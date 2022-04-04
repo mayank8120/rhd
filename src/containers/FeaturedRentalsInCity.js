@@ -1,0 +1,233 @@
+import React, { useState, useEffect } from 'react'
+import Tabs from 'react-bootstrap/Tabs';
+import Tab from 'react-bootstrap/Tab';
+
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+import { capitalise } from './functions';
+const FeaturedRentalsInCity = ({ latlngdata }) => {
+
+    const [key, setKey] = useState('home');
+
+    const [nearbycitiesdata, setnearbycitiesdata] = useState();
+    const [loadmore, setloadmore] = useState(false);
+    // console.log(latlngdata);
+
+    let nearbycitiesurl;
+    if (latlngdata == null || latlngdata == undefined) {
+        nearbycitiesurl = `http://thomasthecat.rentalhousingdeals.com/apis/v1/api/v1/nearbycities?lat=&lng=`
+    } else {
+        nearbycitiesurl = `http://thomasthecat.rentalhousingdeals.com/apis/v1/api/v1/nearbycities?lat=${latlngdata.lat}&lng=${latlngdata.lon}`
+    }
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const result = await axios.post(nearbycitiesurl)
+                .then(res => {
+                    // console.log(res.data.data);
+                    setnearbycitiesdata(res.data.data);
+                }).catch(error => {
+                    console.log('error', error);
+                });
+        };
+        fetchData();
+    }, [nearbycitiesurl]);
+
+    // console.log(nearbycitiesdata);
+    return (
+        <>
+            <section className="secPad featureSection basic">
+                <div className="container">
+                    <div className="sectionTitle">
+                        <h2 className="font-weight700 colorBlue">Featured Rentals in Your City</h2>
+                    </div>
+                    <div className="row marginTop2">
+                        <div className="col-lg-12">
+                            <div>
+                                <Tabs
+                                    id="controlled-tab-example"
+                                    defaultActiveKey="home"
+                                    activeKey={key}
+                                    onSelect={(k) => setKey(k)}
+                                    className="mb-3 sideWhiteGradient">
+
+                                    <Tab eventKey="home" title="This City">
+                                        <div className="listingBlock">
+                                            <div className="row">
+                                                <div className="col-lg-12 pl-0">
+                                                    <ul className="noMarginPad list-style-type row">
+                                                        <Link to={`/propertySearch?city=${nearbycitiesdata == undefined || nearbycitiesdata == null ? 'Los Angeles' : nearbycitiesdata[0].property_city}&state=${nearbycitiesdata == undefined || nearbycitiesdata == null ? 'CA' : nearbycitiesdata[0].property_state}`}>
+                                                            <li>
+                                                                <h3 className="font-weight500 mb-0">{nearbycitiesdata == undefined || nearbycitiesdata == null ? 'Los Angeles' : capitalise(nearbycitiesdata[0].property_city)}</h3>
+                                                                <p className="mb-0 secondaryColor">Affordable Housing</p>
+                                                            </li>
+                                                        </Link>
+                                                        <Link to={`/propertySearch?city=${nearbycitiesdata == undefined || nearbycitiesdata == null ? 'Los Angeles' : nearbycitiesdata[0].property_city}&state=${nearbycitiesdata == undefined || nearbycitiesdata == null ? 'CA' : nearbycitiesdata[0].property_state}&feature=senior`}>
+                                                            <li>
+                                                                <h3 className="font-weight500 mb-0">{nearbycitiesdata == undefined || nearbycitiesdata == null ? 'Los Angeles' : capitalise(nearbycitiesdata[0].property_city)}</h3>
+                                                                <p className="mb-0 secondaryColor">Senior Housing</p>
+                                                            </li>
+                                                        </Link>
+                                                        <Link to={`/propertySearch?city=${nearbycitiesdata == undefined || nearbycitiesdata == null ? 'Los Angeles' : nearbycitiesdata[0].property_city}&state=${nearbycitiesdata == undefined || nearbycitiesdata == null ? 'CA' : nearbycitiesdata[0].property_state}&feature=section`}>
+                                                            <li>
+                                                                <h3 className="font-weight500 mb-0">{nearbycitiesdata == undefined || nearbycitiesdata == null ? 'Los Angeles' : capitalise(nearbycitiesdata[0].property_city)}</h3>
+                                                                <p className="mb-0 secondaryColor">Section 8 Housing</p>
+                                                            </li>
+                                                        </Link>
+                                                        {/* <Link> */}
+                                                        <li>
+                                                            <h3 className="font-weight500 mb-0">{nearbycitiesdata == undefined || nearbycitiesdata == null ? 'Los Angeles' : capitalise(nearbycitiesdata[0].property_city)}</h3>
+                                                            <p className="mb-0 secondaryColor">Low Income Housing</p>
+                                                        </li>
+                                                        {/* </Link> */}
+                                                    </ul>
+                                                </div>
+
+                                                {/* <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <a className="loadMore transition">
+                                                        Load More
+                                                    </a>
+                                                </div> */}
+
+
+                                            </div>
+                                        </div>
+                                    </Tab>
+                                    <Tab eventKey="Nearby Cities" title="Nearby Cities">
+                                        <div className="listingBlock">
+                                            <div className="row">
+                                                <div className="col-lg-12 pl-0">
+                                                    <ul className="noMarginPad list-style-type row ">
+
+
+                                                        {
+                                                            nearbycitiesdata == null || nearbycitiesdata == undefined ?
+                                                                null :
+                                                                (
+                                                                    loadmore == true
+                                                                        ?
+
+
+                                                                        (nearbycitiesdata.map((data) => (
+                                                                            <Link to={`/propertySearch?city=${data.property_city}&state=${data.property_state}`} className="col-lg-3 col-xs-6">
+                                                                                <li >
+                                                                                    <h3 className="font-weight500 mb-0">Affordable Housing</h3>
+                                                                                    <p className="mb-0 secondaryColor">
+                                                                                        {capitalise(data.property_city)}
+                                                                                    </p>
+                                                                                </li>
+                                                                            </Link>
+                                                                        )))
+                                                                        :
+                                                                        (nearbycitiesdata.slice(0, 16).map((data) => (
+                                                                            <Link to={`/propertySearch?city=${data.property_city}&state=${data.property_state}`} className="col-lg-3 col-xs-6">
+                                                                                <li>
+                                                                                    <h3 className="font-weight500 mb-0">Affordable Housing</h3>
+                                                                                    <p className="mb-0 secondaryColor">
+                                                                                        {capitalise(data.property_city)}
+                                                                                    </p>
+                                                                                </li>
+                                                                            </Link>
+                                                                        )))
+                                                                )
+                                                        }
+                                                    </ul>
+                                                </div>
+
+                                                <div className="col-lg-12">
+                                                    <span className="loadMore transition"
+                                                        onClick={() => {
+                                                            setloadmore(!loadmore);
+                                                        }} >
+                                                        {
+                                                            loadmore == true ?
+                                                                'Load Less'
+                                                                :
+                                                                'Load More'
+                                                        }
+                                                    </span>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </Tab>
+
+
+
+                                    <Tab eventKey="Nearby Housing" title="Nearby Housing Authorities">
+                                        <div className="listingBlock">
+                                            <div className="row">
+                                                <div className="col-lg-12 pl-0">
+                                                    <ul className="noMarginPad list-style-type row">
+
+
+                                                        {
+                                                            nearbycitiesdata == null || nearbycitiesdata == undefined ?
+                                                                null :
+                                                                (
+                                                                    loadmore == true
+                                                                        ?
+                                                                        (
+                                                                            nearbycitiesdata.map((data) => (
+                                                                                <Link to={`/agencyState?city=${data.property_city}&state=${data.property_state}`} className="col-lg-3 col-xs-6">
+                                                                                    <li >
+                                                                                        <h3 className="font-weight500 mb-0">Housing Authorities</h3>
+                                                                                        <p className="mb-0 secondaryColor">
+                                                                                            {capitalise(data.property_city)}</p>
+                                                                                    </li>
+                                                                                </Link>
+                                                                            ))
+                                                                        )
+                                                                        :
+                                                                        (
+                                                                            nearbycitiesdata.slice(0, 16).map((data) => (
+                                                                                <Link to={`/agencyState?city=${data.property_city}&state=${data.property_state}`} className="col-lg-3 col-xs-6">
+                                                                                    <li >
+                                                                                        <h3 className="font-weight500 mb-0">Housing Authorities</h3>
+                                                                                        <p className="mb-0 secondaryColor">{capitalise(data.property_city)}</p>
+                                                                                    </li>
+                                                                                </Link>
+                                                                            ))
+                                                                        )
+                                                                )
+                                                        }
+                                                    </ul>
+                                                </div>
+
+                                                <div className="col-lg-12">
+                                                    <span className="loadMore transition"
+                                                        onClick={() => {
+                                                            setloadmore(!loadmore);
+                                                        }} >
+                                                        {
+                                                            loadmore == true ?
+                                                                'Load Less'
+                                                                :
+                                                                'Load More'
+                                                        }
+                                                    </span>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </Tab>
+                                </Tabs>
+
+
+
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </>
+    )
+}
+export default FeaturedRentalsInCity
