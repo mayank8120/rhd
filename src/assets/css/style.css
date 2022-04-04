@@ -9012,11 +9012,11 @@ table.floorplantable thead th {
 button.brdrRadius4.ml-auto.asd {
   width: 100%;
 }
-.sideWhiteGradient {
+/* .sideWhiteGradient {
   position: relative;
   overflow: hidden;
-}
-.sideWhiteGradient:after {
+} */
+/* .sideWhiteGradient:after {
   width: 100%;
   content: "";
   display: block;
@@ -9029,7 +9029,7 @@ button.brdrRadius4.ml-auto.asd {
     rgba(255, 255, 255, 0) 90%
   );
   height: 100%;
-}
+} */
 
 .d-flex.noMobileFlex .leftImage span {
   margin-bottom: 0px;
@@ -9100,7 +9100,7 @@ button.brdrRadius4.ml-auto.asd {
   border-top: none;
 }
 .fairmarketRent {
-	padding: 15px;
+	padding: 15px 0;
 }
 .apgencydetail-page .detailRightSec .alertBox {
 	margin-top: 24px;
@@ -9108,4 +9108,37 @@ button.brdrRadius4.ml-auto.asd {
 .agencyLandingLeftSec .alertBox {
 	margin: 24px 0;
 }
-
+/* #CircularProgressbarWithChildren__children{
+  position: absolute;
+  width: auto !important;
+  height: auto !important;
+  margin-top: 0 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+} */
+[data-test-id="CircularProgressbarWithChildren__children"] {
+  position: absolute;
+  width: auto !important;
+  height: auto !important;
+  margin-top: 0 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+}
+.CircularProgressbar {
+	width: auto !important;
+}
+[type="button"], [type="reset"], [type="submit"], button {
+  -webkit-appearance: initial;
+  }
