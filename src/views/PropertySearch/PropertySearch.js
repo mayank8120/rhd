@@ -19,6 +19,7 @@ import { default as ReactSelect } from "react-select";
 import makeAnimated from "react-select/animated";
 
 import MySelect from "./MySelect.js";
+import { capitalise } from '../../containers/functions';
 
 
 
@@ -602,14 +603,14 @@ const PropertySearch = ({ location }) => {
                                         <nav className="navbar resNavbarBread" aria-label="breadcrumb">
                                             <ol className="breadcrumb font-weight500 mb-0">
                                                 <li className="breadcrumb-item fontSize14"><a href="/" className=' purpleText' > Home</a></li>
-                                                <li className="breadcrumb-item fontSize14 purpleText">{feature == 'senior' ? 'Senior Housing' : (feature == 'section' ? 'Section 8 Housing' : 'Rentals')}</li>
-                                                <li className="breadcrumb-item fontSize14 purpleText">{statename.toUpperCase()}</li>
-                                                {city == undefined || city == '' ? null : <li className="breadcrumb-item fontSize14 active">{city}</li>}
+                                                <li className="breadcrumb-item fontSize14 purpleText"><a href="/" className=' purpleText' >{feature == 'senior' ? 'Senior Housing' : (feature == 'section' ? 'Section 8 Housing' : 'Rentals')}</a></li>
+                                                <li className="breadcrumb-item fontSize14 purpleText"><a href={`/propertySearch?city=&state=${statename}`} className={city == undefined || city == '' ? 'activeimp' : 'purpleText'} >{statename.toUpperCase()}</a></li>
+                                                {city == undefined || city == '' ? null : <li className="breadcrumb-item fontSize14 active">{capitalise(city)}</li>}
 
                                             </ol>
                                         </nav>
                                     </div>
-                                    <h3 className="font-weight400 mb-0">Apartments for rent in or near {city}, {statename.toUpperCase()}</h3>
+                                    <h3 className="font-weight400 mb-0">Apartments for rent in or near {city == undefined || city == '' ? null : `${capitalise(city)},`} {statename.toUpperCase()}</h3>
                                     <div className="tagList d-flex align-items-center">
 
 

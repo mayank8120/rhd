@@ -634,7 +634,6 @@ a:hover {
 }
 .featureSection .nav-tabs .nav-item {
   margin-bottom: 0;
-  border-bottom: 1px solid transparent;
 }
 .detailLeftSec .Resnoauto {
   margin-left: auto;
@@ -6015,7 +6014,6 @@ li.list-inline-item.active {
   overflow-y: scroll;
 }
 .featureSection .nav.nav-tabs {
-    border-bottom: none;
   flex-wrap: inherit;
   overflow: auto;
   white-space: nowrap;
@@ -8517,7 +8515,7 @@ button.brdrRadius4.ml-auto.asd {
 }
 .utf-blog-post-thumbnail-inner .listing-left .bg-image {
 	width: 328px;
-	height: 190px;
+	height: 300px;
 }
 .requestTag {
   color: #9d56f7;
@@ -8943,19 +8941,11 @@ table.floorplantable thead th {
   transform: translateY(-50%);
 }
 .serchSmallBlock button {
-	background: #1bc47d;
-	border-radius: 4px;
-	width: 28px;
-	height: 28px;
-	border: none;
-	position: relative;
-}
-.serchSmallBlock button img {
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-	left: 0;
-	right: 0;
+  background: #1bc47d;
+  border-radius: 4px;
+  width: 28px;
+  height: 28px;
+  border: none;
 }
 .itemMobile1 .searchBox input.form-control {
   padding: 0px 92px 0 4px;

@@ -60,15 +60,15 @@ const PublicHousing = () => {
                                             <th scope="col" className="secondaryColor font-weight500 fontSize14">Persons in<br /> Family</th>
                                             <th scope="col">
                                                 <h5 className="mb-0 skyBlueColor font-weight700">80%</h5>
-                                                <div className="d-flex align-items-center secondaryColor font-weight500 fontSize14">Low Income Limit<span><a href="" className="infoIcon"><img src={require('../../assets/img/info.png').default} /></a></span></div>
+                                                <div className="d-flex align-items-center secondaryColor font-weight500 fontSize14">Low Income Limit<span><a href="" className="infoIcon"><img src={require('../../assets/img/info.svg').default} /></a></span></div>
                                             </th>
                                             <th scope="col">
                                                 <h5 className="mb-0 skyBlueColor font-weight700">50%</h5>
-                                                <div className="d-flex align-items-center secondaryColor font-weight500 fontSize14">Low Income Limit<span><a href="" className="infoIcon"><img src={require('../../assets/img/info.png').default} /></a></span></div>
+                                                <div className="d-flex align-items-center secondaryColor font-weight500 fontSize14">Low Income Limit<span><a href="" className="infoIcon"><img src={require('../../assets/img/info.svg').default} /></a></span></div>
                                             </th>
                                             <th scope="col">
                                                 <h5 className="mb-0 skyBlueColor font-weight700">30%</h5>
-                                                <div className="d-flex align-items-center secondaryColor font-weight500 fontSize14">Low Income Limit<span><a href="" className="infoIcon"><img src={require('../../assets/img/info.png').default} /></a></span></div>
+                                                <div className="d-flex align-items-center secondaryColor font-weight500 fontSize14">Low Income Limit<span><a href="" className="infoIcon"><img src={require('../../assets/img/info.svg').default} /></a></span></div>
                                             </th>
                                         </tr>
                                     </thead>

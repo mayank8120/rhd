@@ -792,11 +792,12 @@ export const PropertySearchItem = ({ post }) => {
 
 
 
-                                            <a href=""
+                                            <a href="javascript:;"
                                                 className="fontSize13 lineBtnCalling brdrRadius4 prplrFilledBtn w-50 d-flex align-items-center nonepointer">
-                                                <img
+                                                {/* <img
                                                     src={require("../../assets/img/phoneFilledWhite.png").default}
-                                                />N / A
+                                                /> */}
+                                                No Phone Number
                                             </a>
 
                                             :

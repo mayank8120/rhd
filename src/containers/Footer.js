@@ -84,7 +84,7 @@ const Footer = () => {
                     <div className="row footerBottom">
                         <div className="col-md-6 pl-0">
                             <div className="leftSide">
-                                <p className="mb-0">&#169; 2021 Rentalhousingdeals, Inc.All rights reserved</p>
+                                <p className="mb-0">&#169; {new Date().getFullYear()} Rentalhousingdeals, Inc.All rights reserved</p>
                             </div>
                         </div>
                         <div className="col-md-6 pr-0">

@@ -40,7 +40,7 @@ const AffordabilityCal = () => {
                         <div id="collapseThree" className="collapse show" aria-labelledby="headingThree"
                             data-parent="#accordion3">
                             <div className="card-body ">
-                                <p className="fontSize12 colorBlue">Please enter your MONTHLY gross income
+                                <p className="colorBlue">Please enter your MONTHLY gross income
                                     (income before taxes, number only)</p>
                                 <form onSubmit={handleSubmit}>
                                     <div className="d-flex align-items-center rentalForm">

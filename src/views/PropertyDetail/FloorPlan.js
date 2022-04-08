@@ -90,7 +90,7 @@ const FloorPlan = ({ data }) => {
                                         :
 
                                         <>
-                                            <span className="colorBlue font-weight500">{data.beds}</span> <span className='colorblack font-weight500'> {data.beds == 'Studio' ? null : 'Bd'}</span>
+                                            <span className="colorBlue font-weight500">{data.beds}</span> <span className='colorblack font-weight400'> {data.beds == 'Studio' ? null : 'Bd'}</span>
                                         </>
                                 }
                             </td>
@@ -99,7 +99,7 @@ const FloorPlan = ({ data }) => {
                                     data.baths == 0 || data.baths == '' ?
                                         (<span className="colorBlue font-weight500">N/A Ba</span>)
                                         :
-                                        <span className="colorBlue font-weight500">{decimalRoundOff(data.baths)}   <span className='colorblack font-weight500'> Ba</span></span>
+                                        <span className="colorBlue font-weight500">{decimalRoundOff(data.baths)}   <span className='colorblack font-weight400'> Ba</span></span>
                                 }
                             </td>
                             <td>
@@ -107,7 +107,7 @@ const FloorPlan = ({ data }) => {
                                     data.square_feet_to == 0 ?
                                         (<span className="colorBlue font-weight500">N/A Sq.ft</span>)
                                         :
-                                        <><span className="colorBlue font-weight500">{data.square_feet_to}</span><span className='colorblack font-weight500'> Sq.ft</span>  </>
+                                        <><span className="colorBlue font-weight500">{data.square_feet_to}</span><span className='colorblack font-weight400'> Sq.ft</span>  </>
                                 }
                             </td>
 

@@ -37,6 +37,7 @@ import { decimalRoundOff, replaceSpace, toggleHeart } from '../../containers/fun
 import { addOrRemoveProp } from '../../containers/functions';
 import { getAllProp } from '../../containers/functions';
 import FloorPlanItemMobile from './FloorPlanItemMobile';
+import { Link } from 'react-router-dom';
 
 
 const PropertyDetailPage = ({ post }) => {
@@ -447,6 +448,11 @@ const PropertyDetailPage = ({ post }) => {
         setIsOpenAvailability(!isOpenAvailability);
     }
 
+
+
+
+    
+
     const [isOpenQualify, setIsOpenQualify] = useState(false);
     function toggleModalQualify() {
         setIsOpenQualify(!isOpenQualify);
@@ -831,7 +837,7 @@ const PropertyDetailPage = ({ post }) => {
                                                     {propdata.phone}
                                                 </h5>
                                                 <div className="ml-auto d-flex align-items-center mr-5">
-                                                    <a href="" className="modalCheck colorWhite">Check Availability123</a>
+                                                    <a href="" className="modalCheck colorWhite">Check Availability</a>
                                                     <ul className="noMarginPad listStyleNone sideActionIcon">
                                                         <li className="brdrRadius4 itemWebsite">
                                                             <i class="far fa-heart lightbluemodified"></i>
@@ -888,11 +894,11 @@ const PropertyDetailPage = ({ post }) => {
                                                 {propdata.property_address} {propdata.property_city}, {propdata.property_state} {propdata.property_zip}
                                             </p>
                                             <div className="d-flex flex-wrap align-items-center detailTags detailTagList">
-                                                <div className="row">
+                                                <div className="row w-100">
 
                                                     {
                                                         propdetails.length !== 0 && propdetails.pet_allowed === 'Yes' ?
-                                                            <div className="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                                            <div className="col-lg-5 col-md-5240 col-sm-12 col-xs-12">
                                                                 <span className="brownTag">
                                                                     <div className="d-flex align-items-center">
                                                                         <img src={require('../../assets/img/detailImage1.svg').default} />
@@ -908,7 +914,7 @@ const PropertyDetailPage = ({ post }) => {
                                                     {
                                                         propdetails.length !== 0 && propdetails.handicap == "Yes" ?
 
-                                                            <div className="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                                                            <div className="col-lg-7 col-md-7 col-sm-12 col-xs-12">
                                                                 <span className="blueTag mt-0">
                                                                     <span className="">
                                                                         <div className="d-flex align-items-center">
@@ -927,7 +933,7 @@ const PropertyDetailPage = ({ post }) => {
 
                                                     {
                                                         propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '62') ?
-                                                            <div className="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                                            <div className="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                                                                 <span className="orangeTag">
                                                                     <div className="d-flex align-items-center">
                                                                         <img src={require('../../assets/img/detailImage3.svg').default} />
@@ -942,7 +948,7 @@ const PropertyDetailPage = ({ post }) => {
 
                                                     {
                                                         propdetails.length !== 0 && ((propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '55') || propdetails.seniorpropval == '') ?
-                                                            <div className="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                                            <div className="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                                                                 <span className="greenTag">
                                                                     <div className="d-flex align-items-center">
                                                                         <img src={require('../../assets/img/detailImage5.svg').default} />
@@ -958,7 +964,7 @@ const PropertyDetailPage = ({ post }) => {
                                                     {
                                                         propdetails.length !== 0 && propdetails.section8 == 'Yes' ?
 
-                                                            <div className="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                                            <div className="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                                                                 <span className="greenTag">
                                                                     <div className="d-flex align-items-center">
                                                                         <img src={require('../../assets/img/detailImage4.svg').default} />
@@ -1116,9 +1122,19 @@ const PropertyDetailPage = ({ post }) => {
                                     {/* href="tel:8665562570" */}
 
                                     <div className="d-flex align-items-center btnSection">
-                                        <a href={`tel:${propdata.phone}`} className="brdrRadius4 w-50 text-center d-flex align-items-center justify-content-center">
+
+                                        {propdata.phone == '' || propdata.phone == null ?
+                                            <a href="javascript:;" className="brdrRadius4 w-50 text-center d-flex align-items-center justify-content-center">
+                                                No Phone Number
+                                            </a>
+                                            :
+                                            <a href={`tel:${propdata.phone}`} className="brdrRadius4 w-50 text-center d-flex align-items-center justify-content-center">
+                                                <img src={require('../../assets/img/phoneIcon.svg').default} />{propdata.phone}
+                                            </a>
+                                        }
+                                        {/* <a href={`tel:${propdata.phone}`} className="brdrRadius4 w-50 text-center d-flex align-items-center justify-content-center">
                                             <img src={require('../../assets/img/phoneIcon.svg').default} />{propdata.phone}
-                                        </a>
+                                        </a> */}
                                         <span className="brdrRadius4 w-50 text-center d-flex align-items-center justify-content-center" >
                                             {propdata.property_type == 'general' ? null : <img src={require('../../assets/img/qualifyIcon.svg').default} />}
 
@@ -1144,7 +1160,7 @@ const PropertyDetailPage = ({ post }) => {
                                                         <div className="modal-body">
                                                             <form>
                                                                 <div className="row">
-                                                                    <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                                    <div className="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                                                         <div className="form-group">
                                                                             <label for="exampleInputEmail1">Full Name <span
                                                                                 className="labelMark">*</span></label>
@@ -1153,7 +1169,7 @@ const PropertyDetailPage = ({ post }) => {
                                                                                 placeholder="Enter email" value="Jonath" />
                                                                         </div>
                                                                     </div>
-                                                                    <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                                    <div className="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                                                         <div className="form-group">
                                                                             <label for="exampleInputEmail1">Address </label>
                                                                             <input type="email" className="form-control" id=""
@@ -1211,7 +1227,7 @@ const PropertyDetailPage = ({ post }) => {
                                                                                 className="labelMark">*</span></label>
                                                                             <input type="email" className="form-control" id=""
                                                                                 aria-describedby="emailHelp"
-                                                                                placeholder="Enter email" value="6261234123" />
+                                                                                placeholder="Enter phone" value="6261234123" />
                                                                         </div>
                                                                     </div>
                                                                     <div className="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -1480,9 +1496,19 @@ const PropertyDetailPage = ({ post }) => {
                                                 </a>
                                             </div>
                                             <div className="ml-auto itemwebsite mbab">
-                                                <a href={`tel:${propdata.phone}`} className="lineBtn brdrRadius4 font-weight700 purpleText">
-                                                    <img src={require('../../assets/img/phoneColored.svg').default} />Call
-                                                </a>
+
+                                                {propdata.phone == '' || propdata.phone == null ?
+
+                                                    <a href="javascript:;" className="lineBtn brdrRadius4 font-weight700 purpleText">
+                                                        No Phone Number
+                                                    </a>
+                                                    :
+                                                    <a href={`tel:${propdata.phone}`} className="lineBtn brdrRadius4 font-weight700 purpleText">
+                                                        <img src={require('../../assets/img/phoneColored.svg').default} />Call
+                                                    </a>
+                                                }
+
+
                                             </div>
 
                                         </div>
@@ -1558,7 +1584,7 @@ const PropertyDetailPage = ({ post }) => {
                                                 <div class="d-flex align-items-top">
                                                     <div class="headingSec">
                                                         <h5 class="mt-0 mb-0 fontSize18 text-left font-weight700 colorBlue">Build your credit and earn rewards</h5>
-                                                        <p class="mb-0 mt-2 colorBlue text-left fontSize18 font-weight400 itemWebsite">Landlords often favor applicants with a high credit score.We have provided an opportunity that over 100,000 members are using to help build their credit - A debit card that builds credit and earn rewards.No credit checks.Keep your bank!
+                                                        <p class="mb-0 mt-2 colorBlue text-left fontSize16 font-weight400 itemWebsite">Landlords often favor applicants with a high credit score.We have provided an opportunity that over 100,000 members are using to help build their credit - A debit card that builds credit and earn rewards.No credit checks.Keep your bank!
                                                         </p>
                                                         <button class="font-weight700 smallResponsiveBtn fontSize14 colorWhite transition brdrRadius4 itemWebsite"><a href="https://secure.rspcdn.com/xprr/red/PID/921/SID/rh,belowimage" target="_blank" className='colorWhite'>Check it out</a></button>
                                                     </div>
@@ -1599,7 +1625,7 @@ const PropertyDetailPage = ({ post }) => {
 
                                                         <thead>
                                                             <tr>
-                                                                <th scope="col">FloorPlan</th>
+                                                                <th scope="col">FloorPlans</th>
                                                                 <th scope="col">Beds</th>
                                                                 <th scope="col">Baths</th>
                                                                 <th scope="col">Sq.ft</th>
@@ -2787,10 +2813,10 @@ const PropertyDetailPage = ({ post }) => {
                                         <>
                                             <div className="fairmarketRent responsive15">
                                                 <Emailsubs2 />
-                                                
+
                                             </div>
                                         </>
-                                        
+
                                 }
 
                                 <div className="brdrLine"></div>
@@ -3112,10 +3138,17 @@ const PropertyDetailPage = ({ post }) => {
                                     <div className="d-flex mb-2 align-items-center">
                                         <h2 className="colorBlue font-weight700 mb-0">Check Availability</h2>
                                         <div className="ml-auto">
-                                            <p className="purpleText font-weight700 fontSize18 mb-0 d-flex align-items-center">
-                                                <img src={require('../../assets/img/phoneColored.svg').default} />
-                                                <span>{propdata.phone}</span>
-                                            </p>
+
+                                            {
+                                                propdata.phone == '' || propdata.phone == null ?
+                                                    null
+                                                    :
+                                                    <p className="purpleText font-weight700 fontSize18 mb-0 d-flex align-items-center">
+                                                        <img src={require('../../assets/img/phoneColored.svg').default} />
+                                                        <span>{propdata.phone}</span>
+                                                    </p>
+                                            }
+
                                         </div>
                                     </div>
                                     <CheckAvailibilityForm propid={propdetails.id_property} message={`Hi, I am interested in ${propdata.property_title}. Please send me current availability and any additional criteria that must be met to be considered for occupancy. Thanks!`} />
@@ -3228,9 +3261,18 @@ const PropertyDetailPage = ({ post }) => {
                                                 <h2 className="colorBlue font-weight700 fontSize18">Check Availability</h2>
                                             </div>
                                             <div className="ml-auto">
-                                                <p className="colorGreen font-weight700 fontSize18">
-                                                    <img
-                                                        src={require('../../assets/img/callGreen.svg').default} className="twentyfourbytwentyfour" />{propdata.phone}</p>
+
+                                                {
+                                                    propdata.phone == '' || propdata.phone == null ?
+                                                        null
+
+                                                        :
+
+                                                        <p className="colorGreen font-weight700 fontSize18">
+                                                            <img
+                                                                src={require('../../assets/img/callGreen.svg').default} className="twentyfourbytwentyfour" />{propdata.phone}</p>
+
+                                                }
                                             </div>
                                             <CheckAvailibilityForm propid={propdata.id_property} message={`Hi, I am interested in ${propdata.property_title}. Please send me current availability and any additional criteria that must be met to be considered for occupancy. Thanks!`} />
                                         </div>
@@ -3254,7 +3296,7 @@ const PropertyDetailPage = ({ post }) => {
                             </div>
                         </div>
                         <div className="brdrLine"></div>
-                        <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">                            
+                        <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <section className="secPad24 housingNearby resPonsivePad">
                                 <div className="">
 
@@ -3466,11 +3508,21 @@ const PropertyDetailPage = ({ post }) => {
 
                             </ul> */}
                             <div className="d-flex align-items-center responsive15 flex-wrap p-0" style={{ "margin-top": "0px" }}>
-                                <div className="lineBlueBtn">
-                                    <a href='#'>Call</a>
-                                </div>
+
+                                {propdata.phone == '' || propdata.phone == null ?
+                                    <div className="lineBlueBtn">
+                                        <a href="javascript:;" >Call</a>
+                                    </div>
+                                    :
+
+                                    <div className="lineBlueBtn">
+                                        <a href={`tel:${propdata.phone}`}>Call</a>
+                                    </div>
+                                }
+
                                 <div className="Resnoauto emailFillBtn">
-                                    <a href="" className="brdrRadius4 transition" data-toggle="modal" data-target="#exampleModal3">Email
+
+                                    <a href="javascript:;" onClick={() => { toggleModalAvailability() }} className="brdrRadius4 transition" >Email
                                     </a>
                                 </div>
                             </div>
@@ -3499,7 +3551,7 @@ const PropertyDetailPage = ({ post }) => {
                         <div className="modal-body">
                             <form onSubmit={handleSubmit}>
                                 <div className="row">
-                                    <div className="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                    <div className="col-lg-3 col-md-3 col-sm-12 col-xs-12 pr-0">
                                         <div className="form-group">
                                             <label for="exampleInputEmail1">First Name <span
                                                 className="labelMark">*</span></label>
@@ -3509,7 +3561,7 @@ const PropertyDetailPage = ({ post }) => {
                                                 value={formData.name} onChange={(e) => setformData({ ...formData, name: e.target.value })} required />
                                         </div>
                                     </div>
-                                    <div className="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                    <div className="col-lg-3 col-md-3 col-sm-12 col-xs-12 pr-0">
                                         <div className="form-group">
                                             <label for="">Last Name<span
                                                 className="labelMark">*</span></label>
@@ -3518,62 +3570,7 @@ const PropertyDetailPage = ({ post }) => {
                                                 value={formData.lastname} onChange={(e) => setformData({ ...formData, lastname: e.target.value })} required />
                                         </div>
                                     </div>
-                                    <div className="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                    <div className="form-group">
-                                            <label for="">City</label>
-                                            <input type="text" className="form-control" id=""
-                                                aria-describedby="emailHelp"
-                                                placeholder="Enter city"
-                                                value={formData.city} onChange={(e) => setformData({ ...formData, city: e.target.value })} required />
-                                        </div>                                        
-                                    </div>
                                     <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                    <div className="form-group">
-                                            <label for="exampleInputEmail1">Address </label>
-                                            <input type="text" className="form-control" id=""
-                                                aria-describedby="emailHelp" placeholder="Address"
-                                                value={formData.address} onChange={(e) => setformData({ ...formData, address: e.target.value })} required />
-                                        </div>
-                                    </div>
-                                    <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                        <div className="row">
-                                            <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                                <div className="form-group">
-                                                    <label
-                                                        for="exampleFormControlSelect1">State</label>
-                                                    <select className="form-control"
-                                                        id="exampleFormControlSelect1"
-                                                        value={formData.state} onChange={(e) => setformData({ ...formData, state: e.target.value })} required >
-                                                        {statelist.length == 0 ?
-                                                            <option>No states found</option>
-                                                            :
-                                                            statelist.map((val) => {
-                                                                return (
-                                                                    <option>{val.state_abbreviation}</option>
-                                                                );
-                                                            })
-                                                        }
-
-
-                                                        {/* <option>bb</option>
-                                                    <option>sd</option>
-                                                    <option>kj</option>
-                                                    <option>re</option> */}
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                                <div className="form-group">
-                                                    <label for="">ZIP</label>
-                                                    <input type="number" className="form-control"
-                                                        id="" aria-describedby="emailHelp"
-                                                        placeholder="Enter email"
-                                                        value={formData.zip} onChange={(e) => setformData({ ...formData, zip: e.target.value })} required />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                                         <div className="form-group">
                                             <label for="">Email Address <span
                                                 className="labelMark">*</span></label>
@@ -3583,7 +3580,7 @@ const PropertyDetailPage = ({ post }) => {
                                                 value={formData.emailid} onChange={(e) => setformData({ ...formData, emailid: e.target.value })} required />
                                         </div>
                                     </div>
-                                    <div className="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                    <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 pr-0">
                                         <div className="form-group">
                                             <label for="">Phone Number <span
                                                 className="labelMark">*</span></label>
@@ -3593,7 +3590,58 @@ const PropertyDetailPage = ({ post }) => {
                                                 value={formData.phone} onChange={(e) => setformData({ ...formData, phone: e.target.value })} required />
                                         </div>
                                     </div>
-                                    <div className="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                    <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                        <div className="form-group">
+                                            <label for="exampleInputEmail1">Address </label>
+                                            <input type="text" className="form-control" id=""
+                                                aria-describedby="emailHelp" placeholder="Address"
+                                                value={formData.address} onChange={(e) => setformData({ ...formData, address: e.target.value })} required />
+                                        </div>
+                                    </div>
+                                    <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 pr-0">
+                                        <div className="form-group">
+                                            <label for="">City</label>
+                                            <input type="text" className="form-control" id=""
+                                                aria-describedby="emailHelp"
+                                                placeholder="Enter city"
+                                                value={formData.city} onChange={(e) => setformData({ ...formData, city: e.target.value })} required />
+                                        </div>
+                                    </div>
+                                    <div className="col-lg-3 col-md-3 col-sm-12 col-xs-12 pr-0">
+                                        <div className="form-group">
+                                            <label
+                                                for="exampleFormControlSelect1">State</label>
+                                            <select className="form-control"
+                                                id="exampleFormControlSelect1"
+                                                value={formData.state} onChange={(e) => setformData({ ...formData, state: e.target.value })} required >
+                                                {statelist.length == 0 ?
+                                                    <option>No states found</option>
+                                                    :
+                                                    statelist.map((val) => {
+                                                        return (
+                                                            <option>{val.state_abbreviation}</option>
+                                                        );
+                                                    })
+                                                }
+
+
+                                                {/* <option>bb</option>
+                                            <option>sd</option>
+                                            <option>kj</option>
+                                            <option>re</option> */}
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div className="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                        <div className="form-group">
+                                            <label for="">ZIP</label>
+                                            <input type="number" className="form-control"
+                                                id="" aria-describedby="emailHelp"
+                                                placeholder="Enter email"
+                                                value={formData.zip} onChange={(e) => setformData({ ...formData, zip: e.target.value })} required />
+                                        </div>
+                                    </div>
+                                    <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 pr-0">
                                         <div className="form-group">
                                             <label for="">Move-In Date</label>
                                             <div className="posRel calnderIcon">
@@ -3604,93 +3652,81 @@ const PropertyDetailPage = ({ post }) => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                        <div className="row">
-                                            <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                                <div className="form-group">
-                                                    <label for="">Occupants</label>
-                                                    <div className="posRel calnderIcon">
-                                                        <input type="number"
-                                                            className="form-control" id=""
-                                                            aria-describedby="emailHelp"
-                                                            placeholder="Number of occupants"
-                                                            value={formData.occupants} onChange={(e) => setformData({ ...formData, occupants: e.target.value })} required />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                                <div className="form-group">
-                                                    <label for="">Monthly Income</label>
-                                                    <input type="number" className="form-control"
-                                                        id="" aria-describedby="emailHelp"
-                                                        placeholder="Monthly Income"
-                                                        value={formData.monthlyIncome} onChange={(e) => setformData({ ...formData, monthlyIncome: e.target.value })} required />
-                                                </div>
+                                    <div className="col-lg-3 col-md-3 col-sm-12 col-xs-12 pr-0">
+                                        <div className="form-group">
+                                            <label for="">Occupants</label>
+                                            <div className="posRel calnderIcon">
+                                                <input type="number"
+                                                    className="form-control" id=""
+                                                    aria-describedby="emailHelp"
+                                                    placeholder="Number of occupants"
+                                                    value={formData.occupants} onChange={(e) => setformData({ ...formData, occupants: e.target.value })} required />
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                        <div className="">
-                                            <div className="">                                                
-                                                <div className="">
-                                                    <div className="row">
-                                                    <div className="col-lg-12 pl-0">
-                                                    <label>Do you have a voucher?</label>
-                                                    </div>
-                                                        <div className="form-check col-lg-3">
-                                                            <input
-                                                                type="radio"
-                                                                className="form-check-input"
-                                                                value={"Yes"}
-                                                                name="priority"
-                                                                onChange={onradioChange}
-                                                            />
-                                                            <label className="form-check-label">Yes</label>
-                                                        </div>
-                                                        <div className="form-check col-lg-3">
-                                                            <input
-                                                                type="radio"
-                                                                value={"No"}
-                                                                className="form-check-input"
-                                                                name="priority"
-                                                                onChange={onradioChange}
-                                                            />
-                                                            <label className="form-check-label">No</label>
-                                                        </div>
-                                                        <div className="form-check col-lg-6">
-                                                            <input
-                                                                type="radio"
-                                                                value={"On Waiting List"}
-                                                                className="form-check-input"
-                                                                name="priority"
-                                                                onChange={onradioChange}
-                                                            />
-                                                            <label className="form-check-label">On waiting list</label>
-                                                        </div>
-                                                        {/* <button onClick={onClick}> Click Value </button> */}
-                                                    </div>
-
-
-                                                    <p>{radiobutton}</p>
-                                                </div>
-                                            </div>
+                                    <div className="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                        <div className="form-group">
+                                            <label for="">Monthly Income</label>
+                                            <input type="number" className="form-control"
+                                                id="" aria-describedby="emailHelp"
+                                                placeholder="Monthly Income"
+                                                value={formData.monthlyIncome} onChange={(e) => setformData({ ...formData, monthlyIncome: e.target.value })} required />
                                         </div>
                                     </div>
+                                    <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <label>Do you have a voucher?</label>
+                                        <div class="d-flex radioMarginBlock">
+                                            <div className="form-check">
+                                                <input
+                                                    type="radio"
+                                                    className="form-check-input"
+                                                    value={"Yes"}
+                                                    name="priority"
+                                                    onChange={onradioChange}
+                                                />
+                                                <label className="form-check-label">Yes</label>
+                                            </div>
+                                            <div className="form-check">
+                                                <input
+                                                    type="radio"
+                                                    value={"No"}
+                                                    className="form-check-input"
+                                                    name="priority"
+                                                    onChange={onradioChange}
+                                                />
+                                                <label className="form-check-label">No</label>
+                                            </div>
+                                            <div className="form-check">
+                                                <input
+                                                    type="radio"
+                                                    value={"On Waiting List"}
+                                                    className="form-check-input"
+                                                    name="priority"
+                                                    onChange={onradioChange}
+                                                />
+                                                <label className="form-check-label">On waiting list</label>
+                                            </div>
+                                        </div>
+
+                                        {/* <button onClick={onClick}> Click Value </button> */}
+                                    </div>
+                                    {/* <p>{radiobutton}</p> */}
                                 </div>
+                                <div className="brdrLine"></div>
                                 <div className="condiBlock form-group">
                                     <h5 className="fontSize14 font-weight700">Disclaimer/Terms of
                                         Conditions:</h5>
 
-                                        <p className="secondaryColor fontSize14 mb-0">
+                                    <p className="secondaryColor fontSize14 mb-0 maxParaScroll">
                                         This is NOT an application for rental assistance. It is only being forwarded for review by the selected Housing Agency, Management Company or Property Owner who determine eligibility and approval. Receipt of your information does not guarantee acceptance in any rental assistance program, nor will it place you on any waiting list. Further information will be required to determine your eligibility for any Rental Assistance program and approval for a selected unit and you are responsibile for continuing the qualification process.By clicking on the Submit button below, you agree that you have read, understand, and accept these terms and conditions.
-                                        </p>
-                                        {/* <textarea className="form-control"
+                                    </p>
+                                    {/* <textarea className="form-control"
                                             id="exampleFormControlTextarea1" rows="3"
                                             value={formData.disclaimer}
                                             placeholder="This is NOT an application for rental assistance. It is only being forwarded for review by the selected Housing Agency, Management Company or Property Owner who determine eligibility and approval. Receipt of your information does not guarantee acceptance in any rental assistance program, nor will it place you on any waiting list. Further information will be required to determine your eligibility for any Rental Assistance program and approval for a selected unit and you are responsibile for continuing the qualification process.By clicking on the Submit button below, you agree that you have read, understand, and accept these terms and conditions."></textarea> */}
-                                    
+
                                 </div>
-                                <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 pl-0 pr-0">
                                     <div className="form-group">
                                         {/* <ReCAPTCHA */}
                                         <ReCAPTCHA
@@ -3706,7 +3742,7 @@ const PropertyDetailPage = ({ post }) => {
                                         }
                                     </div>
                                 </div>
-                                <div className="modal-footer brdrNoneTop">
+                                <div className="modal-footer brdrNoneTop p-0">
                                     <button type="submit" onClick={captchacheck}
                                         className="btn w-100 modalSubmitBtn fontSize16 font-weight500 colorWhite">Submit</button>
                                 </div>
@@ -3790,12 +3826,19 @@ const PropertyDetailPage = ({ post }) => {
                                                         <h2 className="colorBlue font-weight700 fontSize18">
                                                             Check Availability</h2>
                                                         <div className="ml-auto">
-                                                            <p
-                                                                className="purpleText font-weight700 fontSize18 itemWebsite">
-                                                                <img
-                                                                    src={require('../../assets/img/phoneColored.svg').default} />
-                                                                {propdata.phone}
-                                                            </p>
+
+                                                            {propdata.phone == null || propdata.phone == '' ?
+                                                                null
+                                                                :
+                                                                <p
+                                                                    className="purpleText font-weight700 fontSize18 itemWebsite">
+                                                                    <img
+                                                                        src={require('../../assets/img/phoneColored.svg').default} />
+                                                                    {propdata.phone}
+                                                                </p>
+
+                                                            }
+
 
                                                         </div>
                                                     </div>
@@ -3889,8 +3932,14 @@ const PropertyDetailPage = ({ post }) => {
                                                 Availability</h2>
                                         </div>
                                         <div className="ml-auto">
-                                            <p className="purpleText font-weight700 fontSize18"><img
-                                                src={require('../../assets/img/phoneColored.svg').default} />{propdata.phone}</p>
+                                            {
+                                                propdata.phone == '' || propdata.phone == null ?
+                                                    null
+                                                    :
+                                                    <p className="purpleText font-weight700 fontSize18"><img
+                                                        src={require('../../assets/img/phoneColored.svg').default} />{propdata.phone}</p>
+                                            }
+
                                         </div>
                                         <CheckAvailibilityForm message={`Hi, I am interested in ${propdata.property_title}. Please send me current availability and any additional criteria that must be met to be considered for occupancy. Thanks!`} />
                                     </div>
@@ -3927,6 +3976,11 @@ const PropertyDetailPage = ({ post }) => {
                     </div>
 
                 </Modal>
+
+
+
+
+           
 
 
                 {/* <Modal isOpen={isopenschool}

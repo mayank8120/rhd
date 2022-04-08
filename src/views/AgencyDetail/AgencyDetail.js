@@ -22,7 +22,7 @@ import HousingAuthorityforGeneral from '../PropertyDetail/HousingAuthorityforGen
 import SinglePointMap from '../../containers/SinglePointMap';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { Link } from 'react-router-dom';
-import { addOrRemoveHA, getAllHA, toggleHeartHA } from '../../containers/functions';
+import { addOrRemoveHA, getAllHA, replaceSpace, toggleHeartHA } from '../../containers/functions';
 
 const AgencyDetail = () => {
 
@@ -670,7 +670,7 @@ const AgencyDetail = () => {
                                                         <p className="lineRespnsiveIndent mb-0">
                                                             {
                                                                 aboutreadmore == false ?
-                                                                    agendatedetail.description.replace(/<[^>]*>?/gm, '').replace(/&nbsp;/g, ' ').slice(0, 185)
+                                                                    `${agendatedetail.description.replace(/<[^>]*>?/gm, '').replace(/&nbsp;/g, ' ').slice(0, 185)}...`
                                                                     :
                                                                     agendatedetail.description.replace(/<[^>]*>?/gm, '').replace(/&nbsp;/g, ' ')
                                                             }
@@ -688,7 +688,7 @@ const AgencyDetail = () => {
                                                                     }}>
                                                                     {
                                                                         aboutreadmore == false ?
-                                                                            ' ... Read More'
+                                                                            'Read More'
                                                                             :
                                                                             'Read less'
                                                                     }
@@ -1513,22 +1513,22 @@ const AgencyDetail = () => {
                                                                         <h5 className="mb-0 skyBlueColor font-weight700">80%</h5>
                                                                         <div
                                                                             className="d-flex align-items-center secondaryColor font-weight500 fontSize14">
-                                                                            Low Income Limit<span><a href="" className="infoIcon"><img
-                                                                                src={require('../../assets/img/info.png').default} /></a></span></div>
+                                                                            Low Income Limit<span><a href="/incomeLimits" className="infoIcon"><img
+                                                                                src={require('../../assets/img/info.svg').default} /></a></span></div>
                                                                     </th>
                                                                     <th scope="col">
                                                                         <h5 className="mb-0 skyBlueColor font-weight700">50%</h5>
                                                                         <div
                                                                             className="d-flex align-items-center secondaryColor font-weight500 fontSize14">
-                                                                            Low Income Limit<span><a href="" className="infoIcon"><img
-                                                                                src={require('../../assets/img/info.png').default} /></a></span></div>
+                                                                            Low Income Limit<span><a href="/incomeLimits" className="infoIcon"><img
+                                                                                src={require('../../assets/img/info.svg').default} /></a></span></div>
                                                                     </th>
                                                                     <th scope="col">
                                                                         <h5 className="mb-0 skyBlueColor font-weight700">30%</h5>
                                                                         <div
                                                                             className="d-flex align-items-center secondaryColor font-weight500 fontSize14">
-                                                                            Low Income Limit<span><a href="" className="infoIcon"><img
-                                                                                src={require('../../assets/img/info.png').default} /></a></span></div>
+                                                                            Low Income Limit<span><a href="/incomeLimits" className="infoIcon"><img
+                                                                                src={require('../../assets/img/info.svg').default} /></a></span></div>
                                                                     </th>
                                                                 </tr>
                                                             </thead>
@@ -2286,7 +2286,7 @@ const AgencyDetail = () => {
                                                 agenlocalinfo.info == '' || agenlocalinfo.info == null ?
                                                     <p className="fontSize16 font-weight400 colorBlue">No record found.</p>
                                                     :
-                                                    <p className="fontSize16 font-weight400 colorBlue" dangerouslySetInnerHTML={{ __html: agenlocalinfo.info }} />
+                                                    <p className="fontSize16 font-weight400 colorBlue" dangerouslySetInnerHTML={{ __html: replaceSpace(agenlocalinfo.info) }} />
                                             }
 
                                             {/* <p className="fontSize16 font-weight400 colorBlue">Anaheim is a city inhabited by over 300

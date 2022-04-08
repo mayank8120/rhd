@@ -287,10 +287,10 @@ const Maptile = ({ searchresultdata }) => {
     let cnt = 0;
 
     let checkMarker = (clusterinside) => {
-        let exist;
+        // let exist;
         if (parseFloat(clusterinside.geometry.coordinates[0]) == parseFloat(localStorage.getItem('currLng'))
             && parseFloat(clusterinside.geometry.coordinates[1]) == parseFloat(localStorage.getItem('currLat'))) {
-            exist = true;
+            // exist = true;
             return true;
         }
         return false;
@@ -298,24 +298,126 @@ const Maptile = ({ searchresultdata }) => {
 
 
     let checkCluster = (clusterid) => {
-        let clusterinside = supercluster.getChildren(clusterid);
+
+
         let exist = false;
-        clusterinside.forEach(element => {
-            if (element.properties.cluster === true) {
-                if ((checkCluster(element.properties.cluster_id)) == true) {
-                    exist = true;
+
+        try {
+
+            if (clusterid) {
+
+                let clusterinside;
+
+                try {
+                    try {
+                        clusterinside = supercluster.getChildren(clusterid);
+                    } catch (error) {
+                        if (error && error.message == "No cluster with the specified id.") {
+                            console.log("lalalaal");
+                        } else {
+                            console.log("hahaha");
+                        }
+                    }
+                } catch (error) {
+                    console.log(error, "2nd ERROR");
                 }
-            }
-            if (element.properties.cluster === false) {
-                if (checkMarker(element) == true) {
-                    exist = true;
+                if (clusterinside == undefined) {
+
+                } else {
+
+                    clusterinside.forEach(element => {
+                        if (element.properties.cluster === true) {
+
+                            if (element.properties.cluster_id) {
+
+                                if ((checkCluster(element.properties.cluster_id)) == true) {
+                                    exist = true;
+                                }
+                            }
+
+                        }
+                        if (element.properties.cluster === false) {
+                            if (checkMarker(element) == true) {
+                                exist = true;
+                            }
+                        }
+                    })
                 }
+
+
             }
-        })
+
+
+
+
+        } catch (error) {
+
+
+            console.log(error.stack, "ERROR STACK");
+        }
+
         return exist;
+
     }
 
 
+    // let checkCluster = (clusterid) => {
+
+
+    //     let exist = false;
+
+
+    //     let clusterinside = supercluster.getChildren(clusterid);
+
+    //     clusterinside.forEach(element => {
+    //         if (element.properties.cluster === true) {
+
+    //             if (element.properties.cluster_id) {
+
+    //                 if ((checkCluster(element.properties.cluster_id)) == true) {
+    //                     exist = true;
+    //                 }
+    //             }
+
+    //         }
+    //         if (element.properties.cluster === false) {
+    //             if (checkMarker(element) == true) {
+    //                 exist = true;
+    //             }
+    //         }
+    //     })
+
+    //     return exist;
+
+    // }
+
+    let cccc = (id) => {
+
+        let flag = true;
+
+        try {
+            try {
+                console.log(supercluster.getChildren(id), "cluster CHildren");
+            } catch (error) {
+
+                flag = false;
+                if (error && error.message == "No cluster with the specified id.") {
+                    console.log("lalalaal");
+                    // return true;
+                } else {
+                    console.log("hahaha");
+                    // return true;
+                }
+                // console.log(error.message, "ERROR INSIDE");
+            }
+        } catch (error) {
+            console.log(error, "2nd ERROR");
+        }
+
+
+        return flag;
+
+    }
 
 
 
@@ -328,18 +430,64 @@ const Maptile = ({ searchresultdata }) => {
 
             {
                 clusters.map((cluster) => {
-                    // every cluster point has coordinates
+
+                    // console.log(clusters,"log12");
+
                     const [longitude, latitude] = cluster.geometry.coordinates;
-                    // the point may be either a cluster or a point
+
                     const { cluster: isCluster, point_count: pointCount } =
                         cluster.properties;
 
 
-                    // console.log(cluster)
-
-
-                    // we have a cluster to render
                     if (isCluster) {
+                        // console.log(cluster.id, "cluster ID");
+                        // console.log(cluster,"IS CHILD");
+
+
+
+                        // running code 
+                        // try {
+                        //     try {
+                        //         console.log(supercluster.getChildren(cluster.id), "cluster CHildren");
+                        //         console.log("iiiiiiiiiiiiiiiiiiiii");
+                        //     } catch (error) {
+                        //         if (error && error.message == "No cluster with the specified id.") {
+                        //             console.log("lalalaal");
+                        //             return true;
+                        //         } else {
+                        //             console.log("hahaha");
+                        //             return true;
+                        //         }
+                        //         // console.log(error.message, "ERROR INSIDE");
+                        //     }
+                        // } catch (error) {
+                        //     console.log(error, "2nd ERROR");
+                        // }
+
+
+
+                        // try {
+                        //     try {
+                        //         console.log(supercluster.getChildren(cluster.id), "cluster CHildren");
+                        //     } catch (error) {
+                        //         if (error && error.message == "No cluster with the specified id") {
+                        //             console.log("lalalaal");
+                        //             return true;
+                        //         } else {
+                        //             console.log("hahaha");
+                        //             return true;
+                        //         }
+                        //         // console.log(error.message, "ERROR INSIDE");
+                        //     }
+                        // } catch (error) {
+                        //     console.log(error, "2nd ERROR");
+                        // }
+
+
+
+
+
+
 
                         return (
                             <>
@@ -351,30 +499,58 @@ const Maptile = ({ searchresultdata }) => {
                                     key={`cluster-${cluster.id}`}
                                     position={[latitude, longitude]}
                                     icon={
-                                        checkCluster(cluster.id) == true
-                                            ?
+
+
+
+
+                                        cccc(cluster.id) == false ?
                                             L.divIcon({
-                                                html: `<div class="cluster-marker" style="width: ${10 + (pointCount / points.length) * 40}px; height: ${10 + (pointCount / points.length) * 40}px; border:2px solid #ffffff; background:#1bc47d ">
-                                        ${pointCount > 9 ? '9+' : pointCount}
-                                      </div>`,
+                                                html: `<div class="cluster-marker" style="width: ${10 + (pointCount / points.length) * 40}px; height: ${10 + (pointCount / points.length) * 40}px; border:2px solid #ffffff; background:#9d56f7">${pointCount > 9 ? '9+' : pointCount}</div>`,
                                             })
+
                                             :
-                                            L.divIcon({
-                                                html: `<div class="cluster-marker" style="width: ${10 + (pointCount / points.length) * 40}px; height: ${10 + (pointCount / points.length) * 40}px; border:2px solid #ffffff; background:#9d56f7">
-                                        ${pointCount > 9 ? '9+' : pointCount}
-                                      </div>`,
-                                            })
+
+
+
+
+                                            (
+                                                checkCluster(cluster.id) == true
+                                                    ?
+                                                    L.divIcon({
+                                                        html: `<div class="cluster-marker" style="width: ${10 + (pointCount / points.length) * 40}px; height: ${10 + (pointCount / points.length) * 40}px; border:2px solid #ffffff; background:#1bc47d ">
+                                    ${pointCount > 9 ? '9+' : pointCount}
+                                </div>`,
+                                                    })
+                                                    :
+                                                    L.divIcon({
+                                                        html: `<div class="cluster-marker" style="width: ${10 + (pointCount / points.length) * 40}px; height: ${10 + (pointCount / points.length) * 40}px; border:2px solid #ffffff; background:#9d56f7">
+                                    ${pointCount > 9 ? '9+' : pointCount}
+                                </div>`,
+                                                    })
+                                            )
                                     }
                                     eventHandlers={{
                                         click: () => {
-                                            const expansionZoom = Math.min(
-                                                supercluster.getClusterExpansionZoom(cluster.id),
-                                                maxZoom
-                                            );
-                                            map.setView([latitude, longitude], expansionZoom, {
-                                                animate: true,
-                                            });
-                                        },
+
+
+                                            if (cccc(cluster.id) == false) {
+
+                                            } else {
+                                                const expansionZoom = Math.min(
+                                                    supercluster.getClusterExpansionZoom(cluster.id),
+                                                    maxZoom
+                                                );
+                                                map.setView([latitude, longitude], expansionZoom, {
+                                                    animate: true,
+                                                });
+                                            }
+
+
+
+
+
+
+                                        }
                                     }}
                                 />
                             </>

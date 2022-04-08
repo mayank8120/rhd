@@ -542,7 +542,7 @@ export const AgencyStateListItem = ({ data }) => {
                                                                 :
 
                                                                 <>
-                                                                    <h5 className="text-center fontSize14 colorBlue font-weight500 mb-0">
+                                                                    <h5 className="text-center fontSize1 colorBlue font-weight500 mb-0">
                                                                         CALL</h5>
                                                                     <h6 className="mb-0 secondaryColor font-weight400">Subsidized
                                                                         Units</h6>

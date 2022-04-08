@@ -287,3 +287,12 @@ export let arrayToString = (type) => {
 export let replaceSpace = (str) => {
     return str.replace(new RegExp('<p>&nbsp;</p>', 'g'), '');
 }
+
+export let removeDollarWaitlist = (str) => {
+
+    if (str.slice(0, 5) == "$Wait") {
+        str = str.slice(1);
+    }
+
+    return str;
+}

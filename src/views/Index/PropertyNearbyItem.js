@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { addOrRemoveProp, getAllProp, toggleHeart } from '../../containers/functions';
+import { addOrRemoveProp, getAllProp, removeDollarWaitlist, toggleHeart } from '../../containers/functions';
 
 import { Link } from 'react-router-dom';
 
@@ -150,7 +150,7 @@ const PropertyNearbyItem = ({ data }) => {
                         </ul>
                         <div className="boldTag fontSize16">
 
-                            {data.amount}
+                            {removeDollarWaitlist(data.amount)}
 
                         </div>
                     </div>

@@ -10,11 +10,11 @@ const HousingAuthorityforGeneral = ({ prophousingAuthority }) => {
                 <table className="table agencyDetailtable HousingAutho">
                     <thead>
                         <tr>
-                            <th width="30%" scope="col">Agency</th>
+                            <th width="42%" scope="col">Agency</th>
                             <th scope="col">Section 8<br /> Vouchers</th>
                             <th scope="col">Housing<br /> Units</th>
                             <th scope="col">Status</th>
-                            <th scope="col"></th>
+                            <th width="15%" scope="col"></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -38,7 +38,7 @@ const HousingAuthorityforGeneral = ({ prophousingAuthority }) => {
                                                 <h5 className="mt-0 mb-0 fontSize16 font-weight500 colorBlue">
                                                     <Link to={`/agencyDetail?haid=${data.ha_id}`} className="colorBlue"> {data.name} </Link>
                                                 </h5>
-                                                <p className="mb-0 fontSize14 font-weight500 secondaryColor">
+                                                <p className="mb-0 fontSize14 font-weight500 secondaryColor mt-2">
                                                     {data.city}, {data.state} - {data.distance} {data.distance !== '' ? 'Miles' : null}</p>
 
                                             </div>
@@ -46,7 +46,7 @@ const HousingAuthorityforGeneral = ({ prophousingAuthority }) => {
                                         </div>
                                     </th>
                                     <td>
-                                        <div className="minWidth150">
+                                        <div className="minWidth150 font-weight500">
                                             {
                                                 data.section_units == [] || data.section_units == null || data.section_units == '' ?
                                                     'N/A'
@@ -60,7 +60,7 @@ const HousingAuthorityforGeneral = ({ prophousingAuthority }) => {
 
                                     </td>
                                     <td>
-                                        <div className="minWidth150">
+                                        <div className="minWidth150 font-weight500">
                                             {
                                                 data.section_units == [] || data.section_units == null || data.section_units == '' ?
                                                     'N/A'

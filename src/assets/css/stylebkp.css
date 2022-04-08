@@ -634,7 +634,6 @@ a:hover {
 }
 .featureSection .nav-tabs .nav-item {
   margin-bottom: 0;
-  border-bottom: 1px solid transparent;
 }
 .detailLeftSec .Resnoauto {
   margin-left: auto;
@@ -5032,7 +5031,7 @@ span.blue {
   border-bottom-left-radius: 0;
 }
 .propertySearchPage .listing-left {
-	min-width: 328px;
+  min-width: 326px;
 }
 .bg-image {
   width: 100%;
@@ -6015,7 +6014,6 @@ li.list-inline-item.active {
   overflow-y: scroll;
 }
 .featureSection .nav.nav-tabs {
-    border-bottom: none;
   flex-wrap: inherit;
   overflow: auto;
   white-space: nowrap;
@@ -8046,9 +8044,9 @@ iframe {
   /* position: relative; */
 }
 .listting-search-left {
-	width: 750px;
-	height: 100%;
-	position: relative;
+  width: 740px;
+  height: 100%;
+  position: relative;
 }
 .cst {
   position: fixed;
@@ -8302,12 +8300,12 @@ button#starbutton {
   transition: transform 0.5s ease-in-out;
 }
 .utf-blog-post-thumbnail {
-	flex: 0 0 auto;
-	max-width: none;
-	max-height: 100%;
-	overflow: hidden;
-	position: relative;
-	width: 328px;
+  flex: 0 0 auto;
+  max-width: none;
+  max-height: 100%;
+  overflow: hidden;
+  position: relative;
+  width: 220px;
 }
 .utf-blog-post-thumbnail-inner {
   height: 100%;
@@ -8516,8 +8514,8 @@ button.brdrRadius4.ml-auto.asd {
   height: 189px;
 }
 .utf-blog-post-thumbnail-inner .listing-left .bg-image {
-	width: 328px;
-	height: 190px;
+  width: 220px;
+  height: 189px;
 }
 .requestTag {
   color: #9d56f7;
@@ -8943,19 +8941,11 @@ table.floorplantable thead th {
   transform: translateY(-50%);
 }
 .serchSmallBlock button {
-	background: #1bc47d;
-	border-radius: 4px;
-	width: 28px;
-	height: 28px;
-	border: none;
-	position: relative;
-}
-.serchSmallBlock button img {
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-	left: 0;
-	right: 0;
+  background: #1bc47d;
+  border-radius: 4px;
+  width: 28px;
+  height: 28px;
+  border: none;
 }
 .itemMobile1 .searchBox input.form-control {
   padding: 0px 92px 0 4px;
