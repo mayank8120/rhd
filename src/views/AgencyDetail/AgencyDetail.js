@@ -643,6 +643,19 @@ const AgencyDetail = () => {
                                                         </>
                                                 }
                                             </div>
+
+                                            <div className="itemMobile mt-3">
+                                                <div className="d-flex align-items-center">
+                                                    <a href={`tel:${agendetail.phone}`}
+                                                        className="skyBlueResponisveBtn d-flex align-items-center brdrRadius4 skybtn whiteColor"><i
+                                                            className="fas fa-phone-alt"></i>{agendetail.phone}</a>
+                                                    <span onClick={() => {
+                                                        toggleModalContact();
+                                                    }} s
+                                                        className="skyBlueResponisveBtn d-flex align-items-center brdrRadius4 whiteColor"
+                                                        data-toggle="modal" data-target="#exampleModal">Contact</span>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div className="brdrLine5"></div>
 
@@ -943,21 +956,7 @@ const AgencyDetail = () => {
                                 </div> --> */}
 
 
-                                            <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-                                                <div className="itemMobile">
-                                                    <div className="d-flex align-items-center">
-                                                        <a href={`tel:${agendetail.phone}`}
-                                                            className="skyBlueResponisveBtn d-flex align-items-center brdrRadius4 skybtn whiteColor"><i
-                                                                className="fas fa-phone-alt"></i>{agendetail.phone}</a>
-                                                        <span onClick={() => {
-                                                            toggleModalContact();
-                                                        }} s
-                                                            className="skyBlueResponisveBtn d-flex align-items-center brdrRadius4 whiteColor"
-                                                            data-toggle="modal" data-target="#exampleModal">Contact</span>
-                                                    </div>
-                                                </div>
-                                            </div>
                                             {/* <!-- Modal --> */}
                                             {/* <div className="modal fade rentalModal preRentalModal" id="exampleModal" tabindex="-1"
                                     role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -2543,10 +2542,12 @@ const AgencyDetail = () => {
                                                             </div>
                                                             <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                                 <div className="form-group">
-                                                                    <ReCAPTCHA
-                                                                        sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
-                                                                        onChange={captchaHandle}
-                                                                    />
+                                                                <div className="recaptcha_block">
+                                                                        <ReCAPTCHA
+                                                                            sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+                                                                            onChange={captchaHandle}
+                                                                        />
+                                                                    </div>
                                                                     {captchaValue == false ? (
                                                                         <span style={{ color: "red" }}>
                                                                             Please Verify Captcha
@@ -3090,9 +3091,11 @@ const AgencyDetail = () => {
                                         <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <div className="form-group">
                                                 {/* <ReCAPTCHA */}
-                                                <ReCAPTCHA
-                                                    sitekey='6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
-                                                    onChange={captchaHandle} />
+                                                <div className="recaptcha_block">
+                                                    <ReCAPTCHA
+                                                        sitekey='6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
+                                                        onChange={captchaHandle} />
+                                                </div>
                                                 {
                                                     captchaValue == false
                                                         ?

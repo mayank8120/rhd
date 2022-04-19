@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Modal from "react-modal";
-import { decimalRoundOff } from '../../containers/functions';
+import { commaInNumber, decimalRoundOff } from '../../containers/functions';
 
 const FloorPlan = ({ data }) => {
 
@@ -107,7 +107,7 @@ const FloorPlan = ({ data }) => {
                                     data.square_feet_to == 0 ?
                                         (<span className="colorBlue font-weight500">N/A Sq.ft</span>)
                                         :
-                                        <><span className="colorBlue font-weight500">{data.square_feet_to}</span><span className='colorblack font-weight400'> Sq.ft</span>  </>
+                                        <><span className="colorBlue font-weight500">{commaInNumber(data.square_feet_to)}</span><span className='colorblack font-weight400'> Sq.ft</span>  </>
                                 }
                             </td>
 
@@ -121,7 +121,7 @@ const FloorPlan = ({ data }) => {
                                 {data.rent_from == 0 || data.rent_from == '' ?
                                     'N/A'
                                     :
-                                    ` $${data.rent_from}`
+                                    ` $${commaInNumber(data.rent_from)}`
                                 }
                             </td>
                         </tr>

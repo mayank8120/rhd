@@ -763,9 +763,12 @@ export const EmailSubs = () => {
                             </div>
                             <div className="brdrLinee2"></div>
                             <div className="d-flex align-items-center pt-4 buttonadj" >
-                                <ReCAPTCHA className="captcha"
-                                    sitekey='6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
-                                    onChange={captchaHandle} />
+
+                            <div className="recaptcha_block">
+                                    <ReCAPTCHA className="captcha"
+                                        sitekey='6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
+                                        onChange={captchaHandle} />
+                                </div>
 
                                 <button onClick={() => {
                                     // toggleModal()

@@ -60,7 +60,7 @@ const SchoolItem = ({ schoolnearby }) => {
             {schoolnearby == null || schoolnearby == [] || schoolnearby == '' ? null :
 
                 <>
-                    <div className="responsive15">
+                    <div className="responsive15 paddingBottom0 mt-2">
                         <div className="titleHeading">
                             <h3 className="fontSize18 font-weight700">Schools Nearby</h3>
                         </div>
@@ -166,7 +166,7 @@ const SchoolItem = ({ schoolnearby }) => {
 
 
 
-                    <div class="itemMobile responsive15">
+                    <div class="itemMobile responsive15 paddingTop0">
                         <ul class="noMarginPad listStyleNone agendtailList">
 
 

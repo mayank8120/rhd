@@ -85,6 +85,9 @@ const SchoolItemDetail = ({ data }) => {
     }, [schooldetailurl]);
 
 
+    // console.log(schooldetaildata);
+
+
     return (
 
         <>
@@ -234,14 +237,29 @@ const SchoolItemDetail = ({ data }) => {
                                                         class="mb-0 fontSize14 font-weight400 secondaryColor">
                                                         Certificate Offered</p>
                                                     <h5 class="fontSize16 font-weight500 colorBlue">
-                                                        {emptyDataCheck(schooldetaildata.offered[0].certificate_offered)}</h5>
+
+                                                        {
+                                                            schooldetaildata.offered.length == 0 ?
+                                                                'N/A'
+                                                                :
+                                                                emptyDataCheck(schooldetaildata.offered[0].certificate_offered)
+                                                        }
+
+                                                        {/* {emptyDataCheck(schooldetaildata.offered[0].certificate_offered)} */}
+                                                    </h5>
                                                 </li>
                                                 <li>
                                                     <p
                                                         class="mb-0 fontSize14 font-weight400 secondaryColor">
                                                         Degree Offered</p>
                                                     <h5 class="fontSize16 font-weight500 colorBlue">
-                                                        {emptyDataCheck(schooldetaildata.offered[0].degree_offered)}</h5>
+                                                        {
+                                                            schooldetaildata.offered.length == 0 ?
+                                                                'N/A'
+                                                                :
+                                                                emptyDataCheck(schooldetaildata.offered[0].degree_offered)
+                                                        }
+                                                    </h5>
                                                 </li>
                                                 <li>
                                                     <p

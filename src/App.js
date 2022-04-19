@@ -52,7 +52,7 @@ import Inspections from './views/Inspections/Inspections';
 import Payments from './views/PaymentStandards/Payment';
 import { ContactUs } from './views/ContactUS/ContactUs';
 
-
+import ScrollToTop from './containers/ScrollToTop';
 
 function App() {
 
@@ -64,7 +64,8 @@ function App() {
         <>
             <Router>
                 <Navbar />
-                {/* <Scrollbar style={{ width: 1920, height: 1080, scrollbarWidth: 100 }}> */}
+                <ScrollToTop>
+                    {/* <Scrollbar style={{ width: 1920, height: 1080, scrollbarWidth: 100 }}> */}
                     <Switch>
                         <Route path="/" exact component={Index} />
                         <Route path="/seniorHousing" exact component={Seniorhousing} />
@@ -109,7 +110,8 @@ function App() {
 
 
                     </Switch>
-                {/* </Scrollbar> */}
+                    {/* </Scrollbar> */}
+                </ScrollToTop>
             </Router>
         </>
     );

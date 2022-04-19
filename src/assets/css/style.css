@@ -415,7 +415,7 @@ a:hover {
   left: 0;
 }
 .bannerSectionText h1 {
-  font-size: 36px;
+	font-size: 35px;
 }
 .searchBox {
   margin-top: 24px;
@@ -1097,14 +1097,14 @@ a:hover {
 	min-width: 500px;
 }
 .btnSection button {
-  display: inline-block;
-  box-shadow: 0px 8px 16px rgba(255, 125, 78, 0.1);
-  background: #293a90;
-  color: #fff;
-  padding: 13px;
-  font-size: 18px;
-  font-weight: 700;
-  border: none;
+	display: inline-block;
+	box-shadow: 0px 8px 16px rgba(255, 125, 78, 0.1);
+	background: #293a90;
+	color: #fff;
+	padding: 13px 0;
+	font-size: 18px;
+	font-weight: 700;
+	border: none;
 }
 .detailLeftSec .btnSection span {
   display: inline-block;
@@ -1908,7 +1908,8 @@ select {
   margin: 9px 0 16px;
 }
 .priceRangeMobile h4 {
-  color: #45bb30;
+  /* color: #45bb30; */
+  color: #16193a;
 
   margin-right: 12px;
 }
@@ -3025,7 +3026,7 @@ table.basicInfoTable {
   padding-right: 8px !important;
 }
 .botttomDetailSec p {
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 .actionBtn li {
   display: inline-block;
@@ -7985,10 +7986,10 @@ iframe {
 }
 
 .detailListing li span img {
-  width: 20px;
-  margin: 0 auto;
-  object-fit: contain;
-  height: 20px;
+	width: 20px;
+	margin: 0 auto;
+	object-fit: contain;
+	height: auto;
 }
 .imageresize {
   height: 50px;
@@ -9204,4 +9205,14 @@ button.brdrRadius4.ml-auto.asd {
 
 .activeimp{
     color: #6c757d !important;
+}
+.moveSpecialText{
+  font-size: 16px;
+}
+.rightSide.text-right li a img {
+	width: 30px !important;
+	height: 30px !important;
+}
+.topPaddSec{
+  padding: 70px 0 0 !important;
 }

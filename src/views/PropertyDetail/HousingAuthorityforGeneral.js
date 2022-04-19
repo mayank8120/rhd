@@ -101,7 +101,7 @@ const HousingAuthorityforGeneral = ({ prophousingAuthority }) => {
 
 
             {/* mobile responsive  */}
-            <div className="itemMobile responsive15">
+            <div className="itemMobile responsive15 responsive15-0">
                 <ul className="noMarginPad listStyleNone agendtailList">
 
 

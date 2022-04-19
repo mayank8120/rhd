@@ -228,6 +228,11 @@ export let getAllHA = () => {
 
 
 export let capitalise = (str) => {
+
+    if (str == undefined || str == '' || typeof (str) == "number") {
+        return;
+    }
+
     let str1 = str.toLowerCase();
 
     const arr = str1.split(" ");
@@ -242,11 +247,15 @@ export let capitalise = (str) => {
 
 
 
-let removelastcomma = (str) => {
+export let removelastcomma = (str) => {
     let us;
     if (str.charAt(str.length - 1) == ',') {
         us = str.slice(0, -1);
-    } else {
+    }
+    else if (str.charAt(str.length - 1) == ' ' && str.charAt(str.length - 2) == ',') {
+        us = str.slice(0, -2);
+    }
+    else {
         us = str;
     }
     return us;
@@ -295,4 +304,9 @@ export let removeDollarWaitlist = (str) => {
     }
 
     return str;
+}
+
+
+export let commaInNumber = (str) => {
+    return str.toLocaleString(undefined, { minimumFractionDigits: 0 })
 }

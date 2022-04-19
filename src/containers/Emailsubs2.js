@@ -677,10 +677,12 @@ const Emailsubs2 = () => {
                                 }
                             </div>
                             <div className="d-flex align-items-center pt-4 res buttonadj" >
-                                <ReCAPTCHA className="captcha"
-                                    sitekey='6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
-                                    onChange={captchaHandle} />
 
+                            <div className="recaptcha_block">
+                                    <ReCAPTCHA className="captcha"
+                                        sitekey='6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
+                                        onChange={captchaHandle} />
+                                </div>
                                 <button onClick={() => {
                                     // toggleModal()
                                     // toggleModalThankYou()

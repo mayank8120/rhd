@@ -784,10 +784,12 @@ export const AgencyStateListItem = ({ data }) => {
                                                                 </div>
                                                                 <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                                     <div className="form-group">
-                                                                        <ReCAPTCHA
-                                                                            sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
-                                                                            onChange={captchaHandle}
-                                                                        />
+                                                                    <div className="recaptcha_block">
+                                                                            <ReCAPTCHA
+                                                                                sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+                                                                                onChange={captchaHandle}
+                                                                            />
+                                                                        </div>
                                                                         {captchaValue == false ? (
                                                                             <span style={{ color: "red" }}>
                                                                                 Please Verify Captcha

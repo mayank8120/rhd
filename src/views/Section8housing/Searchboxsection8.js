@@ -188,7 +188,7 @@ const Searchboxsection8 = ({ latlngdata }) => {
 
                                                 <input type="text" className="form-control topSearch"
                                                     aria-describedby="emailHelp"
-                                                    placeholder="Enter city, State or ZIP"
+                                                    placeholder="Enter City, State or ZIP"
                                                     value={searchterm}
                                                     // value={searchdata.searchstring} 
                                                     // onChange={(e) => setSearchdata({ searchstring: e.target.value })} 

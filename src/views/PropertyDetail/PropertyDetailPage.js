@@ -16,9 +16,7 @@ import Amenities from './Amenities';
 // import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import { CircularProgressbarWithChildren } from 'react-circular-progressbar';
-import {
-    buildStyles
-} from "react-circular-progressbar";
+import { buildStyles } from "react-circular-progressbar";
 // import { Carousel, CarouselItem } from 'react-bootstrap';
 
 import Carousel from "react-multi-carousel";
@@ -33,7 +31,7 @@ import ReCAPTCHA from 'react-google-recaptcha';
 
 import axios from 'axios';
 
-import { decimalRoundOff, replaceSpace, toggleHeart } from '../../containers/functions';
+import { capitalise, commaInNumber, decimalRoundOff, removelastcomma, replaceSpace, toggleHeart } from '../../containers/functions';
 import { addOrRemoveProp } from '../../containers/functions';
 import { getAllProp } from '../../containers/functions';
 import FloorPlanItemMobile from './FloorPlanItemMobile';
@@ -451,7 +449,7 @@ const PropertyDetailPage = ({ post }) => {
 
 
 
-    
+
 
     const [isOpenQualify, setIsOpenQualify] = useState(false);
     function toggleModalQualify() {
@@ -588,16 +586,16 @@ const PropertyDetailPage = ({ post }) => {
         if (propdata.property_type == 'general') {
 
             if (propdetails.min_bed == propdetails.max_bed) {
-                setbeddesc(`${propdetails.min_bed} Bd(s)`);
+                setbeddesc(`${propdetails.min_bed} Bd`);
             }
             if (propdetails.min_bed !== 0 && propdetails.min_bed !== '' && propdetails.max_bed == '' || propdetails.max_bed == '0') {
-                setbeddesc(`${propdetails.min_bed} Bd(s)`)
+                setbeddesc(`${propdetails.min_bed} Bd`)
             }
             if (propdetails.min_bed !== propdetails.max_bed && propdetails.min_bed !== '0' && propdetails.max_bed !== '0' && propdetails.min_bed !== '' && propdetails.max_bed !== '') {
-                setbeddesc(`${propdetails.min_bed} Bd(s) to ${propdetails.max_bed} Bd(s)`);
+                setbeddesc(`${propdetails.min_bed} Bd-${propdetails.max_bed} Bd`);
             }
             if ((propdetails.min_bed == 0 || propdetails.min_bed == '') && (propdetails.max_bed !== '0' && propdetails.max_bed !== '')) {
-                setbeddesc(`${propdetails.max_bed} Bd(s)`);
+                setbeddesc(`${propdetails.max_bed} Bd`);
             }
             if (propdetails.min_bed == '0' && propdetails.max_bed == '0') {
                 setbeddesc(`1 Bd`);
@@ -615,7 +613,7 @@ const PropertyDetailPage = ({ post }) => {
 
             if (propdetails.max_bath == null || propdetails.max_bath == "" || propdetails.max_bath == undefined) {
                 // console.log("hello");
-                // setbathinfogeneral(`${propdetails.max_bath} Bath`);
+                // setbathinfogeneral(`${decimalRoundOff(propdetails.max_bath)} Bath`);
             }
             else {
                 console.log("hello");
@@ -630,6 +628,219 @@ const PropertyDetailPage = ({ post }) => {
         }
         colorChange(propdata.id_property);
     });
+
+
+
+    const [bedfornongeneral, setbedfornongeneral] = useState("");
+    const [bathfornongeneral, setbathfornongeneral] = useState("");
+    useEffect(() => {
+
+        if (propdetails.min_bed == 0 || propdetails.min_bed == '' && propdetails.max_bed == '' || propdetails.max_bed == '0') {
+            setbedfornongeneral(" ");
+        }
+        else if (propdetails.min_bed == propdetails.max_bed) {
+            setbedfornongeneral(`${propdetails.min_bed} Bd `);
+        }
+        if (propdetails.min_bed !== propdetails.max_bed && propdetails.min_bed !== '0' && propdetails.max_bed !== '0' && propdetails.min_bed !== '' && propdetails.max_bed !== '') {
+            setbedfornongeneral(`${propdetails.min_bed}-${propdetails.max_bed} Bd `);
+        }
+        if ((propdetails.min_bed == 0 || propdetails.min_bed == '') && (propdetails.max_bed !== '0' && propdetails.max_bed !== '')) {
+            setbedfornongeneral(`${propdetails.max_bed} Bd `);
+        }
+
+
+
+        if (propdetails.min_bath == 0 || propdetails.min_bath == '' && propdetails.max_bath == '' || propdetails.max_bath == '0') {
+            setbathfornongeneral("");
+        }
+        else if (propdetails.min_bath == propdetails.max_bath) {
+            setbathfornongeneral(`${decimalRoundOff(propdetails.min_bath)} Ba `);
+        }
+        if (propdetails.min_bath !== propdetails.max_bath && propdetails.min_bath !== '0' && propdetails.max_bath !== '0' && propdetails.min_bath !== '' && propdetails.max_bath !== '') {
+            setbathfornongeneral(`${decimalRoundOff(propdetails.min_bath)}-${decimalRoundOff(propdetails.max_bath)} Ba `);
+        }
+        if ((propdetails.min_bath == 0 || propdetails.min_bath == '') && (propdetails.max_bath !== '0' && propdetails.max_bath !== '')) {
+            setbathfornongeneral(`${decimalRoundOff(propdetails.max_bath)} Ba `);
+        }
+
+
+
+
+    });
+
+    const [tagline, settagline] = useState("");
+
+
+
+    useEffect(() => {
+
+
+        if (propdata.property_type == 'general') {
+
+
+            settagline(
+                "Low Income, " +
+
+                (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '55') ? "Senior 55+, " : (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '') ? "Senior" : "")
+                +
+                (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '62') ? "Senior 62+, " : "")
+                +
+                "Apartment for Rent at "
+
+                + propdata.property_address + ", "
+                + capitalise(propdata.property_city) + ", "
+                + propdata.property_state + ", "
+                + propdata.property_zip + ""
+                // + beddesc + " " 
+                // + "Affordable Housing in " + capitalise(propdata.property_city) + ", "
+                // +
+                // (propdetails.length !== 0 && ((propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '55') || propdetails.seniorpropval == '') ? "Senior 55+, " : "")
+                // +
+                // (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '62') ? "Senior 62+, " : "")
+                // +
+                // (propdetails.length !== 0 && propdetails.pet_allowed === 'Yes' ? "Pets OK, " : "")
+            )
+
+
+        }
+
+        else {
+
+            if (propdetails.section8 == 'Yes') {
+                settagline(
+
+                    capitalise(thirdval)
+
+                    + " "
+                    +
+                    (propdetails.length !== 0 && ((propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '55') || propdetails.seniorpropval == '') ? "Senior 55+, " : "")
+                    +
+                    (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '62') ? "Senior 62+, " : "")
+                    +
+                    "Low Income Apartments for Rent at "
+                    +
+                    propdata.property_address + ", " + capitalise(propdata.property_city) + ", " + propdata.property_state + ", " + propdata.property_zip
+
+
+                    // bedfornongeneral + " " + bathfornongeneral + " " + " in " + ", "
+                    // +
+                    // (propdetails.length !== 0 && ((propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '55') || propdetails.seniorpropval == '') ? "Senior 55+, " : "")
+                    // +
+                    // (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '62') ? "Senior 62+, " : "")
+                    // +
+                    // (propdetails.length !== 0 && propdetails.section8 == 'Yes' ? "Section 8, " : "")
+                    // +
+                    // (propdetails.length !== 0 && propdetails.pet_allowed === 'Yes' ? "Pets OK, " : "")
+                )
+            }
+            else {
+
+
+                settagline(
+
+                    capitalise(thirdval) + ", "
+                    + (propdetails.length !== 0 && ((propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '55') || propdetails.seniorpropval == '') ? "Senior 55+, " : "")
+                    +
+                    (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '62') ? "Senior 62+, " : "")
+                    + "Apartments for Rent at "
+                    + propdata.property_address + ", " + propdata.property_city + ", " + propdata.property_state + ", " + propdata.property_zip + " "
+
+                    // bedfornongeneral + " " + bathfornongeneral + " " + " in " + capitalise(propdata.property_city) + ", "
+                    // +
+
+                    // (propdetails.length !== 0 && propdetails.section8 == 'Yes' ? "Section 8, " : "")
+                    // +
+                    // (propdetails.length !== 0 && propdetails.pet_allowed === 'Yes' ? "Pets OK, " : "")
+                )
+
+
+
+            }
+
+
+        }
+
+
+
+
+
+
+        // console.log(propdata.property_type);
+        // if (propdetails.section8 == 'Yes') {
+        //     settagline(
+
+
+        //         capitalise(thirdval) + " "
+        //         +
+        //         (propdetails.length !== 0 && ((propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '55') || propdetails.seniorpropval == '') ? "Senior 55+, " : "")
+        //         +
+        //         (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '62') ? "Senior 62+, " : "")
+        //         +
+        //         "Low Income Apartments for Rent at "
+        //         +
+        //         propdata.property_address + ", " + capitalise(propdata.property_city) + ", " + propdata.property_state + ", " + propdata.property_zip
+
+
+        //         // bedfornongeneral + " " + bathfornongeneral + " " + " in " + ", "
+        //         // +
+        //         // (propdetails.length !== 0 && ((propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '55') || propdetails.seniorpropval == '') ? "Senior 55+, " : "")
+        //         // +
+        //         // (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '62') ? "Senior 62+, " : "")
+        //         // +
+        //         // (propdetails.length !== 0 && propdetails.section8 == 'Yes' ? "Section 8, " : "")
+        //         // +
+        //         // (propdetails.length !== 0 && propdetails.pet_allowed === 'Yes' ? "Pets OK, " : "")
+        //     )
+        // }
+
+        // else {
+        //     if (propdata.property_type == 'general') {
+
+        //         settagline(
+        //             capitalise(thirdval) + ", "
+        //             + propdata.property_address + ", "
+        //             + propdata.property_city + ", "
+        //             + propdata.property_state + ", "
+        //             + propdata.property_zip + " "
+        //             + beddesc + " " + "Affordable Housing in " + capitalise(propdata.property_city) + ", " + (propdetails.length !== 0 && ((propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '55') || propdetails.seniorpropval == '') ? "Senior 55+, " : "")
+        //             +
+        //             (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '62') ? "Senior 62+, " : "")
+        //             +
+        //             (propdetails.length !== 0 && propdetails.pet_allowed === 'Yes' ? "Pets OK, " : "")
+        //         )
+
+        //     }
+
+        //     if (propdata.property_type == 'premium') {
+
+        //         settagline(
+
+        //             capitalise(thirdval) + ", "
+        //             + 
+        //             (propdetails.length !== 0 && ((propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '55') || propdetails.seniorpropval == '') ? "Senior 55+, " : "")
+        //             +
+        //             (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '62') ? "Senior 62+, " : "")
+        //             + "Apartments for Rent at "
+        //             + propdata.property_address + ", " + propdata.property_city + ", " + propdata.property_state + ", " + propdata.property_zip + " "
+
+        //             // bedfornongeneral + " " + bathfornongeneral + " " + " in " + capitalise(propdata.property_city) + ", "
+        //             // +
+
+        //             // (propdetails.length !== 0 && propdetails.section8 == 'Yes' ? "Section 8, " : "")
+        //             // +
+        //             // (propdetails.length !== 0 && propdetails.pet_allowed === 'Yes' ? "Pets OK, " : "")
+        //         )
+
+
+        //     }
+        // }
+
+
+
+
+
+    }, [beddesc, bedfornongeneral, bathfornongeneral]);
+
 
 
     useEffect(() => {
@@ -647,22 +858,22 @@ const PropertyDetailPage = ({ post }) => {
             if (propcheckabove[0].header_description == 2 || propcheckabove[0].header_description == '2') {
                 setspecialtitle('Affordable Housing');
                 setspecialtext(' If you qualify, you may pay');
-                setthirdval(`$${propcheckabove[0].header_value[0].toLocaleString(undefined, { minimumFractionDigits: 0 })}`);
+                setthirdval(`$${commaInNumber(propcheckabove[0].header_value[0])}`);
                 setbedbathinfo('');
             }
             if (propcheckabove[0].header_description == 3 || propcheckabove[0].header_description == '3') {
                 setspecialtitle('Affordable Housing');
-                setspecialtext(`If you qualify, you may pay for ${propcheckabove[0].header_value[0]} Bed(s), ${decimalRoundOff(propcheckabove[0].header_value[3])} Bath(s)`);
-                setthirdval(`$${propcheckabove[0].header_value[2].toLocaleString(undefined, { minimumFractionDigits: 0 })}`);
+                setspecialtext(`If you qualify, you may pay for ${propcheckabove[0].header_value[0]} Bd, ${decimalRoundOff(propcheckabove[0].header_value[3])} Ba`);
+                setthirdval(`$${commaInNumber(propcheckabove[0].header_value[2])}`);
                 setbeds(propcheckabove[0].header_value[0]);
-                setbedbathinfo(`${propcheckabove[0].header_value[0]} Bed(s), ${decimalRoundOff(propcheckabove[0].header_value[3])} Bath(s)`);
+                setbedbathinfo(`${propcheckabove[0].header_value[0]} Bd, ${decimalRoundOff(propcheckabove[0].header_value[3])} Ba`);
             }
             if (propcheckabove[0].header_description == 4 || propcheckabove[0].header_description == '4') {
                 setspecialtitle('Rental Deals');
-                setspecialtext(`If you qualify, you may pay for ${propcheckabove[0].header_value[0]} Bed(s), 1 Bath(s)`);
-                setthirdval(`$${propcheckabove[0].header_value[2].toLocaleString(undefined, { minimumFractionDigits: 0 })}`);
+                setspecialtext(`If you qualify, you may pay for ${propcheckabove[0].header_value[0]} Bd, 1 Ba`);
+                setthirdval(`$${commaInNumber(propcheckabove[0].header_value[2])}`);
                 setbeds(propcheckabove[0].header_value[0]);
-                setbedbathinfo(`${propcheckabove[0].header_value[0]} Bed(s)`)
+                setbedbathinfo(`${propcheckabove[0].header_value[0]} Bd`)
             }
             if (propcheckabove[0].header_description == 5 || propcheckabove[0].header_description == '5') {
                 setspecialtitle('Rental Deals');
@@ -674,7 +885,7 @@ const PropertyDetailPage = ({ post }) => {
             if (propcheckabove[0].header_description == 6 || propcheckabove[0].header_description == '6') {
                 setspecialtitle('Rental Deals');
                 setspecialtext('If you qualify, you may pay');
-                setthirdval(`$${propcheckabove[0].header_value[0].toLocaleString(undefined, { minimumFractionDigits: 0 })}`);
+                setthirdval(`$${commaInNumber(propcheckabove[0].header_value[0])}`);
                 setbedbathinfo('');
             }
             if (propcheckabove[0].header_description == 7 || propcheckabove[0].header_description == '7') {
@@ -684,7 +895,7 @@ const PropertyDetailPage = ({ post }) => {
             }
         }
         colorChange(propdata.id_property);
-    }, [])
+    }, []);
 
 
 
@@ -706,21 +917,63 @@ const PropertyDetailPage = ({ post }) => {
                             <nav className="navbar resNavbarBread" aria-label="breadcrumb">
                                 <ol className="breadcrumb font-weight500 mb-0">
                                     <li className="breadcrumb-item fontSize14"><a href="/" className="purpleText">Home</a></li>
-                                    <li className="breadcrumb-item fontSize14 purpleText">{propdata.property_state}</li>
-                                    <li className="breadcrumb-item fontSize14 purpleText">{propdata.property_city}</li>
-                                    <li className="breadcrumb-item fontSize14 active purpleText" aria-current="page">{propdata.property_title}</li>
+                                    <li className="breadcrumb-item fontSize14 purpleText">
+                                        <a href={`/propertySearch?city=&state=${propdata.property_state}`} className={'purpleText'} >
+                                            {propdata.property_state}
+                                        </a>
+                                    </li>
+                                    <li className="breadcrumb-item fontSize14 purpleText">
+                                        <a href={`/propertySearch?city=${propdata.property_city}&state=${propdata.property_state}`} className={'purpleText'} >
+                                            {capitalise(propdata.property_city)}
+                                        </a>
+                                    </li>
+                                    <li className="breadcrumb-item fontSize14 active" aria-current="page">{propdata.property_title}</li>
                                 </ol>
                             </nav>
                         </div>
                         <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div className="d-flex detailHeadSec align-items-end">
                                 <h3 className="font-weight700 mb-0">
+                                    {removelastcomma(tagline)}
+                                    {/* 
+                                    {
+                                        propdata.property_type == 'general' ?
+                                            beddesc + " " + "Affordable Housing in " + capitalise(propdata.property_city) + ", " + (propdetails.length !== 0 && ((propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '55') || propdetails.seniorpropval == '') ? "Senior 55+, " : "")
+                                            +
+                                            (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '62') ? "Senior 62+, " : "")
+                                            +
+                                            (propdetails.length !== 0 && propdetails.pet_allowed === 'Yes' ? "Pets OK, " : "")
+                                            :
 
-                                    {propdata.property_address} {propdata.property_city}, {propdata.property_state} {propdata.property_zip} Rental Deals&nbsp;
+                                            ""
+                                    }
+                                    {
+                                        propdata.property_type == 'general' ?
 
-                                    {/* {
-                                        propdetails.length === 0 ? "" : ` ${propdetails.min_bed} Br. ${propdetails.min_bath} Ba `
-                                    } */}
+                                            ""
+                                            :
+                                            bedfornongeneral + " " + bathfornongeneral + " " + thirdval + " in " + capitalise(propdata.property_city) + ", "
+                                            +
+                                            (propdetails.length !== 0 && ((propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '55') || propdetails.seniorpropval == '') ? "Senior 55+ " : "")
+                                            +
+                                            (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '62') ? "Senior 62+, " : "")
+                                            +
+                                            (propdetails.length !== 0 && propdetails.section8 == 'Yes' ? "Section 8, " : "")
+                                            +
+                                            (propdetails.length !== 0 && propdetails.pet_allowed === 'Yes' ? "Pets OK, " : "")
+
+                                    } 
+                                    */}
+
+
+
+
+
+
+
+                                    {/* {propdata.property_address} {propdata.property_city}, {propdata.property_state} {propdata.property_zip} Rental Deals&nbsp;
+
+                                   
 
 
                                     {beddesc}&nbsp;
@@ -739,7 +992,7 @@ const PropertyDetailPage = ({ post }) => {
                                             thirdval
                                     }
 
-                                    &nbsp;{propdata.phone}
+                                    &nbsp;{propdata.phone} */}
                                 </h3>
                                 <div class="ml-auto responsiveMarLeft">
                                     <ul class="noMarginPad listStyleNone sideActionIcon">
@@ -1403,7 +1656,7 @@ const PropertyDetailPage = ({ post }) => {
                                                                 propdetails.min_bath && propdetails.max_bath ?
 
 
-                                                                    `${propdetails.min_bath} - ${propdetails.max_bath}`
+                                                                    `${decimalRoundOff(propdetails.min_bath)} - ${decimalRoundOff(propdetails.max_bath)}`
                                                                     :
                                                                     propdetails.min_bath || propdetails.max_bath ?
                                                                         `${propdetails.min_bath || propdetails.max_bath}`
@@ -1625,7 +1878,7 @@ const PropertyDetailPage = ({ post }) => {
 
                                                         <thead>
                                                             <tr>
-                                                                <th scope="col">FloorPlans</th>
+                                                                <th scope="col">Floorplans</th>
                                                                 <th scope="col">Beds</th>
                                                                 <th scope="col">Baths</th>
                                                                 <th scope="col">Sq.ft</th>
@@ -2642,7 +2895,7 @@ const PropertyDetailPage = ({ post }) => {
                                         <div className="fairmarketRent">
                                             <div className="fairMarketTitle d-flex align-items-center">
                                                 <h5 className="mb-0 fontSize18 font-weight700 colorBlue">{propdata.property_city} Fair Market Rents</h5>
-                                                <p className="mb-0 ml-auto fontSize14 font-weight400 secondaryColor">as of {monthNames[d.getMonth()]} {d.getFullYear()}</p>
+                                                <p className="mb-0 ml-auto fontSize14 font-weight400 secondaryColor">As of {monthNames[d.getMonth()]} {d.getFullYear()}</p>
                                             </div>
                                             <p className="mb-0 secondaryColor fontSize16 font-weight400 mt-1">Fair Market Rents are HUD's
                                                 determination of the average rents in a particular area for each bedroom size. The FMRs
@@ -2652,23 +2905,23 @@ const PropertyDetailPage = ({ post }) => {
                                             <div className="bedroomBox itemWebsite">
                                                 <div className="bedroomBoxFlex">
                                                     <p className="mb-0 secondaryColor fontSize14 font-weight400">Efficiency</p>
-                                                    <h4 className="mb-0 colorBlue font-weight700 fontSize16">${proprent[0].fmr0.toLocaleString(undefined, { minimumFractionDigits: 0 })}</h4>
+                                                    <h4 className="mb-0 colorBlue font-weight700 fontSize16">${commaInNumber(proprent[0].fmr0)}</h4>
                                                 </div>
                                                 <div className="bedroomBoxFlex">
                                                     <p className="mb-0 secondaryColor fontSize14 font-weight400">One-Bedroom</p>
-                                                    <h4 className="mb-0 colorBlue font-weight700 fontSize16">${proprent[0].fmr1.toLocaleString(undefined, { minimumFractionDigits: 0 })}</h4>
+                                                    <h4 className="mb-0 colorBlue font-weight700 fontSize16">${commaInNumber(proprent[0].fmr1)}</h4>
                                                 </div>
                                                 <div className="bedroomBoxFlex">
                                                     <p className="mb-0 secondaryColor fontSize14 font-weight400">Two-Bedroom</p>
-                                                    <h4 className="mb-0 colorBlue font-weight700 fontSize16">${proprent[0].fmr2.toLocaleString(undefined, { minimumFractionDigits: 0 })}</h4>
+                                                    <h4 className="mb-0 colorBlue font-weight700 fontSize16">${commaInNumber(proprent[0].fmr2)}</h4>
                                                 </div>
                                                 <div className="bedroomBoxFlex">
                                                     <p className="mb-0 secondaryColor fontSize14 font-weight400">Three-Bedroom</p>
-                                                    <h4 className="mb-0 colorBlue font-weight700 fontSize16">${proprent[0].fmr3.toLocaleString(undefined, { minimumFractionDigits: 0 })}</h4>
+                                                    <h4 className="mb-0 colorBlue font-weight700 fontSize16">${commaInNumber(proprent[0].fmr3)}</h4>
                                                 </div>
                                                 <div className="bedroomBoxFlex">
                                                     <p className="mb-0 secondaryColor fontSize14 font-weight400">Four-Bedroom</p>
-                                                    <h4 className="mb-0 colorBlue font-weight700 fontSize16">${proprent[0].fmr4.toLocaleString(undefined, { minimumFractionDigits: 0 })}</h4>
+                                                    <h4 className="mb-0 colorBlue font-weight700 fontSize16">${commaInNumber(proprent[0].fmr4)}</h4>
                                                 </div>
                                             </div>
 
@@ -2681,17 +2934,17 @@ const PropertyDetailPage = ({ post }) => {
                                                                 <li>
                                                                     <p className="mb-0 fontSize14 font-weight400 secondaryColor">Efficiency
                                                                     </p>
-                                                                    <h5 className="mb-0 colorBlue font-weight700">${proprent[0].fmr0.toLocaleString(undefined, { minimumFractionDigits: 0 })}</h5>
+                                                                    <h5 className="mb-0 colorBlue font-weight700">${commaInNumber(proprent[0].fmr0)}</h5>
                                                                 </li>
                                                                 <li>
                                                                     <p className="mb-0 fontSize14 font-weight400 secondaryColor">One-Bedroom
                                                                     </p>
-                                                                    <h5 className="mb-0 colorBlue font-weight700">${proprent[0].fmr1.toLocaleString(undefined, { minimumFractionDigits: 0 })}</h5>
+                                                                    <h5 className="mb-0 colorBlue font-weight700">${commaInNumber(proprent[0].fmr1)}</h5>
                                                                 </li>
                                                                 <li>
                                                                     <p className="mb-0 fontSize14 font-weight400 secondaryColor">Two-Bedroom
                                                                     </p>
-                                                                    <h5 className="mb-0 colorBlue font-weight700">${proprent[0].fmr2.toLocaleString(undefined, { minimumFractionDigits: 0 })}</h5>
+                                                                    <h5 className="mb-0 colorBlue font-weight700">${commaInNumber(proprent[0].fmr2)}</h5>
                                                                 </li>
                                                             </ul>
                                                         </div>
@@ -2700,12 +2953,12 @@ const PropertyDetailPage = ({ post }) => {
                                                                 <li>
                                                                     <p className="mb-0 fontSize14 font-weight400 secondaryColor">
                                                                         Three-Bedroom</p>
-                                                                    <h5 className="mb-0 colorBlue font-weight700">${proprent[0].fmr3.toLocaleString(undefined, { minimumFractionDigits: 0 })}</h5>
+                                                                    <h5 className="mb-0 colorBlue font-weight700">${commaInNumber(proprent[0].fmr3)}</h5>
                                                                 </li>
                                                                 <li>
                                                                     <p className="mb-0 fontSize14 font-weight400 secondaryColor">
                                                                         Four-Bedroom</p>
-                                                                    <h5 className="mb-0 colorBlue font-weight700">${proprent[0].fmr4.toLocaleString(undefined, { minimumFractionDigits: 0 })}</h5>
+                                                                    <h5 className="mb-0 colorBlue font-weight700">${commaInNumber(proprent[0].fmr4)}</h5>
                                                                 </li>
                                                             </ul>
                                                         </div>
@@ -3244,7 +3497,7 @@ const PropertyDetailPage = ({ post }) => {
                                             <span className="colorBlue">{specialtext}</span>
                                         </li>
                                          <li className="secondaryColor">
-                                            <span className="colorBlue">{propdetails.min_bath}</span> Ba
+                                            <span className="colorBlue">{decimalRoundOff(propdetails.min_bath)}</span> Ba
                                         </li>
                                         <li className="secondaryColor ml-16">
                                             <span className="colorBlue">
@@ -3729,9 +3982,11 @@ const PropertyDetailPage = ({ post }) => {
                                 <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 pl-0 pr-0">
                                     <div className="form-group">
                                         {/* <ReCAPTCHA */}
-                                        <ReCAPTCHA
-                                            sitekey='6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
-                                            onChange={captchaHandle} />
+                                        <div className="recaptcha_block">
+                                            <ReCAPTCHA
+                                                sitekey='6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
+                                                onChange={captchaHandle} />
+                                        </div>
                                         {
                                             captchaValue == false
                                                 ?
@@ -3980,7 +4235,7 @@ const PropertyDetailPage = ({ post }) => {
 
 
 
-           
+
 
 
                 {/* <Modal isOpen={isopenschool}

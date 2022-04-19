@@ -177,9 +177,11 @@ export const ContactUs = () => {
                                                     <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                         <div className='d-flex align-items-center'>
                                                             <div className="form-group mb-0">
-                                                                <ReCAPTCHA
-                                                                    sitekey='6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
-                                                                    onChange={captchaHandle} />
+                                                                <div className="recaptcha_block">
+                                                                    <ReCAPTCHA
+                                                                        sitekey='6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
+                                                                        onChange={captchaHandle} />
+                                                                </div>
                                                                 {
                                                                     captchaValue == false
                                                                         ?

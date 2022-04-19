@@ -212,7 +212,7 @@ const HousingAuthPage = () => {
 
     return (
         <>
-            <section className="secPad24 agenciesLanding pb-0 housingAuthoritya">
+            <section className="secPad24 agenciesLanding pb-0 housingAuthoritya topPaddSec">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">
@@ -239,7 +239,7 @@ const HousingAuthPage = () => {
 
                                             <input type="text" className="form-control topSearch"
                                                 aria-describedby="emailHelp"
-                                                placeholder="Enter city, State or ZIP"
+                                                placeholder="Enter City, State or ZIP"
                                                 value={searchterm}
                                                 onChange={
                                                     e => {

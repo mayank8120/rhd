@@ -93,6 +93,8 @@ const FeaturedRentalsInCity = ({ latlngdata }) => {
                                             </div>
                                         </div>
                                     </Tab>
+
+
                                     <Tab eventKey="Nearby Cities" title="Nearby Cities">
                                         <div className="listingBlock">
                                             <div className="row">
@@ -111,9 +113,9 @@ const FeaturedRentalsInCity = ({ latlngdata }) => {
                                                                         (nearbycitiesdata.map((data) => (
                                                                             <Link to={`/propertySearch?city=${data.property_city}&state=${data.property_state}`} className="col-lg-3 col-xs-6">
                                                                                 <li >
-                                                                                    <h3 className="font-weight500 mb-0">Affordable Housing</h3>
-                                                                                    <p className="mb-0 secondaryColor">
-                                                                                        {capitalise(data.property_city)}
+                                                                                    <h3 className="font-weight500 mb-0">{capitalise(data.property_city)}</h3>
+                                                                                    <p className="mb-0 secondaryColor">Affordable Housing
+                                                                                        
                                                                                     </p>
                                                                                 </li>
                                                                             </Link>
@@ -122,9 +124,9 @@ const FeaturedRentalsInCity = ({ latlngdata }) => {
                                                                         (nearbycitiesdata.slice(0, 16).map((data) => (
                                                                             <Link to={`/propertySearch?city=${data.property_city}&state=${data.property_state}`} className="col-lg-3 col-xs-6">
                                                                                 <li>
-                                                                                    <h3 className="font-weight500 mb-0">Affordable Housing</h3>
-                                                                                    <p className="mb-0 secondaryColor">
-                                                                                        {capitalise(data.property_city)}
+                                                                                    <h3 className="font-weight500 mb-0">{capitalise(data.property_city)}</h3>
+                                                                                    <p className="mb-0 secondaryColor">Affordable Housing
+                                                                                        
                                                                                     </p>
                                                                                 </li>
                                                                             </Link>
@@ -172,9 +174,9 @@ const FeaturedRentalsInCity = ({ latlngdata }) => {
                                                                             nearbycitiesdata.map((data) => (
                                                                                 <Link to={`/agencyState?city=${data.property_city}&state=${data.property_state}`} className="col-lg-3 col-xs-6">
                                                                                     <li >
-                                                                                        <h3 className="font-weight500 mb-0">Housing Authorities</h3>
-                                                                                        <p className="mb-0 secondaryColor">
-                                                                                            {capitalise(data.property_city)}</p>
+                                                                                        <h3 className="font-weight500 mb-0">{capitalise(data.property_city)}</h3>
+                                                                                        <p className="mb-0 secondaryColor">Housing Authorities
+                                                                                            </p>
                                                                                     </li>
                                                                                 </Link>
                                                                             ))
@@ -184,8 +186,8 @@ const FeaturedRentalsInCity = ({ latlngdata }) => {
                                                                             nearbycitiesdata.slice(0, 16).map((data) => (
                                                                                 <Link to={`/agencyState?city=${data.property_city}&state=${data.property_state}`} className="col-lg-3 col-xs-6">
                                                                                     <li >
-                                                                                        <h3 className="font-weight500 mb-0">Housing Authorities</h3>
-                                                                                        <p className="mb-0 secondaryColor">{capitalise(data.property_city)}</p>
+                                                                                        <h3 className="font-weight500 mb-0">{capitalise(data.property_city)}</h3>
+                                                                                        <p className="mb-0 secondaryColor">Housing Authorities</p>
                                                                                     </li>
                                                                                 </Link>
                                                                             ))
