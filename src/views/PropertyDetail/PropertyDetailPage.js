@@ -119,6 +119,9 @@ const PropertyDetailPage = ({ post }) => {
 
 
 
+
+
+
     let nearbypropurl;
 
     const [nearbypropdata, setnearbypropdata] = useState([]);
@@ -677,13 +680,12 @@ const PropertyDetailPage = ({ post }) => {
 
         if (propdata.property_type == 'general') {
 
-
             settagline(
-                "Low Income, " +
+                "Low Income " +
 
-                (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '55') ? "Senior 55+, " : (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '') ? "Senior" : "")
+                (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '55') ? "Senior 55+ " : (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '') ? "Senior " : "")
                 +
-                (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '62') ? "Senior 62+, " : "")
+                (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '62') ? "Senior 62+ " : "")
                 +
                 "Apartment for Rent at "
 
@@ -709,17 +711,23 @@ const PropertyDetailPage = ({ post }) => {
             if (propdetails.section8 == 'Yes') {
                 settagline(
 
-                    capitalise(thirdval)
+                    (propfloor == null || propfloor.length == 0) ?
+                        "" :
 
-                    + " "
-                    +
-                    (propdetails.length !== 0 && ((propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '55') || propdetails.seniorpropval == '') ? "Senior 55+, " : "")
-                    +
-                    (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '62') ? "Senior 62+, " : "")
-                    +
-                    "Low Income Apartments for Rent at "
-                    +
-                    propdata.property_address + ", " + capitalise(propdata.property_city) + ", " + propdata.property_state + ", " + propdata.property_zip
+                        (commaInNumber(propfloor[0].rent_from == 0 ? "Please Call for Rent" : `$${propfloor[0].rent_from}`))
+
+                        // capitalise(thirdval)
+
+                        + " "
+                        +
+                        (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '55') ? "Senior 55+ " : (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '') ? "Senior " : "")
+
+                        +
+                        (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '62') ? "Senior 62+ " : "")
+                        +
+                        "Low Income Apartments for Rent at "
+                        +
+                        propdata.property_address + ", " + capitalise(propdata.property_city) + ", " + propdata.property_state + ", " + propdata.property_zip
 
 
                     // bedfornongeneral + " " + bathfornongeneral + " " + " in " + ", "
@@ -737,13 +745,22 @@ const PropertyDetailPage = ({ post }) => {
 
 
                 settagline(
+                    (propfloor == null || propfloor.length == 0) ?
+                        "" :
+                        (commaInNumber(propfloor[0].rent_from == 0 ? "Please Call for Rent" : `$${propfloor[0].rent_from}`))
 
-                    capitalise(thirdval) + ", "
-                    + (propdetails.length !== 0 && ((propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '55') || propdetails.seniorpropval == '') ? "Senior 55+, " : "")
-                    +
-                    (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '62') ? "Senior 62+, " : "")
-                    + "Apartments for Rent at "
-                    + propdata.property_address + ", " + propdata.property_city + ", " + propdata.property_state + ", " + propdata.property_zip + " "
+                        // "$" + commaInNumber(propfloor[0].rent_from)
+
+                        // capitalise(thirdval) 
+                        +
+                        " "
+                        +
+                        (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '55') ? "Senior 55+ " : (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '') ? "Senior " : "")
+
+                        +
+                        (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '62') ? "Senior 62+ " : "")
+                        + "Low Income Apartments for Rent at "
+                        + propdata.property_address + ", " + propdata.property_city + ", " + propdata.property_state + ", " + propdata.property_zip + " "
 
                     // bedfornongeneral + " " + bathfornongeneral + " " + " in " + capitalise(propdata.property_city) + ", "
                     // +
@@ -1862,7 +1879,7 @@ const PropertyDetailPage = ({ post }) => {
 
                                         propfloor == null || propfloor.length == 0 ?
                                             null :
-                                            <FloorPlanForGeneral propfloor={propfloor} />
+                                            <FloorPlanForGeneral propfloor={propfloor} toggleModalAvailability={toggleModalAvailability} />
                                     )
                                     :
 
@@ -1892,7 +1909,10 @@ const PropertyDetailPage = ({ post }) => {
 
 
                                                             {propfloor.map((data) => {
+
                                                                 return (
+
+
 
                                                                     data.square_feet_to !== undefined && data.square_feet_from !== undefined ?
 

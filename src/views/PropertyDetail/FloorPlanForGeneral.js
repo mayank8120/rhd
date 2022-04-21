@@ -1,7 +1,7 @@
 import React from 'react'
 import FloorPlanGeneralItem from './FloorPlanGeneralItem'
 
-const FloorPlanForGeneral = ({ propfloor }) => {
+const FloorPlanForGeneral = ({ propfloor, toggleModalAvailability }) => {
     return (
         <>
             <div className="SectionBlock responsive15">
@@ -89,7 +89,7 @@ const FloorPlanForGeneral = ({ propfloor }) => {
 
                             data.square_feet_to !== undefined && data.square_feet_from !== undefined ?
                                 // <FloorPlan data={data} /> 
-                                <FloorPlanGeneralItem data={data} />
+                                <FloorPlanGeneralItem data={data} toggleModalAvailability={toggleModalAvailability} />
                                 :
                                 null
                         );

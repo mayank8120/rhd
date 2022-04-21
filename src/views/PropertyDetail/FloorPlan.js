@@ -14,6 +14,8 @@ const FloorPlan = ({ data }) => {
         setIsOpenFloor(!isOpenFloor);
     }
 
+    
+
     return (
         <>
             {

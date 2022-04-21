@@ -308,5 +308,12 @@ export let removeDollarWaitlist = (str) => {
 
 
 export let commaInNumber = (str) => {
-    return str.toLocaleString(undefined, { minimumFractionDigits: 0 })
+    // console.log(str, typeof (str));
+    if (typeof (str) == "number") {
+        return str.toLocaleString(undefined, { minimumFractionDigits: 0 })
+    }
+    else {
+        return str;
+    }
+
 }
