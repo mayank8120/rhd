@@ -619,12 +619,12 @@ const PropertyDetailPage = ({ post }) => {
                 // setbathinfogeneral(`${decimalRoundOff(propdetails.max_bath)} Bath`);
             }
             else {
-                console.log("hello");
+                // console.log("hello");
                 setbathinfogeneral(`${decimalRoundOff(propdetails.max_bath)} Ba`);
             }
             if (propdetails.min_bath == null || propdetails.min_bath == "" || propdetails.min_bath == undefined) {
             } else {
-                console.log("mayank");
+                // console.log("mayank");
                 setbathinfogeneral(`${decimalRoundOff(propdetails.min_bath)} Ba`);
             }
 
@@ -680,10 +680,15 @@ const PropertyDetailPage = ({ post }) => {
 
         if (propdata.property_type == 'general') {
 
+            console.log("GENERAL PROPERTY");
+            console.log(propdetails.seniorprop, propdetails.seniorpropval);
+
             settagline(
                 "Low Income " +
 
-                (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '55') ? "Senior 55+ " : (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '') ? "Senior " : "")
+                (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '55') ? "Senior 55+ " : "")
+                +
+                (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '') ? "Senior " : "")
                 +
                 (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '62') ? "Senior 62+ " : "")
                 +
@@ -708,20 +713,19 @@ const PropertyDetailPage = ({ post }) => {
 
         else {
 
+            console.log("PREMIUM");
+
             if (propdetails.section8 == 'Yes') {
+
+                console.log("SECTION 8");
                 settagline(
 
-                    (propfloor == null || propfloor.length == 0) ?
-                        "" :
-
-                        (commaInNumber(propfloor[0].rent_from == 0 ? "Please Call for Rent" : `$${propfloor[0].rent_from}`))
-
-                        // capitalise(thirdval)
-
+                    (propfloor == null || propfloor.length == 0) ? "" : (propfloor[0].rent_from == 0 ? "Please Call for Rent" : `$${commaInNumber(propfloor[0].rent_from)}`)
                         + " "
                         +
-                        (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '55') ? "Senior 55+ " : (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '') ? "Senior " : "")
-
+                        (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '55') ? "Senior 55+ " : "")
+                        +
+                        (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '') ? "Senior " : "")
                         +
                         (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '62') ? "Senior 62+ " : "")
                         +
@@ -743,11 +747,12 @@ const PropertyDetailPage = ({ post }) => {
             }
             else {
 
+                console.log("NO SECTION 8");
 
                 settagline(
                     (propfloor == null || propfloor.length == 0) ?
                         "" :
-                        (commaInNumber(propfloor[0].rent_from == 0 ? "Please Call for Rent" : `$${propfloor[0].rent_from}`))
+                        (propfloor[0].rent_from == 0 ? "Please Call for Rent" : `$${commaInNumber(propfloor[0].rent_from)}`)
 
                         // "$" + commaInNumber(propfloor[0].rent_from)
 
@@ -755,11 +760,18 @@ const PropertyDetailPage = ({ post }) => {
                         +
                         " "
                         +
-                        (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '55') ? "Senior 55+ " : (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '') ? "Senior " : "")
-
+                        (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '55') ? "Senior 55+ " : "")
+                        +
+                        (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '') ? "Senior " : "")
                         +
                         (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '62') ? "Senior 62+ " : "")
-                        + "Low Income Apartments for Rent at "
+                        + 
+                        
+                        (propfloor[0].rent_from == 0 ? "Apartments for Rent at - " : "")
+
+                        
+
+
                         + propdata.property_address + ", " + propdata.property_city + ", " + propdata.property_state + ", " + propdata.property_zip + " "
 
                     // bedfornongeneral + " " + bathfornongeneral + " " + " in " + capitalise(propdata.property_city) + ", "
@@ -1217,7 +1229,7 @@ const PropertyDetailPage = ({ post }) => {
 
 
                                                     {
-                                                        propdetails.length !== 0 && ((propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '55') || propdetails.seniorpropval == '') ?
+                                                        propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && (propdetails.seniorpropval == '55' || propdetails.seniorpropval == '')) ?
                                                             <div className="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                                                                 <span className="greenTag">
                                                                     <div className="d-flex align-items-center">
