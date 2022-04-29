@@ -722,14 +722,16 @@ const PropertyDetailPage = ({ post }) => {
 
                     (propfloor == null || propfloor.length == 0) ? "" : (propfloor[0].rent_from == 0 ? "Please Call for Rent" : `$${commaInNumber(propfloor[0].rent_from)}`)
                         + " "
+
+                        +
+                        "Low Income "
                         +
                         (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '55') ? "Senior 55+ " : "")
                         +
                         (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '') ? "Senior " : "")
                         +
                         (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '62') ? "Senior 62+ " : "")
-                        +
-                        "Low Income Apartments for Rent at "
+                        + "Apartments for Rent at "
                         +
                         propdata.property_address + ", " + capitalise(propdata.property_city) + ", " + propdata.property_state + ", " + propdata.property_zip
 
@@ -752,7 +754,7 @@ const PropertyDetailPage = ({ post }) => {
                 settagline(
                     (propfloor == null || propfloor.length == 0) ?
                         "" :
-                        (propfloor[0].rent_from == 0 ? "Please Call for Rent" : `$${commaInNumber(propfloor[0].rent_from)}`)
+                        (propfloor[0].rent_from == 0 ? "Please Call for Rent - " : `$${commaInNumber(propfloor[0].rent_from)}`)
 
                         // "$" + commaInNumber(propfloor[0].rent_from)
 
@@ -765,11 +767,11 @@ const PropertyDetailPage = ({ post }) => {
                         (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '') ? "Senior " : "")
                         +
                         (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '62') ? "Senior 62+ " : "")
-                        + 
-                        
-                        (propfloor[0].rent_from == 0 ? "Apartments for Rent at - " : "")
+                        +
 
-                        
+                        (propfloor[0].rent_from == 0 ? "" : "Apartments for Rent at ")
+
+
 
 
                         + propdata.property_address + ", " + propdata.property_city + ", " + propdata.property_state + ", " + propdata.property_zip + " "
