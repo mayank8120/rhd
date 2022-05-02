@@ -4,7 +4,7 @@ import Navbar from './containers/Navbar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 
-import { Scrollbar } from "react-scrollbars-custom";
+// import { Scrollbar } from "react-scrollbars-custom";
 // import SimpleBar from 'simplebar-react';
 // import SimpleBar from 'simplebar';
 

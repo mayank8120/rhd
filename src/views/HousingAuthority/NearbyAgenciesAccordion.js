@@ -1,6 +1,6 @@
 import React from 'react'
 import Accordion from 'react-bootstrap/Accordion'
-import { Scrollbar } from "react-scrollbars-custom";
+// import { Scrollbar } from "react-scrollbars-custom";
 import { NearbyAgencyListItem } from './NearbyAgencyListItem'
 
 export const NearbyAgenciesAccordion = ({ data }) => {

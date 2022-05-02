@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import MapSection from './MapSection'
 // import { Button, Modal } from 'react-bootstrap';
-import { Scrollbar } from "react-scrollbars-custom";
+// import { Scrollbar } from "react-scrollbars-custom";
 import Modal from "react-modal";
 import CheckAvailibilityForm from '../../containers/CheckAvailibilityForm';
 import MultiRangeSlider from '../../containers/multiRangeSlider';

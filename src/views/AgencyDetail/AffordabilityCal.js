@@ -1,4 +1,4 @@
-import e from 'cors';
+// import e from 'cors';
 import React, { useState, useEffect } from 'react'
 
 import { Accordion } from 'react-bootstrap'

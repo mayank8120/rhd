@@ -3,12 +3,12 @@ import CheckAvailibilityForm from '../../containers/CheckAvailibilityForm'
 import Multiselect from 'multiselect-react-dropdown';
 import Modal from "react-modal";
 import { PropertySearchItem } from './PropertySearchItem';
-import { Scrollbar } from "react-scrollbars-custom";
+// import { Scrollbar } from "react-scrollbars-custom";
 import axios from 'axios'
 import MultiRangeSlider from '../../containers/multiRangeSlider';
 import { Trial } from '../Trial/Trial';
 import MultiplePointMap from './MultiplePointMap';
-import ReactPaginate from 'react-paginate';
+// import ReactPaginate from 'react-paginate';
 import Loader from '../../containers/Loader';
 import Footer from '../../containers/Footer';
 

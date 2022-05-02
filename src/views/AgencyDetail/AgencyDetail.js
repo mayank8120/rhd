@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Emailsubs2 from '../../containers/Emailsubs2'
 import AffordabilityCal from './AffordabilityCal'
 import CheckAvailabilityAgencyDetail from './CheckAvailabilityAgencyDetail'
-import swal from 'sweetalert';
+// import swal from 'sweetalert';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import L from 'leaflet';
 // import '../../assets'
@@ -15,8 +15,8 @@ import PropertiesNearby from '../Index/PropertiesNearby';
 import { CityCountyQuickFacts } from './CityCountyQuickFacts';
 // import { PropertiesNearby3 } from '../../containers/PropertiesNearby3';
 import PropertiesNearby3 from './propertynearby3';
-import SweetAlert from '../../containers/SweetAlert';
-import e from 'cors';
+// import SweetAlert from '../../containers/SweetAlert';
+// import e from 'cors';
 import Footer from '../../containers/Footer';
 import HousingAuthorityforGeneral from '../PropertyDetail/HousingAuthorityforGeneral';
 import SinglePointMap from '../../containers/SinglePointMap';
@@ -147,15 +147,15 @@ const AgencyDetail = () => {
     function toggleModalContact() {
         setIsOpenContact(!isOpenContact);
     }
-    function swalopen(texttoshow) {
-        swal({
-            title: texttoshow,
-            // text: "You clicked the button!",
-            // icon: "success",
-            showCloseButton: true,
-            showCancelButton: true,
-        });
-    }
+    // function swalopen(texttoshow) {
+    //     swal({
+    //         title: texttoshow,
+    //         // text: "You clicked the button!",
+    //         // icon: "success",
+    //         showCloseButton: true,
+    //         showCancelButton: true,
+    //     });
+    // }
 
 
     // let options = { year: 'numeric', month: 'long', day: 'numeric' };

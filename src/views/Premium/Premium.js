@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Form, Button, DropdownButton, Dropdown, ToggleButtonGroup, ToggleButton } from 'react-bootstrap'
 import { SliderThumbnail } from '../../containers/SliderThumbnail';
 import StarRating from '../../containers/StarRating';
-import { Scrollbar } from "react-scrollbars-custom";
+// import { Scrollbar } from "react-scrollbars-custom";
 import Starratingstatic from '../../containers/Starratingstatic';
 import Footer from '../../containers/Footer';
 
