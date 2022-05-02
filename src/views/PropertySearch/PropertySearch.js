@@ -20,6 +20,7 @@ import makeAnimated from "react-select/animated";
 
 import MySelect from "./MySelect.js";
 import { capitalise } from '../../containers/functions';
+import { useSelector } from 'react-redux';
 
 
 
@@ -506,7 +507,13 @@ const PropertySearch = ({ location }) => {
         method: 'POST',
         redirect: 'follow'
     };
-    // console.log(searchApiUrl);
+
+
+
+    const propResult = useSelector((state) => state.search_result);
+
+    // console.log(propResult);
+
     useEffect(() => {
 
         const fetchData = async () => {
@@ -514,7 +521,13 @@ const PropertySearch = ({ location }) => {
 
             }
             else {
+
+
+
                 setsearchresultdata([]);
+
+                // setsearchresultdata(propResult);
+
                 if (feature == 'senior') {
 
                     const result = await fetch(`${searchsenior}`, requestOptions)
@@ -534,11 +547,7 @@ const PropertySearch = ({ location }) => {
                         })
                         .catch(error => console.log('error', error));
 
-
                 } else if (feature == 'section') {
-
-
-
                     const result = await fetch(`${searchsection8}`, requestOptions)
                         .then(response => response.json())
                         .then(res => {
@@ -556,10 +565,8 @@ const PropertySearch = ({ location }) => {
                         })
                         .catch(error => console.log('error', error));
 
-                } else {
-
-                    // console.log(searchApiUrl);
-
+                }
+                else {
                     const result = await fetch(`${searchApiUrl}`, requestOptions)
                         .then(response => response.json())
                         .then(res => {
@@ -577,17 +584,11 @@ const PropertySearch = ({ location }) => {
                         })
                         .catch(error => console.log('error', error));
                 }
+
             }
         };
         fetchData();
-    }, [searchApiUrl, selectBeds, selectBaths]);
-
-
-    // console.log(citiesarray);
-
-    // console.log(min_price, max_price);
-
-    // console.log(minprice, maxprice);
+    }, [searchApiUrl, selectBeds, selectBaths, propResult]);
 
     return (
         <>

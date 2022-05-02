@@ -53,19 +53,49 @@ import Payments from './views/PaymentStandards/Payment';
 import { ContactUs } from './views/ContactUS/ContactUs';
 
 import ScrollToTop from './containers/ScrollToTop';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { getPosts } from './actions';
+
+
+
+
+
+
+
+
 
 function App() {
 
 
 
 
+    const dispatch = useDispatch();
+
+    const propResult = useSelector((state) => state.search_result);
+
+    let minlat = '33.0';
+    let maxlat = '34.0';
+    let minlng = '-118.0';
+    let maxlng = '-117.0';
+
+    useEffect(() => {
+        dispatch(getPosts(minlat, maxlat, minlng, maxlng));
+    }, [])
 
     return (
         <>
+
+            {/* <div>
+                <h1>App34</h1>
+                <h2>{JSON.stringify(propResult)}</h2>
+                {console.log((JSON.stringify(propResult)).slice(0, 10), "POSTS")}
+            </div> */}
+
+
             <Router>
                 <Navbar />
                 <ScrollToTop>
-                    {/* <Scrollbar style={{ width: 1920, height: 1080, scrollbarWidth: 100 }}> */}
                     <Switch>
                         <Route path="/" exact component={Index} />
                         <Route path="/seniorHousing" exact component={Seniorhousing} />
@@ -110,7 +140,6 @@ function App() {
 
 
                     </Switch>
-                    {/* </Scrollbar> */}
                 </ScrollToTop>
             </Router>
         </>

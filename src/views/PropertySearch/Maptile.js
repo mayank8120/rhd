@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useLayoutEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
 import img from '../../assets/img/marker.png'
 import purplecircle from '../../assets/img/purple_circle.svg'
@@ -6,6 +6,8 @@ import greencircle from '../../assets/img/greencircle.svg'
 import L from 'leaflet'
 import useSupercluster from "use-supercluster";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getPosts } from "../../actions";
 
 
 const markerIconpremium = new L.Icon(
@@ -22,18 +24,7 @@ const markerIcongeneral = new L.Icon(
     }
 )
 
-
-
-
-
-// const cuffs = new L.Icon({
-//     iconUrl: "/handcuffs.svg",
-//     iconSize: [24, 24],
-// });
-
-
-
-
+let counter = 0;
 
 const Maptile = ({ searchresultdata }) => {
 
@@ -137,17 +128,46 @@ const Maptile = ({ searchresultdata }) => {
 
     const [spurl, setspurl] = useState("");
 
-    // get map bounds
+    // get map Bounds
     function updateMap() {
         const b = map.getBounds();
         setBounds([
-            b.getSouthWest().lng,
-            b.getSouthWest().lat,
-            b.getNorthEast().lng,
-            b.getNorthEast().lat,
+            b.getSouthWest().lng,//ULNG
+            b.getSouthWest().lat,//LLAT
+            b.getNorthEast().lng,//LLNG
+            b.getNorthEast().lat,//ULAT
         ]);
         setZoom(map.getZoom());
+        counter++;
+        // console.log(counter);
     }
+    const dispatch = useDispatch();
+    // const propResult = useSelector((state) => state.search_result);
+
+    // let minlat = '33.0';
+    // let maxlat = '34.0';
+    // let minlng = '-118.0';
+    // let maxlng = '-117.0';
+
+
+
+    useEffect(() => {
+        // console.log(counter, "FIRST");
+        if ((bounds !== null || bounds !== undefined) && counter > 1) {
+            dispatch(getPosts(bounds[1], bounds[3], bounds[2], bounds[0]));
+            console.log(bounds[1],"MINLAT", bounds[3],"MAXLAT", bounds[2],"MINLNG", bounds[0],"MAXLNG");
+            // console.log(counter,"SECOND");
+        }
+        // console.log(propResult);
+    }, [dispatch, bounds])
+
+
+    // useEffect(() => {
+    //     console.log(counter += 1);
+    // }, [bounds]);
+
+
+
 
     const onMove = useCallback(() => {
         updateMap();
@@ -178,9 +198,6 @@ const Maptile = ({ searchresultdata }) => {
         // console.log(db.property.lng, db.property.lat),
 
         {
-
-
-
             type: "Feature",
             properties: {
                 cluster: false,
@@ -391,22 +408,20 @@ const Maptile = ({ searchresultdata }) => {
 
     // }
 
-    let cccc = (id) => {
+    const checkClusterWithNoIDerror = (id) => {
 
         let flag = true;
 
         try {
             try {
-                console.log(supercluster.getChildren(id), "cluster CHildren");
+                // console.log(supercluster.getChildren(id), "cluster CHildren");
             } catch (error) {
 
                 flag = false;
                 if (error && error.message == "No cluster with the specified id.") {
-                    console.log("lalalaal");
-                    // return true;
+                    // console.log("lalalaal");
                 } else {
-                    console.log("hahaha");
-                    // return true;
+                    // console.log("hahaha");
                 }
                 // console.log(error.message, "ERROR INSIDE");
             }
@@ -500,18 +515,12 @@ const Maptile = ({ searchresultdata }) => {
                                     position={[latitude, longitude]}
                                     icon={
 
-
-
-
-                                        cccc(cluster.id) == false ?
+                                        checkClusterWithNoIDerror(cluster.id) == false ?
                                             L.divIcon({
                                                 html: `<div class="cluster-marker" style="width: ${10 + (pointCount / points.length) * 40}px; height: ${10 + (pointCount / points.length) * 40}px; border:2px solid #ffffff; background:#9d56f7">${pointCount > 9 ? '9+' : pointCount}</div>`,
                                             })
 
                                             :
-
-
-
 
                                             (
                                                 checkCluster(cluster.id) == true
@@ -533,7 +542,7 @@ const Maptile = ({ searchresultdata }) => {
                                         click: () => {
 
 
-                                            if (cccc(cluster.id) == false) {
+                                            if (checkClusterWithNoIDerror(cluster.id) == false) {
 
                                             } else {
                                                 const expansionZoom = Math.min(
