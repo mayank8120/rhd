@@ -526,64 +526,65 @@ const PropertySearch = ({ location }) => {
 
                 setsearchresultdata([]);
 
-                // setsearchresultdata(propResult);
+                setsearchresultdata(propResult);
+                console.log(propResult);
 
-                if (feature == 'senior') {
+                // if (feature == 'senior') {
 
-                    const result = await fetch(`${searchsenior}`, requestOptions)
-                        .then(response => response.json())
-                        .then(res => {
-                            // console.log(res.error);
-                            if (res.error === true) {
-                                // console.log('5');
-                                setsearchresultdata(res.message);
-                                settotalcount(0);
-                            } else {
-                                // console.log('6');
-                                setsearchresultdata(res.data);
-                                settotalcount(res.count);
-                                setlastpage((parseInt((res.count) / 25, 10) + 1));
-                            }
-                        })
-                        .catch(error => console.log('error', error));
+                //     const result = await fetch(`${searchsenior}`, requestOptions)
+                //         .then(response => response.json())
+                //         .then(res => {
+                //             // console.log(res.error);
+                //             if (res.error === true) {
+                //                 // console.log('5');
+                //                 setsearchresultdata(res.message);
+                //                 settotalcount(0);
+                //             } else {
+                //                 // console.log('6');
+                //                 setsearchresultdata(res.data);
+                //                 settotalcount(res.count);
+                //                 setlastpage((parseInt((res.count) / 25, 10) + 1));
+                //             }
+                //         })
+                //         .catch(error => console.log('error', error));
 
-                } else if (feature == 'section') {
-                    const result = await fetch(`${searchsection8}`, requestOptions)
-                        .then(response => response.json())
-                        .then(res => {
-                            // console.log(res.error);
-                            if (res.error === true) {
-                                // console.log('5');
-                                setsearchresultdata(res.message);
-                                settotalcount(0);
-                            } else {
-                                // console.log('6');
-                                setsearchresultdata(res.data);
-                                settotalcount(res.count);
-                                setlastpage((parseInt((res.count) / 25, 10) + 1));
-                            }
-                        })
-                        .catch(error => console.log('error', error));
+                // } else if (feature == 'section') {
+                //     const result = await fetch(`${searchsection8}`, requestOptions)
+                //         .then(response => response.json())
+                //         .then(res => {
+                //             // console.log(res.error);
+                //             if (res.error === true) {
+                //                 // console.log('5');
+                //                 setsearchresultdata(res.message);
+                //                 settotalcount(0);
+                //             } else {
+                //                 // console.log('6');
+                //                 setsearchresultdata(res.data);
+                //                 settotalcount(res.count);
+                //                 setlastpage((parseInt((res.count) / 25, 10) + 1));
+                //             }
+                //         })
+                //         .catch(error => console.log('error', error));
 
-                }
-                else {
-                    const result = await fetch(`${searchApiUrl}`, requestOptions)
-                        .then(response => response.json())
-                        .then(res => {
-                            // console.log(res.error);
-                            if (res.error === true) {
-                                console.log('5');
-                                setsearchresultdata(res.message);
-                                settotalcount(0);
-                            } else {
-                                // console.log('6');
-                                setsearchresultdata(res.data);
-                                settotalcount(res.count);
-                                setlastpage((parseInt((res.count) / 25, 10) + 1));
-                            }
-                        })
-                        .catch(error => console.log('error', error));
-                }
+                // }
+                // else {
+                //     const result = await fetch(`${searchApiUrl}`, requestOptions)
+                //         .then(response => response.json())
+                //         .then(res => {
+                //             // console.log(res.error);
+                //             if (res.error === true) {
+                //                 console.log('5');
+                //                 setsearchresultdata(res.message);
+                //                 settotalcount(0);
+                //             } else {
+                //                 // console.log('6');
+                //                 setsearchresultdata(res.data);
+                //                 settotalcount(res.count);
+                //                 setlastpage((parseInt((res.count) / 25, 10) + 1));
+                //             }
+                //         })
+                //         .catch(error => console.log('error', error));
+                // }
 
             }
         };

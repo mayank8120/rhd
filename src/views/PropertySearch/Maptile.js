@@ -154,8 +154,15 @@ const Maptile = ({ searchresultdata }) => {
     useEffect(() => {
         // console.log(counter, "FIRST");
         if ((bounds !== null || bounds !== undefined) && counter > 1) {
-            dispatch(getPosts(bounds[1], bounds[3], bounds[2], bounds[0]));
-            console.log(bounds[1],"MINLAT", bounds[3],"MAXLAT", bounds[2],"MINLNG", bounds[0],"MAXLNG");
+
+            let minlat = (bounds[1] < bounds[3] ? bounds[1] : bounds[3]);
+            let maxlat = (bounds[1] > bounds[3] ? bounds[1] : bounds[3]);
+            let minlng = (bounds[0] < bounds[2] ? bounds[0] : bounds[2]);
+            let maxlng = (bounds[0] > bounds[2] ? bounds[0] : bounds[2]);
+
+
+            dispatch(getPosts(minlat, maxlat, minlng, maxlng));
+            // console.log(bounds[1], "MINLAT", bounds[3], "MAXLAT", bounds[2], "MINLNG", bounds[0], "MAXLNG");
             // console.log(counter,"SECOND");
         }
         // console.log(propResult);
