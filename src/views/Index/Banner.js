@@ -247,7 +247,6 @@ const Banner = ({ latlngdata }) => {
     //     setsearchterm("");
     //   };
 
-    const doa = "/propertySearch?q=Java";
     return (
 
         <>
@@ -378,7 +377,7 @@ const Banner = ({ latlngdata }) => {
                                                                                                 val.property_state == null || val.property_state == undefined ?
                                                                                                     `${val.property_city}, ${val.property_state}`
                                                                                                     :
-                                                                                                    <Link className='secondaryColor w-100 d-block' to={`/propertySearch?city=${val.property_city}&state=${val.property_state}`}>
+                                                                                                    <Link className='secondaryColor w-100 d-block' to={`/propertySearch/${val.property_city}/${val.property_state}`}>
                                                                                                         {val.property_city.toLowerCase()
                                                                                                             .split(' ')
                                                                                                             .map((s) => s.charAt(0).toUpperCase() + s.substring(1))

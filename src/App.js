@@ -33,7 +33,7 @@ import PropertySearch from './views/PropertySearch/PropertySearch.js'
 import PublicHousing from './views/PublicHousing/PublicHousing.js'
 import { CompareProperties } from './views/CompareProperties/CompareProperties';
 import { Premium } from './views/Premium/Premium';
-import { Trial } from './views/Trial/Trial';
+// import { Trial } from './views/Trial/Trial';
 import { AboutUs } from './views/AboutUs/AboutUs';
 import { Terms } from './views/TermsOfUse/Terms';
 import { PrivacyPolicy } from './views/PrivacyPolicy/PrivacyPolicy';
@@ -55,7 +55,7 @@ import { ContactUs } from './views/ContactUS/ContactUs';
 import ScrollToTop from './containers/ScrollToTop';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { getPosts } from './actions';
+import { getPropListAccordingToMap } from './actions';
 
 
 
@@ -70,18 +70,18 @@ function App() {
 
 
 
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
 
-    const propResult = useSelector((state) => state.search_result);
+    // const propResult = useSelector((state) => state.search_result);
 
-    let minlat = '33.0';
-    let maxlat = '34.0';
-    let minlng = '-118.0';
-    let maxlng = '-117.0';
+    // let minlat = '33.0';
+    // let maxlat = '34.0';
+    // let minlng = '-118.0';
+    // let maxlng = '-117.0';
 
-    useEffect(() => {
-        dispatch(getPosts(minlat, maxlat, minlng, maxlng));
-    }, [])
+    // useEffect(() => {
+    //     dispatch(getPropListAccordingToMap(minlat, maxlat, minlng, maxlng));
+    // }, []);
 
     return (
         <>
@@ -112,11 +112,11 @@ function App() {
                         <Route path="/propertyDetail" component={PropertyDetail} />
                         <Route path="/listhub" component={Listhub} />
                         <Route path="/listhubform" component={ListhubForm} />
-                        <Route path="/propertySearch" component={PropertySearch} />
+                        {/* <Route path="/propertySearch" component={PropertySearch} /> */}
                         <Route path="/listhubSearch" component={ListhubSearch} />
                         <Route path="/compareProperties" component={CompareProperties} />
                         <Route path="/premium" component={Premium} />
-                        <Route path="/trial" component={Trial} />
+                        {/* <Route path="/trial" component={Trial} /> */}
 
                         <Route path="/aboutus" component={AboutUs} />
                         <Route path="/termsofuse" component={Terms} />
@@ -138,6 +138,10 @@ function App() {
                         <Route path="/contactus" component={ContactUs} />
                         <Route path="/advertisewithus" component={ContactUs} />
 
+
+
+                        <Route path="/propertySearch/:cityname/:statename" component={PropertySearch} />
+                        <Route path="/propertySearch" component={PropertySearch} />
 
                     </Switch>
                 </ScrollToTop>

@@ -1,5 +1,9 @@
-import {FETCH_PROPS} from '../constants/constants.js'
+import { FETCH_PROPS } from '../constants/constants.js'
 
+
+
+
+const mapInitState = false;
 export const search_result = (posts = [], action) => {
     switch (action.type) {
         case FETCH_PROPS:
@@ -8,3 +12,15 @@ export const search_result = (posts = [], action) => {
             return posts;
     }
 };
+
+
+
+
+export const changeMapState = (state = mapInitState, action) => {
+    switch (action.type) {
+        case 'MAP_STATE':
+            return !state;
+        default:
+            return state;
+    }
+}

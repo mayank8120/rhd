@@ -10854,19 +10854,3 @@ input[type="radio"]:checked {
 	padding: 0 0 15px;
 	background-color: #fff;
 }
-/*--19-05-1993--*/
-.mapBlockCheck {
-	position: absolute;
-	top: 10px;
-	background-color: #fff;
-	z-index: 999;
-	left: 8%;
-}
-.mapBlockCheck .listingSection.adjustment1.mapListingSection {
-	padding: 8px;
-	top: 0px;
-	padding-top: 8px !important;
-}
-.mapBlockCheck input[type="checkbox"]:checked + span {
-	background: transparent;
-}

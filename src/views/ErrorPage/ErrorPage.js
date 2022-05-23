@@ -207,7 +207,7 @@ const ErrorPage = () => {
 
 
     // console.log(dropdowndata);
-    // const getPosts = () => async (dispatch) => {
+    // const getPropListAccordingToMap = () => async (dispatch) => {
     //     try {
     //         const { datashow } = await axios.post(url)
     //             .then(res => {

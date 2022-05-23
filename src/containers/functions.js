@@ -317,3 +317,23 @@ export let commaInNumber = (str) => {
     }
 
 }
+
+
+
+
+
+
+export let isObjectEmpty = (objectName) => {
+    return objectName && Object.keys(objectName).length === 0 && Object.getPrototypeOf(objectName) === Object.prototype;
+}
+
+
+export let isItCityVISE = (min, max) => {
+    let flag;
+    if (Math.abs((Math.abs(max) - Math.abs(min))) >= 3) {
+        flag = true;
+    } else {
+        flag = false;
+    }
+    return flag;
+}
