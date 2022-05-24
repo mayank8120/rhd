@@ -80,7 +80,7 @@ const MultiplePointMap = () => {
                 // }
                 // console.log(searchresultdata);
 
-                
+
                 searchresultdata.forEach(element => {
                     if (element.property.lat < llat) {
                         llat = element.property.lat;
@@ -141,7 +141,7 @@ const MultiplePointMap = () => {
                                                     } zoom={12} scrollWheelZoom={true}>
                                                         <TileLayer
                                                             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                                                            url={darkmap} />
+                                                            url={streetmap} />
                                                         <Maptile binamapkadata={searchresultdata} />
                                                     </MapContainer>
 
@@ -152,7 +152,7 @@ const MultiplePointMap = () => {
                                         <MapContainer center={[33.0, -117.0]} zoom={12} scrollWheelZoom={true}>
                                             <TileLayer
                                                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                                                url={darkmap} />
+                                                url={streetmap} />
 
 
                                             <Maptile
