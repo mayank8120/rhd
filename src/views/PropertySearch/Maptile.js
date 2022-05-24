@@ -51,6 +51,9 @@ const Maptile = () => {
 
 
 
+
+
+
     // let isItCityVISE = (min, max) => {
     //     let flag;
     //     if (Math.abs((Math.abs(max) - Math.abs(min))) >= 3) {
@@ -213,10 +216,7 @@ const Maptile = () => {
         const fetchData = async () => {
             setsearchresultdata([]);
             setsearchresultdata(propResult.data);
-            if (
-                propResult.hasOwnProperty('count') == false
-                // propResult.type == "CITY"
-            ) {
+            if (propResult.hasOwnProperty('count') == false) {
                 settypeofdata("CITY");
             } else {
                 settypeofdata();
@@ -496,55 +496,34 @@ const Maptile = () => {
 
             {
 
-                typeofdata == "CITY" ?
+                typeofdata === "CITY" ?
 
                     searchresultdata.map((item) => {
 
                         return (
-                            <Marker position={[parseInt(item.coordinate.lat), parseInt(item.coordinate.lng)]}
-
-
+                            <Marker
+                                position={[parseInt(item.coordinate.lat), parseInt(item.coordinate.lng)]}
                                 icon={L.divIcon({
                                     html: `
                                     <div class="cluster-marker" style="width: auto; height:auto; background:#9d56f7;display:flex;align-items:center;justify-content:flex-start;min-width:120px;border-radius:4px;">
-                                  
-                                  <p class='mb-0'>${item.city} <br/> ${item.listingcount} listing</p>
-                                   
-                                   
+                                        <p class='mb-0'>${item.city} <br/> ${item.listingcount} listing</p>
                                     </div>`,
-
-                                    // html: `<div class="cluster-marker" style="width: auto; height:auto; background:#9d56f7">${item.city}</div>`,
-
-
                                 })}
-
-
                             >
 
                             </Marker>
                         );
                     })
-
-
                     :
-
-
-
                     clusters.map((cluster) => {
-
                         // console.log(clusters,"log12");
 
                         const [longitude, latitude] = cluster.geometry.coordinates;
 
-                        const { cluster: isCluster, point_count: pointCount } =
-                            cluster.properties;
-
-
+                        const { cluster: isCluster, point_count: pointCount } = cluster.properties;
                         if (isCluster) {
                             // console.log(cluster.id, "cluster ID");
                             // console.log(cluster,"IS CHILD");
-
-
 
                             // running code
                             // try {
@@ -592,44 +571,30 @@ const Maptile = () => {
 
                             return (
                                 <>
-
-
-
-
                                     <Marker
                                         key={`cluster-${cluster.id}`}
                                         position={[latitude, longitude]}
                                         icon={
-
                                             checkClusterWithNoIDerror(cluster.id) == false ?
                                                 L.divIcon({
                                                     html: `<div class="cluster-marker" style="width: ${10 + (pointCount / points.length) * 40}px; height: ${10 + (pointCount / points.length) * 40}px; border:2px solid #ffffff; background:#9d56f7">${pointCount > 9 ? pointCount : pointCount}</div>`,
                                                 })
-
                                                 :
-
                                                 (
                                                     checkCluster(cluster.id) == true
                                                         ?
                                                         L.divIcon({
-                                                            html: `<div class="cluster-marker" style="width: ${10 + (pointCount / points.length) * 40}px; height: ${10 + (pointCount / points.length) * 40}px; border:2px solid #ffffff; background:#1bc47d ">
-                                ${pointCount > 9 ? pointCount : pointCount}
-                            </div>`,
+                                                            html: `<div class="cluster-marker" style="width: ${10 + (pointCount / points.length) * 40}px; height: ${10 + (pointCount / points.length) * 40}px; border:2px solid #ffffff; background:#1bc47d "> ${pointCount > 9 ? pointCount : pointCount} </div>`
                                                         })
                                                         :
                                                         L.divIcon({
-                                                            html: `<div class="cluster-marker" style="width: ${10 + (pointCount / points.length) * 40}px; height: ${10 + (pointCount / points.length) * 40}px; border:2px solid #ffffff; background:#9d56f7">
-                                ${pointCount > 9 ? pointCount : pointCount}
-                            </div>`,
+                                                            html: `<div class="cluster-marker" style="width: ${10 + (pointCount / points.length) * 40}px; height: ${10 + (pointCount / points.length) * 40}px; border:2px solid #ffffff; background:#9d56f7"> ${pointCount > 9 ? pointCount : pointCount}</div>`,
                                                         })
                                                 )
                                         }
                                         eventHandlers={{
                                             click: () => {
-
-
                                                 if (checkClusterWithNoIDerror(cluster.id) == false) {
-
                                                 } else {
                                                     const expansionZoom = Math.min(
                                                         supercluster.getClusterExpansionZoom(cluster.id),
@@ -639,12 +604,6 @@ const Maptile = () => {
                                                         animate: true,
                                                     });
                                                 }
-
-
-
-
-
-
                                             }
                                         }}
                                     />
@@ -658,12 +617,9 @@ const Maptile = () => {
                                 // key={`property-${cluster.properties.propId}`}
                                 position={[latitude, longitude]}
                                 icon={latitude == localStorage.getItem('currLat') && longitude == localStorage.getItem('currLng') ? markerIconpremium : markerIcongeneral} >
-
                                 <Popup position className="map-section-detail">
-
                                     <div className="brdr_radius4px">
-                                        <img className="imgpopup" src={`${cluster.properties.img}`} />
-                                        {/* https://www.rentalhousingdeals.com/uploaded/prop_1600756794_Capri+Villas+hi+res%20(1).jpg */}
+                                        <img className="imgpopup" src={`${cluster.properties.img}`} alt="Pointer" />
                                         <div className="textAreaBlock">
                                             <Link to={`/propertyDetail?proid=${cluster.properties.propid}`}><h5 className="colorBlue font-weight700 mb-0">{cluster.properties.propname}</h5></Link>
                                             <div className="priceRange itemWebsite">
@@ -685,21 +641,7 @@ const Maptile = () => {
                                                                     'N/A'
                                                             )
                                                     }
-
-                                                    {/* {cluster.properties.amount} */}
                                                 </h4>
-                                                {/* {
-                                            cluster.properties.subsidised == 'Yes' && cluster.properties.section == 'Yes' ?
-                                                <span class="font-weight700">
-                                                    <img
-                                                        src={require("../../assets/img/priceTagg.svg").default}
-                                                    />
-                                                    Good Deal
-                                                </span>
-                                                :
-                                                null
-                                        } */}
-
                                             </div>
                                             <div className="d-flex align-items-center listingBlockLine">
                                                 <ul className="noMarginPad listStyleNone">
@@ -722,7 +664,6 @@ const Maptile = () => {
                                                     </li>
 
                                                     <li className="d-flex align-items-center ml-12">
-
                                                         <img src={require('../../assets/img/shower.svg').default} />
                                                         <span className="colorBlue">
                                                             {
@@ -750,19 +691,12 @@ const Maptile = () => {
                                             <div className="cmap-btuon">
                                                 <Link to={`/propertyDetail?proid=${cluster.properties.propid}`}>Check Availability</Link>
                                             </div>
-
                                         </div>
                                     </div>
                                 </Popup>
-
                             </Marker>
-
-
                         );
                     })
-
-
-
             }
 
 

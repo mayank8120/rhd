@@ -78,7 +78,9 @@ const MultiplePointMap = () => {
                 // if (searchresultdata == true) {
                 //     console.log(searchresultdata);
                 // }
-                console.log(searchresultdata);
+                // console.log(searchresultdata);
+
+                
                 searchresultdata.forEach(element => {
                     if (element.property.lat < llat) {
                         llat = element.property.lat;
