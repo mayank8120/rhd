@@ -36,7 +36,8 @@ const Maptile = () => {
 
     let pushToLatLngPropertyPage = (minlat, maxlat, minlng, maxlng) => {
         history.push(`/propertySearch?minlat=${minlat}&maxlat=${maxlat}&minlng=${minlng}&maxlng=${maxlng}`);
-        console.log(counter += 1);
+        counter += 1;
+        // console.log(counter += 1);
     }
 
 
@@ -161,11 +162,7 @@ const Maptile = () => {
             let maxlat = (bounds[1] > bounds[3] ? bounds[1] : bounds[3]);
             let minlng = (bounds[0] < bounds[2] ? bounds[0] : bounds[2]);
             let maxlng = (bounds[0] > bounds[2] ? bounds[0] : bounds[2]);
-            // console.log("HELLO TOTO");
             if (mapchange == true) {
-
-
-                // console.log("HELLO MOTO");
                 pushToLatLngPropertyPage(minlat, maxlat, minlng, maxlng);
 
                 // if (isItCityVISE(minlng, maxlng) == true) {
@@ -239,7 +236,22 @@ const Maptile = () => {
         // console.log(searchresultdata, "SEARCH RESULT DATA");
 
         if (typeofdata == "CITY") {
-            setpoints([]);
+            setpoints(searchresultdata.map((db) => (
+                {
+                    type: "Feature",
+                    properties: {
+                        cluster: false,
+                        cityname: (db.city),
+                        listingCnt: (db.listingcount)
+                    },
+                    geometry: {
+                        type: "Point",
+                        coordinates: [
+                            parseFloat(db.coordinate.lng),
+                            parseFloat(db.coordinate.lat),
+                        ],
+                    },
+                })))
         } else {
             setpoints(searchresultdata.map((db) => (
                 {
@@ -299,7 +311,7 @@ const Maptile = () => {
         points: points,
         bounds: bounds,
         zoom: zoom,
-        options: { radius: 50, maxZoom: 22 },
+        options: { radius: typeofdata == "CITY" ? 200 : 50, maxZoom: 22 },
     });
 
 
@@ -367,6 +379,8 @@ const Maptile = () => {
 
     let checkMarker = (clusterinside) => {
         // let exist;
+
+        // console.log(clusterinside);
         if (parseFloat(clusterinside.geometry.coordinates[0]) == parseFloat(localStorage.getItem('currLng'))
             && parseFloat(clusterinside.geometry.coordinates[1]) == parseFloat(localStorage.getItem('currLat'))) {
             // exist = true;
@@ -400,6 +414,8 @@ const Maptile = () => {
                 } catch (error) {
                     console.log(error, "2nd ERROR");
                 }
+
+
                 if (clusterinside == undefined) {
                 } else {
                     clusterinside.forEach(element => {
@@ -489,6 +505,91 @@ const Maptile = () => {
 
 
 
+
+    let checkMarkerforCityName = (clusterinside, citydata) => {
+        // let exist;
+        let citydat = citydata;
+        // console.log("!!!", citydata);
+        // console.log(clusterinside, "CLUSTERINSIDE", citydata, "CITY DATA");
+
+        console.log(citydata.lstcnt, citydata.citi, clusterinside.properties.listingCnt, clusterinside.properties.cityname, "COUNT COMP");
+        if (citydata.citi !== undefined) {
+            if (citydata.lstcnt >= clusterinside.properties.listingCnt) {
+                citydat = citydata;
+            } else {
+                citydat.citi = clusterinside.properties.cityname;
+                citydat.lstcnt = clusterinside.properties.listingCnt;
+            }
+        }
+        else {
+            citydat.citi = clusterinside.properties.cityname;
+            citydat.lstcnt = clusterinside.properties.listingCnt;
+        }
+
+        console.log(citydat.citi);
+        return citydat;
+    }
+
+
+    let checkClusterForCityName = (clusterid) => {
+
+
+        let citydata = {};
+
+        try {
+
+            if (clusterid) {
+
+                let clusterinside;
+
+                try {
+                    try {
+                        clusterinside = supercluster.getChildren(clusterid);
+                    } catch (error) {
+                        if (error && error.message == "No cluster with the specified id.") {
+                        } else {
+                        }
+                    }
+                } catch (error) {
+                    console.log(error, "2nd ERROR");
+                }
+
+
+                if (clusterinside === undefined) {
+                } else {
+                    clusterinside.forEach(element => {
+                        // console.log(element);
+                        if (element.properties.cluster === true) {
+                            if (element.properties.cluster_id) {
+                                let data1 = checkClusterForCityName(element.properties.cluster_id);
+                                if (citydata !== undefined && data1.lstcnt <= citydata.lstcnt) {
+                                    citydata = citydata;
+                                } else {
+                                    citydata = data1;
+                                }
+                            }
+                        }
+                        else {
+                            // console.log("NON CLUSTER");
+                            let data2 = checkMarkerforCityName(element, citydata);
+                            if (citydata !== undefined && data2.lstcnt <= citydata.lstcnt) {
+                                citydata = citydata;
+                            }
+                            else {
+                                citydata = data2;
+                            }
+                        }
+                    })
+                }
+            }
+        } catch (error) {
+            console.log(error.stack, "ERROR STACK");
+        }
+        // return false;
+        return citydata;
+    }
+
+
     return (
         <>
 
@@ -498,22 +599,98 @@ const Maptile = () => {
 
                 typeofdata === "CITY" ?
 
-                    searchresultdata.map((item) => {
 
+                    clusters.map((cluster) => {
+
+                        // console.log(cluster);
+
+                        const [longitude, latitude] = cluster.geometry.coordinates;
+
+                        const { cluster: isCluster, point_count: pointCount } = cluster.properties;
+
+                        if (isCluster) {
+                            let data = checkClusterForCityName(cluster.id);
+                            return (
+                                <>
+                                    {/* <>{console.log(checkClusterForCityName(cluster.id))}</> */}
+                                    <Marker
+                                        key={`cluster-${cluster.id}`}
+                                        position={[latitude, longitude]}
+                                        icon={
+                                            checkClusterWithNoIDerror(cluster.id) == false ?
+                                                L.divIcon({
+                                                    html: `
+                                                    <div class="cluster-marker" style="width: auto; height:auto; background:#9d56f7;display:flex;align-items:center;justify-content:flex-start;min-width:120px;border-radius:4px;">
+                                                        <p class='mb-0'>${data.citi}<br/> ${data.lstcnt} listing</p>
+                                                    </div>
+                                                    `,
+                                                })
+                                                :
+                                                (
+                                                    L.divIcon({
+                                                        html: `
+                                                        <div class="cluster-marker" style="width: auto; height:auto; background:#9d56f7;display:flex;align-items:center;justify-content:flex-start;min-width:120px;border-radius:4px;">
+                                                            <p class='mb-0'>${data.citi}<br/> ${data.lstcnt} listing</p>
+                                                        </div>
+                                                        `,
+                                                    })
+                                                )
+                                        }
+                                        eventHandlers={{
+                                            click: () => {
+                                                if (checkClusterWithNoIDerror(cluster.id) == false) {
+                                                } else {
+                                                    const expansionZoom = Math.min(
+                                                        supercluster.getClusterExpansionZoom(cluster.id),
+                                                        maxZoom
+                                                    );
+                                                    map.setView([latitude, longitude], expansionZoom, {
+                                                        animate: true,
+                                                    });
+                                                }
+                                            }
+                                        }}
+                                    />
+                                </>
+                            );
+                        }
+
+                        // we have a single point to render
                         return (
-                            <Marker
-                                position={[parseInt(item.coordinate.lat), parseInt(item.coordinate.lng)]}
-                                icon={L.divIcon({
-                                    html: `
-                                    <div class="cluster-marker" style="width: auto; height:auto; background:#9d56f7;display:flex;align-items:center;justify-content:flex-start;min-width:120px;border-radius:4px;">
-                                        <p class='mb-0'>${item.city} <br/> ${item.listingcount} listing</p>
-                                    </div>`,
-                                })}
-                            >
+                            <>
+                                {console.log(cluster)}
+                                <Marker
+                                    position={[latitude, longitude]}
+                                    icon={
+                                        L.divIcon({
+                                            html: ` <div class="cluster-marker" style="width: auto; height:auto; background:#9d56f7;display:flex;align-items:center;justify-content:flex-start;min-width:120px;border-radius:4px;">
+                                                        <p class='mb-0'>${cluster.properties.cityname} <br/> ${cluster.properties.listingCnt} listing</p>
+                                                    </div>`,
+                                        })
+                                    }
+                                >
+                                </Marker>
+                            </>
 
-                            </Marker>
                         );
                     })
+
+                    // searchresultdata.map((item) => {
+
+                    //     return (
+                    //         <Marker
+                    //             position={[parseInt(item.coordinate.lat), parseInt(item.coordinate.lng)]}
+                    //             icon={L.divIcon({
+                    //                 html: `
+                    //                 <div class="cluster-marker" style="width: auto; height:auto; background:#9d56f7;display:flex;align-items:center;justify-content:flex-start;min-width:120px;border-radius:4px;">
+                    //                     <p class='mb-0'>${item.city} <br/> ${item.listingcount} listing</p>
+                    //                 </div>`,
+                    //             })}
+                    //         >
+
+                    //         </Marker>
+                    //     );
+                    // })
                     :
                     clusters.map((cluster) => {
                         // console.log(clusters,"log12");

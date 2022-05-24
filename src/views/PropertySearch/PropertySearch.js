@@ -98,12 +98,12 @@ const PropertySearch = () => {
         if ((parameters.cityname == undefined || parameters.cityname == null) &&
             (parameters.statename == undefined || parameters.statename == null)) {
             setareNonQuestionParametersPresent(false);
-            console.log(parameters.cityname, parameters.statename, "FALSE");
+            // console.log(parameters.cityname, parameters.statename, "FALSE");
         } else {
             setcity(parameters.cityname);
             setstatename(parameters.statename);
             setareNonQuestionParametersPresent(true);
-            console.log(parameters.cityname, parameters.statename, "TRUE");
+            // console.log(parameters.cityname, parameters.statename, "TRUE");
         }
 
     }, [parameters]);
@@ -161,10 +161,10 @@ const PropertySearch = () => {
             (maxlng == null || maxlng == undefined)) {
             setareQuestionParametersPresent(false);
 
-            console.log(minlat, maxlat, minlng, maxlng, "FALSE");
+            // console.log(minlat, maxlat, minlng, maxlng, "FALSE");
         } else {
             setareQuestionParametersPresent(true);
-            console.log(minlat, maxlat, minlng, maxlng, "TRUE");
+            // console.log(minlat, maxlat, minlng, maxlng, "TRUE");
         }
     }, [searchParameters]);
 
@@ -191,11 +191,11 @@ const PropertySearch = () => {
 
         if (areQuestionParametersPresent == true && areNonQuestionParametersPresent == false && arequestionparameterschanegd == true) {
             if (isItCityVISE(minlng, maxlng) == true) {
-                setsearchresultdata([]);
+                setsearchresultdata();
                 settypeofdata("CITY");
                 dispatch(getPropListAccordingToMap(minlat, maxlat, minlng, maxlng, true));
             } else {
-                setsearchresultdata([]);
+                setsearchresultdata();
                 settypeofdata("NON CITY");
                 dispatch(getPropListAccordingToMap(minlat, maxlat, minlng, maxlng, false));
             }
@@ -676,7 +676,7 @@ const PropertySearch = () => {
                 if (city == null || statename == null || city == undefined || statename == undefined) {
 
                 } else {
-                    console.log(city, statename, searchApiUrl);
+                    // console.log(city, statename, searchApiUrl);
                     dispatch(getPropListAccordingToCityAndState(searchApiUrl));
                 }
 
@@ -847,7 +847,7 @@ const PropertySearch = () => {
                             {
 
 
-                                (searchresultdata === null || searchresultdata.length === 0 || searchresultdata === undefined) ?
+                                (searchresultdata === null || searchresultdata === undefined || searchresultdata === '' || searchresultdata.length === 0) ?
 
 
                                     <Loader />
@@ -856,7 +856,7 @@ const PropertySearch = () => {
                                     (
                                         typeofdata === "CITY" ?
                                             <>
-                                                {console.log(searchresultdata)}
+                                                {/* {console.log(searchresultdata)} */}
                                                 <div class="listingSection adjustment1 mapListingSection">
                                                     <div class="topTitleMapping">
                                                         <h2>Zoom in on the map to see more</h2>
@@ -904,7 +904,7 @@ const PropertySearch = () => {
                                             </>
                                             :
                                             <>
-                                                {console.log(searchresultdata)}
+                                                {/* {console.log(searchresultdata)} */}
                                                 <div className="listingSection map-filter-section">
                                                     <div class="cst adjustment">
                                                         <div className="itemWebsite">

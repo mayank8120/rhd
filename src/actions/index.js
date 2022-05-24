@@ -99,7 +99,7 @@ export const getPropListAccordingToMap = (minlat, maxlat, minlng, maxlng, isItCi
 
         try {
             const data = await axios(zoomOutConfig).then(function (response) {
-                console.log(response,"CITY Wise DATA");
+                // console.log(response,"CITY Wise DATA");
                 return response.data;
             }).catch(function (error) {
                 // console.log(error);
@@ -112,7 +112,7 @@ export const getPropListAccordingToMap = (minlat, maxlat, minlng, maxlng, isItCi
 
         try {
             const data = await axios(zoomInConfig).then(function (response) {
-                console.log(response,"NON CITY WISE DATA");
+                // console.log(response,"NON CITY WISE DATA");
                 return response.data;
             }).catch(function (error) {
                 // console.log(error);
@@ -146,7 +146,7 @@ export const getPropListAccordingToCityAndState = (mainURL) => async (dispatch) 
         const data = await fetch(`${mainURL}`, requestOptions)
             .then(response => response.json())
             .then(res => {
-                console.log(res,"SIMPLE DATA");
+                // console.log(res,"SIMPLE DATA");
                 // console.log(mainURL);
                 return res;
             })

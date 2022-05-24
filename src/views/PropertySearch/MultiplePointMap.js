@@ -142,7 +142,7 @@ const MultiplePointMap = () => {
                                                         <TileLayer
                                                             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                                                             url={streetmap} />
-                                                        <Maptile binamapkadata={searchresultdata} />
+                                                        <Maptile />
                                                     </MapContainer>
 
                                             }
@@ -153,8 +153,6 @@ const MultiplePointMap = () => {
                                             <TileLayer
                                                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                                                 url={streetmap} />
-
-
                                             <Maptile
                                             // searchresultdata={searchresultdata}
                                             />
