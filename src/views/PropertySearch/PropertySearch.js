@@ -797,15 +797,18 @@ const PropertySearch = () => {
             settotalcount(propResult.count);
             setlastpage((parseInt((propResult.count) / 25, 10) + 1));
         }
+
+
+        if (mapchange == true) {
+            currentpagechange(1);
+            setfourpage(4);
+        }
+
     }, [propResult])
 
     // console.log(searchresultdata);
 
-    useEffect(() => {
-        if (mapchange == true) {
-            currentpagechange(1);
-        }
-    }, [propResult]);
+
 
 
 
@@ -1111,28 +1114,18 @@ const PropertySearch = () => {
                                                                                         <>
                                                                                             <li className={`${currentpage == fourpage - 3 ? "active paginationNum" : "paginationNum"}`} onClick={() => {
                                                                                                 currentpagechange(fourpage - 3);
-                                                                                                // setcurrentpage(fourpage - 3)
-                                                                                                // setsearchresultdata();
                                                                                             }} >{fourpage - 3}</li>
 
                                                                                             <li className={`${currentpage == (fourpage - 2) ? "active paginationNum" : "paginationNum"}`} onClick={() => {
                                                                                                 currentpagechange(fourpage - 2);
-                                                                                                // setcurrentpage(fourpage - 2)
-                                                                                                // setsearchresultdata();
                                                                                             }}>{fourpage - 2}</li>
 
                                                                                             <li className={`${currentpage == fourpage - 1 ? "active paginationNum" : "paginationNum"}`} onClick={() => {
                                                                                                 currentpagechange(fourpage - 1);
-                                                                                                // setcurrentpage(fourpage - 1)
-                                                                                                // setsearchresultdata();
                                                                                             }}>{fourpage - 1}</li>
 
                                                                                             <li className={`${currentpage == fourpage ? "active paginationNum" : "paginationNum"}`} onClick={() => {
                                                                                                 currentpagechange(fourpage);
-                                                                                                // setcurrentpage(fourpage)
-                                                                                                // setsearchresultdata();
-
-
                                                                                             }}>{fourpage}</li>
                                                                                         </>
                                                                                 }
@@ -1150,20 +1143,14 @@ const PropertySearch = () => {
 
                                                                                             <li className={`${currentpage == lastpage - 2 ? "active paginationNum" : "paginationNum"}`} onClick={() => {
                                                                                                 currentpagechange(lastpage - 2);
-                                                                                                // setcurrentpage(lastpage - 2);
-                                                                                                // setsearchresultdata();
                                                                                             }}>{lastpage - 2}</li>
 
                                                                                             <li className={`${currentpage == lastpage - 1 ? "active paginationNum" : "paginationNum"}`} onClick={() => {
                                                                                                 currentpagechange(lastpage - 1);
-                                                                                                // setcurrentpage(lastpage - 1)
-                                                                                                // setsearchresultdata();
                                                                                             }}>{lastpage - 1}</li>
 
                                                                                             <li className={`${currentpage == lastpage ? "active paginationNum" : "paginationNum"}`} onClick={() => {
                                                                                                 currentpagechange(lastpage);
-                                                                                                // setcurrentpage(lastpage);
-                                                                                                // setsearchresultdata();
                                                                                             }}>{lastpage}</li>
                                                                                         </>
                                                                                         :
@@ -1185,13 +1172,9 @@ const PropertySearch = () => {
                                                                                     if (currentpage >= 4) {
                                                                                         setfourpage(currentpage + 1);
                                                                                         currentpagechange(currentpage + 1);
-                                                                                        // setcurrentpage(currentpage + 1);
-                                                                                        // setsearchresultdata();
                                                                                     }
                                                                                     else {
                                                                                         currentpagechange(currentpage + 1);
-                                                                                        // setcurrentpage(currentpage + 1);
-                                                                                        // setsearchresultdata();
                                                                                     }
                                                                                 }}>
 
@@ -1219,6 +1202,16 @@ const PropertySearch = () => {
 
                                                                         &nbsp;Results</p>
                                                                 </div>
+
+
+
+
+
+
+
+
+
+
 
                                                             :
                                                             lastpage == undefined || lastpage == 0 || lastpage == '' || totalcount < 26 ? null :
