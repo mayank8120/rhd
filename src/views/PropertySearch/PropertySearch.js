@@ -22,10 +22,11 @@ import MySelect from "./MySelect.js";
 import { capitalise, isItCityVISE, isObjectEmpty } from '../../containers/functions';
 import { useDispatch, useSelector } from 'react-redux';
 import { func } from 'prop-types';
-import { Link, useLocation, useParams } from 'react-router-dom';
+import { Link, useHistory, useLocation, useParams } from 'react-router-dom';
 import { Form } from 'react-bootstrap';
 import { changeMapStateAction, getPropListAccordingToCityAndState, getPropListAccordingToMap } from '../../actions';
 import { amenitieslist, apt_type, numberofbeds, numberofbaths } from '../../constants/arraysLists';
+import CityWiseList from './CityWiseList';
 
 
 
@@ -64,6 +65,7 @@ const PropertySearch = () => {
 
 
 
+    let history = useHistory();
 
 
     const [typeofdata, settypeofdata] = useState();
@@ -109,6 +111,11 @@ const PropertySearch = () => {
     }, [parameters]);
 
 
+    function changePaginationSimpleData(num) {
+        if ((city !== null || city !== undefined) && (statename !== null || statename !== undefined) && areNonQuestionParametersPresent == true && areQuestionParametersPresent == false) {
+            history.push(`/propertySearch/${city}/${statename}/${num}`);
+        }
+    }
 
 
 
@@ -255,6 +262,7 @@ const PropertySearch = () => {
 
     function currentpagechange(num) {
         setcurrentpage(num);
+        changePaginationSimpleData(num);
         window.scrollTo(0, 0);
     }
 
@@ -272,7 +280,7 @@ const PropertySearch = () => {
     else {
         tagarray = [
             <li className={`${currentpage == fourpage - 3 ? "active paginationNum" : "paginationNum"}`} onClick={() => {
-                currentpagechange(fourpage - 3)
+                currentpagechange(fourpage - 3);
                 setsearchresultdata();
             }} >{fourpage - 3}</li>
             ,
@@ -803,9 +811,7 @@ const PropertySearch = () => {
 
     useEffect(() => {
 
-        if (mapchange == false) {
-
-        } else if (mapchange == true) {
+        if (mapchange == true) {
             if (lastpage == 1) {
                 sethead(0);
                 settail(totalcount);
@@ -823,11 +829,11 @@ const PropertySearch = () => {
 
 
 
-    }, [currentpage, propResult, searchApiUrl, mapchange]);
+    }, [currentpage, mapchange]);
 
 
     useEffect(() => {
-        // console.log(head, "HEAD", tail, "TAIL");
+        console.log(head, "HEAD", tail, "TAIL");
     }, [head, tail])
 
 
@@ -857,7 +863,8 @@ const PropertySearch = () => {
                                         typeofdata === "CITY" ?
                                             <>
                                                 {/* {console.log(searchresultdata)} */}
-                                                <div class="listingSection adjustment1 mapListingSection">
+                                                <CityWiseList searchresultdata={searchresultdata} />
+                                                {/* <div class="listingSection adjustment1 mapListingSection">
                                                     <div class="topTitleMapping">
                                                         <h2>Zoom in on the map to see more</h2>
                                                         <p class="mb-0">Or, choose a city below to see listings that match your search.</p>
@@ -900,7 +907,7 @@ const PropertySearch = () => {
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> */}
                                             </>
                                             :
                                             <>
@@ -1073,12 +1080,12 @@ const PropertySearch = () => {
                                                                                 <li className="paginationNum arrowRight" onClick={() => {
                                                                                     if (currentpage <= 4) {
                                                                                         currentpagechange(currentpage - 1);
-                                                                                        setsearchresultdata();
+                                                                                        // setsearchresultdata();
                                                                                     }
                                                                                     else {
                                                                                         setfourpage(currentpage - 1);
                                                                                         currentpagechange(currentpage - 1);
-                                                                                        setsearchresultdata();
+                                                                                        // setsearchresultdata();
                                                                                     }
                                                                                 }}>
                                                                                     <img src={require('../../assets/img/checvronpl.png').default} />
@@ -1105,25 +1112,25 @@ const PropertySearch = () => {
                                                                                             <li className={`${currentpage == fourpage - 3 ? "active paginationNum" : "paginationNum"}`} onClick={() => {
                                                                                                 currentpagechange(fourpage - 3);
                                                                                                 // setcurrentpage(fourpage - 3)
-                                                                                                setsearchresultdata();
+                                                                                                // setsearchresultdata();
                                                                                             }} >{fourpage - 3}</li>
 
                                                                                             <li className={`${currentpage == (fourpage - 2) ? "active paginationNum" : "paginationNum"}`} onClick={() => {
                                                                                                 currentpagechange(fourpage - 2);
                                                                                                 // setcurrentpage(fourpage - 2)
-                                                                                                setsearchresultdata();
+                                                                                                // setsearchresultdata();
                                                                                             }}>{fourpage - 2}</li>
 
                                                                                             <li className={`${currentpage == fourpage - 1 ? "active paginationNum" : "paginationNum"}`} onClick={() => {
                                                                                                 currentpagechange(fourpage - 1);
                                                                                                 // setcurrentpage(fourpage - 1)
-                                                                                                setsearchresultdata();
+                                                                                                // setsearchresultdata();
                                                                                             }}>{fourpage - 1}</li>
 
                                                                                             <li className={`${currentpage == fourpage ? "active paginationNum" : "paginationNum"}`} onClick={() => {
                                                                                                 currentpagechange(fourpage);
                                                                                                 // setcurrentpage(fourpage)
-                                                                                                setsearchresultdata();
+                                                                                                // setsearchresultdata();
 
 
                                                                                             }}>{fourpage}</li>
@@ -1191,7 +1198,6 @@ const PropertySearch = () => {
                                                                                     <img src={require('../../assets/img/checvronpr.png').default} />
                                                                                 </li>
                                                                         }
-
 
                                                                     </ul>
                                                                     <p className="mb-0 fontSize14 font-weight400 text-center mt-1 secondaryColor">Showing&nbsp;
@@ -1407,7 +1413,7 @@ const PropertySearch = () => {
                                                         type="checkbox"
                                                         defaultChecked={mapchange}
                                                         onChange={() => { dispatch(changeMapStateAction()); }}
-                                                    />  <span className="ml-2">Search as I move the Map map area</span>
+                                                    />  <span className="ml-2">Search as I move the Map</span>
 
 
                                                 </div>

@@ -5,7 +5,7 @@ const CityWiseList = ({ searchresultdata }) => {
     return (
         <div class="listingSection adjustment1 mapListingSection">
             <div class="topTitleMapping">
-                <h2>Zoom in on the map to see more</h2>
+                <h2>Zoom in on the map to see more sdfsdf</h2>
                 <p class="mb-0">Or, choose a city below to see listings that match your search.</p>
             </div>
 
