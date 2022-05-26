@@ -79,7 +79,7 @@ const PropertyDetailPage = ({ post }) => {
 
     function colorChange(item) {
 
-        if (toggleHeart(item) == true) {
+        if (toggleHeart(item) === true) {
             setcolorCHangeheart(true);
         } else {
             setcolorCHangeheart(false);
@@ -535,7 +535,7 @@ const PropertyDetailPage = ({ post }) => {
             .then(response => response.json())
             .then(result => {
                 console.log(result);
-                if (result.error == false) {
+                if (result.error === false) {
                     toggleModalQualify();
                     toggleModalThankYou();
                 }
@@ -1044,7 +1044,7 @@ const PropertyDetailPage = ({ post }) => {
                                             }
                                         >
                                             {
-                                                colorCHangeheart == true ?
+                                                colorCHangeheart === true ?
                                                     <>
                                                         <i class="fas fa-heart redcolor"></i>
                                                     </>
@@ -1618,7 +1618,7 @@ const PropertyDetailPage = ({ post }) => {
 
                                                     >
                                                         {
-                                                            colorCHangeheart == true ?
+                                                            colorCHangeheart === true ?
                                                                 <>
                                                                     <i class="fas fa-heart redcolor"></i>
                                                                 </>
@@ -3924,7 +3924,7 @@ const PropertyDetailPage = ({ post }) => {
                                             <label for="">ZIP</label>
                                             <input type="number" className="form-control"
                                                 id="" aria-describedby="emailHelp"
-                                                placeholder="Enter email"
+                                                placeholder="Enter Zip Code"
                                                 value={formData.zip} onChange={(e) => setformData({ ...formData, zip: e.target.value })} required />
                                         </div>
                                     </div>
@@ -4022,7 +4022,7 @@ const PropertyDetailPage = ({ post }) => {
                                                 onChange={captchaHandle} />
                                         </div>
                                         {
-                                            captchaValue == false
+                                            captchaValue === false
                                                 ?
                                                 <span>Please Varify Captcha</span>
                                                 :

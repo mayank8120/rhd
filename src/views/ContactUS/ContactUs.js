@@ -22,7 +22,7 @@ export const ContactUs = () => {
         // console.log(formdata);
 
 
-        if (captchaValue == true) {
+        if (captchaValue === true) {
             submitAllData();
             // console.log('12345');
             setformdata({ name: '', email: '', subject: '', formbody: '' });
@@ -103,7 +103,7 @@ export const ContactUs = () => {
 
                                 <div class="col-md-24 col-sm-24 col-lg-24">
                                     <h2 className='mt-0'>Contact Us</h2>
-                                    {submission == true ?
+                                    {submission === true ?
 
                                         <div class="flash-success">
                                             Thank you for contacting us. We will respond to you as soon as possible.
@@ -128,7 +128,7 @@ export const ContactUs = () => {
                                     }
                                 </div>
                             </div>
-                            {submission == true ? null :
+                            {submission === true ? null :
                                 <div class="form">
                                     <div class="row">
                                         <div class="col-md-12 col-xm-16 col-xs-24 col-lg-12">
@@ -183,7 +183,7 @@ export const ContactUs = () => {
                                                                         onChange={captchaHandle} />
                                                                 </div>
                                                                 {
-                                                                    captchaValue == false
+                                                                    captchaValue === false
                                                                         ?
                                                                         <span style={{ color: 'red' }}>Please Verify Captcha</span>
                                                                         :

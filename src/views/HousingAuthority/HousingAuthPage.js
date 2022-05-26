@@ -63,7 +63,7 @@ const HousingAuthPage = () => {
     const [loadmore, setloadmore] = useState(false);
 
     const toggleshow = () => {
-        if (showdropdown == false) {
+        if (showdropdown === false) {
             setshowdropdown(true)
         } else {
             setshowdropdown(false)
@@ -200,7 +200,7 @@ const HousingAuthPage = () => {
     useEffect(() => {
         const result = axios.post(`http://thomasthecat.rentalhousingdeals.com/apis/v1/api/v1/dropdown-search?keyword=${searchterm}`)
             .then(res => {
-                if (res.data[0].error == true) {
+                if (res.data[0].error === true) {
                     setdropdowndata(res.data[0].message)
                 } else {
                     setdropdowndata(res.data[0].data);
@@ -382,7 +382,7 @@ const HousingAuthPage = () => {
                                             housingauthdata.length !== 0
                                                 ?
                                                 (
-                                                    loadmore == false
+                                                    loadmore === false
                                                         ?
                                                         housingauthdata.slice(0, 5).map((data) => {
                                                             return (
@@ -414,7 +414,7 @@ const HousingAuthPage = () => {
 
                                 <div>
                                     {
-                                        loadmore == false ?
+                                        loadmore === false ?
                                             <span className="loadMore transition" onClick={() => { setloadmore(true) }}>Load More</span>
                                             :
                                             <span className="loadMore transition" onClick={() => { setloadmore(false) }}>Load Less</span>

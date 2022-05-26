@@ -66,7 +66,7 @@ const AffordabilityCal = () => {
                                                     <span className="purpleText font-weight700" onClick={() => { setwhyclick(true) }}>Why?</span>
 
                                                     {
-                                                        whyclick == true ?
+                                                        whyclick === true ?
                                                             <>
                                                                 <p>According to HUD, spending more than 30 percent of your income on housing makes it more difficult to afford necessities such as food, transportation and health care. To live in a budget with higher housing costs, you will need to cut unnecessary expenses.</p>
 

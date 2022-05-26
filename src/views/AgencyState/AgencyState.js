@@ -257,7 +257,7 @@ const AgencyState = () => {
 
 
                                                     {
-                                                        // paginationopen == true ?
+                                                        // paginationopen === true ?
                                                         //     paginationarray.map((data) => (
                                                         //         currentpage == data ?
                                                         //             <li className="active paginationNum" onClick={() => {

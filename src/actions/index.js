@@ -94,7 +94,7 @@ export const getPropListAccordingToMap = (minlat, maxlat, minlng, maxlng, isItCi
     };
 
 
-    if (isItCityVISE == true) {
+    if (isItCityVISE === true) {
 
 
         try {

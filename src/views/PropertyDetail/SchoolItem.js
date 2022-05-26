@@ -77,7 +77,7 @@ const SchoolItem = ({ schoolnearby }) => {
                                 </thead>
                                 <tbody>
                                     {
-                                        loadmore == false ?
+                                        loadmore === false ?
                                             (
                                                 five.map((data) => (
 
@@ -155,7 +155,7 @@ const SchoolItem = ({ schoolnearby }) => {
                         <div className="pupleLineBtn responsive15 itemWebsite">
                             <button href="" className="w-100 transition font-weight500" onClick={handleclick}>Load
 
-                                {loadmore == false ? ' More' : ' Less'}
+                                {loadmore === false ? ' More' : ' Less'}
                             </button>
                         </div>
 

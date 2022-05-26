@@ -9,7 +9,7 @@ const SearchSection = () => {
     const [searchterm, setsearchterm] = useState("");
     const [showdropdown, setshowdropdown] = useState(false);
     const toggleshow = () => {
-        if (showdropdown == false) {
+        if (showdropdown === false) {
             setshowdropdown(true)
         } else {
             setshowdropdown(false)
@@ -62,7 +62,7 @@ const SearchSection = () => {
                                 console.log(searchterm);
                                 const result = axios.post(`http://thomasthecat.rentalhousingdeals.com/apis/v1/api/v1/dropdown-search?keyword=${searchterm}`)
                                     .then(res => {
-                                        if (res.data[0].error == true) {
+                                        if (res.data[0].error === true) {
                                             setdropdowndata(res.data[0].message)
                                         } else {
                                             setdropdowndata(res.data[0].data);

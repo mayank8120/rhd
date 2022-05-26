@@ -21,7 +21,7 @@ import makeAnimated from "react-select/animated";
 import MySelect from "./MySelect.js";
 import { capitalise, isItCityVISE, isObjectEmpty } from '../../containers/functions';
 import { useDispatch, useSelector } from 'react-redux';
-import { func } from 'prop-types';
+import { func, number } from 'prop-types';
 import { Link, useHistory, useLocation, useParams } from 'react-router-dom';
 import { Form } from 'react-bootstrap';
 import { changeMapStateAction, getPropListAccordingToCityAndState, getPropListAccordingToMap } from '../../actions';
@@ -112,8 +112,8 @@ const PropertySearch = () => {
 
 
     function changePaginationSimpleData(num) {
-        if ((city !== null || city !== undefined) && (statename !== null || statename !== undefined) && areNonQuestionParametersPresent == true && areQuestionParametersPresent == false) {
-            history.push(`/propertySearch/${city}/${statename}/${num}`);
+        if ((city !== null || city !== undefined) && (statename !== null || statename !== undefined) && areNonQuestionParametersPresent === true && areQuestionParametersPresent === false) {
+            history.push(`/propertySearch/${city}/${statename}`);
         }
     }
 
@@ -196,8 +196,8 @@ const PropertySearch = () => {
 
     useEffect(() => {
 
-        if (areQuestionParametersPresent == true && areNonQuestionParametersPresent == false && arequestionparameterschanegd == true) {
-            if (isItCityVISE(minlng, maxlng) == true) {
+        if (areQuestionParametersPresent === true && areNonQuestionParametersPresent === false && arequestionparameterschanegd === true) {
+            if (isItCityVISE(minlng, maxlng) === true) {
                 setsearchresultdata();
                 settypeofdata("CITY");
                 dispatch(getPropListAccordingToMap(minlat, maxlat, minlng, maxlng, true));
@@ -262,7 +262,7 @@ const PropertySearch = () => {
 
     function currentpagechange(num) {
         setcurrentpage(num);
-        changePaginationSimpleData(num);
+        // changePaginationSimpleData(num);
         window.scrollTo(0, 0);
     }
 
@@ -678,7 +678,7 @@ const PropertySearch = () => {
 
         } else {
 
-            if (areNonQuestionParametersPresent == true && mapchange == false) {
+            if (areNonQuestionParametersPresent === true && mapchange === false) {
 
                 // console.log(city, statename);
                 if (city == null || statename == null || city == undefined || statename == undefined) {
@@ -700,7 +700,7 @@ const PropertySearch = () => {
 
 
 
-        //         if (mapchange == false) {
+        //         if (mapchange === false) {
 
         //             setsearchresultdata([]);
 
@@ -763,12 +763,12 @@ const PropertySearch = () => {
         //             }
 
         //         }
-        //         else if (mapchange == true) {
+        //         else if (mapchange === true) {
         //             setsearchresultdata([]);
 
         //             setsearchresultdata(propResult.data);
 
-        //             if (propResult.hasOwnProperty('count') == false) {
+        //             if (propResult.hasOwnProperty('count') === false) {
         //                 settypeofdata("CITY");
         //             } else {
         //                 settypeofdata();
@@ -788,18 +788,23 @@ const PropertySearch = () => {
     }, [searchApiUrl]);
 
 
+    let findLastPage = (count) => {
+        return parseInt(count / 25) + (count % 25 === 0 ? 0 : 1);
+    }
+
+
     useEffect(() => {
-        if (propResult.error == true) {
+        if (propResult.error === true) {
             setsearchresultdata('No Record Found');
             settotalcount(0);
-        } else if (propResult.error == false) {
+        } else if (propResult.error === false) {
             setsearchresultdata(propResult.data);
             settotalcount(propResult.count);
-            setlastpage((parseInt((propResult.count) / 25, 10) + 1));
+            setlastpage(findLastPage(propResult.count));
         }
 
 
-        if (mapchange == true) {
+        if (mapchange === true) {
             currentpagechange(1);
             setfourpage(4);
         }
@@ -814,7 +819,7 @@ const PropertySearch = () => {
 
     useEffect(() => {
 
-        if (mapchange == true) {
+        if (mapchange === true) {
             if (lastpage == 1) {
                 sethead(0);
                 settail(totalcount);
@@ -1020,7 +1025,7 @@ const PropertySearch = () => {
 
                                                                             (
 
-                                                                                mapchange == true ?
+                                                                                mapchange === true ?
 
 
 
@@ -1039,7 +1044,7 @@ const PropertySearch = () => {
                                                                                     :
 
                                                                                     (
-                                                                                        mapchange == false ?
+                                                                                        mapchange === false ?
                                                                                             searchresultdata.map(
                                                                                                 (post) => (
                                                                                                     <li className="listingBlock2 responsive-15"
@@ -1068,7 +1073,7 @@ const PropertySearch = () => {
 
 
                                                     {
-                                                        mapchange == true ?
+                                                        mapchange === true ?
 
                                                             lastpage == undefined || lastpage == 0 || lastpage == '' || totalcount < 26 ? null :
                                                                 <div className="pagination">
@@ -1385,7 +1390,7 @@ const PropertySearch = () => {
                                             {
 
 
-                                                // (searchresultdata !== null && searchresultdata.length !== 0 && searchresultdata !== undefined) && mapchange == false ?
+                                                // (searchresultdata !== null && searchresultdata.length !== 0 && searchresultdata !== undefined) && mapchange === false ?
                                                 //     <MultiplePointMap className="map"
                                                 //         searchresultdata={searchresultdata}
                                                 //     />

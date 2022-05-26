@@ -116,7 +116,7 @@ export const AgencyStateListItem = ({ data }) => {
         e.preventDefault();
 
         // console.log(formdata);
-        if (captchaValue == true) {
+        if (captchaValue === true) {
             submitAllData();
             fetchAfterCheckPropList();
             setformdata({ property_id: data.id, first_name: '', last_name: '', phone: '', email_address: '', move_date: '', message: `${formdata.message}` });
@@ -279,7 +279,7 @@ export const AgencyStateListItem = ({ data }) => {
     function colorChange(item) {
 
         if (toggleHeartHA
-            (item) == true) {
+            (item) === true) {
             setcolorCHangeheart(true);
         } else {
             setcolorCHangeheart(false);
@@ -445,7 +445,7 @@ export const AgencyStateListItem = ({ data }) => {
                                                         >
 
                                                             {
-                                                                colorCHangeheart == true ?
+                                                                colorCHangeheart === true ?
                                                                     <>
                                                                         <i class="fas fa-heart redcolor"></i>
                                                                     </>
@@ -790,7 +790,7 @@ export const AgencyStateListItem = ({ data }) => {
                                                                                 onChange={captchaHandle}
                                                                             />
                                                                         </div>
-                                                                        {captchaValue == false ? (
+                                                                        {captchaValue === false ? (
                                                                             <span style={{ color: "red" }}>
                                                                                 Please Verify Captcha
                                                                             </span>

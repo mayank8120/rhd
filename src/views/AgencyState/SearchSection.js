@@ -27,7 +27,7 @@ const SearchSection = ({ latlngdata }) => {
 
 
     const toggleshow = () => {
-        if (showdropdown == false) {
+        if (showdropdown === false) {
             setshowdropdown(true)
         } else {
             setshowdropdown(false)
@@ -69,7 +69,7 @@ const SearchSection = ({ latlngdata }) => {
     useEffect(() => {
         const result = axios.post(`http://thomasthecat.rentalhousingdeals.com/apis/v1/api/v1/dropdown-search?keyword=${searchterm}`)
             .then(res => {
-                if (res.data[0].error == true) {
+                if (res.data[0].error === true) {
                     setdropdowndata(res.data[0].message);
                 } else {
                     setdropdowndata(res.data[0].data);
@@ -106,7 +106,7 @@ const SearchSection = ({ latlngdata }) => {
                                 console.log(searchterm);
                                 const result = axios.post(`http://thomasthecat.rentalhousingdeals.com/apis/v1/api/v1/dropdown-search?keyword=${searchterm}`)
                                     .then(res => {
-                                        if (res.data[0].error == true) {
+                                        if (res.data[0].error === true) {
                                             setdropdowndata(res.data[0].message)
                                         } else {
                                             setdropdowndata(res.data[0].data);

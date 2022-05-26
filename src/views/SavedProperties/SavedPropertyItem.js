@@ -46,7 +46,7 @@ export const SavedPropertyItem = ({ post }) => {
     const [colorCHangeheart, setcolorCHangeheart] = useState();
 
     function colorChange(item) {
-        if (toggleHeart(item) == true) {
+        if (toggleHeart(item) === true) {
             setcolorCHangeheart(true);
         } else {
             setcolorCHangeheart(false);
@@ -224,7 +224,7 @@ export const SavedPropertyItem = ({ post }) => {
                     }
                     }>
                     {
-                        colorCHangeheart == true ?
+                        colorCHangeheart === true ?
                             <><span>
                                 <i class="fas fa-heart redcolor"></i>
                             </span>

@@ -106,7 +106,7 @@ const FeaturedRentalsInCity = ({ latlngdata }) => {
                                                             nearbycitiesdata == null || nearbycitiesdata == undefined ?
                                                                 null :
                                                                 (
-                                                                    loadmore == true
+                                                                    loadmore === true
                                                                         ?
 
 
@@ -142,7 +142,7 @@ const FeaturedRentalsInCity = ({ latlngdata }) => {
                                                             setloadmore(!loadmore);
                                                         }} >
                                                         {
-                                                            loadmore == true ?
+                                                            loadmore === true ?
                                                                 'Load Less'
                                                                 :
                                                                 'Load More'
@@ -168,7 +168,7 @@ const FeaturedRentalsInCity = ({ latlngdata }) => {
                                                             nearbycitiesdata == null || nearbycitiesdata == undefined ?
                                                                 null :
                                                                 (
-                                                                    loadmore == true
+                                                                    loadmore === true
                                                                         ?
                                                                         (
                                                                             nearbycitiesdata.map((data) => (
@@ -203,7 +203,7 @@ const FeaturedRentalsInCity = ({ latlngdata }) => {
                                                             setloadmore(!loadmore);
                                                         }} >
                                                         {
-                                                            loadmore == true ?
+                                                            loadmore === true ?
                                                                 'Load Less'
                                                                 :
                                                                 'Load More'

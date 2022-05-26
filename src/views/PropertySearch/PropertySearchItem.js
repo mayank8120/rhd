@@ -23,7 +23,7 @@ export const PropertySearchItem = ({ post }) => {
     const [colorCHangeheart, setcolorCHangeheart] = useState();
 
     function colorChange(item) {
-        if (toggleHeart(item) == true) {
+        if (toggleHeart(item) === true) {
             setcolorCHangeheart(true);
         } else {
             setcolorCHangeheart(false);
@@ -319,7 +319,7 @@ export const PropertySearchItem = ({ post }) => {
         fetchAfterCheckPropList();
 
 
-        if (captchaValue == true) {
+        if (captchaValue === true) {
             toggleModalAvailability();
             toggleModalSecondList();
             submitAllData();
@@ -453,7 +453,7 @@ export const PropertySearchItem = ({ post }) => {
 
 
                                                         {
-                                                            colorCHangeheart == true ?
+                                                            colorCHangeheart === true ?
                                                                 <><span>
                                                                     <i class="fas fa-heart redcolor"></i>
                                                                 </span>
@@ -1217,7 +1217,7 @@ export const PropertySearchItem = ({ post }) => {
                                                                             onChange={captchaHandle}
                                                                         />
                                                                     </div>
-                                                                    {captchaValue == false ? (
+                                                                    {captchaValue === false ? (
                                                                         <span style={{ color: "red" }}>
                                                                             Please Verify Captcha
                                                                         </span>

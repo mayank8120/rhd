@@ -162,10 +162,10 @@ const Maptile = () => {
             let maxlat = (bounds[1] > bounds[3] ? bounds[1] : bounds[3]);
             let minlng = (bounds[0] < bounds[2] ? bounds[0] : bounds[2]);
             let maxlng = (bounds[0] > bounds[2] ? bounds[0] : bounds[2]);
-            if (mapchange == true) {
+            if (mapchange === true) {
                 pushToLatLngPropertyPage(minlat, maxlat, minlng, maxlng);
 
-                // if (isItCityVISE(minlng, maxlng) == true) {
+                // if (isItCityVISE(minlng, maxlng) === true) {
                 //     dispatch(getPropListAccordingToMap(minlat, maxlat, minlng, maxlng, true));
                 // } else {
                 //     dispatch(getPropListAccordingToMap(minlat, maxlat, minlng, maxlng, false));
@@ -213,7 +213,7 @@ const Maptile = () => {
         const fetchData = async () => {
             setsearchresultdata([]);
             setsearchresultdata(propResult.data);
-            if (propResult.hasOwnProperty('count') == false) {
+            if (propResult.hasOwnProperty('count') === false) {
                 settypeofdata("CITY");
             } else {
                 settypeofdata();
@@ -421,7 +421,7 @@ const Maptile = () => {
                     clusterinside.forEach(element => {
                         if (element.properties.cluster === true) {
                             if (element.properties.cluster_id) {
-                                if ((checkCluster(element.properties.cluster_id)) == true) {
+                                if ((checkCluster(element.properties.cluster_id)) === true) {
                                     exist = true;
                                     // return true;
                                 }
@@ -429,7 +429,7 @@ const Maptile = () => {
                         }
                         // if (element.properties.cluster === false) 
                         else {
-                            if (checkMarker(element) == true) {
+                            if (checkMarker(element) === true) {
                                 exist = true;
                                 // return true;
                             }
@@ -458,14 +458,14 @@ const Maptile = () => {
 
     //             if (element.properties.cluster_id) {
 
-    //                 if ((checkCluster(element.properties.cluster_id)) == true) {
+    //                 if ((checkCluster(element.properties.cluster_id)) === true) {
     //                     exist = true;
     //                 }
     //             }
 
     //         }
     //         if (element.properties.cluster === false) {
-    //             if (checkMarker(element) == true) {
+    //             if (checkMarker(element) === true) {
     //                 exist = true;
     //             }
     //         }
@@ -617,7 +617,7 @@ const Maptile = () => {
                                         key={`cluster-${cluster.id}`}
                                         position={[latitude, longitude]}
                                         icon={
-                                            checkClusterWithNoIDerror(cluster.id) == false ?
+                                            checkClusterWithNoIDerror(cluster.id) === false ?
                                                 L.divIcon({
                                                     html: `
                                                     <div class="cluster-marker" style="width: auto; height:auto; background:#9d56f7;display:flex;align-items:center;justify-content:flex-start;min-width:120px;border-radius:4px;">
@@ -638,7 +638,7 @@ const Maptile = () => {
                                         }
                                         eventHandlers={{
                                             click: () => {
-                                                if (checkClusterWithNoIDerror(cluster.id) == false) {
+                                                if (checkClusterWithNoIDerror(cluster.id) === false) {
                                                 } else {
                                                     const expansionZoom = Math.min(
                                                         supercluster.getClusterExpansionZoom(cluster.id),
@@ -752,13 +752,13 @@ const Maptile = () => {
                                         key={`cluster-${cluster.id}`}
                                         position={[latitude, longitude]}
                                         icon={
-                                            checkClusterWithNoIDerror(cluster.id) == false ?
+                                            checkClusterWithNoIDerror(cluster.id) === false ?
                                                 L.divIcon({
                                                     html: `<div class="cluster-marker" style="width: ${10 + (pointCount / points.length) * 40}px; height: ${10 + (pointCount / points.length) * 40}px; border:2px solid #ffffff; background:#9d56f7">${pointCount > 9 ? pointCount : pointCount}</div>`,
                                                 })
                                                 :
                                                 (
-                                                    checkCluster(cluster.id) == true
+                                                    checkCluster(cluster.id) === true
                                                         ?
                                                         L.divIcon({
                                                             html: `<div class="cluster-marker" style="width: ${10 + (pointCount / points.length) * 40}px; height: ${10 + (pointCount / points.length) * 40}px; border:2px solid #ffffff; background:#1bc47d "> ${pointCount > 9 ? pointCount : pointCount} </div>`
@@ -771,7 +771,7 @@ const Maptile = () => {
                                         }
                                         eventHandlers={{
                                             click: () => {
-                                                if (checkClusterWithNoIDerror(cluster.id) == false) {
+                                                if (checkClusterWithNoIDerror(cluster.id) === false) {
                                                 } else {
                                                     const expansionZoom = Math.min(
                                                         supercluster.getClusterExpansionZoom(cluster.id),

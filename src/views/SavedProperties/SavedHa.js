@@ -71,7 +71,7 @@ const SavedHa = ({ data }) => {
     function colorChange(item) {
 
         if (toggleHeartHA
-            (item) == true) {
+            (item) === true) {
             setcolorCHangeheart(true);
         } else {
             setcolorCHangeheart(false);
@@ -158,7 +158,7 @@ const SavedHa = ({ data }) => {
                                                             >
 
                                                                 {
-                                                                    colorCHangeheart == true ?
+                                                                    colorCHangeheart === true ?
                                                                         <>
                                                                             <i class="fas fa-heart redcolor"></i>
                                                                         </>

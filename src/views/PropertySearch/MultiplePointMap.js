@@ -72,10 +72,10 @@ const MultiplePointMap = () => {
 
         } else {
 
-            if (mapchange == false) {
+            if (mapchange === false) {
 
                 let llat = +100, llng = +200, ulat = -100, ulng = -200;
-                // if (searchresultdata == true) {
+                // if (searchresultdata === true) {
                 //     console.log(searchresultdata);
                 // }
                 // console.log(searchresultdata);
@@ -128,7 +128,7 @@ const MultiplePointMap = () => {
                                 <h1>{searchresultdata}</h1>
                                 :
                                 (
-                                    mapchange == false ?
+                                    mapchange === false ?
 
                                         <>
                                             {

@@ -53,7 +53,7 @@ const CheckAvailibilityForm = ({ propid, page, setIsOpenAvailability, setIsOpenS
         // console.log(formdata);
 
 
-        if (captchaValue == true) {
+        if (captchaValue === true) {
             submitAllData();
 
             toggleModalThankYou();
@@ -285,7 +285,7 @@ const CheckAvailibilityForm = ({ propid, page, setIsOpenAvailability, setIsOpenS
 
                             </div>
                             {
-                                captchaValue == false
+                                captchaValue === false
                                     ?
                                     <span style={{ color: 'red' }}>Please Verify Captcha</span>
                                     :

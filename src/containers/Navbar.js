@@ -215,7 +215,7 @@ const Navbar = () => {
     const [showdropdown, setshowdropdown] = useState(false);
 
     const toggleshow = () => {
-        if (showdropdown == false) {
+        if (showdropdown === false) {
             setshowdropdown(true)
         } else {
             setshowdropdown(false)
@@ -239,7 +239,7 @@ const Navbar = () => {
     useEffect(() => {
         const result = axios.post(`http://thomasthecat.rentalhousingdeals.com/apis/v1/api/v1/dropdown-search?keyword=${searchterm}`)
             .then(res => {
-                if (res.data[0].error == true) {
+                if (res.data[0].error === true) {
                     setdropdowndata(res.data[0].message)
                 } else {
                     setdropdowndata(res.data[0].data);
@@ -602,7 +602,7 @@ const Navbar = () => {
 
                                                         <input type="text" className="form-control topSearch"
                                                             aria-describedby="emailHelp"
-                                                            placeholder="Enter city, State or ZIP"
+                                                            placeholder="Enter city, State or ZIP code"
                                                             value={searchterm}
                                                             onChange={
                                                                 e => {
@@ -613,10 +613,10 @@ const Navbar = () => {
 
                                                         <button type="submit"
                                                             onClick={() => {
-                                                                console.log("search button clicked");
-                                                                console.log(cityname);
-                                                                console.log(statename);
-                                                                setpathnameS("/propertySearch?city=" + cityname + "&state=" + statename);
+                                                                // console.log("search button clicked");
+                                                                // console.log(cityname);
+                                                                // console.log(statename);
+                                                                setpathnameS(`/propertySearch/${cityname}/${statename}`);
                                                             }}>
                                                             <img type="submit" src={require('../assets/img/searchBanner.svg').default} />
                                                         </button>
@@ -681,7 +681,7 @@ const Navbar = () => {
                                                             dropdowndata == 'No Record Found' ?
                                                                 <>
                                                                     <p>
-                                                                        <a className='secondaryColor w-100 d-block' href={`/propertySearch?city=${city == undefined ? null : city}&state=${statenames == undefined ? null : statenames}`}
+                                                                        <a className='secondaryColor w-100 d-block' href={`/propertySearch/${city == undefined ? null : city}/${statenames == undefined ? null : statenames}`}
                                                                             onClick={() => {
                                                                                 setdropdowndata();
                                                                                 setsearchterm('');
@@ -693,7 +693,6 @@ const Navbar = () => {
                                                                     </p>
                                                                     <p>
                                                                         <Link className='secondaryColor w-100 d-block' to={null}>
-
                                                                             No Cities Found with {searchterm} name
                                                                         </Link>
 
@@ -704,7 +703,7 @@ const Navbar = () => {
                                                                     {
                                                                         <>
                                                                             <p>
-                                                                                <a className='secondaryColor w-100 d-block' href={`/propertySearch?city=${city == undefined ? null : city}&state=${statenames == undefined ? null : statenames}`}
+                                                                                <a className='secondaryColor w-100 d-block' href={`/propertySearch/${city == undefined ? null : city}/${statenames == undefined ? null : statenames}`}
                                                                                     onClick={() => {
                                                                                         setdropdowndata();
                                                                                         setsearchterm(() => '');
@@ -731,7 +730,7 @@ const Navbar = () => {
                                                                                                 val.property_state == null || val.property_state == undefined ?
                                                                                                     `${val.property_city}, ${val.property_state}`
                                                                                                     :
-                                                                                                    <a className='secondaryColor w-100 d-block' href={`/propertySearch?city=${val.property_city}&state=${val.property_state}`}
+                                                                                                    <a className='secondaryColor w-100 d-block' href={`/propertySearch/${val.property_city}/${val.property_state}`}
                                                                                                         onClick={() => {
                                                                                                             setdropdowndata();
                                                                                                             setsearchterm(() => '');

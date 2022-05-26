@@ -12,7 +12,7 @@ const PropertyNearbyItem = ({ data }) => {
     const [colorCHangeheart, setcolorCHangeheart] = useState();
 
     function colorChange(item) {
-        if (toggleHeart(item) == true) {
+        if (toggleHeart(item) === true) {
             setcolorCHangeheart(true);
         } else {
             setcolorCHangeheart(false);
@@ -62,7 +62,7 @@ const PropertyNearbyItem = ({ data }) => {
                 >
 
                     {
-                        colorCHangeheart == true ?
+                        colorCHangeheart === true ?
                             <>
                                 <i class="fas fa-heart redcolor"></i>
                             </>

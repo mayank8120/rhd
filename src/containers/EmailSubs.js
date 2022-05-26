@@ -472,9 +472,9 @@ export const EmailSubs = () => {
                 .then(res => {
                     console.log(res);
                     setdoesemailexist(res.data.result);
-                    if (res.data.result == true) {
+                    if (res.data.result === true) {
                         toggleModalAlreadySubs();
-                    } else if (res.data.result == false) {
+                    } else if (res.data.result === false) {
                         toggleModal();
                     }
                 }).catch(error => {
@@ -533,7 +533,7 @@ export const EmailSubs = () => {
         e.preventDefault();
         if (cityAndStatesarray.length == 0) {
             console.log('empty state list');
-        } else if (cityAndStatesarray.length > 0 && inputEmail.firstname !== '' && inputEmail.lastname !== '' && inputEmail.zip !== '' && captchaValue == true) {
+        } else if (cityAndStatesarray.length > 0 && inputEmail.firstname !== '' && inputEmail.lastname !== '' && inputEmail.zip !== '' && captchaValue === true) {
             submitMainForm();
         } else {
             console.log('some exception by pass condtion');

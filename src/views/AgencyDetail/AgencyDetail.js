@@ -35,7 +35,7 @@ const AgencyDetail = () => {
     function colorChange(item) {
 
 
-        if (toggleHeartHA(item) == true) {
+        if (toggleHeartHA(item) === true) {
             setcolorCHangeheart(true);
         } else {
             setcolorCHangeheart(false);
@@ -358,7 +358,7 @@ const AgencyDetail = () => {
         e.preventDefault();
 
 
-        if (captchaValue == true) {
+        if (captchaValue === true) {
             // console.log(checkAvailabilityId);
             console.log(formdata);
             toggleModalThankYou();
@@ -617,7 +617,7 @@ const AgencyDetail = () => {
                                                         >
 
                                                             {
-                                                                colorCHangeheart == true ?
+                                                                colorCHangeheart === true ?
                                                                     <>
                                                                         <i class="fas fa-heart redcolor"></i>
                                                                     </>
@@ -682,7 +682,7 @@ const AgencyDetail = () => {
                                                     <>
                                                         <p className="lineRespnsiveIndent mb-0">
                                                             {
-                                                                aboutreadmore == false ?
+                                                                aboutreadmore === false ?
                                                                     `${agendatedetail.description.replace(/<[^>]*>?/gm, '').replace(/&nbsp;/g, ' ').slice(0, 185)}...`
                                                                     :
                                                                     agendatedetail.description.replace(/<[^>]*>?/gm, '').replace(/&nbsp;/g, ' ')
@@ -700,7 +700,7 @@ const AgencyDetail = () => {
                                                                         setaboutreadmore(!aboutreadmore);
                                                                     }}>
                                                                     {
-                                                                        aboutreadmore == false ?
+                                                                        aboutreadmore === false ?
                                                                             'Read More'
                                                                             :
                                                                             'Read less'
@@ -2548,7 +2548,7 @@ const AgencyDetail = () => {
                                                                             onChange={captchaHandle}
                                                                         />
                                                                     </div>
-                                                                    {captchaValue == false ? (
+                                                                    {captchaValue === false ? (
                                                                         <span style={{ color: "red" }}>
                                                                             Please Verify Captcha
                                                                         </span>
@@ -3097,7 +3097,7 @@ const AgencyDetail = () => {
                                                         onChange={captchaHandle} />
                                                 </div>
                                                 {
-                                                    captchaValue == false
+                                                    captchaValue === false
                                                         ?
                                                         <span>Please Varify Captcha</span>
                                                         :
