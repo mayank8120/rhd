@@ -10,7 +10,12 @@ const AffordableHousingByRegions = ({ page }) => {
             <div className="container">
                 <div className="sectionTitle">
                     <h2 className="font-weight700 colorBlue">
-                        Affordable Housing by Regions
+                        {
+                            page === 2 ?
+                                "Affordable Senior Housing by Regions"
+                                :
+                                "Affordable Housing by Regions"
+                        }
                     </h2>
                 </div>
                 <div className="row marginTop2">

@@ -5,6 +5,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import axios from 'axios';
 import Starratingstatic from '../../containers/Starratingstatic';
 import { addOrRemoveHA, getAllHA, toggleHeart, toggleHeartHA } from '../../containers/functions';
+import { sendMUltipleRequestes } from '../../api/api';
 
 
 export const AgencyStateListItem = ({ data }) => {
@@ -116,10 +117,10 @@ export const AgencyStateListItem = ({ data }) => {
         e.preventDefault();
 
         // console.log(formdata);
-        if (captchaValue === true) {
+        if (captchaValue === true ) {
             submitAllData();
             fetchAfterCheckPropList();
-            setformdata({ property_id: data.id, first_name: '', last_name: '', phone: '', email_address: '', move_date: '', message: `${formdata.message}` });
+            // setformdata({ property_id: data.id, first_name: '', last_name: '', phone: '', email_address: '', move_date: '', message: `${formdata.message}` });
         }
     };
 
@@ -134,8 +135,6 @@ export const AgencyStateListItem = ({ data }) => {
             let year = newdate.getFullYear();
 
             return `${day}/${month}/${year}`
-
-            // return date.replace(/-/g, '/');
         }
 
 
@@ -193,7 +192,7 @@ export const AgencyStateListItem = ({ data }) => {
                     toggleModalAvailability();
                     toggleModalThankYou();
                 } else {
-                    if (res.data.data == null || res.data.data.length == 0 || res.data.data == '' || res.data.data == undefined) {
+                    if (res.data.data == null || res.data.data == '' || res.data.data == undefined || res.data.data.length == 0) {
                         toggleModalAvailability();
                         toggleModalThankYou();
                     }
@@ -253,7 +252,7 @@ export const AgencyStateListItem = ({ data }) => {
             },
             0
         );
-
+        // console.log(arrpets);
         setpropListArray(arrpets);
     };
 
@@ -263,13 +262,79 @@ export const AgencyStateListItem = ({ data }) => {
 
     }
 
+    let formatDate = (date) => {
+
+        let newdate = new Date(date);
+        let day = newdate.getDate();
+        let month = newdate.getMonth() + 1;
+        let year = newdate.getFullYear();
+
+        return `${day}/${month}/${year}`
+    }
+
 
     let sendMultipleProps = () => {
         if (propListArray.length !== 0) {
             toggleModalSecondList();
             toggleModalThankYou();
+
+
+
+
+            propListArray.map(
+                (number) => {
+                    let data = JSON.stringify(
+                        {
+                            "property_id": parseFloat(number),
+                            "first_name": formdata.first_name,
+                            "last_name": formdata.last_name,
+                            "email_address": formdata.email_address,
+                            "phone": formdata.phone,
+                            "message": formdata.message,
+                            "move_date": formatDate(formdata.move_date)
+                        }
+                    );
+                    sendMUltipleRequestes(data);
+                }
+            )
         }
+        setformdata({ property_id: data.id, first_name: '', last_name: '', phone: '', email_address: '', move_date: '', message: `${formdata.message}` });
     }
+
+
+    // function sendMUltipleRequestes(data) {
+
+    //     console.log(data);
+
+    //     var myHeaders = new Headers();
+    //     myHeaders.append("Content-Type", "application/text");
+
+    //     // var raw = JSON.stringify({
+    //     //     "property_id": "142",
+    //     //     "first_name": "john",
+    //     //     "last_name": "doe",
+    //     //     "email_address": "vinaxeh500@zneep.com",
+    //     //     "phone": "8874565211",
+    //     //     "message": "test msg",
+    //     //     "move_date": "27/02/2022"
+    //     // });
+
+    //     var requestOptions = {
+    //         method: 'POST',
+    //         body: data,
+    //         redirect: 'follow',
+    //     };
+
+    //     fetch("http://thomasthecat.rentalhousingdeals.com/apis/v1/api/v1/checkAvailability", requestOptions)
+    //         .then(response => response.json())
+    //         .then(result => console.log(result))
+    //         .catch(error => console.log('error', error));
+
+    // }
+
+
+
+
 
 
 
@@ -420,9 +485,9 @@ export const AgencyStateListItem = ({ data }) => {
                                                 <div className="d-flex align-items-top">
                                                     <div>
                                                         <Link to={`agencyDetail?haid=${authdetail.ha_id}`}>
-                                                            <h5
+                                                            <h2
                                                                 className="mt-0 fontSize16 font-weight700 colorBlue">
-                                                                {authdetail.name}</h5>
+                                                                {authdetail.name}</h2>
                                                         </Link>
                                                         <a href="agencyDetail">
                                                             <p
@@ -784,7 +849,7 @@ export const AgencyStateListItem = ({ data }) => {
                                                                 </div>
                                                                 <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                                     <div className="form-group">
-                                                                    <div className="recaptcha_block">
+                                                                        <div className="recaptcha_block">
                                                                             <ReCAPTCHA
                                                                                 sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
                                                                                 onChange={captchaHandle}

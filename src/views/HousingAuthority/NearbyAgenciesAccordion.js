@@ -14,17 +14,18 @@ export const NearbyAgenciesAccordion = ({ data }) => {
                         <Accordion.Item eventKey="0">
                             <Accordion.Header >
                                 <div className="card-header cardHeaderBorder0" id="headingOne">
-                                    <h5 className="mb-0 d-flex align-items-center">
+                                    <h2 className="mb-0 d-flex align-items-center fontSize18">
                                         <button className="btn btn-link font-weight700 colorBlue rotate"
                                             data-toggle="collapse" data-target="#collapseOne"
                                             aria-expanded="true" aria-controls="collapseOne">
-                                            Nearby Agencies
+                                            {/* Nearby Agencies */}
+                                            Nearby Agency to Find Low Income Apartment
                                         </button>
                                         <span className="ml-auto" data-toggle="collapse" data-target="#collapseOne"
                                             aria-expanded="true" aria-controls="collapseOne">
                                             <img src={require('../../assets/img/upArrow.png').default} />
                                         </span>
-                                    </h5>
+                                    </h2>
                                 </div>
                             </Accordion.Header>
                             <Accordion.Body className='gradientBoxMain'>

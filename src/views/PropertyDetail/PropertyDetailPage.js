@@ -36,6 +36,7 @@ import { addOrRemoveProp } from '../../containers/functions';
 import { getAllProp } from '../../containers/functions';
 import FloorPlanItemMobile from './FloorPlanItemMobile';
 import { Link } from 'react-router-dom';
+import { statelist } from '../../assets/JSONs/jsons';
 
 
 const PropertyDetailPage = ({ post }) => {
@@ -180,230 +181,6 @@ const PropertyDetailPage = ({ post }) => {
 
 
     let statelisturl = `http://thomasthecat.rentalhousingdeals.com/apis/v1/api/v1/selectallState`
-
-
-    // const [statelist, setstatelist] = useState(["Select State"]);
-
-
-
-    const statelist = [
-        {
-            state_name: "",
-            state_abbreviation: "Select state"
-        },
-        {
-            state_name: "Alaska",
-            state_abbreviation: "AK"
-        },
-        {
-            state_name: "Alabama",
-            state_abbreviation: "AL"
-        },
-        {
-            state_name: "Arkansas",
-            state_abbreviation: "AR"
-        },
-        {
-            state_name: "Arizona",
-            state_abbreviation: "AZ"
-        },
-        {
-            state_name: "California",
-            state_abbreviation: "CA"
-        },
-        {
-            state_name: "Colorado",
-            state_abbreviation: "CO"
-        },
-        {
-            state_name: "Connecticut",
-            state_abbreviation: "CT"
-        },
-        {
-            state_name: "District of Columbia",
-            state_abbreviation: "DC"
-        },
-        {
-            state_name: "Delaware",
-            state_abbreviation: "DE"
-        },
-        {
-            state_name: "Florida",
-            state_abbreviation: "FL"
-        },
-        {
-            state_name: "Georgia",
-            state_abbreviation: "GA"
-        },
-        {
-            state_name: "Hawaii",
-            state_abbreviation: "HI"
-        },
-        {
-            state_name: "Iowa",
-            state_abbreviation: "IA"
-        },
-        {
-            state_name: "Idaho",
-            state_abbreviation: "ID"
-        },
-        {
-            state_name: "Illinois",
-            state_abbreviation: "IL"
-        },
-        {
-            state_name: "Indiana",
-            state_abbreviation: "IN"
-        },
-        {
-            state_name: "Kansas",
-            state_abbreviation: "KS"
-        },
-        {
-            state_name: "Kentucky",
-            state_abbreviation: "KY"
-        },
-        {
-            state_name: "Louisiana",
-            state_abbreviation: "LA"
-        },
-        {
-            state_name: "Massachusetts",
-            state_abbreviation: "MA"
-        },
-        {
-            state_name: "Maryland",
-            state_abbreviation: "MD"
-        },
-        {
-            state_name: "Maine",
-            state_abbreviation: "ME"
-        },
-        {
-            state_name: "Michigan",
-            state_abbreviation: "MI"
-        },
-        {
-            state_name: "Minnesota",
-            state_abbreviation: "MN"
-        },
-        {
-            state_name: "Missouri",
-            state_abbreviation: "MO"
-        },
-        {
-            state_name: "Mississippi",
-            state_abbreviation: "MS"
-        },
-        {
-            state_name: "Montana",
-            state_abbreviation: "MT"
-        },
-        {
-            state_name: "North Carolina",
-            state_abbreviation: "NC"
-        },
-        {
-            state_name: "North Dakota",
-            state_abbreviation: "ND"
-        },
-        {
-            state_name: "Nebraska",
-            state_abbreviation: "NE"
-        },
-        {
-            state_name: "New Hampshire",
-            state_abbreviation: "NH"
-        },
-        {
-            state_name: "New Jersey",
-            state_abbreviation: "NJ"
-        },
-        {
-            state_name: "New Mexico",
-            state_abbreviation: "NM"
-        },
-        {
-            state_name: "Nevada",
-            state_abbreviation: "NV"
-        },
-        {
-            state_name: "New York",
-            state_abbreviation: "NY"
-        },
-        {
-            state_name: "Ohio",
-            state_abbreviation: "OH"
-        },
-        {
-            state_name: "Oklahoma",
-            state_abbreviation: "OK"
-        },
-        {
-            state_name: "Oregon",
-            state_abbreviation: "OR"
-        },
-        {
-            state_name: "Pennsylvania",
-            state_abbreviation: "PA"
-        },
-        {
-            state_name: "Puerto Rico",
-            state_abbreviation: "PR"
-        },
-        {
-            state_name: "Rhode Island",
-            state_abbreviation: "RI"
-        },
-        {
-            state_name: "South Carolina",
-            state_abbreviation: "SC"
-        },
-        {
-            state_name: "South Dakota",
-            state_abbreviation: "SD"
-        },
-        {
-            state_name: "Tennessee",
-            state_abbreviation: "TN"
-        },
-        {
-            state_name: "Texas",
-            state_abbreviation: "TX"
-        },
-        {
-            state_name: "Utah",
-            state_abbreviation: "UT"
-        },
-        {
-            state_name: "Virginia",
-            state_abbreviation: "VA"
-        },
-        {
-            state_name: "US Virgin Islands",
-            state_abbreviation: "VI"
-        },
-        {
-            state_name: "Vermont",
-            state_abbreviation: "VT"
-        },
-        {
-            state_name: "Washington",
-            state_abbreviation: "WA"
-        },
-        {
-            state_name: "Wisconsin",
-            state_abbreviation: "WI"
-        },
-        {
-            state_name: "West Virginia",
-            state_abbreviation: "WV"
-        },
-        {
-            state_name: "Wyoming",
-            state_abbreviation: "WY"
-        }
-    ]
 
 
 
@@ -964,7 +741,7 @@ const PropertyDetailPage = ({ post }) => {
                         </div>
                         <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div className="d-flex detailHeadSec align-items-end">
-                                <h3 className="font-weight700 mb-0">
+                                <h1 className="font-weight700 mb-0 fontSize18">
                                     {removelastcomma(tagline)}
                                     {/* 
                                     {
@@ -1024,7 +801,7 @@ const PropertyDetailPage = ({ post }) => {
                                     }
 
                                     &nbsp;{propdata.phone} */}
-                                </h3>
+                                </h1>
                                 <div class="ml-auto responsiveMarLeft">
                                     <ul class="noMarginPad listStyleNone sideActionIcon">
 
@@ -1142,9 +919,9 @@ const PropertyDetailPage = ({ post }) => {
                                 <div className="detailTextSec itemWebsite">
                                     <div className="d-flex align-items-center topHeadSec">
                                         <div className="d-flex align-items-center">
-                                            <h2 className="font-weight700 colorBlue mt-0 mb-0">
+                                            <h3 className="font-weight700 colorBlue mt-0 mb-0 fontSize24">
                                                 {propdata.property_title}
-                                            </h2>
+                                            </h3>
                                             <ul className="noMarginPad listStyleNone">
                                                 {
                                                     proprating.length == 0 ?
@@ -1812,7 +1589,7 @@ const PropertyDetailPage = ({ post }) => {
 
                                 {/* About  */}
                                 <div className="SectionBlock responsive15">
-                                    <h3 className="font-weight700 colorBlue">About</h3>
+                                    <h3 className="font-weight700 colorBlue fontSize18">About {propdata.property_title} - Affordable Apartment for Low Income {propdata.property_type == 'general' ? 'Tenant' : 'Residents'}</h3>
                                     <div className="truncate">
                                         <p>
                                             {
@@ -1858,7 +1635,7 @@ const PropertyDetailPage = ({ post }) => {
                                         <ul>
                                             <li><a className="purpleText fontSize16 font-weight700">Save Listing |</a></li>
                                             <li> <a className="purpleText fontSize16 font-weight700">Share |</a></li>
-                                            <li><a className="purpleText fontSize16 font-weight700">Rental Assistance Nearby {propdata.property_city} {propdata.property_state}</a></li>
+                                            <li><a className="purpleText fontSize16 font-weight700">Affordable Rental Assistance Near {propdata.property_city} {propdata.property_state}</a></li>
                                         </ul>
                                         <div class="media rewards mt-4">
                                             <img class=""
@@ -1893,7 +1670,7 @@ const PropertyDetailPage = ({ post }) => {
 
                                         propfloor == null || propfloor.length == 0 ?
                                             null :
-                                            <FloorPlanForGeneral propfloor={propfloor} toggleModalAvailability={toggleModalAvailability} />
+                                            <FloorPlanForGeneral propfloor={propfloor} toggleModalAvailability={toggleModalAvailability} titletext={`Floorplans for ${propdata.property_title}, ${capitalise(propdata.property_city)}, ${propdata.property_state}`} />
                                     )
                                     :
 
@@ -1902,7 +1679,7 @@ const PropertyDetailPage = ({ post }) => {
                                         null :
                                         <>
                                             <div className="SectionBlock responsive15">
-                                                <h3 className="font-weight700 colorBlue">Floorplans</h3>
+                                                <h3 className="font-weight700 colorBlue fontSize18">Floorplans for {propdata.property_title}, {capitalise(propdata.property_city)}, {propdata.property_state}</h3>
                                                 <ul className="noMarginPad listStyleNone floorplanList itemWebsite">
 
                                                     <table class="table  floorplantable">
@@ -2928,7 +2705,7 @@ const PropertyDetailPage = ({ post }) => {
                                         null :
                                         <div className="fairmarketRent">
                                             <div className="fairMarketTitle d-flex align-items-center">
-                                                <h5 className="mb-0 fontSize18 font-weight700 colorBlue">{propdata.property_city} Fair Market Rents</h5>
+                                                <h3 className="mb-0 fontSize18 font-weight700 colorBlue">Fair Market Rents {capitalise(propdata.property_city)}, {propdata.property_state}</h3>
                                                 <p className="mb-0 ml-auto fontSize14 font-weight400 secondaryColor">As of {monthNames[d.getMonth()]} {d.getFullYear()}</p>
                                             </div>
                                             <p className="mb-0 secondaryColor fontSize16 font-weight400 mt-1">Fair Market Rents are HUD's
@@ -3088,7 +2865,7 @@ const PropertyDetailPage = ({ post }) => {
                                                     :
                                                     <>
                                                         <div className="titleHeading res24Top marginTop24 responsive15">
-                                                            <h3 className="fontSize18 font-weight700">Housing Authorities near {propdata.property_city}</h3>
+                                                            <h3 className="fontSize18 font-weight700">Affordable Housing Authorities near {capitalise(propdata.property_city)}, {propdata.property_state}</h3>
                                                         </div>
                                                         <HousingAuthorityforGeneral prophousingAuthority={prophousingAuthority} />
                                                         <div className="brdrLine"></div>
@@ -3111,7 +2888,7 @@ const PropertyDetailPage = ({ post }) => {
 
 
                                 <div className="SectionBlock responsive15 neighborhoodSec">
-                                    <h3 className="font-weight700 colorBlue">Neighborhoods Nearby</h3>
+                                    <h3 className="font-weight700 colorBlue">Neighborhoods Nearby {propdata.property_title}, {capitalise(propdata.property_city)}, {propdata.property_state}</h3>
                                     <ul className="noMarginPad listStyleNone">
 
                                         <li>
@@ -3423,7 +3200,15 @@ const PropertyDetailPage = ({ post }) => {
 
                                 <div className="SectionBlock responsive15 availabilitySection">
                                     <div className="d-flex mb-2 align-items-center">
-                                        <h2 className="colorBlue font-weight700 mb-0">Check Availability</h2>
+                                        <h2 className="colorBlue font-weight700 mb-0">Check Availability
+
+                                            {
+                                                propdata.property_type == 'general' ?
+                                                    ` in ${propdata.property_title} ${capitalise(propdata.property_city)}, ${propdata.property_state}`
+                                                    :
+                                                    null
+                                            }
+                                        </h2>
                                         <div className="ml-auto">
 
                                             {
@@ -3545,7 +3330,14 @@ const PropertyDetailPage = ({ post }) => {
                                     <div className="sideFormBlock">
                                         <div className="SectionBlock responsive15 availabilitySection">
                                             <div className="d-flex align-items-center">
-                                                <h2 className="colorBlue font-weight700 fontSize18">Check Availability</h2>
+                                                <h2 className="colorBlue font-weight700 fontSize18">Check Availability
+                                                    {
+                                                        propdata.property_type == 'general' ?
+                                                            ` for ${propdata.property_title} ${capitalise(propdata.property_city)}, ${propdata.property_state}`
+                                                            :
+                                                            null
+                                                    }
+                                                </h2>
                                             </div>
                                             <div className="ml-auto">
 
@@ -3589,7 +3381,9 @@ const PropertyDetailPage = ({ post }) => {
 
                                     <div className="row marginTop">
                                         <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 pl-0 pr-0">
-                                            <PropertiesNearby propertynearby={nearbypropdata} />
+                                            <PropertiesNearby propertynearby={nearbypropdata} titletext={
+                                                propdata.property_type == 'general' ?
+                                                    `Affordable Properties Nearby ${capitalise(propdata.property_city)}, ${propdata.property_state}` : `Affordable Properties Nearby`} />
                                         </div>
                                     </div>
                                 </div>

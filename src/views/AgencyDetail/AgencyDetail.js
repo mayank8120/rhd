@@ -115,6 +115,17 @@ const AgencyDetail = () => {
         message: "Hi, I would like to inquire about receiving rental assistance. Please let me know what programs are available at this time. Thanks.",
     });
 
+    // let dataid = 766;
+
+    const [formdatamodal, setformdatamodal] = useState({
+        property_id: "",
+        first_name: "",
+        last_name: "",
+        phone: "",
+        email_address: "",
+        move_date: "",
+        message: "Hi, I would like to inquire about receiving rental assistance. Please let me know what programs are available at this time. Thanks.",
+    });
 
     const [checkAvailability, setcheckAvailability] = useState({ name: '', phone: '', emailid: '', date: '', messagetxt: '' });
 
@@ -353,6 +364,75 @@ const AgencyDetail = () => {
     }
 
 
+    let handleSubmitformmodal = (e) => {
+        e.preventDefault();
+
+        // console.log(formdatamodal);
+        if (captchaValue === true) {
+            submitAllDataModal();
+            toggleModalContact();
+            toggleModalThankYou();
+            // fetchAfterCheckPropList();
+            setformdatamodal({ property_id: "", first_name: '', last_name: '', phone: '', email_address: '', move_date: '', message: `${formdatamodal.message}` });
+        }
+    };
+
+    function submitAllDataModal() {
+
+
+        let formatDate = (date) => {
+
+            let newdate = new Date(date);
+            let day = newdate.getDate();
+            let month = newdate.getMonth() + 1;
+            let year = newdate.getFullYear();
+
+            return `${day}/${month}/${year}`
+
+            // return date.replace(/-/g, '/');
+        }
+
+
+        let data = JSON.stringify(
+            {
+                "property_id": agendetail.id,
+                "first_name": formdatamodal.first_name,
+                "last_name": formdatamodal.last_name,
+                "email_address": formdatamodal.email_address,
+                "phone": formdatamodal.phone,
+                "message": formdatamodal.message,
+                "move_date": formatDate(formdatamodal.move_date)
+            }
+        );
+
+        console.log(data);
+
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/text");
+
+        var raw = JSON.stringify({
+            "property_id": "142",
+            "first_name": "john",
+            "last_name": "doe",
+            "email_address": "vinaxeh500@zneep.com",
+            "phone": "8874565211",
+            "message": "test msg",
+            "move_date": "27/02/2022"
+        });
+
+        var requestOptions = {
+            method: 'POST',
+            body: data,
+            redirect: 'follow',
+        };
+
+        fetch("http://thomasthecat.rentalhousingdeals.com/apis/v1/api/v1/Checkavailabilityha", requestOptions)
+            .then(response => response.json())
+            .then(result => console.log(result))
+            .catch(error => console.log('error', error));
+
+    }
+
 
     const handleSubmitform = (e) => {
         e.preventDefault();
@@ -375,6 +455,18 @@ const AgencyDetail = () => {
             });
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     function submitAllData() {
@@ -730,7 +822,7 @@ const AgencyDetail = () => {
                                             <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                                 <div className="agencyDetailBlock">
                                                     <div className="d-flex align-items-center">
-                                                        <h3 className="fontSize18 font-weight500 colorBlue mb-0">Section 8 Wait List</h3>
+                                                        <h3 className="fontSize18 font-weight500 colorBlue mb-0">Section 8 Wait List in {agendetail.city}, {agendetail.state}</h3>
                                                         <div className="ml-auto">
 
                                                             {
@@ -794,7 +886,7 @@ const AgencyDetail = () => {
                                             <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                                 <div className="agencyDetailBlock">
                                                     <div className="d-flex align-items-center">
-                                                        <h3 className="fontSize18 font-weight500 colorBlue mb-0">Public Housing Wait List</h3>
+                                                        <h3 className="fontSize18 font-weight500 colorBlue mb-0">Public Housing Wait List in {agendetail.city}, {agendetail.state}</h3>
                                                         <div className="ml-auto">
                                                             {
                                                                 agendetail.is_wating_closed == 1
@@ -1163,7 +1255,7 @@ const AgencyDetail = () => {
 
 
                                         <div className="titleHeading">
-                                            <h3 className="fontSize18 font-weight700">Program Summary</h3>
+                                            <h3 className="fontSize18 font-weight700">{agendetail.name} Program Summary, {agendetail.state}</h3>
 
 
                                             <div className="fontSize16 font-weight400 colorBlue detailPara2">
@@ -1253,7 +1345,7 @@ const AgencyDetail = () => {
                                                 {/* <!-- <div className="gradientRight itemWebsite">
                                         <img src={require('../../assets/img/rightGradient.png').default} />
                                     </div> --> */}
-                                                <PropertiesNearby3 />
+                                                <PropertiesNearby3 titletext={`Properties Nearby ${agendetail.city}, ${agendetail.state}`} />
                                                 {/* <PropertiesNearby3 /> */}
                                                 {/* <div className="owl-carousel owl-theme housing_Nearby2 sliderNav">
                                         <div className="item">
@@ -1458,7 +1550,7 @@ const AgencyDetail = () => {
                                             :
                                             <>
                                                 <div className="titleHeading itemWebsite">
-                                                    <h3 className="fontSize18 font-weight700">Income Limits</h3>
+                                                    <h3 className="fontSize18 font-weight700">Income Limits for {agendetail.county}, {agendetail.state}</h3>
                                                     <p className="fontSize16 font-weight400 mb-0 colorBlue">
 
                                                         HUD sets Income Limits for each area based
@@ -1478,7 +1570,7 @@ const AgencyDetail = () => {
 
                                                 <div className="itemMobile mobileIncomeLimit">
                                                     <div className="brdrLine3 responsive-15"></div>
-                                                    <h3 className="colorBlue font-weight700 incomeLimtMobileText">Income Limits</h3>
+                                                    <h3 className="colorBlue font-weight700 incomeLimtMobileText">Income Limits for {agendetail.county}, {agendetail.state}</h3>
                                                     <p className="mb-0 para colorBlue mt-0">
                                                         HUD sets Income Limits for each area based
                                                         on the median family income in that area. Each Public Housing Agency (PHA)
@@ -1740,7 +1832,7 @@ const AgencyDetail = () => {
 
 
                                         <div className="titleHeading">
-                                            <h3 className="fontSize18 font-weight700">Fair Market Rents</h3>
+                                            <h3 className="fontSize18 font-weight700">Know More About The Fair Market Rents in {agendetail.city}, {agendetail.state}</h3>
                                             <p className="fontSize16 font-weight400 mb-0 colorBlue lineFixedNumber4">Fair Market Rents are
                                                 HUD's determination of the average rents in a particular area for each bedroom size. The
                                                 FMRs are set each year based on the rental rates of unsubsidized units so that
@@ -1886,7 +1978,7 @@ const AgencyDetail = () => {
                                                 <>
                                                     <div className="titleHeading">
                                                         <div className="d-flex align-items-center">
-                                                            <h3 className="fontSize18 font-weight700">Location</h3>
+                                                            <h3 className="fontSize18 font-weight700">{agendetail.name} Location in {agendetail.state}</h3>
                                                             <div className="ml-auto itemMobile">
                                                                 <a href="" className="ml-auto fontSize16 font-weight700 skyBlueColor">Get
                                                                     Directions</a>
@@ -1914,7 +2006,7 @@ const AgencyDetail = () => {
                                                 :
                                                 <>
                                                     <div className="titleHeading res24Top">
-                                                        <h3 className="fontSize18 font-weight700">Housing Authorities near Anaheim</h3>
+                                                        <h3 className="fontSize18 font-weight700">Housing Authorities near {agendetail.city}, {agendetail.state}</h3>
                                                     </div>
                                                     <HousingAuthorityforGeneral prophousingAuthority={agenhas} />
                                                     <div className="brdrLine responsive-15"></div>
@@ -2337,7 +2429,7 @@ const AgencyDetail = () => {
                                             <div className="sideFormBlock">
                                                 <div className="SectionBlock responsive15 availabilitySection">
                                                     <div className="d-flex align-items-center">
-                                                        <h2 className="colorBlue font-weight700 fontSize18">Check Availability</h2>
+                                                        <h3 className="colorBlue font-weight700 fontSize18">Check Availability in {agendetail.name} in {agendetail.city}, {agendetail.state} </h3>
                                                     </div>
 
 
@@ -2542,7 +2634,7 @@ const AgencyDetail = () => {
                                                             </div>
                                                             <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                                 <div className="form-group">
-                                                                <div className="recaptcha_block">
+                                                                    <div className="recaptcha_block">
                                                                         <ReCAPTCHA
                                                                             sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
                                                                             onChange={captchaHandle}
@@ -2901,7 +2993,7 @@ const AgencyDetail = () => {
 
 
 
-
+                        {/* 
                         <Modal className="agencydetail-modal" isOpen={isOpenContact}
                             onRequestClose={toggleModalContact}>
 
@@ -2965,10 +3057,7 @@ const AgencyDetail = () => {
                                                                 }
 
 
-                                                                {/* <option>bb</option>
-                                                    <option>sd</option>
-                                                    <option>kj</option>
-                                                    <option>re</option> */}
+                                                                
                                                             </select>
                                                         </div>
                                                     </div>
@@ -3090,7 +3179,6 @@ const AgencyDetail = () => {
                                         </div>
                                         <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <div className="form-group">
-                                                {/* <ReCAPTCHA */}
                                                 <div className="recaptcha_block">
                                                     <ReCAPTCHA
                                                         sitekey='6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
@@ -3114,7 +3202,7 @@ const AgencyDetail = () => {
                                 </div>
                             </div>
 
-                        </Modal>
+                        </Modal> */}
 
 
                         <Modal isOpen={isOpenThankYou}
@@ -3146,6 +3234,245 @@ const AgencyDetail = () => {
 
 
 
+
+
+
+
+
+
+                        <Modal
+                            isOpen={isOpenContact}
+                            onRequestClose={toggleModalContact}
+                            className="propertysearch-modal bottomInfo">
+                            <div className="modal-header     align-items-baseline ">
+                                <div class="">
+                                    <h5 className="modal-title fontSize22 font-weight400 ml-22"
+                                        id="exampleModalLongTitle">
+                                        {agendetail.name}
+                                    </h5>
+                                    <h5 className="modal-title fontSize22 font-weight400 ml-22"
+                                        id="exampleModalLongTitle">
+                                        {agendetail.address} {agendetail.city}, {agendetail.state} {agendetail.zip}
+                                    </h5>
+                                </div>
+
+                                <button
+                                    type="button"
+                                    className="close"
+                                    onClick={toggleModalContact}
+                                    aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div className="modal-body rentalForm availBodyBlock">
+                                <div className="row">
+                                    <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                        <div className="modalLeft">
+                                            <div className="imageSecleftModal posRel">
+
+
+                                                {
+                                                    agenphoto == undefined || agenphoto == null ?
+                                                        <img className="w-100" src={'https://cdn-0.rentalhousingdeals.com/images/l_thumbs/photos-unavailable.jpg'} />
+
+                                                        :
+                                                        <img className="w-100" src={`https://www.rentalhousingdeals.com/${agenphoto.path}/${agenphoto.filename}`} />
+                                                }
+
+                                            </div>
+
+
+                                            <p className="para fontSize14 font-weight400 secondaryColor">
+                                                {
+                                                    agendetail.about_us == '' || agendetail.about_us == null || agendetail.about_us == undefined ?
+                                                        <p className="fontSize16 secondaryColor font-weight400 mb-0 detailPara" >
+                                                            {agendetail.name} is a public housing agency that helps provide decent and safe rental housing for eligible low-income families, the elderly, and persons with disabilities.
+                                                        </p>
+                                                        :
+                                                        <>
+                                                            <p className="fontSize16 secondaryColor font-weight400 mb-0 detailPara" >
+                                                                {agendetail.about_us}
+                                                            </p>
+                                                        </>
+                                                }
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                        <div className="sideFormBlock">
+                                            <div className="SectionBlock responsive15 availabilitySection">
+                                                <div className="d-flex align-items-center">
+                                                    <h2 className="colorBlue font-weight700 fontSize18">
+                                                        Check Availability
+                                                    </h2>
+                                                </div>
+                                                <div className="ml-auto">
+                                                    <p className="purpleText font-weight700 fontSize18 d-flex align-items-center">
+                                                        <img
+                                                            src={require("../../assets/img/phoneColored.svg").default}
+                                                        />
+                                                        {agendetail.phone}
+                                                    </p>
+                                                </div>
+
+                                                <>
+                                                    <form className="rentalForm" onSubmit={handleSubmitformmodal}>
+                                                        <div className="row">
+                                                            <div className="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                                <div className="form-group">
+                                                                    <label for="">First Name</label>
+                                                                    <input
+                                                                        type="text"
+                                                                        className="form-control"
+                                                                        placeholder="First name"
+                                                                        value={formdatamodal.first_name}
+                                                                        onChange={(e) =>
+                                                                            setformdatamodal({
+                                                                                ...formdatamodal,
+                                                                                first_name: e.target.value,
+                                                                            })
+                                                                        }
+                                                                        required
+                                                                    />
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                                <div className="form-group">
+                                                                    <label for="">Last Name</label>
+                                                                    <input
+                                                                        type="text"
+                                                                        className="form-control"
+                                                                        placeholder="Last Name"
+                                                                        value={formdatamodal.last_name}
+                                                                        onChange={(e) =>
+                                                                            setformdatamodal({
+                                                                                ...formdatamodal,
+                                                                                last_name: e.target.value,
+                                                                            })
+                                                                        }
+                                                                        required
+                                                                    />
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                <div className="form-group">
+                                                                    <label for="">Phone Number</label>
+                                                                    <input
+                                                                        type="number"
+                                                                        className="form-control"
+                                                                        placeholder="e.g. 6264482699"
+                                                                        value={formdatamodal.phone}
+                                                                        onChange={(e) =>
+                                                                            setformdatamodal({
+                                                                                ...formdatamodal,
+                                                                                phone: e.target.value,
+                                                                            })
+                                                                        }
+                                                                        required
+                                                                    />
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                <div className="form-group">
+                                                                    <label for="">Email Address</label>
+                                                                    <input
+                                                                        type="email"
+                                                                        className="form-control"
+                                                                        placeholder="e.g. jonathan@gmail.com"
+                                                                        value={formdatamodal.email_address}
+                                                                        onChange={(e) =>
+                                                                            setformdatamodal({
+                                                                                ...formdatamodal,
+                                                                                email_address: e.target.value,
+                                                                            })
+                                                                        }
+                                                                        required
+                                                                    />
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                <div className="form-group">
+                                                                    <label for="">Move In Date</label>
+                                                                    <div className="posRel calnderIcon">
+                                                                        <input
+                                                                            type="date"
+                                                                            className="form-control"
+                                                                            placeholder="Choose Move In Date"
+                                                                            value={formdatamodal.move_date}
+                                                                            onChange={(e) =>
+                                                                                setformdatamodal({
+                                                                                    ...formdatamodal,
+                                                                                    move_date: e.target.value,
+                                                                                })
+                                                                            }
+                                                                            required
+                                                                        />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                <div className="form-group">
+                                                                    <label for="">Message</label>
+                                                                    <textarea
+                                                                        className="form-control"
+                                                                        rows="3"
+                                                                        placeholder="Hi, I would like to inquire about receiving rental assistance. Please let me know what programs are available at this time. Thanks."
+                                                                        value={formdatamodal.message}
+                                                                        onChange={(e) =>
+                                                                            setformdatamodal({
+                                                                                ...formdatamodal,
+                                                                                message: e.target.value,
+                                                                            })
+                                                                        }
+                                                                        required
+                                                                    ></textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                <div className="form-group">
+                                                                    <div className="recaptcha_block">
+                                                                        <ReCAPTCHA
+                                                                            sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+                                                                            onChange={captchaHandle}
+                                                                        />
+                                                                    </div>
+                                                                    {captchaValue === false ? (
+                                                                        <span style={{ color: "red" }}>
+                                                                            Please Verify Captcha
+                                                                        </span>
+                                                                    ) : null}
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                <div className="d-flex align-items-center availSec responsive15 flex-wrap p-0">
+                                                                    <div className="Resnoauto">
+                                                                        <button
+                                                                            onClick={captchacheck}
+                                                                            className="brdrRadius4 transition w-100 d-flex align-items-center justify-content-center"
+                                                                            type="submit"
+                                                                        >
+                                                                            <img
+                                                                                src={
+                                                                                    require("../../assets/img/mail.svg").default
+                                                                                }
+                                                                            />
+                                                                            Check Availability
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </Modal>
 
 
 

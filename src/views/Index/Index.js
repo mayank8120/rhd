@@ -66,10 +66,10 @@ const Index = (props) => {
 
 
             {/* dynamic part  */}
-            <PropertiesNearby propertynearby={nearbypropdata} />
-            <PopularCities />
+            <PropertiesNearby propertynearby={nearbypropdata} titletext={"Affordable Properties Near You"} />
+            <PopularCities titletext={"Find Low Income Affordable Properties in Popular Cities"} />
 
-            <FeaturedRentalsInCity latlngdata={latlngdata} />
+            <FeaturedRentalsInCity latlngdata={latlngdata} titletext={""}/>
             <AffordableHousingByRegions page={1} />
 
 

@@ -58,10 +58,10 @@ const Seniorhousing = () => {
 
             <ResearchYourApt />
 
-            <PropertiesNearby propertynearby={nearbypropdata} />
-            <PopularCities />
+            <PropertiesNearby propertynearby={nearbypropdata} titletext={"Economic Properties For Seniors Near You"} />
+            <PopularCities titletext={"Find Low Income Affordable Properties in Popular Cities"} />
 
-            <FeaturedRentalsInCity latlngdata={latlngdata} />
+            <FeaturedRentalsInCity latlngdata={latlngdata} page={2} />
             {/* <FeaturedRentalsInCity /> */}
             <AffordableHousingByRegions page={2} />
 

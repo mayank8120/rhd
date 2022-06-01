@@ -1,11 +1,11 @@
 import React from 'react'
 import FloorPlanGeneralItem from './FloorPlanGeneralItem'
 
-const FloorPlanForGeneral = ({ propfloor, toggleModalAvailability }) => {
+const FloorPlanForGeneral = ({ propfloor, toggleModalAvailability, titletext }) => {
     return (
         <>
             <div className="SectionBlock responsive15">
-                <h3 className="font-weight700 colorBlue">Floorplans</h3>
+                <h3 className="font-weight700 colorBlue">{titletext !== undefined && titletext !== null ? titletext : 'Floorplans'}</h3>
                 <ul className="noMarginPad listStyleNone floorplanList">
                     {/* <li className="d-flex align-items-center justify-content-between floorPlanListing">
                         <div className="imageLeft floorplanHead d-flex align-items-center">

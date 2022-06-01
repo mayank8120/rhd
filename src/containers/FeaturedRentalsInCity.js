@@ -5,7 +5,7 @@ import Tab from 'react-bootstrap/Tab';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { capitalise } from './functions';
-const FeaturedRentalsInCity = ({ latlngdata }) => {
+const FeaturedRentalsInCity = ({ latlngdata, page }) => {
 
     const [key, setKey] = useState('home');
 
@@ -39,7 +39,14 @@ const FeaturedRentalsInCity = ({ latlngdata }) => {
             <section className="secPad featureSection basic">
                 <div className="container">
                     <div className="sectionTitle">
-                        <h2 className="font-weight700 colorBlue">Featured Rentals in Your City</h2>
+                        {
+                            page === 2 ?
+                                <h2 className="font-weight700 colorBlue">
+                                    Featured Low Income Senior Housing Rentals in {nearbycitiesdata == undefined || nearbycitiesdata == null ? 'Los Angeles' : capitalise(nearbycitiesdata[0].property_city)}</h2>
+                                :
+                                <h2 className="font-weight700 colorBlue">Featured Rentals in {nearbycitiesdata == undefined || nearbycitiesdata == null ? 'Los Angeles' : capitalise(nearbycitiesdata[0].property_city)}</h2>
+
+                        }
                     </div>
                     <div className="row marginTop2">
                         <div className="col-lg-12">
@@ -115,7 +122,7 @@ const FeaturedRentalsInCity = ({ latlngdata }) => {
                                                                                 <li >
                                                                                     <h3 className="font-weight500 mb-0">{capitalise(data.property_city)}</h3>
                                                                                     <p className="mb-0 secondaryColor">Affordable Housing
-                                                                                        
+
                                                                                     </p>
                                                                                 </li>
                                                                             </Link>
@@ -126,7 +133,7 @@ const FeaturedRentalsInCity = ({ latlngdata }) => {
                                                                                 <li>
                                                                                     <h3 className="font-weight500 mb-0">{capitalise(data.property_city)}</h3>
                                                                                     <p className="mb-0 secondaryColor">Affordable Housing
-                                                                                        
+
                                                                                     </p>
                                                                                 </li>
                                                                             </Link>
@@ -176,7 +183,7 @@ const FeaturedRentalsInCity = ({ latlngdata }) => {
                                                                                     <li >
                                                                                         <h3 className="font-weight500 mb-0">{capitalise(data.property_city)}</h3>
                                                                                         <p className="mb-0 secondaryColor">Housing Authorities
-                                                                                            </p>
+                                                                                        </p>
                                                                                     </li>
                                                                                 </Link>
                                                                             ))

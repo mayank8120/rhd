@@ -620,8 +620,9 @@ const Maptile = () => {
                                             checkClusterWithNoIDerror(cluster.id) === false ?
                                                 L.divIcon({
                                                     html: `
-                                                    <div class="cluster-marker" style="width: auto; height:auto; background:#9d56f7;display:flex;align-items:center;justify-content:flex-start;min-width:120px;border-radius:4px;">
+                                                    <div class="cluster-marker" style="position:relative;width: auto; height:auto; background:#9d56f7;display:flex;align-items:center;justify-content:flex-start;min-width:max-content;border-radius:4px;">
                                                         <p class='mb-0'>${data.citi}<br/> ${data.lstcnt} listing</p>
+                                                        <span class="rightArrowAction" ><img src={require('../../assets/img/rightArrowWhite.png').default} /></span>
                                                     </div>
                                                     `,
                                                 })
@@ -629,8 +630,9 @@ const Maptile = () => {
                                                 (
                                                     L.divIcon({
                                                         html: `
-                                                        <div class="cluster-marker" style="width: auto; height:auto; background:#9d56f7;display:flex;align-items:center;justify-content:flex-start;min-width:120px;border-radius:4px;">
+                                                        <div class="cluster-marker" style="position:relative;width: auto; height:auto; background:#9d56f7;display:flex;align-items:center;justify-content:flex-start;min-width:max-content;border-radius:4px;">
                                                             <p class='mb-0'>${data.citi}<br/> ${data.lstcnt} listing</p>
+                                                            <span class="rightArrowAction" ><img src={require('../../assets/img/rightArrowWhite.png').default} /></span>
                                                         </div>
                                                         `,
                                                     })

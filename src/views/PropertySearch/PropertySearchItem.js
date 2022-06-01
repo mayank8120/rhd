@@ -7,6 +7,7 @@ import Starratingstatic from "../../containers/Starratingstatic";
 import axios from "axios";
 
 import { addOrRemoveProp, decimalRoundOff, getAllProp, toggleHeart } from "../../containers/functions";
+import { sendMUltipleRequestes } from "../../api/api";
 
 export const PropertySearchItem = ({ post }) => {
 
@@ -323,24 +324,24 @@ export const PropertySearchItem = ({ post }) => {
             toggleModalAvailability();
             toggleModalSecondList();
             submitAllData();
-            setformdata({ property_id: prop.id_property, first_name: '', last_name: '', phone: '', email_address: '', move_date: '', message: '' });
+            // setformdata({ property_id: prop.id_property, first_name: '', last_name: '', phone: '', email_address: '', move_date: '', message: '' });
         }
     };
 
     function submitAllData() {
 
 
-        let formatDate = (date) => {
+        // let formatDate = (date) => {
 
-            let newdate = new Date(date);
-            let day = newdate.getDate();
-            let month = newdate.getMonth() + 1;
-            let year = newdate.getFullYear();
+        //     let newdate = new Date(date);
+        //     let day = newdate.getDate();
+        //     let month = newdate.getMonth() + 1;
+        //     let year = newdate.getFullYear();
 
-            return `${day}/${month}/${year}`
+        //     return `${day}/${month}/${year}`
 
-            // return date.replace(/-/g, '/');
-        }
+        //     // return date.replace(/-/g, '/');
+        // }
 
 
         let data = JSON.stringify(
@@ -383,11 +384,44 @@ export const PropertySearchItem = ({ post }) => {
 
     }
 
+
+
+    let formatDate = (date) => {
+
+        let newdate = new Date(date);
+        let day = newdate.getDate();
+        let month = newdate.getMonth() + 1;
+        let year = newdate.getFullYear();
+
+        return `${day}/${month}/${year}`
+    }
+
     let sendMultipleProps = () => {
         if (propListArray.length !== 0) {
             toggleModalSecondList();
             toggleModalThankYou();
+
+            propListArray.map(
+                (number) => {
+                    let data = JSON.stringify(
+                        {
+                            "property_id": parseFloat(number),
+                            "first_name": formdata.first_name,
+                            "last_name": formdata.last_name,
+                            "email_address": formdata.email_address,
+                            "phone": formdata.phone,
+                            "message": formdata.message,
+                            "move_date": formatDate(formdata.move_date)
+                        }
+                    );
+                    sendMUltipleRequestes(data);
+                }
+            )
+
+
         }
+
+        setformdata({ property_id: prop.property_id, first_name: '', last_name: '', phone: '', email_address: '', move_date: '', message: `${formdata.message}` });
     }
 
 
@@ -479,9 +513,9 @@ export const PropertySearchItem = ({ post }) => {
                                     <div className="d-flex align-items-center propertyTitle">
                                         <Link to={linkurl} className="d-flex w-100">
                                             {" "}
-                                            <h5 className="colorBlue font-weight700 mb-0">
+                                            <h2 className="colorBlue font-weight700 mb-0 fontSize18">
                                                 {prop.property_title}
-                                            </h5>
+                                            </h2>
                                         </Link>
                                     </div>
                                     <p className="mb-0 secondaryColor fontSize14">
@@ -1211,7 +1245,7 @@ export const PropertySearchItem = ({ post }) => {
                                                             </div>
                                                             <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                                 <div className="form-group">
-                                                                <div className="recaptcha_block">
+                                                                    <div className="recaptcha_block">
                                                                         <ReCAPTCHA
                                                                             sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
                                                                             onChange={captchaHandle}

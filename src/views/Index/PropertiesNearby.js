@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 import { addOrRemoveProp, getAllProp, toggleHeart } from '../../containers/functions';
 import PropertyNearbyItem from './PropertyNearbyItem';
 
-const PropertiesNearby = ({ propertynearby }) => {
+const PropertiesNearby = ({ propertynearby, titletext }) => {
 
     // console.log(propertynearby);
 
@@ -33,8 +33,8 @@ const PropertiesNearby = ({ propertynearby }) => {
         }
     };
 
-  
- 
+
+
 
 
     let arr = JSON.parse(localStorage.getItem('savePropList'));
@@ -52,7 +52,9 @@ const PropertiesNearby = ({ propertynearby }) => {
             <section className="secPad housingNearby">
                 <div className="container">
                     <div className="sectionTitle">
-                        <h2 className="font-weight700 colorBlue">Properties Nearby</h2>
+
+                        {/* <h2 className="font-weight700 colorBlue">Properties Nearby</h2> */}
+                        <h2 className="font-weight700 colorBlue">{titletext}</h2>
                     </div>
                     <div className="row marginTop">
                         <div className="col-lg-12">

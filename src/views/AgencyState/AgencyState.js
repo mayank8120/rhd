@@ -173,7 +173,7 @@ const AgencyState = () => {
                                     </div>
                                     <SearchSection latlngdata={latlngdata} />
                                     <div className="d-flex align-items-center headingTab itemWebsite">
-                                        <h3 className="colorBlue font-weight700 mb-0">Housing Authority in or near {city == undefined || city == '' ? null : `${city},`} {statename == undefined || statename == '' ? null : statename}</h3>
+                                        <h1 className="colorBlue font-weight700 mb-0 fontSize18">Housing Authority in or near {city == undefined || city == '' ? null : `${city},`} {statename == undefined || statename == '' ? null : statename}</h1>
                                         {/* <ul className="noMarginPad listStyleNone itemMobile ml-auto tabiIconResponsive">
                                             <li>
                                                 <img src={require('../../assets/img/mapIcon.png').default} />

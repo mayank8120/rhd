@@ -8,7 +8,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { Link } from 'react-router-dom';
 // import '../assets'
-const PopularCities = () => {
+const PopularCities = ({ titletext }) => {
 
 
     const database = [
@@ -123,7 +123,9 @@ const PopularCities = () => {
         <section className="secPad popularCities">
             <div className="container">
                 <div className="sectionTitle">
-                    <h2 className="font-weight700 colorBlue">Popular Cities</h2>
+
+                    <h2 className="font-weight700 colorBlue">{titletext}</h2>
+                    {/* <h2 className="font-weight700 colorBlue">Popular Cities</h2> */}
                 </div>
                 <div className="row marginTop">
                     <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">

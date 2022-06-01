@@ -25,7 +25,7 @@ const PublicHousing = () => {
                         </div>
                         <div className="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                             <div className="leftContSection">
-                                <h2 className="primaryColor font-weight700">Public Housing</h2>
+                                <h1 className="primaryColor font-weight700">Public Housing</h1>
                                 <p className="para">The Public Housing Program is administered by the local Public Housing Authority
                                     (PHA). Each PHA operates in its own geographical area. The area or areas can consist of one
                                     city or up to several counties, depending on the size. You will find that large metropolitan

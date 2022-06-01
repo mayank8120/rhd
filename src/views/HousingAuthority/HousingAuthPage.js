@@ -226,7 +226,7 @@ const HousingAuthPage = () => {
                         <div className="col-lg-8 col-md-12 col-sm-12 col-xs-12">
                             <div className="agencyLandingLeftSec">
                                 <div className="topTitle mt-2">
-                                    <h2 className="colorBlue font-weight700">Search for Free Rental Assistance Near You!</h2>
+                                    <h1 className="colorBlue font-weight700 fontSize24">Search for Free Rental Assistance Near You!</h1>
                                     <p className="para fontSize16 mb-0">FIND YOUR LOCAL PUBLIC HOUSING AGENCY / Housing Authorities
                                         can help you connect with affordable housing in your community.</p>
                                 </div>
@@ -358,7 +358,7 @@ const HousingAuthPage = () => {
                                 </div>
                                 <div className="d-flex align-items-center flex-row subTitleHead">
                                     <div>
-                                        <h3 className="mb-0 fontSize18">Section 8 Voucher And Public Housing Waitlist Openings</h3>
+                                        <h2 className="mb-0 fontSize18">Section 8 Voucher And Public Housing Waitlist Openings Near You</h2>
                                         <p className="mb-0 fontSize14 ml-auto secondaryColor itemMobile">As of {today.toLocaleDateString("en-US", options)}
                                         </p>
                                     </div>
@@ -466,7 +466,7 @@ const HousingAuthPage = () => {
                                         <div className="row marginTop">
                                             <div className="col-lg-12 paddingaa">
 
-                                                <PropertiesNearby propertynearby={nearbypropdata} />
+                                                <PropertiesNearby propertynearby={nearbypropdata} titletext={"Affordable Properties Near You"} />
                                             </div>
                                         </div>
                                     </div>

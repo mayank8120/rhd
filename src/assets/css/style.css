@@ -139,7 +139,9 @@ body {
 .fontSize11 {
   font-size: 11px !important;
 }
-
+.fontSize18 {
+  font-size: 18px !important;
+}
 .fontSize30 {
   font-size: 30px !important;
 }
@@ -10818,20 +10820,29 @@ input[type="radio"]:checked {
 
 
 /*--map addition 12 may --*/
-.noMarginPad.listStyleNone.housingListt li {
+.housingListt.dataSearchMapList li a p{
+  font-size: 14px;
+  line-height: 24px;
+}
+.housingListt.dataSearchMapList li a h5{
+  font-size: 18px;
+  display: block;
+}
+.noMarginPad.listStyleNone.housingListt.dataSearchMapList li a {
+  color: #fff;
+}
+.noMarginPad.listStyleNone.housingListt.dataSearchMapList li .listSearchAnchor {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  display: block;
   min-width: 125px;
   height: 48px;
-  padding: 5px 10px;
+  padding: 16px;
   color: #fff;
   font-weight: 600;
   font-size: 14px;
   line-height: 1em;
   text-align: left;
-  background-color: #00486a;
+  background-color: #9D56F7;
   border-radius: 6px;
   box-shadow: 0 1px 6px rgba(0, 0, 0, .25);
   -webkit-user-select: none;
@@ -10842,9 +10853,26 @@ input[type="radio"]:checked {
   height: auto;
   margin-bottom: 15px;
 }
-
+.noMarginPad.listStyleNone.housingListt.dataSearchMapList li .listSearchAnchor:hover .rightArrowAction{
+  display: block;
+}
+.cluster-marker:hover{
+  background-color: #293A90 !important;
+}
+.rightArrowAction{
+  display: none;
+}
+.noMarginPad.listStyleNone.housingListt li .listSearchAnchor:hover{
+  background-color: #293A90;
+}
+.rightArrowAction{
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+}
 .noMarginPad.listStyleNone.housingListt li a {
-  color: #fff;
+  color: rgba(40, 54, 70, 0.8);
 }
 
 .mapListingSection {

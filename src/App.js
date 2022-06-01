@@ -140,7 +140,7 @@ function App() {
 
 
 
-                        <Route path="/propertySearch/:cityname/:statename" component={PropertySearch} />
+                        <Route path="/propertySearch/:cityname/:statename/:feature?" component={PropertySearch} />
                         <Route path="/propertySearch" component={PropertySearch} />
 
                     </Switch>

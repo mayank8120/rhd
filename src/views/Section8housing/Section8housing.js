@@ -54,13 +54,13 @@ const Section8housing = () => {
     return (
         <>
 
-            <Searchboxsection8 latlngdata={latlngdata}/>
+            <Searchboxsection8 latlngdata={latlngdata} />
             <ResearchYourApt />
-            <PropertiesNearby propertynearby={nearbypropdata} />
-            <PopularCities />
+            <PropertiesNearby propertynearby={nearbypropdata} titletext={"Low Income Properties Near You"} />
+            <PopularCities titletext={'Find Low Income Affordable Properties in Popular Cities'} />
             <FeaturedRentalsInCity latlngdata={latlngdata} />
             {/* <FeaturedRentalsInCity /> */}
-            <AffordableHousingByRegions page={3}/>
+            <AffordableHousingByRegions page={3} />
             <ProudPartners />
             <EmailSubs />
             <Footer />

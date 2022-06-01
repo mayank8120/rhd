@@ -7,7 +7,7 @@ const RentalAssistance = () => {
             <div className="housingAuthority brdrRadius4 itemWebsite">
                 <div className="row">
                     <div className="col-lg-6">
-                        <h3 className="fontSize18 colorBlue">Rental Assistance Options</h3>
+                        <h2 className="fontSize18 colorBlue">Rental Assistance Options</h2>
                         <ul className="noMarginPad listStyleNone housingListt">
                             <li>
                                 <a href="/incomeLimits">Income Limits</a>
@@ -27,7 +27,7 @@ const RentalAssistance = () => {
                         </ul>
                     </div>
                     <div className="col-lg-6">
-                        <h3 className="fontSize18 colorBlue  btttm">Rental Assistance Tools</h3>
+                        <h2 className="fontSize18 colorBlue  btttm">Rental Assistance Tools</h2>
                         <ul className="noMarginPad listStyleNone housingListt">
                             <li>
                                 <a href="">Income Calculator</a>
@@ -59,7 +59,7 @@ const RentalAssistance = () => {
 
             
             <div className="housingAuthority brdrRadius4 itemWebsite">
-                <h3 className="fontSize18 colorBlue">Find Housing Authorities in every State in the U.S.</h3>
+                <h2 className="fontSize18 colorBlue">Find Housing Authorities in Every State in the U.S.</h2>
                 <div className="row">
                     <div className="col-lg-3 col-sm-6 coll-xs-6">
                         <ul className="noMarginPad listStyleNone housingListt">

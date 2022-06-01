@@ -260,9 +260,9 @@ const Navbar = () => {
             {/* 
             <Nav>
                     <NavLink exact activeClassName="activeclass" to="" activeStyle>Rentals</NavLink>
-                    <NavLink exact activeClassName="activeclass" to="seniorHousing" activeStyle>Senior Housing</NavLink>
-                    <NavLink exact activeClassName="activeclass" to="section8housing" activeStyle>Section 8 Housing</NavLink>
-                    <NavLink exact activeClassName="activeclass" to="housingAuthority" activeStyle>Housing Authority Waitlists</NavLink>
+                    <NavLink exact activeClassName="activeclass" to="/seniorHousing" activeStyle>Senior Housing</NavLink>
+                    <NavLink exact activeClassName="activeclass" to="/section8housing" activeStyle>Section 8 Housing</NavLink>
+                    <NavLink exact activeClassName="activeclass" to="/housingAuthority" activeStyle>Housing Authority Waitlists</NavLink>
                 
             </Nav> */}
 
@@ -290,14 +290,14 @@ const Navbar = () => {
 
                                                             </li>
                                                             <li>
-                                                                <NavLink exact activeClassName="activeclass" to="seniorHousing">Senior Housing</NavLink>
+                                                                <NavLink exact activeClassName="activeclass" to="/seniorHousing">Senior Housing</NavLink>
                                                             </li>
                                                             <li>
-                                                                <NavLink exact activeClassName="activeclass" to="section8housing">Section 8
+                                                                <NavLink exact activeClassName="activeclass" to="/section8housing">Section 8
                                                                     Housing</NavLink>
                                                             </li>
                                                             <li>
-                                                                <NavLink exact activeClassName="activeclass" to="housingAuthority">Housing
+                                                                <NavLink exact activeClassName="activeclass" to="/housingAuthority">Housing
                                                                     Authority Waitlists</NavLink>
                                                             </li>
                                                         </ul>
@@ -350,11 +350,11 @@ const Navbar = () => {
 
                                                             </li>
                                                             <li >
-                                                                <NavLink exact activeClassName="activeclass" to="seniorHousing">Senior Housing</NavLink>
+                                                                <NavLink exact activeClassName="activeclass" to="/seniorHousing">Senior Housing</NavLink>
                                                             </li>
-                                                            <li><NavLink exact activeClassName="activeclass" to="section8housing">Section 8
+                                                            <li><NavLink exact activeClassName="activeclass" to="/section8housing">Section 8
                                                                 Housing</NavLink></li>
-                                                            <li><NavLink exact activeClassName="activeclass" to="housingAuthority">Housing
+                                                            <li><NavLink exact activeClassName="activeclass" to="/housingAuthority">Housing
                                                                 Authority Waitlists</NavLink></li>
                                                         </ul>
                                                         <div className="sideBarLine"></div>
@@ -409,14 +409,14 @@ const Navbar = () => {
 
                                             </li>
                                             <li className="nav-item">
-                                                <NavLink exact activeClassName="activeclass" to="seniorHousing">Senior Housing</NavLink>
+                                                <NavLink exact activeClassName="activeclass" to="/seniorHousing">Senior Housing</NavLink>
                                             </li>
                                             <li className="nav-item">
-                                                <NavLink exact activeClassName="activeclass" to="section8housing">Section 8
+                                                <NavLink exact activeClassName="activeclass" to="/section8housing">Section 8
                                                     Housing</NavLink>
                                             </li>
                                             <li className="nav-item">
-                                                <NavLink exact activeClassName="activeclass" to="housingAuthority">Housing
+                                                <NavLink exact activeClassName="activeclass" to="/housingAuthority">Housing
                                                     Authority Waitlists</NavLink>
                                             </li>
                                         </ul>
@@ -436,11 +436,11 @@ const Navbar = () => {
 
                                                             </li>
                                                             <li>
-                                                                <NavLink exact activeClassName="activeclass" to="seniorHousing">Senior Housing</NavLink>
+                                                                <NavLink exact activeClassName="activeclass" to="/seniorHousing">Senior Housing</NavLink>
                                                             </li>
-                                                            <li> <NavLink exact activeClassName="activeclass" to="section8housing">Section 8
+                                                            <li> <NavLink exact activeClassName="activeclass" to="/section8housing">Section 8
                                                                 Housing</NavLink></li>
-                                                            <li><NavLink exact activeClassName="activeclass" to="housingAuthority">Housing
+                                                            <li><NavLink exact activeClassName="activeclass" to="/housingAuthority">Housing
                                                                 Authority Waitlists</NavLink></li>
                                                         </ul>
                                                         <div className="sideBarLine"></div>
@@ -491,14 +491,14 @@ const Navbar = () => {
 
                                                             </li>
                                                             <li >
-                                                                <NavLink exact activeClassName="activeclass" to="seniorHousing">Senior Housing</NavLink>
+                                                                <NavLink exact activeClassName="activeclass" to="/seniorHousing">Senior Housing</NavLink>
 
                                                             </li>
                                                             <li>
-                                                                <NavLink exact activeClassName="activeclass" to="section8housing">Section 8
+                                                                <NavLink exact activeClassName="activeclass" to="/section8housing">Section 8
                                                                     Housing</NavLink>
                                                             </li>
-                                                            <li><NavLink exact activeClassName="activeclass" to="housingAuthority">Housing
+                                                            <li><NavLink exact activeClassName="activeclass" to="/housingAuthority">Housing
                                                                 Authority Waitlists</NavLink></li>
                                                         </ul>
                                                         <div className="sideBarLine"></div>
@@ -774,14 +774,14 @@ const Navbar = () => {
 
                                             </li>
                                             <li className="nav-item">
-                                                <NavLink className={`${feature == 'senior' ? 'activeclass' : null}`} exact activeClassName="activeclass" to="seniorHousing">Senior Housing</NavLink>
+                                                <NavLink className={`${feature == 'senior' ? 'activeclass' : null}`} exact activeClassName="activeclass" to="/seniorHousing">Senior Housing</NavLink>
                                             </li>
                                             <li className="nav-item">
-                                                <NavLink className={`${feature == 'section' ? 'activeclass' : null}`} exact activeClassName="activeclass" to="section8housing">Section 8
+                                                <NavLink className={`${feature == 'section' ? 'activeclass' : null}`} exact activeClassName="activeclass" to="/section8housing">Section 8
                                                     Housing</NavLink>
                                             </li>
                                             <li className="nav-item">
-                                                <NavLink className={`${feature == undefined && window.location.href.includes('agencyState') ? 'activeclass' : null}`} exact activeClassName="activeclass" to="housingAuthority">Housing
+                                                <NavLink className={`${feature == undefined && window.location.href.includes('agencyState') ? 'activeclass' : null}`} exact activeClassName="activeclass" to="/housingAuthority">Housing
                                                     Authority Waitlists</NavLink>
                                             </li>
                                         </ul>

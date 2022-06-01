@@ -6,7 +6,7 @@ import { SliderItemWithDetail } from '../../containers/SliderItemWithDetail';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
-const PropertiesNearby3 = ({ propertynearby }) => {
+const PropertiesNearby3 = ({ propertynearby, titletext }) => {
 
     const responsive = {
         superLargeDesktop: {
@@ -479,7 +479,7 @@ const PropertiesNearby3 = ({ propertynearby }) => {
             <section className="secPad housingNearby proprty3">
                 <div className="container p-0">
                     <div className="sectionTitle">
-                        <h2 className="font-weight700 colorBlue">Properties Nearby</h2>
+                        <h2 className="font-weight700 colorBlue">{titletext}</h2>
                     </div>
                     <div className="row marginTop">
                         <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -553,21 +553,21 @@ const PropertiesNearby3 = ({ propertynearby }) => {
                                                                         )
                                                                 }
                                                             </b>Sq.Ft</li>
-                                                            
+
                                                         </ul>
                                                         <div className="ml-auto boldTag greenText fontSize16">
-                                                                {
-                                                                    (data.rent_from == 0 && data.rent_to == 0) || (data.rent_from == '' && data.rent_to == '') || (data.rent_from == null && data.rent_to == null)
-                                                                        ?
-                                                                        '$ N/A'
-                                                                        :
+                                                            {
+                                                                (data.rent_from == 0 && data.rent_to == 0) || (data.rent_from == '' && data.rent_to == '') || (data.rent_from == null && data.rent_to == null)
+                                                                    ?
+                                                                    '$ N/A'
+                                                                    :
 
-                                                                        (data.rent_from == data.rent_to ?
-                                                                            `$ ${data.rent_from}`
-                                                                            :
-                                                                            `$ ${data.rent_from} - ${data.rent_to}`
-                                                                        )
-                                                                }
+                                                                    (data.rent_from == data.rent_to ?
+                                                                        `$ ${data.rent_from}`
+                                                                        :
+                                                                        `$ ${data.rent_from} - ${data.rent_to}`
+                                                                    )
+                                                            }
 
                                                         </div>
                                                     </div>

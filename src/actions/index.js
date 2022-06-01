@@ -131,6 +131,7 @@ export const getPropListAccordingToMap = (minlat, maxlat, minlng, maxlng, isItCi
 export const getPropListAccordingToCityAndState = (mainURL) => async (dispatch) => {
 
 
+
     if (typeof (cancelTokens) != typeof (undefined)) {
         cancelTokens.cancel("Canceling the prev stacks");
     }
@@ -147,7 +148,7 @@ export const getPropListAccordingToCityAndState = (mainURL) => async (dispatch) 
             .then(response => response.json())
             .then(res => {
                 // console.log(res,"SIMPLE DATA");
-                // console.log(mainURL);
+                console.log(mainURL);
                 return res;
             })
             .catch(error => console.log('error', error));
