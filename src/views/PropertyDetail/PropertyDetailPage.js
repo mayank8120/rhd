@@ -1589,7 +1589,7 @@ const PropertyDetailPage = ({ post }) => {
 
                                 {/* About  */}
                                 <div className="SectionBlock responsive15">
-                                    <h3 className="font-weight700 colorBlue fontSize18">About {propdata.property_title} - Affordable Apartment for Low Income {propdata.property_type == 'general' ? 'Tenant' : 'Residents'}</h3>
+                                    <h3 className="font-weight700 colorBlue fontSize18">About {propdata.property_title} {propdata.property_type == 'general' ? ' - Affordable Apartments for Low Income Residents' : null}</h3>
                                     <div className="truncate">
                                         <p>
                                             {
@@ -2865,7 +2865,7 @@ const PropertyDetailPage = ({ post }) => {
                                                     :
                                                     <>
                                                         <div className="titleHeading res24Top marginTop24 responsive15">
-                                                            <h3 className="fontSize18 font-weight700">Affordable Housing Authorities near {capitalise(propdata.property_city)}, {propdata.property_state}</h3>
+                                                            <h3 className="fontSize18 font-weight700">Housing Authorities near {capitalise(propdata.property_city)}, {propdata.property_state}</h3>
                                                         </div>
                                                         <HousingAuthorityforGeneral prophousingAuthority={prophousingAuthority} />
                                                         <div className="brdrLine"></div>

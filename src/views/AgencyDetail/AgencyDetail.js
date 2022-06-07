@@ -1255,7 +1255,9 @@ const AgencyDetail = () => {
 
 
                                         <div className="titleHeading">
-                                            <h3 className="fontSize18 font-weight700">{agendetail.name} Program Summary, {agendetail.state}</h3>
+                                            <h3 className="fontSize18 font-weight700">{agendetail.name} Program Summary
+                                                {/* , {agendetail.state} */}
+                                            </h3>
 
 
                                             <div className="fontSize16 font-weight400 colorBlue detailPara2">
