@@ -99,23 +99,23 @@ export const getPropListAccordingToMap = (minlat, maxlat, minlng, maxlng, isItCi
 
         try {
             const data = await axios(zoomOutConfig).then(function (response) {
-                console.log(response,"CITY Wise DATA");
+                // console.log(response,"CITY Wise DATA");
                 return response.data;
             }).catch(function (error) {
-                // console.log(error);
+                console.log(error);
             });
             dispatch({ type: FETCH_PROPS, payload: data });
         } catch (error) {
-            // console.log(error.message);
+            console.log(error.message);
         }
     } else {
 
         try {
             const data = await axios(zoomInConfig).then(function (response) {
-                console.log(response,"NON CITY WISE DATA");
+                // console.log(response,"NON CITY WISE DATA");
                 return response.data;
             }).catch(function (error) {
-                // console.log(error);
+                console.log(error);
             });
             dispatch({ type: FETCH_PROPS, payload: data });
         } catch (error) {
@@ -148,13 +148,13 @@ export const getPropListAccordingToCityAndState = (mainURL) => async (dispatch) 
             .then(response => response.json())
             .then(res => {
                 // console.log(res,"SIMPLE DATA");
-                console.log(mainURL);
+                // console.log(mainURL);
                 return res;
             })
             .catch(error => console.log('error', error));
         dispatch({ type: FETCH_PROPS, payload: data });
     } catch (error) {
-        // console.log(error.message);
+        console.log(error.message);
     }
 };
 

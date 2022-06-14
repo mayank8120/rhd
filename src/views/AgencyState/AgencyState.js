@@ -111,13 +111,13 @@ const AgencyState = () => {
     }, [currentpage]);
 
     const params = new URLSearchParams(window.location.search);
-    const authdetail =
-        useEffect(() => {
-            const city = params.get('city');
-            const states = params.get('state');
-            setcity(city);
-            setstatename(states.toUpperCase());
-        }, [params]);
+    // const authdetail =
+    useEffect(() => {
+        const city = params.get('city');
+        const states = params.get('state');
+        setcity(city);
+        setstatename(states.toUpperCase());
+    }, [params]);
     // console.log(city, statename);
 
     let housngAPIurl = 'http://thomasthecat.rentalhousingdeals.com/apis/v1/api/v1/housing-authorities?state=CA&city=los angeles'
@@ -128,6 +128,7 @@ const AgencyState = () => {
             if (statename === 'undefined' || statename === '' || statename === null) {
             }
             else {
+                setsearchresultdata([]);
                 const result = await axios.post(housingAPIurl)
                     .then(res => {
                         if (res.data.error === true) {

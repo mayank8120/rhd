@@ -37,6 +37,7 @@ import { getAllProp } from '../../containers/functions';
 import FloorPlanItemMobile from './FloorPlanItemMobile';
 import { Link } from 'react-router-dom';
 import { statelist } from '../../assets/JSONs/jsons';
+import { numberofoccupants } from '../../constants/arraysLists';
 
 
 const PropertyDetailPage = ({ post }) => {
@@ -726,12 +727,12 @@ const PropertyDetailPage = ({ post }) => {
                                 <ol className="breadcrumb font-weight500 mb-0">
                                     <li className="breadcrumb-item fontSize14"><a href="/" className="purpleText">Home</a></li>
                                     <li className="breadcrumb-item fontSize14 purpleText">
-                                        <a href={`/propertySearch?city=&state=${propdata.property_state}`} className={'purpleText'} >
+                                        <a href={`/propertySearch/&state=${propdata.property_state}`} className={'purpleText'} >
                                             {propdata.property_state}
                                         </a>
                                     </li>
                                     <li className="breadcrumb-item fontSize14 purpleText">
-                                        <a href={`/propertySearch?city=${propdata.property_city}&state=${propdata.property_state}`} className={'purpleText'} >
+                                        <a href={`/propertySearch/${propdata.property_city}&state=${propdata.property_state}`} className={'purpleText'} >
                                             {capitalise(propdata.property_city)}
                                         </a>
                                     </li>
@@ -3705,11 +3706,6 @@ const PropertyDetailPage = ({ post }) => {
                                                     })
                                                 }
 
-
-                                                {/* <option>bb</option>
-                                            <option>sd</option>
-                                            <option>kj</option>
-                                            <option>re</option> */}
                                             </select>
                                         </div>
                                     </div>
@@ -3736,13 +3732,26 @@ const PropertyDetailPage = ({ post }) => {
                                     <div className="col-lg-3 col-md-3 col-sm-12 col-xs-12 pr-0">
                                         <div className="form-group">
                                             <label for="">Occupants</label>
-                                            <div className="posRel calnderIcon">
+                                            <select className="form-control"
+                                                id="exampleFormControlSelect1"
+                                                value={formData.occupants} onChange={(e) => setformData({ ...formData, occupants: e.target.value })} required >
+                                                {
+                                                    numberofoccupants.map((val) => {
+                                                        return (
+                                                            <option>{val}</option>
+                                                        );
+                                                    })
+                                                }
+
+                                            </select>
+
+                                            {/* <div className="posRel calnderIcon">
                                                 <input type="number"
                                                     className="form-control" id=""
                                                     aria-describedby="emailHelp"
                                                     placeholder="Number of occupants"
                                                     value={formData.occupants} onChange={(e) => setformData({ ...formData, occupants: e.target.value })} required />
-                                            </div>
+                                            </div> */}
                                         </div>
                                     </div>
                                     <div className="col-lg-3 col-md-3 col-sm-12 col-xs-12">

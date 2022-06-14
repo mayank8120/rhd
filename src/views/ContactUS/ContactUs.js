@@ -149,7 +149,7 @@ export const ContactUs = () => {
                                                             <label for="">Email Address</label>
                                                             <input type="email" className="form-control"
 
-                                                                placeholder="e.g. jonathan@gmail.com"
+                                                                placeholder="Email"
                                                                 value={formdata.email}
                                                                 onChange={(e) => setformdata({ ...formdata, email: e.target.value })} required />
                                                         </div>

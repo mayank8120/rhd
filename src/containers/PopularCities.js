@@ -133,7 +133,7 @@ const PopularCities = ({ titletext }) => {
                             responsive={responsive}
                             infinite>
                             {database.map((data) => (
-                                <Link to={`/propertySearch?city=${data.city}&state=${data.state}`}>
+                                <Link to={`/propertySearch/${data.city}/${data.state}`}>
                                     <div className="popularCitySliderText">
                                         <img src={require(`../assets/img/${data.imgurl}`).default} />
                                         <h3 className="font-weight700">{data.city}, {data.state}</h3>

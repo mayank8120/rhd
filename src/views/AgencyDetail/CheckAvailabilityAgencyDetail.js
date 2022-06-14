@@ -47,7 +47,7 @@ const CheckAvailabilityAgencyDetail = () => {
                                 <div className="form-group">
                                     <label for="exampleInputEmail1">Phone Number</label>
                                     <input type="number" className="form-control" id=""
-                                        aria-describedby="emailHelp" placeholder="e.g. 6264482699"
+                                        aria-describedby="emailHelp" placeholder="Phone Number"
                                         value={checkAvailability.phone} onChange={(e) => setcheckAvailability({ ...checkAvailability, phone: e.target.value })} required />
                                 </div>
                             </div>
@@ -56,7 +56,7 @@ const CheckAvailabilityAgencyDetail = () => {
                                     <label for="exampleInputEmail1">Email Address</label>
                                     <input type="email" className="form-control" id=""
                                         aria-describedby="emailHelp"
-                                        placeholder="e.g. jonathan@gmail.com"
+                                        placeholder="Email"
                                         value={checkAvailability.emailid} onChange={(e) => setcheckAvailability({ ...checkAvailability, emailid: e.target.value })} required />
                                 </div>
                             </div>

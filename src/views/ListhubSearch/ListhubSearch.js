@@ -1381,7 +1381,7 @@ const ListhubSearch = () => {
                                                                             <label for="">Phone Number</label>
                                                                             <input type="email" className="form-control" id=""
                                                                                 aria-describedby="emailHelp"
-                                                                                placeholder="e.g. 6264482699" />
+                                                                                placeholder="Phone Number" />
                                                                         </div>
                                                                     </div>
                                                                     <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -1389,7 +1389,7 @@ const ListhubSearch = () => {
                                                                             <label for="">Email Address</label>
                                                                             <input type="email" className="form-control" id=""
                                                                                 aria-describedby="emailHelp"
-                                                                                placeholder="e.g. jonathan@gmail.com" />
+                                                                                placeholder="Email" />
                                                                         </div>
                                                                     </div>
                                                                     <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">

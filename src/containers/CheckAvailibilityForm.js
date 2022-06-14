@@ -237,7 +237,7 @@ const CheckAvailibilityForm = ({ propid, page, setIsOpenAvailability, setIsOpenS
                         <div className="form-group">
                             <label for="">Phone Number</label>
                             <input type="number" className="form-control"
-                                placeholder="e.g. 6264482699"
+                                placeholder="Phone Number"
                                 value={formdata.phone}
                                 onChange={(e) => setformdata({ ...formdata, phone: e.target.value })} required
                             />
@@ -248,7 +248,7 @@ const CheckAvailibilityForm = ({ propid, page, setIsOpenAvailability, setIsOpenS
                             <label for="">Email Address</label>
                             <input type="email" className="form-control"
 
-                                placeholder="e.g. jonathan@gmail.com"
+                                placeholder="Email"
                                 value={formdata.email_address}
                                 onChange={(e) => setformdata({ ...formdata, email_address: e.target.value })} required />
                         </div>

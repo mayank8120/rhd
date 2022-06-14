@@ -301,7 +301,7 @@ const ErrorPage = () => {
         //         } else {
         //             setdropdowndata(res.data[0].data);
         //             console.log(res.data[0].data);
-        //             setpathnameS(`/propertySearch?city=${res.data[0].data[0].property_city}&state=${res.data[0].data[0].property_state}`);
+        //             setpathnameS(`/propertySearch/${res.data[0].data[0].property_city}/${res.data[0].data[0].property_state}`);
         //         }
         //     }).catch(error => {
         //         console.log('error', error);
@@ -325,7 +325,7 @@ const ErrorPage = () => {
                 } else {
                     setdropdowndata(res[0].data);
                     console.log(res[0].data);
-                    setpathnameS(`/propertySearch?city=${res[0].data[0].property_city}&state=${res[0].data[0].property_state}`);
+                    setpathnameS(`/propertySearch/${res[0].data[0].property_city}/${res[0].data[0].property_state}`);
                 }
             }
 
@@ -400,7 +400,7 @@ const ErrorPage = () => {
                                                         dropdowndata == 'No Record Found' ?
                                                             <>
                                                                 <p>
-                                                                    <Link className='secondaryColor w-100 d-flex align-items-center' to={`/propertySearch?city=${city == undefined ? null : city}&state=${statenames == undefined ? null : statenames}`}>
+                                                                    <Link className='secondaryColor w-100 d-flex align-items-center' to={`/propertySearch/${city == undefined ? null : city}/${statenames == undefined ? null : statenames}`}>
                                                                         <svg className='mr-2' xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.208 16.712a.75.75 0 01-.469-1.425 5.564 5.564 0 003.548-3.548.75.75 0 011.425.469 7.064 7.064 0 01-4.504 4.504zM4.712 8.26a.75.75 0 01-1.425-.468 7.064 7.064 0 014.505-4.505.75.75 0 01.469 1.425A5.564 5.564 0 004.712 8.26zm11.522.479a.75.75 0 00.478-.947 7.065 7.065 0 00-4.504-4.505.75.75 0 00-.469 1.425 5.564 5.564 0 013.548 3.548.75.75 0 00.947.479zm-7.973 6.548a.75.75 0 01-.469 1.425 7.065 7.065 0 01-4.505-4.504.75.75 0 011.425-.469 5.564 5.564 0 003.549 3.548z" fill="#726F6C" /><path d="M10 7a3 3 0 110 6 3 3 0 010-6z" fill="#E84676" /></svg>
                                                                         Use Your Current Location
                                                                     </Link>
@@ -416,7 +416,7 @@ const ErrorPage = () => {
                                                                 {
                                                                     <>
                                                                         <p>
-                                                                            <Link className='secondaryColor w-100 d-flex align-items-center' to={`/propertySearch?city=${city == undefined ? null : city}&state=${statenames == undefined ? null : statenames}`}>
+                                                                            <Link className='secondaryColor w-100 d-flex align-items-center' to={`/propertySearch/${city == undefined ? null : city}/${statenames == undefined ? null : statenames}`}>
                                                                                 <svg className='mr-2' xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.208 16.712a.75.75 0 01-.469-1.425 5.564 5.564 0 003.548-3.548.75.75 0 011.425.469 7.064 7.064 0 01-4.504 4.504zM4.712 8.26a.75.75 0 01-1.425-.468 7.064 7.064 0 014.505-4.505.75.75 0 01.469 1.425A5.564 5.564 0 004.712 8.26zm11.522.479a.75.75 0 00.478-.947 7.065 7.065 0 00-4.504-4.505.75.75 0 00-.469 1.425 5.564 5.564 0 013.548 3.548.75.75 0 00.947.479zm-7.973 6.548a.75.75 0 01-.469 1.425 7.065 7.065 0 01-4.505-4.504.75.75 0 011.425-.469 5.564 5.564 0 003.549 3.548z" fill="#726F6C" /><path d="M10 7a3 3 0 110 6 3 3 0 010-6z" fill="#E84676" /></svg>
                                                                                 Use Your Current Location
                                                                             </Link>
@@ -438,7 +438,7 @@ const ErrorPage = () => {
                                                                                                 val.property_state == null || val.property_state == undefined ?
                                                                                                     `${val.property_city}, ${val.property_state}`
                                                                                                     :
-                                                                                                    <Link className='secondaryColor w-100 d-block' to={`/propertySearch?city=${val.property_city}&state=${val.property_state}`}>
+                                                                                                    <Link className='secondaryColor w-100 d-block' to={`/propertySearch/${val.property_city}/${val.property_state}`}>
                                                                                                         {val.property_city.toLowerCase()
                                                                                                             .split(' ')
                                                                                                             .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
@@ -500,7 +500,7 @@ const ErrorPage = () => {
 
 
                             <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                                <Link to={`/propertySearch?city=${data.city}&state=${data.state}`}>
+                                <Link to={`/propertySearch/${data.city}/${data.state}`}>
                                     <div class="popularCitySliderText">
                                         <img src={require(`../../assets/img/${data.imgurl}`).default} />
                                         <h3 class="font-weight700">{data.city}, {data.state}</h3>

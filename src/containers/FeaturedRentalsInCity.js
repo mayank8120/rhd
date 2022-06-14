@@ -63,19 +63,19 @@ const FeaturedRentalsInCity = ({ latlngdata, page }) => {
                                             <div className="row">
                                                 <div className="col-lg-12 pl-0">
                                                     <ul className="noMarginPad list-style-type row">
-                                                        <Link to={`/propertySearch?city=${nearbycitiesdata == undefined || nearbycitiesdata == null ? 'Los Angeles' : nearbycitiesdata[0].property_city}&state=${nearbycitiesdata == undefined || nearbycitiesdata == null ? 'CA' : nearbycitiesdata[0].property_state}`}>
+                                                        <Link to={`/propertySearch/${nearbycitiesdata == undefined || nearbycitiesdata == null ? 'Los Angeles' : nearbycitiesdata[0].property_city}/${nearbycitiesdata == undefined || nearbycitiesdata == null ? 'CA' : nearbycitiesdata[0].property_state}`}>
                                                             <li>
                                                                 <h3 className="font-weight500 mb-0">{nearbycitiesdata == undefined || nearbycitiesdata == null ? 'Los Angeles' : capitalise(nearbycitiesdata[0].property_city)}</h3>
                                                                 <p className="mb-0 secondaryColor">Affordable Housing</p>
                                                             </li>
                                                         </Link>
-                                                        <Link to={`/propertySearch?city=${nearbycitiesdata == undefined || nearbycitiesdata == null ? 'Los Angeles' : nearbycitiesdata[0].property_city}&state=${nearbycitiesdata == undefined || nearbycitiesdata == null ? 'CA' : nearbycitiesdata[0].property_state}&feature=senior`}>
+                                                        <Link to={`/propertySearch/${nearbycitiesdata == undefined || nearbycitiesdata == null ? 'Los Angeles' : nearbycitiesdata[0].property_city}/${nearbycitiesdata == undefined || nearbycitiesdata == null ? 'CA' : nearbycitiesdata[0].property_state}&feature=senior`}>
                                                             <li>
                                                                 <h3 className="font-weight500 mb-0">{nearbycitiesdata == undefined || nearbycitiesdata == null ? 'Los Angeles' : capitalise(nearbycitiesdata[0].property_city)}</h3>
                                                                 <p className="mb-0 secondaryColor">Senior Housing</p>
                                                             </li>
                                                         </Link>
-                                                        <Link to={`/propertySearch?city=${nearbycitiesdata == undefined || nearbycitiesdata == null ? 'Los Angeles' : nearbycitiesdata[0].property_city}&state=${nearbycitiesdata == undefined || nearbycitiesdata == null ? 'CA' : nearbycitiesdata[0].property_state}&feature=section`}>
+                                                        <Link to={`/propertySearch/${nearbycitiesdata == undefined || nearbycitiesdata == null ? 'Los Angeles' : nearbycitiesdata[0].property_city}/${nearbycitiesdata == undefined || nearbycitiesdata == null ? 'CA' : nearbycitiesdata[0].property_state}&feature=section`}>
                                                             <li>
                                                                 <h3 className="font-weight500 mb-0">{nearbycitiesdata == undefined || nearbycitiesdata == null ? 'Los Angeles' : capitalise(nearbycitiesdata[0].property_city)}</h3>
                                                                 <p className="mb-0 secondaryColor">Section 8 Housing</p>
@@ -118,7 +118,7 @@ const FeaturedRentalsInCity = ({ latlngdata, page }) => {
 
 
                                                                         (nearbycitiesdata.map((data) => (
-                                                                            <Link to={`/propertySearch?city=${data.property_city}&state=${data.property_state}`} className="col-lg-3 col-xs-6">
+                                                                            <Link to={`/propertySearch/${data.property_city}/${data.property_state}`} className="col-lg-3 col-xs-6">
                                                                                 <li >
                                                                                     <h3 className="font-weight500 mb-0">{capitalise(data.property_city)}</h3>
                                                                                     <p className="mb-0 secondaryColor">Affordable Housing
@@ -129,7 +129,7 @@ const FeaturedRentalsInCity = ({ latlngdata, page }) => {
                                                                         )))
                                                                         :
                                                                         (nearbycitiesdata.slice(0, 16).map((data) => (
-                                                                            <Link to={`/propertySearch?city=${data.property_city}&state=${data.property_state}`} className="col-lg-3 col-xs-6">
+                                                                            <Link to={`/propertySearch/${data.property_city}/${data.property_state}`} className="col-lg-3 col-xs-6">
                                                                                 <li>
                                                                                     <h3 className="font-weight500 mb-0">{capitalise(data.property_city)}</h3>
                                                                                     <p className="mb-0 secondaryColor">Affordable Housing
@@ -179,7 +179,7 @@ const FeaturedRentalsInCity = ({ latlngdata, page }) => {
                                                                         ?
                                                                         (
                                                                             nearbycitiesdata.map((data) => (
-                                                                                <Link to={`/agencyState?city=${data.property_city}&state=${data.property_state}`} className="col-lg-3 col-xs-6">
+                                                                                <Link to={`/agencyState?city=${data.property_city}/${data.property_state}`} className="col-lg-3 col-xs-6">
                                                                                     <li >
                                                                                         <h3 className="font-weight500 mb-0">{capitalise(data.property_city)}</h3>
                                                                                         <p className="mb-0 secondaryColor">Housing Authorities
@@ -191,7 +191,7 @@ const FeaturedRentalsInCity = ({ latlngdata, page }) => {
                                                                         :
                                                                         (
                                                                             nearbycitiesdata.slice(0, 16).map((data) => (
-                                                                                <Link to={`/agencyState?city=${data.property_city}&state=${data.property_state}`} className="col-lg-3 col-xs-6">
+                                                                                <Link to={`/agencyState?city=${data.property_city}/${data.property_state}`} className="col-lg-3 col-xs-6">
                                                                                     <li >
                                                                                         <h3 className="font-weight500 mb-0">{capitalise(data.property_city)}</h3>
                                                                                         <p className="mb-0 secondaryColor">Housing Authorities</p>

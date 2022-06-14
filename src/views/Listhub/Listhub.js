@@ -171,7 +171,7 @@ const Listhub = () => {
                                                                                         <input type="email"
                                                                                             className="form-control" id=""
                                                                                             aria-describedby="emailHelp"
-                                                                                            placeholder="e.g. 6264482699" />
+                                                                                            placeholder="Phone Number" />
                                                                                     </div>
                                                                                 </div>
                                                                                 <div
@@ -181,7 +181,7 @@ const Listhub = () => {
                                                                                         <input type="email"
                                                                                             className="form-control" id=""
                                                                                             aria-describedby="emailHelp"
-                                                                                            placeholder="e.g. jonathan@gmail.com" />
+                                                                                            placeholder="Email" />
                                                                                     </div>
                                                                                 </div>
                                                                                 <div
@@ -805,7 +805,7 @@ const Listhub = () => {
                                                                             <label for="">Phone Number</label>
                                                                             <input type="email" className="form-control" id=""
                                                                                 aria-describedby="emailHelp"
-                                                                                placeholder="e.g. 6264482699" />
+                                                                                placeholder="Phone Number" />
                                                                         </div>
                                                                     </div>
                                                                     <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -813,7 +813,7 @@ const Listhub = () => {
                                                                             <label for="">Email Address</label>
                                                                             <input type="email" className="form-control" id=""
                                                                                 aria-describedby="emailHelp"
-                                                                                placeholder="e.g. jonathan@gmail.com" />
+                                                                                placeholder="Email" />
                                                                         </div>
                                                                     </div>
                                                                     <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -2310,14 +2310,14 @@ const Listhub = () => {
                                             <div className="form-group">
                                                 <label for="">Phone Number</label>
                                                 <input type="email" className="form-control" id="" aria-describedby="emailHelp"
-                                                    placeholder="e.g. 6264482699" />
+                                                    placeholder="Phone Number" />
                                             </div>
                                         </div>
                                         <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <div className="form-group">
                                                 <label for="">Email Address</label>
                                                 <input type="email" className="form-control" id="" aria-describedby="emailHelp"
-                                                    placeholder="e.g. jonathan@gmail.com" />
+                                                    placeholder="Email" />
                                             </div>
                                         </div>
                                         <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -2407,7 +2407,7 @@ const Listhub = () => {
                                                     <div className="form-group">
                                                         <label for="">Phone Number</label>
                                                         <input type="email" className="form-control" id=""
-                                                            aria-describedby="emailHelp" placeholder="e.g. 6264482699" />
+                                                            aria-describedby="emailHelp" placeholder="Phone Number" />
                                                     </div>
                                                 </div>
                                                 <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -2415,7 +2415,7 @@ const Listhub = () => {
                                                         <label for="">Email Address</label>
                                                         <input type="email" className="form-control" id=""
                                                             aria-describedby="emailHelp"
-                                                            placeholder="e.g. jonathan@gmail.com" />
+                                                            placeholder="Email" />
                                                     </div>
                                                 </div>
                                                 <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -2555,7 +2555,7 @@ const Listhub = () => {
                                                                                                     className="form-control"
                                                                                                     id=""
                                                                                                     aria-describedby="emailHelp"
-                                                                                                    placeholder="e.g. 6264482699" />
+                                                                                                    placeholder="Phone Number" />
                                                                                             </div>
                                                                                         </div>
                                                                                         <div
@@ -2567,7 +2567,7 @@ const Listhub = () => {
                                                                                                     className="form-control"
                                                                                                     id=""
                                                                                                     aria-describedby="emailHelp"
-                                                                                                    placeholder="e.g. jonathan@gmail.com" />
+                                                                                                    placeholder="Email" />
                                                                                             </div>
                                                                                         </div>
                                                                                         <div

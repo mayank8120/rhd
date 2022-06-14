@@ -1174,7 +1174,7 @@ export const PropertySearchItem = ({ post }) => {
                                                                     <input
                                                                         type="number"
                                                                         className="form-control"
-                                                                        placeholder="e.g. 6264482699"
+                                                                        placeholder="Phone Number"
                                                                         value={formdata.phone}
                                                                         onChange={(e) =>
                                                                             setformdata({
@@ -1192,7 +1192,7 @@ export const PropertySearchItem = ({ post }) => {
                                                                     <input
                                                                         type="email"
                                                                         className="form-control"
-                                                                        placeholder="e.g. jonathan@gmail.com"
+                                                                        placeholder="Email"
                                                                         value={formdata.email_address}
                                                                         onChange={(e) =>
                                                                             setformdata({

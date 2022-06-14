@@ -172,7 +172,6 @@ const PropertySearch = () => {
             (minlng == null || minlng == undefined) &&
             (maxlng == null || maxlng == undefined)) {
             setareQuestionParametersPresent(false);
-
             // console.log(minlat, maxlat, minlng, maxlng, "FALSE");
         } else {
             setareQuestionParametersPresent(true);
@@ -618,24 +617,24 @@ const PropertySearch = () => {
 
     const surl = 'http://thomasthecat.rentalhousingdeals.com/apis/v1/api/v1/property-search?';
 
-    let searchApiUrl = `${surl}city=${city}&state=${statename}&page=${currentpage}&feature=${featureParameter}&minamtval=${min_price == undefined ? '' : min_price}&maxamtval=${max_price == undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`
-    let searchsenior = `${surl}city=${city}&state=${statename}&page=${currentpage}&feature=senior&minamtval=${min_price == undefined ? '' : min_price}&maxamtval=${max_price == undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`
-    let searchsection8 = `${surl}city=${city}&state=${statename}&page=${currentpage}&feature=section&minamtval=${min_price == undefined ? '' : min_price}&maxamtval=${max_price == undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`
+    let searchApiUrl = `${surl}city=${city}/${statename}&page=${currentpage}&feature=${featureParameter}&minamtval=${min_price == undefined ? '' : min_price}&maxamtval=${max_price == undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`
+    let searchsenior = `${surl}city=${city}/${statename}&page=${currentpage}&feature=senior&minamtval=${min_price == undefined ? '' : min_price}&maxamtval=${max_price == undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`
+    let searchsection8 = `${surl}city=${city}/${statename}&page=${currentpage}&feature=section&minamtval=${min_price == undefined ? '' : min_price}&maxamtval=${max_price == undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`
 
 
     // console.log(apartmentstring);
 
     // useEffect(() => {
-    //     searchApiUrl = `${surl}city=${city}&state=${statename}&page=${currentpage}&feature=${apartmentstring}&minamtval=${min_price == undefined ? '' : min_price}&maxamtval=${max_price == undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`;
-    //     searchsenior = `${surl}city=${city}&state=${statename}&page=${currentpage}&feature=senior&minamtval=${min_price == undefined ? '' : min_price}&maxamtval=${max_price == undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`
-    //     searchsection8 = `${surl}city=${city}&state=${statename}&page=${currentpage}&feature=section&minamtval=${min_price == undefined ? '' : min_price}&maxamtval=${max_price == undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`
+    //     searchApiUrl = `${surl}city=${city}/${statename}&page=${currentpage}&feature=${apartmentstring}&minamtval=${min_price == undefined ? '' : min_price}&maxamtval=${max_price == undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`;
+    //     searchsenior = `${surl}city=${city}/${statename}&page=${currentpage}&feature=senior&minamtval=${min_price == undefined ? '' : min_price}&maxamtval=${max_price == undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`
+    //     searchsection8 = `${surl}city=${city}/${statename}&page=${currentpage}&feature=section&minamtval=${min_price == undefined ? '' : min_price}&maxamtval=${max_price == undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`
     // }, [selectBeds, selectBaths]);
 
 
     useEffect(() => {
-        searchApiUrl = `${surl}city=${city}&state=${statename}&page=${currentpage}&feature=${featureParameter}&minamtval=${min_price == undefined ? '' : min_price}&maxamtval=${max_price == undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`;
-        searchsenior = `${surl}city=${city}&state=${statename}&page=${currentpage}&feature=senior&minamtval=${min_price == undefined ? '' : min_price}&maxamtval=${max_price == undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`
-        searchsection8 = `${surl}city=${city}&state=${statename}&page=${currentpage}&feature=section&minamtval=${min_price == undefined ? '' : min_price}&maxamtval=${max_price == undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`
+        searchApiUrl = `${surl}city=${city}/${statename}&page=${currentpage}&feature=${featureParameter}&minamtval=${min_price == undefined ? '' : min_price}&maxamtval=${max_price == undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`;
+        searchsenior = `${surl}city=${city}/${statename}&page=${currentpage}&feature=senior&minamtval=${min_price == undefined ? '' : min_price}&maxamtval=${max_price == undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`
+        searchsection8 = `${surl}city=${city}/${statename}&page=${currentpage}&feature=section&minamtval=${min_price == undefined ? '' : min_price}&maxamtval=${max_price == undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`
     }, [selectBeds, selectBaths, areNonQuestionParametersPresent]);
 
 
@@ -643,14 +642,14 @@ const PropertySearch = () => {
 
 
     useEffect(() => {
-        searchApiUrl = `${surl}city=${city}&state=${statename}&page=${currentpage}&feature=${featureParameter}&minamtval=${min_price == undefined ? '' : min_price}&maxamtval=${max_price == undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`;
+        searchApiUrl = `${surl}city=${city}/${statename}&page=${currentpage}&feature=${featureParameter}&minamtval=${min_price == undefined ? '' : min_price}&maxamtval=${max_price == undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`;
     }, [areNonQuestionParametersPresent])
 
 
 
     let applyfilters = () => {
-        // `http://thomasthecat.rentalhousingdeals.com/apis/v1/api/v1/property-search?city=${city}&state=${statename.toUpperCase()}&page=${currentpage}&feature=senior`
-        searchApiUrl = `http://thomasthecat.rentalhousingdeals.com/apis/v1/api/v1/property-search?city=${city}&state=${statename.toUpperCase()}&page=${currentpage}&minamtval=${min_price}&maxamtval=${max_price}`
+        // `http://thomasthecat.rentalhousingdeals.com/apis/v1/api/v1/property-search?city=${city}/${statename.toUpperCase()}&page=${currentpage}&feature=senior`
+        searchApiUrl = `http://thomasthecat.rentalhousingdeals.com/apis/v1/api/v1/property-search?city=${city}/${statename.toUpperCase()}&page=${currentpage}&minamtval=${min_price}&maxamtval=${max_price}`
         // console.log(searchApiUrl);
         setmin_price(minprice);
         setmax_price(maxprice);
@@ -830,7 +829,7 @@ const PropertySearch = () => {
             if (lastpage == 1) {
                 sethead(0);
                 settail(totalcount);
-                console.log(head, tail);
+                // console.log(head, tail);
             } else {
                 if (currentpage == lastpage) {
                     sethead((currentpage - 1) * 25);
@@ -893,7 +892,7 @@ const PropertySearch = () => {
                                                                         searchresultdata.slice(0, searchresultdata.length / 2 + 1).map((data) => (
                                                                             <li>
                                                                                 <div>
-                                                                                    <Link to={`/agencyState?city=&state=AL`}>
+                                                                                    <Link to={`/agencyState?city=/AL`}>
                                                                                         <h5 className='mb-0'>{data.city}</h5>
                                                                                         <p className='mb-0'>{data.listingcount} listings</p>
                                                                                     </Link>
@@ -909,7 +908,7 @@ const PropertySearch = () => {
                                                                         searchresultdata.slice(searchresultdata.length / 2 + 1).map((data) => (
                                                                             <li>
                                                                                 <div>
-                                                                                    <Link to={`/agencyState?city=&state=AL`}>
+                                                                                    <Link to={`/agencyState?city=/AL`}>
                                                                                         <h5 className='mb-0'>{data.city}</h5>
                                                                                         <p className='mb-0'>{data.listingcount} listings</p>
                                                                                     </Link>
@@ -934,7 +933,7 @@ const PropertySearch = () => {
                                                                 <ol className="breadcrumb font-weight500 mb-0">
                                                                     <li className="breadcrumb-item fontSize14"><a href="/" className=' purpleText' > Home</a></li>
                                                                     <li className="breadcrumb-item fontSize14 purpleText"><a href="/" className=' purpleText' >{feature == 'senior' ? 'Senior Housing' : (feature == 'section' ? 'Section 8 Housing' : 'Rentals')}</a></li>
-                                                                    <li className="breadcrumb-item fontSize14 purpleText"><a href={`/propertySearch?city=&state=${statename}`} className={city == undefined || city == '' ? 'activeimp' : 'purpleText'} >{statename}</a></li>
+                                                                    <li className="breadcrumb-item fontSize14 purpleText"><a href={`/propertySearch//${statename}`} className={city == undefined || city == '' ? 'activeimp' : 'purpleText'} >{statename}</a></li>
                                                                     {city == undefined || city == '' ? null : <li className="breadcrumb-item fontSize14 active">{capitalise(city)}</li>}
 
                                                                 </ol>

@@ -2449,7 +2449,7 @@ const AgencyDetail = () => {
                                                     <div className="form-group">
                                                         <label for="exampleInputEmail1">Phone Number</label>
                                                         <input type="email" className="form-control" id=""
-                                                            aria-describedby="emailHelp" placeholder="e.g. 6264482699" />
+                                                            aria-describedby="emailHelp" placeholder="Phone Number" />
                                                     </div>
                                                 </div>
                                                 <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -2457,7 +2457,7 @@ const AgencyDetail = () => {
                                                         <label for="exampleInputEmail1">Email Address</label>
                                                         <input type="email" className="form-control" id=""
                                                             aria-describedby="emailHelp"
-                                                            placeholder="e.g. jonathan@gmail.com" />
+                                                            placeholder="Email" />
                                                     </div>
                                                 </div>
                                                 <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -2566,7 +2566,7 @@ const AgencyDetail = () => {
                                                                     <input
                                                                         type="number"
                                                                         className="form-control"
-                                                                        placeholder="e.g. 6264482699"
+                                                                        placeholder="Phone Number"
                                                                         value={formdata.phone}
                                                                         onChange={(e) =>
                                                                             setformdata({
@@ -2584,7 +2584,7 @@ const AgencyDetail = () => {
                                                                     <input
                                                                         type="email"
                                                                         className="form-control"
-                                                                        placeholder="e.g. jonathan@gmail.com"
+                                                                        placeholder="Email"
                                                                         value={formdata.email_address}
                                                                         onChange={(e) =>
                                                                             setformdata({
@@ -2692,7 +2692,7 @@ const AgencyDetail = () => {
                                                     <div className="form-group">
                                                         <label for="exampleInputEmail1">Phone Number</label>
                                                         <input type="number" className="form-control" id=""
-                                                            aria-describedby="emailHelp" placeholder="e.g. 6264482699"
+                                                            aria-describedby="emailHelp" placeholder="Phone Number"
                                                             value={checkAvailability.phone} onChange={(e) => setcheckAvailability({ ...checkAvailability, phone: e.target.value })} required />
                                                     </div>
                                                 </div>
@@ -2701,7 +2701,7 @@ const AgencyDetail = () => {
                                                         <label for="exampleInputEmail1">Email Address</label>
                                                         <input type="email" className="form-control" id=""
                                                             aria-describedby="emailHelp"
-                                                            placeholder="e.g. jonathan@gmail.com"
+                                                            placeholder="Email"
                                                             value={checkAvailability.emailid} onChange={(e) => setcheckAvailability({ ...checkAvailability, emailid: e.target.value })} required />
                                                     </div>
                                                 </div>
@@ -3362,7 +3362,7 @@ const AgencyDetail = () => {
                                                                     <input
                                                                         type="number"
                                                                         className="form-control"
-                                                                        placeholder="e.g. 6264482699"
+                                                                        placeholder="Phone Number"
                                                                         value={formdatamodal.phone}
                                                                         onChange={(e) =>
                                                                             setformdatamodal({
@@ -3380,7 +3380,7 @@ const AgencyDetail = () => {
                                                                     <input
                                                                         type="email"
                                                                         className="form-control"
-                                                                        placeholder="e.g. jonathan@gmail.com"
+                                                                        placeholder="Email"
                                                                         value={formdatamodal.email_address}
                                                                         onChange={(e) =>
                                                                             setformdatamodal({
