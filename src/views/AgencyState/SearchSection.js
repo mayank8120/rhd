@@ -197,7 +197,7 @@ const SearchSection = ({ latlngdata }) => {
                                             <p
                                             // style={!showdropdown ? style1 : style}
                                             >
-                                                <Link className='secondaryColor w-100 d-block' to={`/agencyState?city=${city}/${statenames}`}
+                                                <Link className='secondaryColor w-100 d-block' to={`/agencyState?city=${city}&state=${statenames}`}
                                                     onClick={() => {
                                                         setdropdowndata();
                                                         setsearchterm(() => '');
@@ -227,7 +227,7 @@ const SearchSection = ({ latlngdata }) => {
                                                     <p
                                                     // style={!showdropdown ? style1 : style}
                                                     >
-                                                        <Link className='secondaryColor w-100 d-block' to={`/agencyState?city=${city}/${statenames}`}
+                                                        <Link className='secondaryColor w-100 d-block' to={`/agencyState?city=${city}&state=${statenames}`}
                                                             onClick={() => {
                                                                 setdropdowndata();
                                                                 setsearchterm(() => '');
@@ -258,7 +258,7 @@ const SearchSection = ({ latlngdata }) => {
                                                                             val.property_state == null || val.property_state == undefined ?
                                                                                 `${val.property_city}, ${val.property_state}`
                                                                                 :
-                                                                                <Link className='secondaryColor w-100 d-block' to={`/agencyState?city=${val.property_city}/${val.property_state}`}
+                                                                                <Link className='secondaryColor w-100 d-block' to={`/agencyState?city=${val.property_city}&state=${val.property_state}`}
                                                                                     onClick={() => {
                                                                                         setdropdowndata();
                                                                                         setsearchterm(() => '');
@@ -302,7 +302,7 @@ const SearchSection = ({ latlngdata }) => {
                     </ul>
 
                     <button type="submit" onClick={() => {
-                        setpathnameS("/agencyState?city=" + cityname + "/" + statename);
+                        setpathnameS("/agencyState?city=" + cityname + "&state=" + statename);
                         console.log("search button clicked")
                     }}>Search</button>
                 </form>

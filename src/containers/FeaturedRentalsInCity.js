@@ -179,7 +179,7 @@ const FeaturedRentalsInCity = ({ latlngdata, page }) => {
                                                                         ?
                                                                         (
                                                                             nearbycitiesdata.map((data) => (
-                                                                                <Link to={`/agencyState?city=${data.property_city}/${data.property_state}`} className="col-lg-3 col-xs-6">
+                                                                                <Link to={`/agencyState?city=${data.property_city}&state=${data.property_state}`} className="col-lg-3 col-xs-6">
                                                                                     <li >
                                                                                         <h3 className="font-weight500 mb-0">{capitalise(data.property_city)}</h3>
                                                                                         <p className="mb-0 secondaryColor">Housing Authorities
@@ -191,7 +191,7 @@ const FeaturedRentalsInCity = ({ latlngdata, page }) => {
                                                                         :
                                                                         (
                                                                             nearbycitiesdata.slice(0, 16).map((data) => (
-                                                                                <Link to={`/agencyState?city=${data.property_city}/${data.property_state}`} className="col-lg-3 col-xs-6">
+                                                                                <Link to={`/agencyState?city=${data.property_city}&state=${data.property_state}`} className="col-lg-3 col-xs-6">
                                                                                     <li >
                                                                                         <h3 className="font-weight500 mb-0">{capitalise(data.property_city)}</h3>
                                                                                         <p className="mb-0 secondaryColor">Housing Authorities</p>

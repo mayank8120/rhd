@@ -266,7 +266,7 @@ const HousingAuthPage = () => {
                                                                     <p
                                                                     // style={!showdropdown ? style1 : style}
                                                                     >
-                                                                        <Link className='secondaryColor w-100 d-block' to={`/agencyState?city=${city}/${statenames}`}>
+                                                                        <Link className='secondaryColor w-100 d-block' to={`/agencyState?city=${city}&state=${statenames}`}>
                                                                             <svg className='mr-2' xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.208 16.712a.75.75 0 01-.469-1.425 5.564 5.564 0 003.548-3.548.75.75 0 011.425.469 7.064 7.064 0 01-4.504 4.504zM4.712 8.26a.75.75 0 01-1.425-.468 7.064 7.064 0 014.505-4.505.75.75 0 01.469 1.425A5.564 5.564 0 004.712 8.26zm11.522.479a.75.75 0 00.478-.947 7.065 7.065 0 00-4.504-4.505.75.75 0 00-.469 1.425 5.564 5.564 0 013.548 3.548.75.75 0 00.947.479zm-7.973 6.548a.75.75 0 01-.469 1.425 7.065 7.065 0 01-4.505-4.504.75.75 0 011.425-.469 5.564 5.564 0 003.549 3.548z" fill="#726F6C" /><path d="M10 7a3 3 0 110 6 3 3 0 010-6z" fill="#E84676" /></svg>
                                                                             Use Your Current Location
                                                                         </Link>
@@ -288,7 +288,7 @@ const HousingAuthPage = () => {
                                                                             <p
                                                                             // style={!showdropdown ? style1 : style}
                                                                             >
-                                                                                <Link className='secondaryColor w-100 d-block' to={`/agencyState?city=${city}/${statenames}`}>
+                                                                                <Link className='secondaryColor w-100 d-block' to={`/agencyState?city=${city}&state=${statenames}`}>
                                                                                     <svg className='mr-2' xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.208 16.712a.75.75 0 01-.469-1.425 5.564 5.564 0 003.548-3.548.75.75 0 011.425.469 7.064 7.064 0 01-4.504 4.504zM4.712 8.26a.75.75 0 01-1.425-.468 7.064 7.064 0 014.505-4.505.75.75 0 01.469 1.425A5.564 5.564 0 004.712 8.26zm11.522.479a.75.75 0 00.478-.947 7.065 7.065 0 00-4.504-4.505.75.75 0 00-.469 1.425 5.564 5.564 0 013.548 3.548.75.75 0 00.947.479zm-7.973 6.548a.75.75 0 01-.469 1.425 7.065 7.065 0 01-4.505-4.504.75.75 0 011.425-.469 5.564 5.564 0 003.549 3.548z" fill="#726F6C" /><path d="M10 7a3 3 0 110 6 3 3 0 010-6z" fill="#E84676" /></svg>
                                                                                     Use Your Current Location
                                                                                 </Link>
@@ -311,7 +311,7 @@ const HousingAuthPage = () => {
                                                                                                 val.property_state == null || val.property_state == undefined ?
                                                                                                     `${val.property_city}, ${val.property_state}`
                                                                                                     :
-                                                                                                    <Link className='secondaryColor w-100 d-block' to={`/agencyState?city=${val.property_city}/${val.property_state}`}>
+                                                                                                    <Link className='secondaryColor w-100 d-block' to={`/agencyState?city=${val.property_city}&state=${val.property_state}`}>
                                                                                                         {val.property_city.toLowerCase()
                                                                                                             .split(' ')
                                                                                                             .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
@@ -350,7 +350,7 @@ const HousingAuthPage = () => {
                                             </ul>
 
                                             <button type="submit" onClick={() => {
-                                                setpathnameS("/agencyState?city=" + cityname + "/" + statename);
+                                                setpathnameS("/agencyState?city=" + cityname + "&state=" + statename);
                                                 // console.log("search button clicked")
                                             }}>Search</button>
                                         </form>

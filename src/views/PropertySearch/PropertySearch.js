@@ -203,10 +203,14 @@ const PropertySearch = () => {
         if (areQuestionParametersPresent === true && areNonQuestionParametersPresent === false && arequestionparameterschanegd === true) {
             if (isItCityVISE(minlng, maxlng) === true) {
                 setsearchresultdata();
+                sethead(0);
+                settail(24);
                 settypeofdata("CITY");
                 dispatch(getPropListAccordingToMap(minlat, maxlat, minlng, maxlng, true));
             } else {
                 setsearchresultdata();
+                sethead(0);
+                settail(24);
                 settypeofdata("NON CITY");
                 dispatch(getPropListAccordingToMap(minlat, maxlat, minlng, maxlng, false));
             }
@@ -617,9 +621,9 @@ const PropertySearch = () => {
 
     const surl = 'http://thomasthecat.rentalhousingdeals.com/apis/v1/api/v1/property-search?';
 
-    let searchApiUrl = `${surl}city=${city}/${statename}&page=${currentpage}&feature=${featureParameter}&minamtval=${min_price == undefined ? '' : min_price}&maxamtval=${max_price == undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`
-    let searchsenior = `${surl}city=${city}/${statename}&page=${currentpage}&feature=senior&minamtval=${min_price == undefined ? '' : min_price}&maxamtval=${max_price == undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`
-    let searchsection8 = `${surl}city=${city}/${statename}&page=${currentpage}&feature=section&minamtval=${min_price == undefined ? '' : min_price}&maxamtval=${max_price == undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`
+    let searchApiUrl = `${surl}city=${city}&state=${statename}&page=${currentpage}&feature=${featureParameter}&minamtval=${min_price == undefined ? '' : min_price}&maxamtval=${max_price == undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`
+    let searchsenior = `${surl}city=${city}&state=${statename}&page=${currentpage}&feature=senior&minamtval=${min_price == undefined ? '' : min_price}&maxamtval=${max_price == undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`
+    let searchsection8 = `${surl}city=${city}&state=${statename}&page=${currentpage}&feature=section&minamtval=${min_price == undefined ? '' : min_price}&maxamtval=${max_price == undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`
 
 
     // console.log(apartmentstring);
@@ -632,9 +636,9 @@ const PropertySearch = () => {
 
 
     useEffect(() => {
-        searchApiUrl = `${surl}city=${city}/${statename}&page=${currentpage}&feature=${featureParameter}&minamtval=${min_price == undefined ? '' : min_price}&maxamtval=${max_price == undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`;
-        searchsenior = `${surl}city=${city}/${statename}&page=${currentpage}&feature=senior&minamtval=${min_price == undefined ? '' : min_price}&maxamtval=${max_price == undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`
-        searchsection8 = `${surl}city=${city}/${statename}&page=${currentpage}&feature=section&minamtval=${min_price == undefined ? '' : min_price}&maxamtval=${max_price == undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`
+        searchApiUrl = `${surl}city=${city}&state=${statename}&page=${currentpage}&feature=${featureParameter}&minamtval=${min_price == undefined ? '' : min_price}&maxamtval=${max_price == undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`;
+        searchsenior = `${surl}city=${city}&state=${statename}&page=${currentpage}&feature=senior&minamtval=${min_price == undefined ? '' : min_price}&maxamtval=${max_price == undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`
+        searchsection8 = `${surl}city=${city}&state=${statename}&page=${currentpage}&feature=section&minamtval=${min_price == undefined ? '' : min_price}&maxamtval=${max_price == undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`
     }, [selectBeds, selectBaths, areNonQuestionParametersPresent]);
 
 
@@ -642,14 +646,14 @@ const PropertySearch = () => {
 
 
     useEffect(() => {
-        searchApiUrl = `${surl}city=${city}/${statename}&page=${currentpage}&feature=${featureParameter}&minamtval=${min_price == undefined ? '' : min_price}&maxamtval=${max_price == undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`;
+        searchApiUrl = `${surl}city=${city}&state=${statename}&page=${currentpage}&feature=${featureParameter}&minamtval=${min_price == undefined ? '' : min_price}&maxamtval=${max_price == undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`;
     }, [areNonQuestionParametersPresent])
 
 
 
     let applyfilters = () => {
         // `http://thomasthecat.rentalhousingdeals.com/apis/v1/api/v1/property-search?city=${city}/${statename.toUpperCase()}&page=${currentpage}&feature=senior`
-        searchApiUrl = `http://thomasthecat.rentalhousingdeals.com/apis/v1/api/v1/property-search?city=${city}/${statename.toUpperCase()}&page=${currentpage}&minamtval=${min_price}&maxamtval=${max_price}`
+        searchApiUrl = `http://thomasthecat.rentalhousingdeals.com/apis/v1/api/v1/property-search?city=${city}&state=${statename.toUpperCase()}&page=${currentpage}&minamtval=${min_price}&maxamtval=${max_price}`
         // console.log(searchApiUrl);
         setmin_price(minprice);
         setmax_price(maxprice);
@@ -829,14 +833,17 @@ const PropertySearch = () => {
             if (lastpage == 1) {
                 sethead(0);
                 settail(totalcount);
+                console.log("tail 1");
                 // console.log(head, tail);
             } else {
                 if (currentpage == lastpage) {
                     sethead((currentpage - 1) * 25);
                     settail(totalcount);
+                    console.log("tail 2");
                 } else {
                     sethead((currentpage - 1) * 25);
                     settail(currentpage * 25);
+                    console.log("tail 3");
                 }
             }
         }
