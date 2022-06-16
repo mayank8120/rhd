@@ -125,10 +125,11 @@ const ErrorPage = () => {
 
     useEffect(() => {
         if (latlngdata == undefined || latlngdata == null) {
-
+            setcity('Los Angeles');
+            setstatenames('CA');
         } else {
-            setcity(latlngdata.city);
-            setstatenames(latlngdata.region);
+            setcity('Los Angeles');
+            setstatenames('CA');
         }
     }, [latlngdata]);
 
