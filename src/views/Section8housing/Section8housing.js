@@ -13,38 +13,22 @@ import axios from 'axios';
 const Section8housing = () => {
 
     { document.title = "Section8Housing - Rental Housing Deals" }
-    // const [latlngdata, setlatlngdata] = useState();
+    const [latlngdata, setlatlngdata] = useState();
 
-    // let latlngurl = 'http://ip-api.com/json';
+    let latlngurl = 'http://ip-api.com/json';
 
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         const result = await axios.post(latlngurl)
-    //             .then(res => {
-    //                 setlatlngdata(res.data)
-    //             }).catch(error => {
-    //                 console.log('error', error);
-    //             });
-    //     };
-    //     fetchData();
-    // }, [latlngurl]);
+    useEffect(() => {
+        const fetchData = async () => {
+            const result = await axios.post(latlngurl)
+                .then(res => {
+                    setlatlngdata(res.data)
+                }).catch(error => {
+                    console.log('error', error);
+                });
+        };
+        fetchData();
+    }, [latlngurl]);
 
-    let latlngdata = {
-        as: "AS55836 Reliance Jio Infocomm Limited",
-        city: "Los Angeles",
-        country: "India",
-        countryCode: "IN",
-        isp: "Reliance Jio Infocomm Limited",
-        lat: 19.0748,
-        lon: 72.8856,
-        org: "JIO FTTX SUBSCRIBER",
-        query: "49.36.29.96",
-        region: "CA",
-        regionName: "Maharashtra",
-        status: "success",
-        timezone: "Asia/Kolkata",
-        zip: "400070"
-    }
 
     let nearbypropurl;
     const [nearbypropdata, setnearbypropdata] = useState([]);
