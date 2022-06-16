@@ -92,7 +92,7 @@ const Navbar = () => {
         zip: "400070"
     }
 
-    let latlngurl = 'http://ip-api.com/json';
+    // let latlngurl = 'http://ip-api.com/json';
 
 
     // useEffect(() => {
