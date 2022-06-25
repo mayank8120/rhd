@@ -27,6 +27,7 @@ import { Form } from 'react-bootstrap';
 import { changeMapStateAction, getPropListAccordingToCityAndState, getPropListAccordingToMap } from '../../actions';
 import { amenitieslist, apt_type, numberofbeds, numberofbaths } from '../../constants/arraysLists';
 import CityWiseList from './CityWiseList';
+import { FIRSTAPI, SECONDAPI, THIRDAPI } from '../../constants/constants';
 
 
 
@@ -143,25 +144,17 @@ const PropertySearch = () => {
 
     let searchParameters = new URLSearchParams(location.search);
 
-
-
-
     const [areQuestionParametersPresent, setareQuestionParametersPresent] = useState(false);
     const [arequestionparameterschanegd, setarequestionparameterschanegd] = useState(false);
 
 
 
     useEffect(() => {
-
-
         if (minlat == searchParameters.get('minlat') && maxlat == searchParameters.get('maxlat') && minlng == searchParameters.get('minlng') && maxlng == searchParameters.get('maxlng')) {
             setarequestionparameterschanegd(false);
         } else {
             setarequestionparameterschanegd(true);
         }
-
-
-
         setminlat(searchParameters.get('minlat'));
         setmaxlat(searchParameters.get('maxlat'));
         setminlng(searchParameters.get('minlng'));
@@ -216,7 +209,11 @@ const PropertySearch = () => {
             }
         }
 
-    }, [areQuestionParametersPresent, areNonQuestionParametersPresent, arequestionparameterschanegd])
+    }, [areQuestionParametersPresent, areNonQuestionParametersPresent, arequestionparameterschanegd]);
+
+
+
+
 
     // console.log(minlat, maxlat, minlng, maxlng);
 
@@ -682,125 +679,208 @@ const PropertySearch = () => {
 
 
 
+    // useEffect(() => {
+
+    //     if (isObjectEmpty(parameters) === true) {
+
+    //     } else {
+
+    //         if (areNonQuestionParametersPresent === true && mapchange === false) {
+
+    //             // console.log(city, statename);
+    //             if (city == null || statename == null || city == undefined || statename == undefined) {
+    //             } else {
+    //                 dispatch(getPropListAccordingToCityAndState(searchApiUrl));
+    //             }
+
+    //         } else {
+
+    //         }
+    //     }
+    //     // const fetchData = async () => {
+    //     //     if (statename === 'undefined' || statename === '' || statename === null) {
+
+    //     //     }
+    //     //     else {
+
+
+
+    //     //         if (mapchange === false) {
+
+    //     //             setsearchresultdata([]);
+
+    //     //             if (feature == 'senior') {
+
+    //     //                 const result = await fetch(`${searchsenior}`, requestOptions)
+    //     //                     .then(response => response.json())
+    //     //                     .then(res => {
+    //     //                         // console.log(res.error);
+    //     //                         if (res.error === true) {
+    //     //                             // console.log('5');
+    //     //                             setsearchresultdata(res.message);
+    //     //                             settotalcount(0);
+    //     //                         } else {
+    //     //                             // console.log('6');
+    //     //                             setsearchresultdata(res.data);
+
+    //     //                             settotalcount(res.count);
+    //     //                             setlastpage((parseInt((res.count) / 25, 10) + 1));
+    //     //                         }
+    //     //                     })
+    //     //                     .catch(error => console.log('error', error));
+
+    //     //             } else if (feature == 'section') {
+    //     //                 const result = await fetch(`${searchsection8}`, requestOptions)
+    //     //                     .then(response => response.json())
+    //     //                     .then(res => {
+    //     //                         // console.log(res.error);
+    //     //                         if (res.error === true) {
+    //     //                             // console.log('5');
+    //     //                             setsearchresultdata(res.message);
+    //     //                             settotalcount(0);
+    //     //                         } else {
+    //     //                             // console.log('6');
+    //     //                             setsearchresultdata(res.data);
+    //     //                             settotalcount(res.count);
+    //     //                             setlastpage((parseInt((res.count) / 25, 10) + 1));
+    //     //                         }
+    //     //                     })
+    //     //                     .catch(error => console.log('error', error));
+
+    //     //             }
+    //     //             else {
+    //     //                 const result = await fetch(`${searchApiUrl}`, requestOptions)
+    //     //                     .then(response => response.json())
+    //     //                     .then(res => {
+    //     //                         // console.log(res.error);
+    //     //                         if (res.error === true) {
+    //     //                             console.log('5');
+    //     //                             setsearchresultdata(res.message);
+    //     //                             settotalcount(0);
+    //     //                         } else {
+    //     //                             // console.log('6');
+    //     //                             setsearchresultdata(res.data);
+    //     //                             settotalcount(res.count);
+    //     //                             setlastpage((parseInt((res.count) / 25, 10) + 1));
+    //     //                         }
+    //     //                     })
+    //     //                     .catch(error => console.log('error', error));
+    //     //             }
+
+    //     //         }
+    //     //         else if (mapchange === true) {
+    //     //             setsearchresultdata([]);
+
+    //     //             setsearchresultdata(propResult.data);
+
+    //     //             if (propResult.hasOwnProperty('count') === false) {
+    //     //                 settypeofdata("CITY");
+    //     //             } else {
+    //     //                 settypeofdata();
+    //     //                 settotalcount(propResult.count);
+    //     //                 setlastpage((parseInt((propResult.count) / 25, 10) + 1));
+    //     //             }
+    //     //         }
+
+
+
+
+    //     //         // console.log(propResult);
+
+    //     //     }
+    //     // };
+    //     // fetchData();
+    // }, [searchApiUrl]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     useEffect(() => {
+        if (areNonQuestionParametersPresent === true && areQuestionParametersPresent === false) {
+            if (city == null || statename == null || city == undefined || statename == undefined) {
+            } else {
+                dispatch(getPropListAccordingToCityAndState(searchApiUrl));
+            }
+        } else if (areNonQuestionParametersPresent === false && areQuestionParametersPresent === true) {
+            if (mapchange === true) {
+                // console.log("FETCH SECOND API");
 
-        if (isObjectEmpty(parameters) === true) {
-
-        } else {
-
-            if (areNonQuestionParametersPresent === true && mapchange === false) {
-
-                // console.log(city, statename);
-                if (city == null || statename == null || city == undefined || statename == undefined) {
-
-                } else {
-                    // console.log(city, statename, searchApiUrl);
-                    dispatch(getPropListAccordingToCityAndState(searchApiUrl));
+                if (areQuestionParametersPresent === true && areNonQuestionParametersPresent === false) {
+                    if (isItCityVISE(minlng, maxlng) === true) {
+                        setsearchresultdata();
+                        sethead(0);
+                        settail(24);
+                        settypeofdata("CITY");
+                        dispatch(getPropListAccordingToMap(minlat, maxlat, minlng, maxlng, true));
+                    } else {
+                        setsearchresultdata();
+                        sethead(0);
+                        settail(24);
+                        settypeofdata("NON CITY");
+                        dispatch(getPropListAccordingToMap(minlat, maxlat, minlng, maxlng, false));
+                    }
                 }
 
-            } else {
 
             }
         }
-        // const fetchData = async () => {
-        //     if (statename === 'undefined' || statename === '' || statename === null) {
-
-        //     }
-        //     else {
-
-
-
-        //         if (mapchange === false) {
-
-        //             setsearchresultdata([]);
-
-        //             if (feature == 'senior') {
-
-        //                 const result = await fetch(`${searchsenior}`, requestOptions)
-        //                     .then(response => response.json())
-        //                     .then(res => {
-        //                         // console.log(res.error);
-        //                         if (res.error === true) {
-        //                             // console.log('5');
-        //                             setsearchresultdata(res.message);
-        //                             settotalcount(0);
-        //                         } else {
-        //                             // console.log('6');
-        //                             setsearchresultdata(res.data);
-
-        //                             settotalcount(res.count);
-        //                             setlastpage((parseInt((res.count) / 25, 10) + 1));
-        //                         }
-        //                     })
-        //                     .catch(error => console.log('error', error));
-
-        //             } else if (feature == 'section') {
-        //                 const result = await fetch(`${searchsection8}`, requestOptions)
-        //                     .then(response => response.json())
-        //                     .then(res => {
-        //                         // console.log(res.error);
-        //                         if (res.error === true) {
-        //                             // console.log('5');
-        //                             setsearchresultdata(res.message);
-        //                             settotalcount(0);
-        //                         } else {
-        //                             // console.log('6');
-        //                             setsearchresultdata(res.data);
-        //                             settotalcount(res.count);
-        //                             setlastpage((parseInt((res.count) / 25, 10) + 1));
-        //                         }
-        //                     })
-        //                     .catch(error => console.log('error', error));
-
-        //             }
-        //             else {
-        //                 const result = await fetch(`${searchApiUrl}`, requestOptions)
-        //                     .then(response => response.json())
-        //                     .then(res => {
-        //                         // console.log(res.error);
-        //                         if (res.error === true) {
-        //                             console.log('5');
-        //                             setsearchresultdata(res.message);
-        //                             settotalcount(0);
-        //                         } else {
-        //                             // console.log('6');
-        //                             setsearchresultdata(res.data);
-        //                             settotalcount(res.count);
-        //                             setlastpage((parseInt((res.count) / 25, 10) + 1));
-        //                         }
-        //                     })
-        //                     .catch(error => console.log('error', error));
-        //             }
-
-        //         }
-        //         else if (mapchange === true) {
-        //             setsearchresultdata([]);
-
-        //             setsearchresultdata(propResult.data);
-
-        //             if (propResult.hasOwnProperty('count') === false) {
-        //                 settypeofdata("CITY");
-        //             } else {
-        //                 settypeofdata();
-        //                 settotalcount(propResult.count);
-        //                 setlastpage((parseInt((propResult.count) / 25, 10) + 1));
-        //             }
-        //         }
+    }, [areNonQuestionParametersPresent, areQuestionParametersPresent, mapchange, arequestionparameterschanegd, searchApiUrl])
 
 
 
 
-        //         // console.log(propResult);
 
-        //     }
-        // };
-        // fetchData();
-    }, [searchApiUrl]);
+
+    useEffect(() => {
+        if (propResult.error === true) {
+            setsearchresultdata('No Record Found');
+        } else if (propResult.error === false) {
+            setsearchresultdata(propResult.data);
+
+            // if (propResult.type === FIRSTAPI) {
+            //     setAPItype(FIRSTAPI);
+            // } else if (propResult.type === SECONDAPI) {
+            //     setAPItype(SECONDAPI)
+            // } else if (propResult.type === THIRDAPI) {
+            //     setAPItype(THIRDAPI);
+            // }
+
+        }
+
+    }, [propResult]);
+
+
+
+
+
+
+
+
+
+
+
 
 
     let findLastPage = (count) => {
         return parseInt(count / 25) + (count % 25 === 0 ? 0 : 1);
     }
+
+    const [resultdatabackup, setresultdatabackup] = useState([]);
+
+    const [APItype, setAPItype] = useState('');
 
 
     useEffect(() => {
@@ -809,6 +889,16 @@ const PropertySearch = () => {
             settotalcount(0);
         } else if (propResult.error === false) {
             setsearchresultdata(propResult.data);
+
+            if (propResult.type === FIRSTAPI) {
+                setAPItype(FIRSTAPI);
+            } else if (propResult.type === SECONDAPI) {
+                setAPItype(SECONDAPI)
+            } else if (propResult.type === THIRDAPI) {
+                setAPItype(THIRDAPI);
+            }
+
+
             settotalcount(propResult.count);
             setlastpage(findLastPage(propResult.count));
         }
@@ -883,56 +973,10 @@ const PropertySearch = () => {
                                     (
                                         typeofdata === "CITY" ?
                                             <>
-                                                {/* {console.log(searchresultdata)} */}
                                                 <CityWiseList searchresultdata={searchresultdata} />
-                                                {/* <div class="listingSection adjustment1 mapListingSection">
-                                                    <div class="topTitleMapping">
-                                                        <h2>Zoom in on the map to see more</h2>
-                                                        <p class="mb-0">Or, choose a city below to see listings that match your search.</p>
-                                                    </div>
-                                                    <div class="">
-                                                        <div className="row">
-                                                            <div className="col-lg-6 col-sm-6 coll-xs-6">
-
-                                                                <ul className="noMarginPad listStyleNone housingListt">
-                                                                    {
-                                                                        searchresultdata.slice(0, searchresultdata.length / 2 + 1).map((data) => (
-                                                                            <li>
-                                                                                <div>
-                                                                                    <Link to={`/agencyState?city=/AL`}>
-                                                                                        <h5 className='mb-0'>{data.city}</h5>
-                                                                                        <p className='mb-0'>{data.listingcount} listings</p>
-                                                                                    </Link>
-                                                                                </div>
-                                                                            </li>
-                                                                        ))
-                                                                    }
-                                                                </ul>
-                                                            </div>
-                                                            <div className="col-lg-6 col-sm-6 coll-xs-6">
-                                                                <ul className="noMarginPad listStyleNone housingListt">
-                                                                    {
-                                                                        searchresultdata.slice(searchresultdata.length / 2 + 1).map((data) => (
-                                                                            <li>
-                                                                                <div>
-                                                                                    <Link to={`/agencyState?city=/AL`}>
-                                                                                        <h5 className='mb-0'>{data.city}</h5>
-                                                                                        <p className='mb-0'>{data.listingcount} listings</p>
-                                                                                    </Link>
-                                                                                </div>
-
-                                                                            </li>
-                                                                        ))
-                                                                    }
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> */}
                                             </>
                                             :
                                             <>
-                                                {/* {console.log(searchresultdata)} */}
                                                 <div className="listingSection map-filter-section">
                                                     <div class="cst adjustment">
                                                         <div className="itemWebsite">
@@ -1011,9 +1055,6 @@ const PropertySearch = () => {
                                                             </div>
                                                         </div>
                                                     </div>
-
-
-                                                    {/* <div className="brdrLine2"></div> */}
                                                 </div>
 
                                                 <div className="listingSection adjustment1">
@@ -1023,8 +1064,8 @@ const PropertySearch = () => {
 
                                                         <div className="wrapperScroll ">
                                                             <ul className="noMarginPad listStyleNone">
-                                                                {
 
+                                                                {
                                                                     searchresultdata === undefined || searchresultdata == '' || searchresultdata.length == 0 || searchresultdata === null ?
                                                                         <>
                                                                             <Loader />
@@ -1035,41 +1076,48 @@ const PropertySearch = () => {
                                                                             // window.location.replace("/error404")
                                                                             null
                                                                             :
-
                                                                             (
 
-                                                                                mapchange === true ?
 
-
-
-                                                                                    searchresultdata.slice(head, tail).map(
-                                                                                        (post) => (
-                                                                                            <li className="listingBlock2 responsive-15"
-                                                                                                onMouseEnter={() => changeLatLng(post.property.lat, post.property.lng)}
-                                                                                                onMouseLeave={() => clearLatlng()}
-                                                                                            >
-                                                                                                <PropertySearchItem post={post} />
-                                                                                            </li>
-                                                                                        )
+                                                                                searchresultdata.slice(head, tail).map(
+                                                                                    (post) => (
+                                                                                        <li className="listingBlock2 responsive-15"
+                                                                                            onMouseEnter={() => changeLatLng(post.property.lat, post.property.lng)}
+                                                                                            onMouseLeave={() => clearLatlng()}
+                                                                                        >
+                                                                                            <PropertySearchItem post={post} />
+                                                                                        </li>
                                                                                     )
+                                                                                )
+                                                                                // mapchange === true ?
+                                                                                //     searchresultdata.slice(head, tail).map(
+                                                                                //         (post) => (
+                                                                                //             <li className="listingBlock2 responsive-15"
+                                                                                //                 onMouseEnter={() => changeLatLng(post.property.lat, post.property.lng)}
+                                                                                //                 onMouseLeave={() => clearLatlng()}
+                                                                                //             >
+                                                                                //                 <PropertySearchItem post={post} />
+                                                                                //             </li>
+                                                                                //         )
+                                                                                //     )
 
 
-                                                                                    :
+                                                                                //     :
 
-                                                                                    (
-                                                                                        mapchange === false ?
-                                                                                            searchresultdata.map(
-                                                                                                (post) => (
-                                                                                                    <li className="listingBlock2 responsive-15"
-                                                                                                        onMouseEnter={() => changeLatLng(post.property.lat, post.property.lng)}
-                                                                                                        onMouseLeave={() => clearLatlng()}
-                                                                                                    >
-                                                                                                        <PropertySearchItem post={post} />
-                                                                                                    </li>
-                                                                                                )
-                                                                                            )
-                                                                                            : null
-                                                                                    )
+                                                                                //     (
+                                                                                //         mapchange === false ?
+                                                                                //             searchresultdata.map(
+                                                                                //                 (post) => (
+                                                                                //                     <li className="listingBlock2 responsive-15"
+                                                                                //                         onMouseEnter={() => changeLatLng(post.property.lat, post.property.lng)}
+                                                                                //                         onMouseLeave={() => clearLatlng()}
+                                                                                //                     >
+                                                                                //                         <PropertySearchItem post={post} />
+                                                                                //                     </li>
+                                                                                //                 )
+                                                                                //             )
+                                                                                //             : null
+                                                                                //     )
 
                                                                             )
 
@@ -1410,9 +1458,7 @@ const PropertySearch = () => {
 
 
                                                 //     :
-                                                <MultiplePointMap className="map"
-                                                // searchresultdata={searchresultdata}
-                                                />
+                                                <MultiplePointMap className="map" />
 
                                             }
 

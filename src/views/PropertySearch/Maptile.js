@@ -36,8 +36,7 @@ const Maptile = () => {
 
     let pushToLatLngPropertyPage = (minlat, maxlat, minlng, maxlng) => {
         history.push(`/propertySearch?minlat=${minlat}&maxlat=${maxlat}&minlng=${minlng}&maxlng=${maxlng}`);
-        counter += 1;
-        // console.log(counter += 1);
+        // counter += 1;
     }
 
 
@@ -156,7 +155,8 @@ const Maptile = () => {
 
 
     useEffect(() => {
-        if ((bounds !== null && bounds !== undefined) && counter > 1) {
+        console.log(counter, "CNTR");
+        if ((bounds !== null && bounds !== undefined)) {
 
             let minlat = (bounds[1] < bounds[3] ? bounds[1] : bounds[3]);
             let maxlat = (bounds[1] > bounds[3] ? bounds[1] : bounds[3]);
@@ -165,16 +165,22 @@ const Maptile = () => {
             if (mapchange === true) {
                 pushToLatLngPropertyPage(minlat, maxlat, minlng, maxlng);
 
+                console.log("HHHH");
+
+
                 // if (isItCityVISE(minlng, maxlng) === true) {
                 //     dispatch(getPropListAccordingToMap(minlat, maxlat, minlng, maxlng, true));
                 // } else {
                 //     dispatch(getPropListAccordingToMap(minlat, maxlat, minlng, maxlng, false));
                 // }
+
+
+
             }
 
 
         }
-    }, [dispatch, bounds, mapchange]);
+    }, [dispatch, bounds, mapchange, counter]);
 
 
 

@@ -3,7 +3,7 @@ import { FETCH_PROPS } from '../constants/constants.js'
 
 
 
-const mapInitState = false;
+const mapInitState = true;
 export const search_result = (posts = [], action) => {
     switch (action.type) {
         case FETCH_PROPS:

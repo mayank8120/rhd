@@ -56,6 +56,7 @@ import ScrollToTop from './containers/ScrollToTop';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { getPropListAccordingToMap } from './actions';
+import PropertySearchFullMap from './views/PropertySearchFULLMAP/PropertySearchFullMap';
 
 
 
@@ -142,6 +143,9 @@ function App() {
 
                         <Route path="/propertySearch/:cityname/:statename/:feature?" component={PropertySearch} />
                         <Route path="/propertySearch" component={PropertySearch} />
+
+                        {/* <Route path="/propertySearch/:cityname/:statename/:feature?" component={PropertySearchFullMap} />
+                        <Route path="/propertySearch" component={PropertySearchFullMap} /> */}
 
                     </Switch>
                 </ScrollToTop>

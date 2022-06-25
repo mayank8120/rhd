@@ -6,6 +6,8 @@ import L from 'leaflet'
 import Loader from '../../containers/Loader';
 import { useSelector } from 'react-redux';
 import { Button } from 'bootstrap';
+import { FIRSTAPI, SECONDAPI, THIRDAPI } from '../../constants/constants';
+import { useHistory } from 'react-router-dom';
 const MultiplePointMap = () => {
 
     // console.log(searchresultdata);
@@ -19,6 +21,10 @@ const MultiplePointMap = () => {
     //         iconSize: [40, 50]
     //     }
     // )
+
+
+
+    let history = useHistory();
 
 
 
@@ -43,26 +49,61 @@ const MultiplePointMap = () => {
 
 
     const [searchresultdata, setsearchresultdata] = useState([]);
+    const [APItype, setAPItype] = useState('');
 
     let propResult = useSelector((state) => state.search_result);
+    // console.log(propResult);
     let searchApiUrl = `city=&state=&page=&feature=&minamtval=&maxamtval=&beds=&baths=}`
 
 
     useEffect(() => {
 
-        // const fetchData = async () => {
-
         setsearchresultdata([]);
         setsearchresultdata(propResult.data);
 
-        // };
-        // fetchData();
+        if (propResult.type === FIRSTAPI) {
+            setAPItype(FIRSTAPI);
+        } else if (propResult.type === SECONDAPI) {
+            setAPItype(SECONDAPI)
+        } else if (propResult.type === THIRDAPI) {
+            setAPItype(THIRDAPI);
+        }
     }, [searchApiUrl, propResult]);
 
 
 
 
+    async function loop() {
+        let llat = +100, llng = +200, ulat = -100, ulng = -200;
+        // console.log(searchresultdata, "LLL");
+        await searchresultdata.forEach(element => {
+            if (element.property.lat < llat) {
+                llat = element.property.lat;
+            }
+            if (element.property.lng < llng) {
+                llng = element.property.lng
+            }
+            if (element.property.lat > ulat) {
+                ulat = element.property.lat;
+            }
+            if (element.property.lng > ulng) {
+                ulng = element.property.lng;
+            }
+        })
+        setlowerlat(llat < ulat ? llat : ulat);
+        // console.log(lowerlat,"LLLL");
+        setupperlat(llat > ulat ? llat : ulat);
+        setlowerlng(llng < ulng ? llng : ulng);
+        setupperlng(llng > ulng ? llng : ulng);
 
+        // if (llat == 100) {
+        // } else {
+        //     pushToLatLngPropertyPage(llat < ulat ? llat : ulat, llat > ulat ? llat : ulat, llng < ulng ? llng : ulng, llng > ulng ? llng : ulng);
+        // }
+
+
+
+    }
 
 
 
@@ -72,46 +113,81 @@ const MultiplePointMap = () => {
 
         } else {
 
-            if (mapchange === false) {
-
-                let llat = +100, llng = +200, ulat = -100, ulng = -200;
-                // if (searchresultdata === true) {
-                //     console.log(searchresultdata);
-                // }
-                // console.log(searchresultdata);
+            // if (mapchange === false) {
 
 
-                searchresultdata.forEach(element => {
-                    if (element.property.lat < llat) {
-                        llat = element.property.lat;
-                    }
-                    if (element.property.lng < llng) {
-                        llng = element.property.lng
-                    }
+            loop();
+
+            // if (upperlng == '') {
+            // } else {
+            //     pushToLatLngPropertyPage(lowerlat, upperlat, lowerlng, upperlng);
+            // }
+
+            // if (searchresultdata === true) {
+            //     console.log(searchresultdata);
+            // }
+            // console.log(searchresultdata);
 
 
-                    if (element.property.lat > ulat) {
-                        ulat = element.property.lat;
-                    }
-                    if (element.property.lng > ulng) {
-                        ulng = element.property.lng;
-                    }
-                })
-                setlowerlat(llat);
-                setupperlat(ulat);
-                setlowerlng(llng);
-                setupperlng(ulng);
 
-            }
+        }
+        // }
+
+    }, [searchresultdata, mapchange, upperlng]);
+
+
+    let returnBigger = (val1, val2) => {
+        let B;
+
+        let val11 = parseFloat(val1);
+        let val22 = parseFloat(val2);
+
+
+
+        console.log(val11, val22);
+        if (val11 >= val22) {
+            B = val11;
+        } else {
+            B = val22;
         }
 
-    }, [searchresultdata, mapchange]);
+        console.log(B, "BIGG");
+        return B;
+    }
+
+    let returnSmaller = (val1, val2) => {
+        let S;
+        let val11 = parseFloat(val1);
+        let val22 = parseFloat(val2);
+
+        if (val11 <= val22) {
+            S = val11;
+        } else {
+            S = val22;
+        }
+        return S;
+    }
+
+    let pushToLatLngPropertyPage = (minlat, maxlat, minlng, maxlng) => {
+        // console.log(minlat, maxlat, minlng, maxlng, "PPPP");
+        // console.log(minlng > maxlng ? minlng : maxlng, "PPPP");
+        history.push(`/propertySearch?minlat=${returnSmaller(minlat, maxlat)}&maxlat=${returnBigger(minlat, maxlat)}&minlng=${returnSmaller(minlng, maxlng)}&maxlng=${returnBigger(minlng, maxlng)}`);
+    }
+
+    useEffect(() => {
+        if ((lowerlat == '' || lowerlng == '' || upperlng == '' || upperlat == '') && (APItype === SECONDAPI || APItype === THIRDAPI)) {
+            console.log("THEY ARE EMPTY");
+        } else if (APItype === FIRSTAPI) {
+            console.log("THEY ARE FULLL");
+            // pushToLatLngPropertyPage(lowerlat, upperlat, lowerlng, upperlng);
+        }
+    }, [lowerlat, upperlat])
+
 
 
 
 
     let streetmap = `https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png`;
-    let darkmap = `https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png`;
 
     return (
         <>
@@ -128,35 +204,41 @@ const MultiplePointMap = () => {
                                 <h1>{searchresultdata}</h1>
                                 :
                                 (
-                                    mapchange === false ?
+                                    // mapchange === false ?
 
-                                        <>
-                                            {
-                                                lowerlat == '' || lowerlng == '' || upperlng == '' || upperlat == ''
-                                                    ?
-                                                    null
-                                                    :
-                                                    <MapContainer center={
-                                                        [(parseFloat(lowerlat) + parseFloat(upperlat)) / 2, (parseFloat(lowerlng) + parseFloat(upperlng)) / 2]
-                                                    } zoom={12} scrollWheelZoom={true}>
-                                                        <TileLayer
-                                                            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                                                            url={streetmap} />
-                                                        <Maptile />
-                                                    </MapContainer>
+                                    <>
+                                        {
+                                            lowerlat == '' || lowerlng == '' || upperlng == '' || upperlat == ''
+                                                ?
+                                                null
+                                                :
+                                                <MapContainer center={
+                                                    [(parseFloat(lowerlat) + parseFloat(upperlat)) / 2, (parseFloat(lowerlng) + parseFloat(upperlng)) / 2]
+                                                } zoom={12} scrollWheelZoom={true}>
+                                                    <TileLayer
+                                                        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                                                        url={streetmap} />
+                                                    <Maptile />
+                                                    {/* {
+                                                        ((lowerlat == '' || lowerlng == '' || upperlng == '' || upperlat == '') && (APItype === SECONDAPI || APItype === THIRDAPI))
+                                                            ?
+                                                            null :
+                                                            (APItype === FIRSTAPI) ? pushToLatLngPropertyPage(lowerlat, upperlat, lowerlng, upperlng) : null
+                                                    } */}
+                                                </MapContainer>
 
-                                            }
+                                        }
 
-                                        </>
-                                        :
-                                        <MapContainer center={[33.0, -117.0]} zoom={12} scrollWheelZoom={true}>
-                                            <TileLayer
-                                                attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                                                url={streetmap} />
-                                            <Maptile
-                                            // searchresultdata={searchresultdata}
-                                            />
-                                        </MapContainer>
+                                    </>
+                                    // :
+                                    // <MapContainer center={[33.0, -117.0]} zoom={12} scrollWheelZoom={true}>
+                                    //     <TileLayer
+                                    //         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                                    //         url={streetmap} />
+                                    //     <Maptile
+                                    //     // searchresultdata={searchresultdata}
+                                    //     />
+                                    // </MapContainer>
                                 )
                     }
 
