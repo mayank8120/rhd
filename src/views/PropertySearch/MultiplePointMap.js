@@ -59,8 +59,6 @@ const MultiplePointMap = () => {
     useEffect(() => {
 
         setsearchresultdata([]);
-        setsearchresultdata(propResult.data);
-
         if (propResult.type === FIRSTAPI) {
             setAPItype(FIRSTAPI);
         } else if (propResult.type === SECONDAPI) {
@@ -68,6 +66,9 @@ const MultiplePointMap = () => {
         } else if (propResult.type === THIRDAPI) {
             setAPItype(THIRDAPI);
         }
+        setsearchresultdata(propResult.data);
+
+
     }, [searchApiUrl, propResult]);
 
 
@@ -91,7 +92,6 @@ const MultiplePointMap = () => {
             }
         })
         setlowerlat(llat < ulat ? llat : ulat);
-        // console.log(lowerlat,"LLLL");
         setupperlat(llat > ulat ? llat : ulat);
         setlowerlng(llng < ulng ? llng : ulng);
         setupperlng(llng > ulng ? llng : ulng);
@@ -115,8 +115,13 @@ const MultiplePointMap = () => {
 
             // if (mapchange === false) {
 
+            console.log(searchresultdata, "PPPP");
 
-            loop();
+            if (APItype === FIRSTAPI) {
+                loop();
+            }
+
+
 
             // if (upperlng == '') {
             // } else {
