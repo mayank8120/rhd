@@ -198,12 +198,14 @@ const PropertySearch = () => {
                 setsearchresultdata();
                 sethead(0);
                 settail(24);
+                console.log("111");
                 settypeofdata("CITY");
                 dispatch(getPropListAccordingToMap(minlat, maxlat, minlng, maxlng, true));
             } else {
                 setsearchresultdata();
                 sethead(0);
                 settail(24);
+                console.log("222");
                 settypeofdata("NON CITY");
                 dispatch(getPropListAccordingToMap(minlat, maxlat, minlng, maxlng, false));
             }
@@ -823,21 +825,21 @@ const PropertySearch = () => {
                         setsearchresultdata();
                         sethead(0);
                         settail(24);
+                        console.log("333");
                         settypeofdata("CITY");
                         dispatch(getPropListAccordingToMap(minlat, maxlat, minlng, maxlng, true));
                     } else {
                         setsearchresultdata();
                         sethead(0);
                         settail(24);
+                        console.log("444");
                         settypeofdata("NON CITY");
                         dispatch(getPropListAccordingToMap(minlat, maxlat, minlng, maxlng, false));
                     }
                 }
-
-
             }
         }
-    }, [areNonQuestionParametersPresent, areQuestionParametersPresent, mapchange, arequestionparameterschanegd, searchApiUrl])
+    }, [areNonQuestionParametersPresent, areQuestionParametersPresent, mapchange, arequestionparameterschanegd])
 
 
 

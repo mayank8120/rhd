@@ -155,7 +155,7 @@ const Maptile = () => {
 
 
     useEffect(() => {
-        console.log(counter, "CNTR");
+        // console.log(counter, "CNTR");
         if ((bounds !== null && bounds !== undefined)) {
 
             let minlat = (bounds[1] < bounds[3] ? bounds[1] : bounds[3]);
@@ -165,7 +165,7 @@ const Maptile = () => {
             if (mapchange === true) {
                 pushToLatLngPropertyPage(minlat, maxlat, minlng, maxlng);
 
-                console.log("HHHH");
+                // console.log("HHHH");
 
 
                 // if (isItCityVISE(minlng, maxlng) === true) {
@@ -518,7 +518,7 @@ const Maptile = () => {
         // console.log("!!!", citydata);
         // console.log(clusterinside, "CLUSTERINSIDE", citydata, "CITY DATA");
 
-        console.log(citydata.lstcnt, citydata.citi, clusterinside.properties.listingCnt, clusterinside.properties.cityname, "COUNT COMP");
+        // console.log(citydata.lstcnt, citydata.citi, clusterinside.properties.listingCnt, clusterinside.properties.cityname, "COUNT COMP");
         if (citydata.citi !== undefined) {
             if (citydata.lstcnt >= clusterinside.properties.listingCnt) {
                 citydat = citydata;
@@ -532,7 +532,7 @@ const Maptile = () => {
             citydat.lstcnt = clusterinside.properties.listingCnt;
         }
 
-        console.log(citydat.citi);
+        // console.log(citydat.citi);
         return citydat;
     }
 
@@ -666,7 +666,7 @@ const Maptile = () => {
                         // we have a single point to render
                         return (
                             <>
-                                {console.log(cluster)}
+                                {/* {console.log(cluster)} */}
                                 <Marker
                                     position={[latitude, longitude]}
                                     icon={

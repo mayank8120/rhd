@@ -115,7 +115,8 @@ const MultiplePointMap = () => {
 
             // if (mapchange === false) {
 
-            console.log(searchresultdata, "PPPP");
+
+            // console.log(searchresultdata, "PPPP");
 
             if (APItype === FIRSTAPI) {
                 loop();
