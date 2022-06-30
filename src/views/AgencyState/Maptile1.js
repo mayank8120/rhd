@@ -84,7 +84,7 @@ const Maptile1 = ({ searchresultdata }) => {
             hacity: db.HADetail[0].city,
             hastate: db.HADetail[0].state,
             hazip: db.HADetail[0].zip,
-            haimg: (db.HAPhotoDetail == undefined || db.HAPhotoDetail.length == 0 || db.HAPhotoDetail[0].path == '' || db.HAPhotoDetail[0].filename == '' ?
+            haimg: (db.HAPhotoDetail === undefined || db.HAPhotoDetail.length === 0 || db.HAPhotoDetail[0].path === '' || db.HAPhotoDetail[0].filename === '' ?
                 `https://cdn-0.rentalhousingdeals.com/images/l_thumbs/photos-unavailable.jpg`
                 :
                 `https://www.rentalhousingdeals.com/${db.HAPhotoDetail[0].path}/${db.HAPhotoDetail[0].filename}`
@@ -156,7 +156,7 @@ const Maptile1 = ({ searchresultdata }) => {
 
                                             <img className="mr-3" src={`${cluster.properties.haimg}`} alt="Image" />
                                             {/* {
-                                                data.image == [] || data.image == null || data.image == '' ?
+                                                data.image === [] || data.image === null || data.image === '' ?
                                                     <img className="w-46 h-46" src={`https://cdn-0.rentalhousingdeals.com/images/l_thumbs/photos-unavailable.jpg`} alt="Image" />
                                                     :
                                                     <img className="w-46 h-46" src={`https://www.rentalhousingdeals.com/${data.image[0].path}/${data.image[0].filename}`} alt="Image" />

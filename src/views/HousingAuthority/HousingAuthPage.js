@@ -30,7 +30,7 @@ const HousingAuthPage = () => {
 
     const [latlngdata, setlatlngdata] = useState();
 
-    let latlngurl = 'http://ip-api.com/json';
+    let latlngurl = 'https://pro.ip-api.com/json?key=JQ2bhI11BHF1bzV';
     useEffect(() => {
         const fetchData = async () => {
             const result = await axios.post(latlngurl)
@@ -252,12 +252,12 @@ const HousingAuthPage = () => {
                                             <span className="searchBannerItem searchBannerItemagency"> <img src={require('../../assets/img/searchBanner.svg').default} /></span>
                                             <ul className="serachDatadrop">
                                                 {
-                                                    searchterm == null || searchterm == undefined || searchterm == '' || dropdowndata === undefined || dropdowndata === null || dropdowndata == ''
+                                                    searchterm === null || searchterm === undefined || searchterm === '' || dropdowndata === undefined || dropdowndata === null || dropdowndata === ''
                                                         ?
                                                         <></>
                                                         :
                                                         (
-                                                            dropdowndata == 'No Record Found'
+                                                            dropdowndata === 'No Record Found'
                                                                 ?
                                                                 // <p style={!showdropdown ? style1 : style}>
                                                                 //     No Record Found
@@ -308,7 +308,7 @@ const HousingAuthPage = () => {
                                                                                                 toggleshow();
                                                                                             }}>
                                                                                             {
-                                                                                                val.property_state == null || val.property_state == undefined ?
+                                                                                                val.property_state === null || val.property_state === undefined ?
                                                                                                     `${val.property_city}, ${val.property_state}`
                                                                                                     :
                                                                                                     <Link className='secondaryColor w-100 d-block' to={`/agencyState?city=${val.property_city}&state=${val.property_state}`}>
@@ -329,7 +329,7 @@ const HousingAuthPage = () => {
                                                                                         toggleshow();
                                                                                     }}>
                                                                                     {
-                                                                                        val.property_state == null || val.property_state == undefined ?
+                                                                                        val.property_state === null || val.property_state === undefined ?
                                                                                             `${val.property_city}, ${val.property_state}`
                                                                                             :
                                                                                             `${val.property_city}, ${val.property_state}`

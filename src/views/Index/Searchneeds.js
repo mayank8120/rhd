@@ -15,7 +15,7 @@ const Searchneeds = ({ latlngdata }) => {
     const [statename, setstatename] = useState("");
 
     useEffect(() => {
-        if (latlngdata == undefined || latlngdata == null) {
+        if (latlngdata === undefined || latlngdata === null) {
 
         } else {
             setcity(latlngdata.city);

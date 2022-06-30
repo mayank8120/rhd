@@ -26,7 +26,7 @@ const StarRating = () => {
                         </button>
                     );
                 })}
-                {rating == 0 ? <label
+                {rating === 0 ? <label
                     className="ml-4 form-check-label fontSize14 font-weight400 colorBlue"
                     for="inlineRadio21">None</label> : ""}
             </div>

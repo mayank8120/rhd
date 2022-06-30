@@ -56,11 +56,11 @@ export const ManagementCompanyItem = ({ props }) => {
                 <ul
                     className="noMarginPad listStyleNone floatLeftList d-flex align-items-center management-companyt">
                     {
-                        props.min_bed == '' && props.max_bed == '' ?
+                        props.min_bed === '' && props.max_bed === '' ?
                             null
                             :
                             (
-                                props.min_bed == '' || props.max_bed == '' ?
+                                props.min_bed === '' || props.max_bed === '' ?
                                     <li className="secondaryColor">
                                         <span className="colorBlue">{props.max_bed}{props.min_bed}</span> Bd
                                     </li>
@@ -73,14 +73,14 @@ export const ManagementCompanyItem = ({ props }) => {
 
                     }
                     {
-                        props.min_bath == '' && props.max_bath == '' ?
+                        props.min_bath === '' && props.max_bath === '' ?
                             // null
                             <li className="secondaryColor ml-3">
                                 <span className="colorBlue">1-5</span> Ba
                             </li>
                             :
                             (
-                                props.min_bath == '' ?
+                                props.min_bath === '' ?
                                     <li className="secondaryColor ml-3">
                                         <span className="colorBlue">{props.max_bath}</span> Ba
                                     </li>
@@ -97,7 +97,7 @@ export const ManagementCompanyItem = ({ props }) => {
                     <li
                         className="ml-auto priceTagg font-weight700 fontSize16">
                         {
-                            props.props_amount == 0 || props.props_amount == null || props.props_amount == '' || props.props_amount == undefined ?
+                            props.props_amount === 0 || props.props_amount === null || props.props_amount === '' || props.props_amount === undefined ?
                                 'CALL'
                                 :
                                 props.props_amount

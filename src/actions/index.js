@@ -25,7 +25,7 @@ export const getPropListAccordingToMap = (minlat, maxlat, minlng, maxlng, isItCi
             const data = await axios(zoomOutConfig).then(function (response) {
                 // return response.data;
                 let result = { ...response.data, type: THIRDAPI };
-                // console.log(result, "THIRD API CALL");
+                console.log(result, "THIRD API CALL");
                 return result;
             }).catch(function (error) {
                 console.log(error);
@@ -38,7 +38,7 @@ export const getPropListAccordingToMap = (minlat, maxlat, minlng, maxlng, isItCi
         try {
             const data = await axios(zoomInConfig).then(function (response) {
                 let result = { ...response.data, type: SECONDAPI };
-                // console.log(result, "SECOND API CALL");
+                console.log(result, "SECOND API CALL");
                 return result;
                 // return response.data;
             }).catch(function (error) {
@@ -66,7 +66,7 @@ export const getPropListAccordingToCityAndState = (mainURL) => async (dispatch) 
             .then(res => {
                 console.log(mainURL);
                 let result = { ...res, type: FIRSTAPI };
-                // console.log(result, "FIRST API CALL");
+                console.log(result, "FIRST API CALL");
                 return result;
             })
             .catch(error => console.log('error', error));

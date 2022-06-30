@@ -96,10 +96,10 @@ const MultiplePointMap = () => {
         setlowerlng(llng < ulng ? llng : ulng);
         setupperlng(llng > ulng ? llng : ulng);
 
-        // if (llat == 100) {
-        // } else {
-        //     pushToLatLngPropertyPage(llat < ulat ? llat : ulat, llat > ulat ? llat : ulat, llng < ulng ? llng : ulng, llng > ulng ? llng : ulng);
-        // }
+        if (llat === 100) {
+        } else {
+            pushToLatLngPropertyPage(llat < ulat ? llat : ulat, llat > ulat ? llat : ulat, llng < ulng ? llng : ulng, llng > ulng ? llng : ulng);
+        }
 
 
 
@@ -115,11 +115,11 @@ const MultiplePointMap = () => {
 
             // if (mapchange === false) {
 
-
-            // console.log(searchresultdata, "PPPP");
+            console.log(searchresultdata, "PPPP");
 
             if (APItype === FIRSTAPI) {
                 loop();
+
             }
 
 

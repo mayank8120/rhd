@@ -17,7 +17,7 @@ export const AgencyStateListItem = ({ data }) => {
     let authimg;
     let authdate;
 
-    if (data.HADetail == [] || data.HADetail == '' || data.HADetail == undefined || data.HADetail == null) {
+    if (data.HADetail === [] || data.HADetail === '' || data.HADetail === undefined || data.HADetail === null) {
 
     } else {
         authdetail = data.HADetail[0];
@@ -25,7 +25,7 @@ export const AgencyStateListItem = ({ data }) => {
 
 
 
-    if (data.HAPhotoDetail == [] || data.HAPhotoDetail == '' || data.HAPhotoDetail == undefined || data.HAPhotoDetail == null) {
+    if (data.HAPhotoDetail === [] || data.HAPhotoDetail === '' || data.HAPhotoDetail === undefined || data.HAPhotoDetail === null) {
 
     } else {
         authimg = data.HAPhotoDetail[0];
@@ -33,7 +33,7 @@ export const AgencyStateListItem = ({ data }) => {
 
 
 
-    if (data.closedate == [] || data.closedate == '' || data.closedate == undefined || data.closedate == null) {
+    if (data.closedate === [] || data.closedate === '' || data.closedate === undefined || data.closedate === null) {
 
     } else {
         authdate = data.closedate[0];
@@ -44,18 +44,18 @@ export const AgencyStateListItem = ({ data }) => {
 
 
     useEffect(() => {
-        // if (data == undefined || data == [] || data == null || data == '') {
+        // if (data === undefined || data === [] || data === null || data === '') {
         if (authdetail.service_type != '' && authdetail.service_type !== null) {
-            if (authdetail.service_type == 'Low-Rent') {
+            if (authdetail.service_type === 'Low-Rent') {
                 setheadertext('Low-Rent');
             }
-            else if (authdetail.service_type == 'Section 8') {
+            else if (authdetail.service_type === 'Section 8') {
                 setheadertext('Section 8 Voucher');
             } else {
                 setheadertext('SRent');
             }
 
-            if (authdetail.is_section_8_wating_list == 1 && authdate.close_date !== '0000-00-00') {
+            if (authdetail.is_section_8_wating_list === 1 && authdate.close_date !== '0000-00-00') {
                 setheadertext(authdate.close_date + ' ' + authdate.close_time);
             }
         }
@@ -69,16 +69,16 @@ export const AgencyStateListItem = ({ data }) => {
 
 
     // if (authdetail.service_type != '' || authdetail.service_type !== null) {
-    //     if (authdetail.service_type == 'Low-Rent') {
+    //     if (authdetail.service_type === 'Low-Rent') {
     //         setheadertext('Low-Rent');
     //     }
-    //     else if (authdetail.service_type == 'Section 8') {
+    //     else if (authdetail.service_type === 'Section 8') {
     //         setheadertext('Section 8 Voucher');
     //     } else {
     //         setheadertext('Section 8 Voucher<br/>Low-Rent');
     //     }
 
-    //     if (authdetail.is_section_8_wating_list == 1 && authdate.close_date !== '0000-00-00') {
+    //     if (authdetail.is_section_8_wating_list === 1 && authdate.close_date !== '0000-00-00') {
     //         setheadertext(authdate.close_date + ' ' + authdate.close_time);
     //     }
     // }
@@ -107,7 +107,7 @@ export const AgencyStateListItem = ({ data }) => {
     }
 
     function captchacheck() {
-        if (captchaValue == undefined || captchaValue !== true) {
+        if (captchaValue === undefined || captchaValue !== true) {
             setcaptchaValue(false);
         }
     }
@@ -192,7 +192,7 @@ export const AgencyStateListItem = ({ data }) => {
                     toggleModalAvailability();
                     toggleModalThankYou();
                 } else {
-                    if (res.data.data == null || res.data.data == '' || res.data.data == undefined || res.data.data.length == 0) {
+                    if (res.data.data === null || res.data.data === '' || res.data.data === undefined || res.data.data.length === 0) {
                         toggleModalAvailability();
                         toggleModalThankYou();
                     }
@@ -360,9 +360,9 @@ export const AgencyStateListItem = ({ data }) => {
     return (
         <>
             {
-                data == undefined || data.length == 0 || data == null || data == ''
-                    // || authimg == '' || authimg == undefined || authimg.path == '' ||
-                    // authimg.path == undefined || authimg.filename == '' || authimg.filename == undefined
+                data === undefined || data.length === 0 || data === null || data === ''
+                    // || authimg === '' || authimg === undefined || authimg.path === '' ||
+                    // authimg.path === undefined || authimg.filename === '' || authimg.filename === undefined
                     ?
                     <>No Record Found</>
                     :
@@ -467,7 +467,7 @@ export const AgencyStateListItem = ({ data }) => {
                                     <div className="agencyLeftHeadermedia">
                                         <div className="media">
                                             {
-                                                data.HAPhotoDetail.length == 0 || data.HAPhotoDetail == null || data.HAPhotoDetail == ''
+                                                data.HAPhotoDetail.length === 0 || data.HAPhotoDetail === null || data.HAPhotoDetail === ''
                                                     ?
                                                     <a href="javascript:;">
                                                         <span className="CircleImage">
@@ -526,7 +526,7 @@ export const AgencyStateListItem = ({ data }) => {
                                             </div>
                                         </div>
                                         {
-                                            authdetail.about_us == '' || authdetail.about_us == null || authdetail.about_us == undefined ?
+                                            authdetail.about_us === '' || authdetail.about_us === null || authdetail.about_us === undefined ?
                                                 <p className="fontSize16 secondaryColor font-weight400 mb-0 detailPara" >
                                                     {authdetail.name} is a public housing agency that helps provide decent and safe rental housing for eligible low-income families, the elderly, and persons with disabilities.
 
@@ -559,10 +559,10 @@ export const AgencyStateListItem = ({ data }) => {
                                 <div className="agencyStateListRight">
                                     <div className="itemWebsite">
                                         {
-                                            authdetail.is_section_8_wating_list == 1 && authdate.close_date != '0000-00-00' ?
+                                            authdetail.is_section_8_wating_list === 1 && authdate.close_date != '0000-00-00' ?
                                                 <>
                                                     {
-                                                        headertext == 'SRent' ?
+                                                        headertext === 'SRent' ?
                                                             <>
                                                                 <h5 className=" text-center fontSize14 colorBlue font-weight500 mb-0">
                                                                     Section 8 Voucher Low-Rent
@@ -583,7 +583,7 @@ export const AgencyStateListItem = ({ data }) => {
                                                 :
                                                 <>
                                                     {
-                                                        headertext == 'SRent' ?
+                                                        headertext === 'SRent' ?
                                                             <>
                                                                 <h5 className="text-center fontSize14 colorBlue font-weight500 mb-0">
                                                                     Section 8 Voucher
@@ -689,7 +689,7 @@ export const AgencyStateListItem = ({ data }) => {
 
 
                                                     {
-                                                        data.HAPhotoDetail.length == 0 || data.HAPhotoDetail == null || data.HAPhotoDetail == ''
+                                                        data.HAPhotoDetail.length === 0 || data.HAPhotoDetail === null || data.HAPhotoDetail === ''
                                                             ?
                                                             <img className="w-100" src={`https://cdn-0.rentalhousingdeals.com/images/l_thumbs/photos-unavailable.jpg`} />
 
@@ -703,7 +703,7 @@ export const AgencyStateListItem = ({ data }) => {
 
                                                 <p className="para fontSize14 font-weight400 secondaryColor">
                                                     {
-                                                        authdetail.about_us == '' || authdetail.about_us == null || authdetail.about_us == undefined ?
+                                                        authdetail.about_us === '' || authdetail.about_us === null || authdetail.about_us === undefined ?
                                                             <p className="fontSize16 secondaryColor font-weight400 mb-0 detailPara" >
                                                                 {authdetail.name} is a public housing agency that helps provide decent and safe rental housing for eligible low-income families, the elderly, and persons with disabilities.
                                                             </p>
@@ -743,7 +743,7 @@ export const AgencyStateListItem = ({ data }) => {
                                                                         <input
                                                                             type="text"
                                                                             className="form-control"
-                                                                            placeholder="First name"
+                                                                            placeholder="First Name"
                                                                             value={formdata.first_name}
                                                                             onChange={(e) =>
                                                                                 setformdata({
@@ -915,7 +915,7 @@ export const AgencyStateListItem = ({ data }) => {
                                 </div>
 
                                 <div className="modal-body responsiveApartment">
-                                    {propListArray.length == 0 ? 'Please Select At least one Property' : null}
+                                    {propListArray.length === 0 ? 'Please Select At least one Property' : null}
                                     <div className="rentalForm availBodyBlock">
                                         {aftercheckPropList.map(
                                             (
@@ -939,9 +939,9 @@ export const AgencyStateListItem = ({ data }) => {
                                                                         {/* <Link to={linkurl} className="d-flex w-100  abcd"> */}
                                                                         <div className="listing-left">
                                                                             <div className="bg-image">
-                                                                                {property_photo == null ||
-                                                                                    property_photo == "" ||
-                                                                                    property_photo.length == 0 ? (
+                                                                                {property_photo === null ||
+                                                                                    property_photo === "" ||
+                                                                                    property_photo.length === 0 ? (
                                                                                     // Affordable Housing Logo
 
                                                                                     //     spurl = "https://cdn-0.rentalhousingdeals.com/images/l_thumbs/affordable-no-image.jpg"
@@ -993,8 +993,8 @@ export const AgencyStateListItem = ({ data }) => {
                                                                             </p>
                                                                         </div>
 
-                                                                        {property_rating == null ||
-                                                                            property_rating == undefined ||
+                                                                        {property_rating === null ||
+                                                                            property_rating === undefined ||
                                                                             property_rating ==
                                                                             "" ? null : property_rating.vote_avg ==
                                                                                 null ? null : (
@@ -1010,11 +1010,11 @@ export const AgencyStateListItem = ({ data }) => {
 
 
                                                                     {/* {
-                                                        propdetail == null || propdetail == '' ?
+                                                        propdetail === null || propdetail === '' ?
                                                             null
                                                             :
-                                                            propdetail.subsidized == "Yes" &&
-                                                                propdetail.section8 == "Yes" ?
+                                                            propdetail.subsidized === "Yes" &&
+                                                                propdetail.section8 === "Yes" ?
                                                                 (
                                                                     <div class="itemWebsite priceRangeMobile">
                                                                         <div class="d-flex align-items-center">
@@ -1026,7 +1026,7 @@ export const AgencyStateListItem = ({ data }) => {
                                                                                         thirdval
                                                                                         :
                                                                                         (
-                                                                                            thirdval == 'MOVE-IN SPECIALS' || thirdval == 'SPECIALS'
+                                                                                            thirdval === 'MOVE-IN SPECIALS' || thirdval === 'SPECIALS'
 
                                                                                                 ?
                                                                                                 thirdval
@@ -1056,7 +1056,7 @@ export const AgencyStateListItem = ({ data }) => {
                                                                                     thirdval
                                                                                     :
                                                                                     (
-                                                                                        thirdval == 'MOVE-IN SPECIALS' || thirdval == 'SPECIALS'
+                                                                                        thirdval === 'MOVE-IN SPECIALS' || thirdval === 'SPECIALS'
 
                                                                                             ?
                                                                                             thirdval
@@ -1072,14 +1072,14 @@ export const AgencyStateListItem = ({ data }) => {
                                                                     <div class="priceRangeMobile">
                                                                         <div class="d-flex align-items-center">
                                                                             <h4 class="black-color fontSize22 font-weight800 mb-0">
-                                                                                {(property_details[0].min_rent == 0 && property_details[0].max_rent == 0) || (property_details[0].max_rent == '' && property_details[0].min_rent == '')
+                                                                                {(property_details[0].min_rent === 0 && property_details[0].max_rent === 0) || (property_details[0].max_rent === '' && property_details[0].min_rent === '')
                                                                                     ?
                                                                                     null :
 
-                                                                                    (property_details[0].min_rent == 0 || property_details[0].max_rent == 0) || (property_details[0].max_rent == '' || property_details[0].min_rent == '')
+                                                                                    (property_details[0].min_rent === 0 || property_details[0].max_rent === 0) || (property_details[0].max_rent === '' || property_details[0].min_rent === '')
                                                                                         ?
 
-                                                                                        `$${property_details[0].max_rent == 0 ? '' : property_details[0].max_rent}${property_details[0].min_rent == 0 ? '' : property_details[0].min_rent}`
+                                                                                        `$${property_details[0].max_rent === 0 ? '' : property_details[0].max_rent}${property_details[0].min_rent === 0 ? '' : property_details[0].min_rent}`
                                                                                         :
                                                                                         `$${property_details[0].min_rent}-$${property_details[0].max_rent}`
                                                                                 }
@@ -1088,25 +1088,25 @@ export const AgencyStateListItem = ({ data }) => {
                                                                     </div>
 
                                                                     <div className="d-flex align-items-center listingBlockLine ">
-                                                                        {property_details == null ||
-                                                                            property_details == "" ||
+                                                                        {property_details === null ||
+                                                                            property_details === "" ||
                                                                             property_details.length ==
-                                                                            0 ? null : (property_details[0].max_bed == null ||
-                                                                                property_details[0].max_bed == "" ||
-                                                                                property_details[0].min_bed == "" ||
-                                                                                property_details[0].min_bed == null) &&
-                                                                                (property_details[0].min_bath == null ||
-                                                                                    property_details[0].min_bath == "" ||
-                                                                                    property_details[0].max_bath == "" ||
-                                                                                    property_details[0].max_bath == null) ? null : (
+                                                                            0 ? null : (property_details[0].max_bed === null ||
+                                                                                property_details[0].max_bed === "" ||
+                                                                                property_details[0].min_bed === "" ||
+                                                                                property_details[0].min_bed === null) &&
+                                                                                (property_details[0].min_bath === null ||
+                                                                                    property_details[0].min_bath === "" ||
+                                                                                    property_details[0].max_bath === "" ||
+                                                                                    property_details[0].max_bath === null) ? null : (
                                                                             <ul className="noMarginPad listStyleNone mr-18">
-                                                                                {property_details[0].max_bed == null ||
-                                                                                    (property_details[0].max_bed == "" &&
-                                                                                        property_details[0].min_bed == "") ||
+                                                                                {property_details[0].max_bed === null ||
+                                                                                    (property_details[0].max_bed === "" &&
+                                                                                        property_details[0].min_bed === "") ||
                                                                                     property_details[0].min_bed ==
                                                                                     null ? null : property_details[0].min_bed ==
                                                                                         "" ||
-                                                                                        property_details[0].min_bed == null ? (
+                                                                                        property_details[0].min_bed === null ? (
                                                                                     <li className="d-flex align-items-center">
                                                                                         <img
                                                                                             src={
@@ -1149,13 +1149,13 @@ export const AgencyStateListItem = ({ data }) => {
                                                                                     </li>
                                                                                 )}
 
-                                                                                {property_details[0].max_bath == null ||
-                                                                                    (property_details[0].max_bath == "" &&
-                                                                                        property_details[0].min_bath == "") ||
+                                                                                {property_details[0].max_bath === null ||
+                                                                                    (property_details[0].max_bath === "" &&
+                                                                                        property_details[0].min_bath === "") ||
                                                                                     property_details[0].min_bath ==
                                                                                     null ? null : property_details[0].min_bath ==
                                                                                         "" ||
-                                                                                        property_details[0].min_bath == null ? (
+                                                                                        property_details[0].min_bath === null ? (
                                                                                     <li className="d-flex align-items-center">
                                                                                         <img
                                                                                             src={
@@ -1200,11 +1200,11 @@ export const AgencyStateListItem = ({ data }) => {
                                                                             </ul>
                                                                         )}
 
-                                                                        {property_details[0] == null ||
-                                                                            property_details[0] == "" ? null : (
+                                                                        {property_details[0] === null ||
+                                                                            property_details[0] === "" ? null : (
                                                                             <ul className="listStyleNone listIcon pl-0 mb-0">
-                                                                                {property_details[0].pet_allowed == null ||
-                                                                                    property_details[0].pet_allowed == "" ||
+                                                                                {property_details[0].pet_allowed === null ||
+                                                                                    property_details[0].pet_allowed === "" ||
                                                                                     property_details[0].pet_allowed.toLowerCase() ==
                                                                                     "no" ? null : (
                                                                                     <li>
@@ -1217,8 +1217,8 @@ export const AgencyStateListItem = ({ data }) => {
                                                                                     </li>
                                                                                 )}
 
-                                                                                {property_details[0].handicap == null ||
-                                                                                    property_details[0].handicap == "" ||
+                                                                                {property_details[0].handicap === null ||
+                                                                                    property_details[0].handicap === "" ||
                                                                                     property_details[0].handicap.toLowerCase() ==
                                                                                     "no" ? null : (
                                                                                     <li>
@@ -1231,8 +1231,8 @@ export const AgencyStateListItem = ({ data }) => {
                                                                                     </li>
                                                                                 )}
 
-                                                                                {property_details[0].section8 == null ||
-                                                                                    property_details[0].section8 == "" ||
+                                                                                {property_details[0].section8 === null ||
+                                                                                    property_details[0].section8 === "" ||
                                                                                     property_details[0].section8.toLowerCase() ==
                                                                                     "no" ? null : (
                                                                                     <li>
@@ -1249,7 +1249,7 @@ export const AgencyStateListItem = ({ data }) => {
                                                                                     "yes" &&
                                                                                     (property_details[0].seniorpropval.toLowerCase() ==
                                                                                         "62" ||
-                                                                                        property_details[0].seniorpropval == 62) ? (
+                                                                                        property_details[0].seniorpropval === 62) ? (
                                                                                     <li>
                                                                                         <img
                                                                                             src={
@@ -1263,9 +1263,9 @@ export const AgencyStateListItem = ({ data }) => {
                                                                                     "yes" &&
                                                                                     (property_details[0].seniorpropval.toLowerCase() ==
                                                                                         "55" ||
-                                                                                        property_details[0].seniorpropval == 55 ||
-                                                                                        property_details[0].seniorpropval == "" ||
-                                                                                        property_details[0].seniorpropval == null) ? (
+                                                                                        property_details[0].seniorpropval === 55 ||
+                                                                                        property_details[0].seniorpropval === "" ||
+                                                                                        property_details[0].seniorpropval === null) ? (
                                                                                     <li>
                                                                                         <img
                                                                                             src={

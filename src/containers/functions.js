@@ -1,10 +1,10 @@
 export let decimalRoundOff = (number) => {
-    return Math.floor(number) == Math.round(number) ? Math.floor(number) : number
+    return Math.floor(number) === Math.round(number) ? Math.floor(number) : number
 }
 
 export let emptyDataCheck = (data) => {
     let flag;
-    if (data == undefined || data == null || data == '') {
+    if (data === undefined || data === null || data === '') {
         flag = "N/A"
     } else {
         flag = data;
@@ -32,11 +32,11 @@ export let finddate = (item, type) => {
         let arr = JSON.parse(localStorage.getItem('saveHAList'));
 
 
-        if (arr == '' || arr == null || arr == undefined || arr.length == 0) {
+        if (arr === '' || arr === null || arr === undefined || arr.length === 0) {
 
         } else {
             for (let i = 0; i < arr.length; i++) {
-                if (arr[i][0] == item) {
+                if (arr[i][0] === item) {
                     date = arr[i][1];
                 }
             }
@@ -44,11 +44,11 @@ export let finddate = (item, type) => {
     } else {
         let arr = JSON.parse(localStorage.getItem('savePropList'));
 
-        if (arr == '' || arr == null || arr == undefined || arr.length == 0) {
+        if (arr === '' || arr === null || arr === undefined || arr.length === 0) {
 
         } else {
             for (let i = 0; i < arr.length; i++) {
-                if (arr[i][0] == item) {
+                if (arr[i][0] === item) {
                     date = arr[i][1];
 
                 }
@@ -66,7 +66,7 @@ export let addOrRemoveProp = (item, dateI) => {
     // console.log(d.getDate());
     // console.log(monthNames[d.getMonth()]);
 
-    if (oldData == null || oldData == '' || oldData == undefined) {
+    if (oldData === null || oldData === '' || oldData === undefined) {
         addFirstElementProp(item, dateI);
     } else {
         if (existCheck(oldData, item)) {
@@ -83,7 +83,7 @@ export let addOrRemoveHA = (item, dateI) => {
 
     let oldData = JSON.parse(localStorage.getItem('saveHAList'));
 
-    if (oldData == null || oldData == '' || oldData == undefined) {
+    if (oldData === null || oldData === '' || oldData === undefined) {
         addFirstElementHA(item, dateI);
     } else {
         if (existCheck(oldData, item)) {
@@ -100,7 +100,7 @@ export let addOrRemoveHA = (item, dateI) => {
 function removefromLocal(arr, item) {
     let newArr = [];
     for (let i = 0; i < arr.length; i++) {
-        if (arr[i][0] == item) { }
+        if (arr[i][0] === item) { }
         else {
             newArr.push(arr[i]);
         }
@@ -111,7 +111,7 @@ function removefromLocal(arr, item) {
 function removefromLocalHA(arr, item) {
     let newArr = [];
     for (let i = 0; i < arr.length; i++) {
-        if (arr[i][0] == item) { }
+        if (arr[i][0] === item) { }
         else {
             newArr.push(arr[i]);
         }
@@ -140,10 +140,10 @@ function addFirstElementHA(item, dateI) {
 //     let oldData = JSON.parse(localStorage.getItem('savePropList'));
 //     let oldData1 = JSON.parse(localStorage.getItem('saveHAList'));
 
-//     if (oldData == null || oldData == '' || oldData == undefined) {
+//     if (oldData === null || oldData === '' || oldData === undefined) {
 
 //     }
-//     if (oldData1 == null || oldData1 == '' || oldData1 == undefined) {
+//     if (oldData1 === null || oldData1 === '' || oldData1 === undefined) {
 
 //     }
 // }
@@ -174,7 +174,7 @@ let existCheck = (arr, item) => {
     for (let i = 0; i < arr.length; i++) {
         console.log(arr[i][0]);
         // console.log(item);
-        if (arr[i][0] == item) {
+        if (arr[i][0] === item) {
             flag = true;
         }
     }
@@ -187,11 +187,11 @@ export let toggleHeart = (item) => {
 
     let arr = JSON.parse(localStorage.getItem('savePropList'));
     let flag = false;
-    if (arr == '' || arr == null || arr == undefined || arr.length == 0) {
+    if (arr === '' || arr === null || arr === undefined || arr.length === 0) {
 
     } else {
         for (let i = 0; i < arr.length; i++) {
-            if (arr[i][0] == item) {
+            if (arr[i][0] === item) {
                 flag = true;
             }
         }
@@ -203,11 +203,11 @@ export let toggleHeartHA = (item) => {
 
     let arr = JSON.parse(localStorage.getItem('saveHAList'));
     let flag = false;
-    if (arr == '' || arr == null || arr == undefined || arr.length == 0) {
+    if (arr === '' || arr === null || arr === undefined || arr.length === 0) {
 
     } else {
         for (let i = 0; i < arr.length; i++) {
-            if (arr[i][0] == item) {
+            if (arr[i][0] === item) {
                 flag = true;
             }
         }
@@ -229,7 +229,7 @@ export let getAllHA = () => {
 
 export let capitalise = (str) => {
 
-    if (str == undefined || str == '' || typeof (str) == "number") {
+    if (str === undefined || str === '' || typeof (str) === "number") {
         return;
     }
 
@@ -249,10 +249,10 @@ export let capitalise = (str) => {
 
 export let removelastcomma = (str) => {
     let us;
-    if (str.charAt(str.length - 1) == ',') {
+    if (str.charAt(str.length - 1) === ',') {
         us = str.slice(0, -1);
     }
-    else if (str.charAt(str.length - 1) == ' ' && str.charAt(str.length - 2) == ',') {
+    else if (str.charAt(str.length - 1) === ' ' && str.charAt(str.length - 2) === ',') {
         us = str.slice(0, -2);
     }
     else {
@@ -265,12 +265,12 @@ export let removelastcomma = (str) => {
 export let arrayToString = (type) => {
     let str = "";
 
-    if (type == 0) {
+    if (type === 0) {
         let arr = JSON.parse(localStorage.getItem('savePropList'));
 
         // console.log(arr);
 
-        if (arr == null || arr == undefined || arr == '' || arr.length == 0) {
+        if (arr === null || arr === undefined || arr === '' || arr.length === 0) {
 
         } else {
             arr.map((data) => {
@@ -282,7 +282,7 @@ export let arrayToString = (type) => {
 
         // console.log(arr);
 
-        if (arr == null || arr == undefined || arr == '' || arr.length == 0) {
+        if (arr === null || arr === undefined || arr === '' || arr.length === 0) {
 
         } else {
             arr.map((data) => {
@@ -299,7 +299,7 @@ export let replaceSpace = (str) => {
 
 export let removeDollarWaitlist = (str) => {
 
-    if (str.slice(0, 5) == "$Wait") {
+    if (str.slice(0, 5) === "$Wait") {
         str = str.slice(1);
     }
 
@@ -309,7 +309,7 @@ export let removeDollarWaitlist = (str) => {
 
 export let commaInNumber = (str) => {
     // console.log(str, typeof (str));
-    if (typeof (str) == "number") {
+    if (typeof (str) === "number") {
         return str.toLocaleString(undefined, { minimumFractionDigits: 0 })
     }
     else {
@@ -336,4 +336,38 @@ export let isItCityVISE = (min, max) => {
         flag = false;
     }
     return flag;
+}
+
+
+
+
+
+
+
+
+
+
+export const returnBigger = (val1, val2) => {
+    let B;
+    let val11 = parseFloat(val1);
+    let val22 = parseFloat(val2);
+
+    if (val11 >= val22) {
+        B = val11;
+    } else {
+        B = val22;
+    }
+    return B;
+}
+
+export const returnSmaller = (val1, val2) => {
+    let S;
+    let val11 = parseFloat(val1);
+    let val22 = parseFloat(val2);
+    if (val11 <= val22) {
+        S = val11;
+    } else {
+        S = val22;
+    }
+    return S;
 }

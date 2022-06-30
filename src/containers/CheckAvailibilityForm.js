@@ -91,7 +91,7 @@ const CheckAvailibilityForm = ({ propid, page, setIsOpenAvailability, setIsOpenS
     //     axios(config)
     //         .then(function (response) {
     //             console.log(JSON.stringify(response.data));
-    //             if (response.data.result == "Email Sent. Check your inbox" && page == "listPage") {
+    //             if (response.data.result === "Email Sent. Check your inbox" && page === "listPage") {
     //                 setIsOpenSecondList(true);
     //                 setIsOpenAvailability(false);
     //             } else {
@@ -203,7 +203,7 @@ const CheckAvailibilityForm = ({ propid, page, setIsOpenAvailability, setIsOpenS
     }
 
     function captchacheck() {
-        if (captchaValue == undefined || captchaValue !== true) { setcaptchaValue(false) }
+        if (captchaValue === undefined || captchaValue !== true) { setcaptchaValue(false) }
     }
 
 
@@ -217,7 +217,7 @@ const CheckAvailibilityForm = ({ propid, page, setIsOpenAvailability, setIsOpenS
                         <div className="form-group">
                             <label for="">First Name</label>
                             <input type="text" className="form-control"
-                                placeholder="First name"
+                                placeholder="First Name"
                                 value={formdata.first_name}
                                 onChange={(e) => setformdata({ ...formdata, first_name: e.target.value })} required
                             />

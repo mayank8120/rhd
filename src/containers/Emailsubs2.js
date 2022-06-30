@@ -531,7 +531,7 @@ const Emailsubs2 = () => {
 
     let handleAllDataSubmit = (e) => {
         e.preventDefault();
-        if (cityAndStatesarray.length == 0) {
+        if (cityAndStatesarray.length === 0) {
             console.log('empty state list');
         } else if (cityAndStatesarray.length > 0 && inputEmail.firstname !== '' && inputEmail.lastname !== '' && inputEmail.zip !== '' && captchaValue === true) {
             submitMainForm();
@@ -703,7 +703,7 @@ const Emailsubs2 = () => {
                 </div>
 
                 {
-                    formSubmitResponse == "Email Sent. Check your inbox" ?
+                    formSubmitResponse === "Email Sent. Check your inbox" ?
 
                         <div className="modal-body">
 

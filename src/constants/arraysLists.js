@@ -49,3 +49,94 @@ export const numberofbaths = [
 
 
 export const numberofoccupants = [1, 2, 3, 4, 5, 6, 7, 8];
+
+
+
+export const errorPageCItyList = [
+    {
+        city: "Los Angeles",
+        state: "CA",
+        imgurl: "popularCity1.png"
+    },
+    {
+        city: "New York",
+        state: "NY",
+        imgurl: "popularCity2.png"
+    },
+    {
+        city: "Boston",
+        state: "MA",
+        imgurl: "popularCity3.png"
+    },
+    {
+        city: "Columbus",
+        state: "OH",
+        imgurl: "popularCity4.png"
+    },
+    {
+        city: "Phoenix",
+        state: "AZ",
+        imgurl: "popularCity5.png"
+    },
+    {
+        city: "Atlanta",
+        state: "GA",
+        imgurl: "popularCity6.png"
+    },
+    {
+        city: "Chicago",
+        state: "IL ",
+        imgurl: "popularCity7.png"
+    },
+    {
+        city: "Miami",
+        state: "FL",
+        imgurl: "popularCity8.png"
+    },
+    {
+        city: "San Diego",
+        state: "CA",
+        imgurl: "popularCity9.png"
+    },
+    {
+        city: "San Francisco",
+        state: "CA",
+        imgurl: "popularCity10.png"
+    },
+    {
+        city: "Nashville",
+        state: "TN ",
+        imgurl: "popularCity11.png"
+    },
+    {
+        city: "Seattle",
+        state: "WA",
+        imgurl: "popularCity12.png"
+    },
+    {
+        city: "Philadelphia",
+        state: "PA",
+        imgurl: "popularCity13.png"
+    },
+    {
+        city: "Dallas",
+        state: "TX",
+        imgurl: "popularCity14.png"
+    },
+    {
+        city: "Austin",
+        state: "TX",
+        imgurl: "popularCity15.png"
+    },
+    {
+        city: "New Orleans",
+        state: "LA",
+        imgurl: "popularCity16.png"
+    },
+    {
+        city: "San Antonio",
+        state: "TX",
+        imgurl: "popularCity17.png"
+    }
+
+]

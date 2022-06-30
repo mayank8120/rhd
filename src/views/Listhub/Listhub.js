@@ -160,7 +160,7 @@ const Listhub = () => {
                                                                                         <input type="email"
                                                                                             className="form-control" id=""
                                                                                             aria-describedby="emailHelp"
-                                                                                            placeholder="Enter email"
+                                                                                            placeholder="Enter Email"
                                                                                             value="Jonath" />
                                                                                     </div>
                                                                                 </div>
@@ -390,7 +390,7 @@ const Listhub = () => {
                                                                                 className="labelMark">*</span></label>
                                                                             <input type="email" className="form-control" id=""
                                                                                 aria-describedby="emailHelp"
-                                                                                placeholder="Enter email" value="Jonath" />
+                                                                                placeholder="Enter Email" value="Jonath" />
                                                                         </div>
                                                                     </div>
                                                                     <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -406,7 +406,7 @@ const Listhub = () => {
                                                                             <label for="">City</label>
                                                                             <input type="email" className="form-control" id=""
                                                                                 aria-describedby="emailHelp"
-                                                                                placeholder="Enter email" value="Los Angeles" />
+                                                                                placeholder="Enter Email" value="Los Angeles" />
                                                                         </div>
                                                                     </div>
                                                                     <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -430,7 +430,7 @@ const Listhub = () => {
                                                                                     <label for="">ZIP</label>
                                                                                     <input type="email" className="form-control"
                                                                                         id="" aria-describedby="emailHelp"
-                                                                                        placeholder="Enter email" value="90022" />
+                                                                                        placeholder="Enter Email" value="90022" />
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -441,7 +441,7 @@ const Listhub = () => {
                                                                                 className="labelMark">*</span></label>
                                                                             <input type="email" className="form-control" id=""
                                                                                 aria-describedby="emailHelp"
-                                                                                placeholder="Enter email"
+                                                                                placeholder="Enter Email"
                                                                                 value="Jonathan@gmail.com" />
                                                                         </div>
                                                                     </div>
@@ -451,7 +451,7 @@ const Listhub = () => {
                                                                                 className="labelMark">*</span></label>
                                                                             <input type="email" className="form-control" id=""
                                                                                 aria-describedby="emailHelp"
-                                                                                placeholder="Enter email" value="6261234123" />
+                                                                                placeholder="Enter Email" value="6261234123" />
                                                                         </div>
                                                                     </div>
                                                                     <div className="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -797,7 +797,7 @@ const Listhub = () => {
                                                                             <label for="">Full Name</label>
                                                                             <input type="email" className="form-control" id=""
                                                                                 aria-describedby="emailHelp"
-                                                                                placeholder="Enter email" value="Jonath" />
+                                                                                placeholder="Enter Email" value="Jonath" />
                                                                         </div>
                                                                     </div>
                                                                     <div className="col-lg-6 col-md-6 col-sm-6 col-xs-6">
@@ -2303,7 +2303,7 @@ const Listhub = () => {
                                             <div className="form-group">
                                                 <label for="">Full Name</label>
                                                 <input type="email" className="form-control" id="" aria-describedby="emailHelp"
-                                                    placeholder="Enter email" value="Jonath" />
+                                                    placeholder="Enter Email" value="Jonath" />
                                             </div>
                                         </div>
                                         <div className="col-lg-6 col-md-6 col-sm-6 col-xs-6">
@@ -2399,7 +2399,7 @@ const Listhub = () => {
                                                     <div className="form-group">
                                                         <label for="">Full Name</label>
                                                         <input type="email" className="form-control" id=""
-                                                            aria-describedby="emailHelp" placeholder="Enter email"
+                                                            aria-describedby="emailHelp" placeholder="Enter Email"
                                                             value="Jonath" />
                                                     </div>
                                                 </div>
@@ -2542,7 +2542,7 @@ const Listhub = () => {
                                                                                                     className="form-control"
                                                                                                     id=""
                                                                                                     aria-describedby="emailHelp"
-                                                                                                    placeholder="Enter email"
+                                                                                                    placeholder="Enter Email"
                                                                                                     value="Jonath" />
                                                                                             </div>
                                                                                         </div>
@@ -3843,7 +3843,7 @@ const Listhub = () => {
                                         <label for="">City</label>
                                         <input type="text" className="form-control" id=""
                                             aria-describedby="emailHelp"
-                                            placeholder="Enter city"
+                                            placeholder="Enter City"
                                             value={formData.city} onChange={(e) => setformData({ ...formData, city: e.target.value })} required />
                                     </div>
                                 </div>
@@ -3870,7 +3870,7 @@ const Listhub = () => {
                                                 <label for="">ZIP</label>
                                                 <input type="number" className="form-control"
                                                     id="" aria-describedby="emailHelp"
-                                                    placeholder="Enter email"
+                                                    placeholder="Enter Email"
                                                     value={formData.zip} onChange={(e) => setformData({ ...formData, zip: e.target.value })} required />
                                             </div>
                                         </div>
@@ -3882,7 +3882,7 @@ const Listhub = () => {
                                             className="labelMark">*</span></label>
                                         <input type="email" className="form-control" id=""
                                             aria-describedby="emailHelp"
-                                            placeholder="Enter email"
+                                            placeholder="Enter Email"
                                             value={formData.emailid} onChange={(e) => setformData({ ...formData, emailid: e.target.value })} required />
                                     </div>
                                 </div>
@@ -3892,7 +3892,7 @@ const Listhub = () => {
                                             className="labelMark">*</span></label>
                                         <input type="number" className="form-control" id=""
                                             aria-describedby="emailHelp"
-                                            placeholder="Enter number"
+                                            placeholder="Enter Number"
                                             value={formData.phone} onChange={(e) => setformData({ ...formData, phone: e.target.value })} required />
                                     </div>
                                 </div>
@@ -4006,7 +4006,7 @@ const Listhub = () => {
                                                         <input type="radio" id="test1"
                                                             name="radio-group"
                                                             value="Yes"
-                                                            checked={formData.voucher == "Yes"}
+                                                            checked={formData.voucher === "Yes"}
                                                             onChange={onValChange}
                                                         />
                                                         <label for="test1">Yes</label>
@@ -4015,7 +4015,7 @@ const Listhub = () => {
                                                         <input type="radio" id="test2"
                                                             name="radio-group"
                                                             value="No"
-                                                            checked={formData.voucher == "No"}
+                                                            checked={formData.voucher === "No"}
                                                             onChange={onValChange}
                                                         />
                                                         <label for="test2">No</label>

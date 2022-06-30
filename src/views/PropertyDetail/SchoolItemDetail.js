@@ -60,7 +60,7 @@ const SchoolItemDetail = ({ data }) => {
 
     useEffect(() => {
         const fetchData = async () => {
-            if (data.id === undefined || data.id == '' || data.id == null) {
+            if (data.id === undefined || data.id === '' || data.id === null) {
             }
             else {
                 // var axios = require('axios');
@@ -106,24 +106,24 @@ const SchoolItemDetail = ({ data }) => {
                 </th>
                 <td>
                     <div className="minWidth150">
-                        {data.grade_level == "" || data.grade_level == null ? "N/A" : data.grade_level}
+                        {data.grade_level === "" || data.grade_level === null ? "N/A" : data.grade_level}
                     </div>
                 </td>
 
                 <td>
                     <div className="minWidth150">
                         {
-                            data.institute_info == "" || data.institute_info == null ? "N/A" :
-                                data.institute_info == 'CityLarge11' ? 'City Large' :
-                                    data.institute_info == 'TownRemote33' ? 'Town Remote' :
-                                        data.institute_info == 'TownDistant32' ? 'Town Distant' :
-                                            data.institute_info == 'TownFringe31' ? 'Town Fringe' :
-                                                data.institute_info == 'SuburbSmall23' ? 'Suburb Small' :
-                                                    data.institute_info == 'SuburbMidsize22' ? 'Suburb Midsize' :
-                                                        data.institute_info == 'SuburbLarge21' ? 'Suburb Large' :
-                                                            data.institute_info == 'RuralRemote43' ? 'Rural Remote' :
-                                                                data.institute_info == 'RuralFringe41' ? 'Rural Fringe' :
-                                                                    data.institute_info == 'RuralDistant42' ? 'Rural Distant' :
+                            data.institute_info === "" || data.institute_info === null ? "N/A" :
+                                data.institute_info === 'CityLarge11' ? 'City Large' :
+                                    data.institute_info === 'TownRemote33' ? 'Town Remote' :
+                                        data.institute_info === 'TownDistant32' ? 'Town Distant' :
+                                            data.institute_info === 'TownFringe31' ? 'Town Fringe' :
+                                                data.institute_info === 'SuburbSmall23' ? 'Suburb Small' :
+                                                    data.institute_info === 'SuburbMidsize22' ? 'Suburb Midsize' :
+                                                        data.institute_info === 'SuburbLarge21' ? 'Suburb Large' :
+                                                            data.institute_info === 'RuralRemote43' ? 'Rural Remote' :
+                                                                data.institute_info === 'RuralFringe41' ? 'Rural Fringe' :
+                                                                    data.institute_info === 'RuralDistant42' ? 'Rural Distant' :
                                                                         // data.institute_info
                                                                         'N/A'
 
@@ -152,7 +152,7 @@ const SchoolItemDetail = ({ data }) => {
 
 
             {
-                schooldetaildata == null || schooldetaildata.length == 0 ? null
+                schooldetaildata === null || schooldetaildata.length === 0 ? null
                     :
                     <Modal isOpen={isopenschool}
                         onRequestClose={toggleisopenschool} className="prerentala">
@@ -239,7 +239,7 @@ const SchoolItemDetail = ({ data }) => {
                                                     <h5 class="fontSize16 font-weight500 colorBlue">
 
                                                         {
-                                                            schooldetaildata.offered.length == 0 ?
+                                                            schooldetaildata.offered.length === 0 ?
                                                                 'N/A'
                                                                 :
                                                                 emptyDataCheck(schooldetaildata.offered[0].certificate_offered)
@@ -254,7 +254,7 @@ const SchoolItemDetail = ({ data }) => {
                                                         Degree Offered</p>
                                                     <h5 class="fontSize16 font-weight500 colorBlue">
                                                         {
-                                                            schooldetaildata.offered.length == 0 ?
+                                                            schooldetaildata.offered.length === 0 ?
                                                                 'N/A'
                                                                 :
                                                                 emptyDataCheck(schooldetaildata.offered[0].degree_offered)
@@ -291,7 +291,7 @@ const SchoolItemDetail = ({ data }) => {
                                                         class="mb-0 fontSize14 font-weight400 secondaryColor">
                                                         Magnet</p>
                                                     <h5 class="fontSize16 font-weight500 colorBlue">
-                                                        {emptyDataCheck(schooldetaildata.schoolData[0].magnet) == 'magnet' ? 'Yes' : emptyDataCheck(schooldetaildata.schoolData[0].magnet)}</h5>
+                                                        {emptyDataCheck(schooldetaildata.schoolData[0].magnet) === 'magnet' ? 'Yes' : emptyDataCheck(schooldetaildata.schoolData[0].magnet)}</h5>
                                                 </li>
                                                 <li>
                                                     <p
@@ -312,7 +312,7 @@ const SchoolItemDetail = ({ data }) => {
                                                         class="mb-0 fontSize14 font-weight400 secondaryColor">
                                                         Student/Teacher Ratio</p>
                                                     <h5 class="fontSize16 font-weight500 colorBlue">
-                                                        {emptyDataCheck(schooldetaildata.schoolData[0].student_teacher_ratio) == 'ratio' ? 'Yes' : emptyDataCheck(schooldetaildata.schoolData[0].student_teacher_ratio)}</h5>
+                                                        {emptyDataCheck(schooldetaildata.schoolData[0].student_teacher_ratio) === 'ratio' ? 'Yes' : emptyDataCheck(schooldetaildata.schoolData[0].student_teacher_ratio)}</h5>
                                                 </li>
                                             </ul>
                                         </div>

@@ -94,8 +94,8 @@ const PropertySearchFullMap = () => {
     const [areNonQuestionParametersPresent, setareNonQuestionParametersPresent] = useState(false);
 
     useEffect(() => {
-        if ((parameters.cityname == undefined || parameters.cityname == null) &&
-            (parameters.statename == undefined || parameters.statename == null)) {
+        if ((parameters.cityname === undefined || parameters.cityname === null) &&
+            (parameters.statename === undefined || parameters.statename === null)) {
             setareNonQuestionParametersPresent(false);
             // console.log(parameters.cityname, parameters.statename, "FALSE");
         } else {
@@ -130,7 +130,7 @@ const PropertySearchFullMap = () => {
 
 
     useEffect(() => {
-        if (minlat == searchParameters.get('minlat') && maxlat == searchParameters.get('maxlat') && minlng == searchParameters.get('minlng') && maxlng == searchParameters.get('maxlng')) {
+        if (minlat === searchParameters.get('minlat') && maxlat === searchParameters.get('maxlat') && minlng === searchParameters.get('minlng') && maxlng === searchParameters.get('maxlng')) {
             setarequestionparameterschanegd(false);
         } else {
             setarequestionparameterschanegd(true);
@@ -140,10 +140,10 @@ const PropertySearchFullMap = () => {
         setminlng(searchParameters.get('minlng'));
         setmaxlng(searchParameters.get('maxlng'));
         // console.log("PARAMETERS CHANGED");
-        if ((minlat == null || minlat == undefined) &&
-            (maxlat == null || maxlat == undefined) &&
-            (minlng == null || minlng == undefined) &&
-            (maxlng == null || maxlng == undefined)) {
+        if ((minlat === null || minlat === undefined) &&
+            (maxlat === null || maxlat === undefined) &&
+            (minlng === null || minlng === undefined) &&
+            (maxlng === null || maxlng === undefined)) {
             setareQuestionParametersPresent(false);
             // console.log(minlat, maxlat, minlng, maxlng, "FALSE");
         } else {
@@ -185,7 +185,7 @@ const PropertySearchFullMap = () => {
 
     useEffect(() => {
         if (areNonQuestionParametersPresent === true && areQuestionParametersPresent === false) {
-            if (city == null || statename == null || city == undefined || statename == undefined) {
+            if (city === null || statename === null || city === undefined || statename === undefined) {
             } else {
                 dispatch(getPropListAccordingToCityAndState(searchApiUrl));
             }
@@ -254,8 +254,8 @@ const PropertySearchFullMap = () => {
 
             hiii
 
-            <p>non question  {areNonQuestionParametersPresent == true ? "tr" : 'false'}</p>
-            <p>question   {areQuestionParametersPresent == true ? "tr" : "false"}</p>
+            <p>non question  {areNonQuestionParametersPresent === true ? "tr" : 'false'}</p>
+            <p>question   {areQuestionParametersPresent === true ? "tr" : "false"}</p>
 
 
             <MultiplePointMap className="map" />

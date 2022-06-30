@@ -14,7 +14,7 @@ const SavedHa = ({ data }) => {
     let authimg;
     let authdate;
 
-    if (data.HADetail == [] || data.HADetail == '' || data.HADetail == undefined || data.HADetail == null) {
+    if (data.HADetail === [] || data.HADetail === '' || data.HADetail === undefined || data.HADetail === null) {
 
     } else {
         authdetail = data.HADetail;
@@ -22,7 +22,7 @@ const SavedHa = ({ data }) => {
 
 
 
-    if (data.HAPhotoDetail == [] || data.HAPhotoDetail == '' || data.HAPhotoDetail == undefined || data.HAPhotoDetail == null) {
+    if (data.HAPhotoDetail === [] || data.HAPhotoDetail === '' || data.HAPhotoDetail === undefined || data.HAPhotoDetail === null) {
 
     } else {
         authimg = data.HAPhotoDetail;
@@ -30,7 +30,7 @@ const SavedHa = ({ data }) => {
 
 
 
-    if (data.closedate == [] || data.closedate == '' || data.closedate == undefined || data.closedate == null) {
+    if (data.closedate === [] || data.closedate === '' || data.closedate === undefined || data.closedate === null) {
 
     } else {
         authdate = data.closedate;
@@ -41,18 +41,18 @@ const SavedHa = ({ data }) => {
 
 
     useEffect(() => {
-        // if (data == undefined || data == [] || data == null || data == '') {
+        // if (data === undefined || data === [] || data === null || data === '') {
         if (authdetail.service_type != '' && authdetail.service_type !== null) {
-            if (authdetail.service_type == 'Low-Rent') {
+            if (authdetail.service_type === 'Low-Rent') {
                 setheadertext('Low-Rent');
             }
-            else if (authdetail.service_type == 'Section 8') {
+            else if (authdetail.service_type === 'Section 8') {
                 setheadertext('Section 8 Voucher');
             } else {
                 setheadertext('SRent');
             }
 
-            if (authdetail.is_section_8_wating_list == 1 && authdate.close_date !== '0000-00-00') {
+            if (authdetail.is_section_8_wating_list === 1 && authdate.close_date !== '0000-00-00') {
                 setheadertext(authdate.close_date + ' ' + authdate.close_time);
             }
         }
@@ -96,9 +96,9 @@ const SavedHa = ({ data }) => {
         <>
 
             {
-                data == undefined || data.length == 0 || data == null || data == ''
-                    // || authimg == '' || authimg == undefined || authimg.path == '' ||
-                    // authimg.path == undefined || authimg.filename == '' || authimg.filename == undefined
+                data === undefined || data.length === 0 || data === null || data === ''
+                    // || authimg === '' || authimg === undefined || authimg.path === '' ||
+                    // authimg.path === undefined || authimg.filename === '' || authimg.filename === undefined
                     ?
                     <>No Record Found</>
                     :
@@ -113,7 +113,7 @@ const SavedHa = ({ data }) => {
                                         <div class="agencyLeftHeadermedia">
                                             <div class="media">
                                                 {
-                                                    data.HAPhotoDetail.length == 0 || data.HAPhotoDetail == null || data.HAPhotoDetail == ''
+                                                    data.HAPhotoDetail.length === 0 || data.HAPhotoDetail === null || data.HAPhotoDetail === ''
                                                         ?
                                                         <a href="javascript:;">
                                                             <span className="CircleImage">
@@ -174,7 +174,7 @@ const SavedHa = ({ data }) => {
                                                 </div>
                                             </div>
                                             {
-                                                authdetail.about_us == '' || authdetail.about_us == null || authdetail.about_us == undefined ?
+                                                authdetail.about_us === '' || authdetail.about_us === null || authdetail.about_us === undefined ?
                                                     <p className="fontSize16 secondaryColor font-weight400 mb-0 detailPara" >
                                                         {authdetail.name} is a public housing agency that helps provide decent and safe rental housing for eligible low-income families, the elderly, and persons with disabilities.
 
@@ -213,10 +213,10 @@ const SavedHa = ({ data }) => {
                                     <div class="agencyStateListRight">
                                         <div className="itemWebsite">
                                             {
-                                                authdetail.is_section_8_wating_list == 1 && authdate.close_date != '0000-00-00' ?
+                                                authdetail.is_section_8_wating_list === 1 && authdate.close_date != '0000-00-00' ?
                                                     <>
                                                         {
-                                                            headertext == 'SRent' ?
+                                                            headertext === 'SRent' ?
                                                                 <>
                                                                     <h5 className=" text-center fontSize14 colorBlue font-weight500 mb-0">
                                                                         Section 8 Voucher Low-Rent
@@ -237,7 +237,7 @@ const SavedHa = ({ data }) => {
                                                     :
                                                     <>
                                                         {
-                                                            headertext == 'SRent' ?
+                                                            headertext === 'SRent' ?
                                                                 <>
                                                                     <h5 className="text-center fontSize14 colorBlue font-weight500 mb-0">
                                                                         Section 8 Voucher
@@ -283,10 +283,10 @@ const SavedHa = ({ data }) => {
 
 
                                                 {
-                                                    authdetail.is_section_8_wating_list == 1 && authdate.close_date != '0000-00-00' ?
+                                                    authdetail.is_section_8_wating_list === 1 && authdate.close_date != '0000-00-00' ?
                                                         <>
                                                             {
-                                                                headertext == 'SRent' ?
+                                                                headertext === 'SRent' ?
                                                                     <>
                                                                         <h5
                                                                             className="text-center fontSize14 colorBlue font-weight500 mb-0">
@@ -310,7 +310,7 @@ const SavedHa = ({ data }) => {
                                                         :
                                                         <>
                                                             {
-                                                                headertext == 'SRent' ?
+                                                                headertext === 'SRent' ?
                                                                     <>
                                                                         <h5
                                                                             className="text-center fontSize14 colorBlue font-weight500 mb-0">

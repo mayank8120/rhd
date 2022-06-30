@@ -8,7 +8,7 @@ export const NearbyAgenciesAccordion = ({ data }) => {
     return (
         <>
             {
-                data == null || data == [] || data.length == 0 ?
+                data === null || data === [] || data.length === 0 ?
                     null :
                     <Accordion defaultActiveKey="0" className="accordionBoxInfo losAngeles">
                         <Accordion.Item eventKey="0">

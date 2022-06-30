@@ -81,7 +81,7 @@ export const ContactUs = () => {
     }
 
     function captchacheck() {
-        if (captchaValue == undefined || captchaValue !== true) { setcaptchaValue(false) }
+        if (captchaValue === undefined || captchaValue !== true) { setcaptchaValue(false) }
     }
 
     return (
@@ -138,7 +138,7 @@ export const ContactUs = () => {
                                                         <div className="form-group">
                                                             <label for="">First Name</label>
                                                             <input type="text" className="form-control"
-                                                                placeholder="First name"
+                                                                placeholder="First Name"
                                                                 value={formdata.name}
                                                                 onChange={(e) => setformdata({ ...formdata, name: e.target.value })} required
                                                             />

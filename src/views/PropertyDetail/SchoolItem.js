@@ -57,7 +57,7 @@ const SchoolItem = ({ schoolnearby }) => {
     return (
 
         <>
-            {schoolnearby == null || schoolnearby == [] || schoolnearby == '' ? null :
+            {schoolnearby === null || schoolnearby === [] || schoolnearby === '' ? null :
 
                 <>
                     <div className="responsive15 paddingBottom0 mt-2">
@@ -106,20 +106,20 @@ const SchoolItem = ({ schoolnearby }) => {
                                                     //             </div>
                                                     //         </div>
                                                     //     </th>
-                                                    //     <td>{data.grade_level == "" || data.grade_level == null ? "N/A" : data.grade_level}</td>
+                                                    //     <td>{data.grade_level === "" || data.grade_level === null ? "N/A" : data.grade_level}</td>
                                                     //     <td>
                                                     //         {
-                                                    //             data.institute_info == "" || data.institute_info == null ? "N/A" :
-                                                    //                 data.institute_info == 'CityLarge11' ? 'City Large' :
-                                                    //                     data.institute_info == 'TownRemote33' ? 'Town Remote' :
-                                                    //                         data.institute_info == 'TownDistant32' ? 'Town Distant' :
-                                                    //                             data.institute_info == 'TownFringe31' ? 'Town Fringe' :
-                                                    //                                 data.institute_info == 'SuburbSmall23' ? 'Suburb Small' :
-                                                    //                                     data.institute_info == 'SuburbMidsize22' ? 'Suburb Midsize' :
-                                                    //                                         data.institute_info == 'SuburbLarge21' ? 'Suburb Large' :
-                                                    //                                             data.institute_info == 'RuralRemote43' ? 'Rural Remote' :
-                                                    //                                                 data.institute_info == 'RuralFringe41' ? 'Rural Fringe' :
-                                                    //                                                     data.institute_info == 'RuralDistant42' ? 'Rural Distant' :
+                                                    //             data.institute_info === "" || data.institute_info === null ? "N/A" :
+                                                    //                 data.institute_info === 'CityLarge11' ? 'City Large' :
+                                                    //                     data.institute_info === 'TownRemote33' ? 'Town Remote' :
+                                                    //                         data.institute_info === 'TownDistant32' ? 'Town Distant' :
+                                                    //                             data.institute_info === 'TownFringe31' ? 'Town Fringe' :
+                                                    //                                 data.institute_info === 'SuburbSmall23' ? 'Suburb Small' :
+                                                    //                                     data.institute_info === 'SuburbMidsize22' ? 'Suburb Midsize' :
+                                                    //                                         data.institute_info === 'SuburbLarge21' ? 'Suburb Large' :
+                                                    //                                             data.institute_info === 'RuralRemote43' ? 'Rural Remote' :
+                                                    //                                                 data.institute_info === 'RuralFringe41' ? 'Rural Fringe' :
+                                                    //                                                     data.institute_info === 'RuralDistant42' ? 'Rural Distant' :
                                                     //                                                         // data.institute_info
                                                     //                                                         'N/A'
                                                     //         }
@@ -187,21 +187,21 @@ const SchoolItem = ({ schoolnearby }) => {
                                                                 <ul class="noMarginPad listStyleNone">
                                                                     <li>
                                                                         <h5 class="mb-0 fontSize16 font-weight500 colorBlue">
-                                                                            {data.grade_level == "" || data.grade_level == null ? "N/A" : data.grade_level}
+                                                                            {data.grade_level === "" || data.grade_level === null ? "N/A" : data.grade_level}
                                                                         </h5>
                                                                         <p class="mb-0 secondaryColor font-weight500 fontSize12">
                                                                             {
-                                                                                data.institute_info == "" || data.institute_info == null ? "N/A" :
-                                                                                    data.institute_info == 'CityLarge11' ? 'City Large' :
-                                                                                        data.institute_info == 'TownRemote33' ? 'Town Remote' :
-                                                                                            data.institute_info == 'TownDistant32' ? 'Town Distant' :
-                                                                                                data.institute_info == 'TownFringe31' ? 'Town Fringe' :
-                                                                                                    data.institute_info == 'SuburbSmall23' ? 'Suburb Small' :
-                                                                                                        data.institute_info == 'SuburbMidsize22' ? 'Suburb Midsize' :
-                                                                                                            data.institute_info == 'SuburbLarge21' ? 'Suburb Large' :
-                                                                                                                data.institute_info == 'RuralRemote43' ? 'Rural Remote' :
-                                                                                                                    data.institute_info == 'RuralFringe41' ? 'Rural Fringe' :
-                                                                                                                        data.institute_info == 'RuralDistant42' ? 'Rural Distant' :
+                                                                                data.institute_info === "" || data.institute_info === null ? "N/A" :
+                                                                                    data.institute_info === 'CityLarge11' ? 'City Large' :
+                                                                                        data.institute_info === 'TownRemote33' ? 'Town Remote' :
+                                                                                            data.institute_info === 'TownDistant32' ? 'Town Distant' :
+                                                                                                data.institute_info === 'TownFringe31' ? 'Town Fringe' :
+                                                                                                    data.institute_info === 'SuburbSmall23' ? 'Suburb Small' :
+                                                                                                        data.institute_info === 'SuburbMidsize22' ? 'Suburb Midsize' :
+                                                                                                            data.institute_info === 'SuburbLarge21' ? 'Suburb Large' :
+                                                                                                                data.institute_info === 'RuralRemote43' ? 'Rural Remote' :
+                                                                                                                    data.institute_info === 'RuralFringe41' ? 'Rural Fringe' :
+                                                                                                                        data.institute_info === 'RuralDistant42' ? 'Rural Distant' :
                                                                                                                             'N/A'
 
                                                                             }

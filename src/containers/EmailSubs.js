@@ -531,7 +531,7 @@ export const EmailSubs = () => {
 
     let handleAllDataSubmit = (e) => {
         e.preventDefault();
-        if (cityAndStatesarray.length == 0) {
+        if (cityAndStatesarray.length === 0) {
             console.log('empty state list');
         } else if (cityAndStatesarray.length > 0 && inputEmail.firstname !== '' && inputEmail.lastname !== '' && inputEmail.zip !== '' && captchaValue === true) {
             submitMainForm();
@@ -606,11 +606,11 @@ export const EmailSubs = () => {
 
     //             console.log(response);
     //             response.json();
-    //             // if (response.result == "Email Sent. Check your inbox") {
+    //             // if (response.result === "Email Sent. Check your inbox") {
     //             //     console.log("Email Sent");
     //             //     setformSubmitResponse(response.result);
     //             // }
-    //             // else if (response.result == "Something Went Wrong, Email Not Sent.") {
+    //             // else if (response.result === "Something Went Wrong, Email Not Sent.") {
     //             //     console.log("Email Not Sent.");
     //             //     setformSubmitResponse(response.result);
     //             // } else {
@@ -791,7 +791,7 @@ export const EmailSubs = () => {
                 </div>
 
                 {
-                    formSubmitResponse == "Email Sent. Check your inbox" ?
+                    formSubmitResponse === "Email Sent. Check your inbox" ?
 
                         <div className="modal-body">
 

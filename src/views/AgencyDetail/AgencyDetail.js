@@ -170,7 +170,7 @@ const AgencyDetail = () => {
 
 
     // let options = { year: 'numeric', month: 'long', day: 'numeric' };
-    // if (date == undefined || date == null) {
+    // if (date === undefined || date === null) {
 
     // } else {
     //     date1 = new Date(date);
@@ -181,7 +181,7 @@ const AgencyDetail = () => {
     // function dateConvert(date) {
 
     //     let date1;
-    //     if (date == undefined || date == null) {
+    //     if (date === undefined || date === null) {
 
     //     } else {
     //         date1 = new Date(date);
@@ -260,11 +260,11 @@ const AgencyDetail = () => {
     // console.log(agencydata.details.county);
     let checkAvailabilityId;
 
-    if (agencydata == [] || agencydata == undefined || agencydata == null || agencydata == '') {
+    if (agencydata === [] || agencydata === undefined || agencydata === null || agencydata === '') {
 
     } else {
         // agendetail = agencydata.details[0];
-        if (agencydata.details == [] || agencydata.details == null || agencydata.details == '') {
+        if (agencydata.details === [] || agencydata.details === null || agencydata.details === '') {
         }
         else {
             agendetail = agencydata.details[0];
@@ -273,7 +273,7 @@ const AgencyDetail = () => {
         }
 
         // agendatedetail = agencydata.datedetail[0];
-        if (agencydata.datedetail == [] || agencydata.datedetail == null || agencydata.datedetail == '') {
+        if (agencydata.datedetail === [] || agencydata.datedetail === null || agencydata.datedetail === '') {
         }
         else {
             agendatedetail = agencydata.datedetail[0];
@@ -281,47 +281,47 @@ const AgencyDetail = () => {
 
 
         // agenquickfacts = agencydata.quickFacts;
-        if (agencydata.quickFacts == [] || agencydata.quickFacts == null || agencydata.quickFacts == '') {
+        if (agencydata.quickFacts === [] || agencydata.quickFacts === null || agencydata.quickFacts === '') {
         }
         else {
             agenquickfacts = agencydata.quickFacts;
         }
 
 
-        if (agencydata.HAPhotoDetail == [] || agencydata.HAPhotoDetail == null || agencydata.HAPhotoDetail == '') {
+        if (agencydata.HAPhotoDetail === [] || agencydata.HAPhotoDetail === null || agencydata.HAPhotoDetail === '') {
         }
         else {
             agenphoto = agencydata.HAPhotoDetail[0];
         }
 
 
-        if (agencydata.fairMarketData == [] || agencydata.fairMarketData == null || agencydata.fairMarketData == '') {
+        if (agencydata.fairMarketData === [] || agencydata.fairMarketData === null || agencydata.fairMarketData === '') {
         }
         else {
             agenfmr = agencydata.fairMarketData[0];
         }
 
-        if (agencydata.localinfo == [] || agencydata.localinfo == null || agencydata.localinfo == '') {
+        if (agencydata.localinfo === [] || agencydata.localinfo === null || agencydata.localinfo === '') {
         }
         else {
             agenlocalinfo = agencydata.localinfo[0];
         }
 
 
-        if (agencydata.nearHAS == [] || agencydata.nearHAS == null || agencydata.nearHAS == '') {
+        if (agencydata.nearHAS === [] || agencydata.nearHAS === null || agencydata.nearHAS === '') {
         }
         else {
             agenhas = agencydata.nearHAS;
         }
 
 
-        if (agencydata.incomelimit == [] || agencydata.incomelimit == null || agencydata.incomelimit == '') {
+        if (agencydata.incomelimit === [] || agencydata.incomelimit === null || agencydata.incomelimit === '') {
         }
         else {
             agenincomelimit = agencydata.incomelimit[0];
         }
 
-        if (agencydata.program_summary == [] || agencydata.program_summary == null || agencydata.program_summary == '') {
+        if (agencydata.program_summary === [] || agencydata.program_summary === null || agencydata.program_summary === '') {
         }
         else {
             agenprogsummary = agencydata.program_summary[0];
@@ -346,14 +346,14 @@ const AgencyDetail = () => {
     }
 
     function captchacheck() {
-        if (captchaValue == undefined || captchaValue !== true) { setcaptchaValue(false) }
+        if (captchaValue === undefined || captchaValue !== true) { setcaptchaValue(false) }
     }
 
     // useEffect(() => {
     //     setformdata({ property_id: `${checkAvailabilityId}` });
     // }, [checkAvailabilityId])
 
-    // if (checkAvailabilityId == undefined) { }
+    // if (checkAvailabilityId === undefined) { }
     // else {
     //     setformdata({ property_id: `${checkAvailabilityId}` });
     // }
@@ -539,7 +539,7 @@ const AgencyDetail = () => {
     }
 
 
-    // if (agencydata == [] || agencydata == undefined || agencydata == null || agencydata == '' ) {
+    // if (agencydata === [] || agencydata === undefined || agencydata === null || agencydata === '' ) {
 
     // } else {
     //     agendatedetail = agencydata.closedate[0];
@@ -561,7 +561,7 @@ const AgencyDetail = () => {
     return (
         <>
             {
-                agencydata == [] || agencydata == undefined || agencydata == null || agencydata == ''
+                agencydata === [] || agencydata === undefined || agencydata === null || agencydata === ''
                     ?
                     null
                     :
@@ -593,7 +593,7 @@ const AgencyDetail = () => {
                                                 {/* {require('../../assets/img/searchHome3.png').default} */}
 
                                                 {
-                                                    agenphoto == undefined || agenphoto == null ?
+                                                    agenphoto === undefined || agenphoto === null ?
                                                         <img className="mr-3 agencylogo" src={'https://cdn-0.rentalhousingdeals.com/images/l_thumbs/photos-unavailable.jpg'} />
                                                         :
                                                         <img className="mr-3 agencylogo" src={`https://www.rentalhousingdeals.com/${agenphoto.path}/${agenphoto.filename}`} />
@@ -606,10 +606,10 @@ const AgencyDetail = () => {
                                                         {agendetail.address}, {agendetail.city}, {agendetail.state}, {agendetail.zip} </p>
                                                     <div className="d-flex align-items-center exportLink">
                                                         {
-                                                            agendetail.url == '' || agendetail.url == null ? null :
+                                                            agendetail.url === '' || agendetail.url === null ? null :
                                                                 <>
                                                                     <img src={require('../../assets/img/export.svg').default} />
-                                                                    <a href={`${agendetail.url == '' || agendetail.url == null ? null : agendetail.url}`} className="purpleText fontSize16 font-weight500">{agendetail.url == '' || agendetail.url == null ? null : agendetail.url}</a>
+                                                                    <a href={`${agendetail.url === '' || agendetail.url === null ? null : agendetail.url}`} className="purpleText fontSize16 font-weight500">{agendetail.url === '' || agendetail.url === null ? null : agendetail.url}</a>
                                                                 </>
                                                         }
                                                     </div>
@@ -622,7 +622,7 @@ const AgencyDetail = () => {
                                             <div class="media">
 
                                                 {
-                                                    agenphoto == undefined || agenphoto == null ?
+                                                    agenphoto === undefined || agenphoto === null ?
 
 
                                                         <img class="mr-3" src={'https://cdn-0.rentalhousingdeals.com/images/l_thumbs/photos-unavailable.jpg'} alt="Generic placeholder image" />
@@ -654,10 +654,10 @@ const AgencyDetail = () => {
 
 
                                                 {
-                                                    agendetail.url == '' || agendetail.url == null ? null :
+                                                    agendetail.url === '' || agendetail.url === null ? null :
                                                         <>
                                                             <img src={require('../../assets/img/export.svg').default} />
-                                                            <Link to={`${agendetail.url == '' || agendetail.url == null ? null : agendetail.url}`} class="purpleText fontSize16 font-weight700">Visit Site</Link>
+                                                            <Link to={`${agendetail.url === '' || agendetail.url === null ? null : agendetail.url}`} class="purpleText fontSize16 font-weight700">Visit Site</Link>
                                                         </>
                                                 }
                                             </div>
@@ -669,7 +669,7 @@ const AgencyDetail = () => {
 
 
                                                 {
-                                                    agenphoto == undefined || agenphoto == null ?
+                                                    agenphoto === undefined || agenphoto === null ?
                                                         <img className="mr-3 agencylogo" src={'https://cdn-0.rentalhousingdeals.com/images/l_thumbs/photos-unavailable.jpg'} />
                                                         :
                                                         <img className="mr-3 agencylogo" src={`https://www.rentalhousingdeals.com/${agenphoto.path}/${agenphoto.filename}`} />
@@ -729,9 +729,9 @@ const AgencyDetail = () => {
                                                 {/* <a href="" className="purpleText fontSize16 font-weight700">Visit Site</a> */}
 
                                                 {
-                                                    agendetail.url == '' || agendetail.url == null ? null :
+                                                    agendetail.url === '' || agendetail.url === null ? null :
                                                         <>
-                                                            <a href={`${agendetail.url == '' || agendetail.url == null ? null : agendetail.url}`} className="purpleText fontSize16 font-weight700">Visit Site</a>
+                                                            <a href={`${agendetail.url === '' || agendetail.url === null ? null : agendetail.url}`} className="purpleText fontSize16 font-weight700">Visit Site</a>
                                                         </>
                                                 }
                                             </div>
@@ -765,7 +765,7 @@ const AgencyDetail = () => {
                                         </div> */}
                                         <div className="fontSize16 font-weight400 colorBlue detailPara2">
                                             {
-                                                agendetail.about_us == '' || agendetail.about_us == null || agendetail.about_us == undefined ?
+                                                agendetail.about_us === '' || agendetail.about_us === null || agendetail.about_us === undefined ?
 
                                                     <p className="lineRespnsiveIndent mb-0" >
                                                         {agendetail.name} is a public housing agency that helps provide decent and safe rental housing for eligible low-income families, the elderly, and persons with disabilities.
@@ -782,7 +782,7 @@ const AgencyDetail = () => {
                                                         </p>
 
                                                         {
-                                                            agendatedetail.description == '' || agendatedetail.description == null
+                                                            agendatedetail.description === '' || agendatedetail.description === null
                                                                 ?
                                                                 null
                                                                 :
@@ -826,7 +826,7 @@ const AgencyDetail = () => {
                                                         <div className="ml-auto">
 
                                                             {
-                                                                agendetail.is_section_8_wating_list == 0 ?
+                                                                agendetail.is_section_8_wating_list === 0 ?
                                                                     <span className="statusTag fontSize14 font-weight500 closed">
                                                                         Closed
                                                                     </span>
@@ -848,19 +848,19 @@ const AgencyDetail = () => {
                                                             <div className="media-body">
                                                                 <h5 className="mt-0 mb-0 fontSize14 colorBlue">
                                                                     {
-                                                                        (agendatedetail.open_date == '0000-00-00' || agendatedetail.open_date == '') && (agendatedetail.close_date == '0000-00-00' || agendatedetail.close_date == '') ?
+                                                                        (agendatedetail.open_date === '0000-00-00' || agendatedetail.open_date === '') && (agendatedetail.close_date === '0000-00-00' || agendatedetail.close_date === '') ?
                                                                             'N/A'
                                                                             :
                                                                             <>
-                                                                                {agendatedetail.open_date == '0000-00-00' || agendatedetail.open_date == '' ? 'N/A' : `${dateconvert(agendatedetail.open_date).toLocaleDateString("en-US", options)}`} - {agendatedetail.close_date == '0000-00-00' || agendatedetail.close_date == '' ? 'N/A' : `${dateconvert(agendatedetail.close_date).toLocaleDateString("en-US", options)}`}
+                                                                                {agendatedetail.open_date === '0000-00-00' || agendatedetail.open_date === '' ? 'N/A' : `${dateconvert(agendatedetail.open_date).toLocaleDateString("en-US", options)}`} - {agendatedetail.close_date === '0000-00-00' || agendatedetail.close_date === '' ? 'N/A' : `${dateconvert(agendatedetail.close_date).toLocaleDateString("en-US", options)}`}
                                                                             </>
                                                                     }
-                                                                    {/* {agendatedetail.open_date == '0000-00-00' || agendatedetail.open_date == '' ? 'N/A' : `${dateconvert(agendatedetail.open_date).toLocaleDateString("en-US", options)}`} - {agendatedetail.close_date == '0000-00-00' || agendatedetail.close_date == '' ? 'N/A' : `${dateconvert(agendatedetail.close_date).toLocaleDateString("en-US", options)}`} */}
+                                                                    {/* {agendatedetail.open_date === '0000-00-00' || agendatedetail.open_date === '' ? 'N/A' : `${dateconvert(agendatedetail.open_date).toLocaleDateString("en-US", options)}`} - {agendatedetail.close_date === '0000-00-00' || agendatedetail.close_date === '' ? 'N/A' : `${dateconvert(agendatedetail.close_date).toLocaleDateString("en-US", options)}`} */}
                                                                     {/* Oct 31st - Nov 31st */}
 
                                                                 </h5>
                                                                 <p className="mb-0 secondaryColor fontSize14">
-                                                                    {agendatedetail.open_time == '' ? 'N/A' : agendatedetail.open_time} - {agendatedetail.close_time == '' ? 'N/A' : agendatedetail.close_time}
+                                                                    {agendatedetail.open_time === '' ? 'N/A' : agendatedetail.open_time} - {agendatedetail.close_time === '' ? 'N/A' : agendatedetail.close_time}
 
                                                                     {/* 08:00 PM */}
                                                                 </p>
@@ -868,7 +868,7 @@ const AgencyDetail = () => {
                                                         </div>
                                                         <p className="mb-0 secondaryColor fontSize14 datecalnderPara">
                                                             {
-                                                                agendatedetail.description == '' ?
+                                                                agendatedetail.description === '' ?
                                                                     'According to recently updated public information sources, this agency appears to have open waiting list. Please contact them directly to confirm the current status of their waiting lists for public housing.'
                                                                     :
                                                                     agendatedetail.description.replace(/<[^>]*>?/gm, '').replace(/&nbsp;/g, ' ').slice(0, 84)
@@ -889,7 +889,7 @@ const AgencyDetail = () => {
                                                         <h3 className="fontSize18 font-weight500 colorBlue mb-0">Public Housing Wait List in {agendetail.city}, {agendetail.state}</h3>
                                                         <div className="ml-auto">
                                                             {
-                                                                agendetail.is_wating_closed == 1
+                                                                agendetail.is_wating_closed === 1
                                                                     ?
                                                                     <span className="statusTag fontSize14 font-weight500 closed">
                                                                         Closed
@@ -911,20 +911,20 @@ const AgencyDetail = () => {
                                                             </span>
                                                             <div className="media-body">
                                                                 <h5 className="mt-0 mb-0 fontSize14 colorBlue">
-                                                                    {/* {agendatedetail.open_date_ha == '0000-00-00' || agendatedetail.open_date_ha == '' ? 'N/A' : agendatedetail.open_date_ha} - {agendatedetail.close_date_ha == '0000-00-00' || agendatedetail.close_date_ha == '' ? 'N/A' : agendatedetail.close_date_ha} */}
+                                                                    {/* {agendatedetail.open_date_ha === '0000-00-00' || agendatedetail.open_date_ha === '' ? 'N/A' : agendatedetail.open_date_ha} - {agendatedetail.close_date_ha === '0000-00-00' || agendatedetail.close_date_ha === '' ? 'N/A' : agendatedetail.close_date_ha} */}
 
                                                                     {
-                                                                        (agendatedetail.open_date_ha == '0000-00-00' || agendatedetail.open_date_ha == '') && (agendatedetail.close_date_ha == '0000-00-00' || agendatedetail.close_date_ha == '') ?
+                                                                        (agendatedetail.open_date_ha === '0000-00-00' || agendatedetail.open_date_ha === '') && (agendatedetail.close_date_ha === '0000-00-00' || agendatedetail.close_date_ha === '') ?
                                                                             'N/A'
                                                                             :
                                                                             <>
-                                                                                {agendatedetail.open_date_ha == '0000-00-00' || agendatedetail.open_date_ha == '' ? 'N/A' : `${dateconvert(agendatedetail.open_date_ha).toLocaleDateString("en-US", options)}`} - {agendatedetail.close_date_ha == '0000-00-00' || agendatedetail.close_date_ha == '' ? 'N/A' : `${dateconvert(agendatedetail.close_date_ha).toLocaleDateString("en-US", options)}`}
+                                                                                {agendatedetail.open_date_ha === '0000-00-00' || agendatedetail.open_date_ha === '' ? 'N/A' : `${dateconvert(agendatedetail.open_date_ha).toLocaleDateString("en-US", options)}`} - {agendatedetail.close_date_ha === '0000-00-00' || agendatedetail.close_date_ha === '' ? 'N/A' : `${dateconvert(agendatedetail.close_date_ha).toLocaleDateString("en-US", options)}`}
                                                                             </>
                                                                     }
                                                                     {/* Oct 31st - Nov 31st */}
                                                                 </h5>
                                                                 <p className="mb-0 secondaryColor fontSize14">
-                                                                    {agendatedetail.open_time_ha == '' ? 'N/A' : agendatedetail.open_time_ha} - {agendatedetail.close_time_ha == '' ? 'N/A' : agendatedetail.close_time_ha}
+                                                                    {agendatedetail.open_time_ha === '' ? 'N/A' : agendatedetail.open_time_ha} - {agendatedetail.close_time_ha === '' ? 'N/A' : agendatedetail.close_time_ha}
 
                                                                     {/* 08:00 PM */}
                                                                 </p>
@@ -934,7 +934,7 @@ const AgencyDetail = () => {
 
 
                                                             {
-                                                                agendatedetail.description == '' ?
+                                                                agendatedetail.description === '' ?
                                                                     'According to recently updated public information sources, this agency appears to have open waiting list. Please contact them directly to confirm the current status of their waiting lists for public housing.'
                                                                     :
                                                                     agendatedetail.description.replace(/<[^>]*>?/gm, '').replace(/&nbsp;/g, ' ').slice(0, 84)
@@ -1072,7 +1072,7 @@ const AgencyDetail = () => {
                                                                         className="labelMark">*</span></label>
                                                                     <input type="email" className="form-control" id=""
                                                                         aria-describedby="emailHelp"
-                                                                        placeholder="Enter email" value="Jonath" />
+                                                                        placeholder="Enter Email" value="Jonath" />
                                                                 </div>
                                                             </div>
                                                             <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -1088,7 +1088,7 @@ const AgencyDetail = () => {
                                                                     <label for="">City</label>
                                                                     <input type="email" className="form-control" id=""
                                                                         aria-describedby="emailHelp"
-                                                                        placeholder="Enter email" value="Los Angeles" />
+                                                                        placeholder="Enter Email" value="Los Angeles" />
                                                                 </div>
                                                             </div>
                                                             <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -1112,7 +1112,7 @@ const AgencyDetail = () => {
                                                                             <label for="">ZIP</label>
                                                                             <input type="email" className="form-control" id=""
                                                                                 aria-describedby="emailHelp"
-                                                                                placeholder="Enter email" value="90022" />
+                                                                                placeholder="Enter Email" value="90022" />
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1123,7 +1123,7 @@ const AgencyDetail = () => {
                                                                         className="labelMark">*</span></label>
                                                                     <input type="email" className="form-control" id=""
                                                                         aria-describedby="emailHelp"
-                                                                        placeholder="Enter email"
+                                                                        placeholder="Enter Email"
                                                                         value="Jonathan@gmail.com" />
                                                                 </div>
                                                             </div>
@@ -1133,7 +1133,7 @@ const AgencyDetail = () => {
                                                                         className="labelMark">*</span></label>
                                                                     <input type="email" className="form-control" id=""
                                                                         aria-describedby="emailHelp"
-                                                                        placeholder="Enter email" value="6261234123" />
+                                                                        placeholder="Enter Email" value="6261234123" />
                                                                 </div>
                                                             </div>
                                                             <div className="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -1245,10 +1245,10 @@ const AgencyDetail = () => {
                                             <h3 className="fontSize18 font-weight700">Program Types</h3>
                                             <p className="fontSize16 font-weight500 mb-0 secondaryColor">
 
-                                                {agenprogsummary.program_type == 'Combined' ? 'Section 8 Voucher, Low Rent Units'
+                                                {agenprogsummary.program_type === 'Combined' ? 'Section 8 Voucher, Low Rent Units'
                                                     :
-                                                    (agenprogsummary.program_type == 'Section 8' ? 'Section 8 Voucher' :
-                                                        (agenprogsummary.program_type == 'Low-Rent' ? 'Low Rent Units' : 'N/A'))}
+                                                    (agenprogsummary.program_type === 'Section 8' ? 'Section 8 Voucher' :
+                                                        (agenprogsummary.program_type === 'Low-Rent' ? 'Low Rent Units' : 'N/A'))}
                                             </p>
                                         </div>
                                         <div className="brdrLine"></div>
@@ -1262,7 +1262,7 @@ const AgencyDetail = () => {
 
                                             <div className="fontSize16 font-weight400 colorBlue detailPara2">
                                                 <p className="lineRespnsiveIndent mb-0">
-                                                    {agendetail.name} is a public housing agency that helps provide decent and safe rental housing for eligible low-income families, the elderly, and persons with disabilities. {agendetail.name} manages several funded programs and has a total of {agenprogsummary.total_units == '' || agenprogsummary.total_units == null ? '60' : agenprogsummary.total_units} subsidized affordable housing units for rental assistance. {agendetail.name} administered a total of {agenprogsummary.section_units == '' || agenprogsummary.section_units == null ? '50' : agenprogsummary.section_units} Section 8 Vouchers. {agendetail.name} currently has {agenprogsummary.program_type == 'Combined' ? 'low rent units and Section 8 Voucher' : agenprogsummary.program_type} as its program type. {agendetail.name} is located at {agendetail.address}, {agendetail.city}, {agendetail.state}, {agendetail.zip}  and serves the city of {agendetail.city}.
+                                                    {agendetail.name} is a public housing agency that helps provide decent and safe rental housing for eligible low-income families, the elderly, and persons with disabilities. {agendetail.name} manages several funded programs and has a total of {agenprogsummary.total_units === '' || agenprogsummary.total_units === null ? '60' : agenprogsummary.total_units} subsidized affordable housing units for rental assistance. {agendetail.name} administered a total of {agenprogsummary.section_units === '' || agenprogsummary.section_units === null ? '50' : agenprogsummary.section_units} Section 8 Vouchers. {agendetail.name} currently has {agenprogsummary.program_type === 'Combined' ? 'low rent units and Section 8 Voucher' : agenprogsummary.program_type} as its program type. {agendetail.name} is located at {agendetail.address}, {agendetail.city}, {agendetail.state}, {agendetail.zip}  and serves the city of {agendetail.city}.
                                                     Income limits, fair market rents and rent rates vary with each agency. Please contact {agendetail.name} at, {agendetail.phone} for more information about coverage area and program availability.
                                                 </p>
                                                 {/* <a href="" className="purpleText font-weight700">Read More</a> */}
@@ -1280,7 +1280,7 @@ const AgencyDetail = () => {
                                                         </span>
                                                         <div className="media-body">
                                                             <h5 className="mt-0 purpleText font-weight700">
-                                                                {agenprogsummary.total_dev == '' || agenprogsummary.total_dev == null || agenprogsummary.total_dev == 0 ? 'N/A' : (agenprogsummary.total_dev).toLocaleString(undefined, { minimumFractionDigits: 0 })}
+                                                                {agenprogsummary.total_dev === '' || agenprogsummary.total_dev === null || agenprogsummary.total_dev === 0 ? 'N/A' : (agenprogsummary.total_dev).toLocaleString(undefined, { minimumFractionDigits: 0 })}
                                                             </h5>
                                                             <p className="mb-0 secondaryColor fontSize14">Total Number of Communities</p>
                                                         </div>
@@ -1295,7 +1295,7 @@ const AgencyDetail = () => {
                                                         </span>
                                                         <div className="media-body">
                                                             <h5 className="mt-0 purpleText font-weight700">
-                                                                {agenprogsummary.section_units == '' || agenprogsummary.section_units == null || agenprogsummary.section_units == 0 ? 'N/A' : (agenprogsummary.section_units).toLocaleString(undefined, { minimumFractionDigits: 0 })}
+                                                                {agenprogsummary.section_units === '' || agenprogsummary.section_units === null || agenprogsummary.section_units === 0 ? 'N/A' : (agenprogsummary.section_units).toLocaleString(undefined, { minimumFractionDigits: 0 })}
                                                             </h5>
 
 
@@ -1313,7 +1313,7 @@ const AgencyDetail = () => {
                                                         </span>
                                                         <div className="media-body">
                                                             <h5 className="mt-0 purpleText font-weight700">
-                                                                {agendetail.num_units == '' || agendetail.num_units == null || agendetail.num_units == 0 ? 'N/A' : agendetail.num_units}
+                                                                {agendetail.num_units === '' || agendetail.num_units === null || agendetail.num_units === 0 ? 'N/A' : agendetail.num_units}
                                                             </h5>
                                                             <p className="mb-0 secondaryColor fontSize14">Total subsidized units for Rental
                                                                 Assistance Availability</p>
@@ -1329,7 +1329,7 @@ const AgencyDetail = () => {
                                                         </span>
                                                         <div className="media-body">
                                                             <h5 className="mt-0 purpleText font-weight700">
-                                                                {agenprogsummary.total_units == '' || agenprogsummary.total_units == null || agenprogsummary.total_units == 0 ? 'N/A' : agenprogsummary.total_units}
+                                                                {agenprogsummary.total_units === '' || agenprogsummary.total_units === null || agenprogsummary.total_units === 0 ? 'N/A' : agenprogsummary.total_units}
                                                             </h5>
                                                             <p className="mb-0 secondaryColor fontSize14">Total Number of Administered
                                                                 Public Housing Units</p>
@@ -1547,7 +1547,7 @@ const AgencyDetail = () => {
                                         </div>
                                         <div className="brdrLine itemWebsite"></div>
 
-                                        {agenincomelimit == undefined ?
+                                        {agenincomelimit === undefined ?
                                             null
                                             :
                                             <>
@@ -1563,7 +1563,7 @@ const AgencyDetail = () => {
                                                         Below are the Income Limits for {agenincomelimit.County_Name}, {agenincomelimit.State_Alpha}:
                                                     </p>
                                                 </div>
-                                                <h3 className="priceGreenText colorGreen font-weight700 itemWebsite marginTop16 fontSize24">${agenincomelimit.median2020 == 0 || agenincomelimit.median2020 == '' || agenincomelimit.median2020 == null ? 'N/A' : (agenincomelimit.median2020).toLocaleString(undefined, { minimumFractionDigits: 0 })}
+                                                <h3 className="priceGreenText colorGreen font-weight700 itemWebsite marginTop16 fontSize24">${agenincomelimit.median2020 === 0 || agenincomelimit.median2020 === '' || agenincomelimit.median2020 === null ? 'N/A' : (agenincomelimit.median2020).toLocaleString(undefined, { minimumFractionDigits: 0 })}
                                                 </h3>
                                                 <p className="mb-0 para secondaryColor itemWebsite">Median Income Limits of {agenincomelimit.County_Name}, {agenincomelimit.State_Alpha}</p>
 
@@ -1585,7 +1585,7 @@ const AgencyDetail = () => {
                                                             href="">Read More</a> */}
 
                                                     </p>
-                                                    <h3 className="priceGreenText colorGreen font-weight700">${agenincomelimit.median2020 == 0 || agenincomelimit.median2020 == '' || agenincomelimit.median2020 == null ? 'N/A' : (agenincomelimit.median2020).toLocaleString(undefined, { minimumFractionDigits: 0 })}</h3>
+                                                    <h3 className="priceGreenText colorGreen font-weight700">${agenincomelimit.median2020 === 0 || agenincomelimit.median2020 === '' || agenincomelimit.median2020 === null ? 'N/A' : (agenincomelimit.median2020).toLocaleString(undefined, { minimumFractionDigits: 0 })}</h3>
                                                     <p className="mb-0 para secondaryColor">Median Income Limits of {agenincomelimit.County_Name}, {agenincomelimit.State_Alpha}</p>
                                                 </div>
                                                 <div className="brdrLine3 itemWebsite"></div>
@@ -1628,33 +1628,33 @@ const AgencyDetail = () => {
                                                             <tbody>
                                                                 <tr>
                                                                     <th scope="row">1 Person</th>
-                                                                    <td>{agenincomelimit.l80_1 == '' || agenincomelimit.l80_1 == null || agenincomelimit.l80_1 == 0 ? 'N/A' : `$${(agenincomelimit.l80_1).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</td>
-                                                                    <td>{agenincomelimit.l50_1 == '' || agenincomelimit.l50_1 == null || agenincomelimit.l50_1 == 0 ? 'N/A' : `$${(agenincomelimit.l50_1).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</td>
-                                                                    <td>{agenincomelimit.ELI_1 == '' || agenincomelimit.ELI_1 == null || agenincomelimit.ELI_1 == 0 ? 'N/A' : `$${(agenincomelimit.ELI_1).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</td>
+                                                                    <td>{agenincomelimit.l80_1 === '' || agenincomelimit.l80_1 === null || agenincomelimit.l80_1 === 0 ? 'N/A' : `$${(agenincomelimit.l80_1).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</td>
+                                                                    <td>{agenincomelimit.l50_1 === '' || agenincomelimit.l50_1 === null || agenincomelimit.l50_1 === 0 ? 'N/A' : `$${(agenincomelimit.l50_1).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</td>
+                                                                    <td>{agenincomelimit.ELI_1 === '' || agenincomelimit.ELI_1 === null || agenincomelimit.ELI_1 === 0 ? 'N/A' : `$${(agenincomelimit.ELI_1).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <th scope="row">2 Person</th>
-                                                                    <td>{agenincomelimit.l80_2 == '' || agenincomelimit.l80_2 == null || agenincomelimit.l80_2 == 0 ? 'N/A' : `$${(agenincomelimit.l80_2).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</td>
-                                                                    <td>{agenincomelimit.l50_2 == '' || agenincomelimit.l50_2 == null || agenincomelimit.l50_2 == 0 ? 'N/A' : `$${(agenincomelimit.l50_2).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</td>
-                                                                    <td>{agenincomelimit.ELI_2 == '' || agenincomelimit.ELI_2 == null || agenincomelimit.ELI_2 == 0 ? 'N/A' : `$${(agenincomelimit.ELI_2).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</td>
+                                                                    <td>{agenincomelimit.l80_2 === '' || agenincomelimit.l80_2 === null || agenincomelimit.l80_2 === 0 ? 'N/A' : `$${(agenincomelimit.l80_2).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</td>
+                                                                    <td>{agenincomelimit.l50_2 === '' || agenincomelimit.l50_2 === null || agenincomelimit.l50_2 === 0 ? 'N/A' : `$${(agenincomelimit.l50_2).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</td>
+                                                                    <td>{agenincomelimit.ELI_2 === '' || agenincomelimit.ELI_2 === null || agenincomelimit.ELI_2 === 0 ? 'N/A' : `$${(agenincomelimit.ELI_2).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</td>
                                                                 </tr>
                                                                 <tr className="backColorGround">
                                                                     <th scope="row">3 Person</th>
-                                                                    <td>{agenincomelimit.l80_3 == '' || agenincomelimit.l80_3 == null || agenincomelimit.l80_3 == 0 ? 'N/A' : `$${(agenincomelimit.l80_3).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</td>
-                                                                    <td>{agenincomelimit.l50_3 == '' || agenincomelimit.l50_3 == null || agenincomelimit.l50_3 == 0 ? 'N/A' : `$${(agenincomelimit.l50_3).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</td>
-                                                                    <td>{agenincomelimit.ELI_3 == '' || agenincomelimit.ELI_3 == null || agenincomelimit.ELI_3 == 0 ? 'N/A' : `$${(agenincomelimit.ELI_3).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</td>
+                                                                    <td>{agenincomelimit.l80_3 === '' || agenincomelimit.l80_3 === null || agenincomelimit.l80_3 === 0 ? 'N/A' : `$${(agenincomelimit.l80_3).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</td>
+                                                                    <td>{agenincomelimit.l50_3 === '' || agenincomelimit.l50_3 === null || agenincomelimit.l50_3 === 0 ? 'N/A' : `$${(agenincomelimit.l50_3).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</td>
+                                                                    <td>{agenincomelimit.ELI_3 === '' || agenincomelimit.ELI_3 === null || agenincomelimit.ELI_3 === 0 ? 'N/A' : `$${(agenincomelimit.ELI_3).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <th scope="row">4 Person</th>
-                                                                    <td>{agenincomelimit.l80_4 == '' || agenincomelimit.l80_4 == null || agenincomelimit.l80_4 == 0 ? 'N/A' : `$${(agenincomelimit.l80_4).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</td>
-                                                                    <td>{agenincomelimit.l50_4 == '' || agenincomelimit.l50_4 == null || agenincomelimit.l50_4 == 0 ? 'N/A' : `$${(agenincomelimit.l50_4).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</td>
-                                                                    <td>{agenincomelimit.ELI_4 == '' || agenincomelimit.ELI_4 == null || agenincomelimit.ELI_4 == 0 ? 'N/A' : `$${(agenincomelimit.ELI_4).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</td>
+                                                                    <td>{agenincomelimit.l80_4 === '' || agenincomelimit.l80_4 === null || agenincomelimit.l80_4 === 0 ? 'N/A' : `$${(agenincomelimit.l80_4).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</td>
+                                                                    <td>{agenincomelimit.l50_4 === '' || agenincomelimit.l50_4 === null || agenincomelimit.l50_4 === 0 ? 'N/A' : `$${(agenincomelimit.l50_4).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</td>
+                                                                    <td>{agenincomelimit.ELI_4 === '' || agenincomelimit.ELI_4 === null || agenincomelimit.ELI_4 === 0 ? 'N/A' : `$${(agenincomelimit.ELI_4).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <th scope="row">5 Person</th>
-                                                                    <td>{agenincomelimit.l80_5 == '' || agenincomelimit.l80_5 == null || agenincomelimit.l80_5 == 0 ? 'N/A' : `$${(agenincomelimit.l80_5).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</td>
-                                                                    <td>{agenincomelimit.l50_5 == '' || agenincomelimit.l50_5 == null || agenincomelimit.l50_5 == 0 ? 'N/A' : `$${(agenincomelimit.l50_5).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</td>
-                                                                    <td>{agenincomelimit.ELI_5 == '' || agenincomelimit.ELI_5 == null || agenincomelimit.ELI_5 == 0 ? 'N/A' : `$${(agenincomelimit.ELI_5).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</td>
+                                                                    <td>{agenincomelimit.l80_5 === '' || agenincomelimit.l80_5 === null || agenincomelimit.l80_5 === 0 ? 'N/A' : `$${(agenincomelimit.l80_5).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</td>
+                                                                    <td>{agenincomelimit.l50_5 === '' || agenincomelimit.l50_5 === null || agenincomelimit.l50_5 === 0 ? 'N/A' : `$${(agenincomelimit.l50_5).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</td>
+                                                                    <td>{agenincomelimit.ELI_5 === '' || agenincomelimit.ELI_5 === null || agenincomelimit.ELI_5 === 0 ? 'N/A' : `$${(agenincomelimit.ELI_5).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</td>
                                                                 </tr>
                                                             </tbody>
                                                         </table>
@@ -1690,7 +1690,7 @@ const AgencyDetail = () => {
                                                                                     className="font-weight500 fontSize12 secondaryColor">Low</span>
                                                                             </div>
                                                                             <p className="mb-0 ml-auto font-weight400 fontSize14 secondaryColor">
-                                                                                {agenincomelimit.l80_1 == '' || agenincomelimit.l80_1 == null || agenincomelimit.l80_1 == 0 ? 'N/A' : `$${(agenincomelimit.l80_1).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}
+                                                                                {agenincomelimit.l80_1 === '' || agenincomelimit.l80_1 === null || agenincomelimit.l80_1 === 0 ? 'N/A' : `$${(agenincomelimit.l80_1).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}
                                                                             </p>
                                                                         </li>
                                                                         <li className="d-flex align-items-center tableRow percentBlock">
@@ -1701,7 +1701,7 @@ const AgencyDetail = () => {
                                                                                     Low</span>
                                                                             </div>
                                                                             <p className="mb-0 ml-auto font-weight400 fontSize14 secondaryColor">
-                                                                                {agenincomelimit.l50_1 == '' || agenincomelimit.l50_1 == null || agenincomelimit.l50_1 == 0 ? 'N/A' : `$${(agenincomelimit.l50_1).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}
+                                                                                {agenincomelimit.l50_1 === '' || agenincomelimit.l50_1 === null || agenincomelimit.l50_1 === 0 ? 'N/A' : `$${(agenincomelimit.l50_1).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}
                                                                             </p>
                                                                         </li>
                                                                         <li className="d-flex align-items-center tableRow percentBlock">
@@ -1712,7 +1712,7 @@ const AgencyDetail = () => {
                                                                                     Low</span>
                                                                             </div>
                                                                             <p className="mb-0 ml-auto font-weight400 fontSize14 secondaryColor">
-                                                                                {agenincomelimit.ELI_1 == '' || agenincomelimit.ELI_1 == null || agenincomelimit.ELI_1 == 0 ? 'N/A' : `$${(agenincomelimit.ELI_1).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}
+                                                                                {agenincomelimit.ELI_1 === '' || agenincomelimit.ELI_1 === null || agenincomelimit.ELI_1 === 0 ? 'N/A' : `$${(agenincomelimit.ELI_1).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}
                                                                             </p>
                                                                         </li>
                                                                     </ul>
@@ -1743,7 +1743,7 @@ const AgencyDetail = () => {
                                                                                     className="font-weight500 fontSize12 secondaryColor">Low</span>
                                                                             </div>
                                                                             <p className="mb-0 ml-auto font-weight400 fontSize14 secondaryColor">
-                                                                                {agenincomelimit.l80_2 == '' || agenincomelimit.l80_2 == null || agenincomelimit.l80_2 == 0 ? 'N/A' : `$${(agenincomelimit.l80_2).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}
+                                                                                {agenincomelimit.l80_2 === '' || agenincomelimit.l80_2 === null || agenincomelimit.l80_2 === 0 ? 'N/A' : `$${(agenincomelimit.l80_2).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}
                                                                             </p>
                                                                         </li>
                                                                         <li className="d-flex align-items-center tableRow percentBlock">
@@ -1754,7 +1754,7 @@ const AgencyDetail = () => {
                                                                                     Low</span>
                                                                             </div>
                                                                             <p className="mb-0 ml-auto font-weight400 fontSize14 secondaryColor">
-                                                                                {agenincomelimit.l50_2 == '' || agenincomelimit.l50_2 == null || agenincomelimit.l50_2 == 0 ? 'N/A' : `$${(agenincomelimit.l50_2).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}
+                                                                                {agenincomelimit.l50_2 === '' || agenincomelimit.l50_2 === null || agenincomelimit.l50_2 === 0 ? 'N/A' : `$${(agenincomelimit.l50_2).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}
                                                                             </p>
                                                                         </li>
                                                                         <li className="d-flex align-items-center tableRow percentBlock">
@@ -1765,7 +1765,7 @@ const AgencyDetail = () => {
                                                                                     Low</span>
                                                                             </div>
                                                                             <p className="mb-0 ml-auto font-weight400 fontSize14 secondaryColor">
-                                                                                {agenincomelimit.ELI_2 == '' || agenincomelimit.ELI_2 == null || agenincomelimit.ELI_2 == 0 ? 'N/A' : `$${(agenincomelimit.ELI_2).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}
+                                                                                {agenincomelimit.ELI_2 === '' || agenincomelimit.ELI_2 === null || agenincomelimit.ELI_2 === 0 ? 'N/A' : `$${(agenincomelimit.ELI_2).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}
                                                                             </p>
                                                                         </li>
                                                                     </ul>
@@ -1796,7 +1796,7 @@ const AgencyDetail = () => {
                                                                                     className="font-weight500 fontSize12 secondaryColor">Low</span>
                                                                             </div>
                                                                             <p className="mb-0 ml-auto font-weight400 fontSize14 secondaryColor">
-                                                                                {agenincomelimit.l80_3 == '' || agenincomelimit.l80_3 == null || agenincomelimit.l80_3 == 0 ? 'N/A' : `$${(agenincomelimit.l80_3).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}
+                                                                                {agenincomelimit.l80_3 === '' || agenincomelimit.l80_3 === null || agenincomelimit.l80_3 === 0 ? 'N/A' : `$${(agenincomelimit.l80_3).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}
                                                                             </p>
                                                                         </li>
                                                                         <li className="d-flex align-items-center tableRow percentBlock">
@@ -1807,7 +1807,7 @@ const AgencyDetail = () => {
                                                                                     Low</span>
                                                                             </div>
                                                                             <p className="mb-0 ml-auto font-weight400 fontSize14 secondaryColor">
-                                                                                {agenincomelimit.l50_3 == '' || agenincomelimit.l50_3 == null || agenincomelimit.l50_3 == 0 ? 'N/A' : `$${(agenincomelimit.l50_3).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}
+                                                                                {agenincomelimit.l50_3 === '' || agenincomelimit.l50_3 === null || agenincomelimit.l50_3 === 0 ? 'N/A' : `$${(agenincomelimit.l50_3).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}
                                                                             </p>
                                                                         </li>
                                                                         <li className="d-flex align-items-center tableRow percentBlock">
@@ -1818,7 +1818,7 @@ const AgencyDetail = () => {
                                                                                     Low</span>
                                                                             </div>
                                                                             <p className="mb-0 ml-auto font-weight400 fontSize14 secondaryColor">
-                                                                                {agenincomelimit.ELI_3 == '' || agenincomelimit.ELI_3 == null || agenincomelimit.ELI_3 == 0 ? 'N/A' : `$${(agenincomelimit.ELI_3).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}
+                                                                                {agenincomelimit.ELI_3 === '' || agenincomelimit.ELI_3 === null || agenincomelimit.ELI_3 === 0 ? 'N/A' : `$${(agenincomelimit.ELI_3).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}
                                                                             </p>
                                                                         </li>
                                                                     </ul>
@@ -1843,7 +1843,7 @@ const AgencyDetail = () => {
                                         </div>
 
                                         {
-                                            agenfmr == undefined || agenfmr == null || agenfmr == '' ?
+                                            agenfmr === undefined || agenfmr === null || agenfmr === '' ?
                                                 <>
                                                     <div className="bedroomBox itemWebsite">
                                                         <div className="bedroomBoxFlex">
@@ -1910,23 +1910,23 @@ const AgencyDetail = () => {
                                                     <div className="bedroomBox itemWebsite">
                                                         <div className="bedroomBoxFlex">
                                                             <p className="mb-0 secondaryColor fontSize14 font-weight400">Efficiency</p>
-                                                            <h4 className="mb-0 colorBlue font-weight700 fontSize16">{agenfmr.fmr0 == 0 || agenfmr.fmr0 == '' ? 'N/A' : `$${(agenfmr.fmr0).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</h4>
+                                                            <h4 className="mb-0 colorBlue font-weight700 fontSize16">{agenfmr.fmr0 === 0 || agenfmr.fmr0 === '' ? 'N/A' : `$${(agenfmr.fmr0).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</h4>
                                                         </div>
                                                         <div className="bedroomBoxFlex">
                                                             <p className="mb-0 secondaryColor fontSize14 font-weight400">One-Bedroom</p>
-                                                            <h4 className="mb-0 colorBlue font-weight700 fontSize16">{agenfmr.fmr1 == 0 || agenfmr.fmr1 == '' ? 'N/A' : `$${(agenfmr.fmr1).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</h4>
+                                                            <h4 className="mb-0 colorBlue font-weight700 fontSize16">{agenfmr.fmr1 === 0 || agenfmr.fmr1 === '' ? 'N/A' : `$${(agenfmr.fmr1).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</h4>
                                                         </div>
                                                         <div className="bedroomBoxFlex">
                                                             <p className="mb-0 secondaryColor fontSize14 font-weight400">Two-Bedroom</p>
-                                                            <h4 className="mb-0 colorBlue font-weight700 fontSize16">{agenfmr.fmr2 == 0 || agenfmr.fmr2 == '' ? 'N/A' : `$${(agenfmr.fmr2).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</h4>
+                                                            <h4 className="mb-0 colorBlue font-weight700 fontSize16">{agenfmr.fmr2 === 0 || agenfmr.fmr2 === '' ? 'N/A' : `$${(agenfmr.fmr2).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</h4>
                                                         </div>
                                                         <div className="bedroomBoxFlex">
                                                             <p className="mb-0 secondaryColor fontSize14 font-weight400">Three-Bedroom</p>
-                                                            <h4 className="mb-0 colorBlue font-weight700 fontSize16">{agenfmr.fmr3 == 0 || agenfmr.fmr3 == '' ? 'N/A' : `$${(agenfmr.fmr3).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</h4>
+                                                            <h4 className="mb-0 colorBlue font-weight700 fontSize16">{agenfmr.fmr3 === 0 || agenfmr.fmr3 === '' ? 'N/A' : `$${(agenfmr.fmr3).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</h4>
                                                         </div>
                                                         <div className="bedroomBoxFlex">
                                                             <p className="mb-0 secondaryColor fontSize14 font-weight400">Four-Bedroom</p>
-                                                            <h4 className="mb-0 colorBlue font-weight700 fontSize16">{agenfmr.fmr4 == 0 || agenfmr.fmr4 == '' ? 'N/A' : `$${(agenfmr.fmr4).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</h4>
+                                                            <h4 className="mb-0 colorBlue font-weight700 fontSize16">{agenfmr.fmr4 === 0 || agenfmr.fmr4 === '' ? 'N/A' : `$${(agenfmr.fmr4).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</h4>
                                                         </div>
                                                     </div>
                                                     <div className="itemMobile">
@@ -1936,15 +1936,15 @@ const AgencyDetail = () => {
                                                                     <ul className="noMarginPad listStyleNone">
                                                                         <li>
                                                                             <p className="mb-0 fontSize14 font-weight400 secondaryColor">Efficiency</p>
-                                                                            <h5 className="mb-0 colorBlue font-weight700">{agenfmr.fmr0 == 0 || agenfmr.fmr0 == '' ? 'N/A' : `$${(agenfmr.fmr0).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</h5>
+                                                                            <h5 className="mb-0 colorBlue font-weight700">{agenfmr.fmr0 === 0 || agenfmr.fmr0 === '' ? 'N/A' : `$${(agenfmr.fmr0).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</h5>
                                                                         </li>
                                                                         <li>
                                                                             <p className="mb-0 fontSize14 font-weight400 secondaryColor">One-Bedroom</p>
-                                                                            <h5 className="mb-0 colorBlue font-weight700">{agenfmr.fmr1 == 0 || agenfmr.fmr1 == '' ? 'N/A' : `$${(agenfmr.fmr1).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</h5>
+                                                                            <h5 className="mb-0 colorBlue font-weight700">{agenfmr.fmr1 === 0 || agenfmr.fmr1 === '' ? 'N/A' : `$${(agenfmr.fmr1).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</h5>
                                                                         </li>
                                                                         <li>
                                                                             <p className="mb-0 fontSize14 font-weight400 secondaryColor">Two-Bedroom</p>
-                                                                            <h5 className="mb-0 colorBlue font-weight700">{agenfmr.fmr2 == 0 || agenfmr.fmr2 == '' ? 'N/A' : `$${(agenfmr.fmr2).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</h5>
+                                                                            <h5 className="mb-0 colorBlue font-weight700">{agenfmr.fmr2 === 0 || agenfmr.fmr2 === '' ? 'N/A' : `$${(agenfmr.fmr2).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</h5>
                                                                         </li>
                                                                     </ul>
                                                                 </div>
@@ -1953,12 +1953,12 @@ const AgencyDetail = () => {
                                                                         <li>
                                                                             <p className="mb-0 fontSize14 font-weight400 secondaryColor">Three-Bedroom
                                                                             </p>
-                                                                            <h5 className="mb-0 colorBlue font-weight700">{agenfmr.fmr3 == 0 || agenfmr.fmr3 == '' ? 'N/A' : `$${(agenfmr.fmr3).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</h5>
+                                                                            <h5 className="mb-0 colorBlue font-weight700">{agenfmr.fmr3 === 0 || agenfmr.fmr3 === '' ? 'N/A' : `$${(agenfmr.fmr3).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</h5>
                                                                         </li>
                                                                         <li>
                                                                             <p className="mb-0 fontSize14 font-weight400 secondaryColor">Four-Bedroom
                                                                             </p>
-                                                                            <h5 className="mb-0 colorBlue font-weight700">{agenfmr.fmr4 == 0 || agenfmr.fmr4 == '' ? 'N/A' : `$${(agenfmr.fmr4).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</h5>
+                                                                            <h5 className="mb-0 colorBlue font-weight700">{agenfmr.fmr4 === 0 || agenfmr.fmr4 === '' ? 'N/A' : `$${(agenfmr.fmr4).toLocaleString(undefined, { minimumFractionDigits: 0 })}`}</h5>
                                                                         </li>
                                                                     </ul>
                                                                 </div>
@@ -1974,7 +1974,7 @@ const AgencyDetail = () => {
 
 
                                         {
-                                            agendetail.lat == null || agendetail.lng == null || agendetail.lat == '' || agendetail.lng == '' ?
+                                            agendetail.lat === null || agendetail.lng === null || agendetail.lat === '' || agendetail.lng === '' ?
                                                 null
                                                 :
                                                 <>
@@ -2002,7 +2002,7 @@ const AgencyDetail = () => {
                                                 </>
                                         }
                                         {
-                                            agenhas == undefined || agenhas == [] || agenhas == '' || agenhas == null
+                                            agenhas === undefined || agenhas === [] || agenhas === '' || agenhas === null
                                                 ?
                                                 null
                                                 :
@@ -2376,7 +2376,7 @@ const AgencyDetail = () => {
                                                 }</h3>
 
                                             {
-                                                agenlocalinfo.info == '' || agenlocalinfo.info == null ?
+                                                agenlocalinfo.info === '' || agenlocalinfo.info === null ?
                                                     <p className="fontSize16 font-weight400 colorBlue">No record found.</p>
                                                     :
                                                     <p className="fontSize16 font-weight400 colorBlue" dangerouslySetInnerHTML={{ __html: replaceSpace(agenlocalinfo.info) }} />
@@ -2441,7 +2441,7 @@ const AgencyDetail = () => {
                                                     <div className="form-group">
                                                         <label for="exampleInputEmail1">Full Name</label>
                                                         <input type="email" className="form-control" id=""
-                                                            aria-describedby="emailHelp" placeholder="Enter email"
+                                                            aria-describedby="emailHelp" placeholder="Enter Email"
                                                             value="Jonath" />
                                                     </div>
                                                 </div>
@@ -2530,7 +2530,7 @@ const AgencyDetail = () => {
                                                                     <input
                                                                         type="text"
                                                                         className="form-control"
-                                                                        placeholder="First name"
+                                                                        placeholder="First Name"
                                                                         value={formdata.first_name}
                                                                         onChange={(e) =>
                                                                             setformdata({
@@ -2863,7 +2863,7 @@ const AgencyDetail = () => {
                                         <div className="d-flex align-items-bottom">
 
                                             {
-                                                agendetail.is_section_8_wating_list == 0 ?
+                                                agendetail.is_section_8_wating_list === 0 ?
                                                     <span className="statusTag fontSize14 font-weight500 closed">
                                                         Closed
                                                     </span>
@@ -2879,23 +2879,23 @@ const AgencyDetail = () => {
                                                 data-toggle="modal" data-target="#exampleModal"
                                                 style={{ cursor: "pointer" }}>
 
-                                                {/* {agendatedetail.open_date == '0000-00-00' || agendatedetail.open_date == '' ? 'N/A' : agendatedetail.open_date} - {agendatedetail.close_date == '0000-00-00' || agendatedetail.close_date == '' ? 'N/A' : agendatedetail.close_date} */}
+                                                {/* {agendatedetail.open_date === '0000-00-00' || agendatedetail.open_date === '' ? 'N/A' : agendatedetail.open_date} - {agendatedetail.close_date === '0000-00-00' || agendatedetail.close_date === '' ? 'N/A' : agendatedetail.close_date} */}
                                                 {
-                                                    (agendatedetail.open_date == '0000-00-00' || agendatedetail.open_date == '') && (agendatedetail.close_date == '0000-00-00' || agendatedetail.close_date == '') ?
+                                                    (agendatedetail.open_date === '0000-00-00' || agendatedetail.open_date === '') && (agendatedetail.close_date === '0000-00-00' || agendatedetail.close_date === '') ?
                                                         'N/A'
                                                         :
                                                         <>
-                                                            {agendatedetail.open_date == '0000-00-00' || agendatedetail.open_date == '' ? 'N/A' : `${dateconvert(agendatedetail.open_date).toLocaleDateString("en-US", options)}`} - {agendatedetail.close_date == '0000-00-00' || agendatedetail.close_date == '' ? 'N/A' : `${dateconvert(agendatedetail.close_date).toLocaleDateString("en-US", options)}`}
+                                                            {agendatedetail.open_date === '0000-00-00' || agendatedetail.open_date === '' ? 'N/A' : `${dateconvert(agendatedetail.open_date).toLocaleDateString("en-US", options)}`} - {agendatedetail.close_date === '0000-00-00' || agendatedetail.close_date === '' ? 'N/A' : `${dateconvert(agendatedetail.close_date).toLocaleDateString("en-US", options)}`}
                                                         </>
                                                 }
 
-                                                , {agendatedetail.open_time == '' ? 'N/A' : agendatedetail.open_time} - {agendatedetail.close_time == '' ? 'N/A' : agendatedetail.close_time}
+                                                , {agendatedetail.open_time === '' ? 'N/A' : agendatedetail.open_time} - {agendatedetail.close_time === '' ? 'N/A' : agendatedetail.close_time}
                                             </p>
                                         </div>
                                         <p
                                             className="mb-0 fontSize14 font-weight400 secondaryColor landingModalPara">
                                             {
-                                                agendatedetail.description == '' ?
+                                                agendatedetail.description === '' ?
                                                     'According to recently updated public information sources, this agency appears to have open waiting list. Please contact them directly to confirm the current status of their waiting lists for public housing.'
                                                     :
                                                     agendatedetail.description.replace(/<[^>]*>?/gm, '').replace(/&nbsp;/g, ' ')
@@ -2940,7 +2940,7 @@ const AgencyDetail = () => {
                                                 Open
                                             </span> */}
                                             {
-                                                agendetail.is_wating_closed == 1
+                                                agendetail.is_wating_closed === 1
                                                     ?
                                                     <span className="statusTag fontSize14 font-weight500 closed">
                                                         Closed
@@ -2953,21 +2953,21 @@ const AgencyDetail = () => {
                                             <p className="mb-0 fontSize16 font-weight400 colorBlue dateTime"
                                                 data-toggle="modal" data-target="#exampleModal"
                                                 style={{ cursor: "pointer" }}>
-                                                {/* {agendatedetail.open_date_ha == '0000-00-00' || agendatedetail.open_date_ha == '' ? 'N/A' : agendatedetail.open_date_ha} - {agendatedetail.close_date_ha == '0000-00-00' || agendatedetail.close_date_ha == '' ? 'N/A' : agendatedetail.close_date_ha} */}
+                                                {/* {agendatedetail.open_date_ha === '0000-00-00' || agendatedetail.open_date_ha === '' ? 'N/A' : agendatedetail.open_date_ha} - {agendatedetail.close_date_ha === '0000-00-00' || agendatedetail.close_date_ha === '' ? 'N/A' : agendatedetail.close_date_ha} */}
                                                 {
-                                                    (agendatedetail.open_date_ha == '0000-00-00' || agendatedetail.open_date_ha == '') && (agendatedetail.close_date_ha == '0000-00-00' || agendatedetail.close_date_ha == '') ?
+                                                    (agendatedetail.open_date_ha === '0000-00-00' || agendatedetail.open_date_ha === '') && (agendatedetail.close_date_ha === '0000-00-00' || agendatedetail.close_date_ha === '') ?
                                                         'N/A'
                                                         :
                                                         <>
-                                                            {agendatedetail.open_date_ha == '0000-00-00' || agendatedetail.open_date_ha == '' ? 'N/A' : `${dateconvert(agendatedetail.open_date_ha).toLocaleDateString("en-US", options)}`} - {agendatedetail.close_date_ha == '0000-00-00' || agendatedetail.close_date_ha == '' ? 'N/A' : `${dateconvert(agendatedetail.close_date_ha).toLocaleDateString("en-US", options)}`}
+                                                            {agendatedetail.open_date_ha === '0000-00-00' || agendatedetail.open_date_ha === '' ? 'N/A' : `${dateconvert(agendatedetail.open_date_ha).toLocaleDateString("en-US", options)}`} - {agendatedetail.close_date_ha === '0000-00-00' || agendatedetail.close_date_ha === '' ? 'N/A' : `${dateconvert(agendatedetail.close_date_ha).toLocaleDateString("en-US", options)}`}
                                                         </>
                                                 }
-                                                , {agendatedetail.open_time_ha == '' ? 'N/A' : agendatedetail.open_time_ha} - {agendatedetail.close_time_ha == '' ? 'N/A' : agendatedetail.close_time_ha}
+                                                , {agendatedetail.open_time_ha === '' ? 'N/A' : agendatedetail.open_time_ha} - {agendatedetail.close_time_ha === '' ? 'N/A' : agendatedetail.close_time_ha}
                                             </p>
                                         </div>
                                         <p className="mb-0 fontSize14 font-weight400 secondaryColor landingModalPara">
                                             {
-                                                agendatedetail.description == '' ?
+                                                agendatedetail.description === '' ?
                                                     'According to recently updated public information sources, this agency appears to have open waiting list. Please contact them directly to confirm the current status of their waiting lists for public housing.'
                                                     :
                                                     agendatedetail.description.replace(/<[^>]*>?/gm, '').replace(/&nbsp;/g, ' ')
@@ -3035,7 +3035,7 @@ const AgencyDetail = () => {
                                                     <label for="">City</label>
                                                     <input type="text" className="form-control" id=""
                                                         aria-describedby="emailHelp"
-                                                        placeholder="Enter city"
+                                                        placeholder="Enter City"
                                                         value={formDataagency.city} onChange={(e) => setformDataagency({ ...formDataagency, city: e.target.value })} required />
                                                 </div>
                                             </div>
@@ -3048,7 +3048,7 @@ const AgencyDetail = () => {
                                                             <select className="form-control"
                                                                 id="exampleFormControlSelect1"
                                                                 value={formDataagency.state} onChange={(e) => setformDataagency({ ...formDataagency, state: e.target.value })} required >
-                                                                {statelist.length == 0 ?
+                                                                {statelist.length === 0 ?
                                                                     <option>No states found</option>
                                                                     :
                                                                     statelist.map((val) => {
@@ -3068,7 +3068,7 @@ const AgencyDetail = () => {
                                                             <label for="">ZIP</label>
                                                             <input type="number" className="form-control"
                                                                 id="" aria-describedby="emailHelp"
-                                                                placeholder="Enter email"
+                                                                placeholder="Enter Email"
                                                                 value={formDataagency.zip} onChange={(e) => setformDataagency({ ...formDataagency, zip: e.target.value })} required />
                                                         </div>
                                                     </div>
@@ -3080,7 +3080,7 @@ const AgencyDetail = () => {
                                                         className="labelMark">*</span></label>
                                                     <input type="email" className="form-control" id=""
                                                         aria-describedby="emailHelp"
-                                                        placeholder="Enter email"
+                                                        placeholder="Enter Email"
                                                         value={formDataagency.emailid} onChange={(e) => setformDataagency({ ...formDataagency, emailid: e.target.value })} required />
                                                 </div>
                                             </div>
@@ -3090,7 +3090,7 @@ const AgencyDetail = () => {
                                                         className="labelMark">*</span></label>
                                                     <input type="number" className="form-control" id=""
                                                         aria-describedby="emailHelp"
-                                                        placeholder="Enter number"
+                                                        placeholder="Enter Number"
                                                         value={formDataagency.phone} onChange={(e) => setformDataagency({ ...formDataagency, phone: e.target.value })} required />
                                                 </div>
                                             </div>
@@ -3139,7 +3139,7 @@ const AgencyDetail = () => {
                                                                 <input type="radio" id="test1"
                                                                     name="radio-group"
                                                                     value="Yes"
-                                                                    checked={formDataagency.voucher == "Yes"}
+                                                                    checked={formDataagency.voucher === "Yes"}
                                                                     onChange={onValChange}
                                                                 />
                                                                 <label for="test1">Yes</label>
@@ -3148,7 +3148,7 @@ const AgencyDetail = () => {
                                                                 <input type="radio" id="test2"
                                                                     name="radio-group"
                                                                     value="No"
-                                                                    checked={formDataagency.voucher == "No"}
+                                                                    checked={formDataagency.voucher === "No"}
                                                                     onChange={onValChange}
                                                                 />
                                                                 <label for="test2">No</label>
@@ -3274,7 +3274,7 @@ const AgencyDetail = () => {
 
 
                                                 {
-                                                    agenphoto == undefined || agenphoto == null ?
+                                                    agenphoto === undefined || agenphoto === null ?
                                                         <img className="w-100" src={'https://cdn-0.rentalhousingdeals.com/images/l_thumbs/photos-unavailable.jpg'} />
 
                                                         :
@@ -3286,7 +3286,7 @@ const AgencyDetail = () => {
 
                                             <p className="para fontSize14 font-weight400 secondaryColor">
                                                 {
-                                                    agendetail.about_us == '' || agendetail.about_us == null || agendetail.about_us == undefined ?
+                                                    agendetail.about_us === '' || agendetail.about_us === null || agendetail.about_us === undefined ?
                                                         <p className="fontSize16 secondaryColor font-weight400 mb-0 detailPara" >
                                                             {agendetail.name} is a public housing agency that helps provide decent and safe rental housing for eligible low-income families, the elderly, and persons with disabilities.
                                                         </p>
@@ -3326,7 +3326,7 @@ const AgencyDetail = () => {
                                                                     <input
                                                                         type="text"
                                                                         className="form-control"
-                                                                        placeholder="First name"
+                                                                        placeholder="First Name"
                                                                         value={formdatamodal.first_name}
                                                                         onChange={(e) =>
                                                                             setformdatamodal({

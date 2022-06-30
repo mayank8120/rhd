@@ -74,16 +74,16 @@ export const PropertySearchItem = ({ post }) => {
 
     useEffect(() => {
 
-        if (propdetail == null || propdetail == undefined || propdetail == '') {
+        if (propdetail === null || propdetail === undefined || propdetail === '') {
 
         } else {
-            if (propdetail.min_bed == null || propdetail.min_bed == '' || propdetail.min_bed == undefined || propdetail.min_bed == 0) {
+            if (propdetail.min_bed === null || propdetail.min_bed === '' || propdetail.min_bed === undefined || propdetail.min_bed === 0) {
                 setminimumbed(0);
             } else {
                 setminimumbed(propdetail.min_bed);
             }
 
-            if (propdetail.max_bed == null || propdetail.max_bed == '' || propdetail.max_bed == undefined || propdetail.max_bed == 0) {
+            if (propdetail.max_bed === null || propdetail.max_bed === '' || propdetail.max_bed === undefined || propdetail.max_bed === 0) {
                 setmaximumbed(0);
             } else {
                 setmaximumbed(propdetail.max_bed);
@@ -96,7 +96,7 @@ export const PropertySearchItem = ({ post }) => {
 
 
     useEffect(() => {
-        if (post == null && post == undefined && post.length == 0) {
+        if (post === null && post === undefined && post.length === 0) {
         } else {
             if (prop.property_type !== "general") {
                 if (
@@ -106,14 +106,14 @@ export const PropertySearchItem = ({ post }) => {
                     if (deals === null) {
                     } else {
                         if (
-                            deals.header_description == 1 ||
-                            deals.header_description == "1"
+                            deals.header_description === 1 ||
+                            deals.header_description === "1"
                         ) {
                             setthirdval("SPECIALS");
                             // console.log(1);
                         } else if (
-                            deals.header_description == 2 ||
-                            deals.header_description == "2"
+                            deals.header_description === 2 ||
+                            deals.header_description === "2"
                         ) {
                             setthirdval(
                                 `$${headervalue[0].toLocaleString(undefined, {
@@ -122,8 +122,8 @@ export const PropertySearchItem = ({ post }) => {
                             );
                             // console.log(2);
                         } else if (
-                            deals.header_description == 3 ||
-                            deals.header_description == "3"
+                            deals.header_description === 3 ||
+                            deals.header_description === "3"
                         ) {
                             setthirdval(
                                 `$${headervalue[2].toLocaleString(undefined, {
@@ -132,8 +132,8 @@ export const PropertySearchItem = ({ post }) => {
                             );
                             // console.log(3);
                         } else if (
-                            deals.header_description == 4 ||
-                            deals.header_description == "4"
+                            deals.header_description === 4 ||
+                            deals.header_description === "4"
                         ) {
                             setthirdval(
                                 `$${headervalue[2].toLocaleString(undefined, {
@@ -142,14 +142,14 @@ export const PropertySearchItem = ({ post }) => {
                             );
                             // console.log(4);
                         } else if (
-                            deals.header_description == 5 ||
-                            deals.header_description == "5"
+                            deals.header_description === 5 ||
+                            deals.header_description === "5"
                         ) {
                             setthirdval("MOVE-IN SPECIALS");
                             // console.log(5);
                         } else if (
-                            deals.header_description == 6 ||
-                            deals.header_description == "6"
+                            deals.header_description === 6 ||
+                            deals.header_description === "6"
                         ) {
                             setthirdval(
                                 `$${headervalue[0].toLocaleString(undefined, {
@@ -158,8 +158,8 @@ export const PropertySearchItem = ({ post }) => {
                             );
                             // console.log(6);
                         } else if (
-                            deals.header_description == 7 ||
-                            deals.header_description == "7"
+                            deals.header_description === 7 ||
+                            deals.header_description === "7"
                         ) {
                             setthirdval(headervalue[2]);
                             // console.log(7);
@@ -174,7 +174,7 @@ export const PropertySearchItem = ({ post }) => {
                     // console.log(8);
                 }
             }
-            if (prop.property_type == "general") {
+            if (prop.property_type === "general") {
                 setthirdval("CALL");
             }
         }
@@ -185,13 +185,13 @@ export const PropertySearchItem = ({ post }) => {
     //     if (thirdval !== undefined) {
     //         (
     //             thirdval !== '' && thirdval !== 'MOVE-IN SPECIALS' && thirdval !== 'SPECIALS'
-    //                 && (deals.header_description == null ? thirdval !== 'SPECIALS' : (deals.header_description !== 7 || deals.header_description !== '7'))
+    //                 && (deals.header_description === null ? thirdval !== 'SPECIALS' : (deals.header_description !== 7 || deals.header_description !== '7'))
     //                 ?
     //                 setthirdval(thirdval)
     //                 :
     //                 (
-    //                     thirdval == 'MOVE-IN SPECIALS' || thirdval == 'SPECIALS'
-    //                         || ((deals.header_description == 7 || deals.header_description == '7'))
+    //                     thirdval === 'MOVE-IN SPECIALS' || thirdval === 'SPECIALS'
+    //                         || ((deals.header_description === 7 || deals.header_description === '7'))
     //                         ?
     //                         setthirdval(thirdval)
     //                         :
@@ -273,7 +273,7 @@ export const PropertySearchItem = ({ post }) => {
     }
 
     function captchacheck() {
-        if (captchaValue == undefined || captchaValue !== true) {
+        if (captchaValue === undefined || captchaValue !== true) {
             setcaptchaValue(false);
         }
     }
@@ -426,7 +426,7 @@ export const PropertySearchItem = ({ post }) => {
 
 
     // function decimalRoundOff(number) {
-    //     return Math.floor(number) == Math.round(number) ? Math.floor(number) : number
+    //     return Math.floor(number) === Math.round(number) ? Math.floor(number) : number
     // }
 
     return (
@@ -434,7 +434,7 @@ export const PropertySearchItem = ({ post }) => {
         <>
 
             {
-                post == null || post == undefined || post == '' ?
+                post === null || post === undefined || post === '' ?
 
                     null
                     :
@@ -448,10 +448,10 @@ export const PropertySearchItem = ({ post }) => {
                                         <Link to={linkurl} className="d-flex w-100  abcd">
                                             <div className="listing-left">
                                                 <div className="bg-image">
-                                                    {propphoto == null ||
-                                                        propphoto == "" ||
-                                                        propphoto.photo == null ||
-                                                        propphoto.photo == "" ? (
+                                                    {propphoto === null ||
+                                                        propphoto === "" ||
+                                                        propphoto.photo === null ||
+                                                        propphoto.photo === "" ? (
                                                         // Affordable Housing Logo
 
                                                         //     spurl = "https://cdn-0.rentalhousingdeals.com/images/l_thumbs/affordable-no-image.jpg"
@@ -525,15 +525,15 @@ export const PropertySearchItem = ({ post }) => {
                                             {prop.property_state}, {prop.property_zip}
                                         </Link>
                                     </p>
-                                    {proprating == null ||
-                                        proprating == undefined ||
-                                        proprating == "" ? null : proprating.vote_avg == null ? null : (
+                                    {proprating === null ||
+                                        proprating === undefined ||
+                                        proprating === "" ? null : proprating.vote_avg === null ? null : (
                                             <Starratingstatic rating={proprating.vote_avg} />
                                         )}
 
-                                    {propdetail == null ||
-                                        propdetail == "" ? null : propdetail.subsidized == "Yes" &&
-                                            propdetail.section8 == "Yes" ?
+                                    {propdetail === null ||
+                                        propdetail === "" ? null : propdetail.subsidized === "Yes" &&
+                                            propdetail.section8 === "Yes" ?
                                         (
                                             <div class="itemWebsite priceRangeMobile">
                                                 <div class="d-flex align-items-center">
@@ -543,7 +543,7 @@ export const PropertySearchItem = ({ post }) => {
                                                             thirdval !== "SPECIALS" &&
                                                             typeof thirdval !== undefined
                                                             ? thirdval
-                                                            : thirdval == "MOVE-IN SPECIALS" || thirdval == "SPECIALS"
+                                                            : thirdval === "MOVE-IN SPECIALS" || thirdval === "SPECIALS"
                                                                 ? thirdval
                                                                 : null}
 
@@ -565,7 +565,7 @@ export const PropertySearchItem = ({ post }) => {
                                                     thirdval !== "SPECIALS" &&
                                                     typeof thirdval !== undefined
                                                     ? thirdval
-                                                    : thirdval == "MOVE-IN SPECIALS" || thirdval == "SPECIALS"
+                                                    : thirdval === "MOVE-IN SPECIALS" || thirdval === "SPECIALS"
                                                         ? thirdval
                                                         : null}
                                             </h4>
@@ -588,9 +588,9 @@ export const PropertySearchItem = ({ post }) => {
 
 
 
-                                    {propdetail == null ||
-                                        propdetail == "" ? null : propdetail.subsidized == "Yes" &&
-                                            propdetail.section8 == "Yes" ?
+                                    {propdetail === null ||
+                                        propdetail === "" ? null : propdetail.subsidized === "Yes" &&
+                                            propdetail.section8 === "Yes" ?
 
                                         <div className="itemMobile priceRangeMobile">
                                             <div className="d-flex align-items-center">
@@ -602,7 +602,7 @@ export const PropertySearchItem = ({ post }) => {
                                                         thirdval !== "SPECIALS" &&
                                                         typeof thirdval !== undefined
                                                         ? thirdval
-                                                        : thirdval == "MOVE-IN SPECIALS" || thirdval == "SPECIALS"
+                                                        : thirdval === "MOVE-IN SPECIALS" || thirdval === "SPECIALS"
                                                             ? thirdval
                                                             : null}
 
@@ -630,7 +630,7 @@ export const PropertySearchItem = ({ post }) => {
                                                         thirdval !== "SPECIALS" &&
                                                         typeof thirdval !== undefined
                                                         ? thirdval
-                                                        : thirdval == "MOVE-IN SPECIALS" || thirdval == "SPECIALS"
+                                                        : thirdval === "MOVE-IN SPECIALS" || thirdval === "SPECIALS"
                                                             ? thirdval
                                                             : null}
 
@@ -643,20 +643,20 @@ export const PropertySearchItem = ({ post }) => {
                                     }
 
                                     <div className="d-flex align-items-center listingBlockLine blockclass">
-                                        {propdetail == null ||
-                                            propdetail == "" ? null : (propdetail.max_bed == null ||
-                                                propdetail.max_bed == "" ||
-                                                propdetail.min_bed == "" ||
-                                                propdetail.min_bed == null) &&
-                                                (propdetail.min_bath == null ||
-                                                    propdetail.min_bath == "" ||
-                                                    propdetail.max_bath == "" ||
-                                                    propdetail.max_bath == null) ? null : (
+                                        {propdetail === null ||
+                                            propdetail === "" ? null : (propdetail.max_bed === null ||
+                                                propdetail.max_bed === "" ||
+                                                propdetail.min_bed === "" ||
+                                                propdetail.min_bed === null) &&
+                                                (propdetail.min_bath === null ||
+                                                    propdetail.min_bath === "" ||
+                                                    propdetail.max_bath === "" ||
+                                                    propdetail.max_bath === null) ? null : (
                                             <ul className="noMarginPad listStyleNone mr-18">
-                                                {propdetail.max_bed == null ||
-                                                    (propdetail.max_bed == "" && propdetail.min_bed == "") ||
-                                                    propdetail.min_bed == null ? null : propdetail.min_bed ==
-                                                        "" || propdetail.min_bed == null ? (
+                                                {propdetail.max_bed === null ||
+                                                    (propdetail.max_bed === "" && propdetail.min_bed === "") ||
+                                                    propdetail.min_bed === null ? null : propdetail.min_bed ==
+                                                        "" || propdetail.min_bed === null ? (
                                                     <li className="d-flex align-items-center">
                                                         <img src={require("../../assets/img/beds.svg").default} />
                                                         <span className="colorBlue">
@@ -664,7 +664,7 @@ export const PropertySearchItem = ({ post }) => {
                                                         </span>{" "}
                                                         Beds
                                                     </li>
-                                                ) : propdetail.min_bed == propdetail.max_bed ? (
+                                                ) : propdetail.min_bed === propdetail.max_bed ? (
                                                     <li className="d-flex align-items-center">
                                                         <img src={require("../../assets/img/beds.svg").default} />
                                                         <span className="colorBlue">
@@ -682,23 +682,23 @@ export const PropertySearchItem = ({ post }) => {
                                                     </li>
                                                 )}
 
-                                                {propdetail.max_bath == null ||
-                                                    (propdetail.max_bath == "" && propdetail.min_bath == "") ||
-                                                    propdetail.min_bath == null ? null : propdetail.min_bath ==
-                                                        "" || propdetail.min_bath == null ? (
+                                                {propdetail.max_bath === null ||
+                                                    (propdetail.max_bath === "" && propdetail.min_bath === "") ||
+                                                    propdetail.min_bath === null ? null : propdetail.min_bath ==
+                                                        "" || propdetail.min_bath === null ? (
                                                     <li className="d-flex align-items-center">
                                                         <img
                                                             src={require("../../assets/img/shower.svg").default}
                                                         />
                                                         <span className="colorBlue">{
 
-                                                            // Math.floor(propdetail.max_bath) == Math.round(propdetail.max_bath) ? Math.floor(propdetail.max_bath) : propdetail.max_bath
+                                                            // Math.floor(propdetail.max_bath) === Math.round(propdetail.max_bath) ? Math.floor(propdetail.max_bath) : propdetail.max_bath
                                                             decimalRoundOff(propdetail.max_bath)
 
                                                         }</span>{" "}
                                                         Baths
                                                     </li>
-                                                ) : propdetail.min_bath == propdetail.max_bath ? (
+                                                ) : propdetail.min_bath === propdetail.max_bath ? (
                                                     <li className="d-flex align-items-center">
                                                         <img
                                                             src={require("../../assets/img/shower.svg").default}
@@ -709,7 +709,7 @@ export const PropertySearchItem = ({ post }) => {
                                                             // propdetail.min_bath
                                                             decimalRoundOff(propdetail.min_bath)
 
-                                                            // Math.floor(propdetail.min_bath) == Math.round(propdetail.min_bath) ? Math.floor(propdetail.min_bath) : propdetail.min_bath
+                                                            // Math.floor(propdetail.min_bath) === Math.round(propdetail.min_bath) ? Math.floor(propdetail.min_bath) : propdetail.min_bath
                                                         }</span>{" "}
                                                         Baths
                                                     </li>
@@ -725,7 +725,7 @@ export const PropertySearchItem = ({ post }) => {
                                                     </li>
                                                 )}
 
-                                                {/* {propdetail.beds == null || propdetail.beds == '' ?
+                                                {/* {propdetail.beds === null || propdetail.beds === '' ?
                                 null :
                                 <li className="d-flex align-items-center">
                                     <img src={require('../../assets/img/beds.svg').default} /><span
@@ -733,7 +733,7 @@ export const PropertySearchItem = ({ post }) => {
                                 </li>
                             }
 
-                            {propdetail.baths == null || propdetail.baths == '' ?
+                            {propdetail.baths === null || propdetail.baths === '' ?
                                 null : <li className="d-flex align-items-center ml-12">
                                     <img src={require('../../assets/img/shower.svg').default} /><span
                                         className="colorBlue">{propdetail.baths}</span> Baths
@@ -742,11 +742,11 @@ export const PropertySearchItem = ({ post }) => {
                                             </ul>
                                         )}
 
-                                        {propdetail == null || propdetail == "" ? null : (
+                                        {propdetail === null || propdetail === "" ? null : (
                                             <ul className="listStyleNone listIcon pl-0">
-                                                {propdetail.pet_allowed == null ||
-                                                    propdetail.pet_allowed == "" ||
-                                                    propdetail.pet_allowed.toLowerCase() == "no" ? null : (
+                                                {propdetail.pet_allowed === null ||
+                                                    propdetail.pet_allowed === "" ||
+                                                    propdetail.pet_allowed.toLowerCase() === "no" ? null : (
                                                     <li>
                                                         <img
                                                             src={
@@ -756,9 +756,9 @@ export const PropertySearchItem = ({ post }) => {
                                                     </li>
                                                 )}
 
-                                                {propdetail.handicap == null ||
-                                                    propdetail.handicap == "" ||
-                                                    propdetail.handicap.toLowerCase() == "no" ? null : (
+                                                {propdetail.handicap === null ||
+                                                    propdetail.handicap === "" ||
+                                                    propdetail.handicap.toLowerCase() === "no" ? null : (
                                                     <li>
                                                         <img
                                                             src={
@@ -767,9 +767,9 @@ export const PropertySearchItem = ({ post }) => {
                                                         />
                                                     </li>
                                                 )}
-                                                {propdetail.section8 == null ||
-                                                    propdetail.section8 == "" ||
-                                                    propdetail.section8.toLowerCase() == "no" ? null : (
+                                                {propdetail.section8 === null ||
+                                                    propdetail.section8 === "" ||
+                                                    propdetail.section8.toLowerCase() === "no" ? null : (
                                                     <li>
                                                         <img
                                                             src={
@@ -779,9 +779,9 @@ export const PropertySearchItem = ({ post }) => {
                                                     </li>
                                                 )}
 
-                                                {propdetail.seniorprop.toLowerCase() == "yes" &&
-                                                    (propdetail.seniorpropval.toLowerCase() == "62" ||
-                                                        propdetail.seniorpropval == 62) ? (
+                                                {propdetail.seniorprop.toLowerCase() === "yes" &&
+                                                    (propdetail.seniorpropval.toLowerCase() === "62" ||
+                                                        propdetail.seniorpropval === 62) ? (
                                                     <li>
                                                         <img
                                                             src={
@@ -790,11 +790,11 @@ export const PropertySearchItem = ({ post }) => {
                                                         />
                                                     </li>
                                                 ) : null}
-                                                {propdetail.seniorprop.toLowerCase() == "yes" &&
-                                                    (propdetail.seniorpropval.toLowerCase() == "55" ||
-                                                        propdetail.seniorpropval == 55 ||
-                                                        propdetail.seniorpropval == "" ||
-                                                        propdetail.seniorpropval == null) ? (
+                                                {propdetail.seniorprop.toLowerCase() === "yes" &&
+                                                    (propdetail.seniorpropval.toLowerCase() === "55" ||
+                                                        propdetail.seniorpropval === 55 ||
+                                                        propdetail.seniorpropval === "" ||
+                                                        propdetail.seniorpropval === null) ? (
                                                     <li>
                                                         <img
                                                             src={
@@ -819,7 +819,7 @@ export const PropertySearchItem = ({ post }) => {
                 </p> */}
                                     <div className="d-flex align-items-center padda responsiveBtnDesign">
 
-                                        {prop.phone == null || prop.phone == "" || prop.phone == 0
+                                        {prop.phone === null || prop.phone === "" || prop.phone === 0
                                             ?
 
 
@@ -873,13 +873,13 @@ export const PropertySearchItem = ({ post }) => {
                                 <h5 className="modal-title fontSize22 font-weight400 ml-22">
                                     {prop.property_address} {prop.property_city}, {prop.property_state}{" "}
                                     {prop.property_zip} Rental Deals &nbsp;
-                                    {/* {propdetail.max_bed == null ||
-                    (propdetail.max_bed == "" && propdetail.min_bed == "") ||
-                    propdetail.min_bed == null ? null : propdetail.min_bed ==
-                        "" || propdetail.min_bed == null ? (
+                                    {/* {propdetail.max_bed === null ||
+                    (propdetail.max_bed === "" && propdetail.min_bed === "") ||
+                    propdetail.min_bed === null ? null : propdetail.min_bed ==
+                        "" || propdetail.min_bed === null ? (
                     `${propdetail.max_bed} Bd`
 
-                ) : propdetail.min_bed == propdetail.max_bed ? (
+                ) : propdetail.min_bed === propdetail.max_bed ? (
 
                     `${propdetail.min_bed} Bd`
 
@@ -894,13 +894,13 @@ export const PropertySearchItem = ({ post }) => {
 
 
 
-                                    {minimumbed == 0 || minimumbed == undefined ? null : `${minimumbed}Bd`}
+                                    {minimumbed === 0 || minimumbed === undefined ? null : `${minimumbed}Bd`}
                                     {
                                         (minimumbed !== 0 && minimumbed !== undefined) && (maximumbed !== 0 && maximumbed !== undefined) ? `-` : null
                                     }
 
                                     {
-                                        maximumbed == 0 || maximumbed == undefined ? null : `${maximumbed}Bd`
+                                        maximumbed === 0 || maximumbed === undefined ? null : `${maximumbed}Bd`
                                     }
 
 
@@ -922,10 +922,10 @@ export const PropertySearchItem = ({ post }) => {
                                         <div className="modalLeft">
                                             <div className="imageSecleftModal posRel">
 
-                                                {propphoto == null ||
-                                                    propphoto == "" ||
-                                                    propphoto.photo == null ||
-                                                    propphoto.photo == "" ? (
+                                                {propphoto === null ||
+                                                    propphoto === "" ||
+                                                    propphoto.photo === null ||
+                                                    propphoto.photo === "" ? (
                                                     // Affordable Housing Logo
 
                                                     //     spurl = "https://cdn-0.rentalhousingdeals.com/images/l_thumbs/affordable-no-image.jpg"
@@ -937,7 +937,7 @@ export const PropertySearchItem = ({ post }) => {
                                                                     .default
                                                             }
                                                         />
-                                                        {prop.prog_type.toLowerCase() == "affordablehousing" ? (
+                                                        {prop.prog_type.toLowerCase() === "affordablehousing" ? (
                                                             <div className="sliderTagName brdrRadius4 colorWhite font-weight700">
                                                                 Affordable Housing
                                                             </div>
@@ -949,7 +949,7 @@ export const PropertySearchItem = ({ post }) => {
                                                         <img className="w-100"
                                                             src={`https://www.rentalhousingdeals.com/${propphoto.photo}`}
                                                         />
-                                                        {prop.prog_type.toLowerCase() == "affordablehousing" ? (
+                                                        {prop.prog_type.toLowerCase() === "affordablehousing" ? (
                                                             <div className="sliderTagName brdrRadius4 colorWhite font-weight700">
                                                                 Affordable Housing
                                                             </div>
@@ -958,16 +958,16 @@ export const PropertySearchItem = ({ post }) => {
                                                 )}
 
 
-                                                {/* {propphoto == null ||
-                                propphoto == "" ||
-                                propphoto.photo == null ||
-                                propphoto.photo == "" ? null : (
+                                                {/* {propphoto === null ||
+                                propphoto === "" ||
+                                propphoto.photo === null ||
+                                propphoto.photo === "" ? null : (
                                 <>
                                     <img
                                         className="w-100"
                                         src={`https://www.rentalhousingdeals.com/${propphoto.photo}`}
                                     />
-                                    {prop.prog_type.toLowerCase() == "affordablehousing" ? (
+                                    {prop.prog_type.toLowerCase() === "affordablehousing" ? (
                                         <div className="sliderTagName brdrRadius4 colorWhite font-weight700">
                                             Affordable Housing
                                         </div>
@@ -992,25 +992,25 @@ export const PropertySearchItem = ({ post }) => {
                             </div> */}
                                             </div>
                                             <div className="sliderListing">
-                                                {propdetail == null || propdetail == "" ? null : (
+                                                {propdetail === null || propdetail === "" ? null : (
                                                     <ul className="clearfix d-flex align-items-center">
-                                                        {/* {propdetail.beds == null ||
-                                        propdetail.beds == "" ? null : (
+                                                        {/* {propdetail.beds === null ||
+                                        propdetail.beds === "" ? null : (
                                         <li className="fontSize17">
                                             <b>{propdetail.beds}</b>Bd
                                         </li>
                                     )} */}
 
-                                                        {/* {propdetail.max_bed == null ||
-                                        (propdetail.max_bed == "" && propdetail.min_bed == "") ||
-                                        propdetail.min_bed == null ? null : propdetail.min_bed ==
-                                            "" || propdetail.min_bed == null ? (
+                                                        {/* {propdetail.max_bed === null ||
+                                        (propdetail.max_bed === "" && propdetail.min_bed === "") ||
+                                        propdetail.min_bed === null ? null : propdetail.min_bed ==
+                                            "" || propdetail.min_bed === null ? (
 
                                         <li className="fontSize17">
                                             <b>{propdetail.max_bed}</b>Bd
                                         </li>
 
-                                    ) : propdetail.min_bed == propdetail.max_bed ? (
+                                    ) : propdetail.min_bed === propdetail.max_bed ? (
 
                                         <li className="fontSize17">
                                             <b>{propdetail.min_bed}</b>Bd
@@ -1028,7 +1028,7 @@ export const PropertySearchItem = ({ post }) => {
 
 
 
-                                                        {propdetail.min_bed == null || propdetail.min_bed == '' || propdetail.min_bed == undefined || propdetail.min_bed == 0 ? null :
+                                                        {propdetail.min_bed === null || propdetail.min_bed === '' || propdetail.min_bed === undefined || propdetail.min_bed === 0 ? null :
 
 
                                                             // `${propdetail.min_bed} Bd`
@@ -1039,7 +1039,7 @@ export const PropertySearchItem = ({ post }) => {
 
                                                         }
 
-                                                        {propdetail.min_bed == null || propdetail.min_bed == '' || propdetail.min_bed == undefined || propdetail.min_bed == 0 ? null :
+                                                        {propdetail.min_bed === null || propdetail.min_bed === '' || propdetail.min_bed === undefined || propdetail.min_bed === 0 ? null :
 
                                                             < li className="fontSize17">
                                                                 <b>-</b>Bd
@@ -1047,7 +1047,7 @@ export const PropertySearchItem = ({ post }) => {
 
                                                         }
 
-                                                        {propdetail.max_bed == null || propdetail.max_bed == '' || propdetail.max_bed == undefined || propdetail.max_bed == 0 ? null :
+                                                        {propdetail.max_bed === null || propdetail.max_bed === '' || propdetail.max_bed === undefined || propdetail.max_bed === 0 ? null :
 
                                                             < li className="fontSize17">
                                                                 <b>{propdetail.max_bed}</b>Bd
@@ -1057,17 +1057,17 @@ export const PropertySearchItem = ({ post }) => {
 
 
 
-                                                        {propdetail.max_bath == null ||
-                                                            (propdetail.max_bath == "" && propdetail.min_bath == "") ||
-                                                            propdetail.min_bath == null ? null : propdetail.min_bath ==
-                                                                "" || propdetail.min_bath == null ? (
+                                                        {propdetail.max_bath === null ||
+                                                            (propdetail.max_bath === "" && propdetail.min_bath === "") ||
+                                                            propdetail.min_bath === null ? null : propdetail.min_bath ==
+                                                                "" || propdetail.min_bath === null ? (
                                                             <li className="fontSize17">
                                                                 <b>{propdetail.max_bath}</b>Ba
                                                             </li>
 
 
 
-                                                        ) : propdetail.min_bath == propdetail.max_bath ? (
+                                                        ) : propdetail.min_bath === propdetail.max_bath ? (
 
                                                             <li className="fontSize17">
                                                                 <b>{propdetail.min_bath}</b>Ba
@@ -1082,13 +1082,13 @@ export const PropertySearchItem = ({ post }) => {
 
 
 
-                                                        {/* {propdetail.baths == null ||
-                                        propdetail.baths == "" ? null : (
+                                                        {/* {propdetail.baths === null ||
+                                        propdetail.baths === "" ? null : (
                                        
                                     )} */}
 
-                                                        {/* {propdetail.sq_ft == null ||
-                                        propdetail.sq_ft == "" ? null : (
+                                                        {/* {propdetail.sq_ft === null ||
+                                        propdetail.sq_ft === "" ? null : (
                                         <li className="fontSize17">
                                             <b>{propdetail.sq_ft}sdfds</b>Sq.Ft
                                         </li>
@@ -1115,7 +1115,7 @@ export const PropertySearchItem = ({ post }) => {
                                                     </h2>
                                                 </div>
                                                 {
-                                                    prop.phone == '' || prop.phone == undefined || prop.phone == null
+                                                    prop.phone === '' || prop.phone === undefined || prop.phone === null
                                                         ?
                                                         null :
                                                         <div className="ml-auto">
@@ -1138,7 +1138,7 @@ export const PropertySearchItem = ({ post }) => {
                                                                     <input
                                                                         type="text"
                                                                         className="form-control"
-                                                                        placeholder="First name"
+                                                                        placeholder="First Name"
                                                                         value={formdata.first_name}
                                                                         onChange={(e) =>
                                                                             setformdata({
@@ -1336,7 +1336,7 @@ export const PropertySearchItem = ({ post }) => {
                             </div>
 
                             <div className="modal-body extraPadRes">
-                                <span className="text-danger">{propListArray.length == 0 ? 'Plesae Select At least one Property' : null}</span>
+                                <span className="text-danger">{propListArray.length === 0 ? 'Plesae Select At least one Property' : null}</span>
 
                                 <div className="rentalForm availBodyBlock">
                                     {aftercheckPropList.map(
@@ -1361,9 +1361,9 @@ export const PropertySearchItem = ({ post }) => {
                                                                     {/* <Link to={linkurl} className="d-flex w-100  abcd"> */}
                                                                     <div className="listing-left">
                                                                         <div className="bg-image">
-                                                                            {property_photo == null ||
-                                                                                property_photo == "" ||
-                                                                                property_photo.length == 0 ? (
+                                                                            {property_photo === null ||
+                                                                                property_photo === "" ||
+                                                                                property_photo.length === 0 ? (
                                                                                 <img
                                                                                     className="img-fluid"
                                                                                     src={
@@ -1401,8 +1401,8 @@ export const PropertySearchItem = ({ post }) => {
                                                                         </p>
                                                                     </div>
 
-                                                                    {property_rating == null ||
-                                                                        property_rating == undefined ||
+                                                                    {property_rating === null ||
+                                                                        property_rating === undefined ||
                                                                         property_rating ==
                                                                         "" ? null : property_rating.vote_avg ==
                                                                             null ? null : (
@@ -1418,14 +1418,14 @@ export const PropertySearchItem = ({ post }) => {
                                                                 <div class="priceRangeMobile">
                                                                     <div class="d-flex align-items-center">
                                                                         <h4 class="black-color fontSize22 font-weight800 mb-0">
-                                                                            {(property_details[0].min_rent == 0 && property_details[0].max_rent == 0) || (property_details[0].max_rent == '' && property_details[0].min_rent == '')
+                                                                            {(property_details[0].min_rent === 0 && property_details[0].max_rent === 0) || (property_details[0].max_rent === '' && property_details[0].min_rent === '')
                                                                                 ?
                                                                                 null :
 
-                                                                                (property_details[0].min_rent == 0 || property_details[0].max_rent == 0) || (property_details[0].max_rent == '' || property_details[0].min_rent == '')
+                                                                                (property_details[0].min_rent === 0 || property_details[0].max_rent === 0) || (property_details[0].max_rent === '' || property_details[0].min_rent === '')
                                                                                     ?
 
-                                                                                    `$${property_details[0].max_rent == 0 ? '' : property_details[0].max_rent}${property_details[0].min_rent == 0 ? '' : property_details[0].min_rent}`
+                                                                                    `$${property_details[0].max_rent === 0 ? '' : property_details[0].max_rent}${property_details[0].min_rent === 0 ? '' : property_details[0].min_rent}`
                                                                                     :
                                                                                     `$${property_details[0].min_rent}-$${property_details[0].max_rent}`
                                                                             }
@@ -1453,25 +1453,25 @@ export const PropertySearchItem = ({ post }) => {
                                             </div> */}
 
                                                                 <div className="d-flex align-items-center listingBlockLine ">
-                                                                    {property_details == null ||
-                                                                        property_details == "" ||
+                                                                    {property_details === null ||
+                                                                        property_details === "" ||
                                                                         property_details.length ==
-                                                                        0 ? null : (property_details[0].max_bed == null ||
-                                                                            property_details[0].max_bed == "" ||
-                                                                            property_details[0].min_bed == "" ||
-                                                                            property_details[0].min_bed == null) &&
-                                                                            (property_details[0].min_bath == null ||
-                                                                                property_details[0].min_bath == "" ||
-                                                                                property_details[0].max_bath == "" ||
-                                                                                property_details[0].max_bath == null) ? null : (
+                                                                        0 ? null : (property_details[0].max_bed === null ||
+                                                                            property_details[0].max_bed === "" ||
+                                                                            property_details[0].min_bed === "" ||
+                                                                            property_details[0].min_bed === null) &&
+                                                                            (property_details[0].min_bath === null ||
+                                                                                property_details[0].min_bath === "" ||
+                                                                                property_details[0].max_bath === "" ||
+                                                                                property_details[0].max_bath === null) ? null : (
                                                                         <ul className="noMarginPad listStyleNone mr-18">
-                                                                            {property_details[0].max_bed == null ||
-                                                                                (property_details[0].max_bed == "" &&
-                                                                                    property_details[0].min_bed == "") ||
+                                                                            {property_details[0].max_bed === null ||
+                                                                                (property_details[0].max_bed === "" &&
+                                                                                    property_details[0].min_bed === "") ||
                                                                                 property_details[0].min_bed ==
                                                                                 null ? null : property_details[0].min_bed ==
                                                                                     "" ||
-                                                                                    property_details[0].min_bed == null ? (
+                                                                                    property_details[0].min_bed === null ? (
                                                                                 <li className="d-flex align-items-center">
                                                                                     <img
                                                                                         src={
@@ -1514,13 +1514,13 @@ export const PropertySearchItem = ({ post }) => {
                                                                                 </li>
                                                                             )}
 
-                                                                            {property_details[0].max_bath == null ||
-                                                                                (property_details[0].max_bath == "" &&
-                                                                                    property_details[0].min_bath == "") ||
+                                                                            {property_details[0].max_bath === null ||
+                                                                                (property_details[0].max_bath === "" &&
+                                                                                    property_details[0].min_bath === "") ||
                                                                                 property_details[0].min_bath ==
                                                                                 null ? null : property_details[0].min_bath ==
                                                                                     "" ||
-                                                                                    property_details[0].min_bath == null ? (
+                                                                                    property_details[0].min_bath === null ? (
                                                                                 <li className="d-flex align-items-center">
                                                                                     <img
                                                                                         src={
@@ -1571,11 +1571,11 @@ export const PropertySearchItem = ({ post }) => {
                                                                         </ul>
                                                                     )}
 
-                                                                    {property_details[0] == null ||
-                                                                        property_details[0] == "" ? null : (
+                                                                    {property_details[0] === null ||
+                                                                        property_details[0] === "" ? null : (
                                                                         <ul className="listStyleNone listIcon pl-0 mb-0">
-                                                                            {property_details[0].pet_allowed == null ||
-                                                                                property_details[0].pet_allowed == "" ||
+                                                                            {property_details[0].pet_allowed === null ||
+                                                                                property_details[0].pet_allowed === "" ||
                                                                                 property_details[0].pet_allowed.toLowerCase() ==
                                                                                 "no" ? null : (
                                                                                 <li>
@@ -1588,8 +1588,8 @@ export const PropertySearchItem = ({ post }) => {
                                                                                 </li>
                                                                             )}
 
-                                                                            {property_details[0].handicap == null ||
-                                                                                property_details[0].handicap == "" ||
+                                                                            {property_details[0].handicap === null ||
+                                                                                property_details[0].handicap === "" ||
                                                                                 property_details[0].handicap.toLowerCase() ==
                                                                                 "no" ? null : (
                                                                                 <li>
@@ -1601,8 +1601,8 @@ export const PropertySearchItem = ({ post }) => {
                                                                                     />
                                                                                 </li>
                                                                             )}
-                                                                            {property_details[0].section8 == null ||
-                                                                                property_details[0].section8 == "" ||
+                                                                            {property_details[0].section8 === null ||
+                                                                                property_details[0].section8 === "" ||
                                                                                 property_details[0].section8.toLowerCase() ==
                                                                                 "no" ? null : (
                                                                                 <li>
@@ -1619,7 +1619,7 @@ export const PropertySearchItem = ({ post }) => {
                                                                                 "yes" &&
                                                                                 (propdetail.seniorpropval.toLowerCase() ==
                                                                                     "62" ||
-                                                                                    propdetail.seniorpropval == 62) ? (
+                                                                                    propdetail.seniorpropval === 62) ? (
                                                                                 <li>
                                                                                     <img
                                                                                         src={
@@ -1633,9 +1633,9 @@ export const PropertySearchItem = ({ post }) => {
                                                                                 "yes" &&
                                                                                 (property_details[0].seniorpropval.toLowerCase() ==
                                                                                     "55" ||
-                                                                                    property_details[0].seniorpropval == 55 ||
-                                                                                    property_details[0].seniorpropval == "" ||
-                                                                                    property_details[0].seniorpropval == null) ? (
+                                                                                    property_details[0].seniorpropval === 55 ||
+                                                                                    property_details[0].seniorpropval === "" ||
+                                                                                    property_details[0].seniorpropval === null) ? (
                                                                                 <li>
                                                                                     <img
                                                                                         src={

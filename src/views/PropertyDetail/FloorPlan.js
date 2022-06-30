@@ -19,7 +19,7 @@ const FloorPlan = ({ data }) => {
     return (
         <>
             {
-                data == undefined || data == null || data == [] || data == '' ?
+                data === undefined || data === null || data === [] || data === '' ?
                     null
                     :
                     <>
@@ -35,7 +35,7 @@ const FloorPlan = ({ data }) => {
 
 
                                     {
-                                        data.floor_plan_photo == '' || data.floor_plan_photo == null ?
+                                        data.floor_plan_photo === '' || data.floor_plan_photo === null ?
                                             <>
 
                                                 <div className="">
@@ -64,7 +64,7 @@ const FloorPlan = ({ data }) => {
                                                     </div>
                                                     <div className="modal-body rentalForm availBodyBlock">
                                                         {
-                                                            data.floor_plan_photo == '' || data.floor_plan_photo == null ?
+                                                            data.floor_plan_photo === '' || data.floor_plan_photo === null ?
                                                                 <></>
                                                                 :
                                                                 <img className=' w-100' src={`https://www.rentalhousingdeals.com/${data.floor_plan_photo}`} alt='alt' />
@@ -87,18 +87,18 @@ const FloorPlan = ({ data }) => {
                             <td>
 
                                 {
-                                    data.beds == 0 || data.beds == '' ?
+                                    data.beds === 0 || data.beds === '' ?
                                         (<span className="colorBlue">N/A Bd</span>)
                                         :
 
                                         <>
-                                            <span className="colorBlue font-weight500">{data.beds}</span> <span className='colorblack font-weight400'> {data.beds == 'Studio' ? null : 'Bd'}</span>
+                                            <span className="colorBlue font-weight500">{data.beds}</span> <span className='colorblack font-weight400'> {data.beds === 'Studio' ? null : 'Bd'}</span>
                                         </>
                                 }
                             </td>
                             <td>
                                 {
-                                    data.baths == 0 || data.baths == '' ?
+                                    data.baths === 0 || data.baths === '' ?
                                         (<span className="colorBlue font-weight500">N/A Ba</span>)
                                         :
                                         <span className="colorBlue font-weight500">{decimalRoundOff(data.baths)}   <span className='colorblack font-weight400'> Ba</span></span>
@@ -106,7 +106,7 @@ const FloorPlan = ({ data }) => {
                             </td>
                             <td>
                                 {
-                                    data.square_feet_to == 0 ?
+                                    data.square_feet_to === 0 ?
                                         (<span className="colorBlue font-weight500">N/A Sq.ft</span>)
                                         :
                                         <><span className="colorBlue font-weight500">{commaInNumber(data.square_feet_to)}</span><span className='colorblack font-weight400'> Sq.ft</span>  </>
@@ -120,7 +120,7 @@ const FloorPlan = ({ data }) => {
 
                             <td>
 
-                                {data.rent_from == 0 || data.rent_from == '' ?
+                                {data.rent_from === 0 || data.rent_from === '' ?
                                     'N/A'
                                     :
                                     ` $${commaInNumber(data.rent_from)}`

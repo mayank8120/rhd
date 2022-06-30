@@ -58,7 +58,7 @@ const AffordabilityCal = () => {
                                     calculateshow === true ?
 
                                         (
-                                            costAfford.cost == 0 || costAfford.cost == '' || costAfford.cost == null ?
+                                            costAfford.cost === 0 || costAfford.cost === '' || costAfford.cost === null ?
                                                 null
                                                 :
                                                 <div><p className="fontSize16 secondaryColor mb-0 mt-1">You should not be paying more

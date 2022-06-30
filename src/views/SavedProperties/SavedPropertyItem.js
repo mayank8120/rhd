@@ -77,16 +77,16 @@ export const SavedPropertyItem = ({ post }) => {
 
     useEffect(() => {
 
-        if (propdetail == null || propdetail == undefined || propdetail == '') {
+        if (propdetail === null || propdetail === undefined || propdetail === '') {
 
         } else {
-            if (propdetail.min_bed == null || propdetail.min_bed == '' || propdetail.min_bed == undefined || propdetail.min_bed == 0) {
+            if (propdetail.min_bed === null || propdetail.min_bed === '' || propdetail.min_bed === undefined || propdetail.min_bed === 0) {
                 setminimumbed(0);
             } else {
                 setminimumbed(propdetail.min_bed);
             }
 
-            if (propdetail.max_bed == null || propdetail.max_bed == '' || propdetail.max_bed == undefined || propdetail.max_bed == 0) {
+            if (propdetail.max_bed === null || propdetail.max_bed === '' || propdetail.max_bed === undefined || propdetail.max_bed === 0) {
                 setmaximumbed(0);
             } else {
                 setmaximumbed(propdetail.max_bed);
@@ -99,7 +99,7 @@ export const SavedPropertyItem = ({ post }) => {
 
 
     useEffect(() => {
-        if (post == null && post == undefined && post.length == 0) {
+        if (post === null && post === undefined && post.length === 0) {
         } else {
             if (prop.property_type !== "general") {
                 if (
@@ -109,14 +109,14 @@ export const SavedPropertyItem = ({ post }) => {
                     if (deals === null) {
                     } else {
                         if (
-                            deals.header_description == 1 ||
-                            deals.header_description == "1"
+                            deals.header_description === 1 ||
+                            deals.header_description === "1"
                         ) {
                             setthirdval("SPECIALS");
                             // console.log(1);
                         } else if (
-                            deals.header_description == 2 ||
-                            deals.header_description == "2"
+                            deals.header_description === 2 ||
+                            deals.header_description === "2"
                         ) {
                             setthirdval(
                                 `$${headervalue[0].toLocaleString(undefined, {
@@ -125,8 +125,8 @@ export const SavedPropertyItem = ({ post }) => {
                             );
                             // console.log(2);
                         } else if (
-                            deals.header_description == 3 ||
-                            deals.header_description == "3"
+                            deals.header_description === 3 ||
+                            deals.header_description === "3"
                         ) {
                             setthirdval(
                                 `$${headervalue[2].toLocaleString(undefined, {
@@ -135,8 +135,8 @@ export const SavedPropertyItem = ({ post }) => {
                             );
                             // console.log(3);
                         } else if (
-                            deals.header_description == 4 ||
-                            deals.header_description == "4"
+                            deals.header_description === 4 ||
+                            deals.header_description === "4"
                         ) {
                             setthirdval(
                                 `$${headervalue[2].toLocaleString(undefined, {
@@ -145,14 +145,14 @@ export const SavedPropertyItem = ({ post }) => {
                             );
                             // console.log(4);
                         } else if (
-                            deals.header_description == 5 ||
-                            deals.header_description == "5"
+                            deals.header_description === 5 ||
+                            deals.header_description === "5"
                         ) {
                             setthirdval("MOVE-IN SPECIALS");
                             // console.log(5);
                         } else if (
-                            deals.header_description == 6 ||
-                            deals.header_description == "6"
+                            deals.header_description === 6 ||
+                            deals.header_description === "6"
                         ) {
                             setthirdval(
                                 `$${headervalue[0].toLocaleString(undefined, {
@@ -161,8 +161,8 @@ export const SavedPropertyItem = ({ post }) => {
                             );
                             // console.log(6);
                         } else if (
-                            deals.header_description == 7 ||
-                            deals.header_description == "7"
+                            deals.header_description === 7 ||
+                            deals.header_description === "7"
                         ) {
                             setthirdval(headervalue[2]);
                             // console.log(7);
@@ -177,7 +177,7 @@ export const SavedPropertyItem = ({ post }) => {
                     // console.log(8);
                 }
             }
-            if (prop.property_type == "general") {
+            if (prop.property_type === "general") {
                 setthirdval("CALL");
             }
         }
@@ -194,10 +194,10 @@ export const SavedPropertyItem = ({ post }) => {
         <div className="d-flex noMobileFlex">
             <div className="leftImage posRel">
                 <a href="javascript:;">
-                    {propphoto == null ||
-                        propphoto == "" ||
-                        propphoto.photo == null ||
-                        propphoto.photo == "" ? (
+                    {propphoto === null ||
+                        propphoto === "" ||
+                        propphoto.photo === null ||
+                        propphoto.photo === "" ? (
                         <img
                             className="img-fluid"
                             src={
@@ -266,9 +266,9 @@ export const SavedPropertyItem = ({ post }) => {
                             src={require('../../assets/img/priceTagg.svg').default} />Good Deal</span>
                     </div>
                 </div> */}
-                {propdetail == null ||
-                    propdetail == "" ? null : propdetail.subsidized == "Yes" &&
-                        propdetail.section8 == "Yes" ?
+                {propdetail === null ||
+                    propdetail === "" ? null : propdetail.subsidized === "Yes" &&
+                        propdetail.section8 === "Yes" ?
                     (
                         <div class="itemWebsite priceRangeMobile">
                             <div class="d-flex align-items-center">
@@ -278,7 +278,7 @@ export const SavedPropertyItem = ({ post }) => {
                                         thirdval !== "SPECIALS" &&
                                         typeof thirdval !== undefined
                                         ? thirdval
-                                        : thirdval == "MOVE-IN SPECIALS" || thirdval == "SPECIALS"
+                                        : thirdval === "MOVE-IN SPECIALS" || thirdval === "SPECIALS"
                                             ? thirdval
                                             : null}
 
@@ -300,7 +300,7 @@ export const SavedPropertyItem = ({ post }) => {
                                 thirdval !== "SPECIALS" &&
                                 typeof thirdval !== undefined
                                 ? thirdval
-                                : thirdval == "MOVE-IN SPECIALS" || thirdval == "SPECIALS"
+                                : thirdval === "MOVE-IN SPECIALS" || thirdval === "SPECIALS"
                                     ? thirdval
                                     : null}
                         </h4>
@@ -310,9 +310,9 @@ export const SavedPropertyItem = ({ post }) => {
 
 
                 {
-                    propdetail == null ||
-                        propdetail == "" ? null : propdetail.subsidized == "Yes" &&
-                            propdetail.section8 == "Yes" ?
+                    propdetail === null ||
+                        propdetail === "" ? null : propdetail.subsidized === "Yes" &&
+                            propdetail.section8 === "Yes" ?
 
                         <div className="itemMobile priceRangeMobile">
                             <div className="d-flex align-items-center">
@@ -324,7 +324,7 @@ export const SavedPropertyItem = ({ post }) => {
                                         thirdval !== "SPECIALS" &&
                                         typeof thirdval !== undefined
                                         ? thirdval
-                                        : thirdval == "MOVE-IN SPECIALS" || thirdval == "SPECIALS"
+                                        : thirdval === "MOVE-IN SPECIALS" || thirdval === "SPECIALS"
                                             ? thirdval
                                             : null}
 
@@ -352,7 +352,7 @@ export const SavedPropertyItem = ({ post }) => {
                                         thirdval !== "SPECIALS" &&
                                         typeof thirdval !== undefined
                                         ? thirdval
-                                        : thirdval == "MOVE-IN SPECIALS" || thirdval == "SPECIALS"
+                                        : thirdval === "MOVE-IN SPECIALS" || thirdval === "SPECIALS"
                                             ? thirdval
                                             : null}
 
@@ -375,20 +375,20 @@ export const SavedPropertyItem = ({ post }) => {
 
                 <div className="d-flex align-items-center listingBlockLine">
                     {
-                        propdetail == null ||
-                            propdetail == "" ? null : (propdetail.max_bed == null ||
-                                propdetail.max_bed == "" ||
-                                propdetail.min_bed == "" ||
-                                propdetail.min_bed == null) &&
-                                (propdetail.min_bath == null ||
-                                    propdetail.min_bath == "" ||
-                                    propdetail.max_bath == "" ||
-                                    propdetail.max_bath == null) ? null : (
+                        propdetail === null ||
+                            propdetail === "" ? null : (propdetail.max_bed === null ||
+                                propdetail.max_bed === "" ||
+                                propdetail.min_bed === "" ||
+                                propdetail.min_bed === null) &&
+                                (propdetail.min_bath === null ||
+                                    propdetail.min_bath === "" ||
+                                    propdetail.max_bath === "" ||
+                                    propdetail.max_bath === null) ? null : (
                             <ul className="noMarginPad listStyleNone">
-                                {propdetail.max_bed == null ||
-                                    (propdetail.max_bed == "" && propdetail.min_bed == "") ||
-                                    propdetail.min_bed == null ? null : propdetail.min_bed ==
-                                        "" || propdetail.min_bed == null ? (
+                                {propdetail.max_bed === null ||
+                                    (propdetail.max_bed === "" && propdetail.min_bed === "") ||
+                                    propdetail.min_bed === null ? null : propdetail.min_bed ==
+                                        "" || propdetail.min_bed === null ? (
                                     <li className="d-flex align-items-center">
                                         <img src={require("../../assets/img/beds.svg").default} />
                                         <span className="colorBlue">
@@ -396,7 +396,7 @@ export const SavedPropertyItem = ({ post }) => {
                                         </span>{" "}
                                         Beds
                                     </li>
-                                ) : propdetail.min_bed == propdetail.max_bed ? (
+                                ) : propdetail.min_bed === propdetail.max_bed ? (
                                     <li className="d-flex align-items-center">
                                         <img src={require("../../assets/img/beds.svg").default} />
                                         <span className="colorBlue">
@@ -415,23 +415,23 @@ export const SavedPropertyItem = ({ post }) => {
                                 )
                                 }
 
-                                {propdetail.max_bath == null ||
-                                    (propdetail.max_bath == "" && propdetail.min_bath == "") ||
-                                    propdetail.min_bath == null ? null : propdetail.min_bath ==
-                                        "" || propdetail.min_bath == null ? (
+                                {propdetail.max_bath === null ||
+                                    (propdetail.max_bath === "" && propdetail.min_bath === "") ||
+                                    propdetail.min_bath === null ? null : propdetail.min_bath ==
+                                        "" || propdetail.min_bath === null ? (
                                     <li className="d-flex align-items-center">
                                         <img
                                             src={require("../../assets/img/shower.svg").default}
                                         />
                                         <span className="colorBlue">{
 
-                                            // Math.floor(propdetail.max_bath) == Math.round(propdetail.max_bath) ? Math.floor(propdetail.max_bath) : propdetail.max_bath
+                                            // Math.floor(propdetail.max_bath) === Math.round(propdetail.max_bath) ? Math.floor(propdetail.max_bath) : propdetail.max_bath
                                             decimalRoundOff(propdetail.max_bath)
 
                                         }</span>{" "}
                                         Baths
                                     </li>
-                                ) : propdetail.min_bath == propdetail.max_bath ? (
+                                ) : propdetail.min_bath === propdetail.max_bath ? (
                                     <li className="d-flex align-items-center">
                                         <img
                                             src={require("../../assets/img/shower.svg").default}
@@ -442,7 +442,7 @@ export const SavedPropertyItem = ({ post }) => {
                                             // propdetail.min_bath
                                             decimalRoundOff(propdetail.min_bath)
 
-                                            // Math.floor(propdetail.min_bath) == Math.round(propdetail.min_bath) ? Math.floor(propdetail.min_bath) : propdetail.min_bath
+                                            // Math.floor(propdetail.min_bath) === Math.round(propdetail.min_bath) ? Math.floor(propdetail.min_bath) : propdetail.min_bath
                                         }</span>{" "}
                                         Baths
                                     </li>
@@ -458,7 +458,7 @@ export const SavedPropertyItem = ({ post }) => {
                                     </li>
                                 )}
 
-                                {/* {propdetail.beds == null || propdetail.beds == '' ?
+                                {/* {propdetail.beds === null || propdetail.beds === '' ?
                                 null :
                                 <li className="d-flex align-items-center">
                                     <img src={require('../../assets/img/beds.svg').default} /><span
@@ -466,7 +466,7 @@ export const SavedPropertyItem = ({ post }) => {
                                 </li>
                             }
 
-                            {propdetail.baths == null || propdetail.baths == '' ?
+                            {propdetail.baths === null || propdetail.baths === '' ?
                                 null : <li className="d-flex align-items-center ml-12">
                                     <img src={require('../../assets/img/shower.svg').default} /><span
                                         className="colorBlue">{propdetail.baths}</span> Baths
@@ -474,11 +474,11 @@ export const SavedPropertyItem = ({ post }) => {
                             } */}
                             </ul>
                         )}
-                    {propdetail == null || propdetail == "" ? null : (
+                    {propdetail === null || propdetail === "" ? null : (
                         <ul className="noMarginPad listStyleNone listIcon ml-40">
-                            {propdetail.pet_allowed == null ||
-                                propdetail.pet_allowed == "" ||
-                                propdetail.pet_allowed.toLowerCase() == "no" ? null : (
+                            {propdetail.pet_allowed === null ||
+                                propdetail.pet_allowed === "" ||
+                                propdetail.pet_allowed.toLowerCase() === "no" ? null : (
                                 <li>
                                     <img
                                         src={
@@ -488,9 +488,9 @@ export const SavedPropertyItem = ({ post }) => {
                                 </li>
                             )}
 
-                            {propdetail.handicap == null ||
-                                propdetail.handicap == "" ||
-                                propdetail.handicap.toLowerCase() == "no" ? null : (
+                            {propdetail.handicap === null ||
+                                propdetail.handicap === "" ||
+                                propdetail.handicap.toLowerCase() === "no" ? null : (
                                 <li>
                                     <img
                                         src={
@@ -499,9 +499,9 @@ export const SavedPropertyItem = ({ post }) => {
                                     />
                                 </li>
                             )}
-                            {propdetail.section8 == null ||
-                                propdetail.section8 == "" ||
-                                propdetail.section8.toLowerCase() == "no" ? null : (
+                            {propdetail.section8 === null ||
+                                propdetail.section8 === "" ||
+                                propdetail.section8.toLowerCase() === "no" ? null : (
                                 <li>
                                     <img
                                         src={
@@ -511,9 +511,9 @@ export const SavedPropertyItem = ({ post }) => {
                                 </li>
                             )}
 
-                            {propdetail.seniorprop.toLowerCase() == "yes" &&
-                                (propdetail.seniorpropval.toLowerCase() == "62" ||
-                                    propdetail.seniorpropval == 62) ? (
+                            {propdetail.seniorprop.toLowerCase() === "yes" &&
+                                (propdetail.seniorpropval.toLowerCase() === "62" ||
+                                    propdetail.seniorpropval === 62) ? (
                                 <li>
                                     <img
                                         src={
@@ -522,11 +522,11 @@ export const SavedPropertyItem = ({ post }) => {
                                     />
                                 </li>
                             ) : null}
-                            {propdetail.seniorprop.toLowerCase() == "yes" &&
-                                (propdetail.seniorpropval.toLowerCase() == "55" ||
-                                    propdetail.seniorpropval == 55 ||
-                                    propdetail.seniorpropval == "" ||
-                                    propdetail.seniorpropval == null) ? (
+                            {propdetail.seniorprop.toLowerCase() === "yes" &&
+                                (propdetail.seniorpropval.toLowerCase() === "55" ||
+                                    propdetail.seniorpropval === 55 ||
+                                    propdetail.seniorpropval === "" ||
+                                    propdetail.seniorpropval === null) ? (
                                 <li>
                                     <img
                                         src={
@@ -564,7 +564,7 @@ export const SavedPropertyItem = ({ post }) => {
                         </Link>
                     </div>
                     <div>
-                        {prop.phone == null || prop.phone == "" || prop.phone == 0
+                        {prop.phone === null || prop.phone === "" || prop.phone === 0
                             ?
 
                             <a href="" className="lineBtnCalling purpleText brdrRadius4 d-flex align-items-center justify-content-center">

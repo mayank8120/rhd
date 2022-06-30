@@ -6,7 +6,7 @@ export const CityCountyQuickFacts = ({ propincome }) => {
     return (
         <>
             {
-                propincome == null || propincome.length == 0
+                propincome === null || propincome.length === 0
                     ?
                     null
                     // <Accordion defaultActiveKey="0" className="accordionBoxInfo">

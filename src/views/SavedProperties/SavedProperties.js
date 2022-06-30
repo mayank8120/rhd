@@ -17,13 +17,13 @@ const SavedProperties = () => {
 
 
 
-    if (arr == null || arr == '' || arr == undefined) {
+    if (arr === null || arr === '' || arr === undefined) {
         let newArr = [];
         localStorage.setItem('saveHAList', JSON.stringify(newArr));
 
     }
 
-    if (arr1 == null || arr1 == '' || arr1 == undefined) {
+    if (arr1 === null || arr1 === '' || arr1 === undefined) {
         let newArr = [];
         localStorage.setItem('savePropList', JSON.stringify(newArr));
     }
@@ -135,7 +135,7 @@ const SavedProperties = () => {
                                                 {
 
 
-                                                    arr1 == null || arr1 == '' || arr1.length == 0 ?
+                                                    arr1 === null || arr1 === '' || arr1.length === 0 ?
                                                         <li className="listingBlock2">
 
                                                             <h1>No Properties Saved. Please save the propeties.</h1>
@@ -170,7 +170,7 @@ const SavedProperties = () => {
                                                         {
 
 
-                                                            arr == null || arr == '' || arr.length == 0 ?
+                                                            arr === null || arr === '' || arr.length === 0 ?
                                                                 <li className="listingBlock2">
                                                                     <h1>No Housing authorities Saved. Please save the housing authorities.</h1>
                                                                 </li>
@@ -183,7 +183,7 @@ const SavedProperties = () => {
                                                                         // {
                                                                         //     
                                                                         <li className="listingBlock2">
-                                                                            {data.HADetail == null || data.HADetail == '' || data.HADetail == undefined ?
+                                                                            {data.HADetail === null || data.HADetail === '' || data.HADetail === undefined ?
                                                                                 null :
 
                                                                                 <SavedHa data={data} />

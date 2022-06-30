@@ -14,7 +14,7 @@ const FeaturedRentalsInCity = ({ latlngdata, page }) => {
     // console.log(latlngdata);
 
     let nearbycitiesurl;
-    if (latlngdata == null || latlngdata == undefined) {
+    if (latlngdata === null || latlngdata === undefined) {
         nearbycitiesurl = `http://thomasthecat.rentalhousingdeals.com/apis/v1/api/v1/nearbycities?lat=&lng=`
     } else {
         nearbycitiesurl = `http://thomasthecat.rentalhousingdeals.com/apis/v1/api/v1/nearbycities?lat=${latlngdata.lat}&lng=${latlngdata.lon}`
@@ -42,9 +42,9 @@ const FeaturedRentalsInCity = ({ latlngdata, page }) => {
                         {
                             page === 2 ?
                                 <h2 className="font-weight700 colorBlue">
-                                    Featured Low Income Senior Housing Rentals in {nearbycitiesdata == undefined || nearbycitiesdata == null ? 'Los Angeles' : capitalise(nearbycitiesdata[0].property_city)}</h2>
+                                    Featured Low Income Senior Housing Rentals in {nearbycitiesdata === undefined || nearbycitiesdata === null ? 'Los Angeles' : capitalise(nearbycitiesdata[0].property_city)}</h2>
                                 :
-                                <h2 className="font-weight700 colorBlue">Featured Rentals in {nearbycitiesdata == undefined || nearbycitiesdata == null ? 'Los Angeles' : capitalise(nearbycitiesdata[0].property_city)}</h2>
+                                <h2 className="font-weight700 colorBlue">Featured Rentals in {nearbycitiesdata === undefined || nearbycitiesdata === null ? 'Los Angeles' : capitalise(nearbycitiesdata[0].property_city)}</h2>
 
                         }
                     </div>
@@ -63,27 +63,27 @@ const FeaturedRentalsInCity = ({ latlngdata, page }) => {
                                             <div className="row">
                                                 <div className="col-lg-12 pl-0">
                                                     <ul className="noMarginPad list-style-type row">
-                                                        <Link to={`/propertySearch/${nearbycitiesdata == undefined || nearbycitiesdata == null ? 'Los Angeles' : nearbycitiesdata[0].property_city}/${nearbycitiesdata == undefined || nearbycitiesdata == null ? 'CA' : nearbycitiesdata[0].property_state}`}>
+                                                        <Link to={`/propertySearch/${nearbycitiesdata === undefined || nearbycitiesdata === null ? 'Los Angeles' : nearbycitiesdata[0].property_city}/${nearbycitiesdata === undefined || nearbycitiesdata === null ? 'CA' : nearbycitiesdata[0].property_state}`}>
                                                             <li>
-                                                                <h3 className="font-weight500 mb-0">{nearbycitiesdata == undefined || nearbycitiesdata == null ? 'Los Angeles' : capitalise(nearbycitiesdata[0].property_city)}</h3>
+                                                                <h3 className="font-weight500 mb-0">{nearbycitiesdata === undefined || nearbycitiesdata === null ? 'Los Angeles' : capitalise(nearbycitiesdata[0].property_city)}</h3>
                                                                 <p className="mb-0 secondaryColor">Affordable Housing</p>
                                                             </li>
                                                         </Link>
-                                                        <Link to={`/propertySearch/${nearbycitiesdata == undefined || nearbycitiesdata == null ? 'Los Angeles' : nearbycitiesdata[0].property_city}/${nearbycitiesdata == undefined || nearbycitiesdata == null ? 'CA' : nearbycitiesdata[0].property_state}&feature=senior`}>
+                                                        <Link to={`/propertySearch/${nearbycitiesdata === undefined || nearbycitiesdata === null ? 'Los Angeles' : nearbycitiesdata[0].property_city}/${nearbycitiesdata === undefined || nearbycitiesdata === null ? 'CA' : nearbycitiesdata[0].property_state}&feature=senior`}>
                                                             <li>
-                                                                <h3 className="font-weight500 mb-0">{nearbycitiesdata == undefined || nearbycitiesdata == null ? 'Los Angeles' : capitalise(nearbycitiesdata[0].property_city)}</h3>
+                                                                <h3 className="font-weight500 mb-0">{nearbycitiesdata === undefined || nearbycitiesdata === null ? 'Los Angeles' : capitalise(nearbycitiesdata[0].property_city)}</h3>
                                                                 <p className="mb-0 secondaryColor">Senior Housing</p>
                                                             </li>
                                                         </Link>
-                                                        <Link to={`/propertySearch/${nearbycitiesdata == undefined || nearbycitiesdata == null ? 'Los Angeles' : nearbycitiesdata[0].property_city}/${nearbycitiesdata == undefined || nearbycitiesdata == null ? 'CA' : nearbycitiesdata[0].property_state}&feature=section`}>
+                                                        <Link to={`/propertySearch/${nearbycitiesdata === undefined || nearbycitiesdata === null ? 'Los Angeles' : nearbycitiesdata[0].property_city}/${nearbycitiesdata === undefined || nearbycitiesdata === null ? 'CA' : nearbycitiesdata[0].property_state}&feature=section`}>
                                                             <li>
-                                                                <h3 className="font-weight500 mb-0">{nearbycitiesdata == undefined || nearbycitiesdata == null ? 'Los Angeles' : capitalise(nearbycitiesdata[0].property_city)}</h3>
+                                                                <h3 className="font-weight500 mb-0">{nearbycitiesdata === undefined || nearbycitiesdata === null ? 'Los Angeles' : capitalise(nearbycitiesdata[0].property_city)}</h3>
                                                                 <p className="mb-0 secondaryColor">Section 8 Housing</p>
                                                             </li>
                                                         </Link>
                                                         {/* <Link> */}
                                                         <li>
-                                                            <h3 className="font-weight500 mb-0">{nearbycitiesdata == undefined || nearbycitiesdata == null ? 'Los Angeles' : capitalise(nearbycitiesdata[0].property_city)}</h3>
+                                                            <h3 className="font-weight500 mb-0">{nearbycitiesdata === undefined || nearbycitiesdata === null ? 'Los Angeles' : capitalise(nearbycitiesdata[0].property_city)}</h3>
                                                             <p className="mb-0 secondaryColor">Low Income Housing</p>
                                                         </li>
                                                         {/* </Link> */}
@@ -110,7 +110,7 @@ const FeaturedRentalsInCity = ({ latlngdata, page }) => {
 
 
                                                         {
-                                                            nearbycitiesdata == null || nearbycitiesdata == undefined ?
+                                                            nearbycitiesdata === null || nearbycitiesdata === undefined ?
                                                                 null :
                                                                 (
                                                                     loadmore === true
@@ -172,7 +172,7 @@ const FeaturedRentalsInCity = ({ latlngdata, page }) => {
 
 
                                                         {
-                                                            nearbycitiesdata == null || nearbycitiesdata == undefined ?
+                                                            nearbycitiesdata === null || nearbycitiesdata === undefined ?
                                                                 null :
                                                                 (
                                                                     loadmore === true

@@ -97,7 +97,7 @@ const PropertyDetailPage = ({ post }) => {
 
 
 
-    let latlngurl = 'http://ip-api.com/json';
+    let latlngurl = 'https://pro.ip-api.com/json?key=JQ2bhI11BHF1bzV';
     useEffect(() => {
         const fetchData = async () => {
             const result = await axios.post(latlngurl)
@@ -177,7 +177,7 @@ const PropertyDetailPage = ({ post }) => {
     }
 
     function captchacheck() {
-        if (captchaValue == undefined || captchaValue !== true) { setcaptchaValue(false) }
+        if (captchaValue === undefined || captchaValue !== true) { setcaptchaValue(false) }
     }
 
 
@@ -335,7 +335,7 @@ const PropertyDetailPage = ({ post }) => {
 
     var stringg;
     var replaced;
-    if (post == undefined || post == [] || post == '' || post == null) {
+    if (post === undefined || post === [] || post === '' || post === null) {
 
     } else {
         document.title = `${post.property.property_title} - Rental Housing Deals`
@@ -364,35 +364,35 @@ const PropertyDetailPage = ({ post }) => {
 
 
     useEffect(() => {
-        if (propdata.property_type == 'general') {
+        if (propdata.property_type === 'general') {
 
-            if (propdetails.min_bed == propdetails.max_bed) {
+            if (propdetails.min_bed === propdetails.max_bed) {
                 setbeddesc(`${propdetails.min_bed} Bd`);
             }
-            if (propdetails.min_bed !== 0 && propdetails.min_bed !== '' && propdetails.max_bed == '' || propdetails.max_bed == '0') {
+            if (propdetails.min_bed !== 0 && propdetails.min_bed !== '' && propdetails.max_bed === '' || propdetails.max_bed === '0') {
                 setbeddesc(`${propdetails.min_bed} Bd`)
             }
             if (propdetails.min_bed !== propdetails.max_bed && propdetails.min_bed !== '0' && propdetails.max_bed !== '0' && propdetails.min_bed !== '' && propdetails.max_bed !== '') {
                 setbeddesc(`${propdetails.min_bed} Bd-${propdetails.max_bed} Bd`);
             }
-            if ((propdetails.min_bed == 0 || propdetails.min_bed == '') && (propdetails.max_bed !== '0' && propdetails.max_bed !== '')) {
+            if ((propdetails.min_bed === 0 || propdetails.min_bed === '') && (propdetails.max_bed !== '0' && propdetails.max_bed !== '')) {
                 setbeddesc(`${propdetails.max_bed} Bd`);
             }
-            if (propdetails.min_bed == '0' && propdetails.max_bed == '0') {
+            if (propdetails.min_bed === '0' && propdetails.max_bed === '0') {
                 setbeddesc(`1 Bd`);
             }
-            if (propdetails.min_bed == '' && propdetails.max_bed == '') {
+            if (propdetails.min_bed === '' && propdetails.max_bed === '') {
                 setbeddesc(`1 Bd`);
             }
 
-            if (propdata.prog_type == 'affordablehousing') {
+            if (propdata.prog_type === 'affordablehousing') {
                 setprogdesc(' affordable housing apartments ');
             } else {
                 setprogdesc(' apartments ');
             }
 
 
-            if (propdetails.max_bath == null || propdetails.max_bath == "" || propdetails.max_bath == undefined) {
+            if (propdetails.max_bath === null || propdetails.max_bath === "" || propdetails.max_bath === undefined) {
                 // console.log("hello");
                 // setbathinfogeneral(`${decimalRoundOff(propdetails.max_bath)} Bath`);
             }
@@ -400,7 +400,7 @@ const PropertyDetailPage = ({ post }) => {
                 // console.log("hello");
                 setbathinfogeneral(`${decimalRoundOff(propdetails.max_bath)} Ba`);
             }
-            if (propdetails.min_bath == null || propdetails.min_bath == "" || propdetails.min_bath == undefined) {
+            if (propdetails.min_bath === null || propdetails.min_bath === "" || propdetails.min_bath === undefined) {
             } else {
                 // console.log("mayank");
                 setbathinfogeneral(`${decimalRoundOff(propdetails.min_bath)} Ba`);
@@ -416,31 +416,31 @@ const PropertyDetailPage = ({ post }) => {
     const [bathfornongeneral, setbathfornongeneral] = useState("");
     useEffect(() => {
 
-        if (propdetails.min_bed == 0 || propdetails.min_bed == '' && propdetails.max_bed == '' || propdetails.max_bed == '0') {
+        if (propdetails.min_bed === 0 || propdetails.min_bed === '' && propdetails.max_bed === '' || propdetails.max_bed === '0') {
             setbedfornongeneral(" ");
         }
-        else if (propdetails.min_bed == propdetails.max_bed) {
+        else if (propdetails.min_bed === propdetails.max_bed) {
             setbedfornongeneral(`${propdetails.min_bed} Bd `);
         }
         if (propdetails.min_bed !== propdetails.max_bed && propdetails.min_bed !== '0' && propdetails.max_bed !== '0' && propdetails.min_bed !== '' && propdetails.max_bed !== '') {
             setbedfornongeneral(`${propdetails.min_bed}-${propdetails.max_bed} Bd `);
         }
-        if ((propdetails.min_bed == 0 || propdetails.min_bed == '') && (propdetails.max_bed !== '0' && propdetails.max_bed !== '')) {
+        if ((propdetails.min_bed === 0 || propdetails.min_bed === '') && (propdetails.max_bed !== '0' && propdetails.max_bed !== '')) {
             setbedfornongeneral(`${propdetails.max_bed} Bd `);
         }
 
 
 
-        if (propdetails.min_bath == 0 || propdetails.min_bath == '' && propdetails.max_bath == '' || propdetails.max_bath == '0') {
+        if (propdetails.min_bath === 0 || propdetails.min_bath === '' && propdetails.max_bath === '' || propdetails.max_bath === '0') {
             setbathfornongeneral("");
         }
-        else if (propdetails.min_bath == propdetails.max_bath) {
+        else if (propdetails.min_bath === propdetails.max_bath) {
             setbathfornongeneral(`${decimalRoundOff(propdetails.min_bath)} Ba `);
         }
         if (propdetails.min_bath !== propdetails.max_bath && propdetails.min_bath !== '0' && propdetails.max_bath !== '0' && propdetails.min_bath !== '' && propdetails.max_bath !== '') {
             setbathfornongeneral(`${decimalRoundOff(propdetails.min_bath)}-${decimalRoundOff(propdetails.max_bath)} Ba `);
         }
-        if ((propdetails.min_bath == 0 || propdetails.min_bath == '') && (propdetails.max_bath !== '0' && propdetails.max_bath !== '')) {
+        if ((propdetails.min_bath === 0 || propdetails.min_bath === '') && (propdetails.max_bath !== '0' && propdetails.max_bath !== '')) {
             setbathfornongeneral(`${decimalRoundOff(propdetails.max_bath)} Ba `);
         }
 
@@ -456,7 +456,7 @@ const PropertyDetailPage = ({ post }) => {
     useEffect(() => {
 
 
-        if (propdata.property_type == 'general') {
+        if (propdata.property_type === 'general') {
 
             console.log("GENERAL PROPERTY");
             console.log(propdetails.seniorprop, propdetails.seniorpropval);
@@ -464,11 +464,11 @@ const PropertyDetailPage = ({ post }) => {
             settagline(
                 "Low Income " +
 
-                (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '55') ? "Senior 55+ " : "")
+                (propdetails.length !== 0 && (propdetails.seniorprop === 'Yes' && propdetails.seniorpropval === '55') ? "Senior 55+ " : "")
                 +
-                (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '') ? "Senior " : "")
+                (propdetails.length !== 0 && (propdetails.seniorprop === 'Yes' && propdetails.seniorpropval === '') ? "Senior " : "")
                 +
-                (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '62') ? "Senior 62+ " : "")
+                (propdetails.length !== 0 && (propdetails.seniorprop === 'Yes' && propdetails.seniorpropval === '62') ? "Senior 62+ " : "")
                 +
                 "Apartment for Rent at "
 
@@ -479,9 +479,9 @@ const PropertyDetailPage = ({ post }) => {
                 // + beddesc + " " 
                 // + "Affordable Housing in " + capitalise(propdata.property_city) + ", "
                 // +
-                // (propdetails.length !== 0 && ((propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '55') || propdetails.seniorpropval == '') ? "Senior 55+, " : "")
+                // (propdetails.length !== 0 && ((propdetails.seniorprop === 'Yes' && propdetails.seniorpropval === '55') || propdetails.seniorpropval === '') ? "Senior 55+, " : "")
                 // +
-                // (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '62') ? "Senior 62+, " : "")
+                // (propdetails.length !== 0 && (propdetails.seniorprop === 'Yes' && propdetails.seniorpropval === '62') ? "Senior 62+, " : "")
                 // +
                 // (propdetails.length !== 0 && propdetails.pet_allowed === 'Yes' ? "Pets OK, " : "")
             )
@@ -493,22 +493,22 @@ const PropertyDetailPage = ({ post }) => {
 
             console.log("PREMIUM");
 
-            if (propdetails.section8 == 'Yes') {
+            if (propdetails.section8 === 'Yes') {
 
                 console.log("SECTION 8");
                 settagline(
 
-                    (propfloor == null || propfloor.length == 0) ? "" : (propfloor[0].rent_from == 0 ? "Please Call for Rent" : `$${commaInNumber(propfloor[0].rent_from)}`)
+                    (propfloor === null || propfloor.length === 0) ? "" : (propfloor[0].rent_from === 0 ? "Please Call for Rent" : `$${commaInNumber(propfloor[0].rent_from)}`)
                         + " "
 
                         +
                         "Low Income "
                         +
-                        (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '55') ? "Senior 55+ " : "")
+                        (propdetails.length !== 0 && (propdetails.seniorprop === 'Yes' && propdetails.seniorpropval === '55') ? "Senior 55+ " : "")
                         +
-                        (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '') ? "Senior " : "")
+                        (propdetails.length !== 0 && (propdetails.seniorprop === 'Yes' && propdetails.seniorpropval === '') ? "Senior " : "")
                         +
-                        (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '62') ? "Senior 62+ " : "")
+                        (propdetails.length !== 0 && (propdetails.seniorprop === 'Yes' && propdetails.seniorpropval === '62') ? "Senior 62+ " : "")
                         + "Apartments for Rent at "
                         +
                         propdata.property_address + ", " + capitalise(propdata.property_city) + ", " + propdata.property_state + ", " + propdata.property_zip
@@ -516,11 +516,11 @@ const PropertyDetailPage = ({ post }) => {
 
                     // bedfornongeneral + " " + bathfornongeneral + " " + " in " + ", "
                     // +
-                    // (propdetails.length !== 0 && ((propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '55') || propdetails.seniorpropval == '') ? "Senior 55+, " : "")
+                    // (propdetails.length !== 0 && ((propdetails.seniorprop === 'Yes' && propdetails.seniorpropval === '55') || propdetails.seniorpropval === '') ? "Senior 55+, " : "")
                     // +
-                    // (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '62') ? "Senior 62+, " : "")
+                    // (propdetails.length !== 0 && (propdetails.seniorprop === 'Yes' && propdetails.seniorpropval === '62') ? "Senior 62+, " : "")
                     // +
-                    // (propdetails.length !== 0 && propdetails.section8 == 'Yes' ? "Section 8, " : "")
+                    // (propdetails.length !== 0 && propdetails.section8 === 'Yes' ? "Section 8, " : "")
                     // +
                     // (propdetails.length !== 0 && propdetails.pet_allowed === 'Yes' ? "Pets OK, " : "")
                 )
@@ -530,9 +530,9 @@ const PropertyDetailPage = ({ post }) => {
                 console.log("NO SECTION 8");
 
                 settagline(
-                    (propfloor == null || propfloor.length == 0) ?
+                    (propfloor === null || propfloor.length === 0) ?
                         "" :
-                        (propfloor[0].rent_from == 0 ? "Please Call for Rent - " : `$${commaInNumber(propfloor[0].rent_from)}`)
+                        (propfloor[0].rent_from === 0 ? "Please Call for Rent - " : `$${commaInNumber(propfloor[0].rent_from)}`)
 
                         // "$" + commaInNumber(propfloor[0].rent_from)
 
@@ -540,14 +540,14 @@ const PropertyDetailPage = ({ post }) => {
                         +
                         " "
                         +
-                        (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '55') ? "Senior 55+ " : "")
+                        (propdetails.length !== 0 && (propdetails.seniorprop === 'Yes' && propdetails.seniorpropval === '55') ? "Senior 55+ " : "")
                         +
-                        (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '') ? "Senior " : "")
+                        (propdetails.length !== 0 && (propdetails.seniorprop === 'Yes' && propdetails.seniorpropval === '') ? "Senior " : "")
                         +
-                        (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '62') ? "Senior 62+ " : "")
+                        (propdetails.length !== 0 && (propdetails.seniorprop === 'Yes' && propdetails.seniorpropval === '62') ? "Senior 62+ " : "")
                         +
 
-                        (propfloor[0].rent_from == 0 ? "" : "Apartments for Rent at ")
+                        (propfloor[0].rent_from === 0 ? "" : "Apartments for Rent at ")
 
 
 
@@ -557,7 +557,7 @@ const PropertyDetailPage = ({ post }) => {
                     // bedfornongeneral + " " + bathfornongeneral + " " + " in " + capitalise(propdata.property_city) + ", "
                     // +
 
-                    // (propdetails.length !== 0 && propdetails.section8 == 'Yes' ? "Section 8, " : "")
+                    // (propdetails.length !== 0 && propdetails.section8 === 'Yes' ? "Section 8, " : "")
                     // +
                     // (propdetails.length !== 0 && propdetails.pet_allowed === 'Yes' ? "Pets OK, " : "")
                 )
@@ -575,15 +575,15 @@ const PropertyDetailPage = ({ post }) => {
 
 
         // console.log(propdata.property_type);
-        // if (propdetails.section8 == 'Yes') {
+        // if (propdetails.section8 === 'Yes') {
         //     settagline(
 
 
         //         capitalise(thirdval) + " "
         //         +
-        //         (propdetails.length !== 0 && ((propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '55') || propdetails.seniorpropval == '') ? "Senior 55+, " : "")
+        //         (propdetails.length !== 0 && ((propdetails.seniorprop === 'Yes' && propdetails.seniorpropval === '55') || propdetails.seniorpropval === '') ? "Senior 55+, " : "")
         //         +
-        //         (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '62') ? "Senior 62+, " : "")
+        //         (propdetails.length !== 0 && (propdetails.seniorprop === 'Yes' && propdetails.seniorpropval === '62') ? "Senior 62+, " : "")
         //         +
         //         "Low Income Apartments for Rent at "
         //         +
@@ -592,18 +592,18 @@ const PropertyDetailPage = ({ post }) => {
 
         //         // bedfornongeneral + " " + bathfornongeneral + " " + " in " + ", "
         //         // +
-        //         // (propdetails.length !== 0 && ((propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '55') || propdetails.seniorpropval == '') ? "Senior 55+, " : "")
+        //         // (propdetails.length !== 0 && ((propdetails.seniorprop === 'Yes' && propdetails.seniorpropval === '55') || propdetails.seniorpropval === '') ? "Senior 55+, " : "")
         //         // +
-        //         // (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '62') ? "Senior 62+, " : "")
+        //         // (propdetails.length !== 0 && (propdetails.seniorprop === 'Yes' && propdetails.seniorpropval === '62') ? "Senior 62+, " : "")
         //         // +
-        //         // (propdetails.length !== 0 && propdetails.section8 == 'Yes' ? "Section 8, " : "")
+        //         // (propdetails.length !== 0 && propdetails.section8 === 'Yes' ? "Section 8, " : "")
         //         // +
         //         // (propdetails.length !== 0 && propdetails.pet_allowed === 'Yes' ? "Pets OK, " : "")
         //     )
         // }
 
         // else {
-        //     if (propdata.property_type == 'general') {
+        //     if (propdata.property_type === 'general') {
 
         //         settagline(
         //             capitalise(thirdval) + ", "
@@ -611,31 +611,31 @@ const PropertyDetailPage = ({ post }) => {
         //             + propdata.property_city + ", "
         //             + propdata.property_state + ", "
         //             + propdata.property_zip + " "
-        //             + beddesc + " " + "Affordable Housing in " + capitalise(propdata.property_city) + ", " + (propdetails.length !== 0 && ((propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '55') || propdetails.seniorpropval == '') ? "Senior 55+, " : "")
+        //             + beddesc + " " + "Affordable Housing in " + capitalise(propdata.property_city) + ", " + (propdetails.length !== 0 && ((propdetails.seniorprop === 'Yes' && propdetails.seniorpropval === '55') || propdetails.seniorpropval === '') ? "Senior 55+, " : "")
         //             +
-        //             (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '62') ? "Senior 62+, " : "")
+        //             (propdetails.length !== 0 && (propdetails.seniorprop === 'Yes' && propdetails.seniorpropval === '62') ? "Senior 62+, " : "")
         //             +
         //             (propdetails.length !== 0 && propdetails.pet_allowed === 'Yes' ? "Pets OK, " : "")
         //         )
 
         //     }
 
-        //     if (propdata.property_type == 'premium') {
+        //     if (propdata.property_type === 'premium') {
 
         //         settagline(
 
         //             capitalise(thirdval) + ", "
         //             + 
-        //             (propdetails.length !== 0 && ((propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '55') || propdetails.seniorpropval == '') ? "Senior 55+, " : "")
+        //             (propdetails.length !== 0 && ((propdetails.seniorprop === 'Yes' && propdetails.seniorpropval === '55') || propdetails.seniorpropval === '') ? "Senior 55+, " : "")
         //             +
-        //             (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '62') ? "Senior 62+, " : "")
+        //             (propdetails.length !== 0 && (propdetails.seniorprop === 'Yes' && propdetails.seniorpropval === '62') ? "Senior 62+, " : "")
         //             + "Apartments for Rent at "
         //             + propdata.property_address + ", " + propdata.property_city + ", " + propdata.property_state + ", " + propdata.property_zip + " "
 
         //             // bedfornongeneral + " " + bathfornongeneral + " " + " in " + capitalise(propdata.property_city) + ", "
         //             // +
 
-        //             // (propdetails.length !== 0 && propdetails.section8 == 'Yes' ? "Section 8, " : "")
+        //             // (propdetails.length !== 0 && propdetails.section8 === 'Yes' ? "Section 8, " : "")
         //             // +
         //             // (propdetails.length !== 0 && propdetails.pet_allowed === 'Yes' ? "Pets OK, " : "")
         //         )
@@ -653,51 +653,51 @@ const PropertyDetailPage = ({ post }) => {
 
 
     useEffect(() => {
-        if (propcheckabove == [] || propcheckabove == null || propcheckabove.length == 0) {
+        if (propcheckabove === [] || propcheckabove === null || propcheckabove.length === 0) {
         }
         else {
 
-            if (propcheckabove[0].header_description == 1 || propcheckabove[0].header_description == '1') {
+            if (propcheckabove[0].header_description === 1 || propcheckabove[0].header_description === '1') {
                 setspecialtitle('Affordable Housing');
                 setspecialtext('If you qualify, the Federal Government may subsidize your rent.');
                 setthirdval('SPECIAL');
                 setthirdvalint(1);
                 setbedbathinfo('');
             }
-            if (propcheckabove[0].header_description == 2 || propcheckabove[0].header_description == '2') {
+            if (propcheckabove[0].header_description === 2 || propcheckabove[0].header_description === '2') {
                 setspecialtitle('Affordable Housing');
                 setspecialtext(' If you qualify, you may pay');
                 setthirdval(`$${commaInNumber(propcheckabove[0].header_value[0])}`);
                 setbedbathinfo('');
             }
-            if (propcheckabove[0].header_description == 3 || propcheckabove[0].header_description == '3') {
+            if (propcheckabove[0].header_description === 3 || propcheckabove[0].header_description === '3') {
                 setspecialtitle('Affordable Housing');
                 setspecialtext(`If you qualify, you may pay for ${propcheckabove[0].header_value[0]} Bd, ${decimalRoundOff(propcheckabove[0].header_value[3])} Ba`);
                 setthirdval(`$${commaInNumber(propcheckabove[0].header_value[2])}`);
                 setbeds(propcheckabove[0].header_value[0]);
                 setbedbathinfo(`${propcheckabove[0].header_value[0]} Bd, ${decimalRoundOff(propcheckabove[0].header_value[3])} Ba`);
             }
-            if (propcheckabove[0].header_description == 4 || propcheckabove[0].header_description == '4') {
+            if (propcheckabove[0].header_description === 4 || propcheckabove[0].header_description === '4') {
                 setspecialtitle('Rental Deals');
                 setspecialtext(`If you qualify, you may pay for ${propcheckabove[0].header_value[0]} Bd, 1 Ba`);
                 setthirdval(`$${commaInNumber(propcheckabove[0].header_value[2])}`);
                 setbeds(propcheckabove[0].header_value[0]);
                 setbedbathinfo(`${propcheckabove[0].header_value[0]} Bd`)
             }
-            if (propcheckabove[0].header_description == 5 || propcheckabove[0].header_description == '5') {
+            if (propcheckabove[0].header_description === 5 || propcheckabove[0].header_description === '5') {
                 setspecialtitle('Rental Deals');
                 setspecialtext(`Find out the current specials at ${propdata.property_title}`);
                 setthirdval('MOVE-IN SPECIALS');
                 setbedbathinfo('');
                 setthirdvalint(1);
             }
-            if (propcheckabove[0].header_description == 6 || propcheckabove[0].header_description == '6') {
+            if (propcheckabove[0].header_description === 6 || propcheckabove[0].header_description === '6') {
                 setspecialtitle('Rental Deals');
                 setspecialtext('If you qualify, you may pay');
                 setthirdval(`$${commaInNumber(propcheckabove[0].header_value[0])}`);
                 setbedbathinfo('');
             }
-            if (propcheckabove[0].header_description == 7 || propcheckabove[0].header_description == '7') {
+            if (propcheckabove[0].header_description === 7 || propcheckabove[0].header_description === '7') {
                 setspecialtitle(propcheckabove[0].header_value[0]);
                 setspecialtext(propcheckabove[0].header_value[1]);
                 setthirdval(propcheckabove[0].header_value[2]);
@@ -746,10 +746,10 @@ const PropertyDetailPage = ({ post }) => {
                                     {removelastcomma(tagline)}
                                     {/* 
                                     {
-                                        propdata.property_type == 'general' ?
-                                            beddesc + " " + "Affordable Housing in " + capitalise(propdata.property_city) + ", " + (propdetails.length !== 0 && ((propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '55') || propdetails.seniorpropval == '') ? "Senior 55+, " : "")
+                                        propdata.property_type === 'general' ?
+                                            beddesc + " " + "Affordable Housing in " + capitalise(propdata.property_city) + ", " + (propdetails.length !== 0 && ((propdetails.seniorprop === 'Yes' && propdetails.seniorpropval === '55') || propdetails.seniorpropval === '') ? "Senior 55+, " : "")
                                             +
-                                            (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '62') ? "Senior 62+, " : "")
+                                            (propdetails.length !== 0 && (propdetails.seniorprop === 'Yes' && propdetails.seniorpropval === '62') ? "Senior 62+, " : "")
                                             +
                                             (propdetails.length !== 0 && propdetails.pet_allowed === 'Yes' ? "Pets OK, " : "")
                                             :
@@ -757,17 +757,17 @@ const PropertyDetailPage = ({ post }) => {
                                             ""
                                     }
                                     {
-                                        propdata.property_type == 'general' ?
+                                        propdata.property_type === 'general' ?
 
                                             ""
                                             :
                                             bedfornongeneral + " " + bathfornongeneral + " " + thirdval + " in " + capitalise(propdata.property_city) + ", "
                                             +
-                                            (propdetails.length !== 0 && ((propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '55') || propdetails.seniorpropval == '') ? "Senior 55+ " : "")
+                                            (propdetails.length !== 0 && ((propdetails.seniorprop === 'Yes' && propdetails.seniorpropval === '55') || propdetails.seniorpropval === '') ? "Senior 55+ " : "")
                                             +
-                                            (propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '62') ? "Senior 62+, " : "")
+                                            (propdetails.length !== 0 && (propdetails.seniorprop === 'Yes' && propdetails.seniorpropval === '62') ? "Senior 62+, " : "")
                                             +
-                                            (propdetails.length !== 0 && propdetails.section8 == 'Yes' ? "Section 8, " : "")
+                                            (propdetails.length !== 0 && propdetails.section8 === 'Yes' ? "Section 8, " : "")
                                             +
                                             (propdetails.length !== 0 && propdetails.pet_allowed === 'Yes' ? "Pets OK, " : "")
 
@@ -787,7 +787,7 @@ const PropertyDetailPage = ({ post }) => {
 
                                     {beddesc}&nbsp;
                                     {
-                                        bathinfogeneral == null || bathinfogeneral == '' || bathinfogeneral == undefined ?
+                                        bathinfogeneral === null || bathinfogeneral === '' || bathinfogeneral === undefined ?
                                             null :
 
                                             bathinfogeneral
@@ -795,7 +795,7 @@ const PropertyDetailPage = ({ post }) => {
 
 
                                     {
-                                        propdata.property_type == 'general' ?
+                                        propdata.property_type === 'general' ?
                                             'CALL'
                                             :
                                             thirdval
@@ -849,7 +849,7 @@ const PropertyDetailPage = ({ post }) => {
                             <div className="detailLeftSec">
 
 
-                                {/* {propdata.property_type == 'general' ?
+                                {/* {propdata.property_type === 'general' ?
                                     null
                                     : */}
 
@@ -925,7 +925,7 @@ const PropertyDetailPage = ({ post }) => {
                                             </h3>
                                             <ul className="noMarginPad listStyleNone">
                                                 {
-                                                    proprating.length == 0 ?
+                                                    proprating.length === 0 ?
                                                         null
                                                         :
                                                         <Starratingstatic rating={proprating[0].vote_avg} />
@@ -937,7 +937,7 @@ const PropertyDetailPage = ({ post }) => {
 
                                             <h2 className="font-weight700 colorBlue">
                                                 {
-                                                    propdata.property_type == 'general' ?
+                                                    propdata.property_type === 'general' ?
                                                         'CALL'
                                                         :
 
@@ -974,7 +974,7 @@ const PropertyDetailPage = ({ post }) => {
 
 
                                                     {
-                                                        propdetails.length !== 0 && propdetails.handicap == "Yes" ?
+                                                        propdetails.length !== 0 && propdetails.handicap === "Yes" ?
 
                                                             <div className="col-lg-7 col-md-7 col-sm-12 col-xs-12">
                                                                 <span className="blueTag mt-0">
@@ -994,7 +994,7 @@ const PropertyDetailPage = ({ post }) => {
 
 
                                                     {
-                                                        propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '62') ?
+                                                        propdetails.length !== 0 && (propdetails.seniorprop === 'Yes' && propdetails.seniorpropval === '62') ?
                                                             <div className="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                                                                 <span className="orangeTag">
                                                                     <div className="d-flex align-items-center">
@@ -1009,7 +1009,7 @@ const PropertyDetailPage = ({ post }) => {
 
 
                                                     {
-                                                        propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && (propdetails.seniorpropval == '55' || propdetails.seniorpropval == '')) ?
+                                                        propdetails.length !== 0 && (propdetails.seniorprop === 'Yes' && (propdetails.seniorpropval === '55' || propdetails.seniorpropval === '')) ?
                                                             <div className="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                                                                 <span className="greenTag">
                                                                     <div className="d-flex align-items-center">
@@ -1024,7 +1024,7 @@ const PropertyDetailPage = ({ post }) => {
 
 
                                                     {
-                                                        propdetails.length !== 0 && propdetails.section8 == 'Yes' ?
+                                                        propdetails.length !== 0 && propdetails.section8 === 'Yes' ?
 
                                                             <div className="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                                                                 <span className="greenTag">
@@ -1136,7 +1136,7 @@ const PropertyDetailPage = ({ post }) => {
 
 
                                                 {
-                                                    propfloor.length == 0 ?
+                                                    propfloor.length === 0 ?
 
                                                         <li className="d-flex aligm-items-center">
                                                             <span className="imgBox">
@@ -1149,14 +1149,14 @@ const PropertyDetailPage = ({ post }) => {
                                                             </p>
                                                         </li>
                                                         :
-                                                        propfloor[0].square_feet_from == propfloor[propfloor.length - 1].square_feet_to ?
+                                                        propfloor[0].square_feet_from === propfloor[propfloor.length - 1].square_feet_to ?
                                                             <li className="d-flex aligm-items-center">
                                                                 <span className="imgBox">
                                                                     <img src={require('../../assets/img/area.svg').default} />
                                                                 </span>
                                                                 <p className="mb-0 secondaryColor">
                                                                     <span className="colorBlue">
-                                                                        {propfloor[0].square_feet_from == 0 || propfloor[0].square_feet_from == '0' ?
+                                                                        {propfloor[0].square_feet_from === 0 || propfloor[0].square_feet_from === '0' ?
                                                                             'N/A' : propfloor[0].square_feet_from}
                                                                     </span> Sq.Ft
                                                                 </p>
@@ -1185,7 +1185,7 @@ const PropertyDetailPage = ({ post }) => {
 
                                     <div className="d-flex align-items-center btnSection">
 
-                                        {propdata.phone == '' || propdata.phone == null ?
+                                        {propdata.phone === '' || propdata.phone === null ?
                                             <a href="javascript:;" className="brdrRadius4 w-50 text-center d-flex align-items-center justify-content-center">
                                                 No Phone Number
                                             </a>
@@ -1198,15 +1198,15 @@ const PropertyDetailPage = ({ post }) => {
                                             <img src={require('../../assets/img/phoneIcon.svg').default} />{propdata.phone}
                                         </a> */}
                                         <span className="brdrRadius4 w-50 text-center d-flex align-items-center justify-content-center" >
-                                            {propdata.property_type == 'general' ? null : <img src={require('../../assets/img/qualifyIcon.svg').default} />}
+                                            {propdata.property_type === 'general' ? null : <img src={require('../../assets/img/qualifyIcon.svg').default} />}
 
                                             <button onClick={toggleModalQualify}>
-                                                {propdata.property_type == 'general' ? 'Apply Now' : 'Qualify Now'}
+                                                {propdata.property_type === 'general' ? 'Apply Now' : 'Qualify Now'}
                                                 {/* Qualify Now */}
                                             </button>
                                         </span>
 
-                                        <div className="modal fade rentalModal preRentalModal" id="exampleModal" tabindex="-1"
+                                        {/* <div className="modal fade rentalModal preRentalModal" id="exampleModal" tabindex="-1"
                                             role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div className="modal-dialog boxscroll4" role="document">
                                                 <div className="wrapperScroll">
@@ -1228,7 +1228,7 @@ const PropertyDetailPage = ({ post }) => {
                                                                                 className="labelMark">*</span></label>
                                                                             <input type="email" className="form-control" id=""
                                                                                 aria-describedby="emailHelp"
-                                                                                placeholder="Enter email" value="Jonath" />
+                                                                                placeholder="Enter Email" value="Jonath" />
                                                                         </div>
                                                                     </div>
                                                                     <div className="col-lg-3 col-md-3 col-sm-12 col-xs-12">
@@ -1244,7 +1244,7 @@ const PropertyDetailPage = ({ post }) => {
                                                                             <label for="">City</label>
                                                                             <input type="email" className="form-control" id=""
                                                                                 aria-describedby="emailHelp"
-                                                                                placeholder="Enter email" value="Los Angeles" />
+                                                                                placeholder="Enter Email" value="Los Angeles" />
                                                                         </div>
                                                                     </div>
                                                                     <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -1268,7 +1268,7 @@ const PropertyDetailPage = ({ post }) => {
                                                                                     <label for="">ZIP</label>
                                                                                     <input type="email" className="form-control"
                                                                                         id="" aria-describedby="emailHelp"
-                                                                                        placeholder="Enter email" value="90022" />
+                                                                                        placeholder="Enter Email" value="90022" />
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -1279,7 +1279,7 @@ const PropertyDetailPage = ({ post }) => {
                                                                                 className="labelMark">*</span></label>
                                                                             <input type="email" className="form-control" id=""
                                                                                 aria-describedby="emailHelp"
-                                                                                placeholder="Enter email"
+                                                                                placeholder="Enter Email"
                                                                                 value="Jonathan@gmail.com" />
                                                                         </div>
                                                                     </div>
@@ -1371,7 +1371,7 @@ const PropertyDetailPage = ({ post }) => {
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </div>
 
@@ -1424,7 +1424,7 @@ const PropertyDetailPage = ({ post }) => {
                                             </ul> */}
 
                                             {
-                                                proprating.length == 0 ? null : <Starratingstatic rating={proprating[0].vote_avg} />
+                                                proprating.length === 0 ? null : <Starratingstatic rating={proprating[0].vote_avg} />
                                             }
                                         </div>
                                         <div className="d-flex align-items-center rightOtherDetail">
@@ -1483,14 +1483,14 @@ const PropertyDetailPage = ({ post }) => {
                                                     <p className="mb-0 secondaryColor">
                                                         <span className="colorBlue">
                                                             {
-                                                                propfloor.length == 0 ?
+                                                                propfloor.length === 0 ?
 
                                                                     'N/A'
 
                                                                     :
-                                                                    propfloor[0].square_feet_from == propfloor[propfloor.length - 1].square_feet_to ?
+                                                                    propfloor[0].square_feet_from === propfloor[propfloor.length - 1].square_feet_to ?
 
-                                                                        `${propfloor[0].square_feet_from == 0 || propfloor[0].square_feet_from == '0' ?
+                                                                        `${propfloor[0].square_feet_from === 0 || propfloor[0].square_feet_from === '0' ?
                                                                             'N/A' : propfloor[0].square_feet_from}`
 
 
@@ -1515,7 +1515,7 @@ const PropertyDetailPage = ({ post }) => {
                                                         null
                                                 }
                                                 {
-                                                    propdetails.length !== 0 && propdetails.handicap == "Yes" ?
+                                                    propdetails.length !== 0 && propdetails.handicap === "Yes" ?
                                                         <li>
                                                             <img src={require('../../assets/img/detailImage2.svg').default} />
                                                         </li>
@@ -1524,7 +1524,7 @@ const PropertyDetailPage = ({ post }) => {
 
                                                 }
                                                 {
-                                                    propdetails.length !== 0 && (propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '62') ?
+                                                    propdetails.length !== 0 && (propdetails.seniorprop === 'Yes' && propdetails.seniorpropval === '62') ?
                                                         <li>
                                                             <img src={require('../../assets/img/detailImage3.svg').default} />
                                                         </li>
@@ -1533,7 +1533,7 @@ const PropertyDetailPage = ({ post }) => {
                                                 }
 
                                                 {
-                                                    propdetails.length !== 0 && propdetails.section8 == 'Yes' ?
+                                                    propdetails.length !== 0 && propdetails.section8 === 'Yes' ?
                                                         <li>
                                                             <img src={require('../../assets/img/detailImage4.svg').default} />
                                                         </li>
@@ -1542,7 +1542,7 @@ const PropertyDetailPage = ({ post }) => {
                                                 }
 
                                                 {
-                                                    propdetails.length !== 0 && ((propdetails.seniorprop == 'Yes' && propdetails.seniorpropval == '55') || propdetails.seniorpropval == '') ?
+                                                    propdetails.length !== 0 && ((propdetails.seniorprop === 'Yes' && propdetails.seniorpropval === '55') || propdetails.seniorpropval === '') ?
 
                                                         <li>
                                                             <img src={require('../../assets/img/detailImage5.svg').default} />
@@ -1559,7 +1559,7 @@ const PropertyDetailPage = ({ post }) => {
                                             </div>
                                             <div className="ml-auto itemwebsite mbab">
 
-                                                {propdata.phone == '' || propdata.phone == null ?
+                                                {propdata.phone === '' || propdata.phone === null ?
 
                                                     <a href="javascript:;" className="lineBtn brdrRadius4 font-weight700 purpleText">
                                                         No Phone Number
@@ -1590,11 +1590,11 @@ const PropertyDetailPage = ({ post }) => {
 
                                 {/* About  */}
                                 <div className="SectionBlock responsive15">
-                                    <h3 className="font-weight700 colorBlue fontSize18">About {propdata.property_title} {propdata.property_type == 'general' ? ' - Affordable Apartments for Low Income Residents' : null}</h3>
+                                    <h3 className="font-weight700 colorBlue fontSize18">About {propdata.property_title} {propdata.property_type === 'general' ? ' - Affordable Apartments for Low Income Residents' : null}</h3>
                                     <div className="truncate">
                                         <p>
                                             {
-                                                propdata.description == '' || propdata.description == null ?
+                                                propdata.description === '' || propdata.description === null ?
 
                                                     propdetails.min_bed && propdetails.max_bed ?
 
@@ -1666,17 +1666,17 @@ const PropertyDetailPage = ({ post }) => {
 
                                 <div className="brdrLine"></div>
 
-                                {propdata.property_type == 'general' ?
+                                {propdata.property_type === 'general' ?
                                     (
 
-                                        propfloor == null || propfloor.length == 0 ?
+                                        propfloor === null || propfloor.length === 0 ?
                                             null :
                                             <FloorPlanForGeneral propfloor={propfloor} toggleModalAvailability={toggleModalAvailability} titletext={`Floorplans for ${propdata.property_title}, ${capitalise(propdata.property_city)}, ${propdata.property_state}`} />
                                     )
                                     :
 
 
-                                    (propfloor == null || propfloor.length == 0 ?
+                                    (propfloor === null || propfloor.length === 0 ?
                                         null :
                                         <>
                                             <div className="SectionBlock responsive15">
@@ -1767,7 +1767,7 @@ const PropertyDetailPage = ({ post }) => {
 
 
                                 {
-                                    // (propfloor == null || propfloor.length == 0 ?
+                                    // (propfloor === null || propfloor.length === 0 ?
                                     //     null :
                                     //     <>
                                     //         <div className="SectionBlock responsive15">
@@ -2181,11 +2181,11 @@ const PropertyDetailPage = ({ post }) => {
                                 <div className="brdrLine"></div>
 
                                 {
-                                    propamenities == [] || (propamenities.unit_amenities == 0 && propamenities.property_amenities == 0) ?
+                                    propamenities === [] || (propamenities.unit_amenities === 0 && propamenities.property_amenities === 0) ?
                                         null :
                                         <>
                                             {
-                                                propdata.property_type == 'general' ?
+                                                propdata.property_type === 'general' ?
                                                     null :
                                                     <><Amenities propamenities={propamenities} />
                                                         <div className="brdrLine"></div></>
@@ -2196,7 +2196,7 @@ const PropertyDetailPage = ({ post }) => {
                                 }
 
                                 {
-                                    proputility == null || proputility.length == 0 ?
+                                    proputility === null || proputility.length === 0 ?
 
                                         null :
                                         <>
@@ -2214,10 +2214,10 @@ const PropertyDetailPage = ({ post }) => {
 
 
                                                                         {
-                                                                            proputility[0].electric == '' && proputility[0].water == ''
-                                                                                && proputility[0].sewer == '' && proputility[0].hot_water == ''
-                                                                                && proputility[0].cooling == '' && proputility[0].cooking == ''
-                                                                                && proputility[0].heat == '' ?
+                                                                            proputility[0].electric === '' && proputility[0].water === ''
+                                                                                && proputility[0].sewer === '' && proputility[0].hot_water === ''
+                                                                                && proputility[0].cooling === '' && proputility[0].cooking === ''
+                                                                                && proputility[0].heat === '' ?
                                                                                 <li className="d-flex align-items-center">
                                                                                     <p className="mb-0">N/A</p>
                                                                                 </li>
@@ -2225,7 +2225,7 @@ const PropertyDetailPage = ({ post }) => {
                                                                                 <>
                                                                                     {
                                                                                         proputility.length !== 0 ?
-                                                                                            (proputility[0].electric == 'tenant' ?
+                                                                                            (proputility[0].electric === 'tenant' ?
                                                                                                 <li className="d-flex align-items-center">
                                                                                                     <span className="brdrRadius4">
                                                                                                         <img src={require('../../assets/img/tenant1.png').default} />
@@ -2240,7 +2240,7 @@ const PropertyDetailPage = ({ post }) => {
                                                                                     {
                                                                                         proputility.length !== 0 ?
                                                                                             (
-                                                                                                proputility[0].water == 'tenant' ?
+                                                                                                proputility[0].water === 'tenant' ?
                                                                                                     <li className="d-flex align-items-center">
                                                                                                         <span className="brdrRadius4">
                                                                                                             <img src={require('../../assets/img/manager1.png').default} />
@@ -2253,7 +2253,7 @@ const PropertyDetailPage = ({ post }) => {
                                                                                     {
                                                                                         proputility.length !== 0 ?
                                                                                             (
-                                                                                                proputility[0].sewer == 'tenant' ?
+                                                                                                proputility[0].sewer === 'tenant' ?
                                                                                                     <li className="d-flex align-items-center">
                                                                                                         <span className="brdrRadius4">
                                                                                                             <img src={require('../../assets/img/tenant2.png').default} />
@@ -2266,7 +2266,7 @@ const PropertyDetailPage = ({ post }) => {
                                                                                     {
                                                                                         proputility.length !== 0 ?
                                                                                             (
-                                                                                                proputility[0].hot_water == 'tenant' ?
+                                                                                                proputility[0].hot_water === 'tenant' ?
                                                                                                     <li className="d-flex align-items-center">
                                                                                                         <span className="brdrRadius4">
                                                                                                             <img src={require('../../assets/img/manager2.png').default} />
@@ -2278,7 +2278,7 @@ const PropertyDetailPage = ({ post }) => {
 
                                                                                     {proputility.length !== 0 ?
                                                                                         (
-                                                                                            proputility[0].cooling == 'tenant' ?
+                                                                                            proputility[0].cooling === 'tenant' ?
                                                                                                 <li className="d-flex align-items-center">
                                                                                                     <span className="brdrRadius4">
                                                                                                         <img src={require('../../assets/img/tenant3.png').default} />
@@ -2290,7 +2290,7 @@ const PropertyDetailPage = ({ post }) => {
                                                                                     {
                                                                                         proputility.length !== 0 ?
                                                                                             (
-                                                                                                proputility[0].cooking == 'tenant' ?
+                                                                                                proputility[0].cooking === 'tenant' ?
                                                                                                     <li className="d-flex align-items-center">
                                                                                                         <span className="brdrRadius4">
                                                                                                             <img src={require('../../assets/img/tenant4.png').default} />
@@ -2301,7 +2301,7 @@ const PropertyDetailPage = ({ post }) => {
                                                                                     {
                                                                                         proputility.length !== 0 ?
                                                                                             (
-                                                                                                proputility[0].heat == 'tenant' ?
+                                                                                                proputility[0].heat === 'tenant' ?
                                                                                                     <li className="d-flex align-items-center">
                                                                                                         <span className="brdrRadius4">
                                                                                                             <img src={require('../../assets/img/tenant5.png').default} />
@@ -2321,10 +2321,10 @@ const PropertyDetailPage = ({ post }) => {
                                                                     <ul className="noMarginPad listStyleNone detailListing">
 
                                                                         {
-                                                                            proputility[0].electric == '' && proputility[0].water == ''
-                                                                                && proputility[0].sewer == '' && proputility[0].hot_water == ''
-                                                                                && proputility[0].cooling == '' && proputility[0].cooking == ''
-                                                                                && proputility[0].heat == '' ?
+                                                                            proputility[0].electric === '' && proputility[0].water === ''
+                                                                                && proputility[0].sewer === '' && proputility[0].hot_water === ''
+                                                                                && proputility[0].cooling === '' && proputility[0].cooking === ''
+                                                                                && proputility[0].heat === '' ?
                                                                                 <li className="d-flex align-items-center">
                                                                                     <p className="mb-0">N/A</p>
                                                                                 </li>
@@ -2337,7 +2337,7 @@ const PropertyDetailPage = ({ post }) => {
 
 
                                                                                             (
-                                                                                                proputility[0].electric == 'manager' ?
+                                                                                                proputility[0].electric === 'manager' ?
                                                                                                     <li className="d-flex align-items-center">
                                                                                                         <span className="brdrRadius4">
                                                                                                             <img src={require('../../assets/img/tenant1.png').default} />
@@ -2351,7 +2351,7 @@ const PropertyDetailPage = ({ post }) => {
 
 
                                                                                         (
-                                                                                            proputility[0].water == 'manager' ?
+                                                                                            proputility[0].water === 'manager' ?
                                                                                                 <li className="d-flex align-items-center">
                                                                                                     <span className="brdrRadius4">
                                                                                                         <img src={require('../../assets/img/manager1.png').default} />
@@ -2365,7 +2365,7 @@ const PropertyDetailPage = ({ post }) => {
 
 
                                                                                         (
-                                                                                            proputility[0].sewer == 'manager' ?
+                                                                                            proputility[0].sewer === 'manager' ?
                                                                                                 <li className="d-flex align-items-center">
                                                                                                     <span className="brdrRadius4">
                                                                                                         <img src={require('../../assets/img/tenant2.png').default} />
@@ -2379,7 +2379,7 @@ const PropertyDetailPage = ({ post }) => {
 
 
                                                                                         (
-                                                                                            proputility[0].hot_water == 'manager' ?
+                                                                                            proputility[0].hot_water === 'manager' ?
                                                                                                 <li className="d-flex align-items-center">
                                                                                                     <span className="brdrRadius4">
                                                                                                         <img src={require('../../assets/img/manager2.png').default} />
@@ -2394,7 +2394,7 @@ const PropertyDetailPage = ({ post }) => {
 
 
                                                                                             (
-                                                                                                proputility[0].cooling == 'manager' ?
+                                                                                                proputility[0].cooling === 'manager' ?
                                                                                                     <li className="d-flex align-items-center">
                                                                                                         <span className="brdrRadius4">
                                                                                                             <img src={require('../../assets/img/tenant3.png').default} />
@@ -2407,7 +2407,7 @@ const PropertyDetailPage = ({ post }) => {
 
 
                                                                                         (
-                                                                                            proputility[0].cooking == 'manager' ?
+                                                                                            proputility[0].cooking === 'manager' ?
                                                                                                 <li className="d-flex align-items-center">
                                                                                                     <span className="brdrRadius4">
                                                                                                         <img src={require('../../assets/img/tenant4.png').default} />
@@ -2418,7 +2418,7 @@ const PropertyDetailPage = ({ post }) => {
                                                                                     {
                                                                                         proputility.length !== 0 ?
                                                                                             (
-                                                                                                proputility[0].heat == 'manager' ?
+                                                                                                proputility[0].heat === 'manager' ?
                                                                                                     <li className="d-flex align-items-center">
                                                                                                         <span className="brdrRadius4">
                                                                                                             <img src={require('../../assets/img/tenant5.png').default} />
@@ -2441,7 +2441,7 @@ const PropertyDetailPage = ({ post }) => {
                                 }
 
                                 {
-                                    propdata.property_type == 'general' ?
+                                    propdata.property_type === 'general' ?
                                         null
                                         :
 
@@ -2453,14 +2453,14 @@ const PropertyDetailPage = ({ post }) => {
                                                         <p className="d-flex align-items-center font-weight500 colorBlue">Monday<span
                                                             className="ml-auto font-weight400 secondaryColor">
                                                             {
-                                                                propdetails.lease_office_time_open_monday == 0 && propdetails.lease_office_time_close_monday == 0 ?
+                                                                propdetails.lease_office_time_open_monday === 0 && propdetails.lease_office_time_close_monday === 0 ?
                                                                     'Closed' :
-                                                                    propdetails.lease_office_time_open_monday == 'Call' ?
+                                                                    propdetails.lease_office_time_open_monday === 'Call' ?
                                                                         <>
                                                                             <img src={require('../../assets/img/call.svg').default} />Call {propdata.phone}
                                                                         </>
                                                                         :
-                                                                        propdetails.lease_office_time_open_monday == 'By Appt' ? 'by Appointment' :
+                                                                        propdetails.lease_office_time_open_monday === 'By Appt' ? 'by Appointment' :
                                                                             `${propdetails.lease_office_time_open_monday.charAt(0) === '0' ? propdetails.lease_office_time_open_monday.substring(1) : propdetails.lease_office_time_open_monday}-${propdetails.lease_office_time_close_monday.charAt(0) === '0' ? propdetails.lease_office_time_close_monday.substring(1) : propdetails.lease_office_time_close_monday}`
 
                                                             }
@@ -2470,12 +2470,12 @@ const PropertyDetailPage = ({ post }) => {
                                                     <li>
                                                         <p className="d-flex align-items-center font-weight500 colorBlue">Tuesday<span
                                                             className="ml-auto font-weight400 secondaryColor">
-                                                            {propdetails.lease_office_time_open_tuesday == 0 && propdetails.lease_office_time_close_tuesday == 0 ?
+                                                            {propdetails.lease_office_time_open_tuesday === 0 && propdetails.lease_office_time_close_tuesday === 0 ?
                                                                 'Closed' :
-                                                                propdetails.lease_office_time_open_tuesday == 'Call' ? <>
+                                                                propdetails.lease_office_time_open_tuesday === 'Call' ? <>
                                                                     <img src={require('../../assets/img/call.svg').default} />Call {propdata.phone}
                                                                 </> :
-                                                                    propdetails.lease_office_time_open_tuesday == 'By Appt' ? 'by Appointment' :
+                                                                    propdetails.lease_office_time_open_tuesday === 'By Appt' ? 'by Appointment' :
                                                                         `${propdetails.lease_office_time_open_tuesday.charAt(0) === '0' ? propdetails.lease_office_time_open_tuesday.substring(1) : propdetails.lease_office_time_open_tuesday}-${propdetails.lease_office_time_close_tuesday.charAt(0) === '0' ? propdetails.lease_office_time_close_tuesday.substring(1) : propdetails.lease_office_time_close_tuesday}`
                                                             }
                                                             {/* {propdetails.lease_office_time_open_tuesday} - {propdetails.lease_office_time_close_tuesday} */}
@@ -2484,12 +2484,12 @@ const PropertyDetailPage = ({ post }) => {
                                                     <li>
                                                         <p className="d-flex align-items-center font-weight500 colorBlue">Wednesday<span
                                                             className="ml-auto font-weight400 secondaryColor">
-                                                            {propdetails.lease_office_time_open_wednesday == 0 && propdetails.lease_office_time_close_wednesday == 0 ?
+                                                            {propdetails.lease_office_time_open_wednesday === 0 && propdetails.lease_office_time_close_wednesday === 0 ?
                                                                 'Closed' :
-                                                                propdetails.lease_office_time_open_wednesday == 'Call' ? <>
+                                                                propdetails.lease_office_time_open_wednesday === 'Call' ? <>
                                                                     <img src={require('../../assets/img/call.svg').default} />Call {propdata.phone}
                                                                 </> :
-                                                                    propdetails.lease_office_time_open_wednesday == 'By Appt' ? 'by Appointment' :
+                                                                    propdetails.lease_office_time_open_wednesday === 'By Appt' ? 'by Appointment' :
                                                                         `${propdetails.lease_office_time_open_wednesday.charAt(0) === '0' ? propdetails.lease_office_time_open_wednesday.substring(1) : propdetails.lease_office_time_open_wednesday}-${propdetails.lease_office_time_close_wednesday.charAt(0) === '0' ? propdetails.lease_office_time_close_wednesday.substring(1) : propdetails.lease_office_time_close_wednesday}`
                                                             }
                                                             {/* {propdetails.lease_office_time_open_wednesday} - {propdetails.lease_office_time_close_wednesday} */}
@@ -2498,14 +2498,14 @@ const PropertyDetailPage = ({ post }) => {
                                                     <li>
                                                         <p className="d-flex align-items-center font-weight500 colorBlue">Thursday<span
                                                             className="ml-auto font-weight400 secondaryColor">
-                                                            {propdetails.lease_office_time_open_thursday == 0 && propdetails.lease_office_time_close_thursday == 0 ?
+                                                            {propdetails.lease_office_time_open_thursday === 0 && propdetails.lease_office_time_close_thursday === 0 ?
                                                                 'Closed' :
-                                                                propdetails.lease_office_time_open_thursday == 'Call' ?
+                                                                propdetails.lease_office_time_open_thursday === 'Call' ?
                                                                     <>
                                                                         <img src={require('../../assets/img/call.svg').default} />Call {propdata.phone}
                                                                     </>
                                                                     :
-                                                                    propdetails.lease_office_time_open_thursday == 'By Appt' ? 'by Appointment' :
+                                                                    propdetails.lease_office_time_open_thursday === 'By Appt' ? 'by Appointment' :
                                                                         `${propdetails.lease_office_time_open_thursday.charAt(0) === '0' ? propdetails.lease_office_time_open_thursday.substring(1) : propdetails.lease_office_time_open_thursday}-${propdetails.lease_office_time_close_thursday.charAt(0) === '0' ? propdetails.lease_office_time_close_thursday.substring(1) : propdetails.lease_office_time_close_thursday}`
                                                             }
                                                             {/* {propdetails.lease_office_time_open_thursday} - {propdetails.lease_office_time_close_thursday} */}
@@ -2514,14 +2514,14 @@ const PropertyDetailPage = ({ post }) => {
                                                     <li>
                                                         <p className="d-flex align-items-center font-weight500 colorBlue">Friday<span
                                                             className="ml-auto font-weight400 secondaryColor">
-                                                            {propdetails.lease_office_time_open_friday == 0 && propdetails.lease_office_time_close_friday == 0 ?
+                                                            {propdetails.lease_office_time_open_friday === 0 && propdetails.lease_office_time_close_friday === 0 ?
                                                                 'Closed' :
-                                                                propdetails.lease_office_time_open_friday == 'Call' ?
+                                                                propdetails.lease_office_time_open_friday === 'Call' ?
                                                                     <>
                                                                         <img src={require('../../assets/img/call.svg').default} />Call {propdata.phone}
                                                                     </>
                                                                     :
-                                                                    propdetails.lease_office_time_open_friday == 'By Appt' ? 'by Appointment' :
+                                                                    propdetails.lease_office_time_open_friday === 'By Appt' ? 'by Appointment' :
                                                                         `${propdetails.lease_office_time_open_friday.charAt(0) === '0' ? propdetails.lease_office_time_open_friday.substring(1) : propdetails.lease_office_time_open_friday}-${propdetails.lease_office_time_close_friday.charAt(0) === '0' ? propdetails.lease_office_time_close_friday.substring(1) : propdetails.lease_office_time_close_friday}`
                                                             }
                                                             {/* {propdetails.lease_office_time_open_friday} - {propdetails.lease_office_time_close_friday} */}
@@ -2531,14 +2531,14 @@ const PropertyDetailPage = ({ post }) => {
                                                     <li>
                                                         <p className="d-flex align-items-center font-weight500 colorBlue">Saturday<span
                                                             className="ml-auto font-weight400 secondaryColor">
-                                                            {propdetails.lease_office_time_open_sturday == 0 && propdetails.lease_office_time_close_sturday == 0 ?
+                                                            {propdetails.lease_office_time_open_sturday === 0 && propdetails.lease_office_time_close_sturday === 0 ?
                                                                 'Closed' :
-                                                                propdetails.lease_office_time_open_sturday == 'Call' ?
+                                                                propdetails.lease_office_time_open_sturday === 'Call' ?
                                                                     <>
                                                                         <img src={require('../../assets/img/call.svg').default} />Call {propdata.phone}
                                                                     </>
                                                                     :
-                                                                    propdetails.lease_office_time_open_sturday == 'By Appt' ? 'by Appointment' :
+                                                                    propdetails.lease_office_time_open_sturday === 'By Appt' ? 'by Appointment' :
                                                                         `${propdetails.lease_office_time_open_sturday.charAt(0) === '0' ? propdetails.lease_office_time_open_sturday.substring(1) : propdetails.lease_office_time_open_sturday}-${propdetails.lease_office_time_close_sturday.charAt(0) === '0' ? propdetails.lease_office_time_close_sturday.substring(1) : propdetails.lease_office_time_close_sturday}`
                                                             }
                                                             {/* {propdetails.lease_office_time_open_sturday} - {propdetails.lease_office_time_close_sturday} */}
@@ -2550,14 +2550,14 @@ const PropertyDetailPage = ({ post }) => {
                                         </li> */}
                                                     <li>
                                                         <p className="d-flex align-items-center font-weight500 colorBlue">Sunday<span className="ml-auto font-weight400 secondaryColor">
-                                                            {propdetails.lease_office_time_open_sunday == 0 && propdetails.lease_office_time_close_sunday == 0 ?
+                                                            {propdetails.lease_office_time_open_sunday === 0 && propdetails.lease_office_time_close_sunday === 0 ?
                                                                 'Closed' :
-                                                                propdetails.lease_office_time_open_sunday == 'Call' ?
+                                                                propdetails.lease_office_time_open_sunday === 'Call' ?
                                                                     <>
                                                                         <img src={require('../../assets/img/call.svg').default} />Call {propdata.phone}
                                                                     </>
                                                                     :
-                                                                    propdetails.lease_office_time_open_sunday == 'By Appt' ? 'by Appointment' :
+                                                                    propdetails.lease_office_time_open_sunday === 'By Appt' ? 'by Appointment' :
                                                                         `${propdetails.lease_office_time_open_sunday.charAt(0) === '0' ? propdetails.lease_office_time_open_sunday.substring(1) : propdetails.lease_office_time_open_sunday}-${propdetails.lease_office_time_close_sunday.charAt(0) === '0' ? propdetails.lease_office_time_close_sunday.substring(1) : propdetails.lease_office_time_close_sunday}`
                                                             }
                                                             {/* {propdetails.lease_office_time_open_sunday} - {propdetails.lease_office_time_close_sunday} */}
@@ -2576,7 +2576,7 @@ const PropertyDetailPage = ({ post }) => {
 
                                 {/* Lease Terms seatiocn  */}
                                 {
-                                    propdata.property_type == 'general' ?
+                                    propdata.property_type === 'general' ?
                                         null
                                         :
 
@@ -2599,11 +2599,11 @@ const PropertyDetailPage = ({ post }) => {
                                             //     {propdetails.lease_length}
                                             // </p> */}
                                                         {
-                                                            propdetails.subsidized == 'Yes' || propdetails.section8 == 'Yes' || propdetails.handicap == 'Yes' ?
+                                                            propdetails.subsidized === 'Yes' || propdetails.section8 === 'Yes' || propdetails.handicap === 'Yes' ?
                                                                 <>
                                                                     <ul className="noMarginPad listStyleNone floatLeftList clearfix">
 
-                                                                        {propdetails.subsidized == 'Yes' || propdetails.section8 == 'Yes' ?
+                                                                        {propdetails.subsidized === 'Yes' || propdetails.section8 === 'Yes' ?
                                                                             <li>
                                                                                 <img src={require('../../assets/img/lease1.svg').default} />
                                                                             </li>
@@ -2611,7 +2611,7 @@ const PropertyDetailPage = ({ post }) => {
                                                                             null
                                                                         }
                                                                         {
-                                                                            propdetails.handicap == 'Yes' ?
+                                                                            propdetails.handicap === 'Yes' ?
                                                                                 <li>
                                                                                     <img src={require('../../assets/img/lease2.svg').default} />
                                                                                 </li>
@@ -2650,16 +2650,16 @@ const PropertyDetailPage = ({ post }) => {
                                                     <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 
                                                         {
-                                                            (propdetails.pet_allowed == 'Yes' || propdetails.pet_allowed == 'Contact') && propdetails.other_term !== '' ?
+                                                            (propdetails.pet_allowed === 'Yes' || propdetails.pet_allowed === 'Contact') && propdetails.other_term !== '' ?
                                                                 <h3 className="font-weight700 colorBlue">
                                                                     Pet Policy</h3>
                                                                 :
-                                                                (propdetails.subsidized == 'Yes' || propdetails.section8 == 'Yes' || propdetails.handicap == 'Yes' ?
+                                                                (propdetails.subsidized === 'Yes' || propdetails.section8 === 'Yes' || propdetails.handicap === 'Yes' ?
 
                                                                     <>
 
                                                                         {
-                                                                            (propdetails.pet_allowed == 'Yes' || propdetails.pet_allowed == 'Contact')
+                                                                            (propdetails.pet_allowed === 'Yes' || propdetails.pet_allowed === 'Contact')
                                                                                 && propdetails.other_term !== '' ?
                                                                                 <h3 className="font-weight700 colorBlue">
                                                                                     Other Terms</h3>
@@ -2673,7 +2673,7 @@ const PropertyDetailPage = ({ post }) => {
                                                         }
 
                                                         {
-                                                            (propdetails.pet_allowed == 'Yes' || propdetails.pet_allowed == 'Contact')
+                                                            (propdetails.pet_allowed === 'Yes' || propdetails.pet_allowed === 'Contact')
                                                                 && propdetails.other_term !== '' ?
                                                                 <p className="colorBlue fontSize14 mb-0">
                                                                     {propdetails.other_term}
@@ -2702,7 +2702,7 @@ const PropertyDetailPage = ({ post }) => {
 
 
                                 {
-                                    proprent == null || proprent.length == 0 ?
+                                    proprent === null || proprent.length === 0 ?
                                         null :
                                         <div className="fairmarketRent">
                                             <div className="fairMarketTitle d-flex align-items-center">
@@ -2858,10 +2858,10 @@ const PropertyDetailPage = ({ post }) => {
                                     </div>
                                 </div> */}
                                 {
-                                    propdata.property_type == 'general' ?
+                                    propdata.property_type === 'general' ?
                                         <>
                                             {
-                                                prophousingAuthority == undefined || prophousingAuthority == [] || prophousingAuthority == null ?
+                                                prophousingAuthority === undefined || prophousingAuthority === [] || prophousingAuthority === null ?
                                                     null
                                                     :
                                                     <>
@@ -2897,7 +2897,7 @@ const PropertyDetailPage = ({ post }) => {
 
                                                 {
                                                     propwalkscore !== [] || propwalkscore !== null || propwalkscore !== '' || propwalkscore !== undefined ?
-                                                        propwalkscore.status == 1 ?
+                                                        propwalkscore.status === 1 ?
                                                             <>
                                                                 <CircularBar propwalkscore={propwalkscore.walkscore} />
                                                                 <div className="media-body">
@@ -2977,7 +2977,7 @@ const PropertyDetailPage = ({ post }) => {
                                             <div className="media d-flex align-items-center ">
                                                 {
                                                     propwalkscore !== [] || propwalkscore !== null || propwalkscore !== '' || propwalkscore !== undefined ?
-                                                        propwalkscore.transit_score == 'N/A' ?
+                                                        propwalkscore.transit_score === 'N/A' ?
 
                                                             <CircularBar propwalkscore={'N/A'} />
                                                             :
@@ -3006,7 +3006,7 @@ const PropertyDetailPage = ({ post }) => {
                                 <div className="brdrLine"></div>
 
                                 {
-                                    propdetails.seniorprop == 'Yes' ?
+                                    propdetails.seniorprop === 'Yes' ?
 
                                         null
                                         :
@@ -3204,7 +3204,7 @@ const PropertyDetailPage = ({ post }) => {
                                         <h2 className="colorBlue font-weight700 mb-0">Check Availability
 
                                             {
-                                                propdata.property_type == 'general' ?
+                                                propdata.property_type === 'general' ?
                                                     ` in ${propdata.property_title} ${capitalise(propdata.property_city)}, ${propdata.property_state}`
                                                     :
                                                     null
@@ -3213,7 +3213,7 @@ const PropertyDetailPage = ({ post }) => {
                                         <div className="ml-auto">
 
                                             {
-                                                propdata.phone == '' || propdata.phone == null ?
+                                                propdata.phone === '' || propdata.phone === null ?
                                                     null
                                                     :
                                                     <p className="purpleText font-weight700 fontSize18 mb-0 d-flex align-items-center">
@@ -3239,7 +3239,7 @@ const PropertyDetailPage = ({ post }) => {
                                     <div className="d-flex align-items-center">
 
                                         {
-                                            propdata.property_type == 'general' ?
+                                            propdata.property_type === 'general' ?
                                                 <div className="dealTag font-weight700 brdrRadius4 d-flex align-items-center">
                                                     Affordable Housing
                                                 </div>
@@ -3260,7 +3260,7 @@ const PropertyDetailPage = ({ post }) => {
 
 
                                         {
-                                            propdata.property_type == 'general' ?
+                                            propdata.property_type === 'general' ?
                                                 <div className="ml-auto">
                                                     <h2 className="mb-0 font-weight700">
                                                         CALL
@@ -3268,7 +3268,7 @@ const PropertyDetailPage = ({ post }) => {
                                                 </div>
                                                 :
                                                 (
-                                                    (thirdval !== '' && thirdval !== 'MOVE-IN SPECIALS') || (thirdval == 'MOVE-IN SPECIALS') ?
+                                                    (thirdval !== '' && thirdval !== 'MOVE-IN SPECIALS') || (thirdval === 'MOVE-IN SPECIALS') ?
 
                                                         <div className="ml-auto">
                                                             <h2 className="mb-0 font-weight700">
@@ -3288,13 +3288,13 @@ const PropertyDetailPage = ({ post }) => {
 
 
                                     {
-                                        propdata.property_type == 'general' ?
+                                        propdata.property_type === 'general' ?
                                             <ul className="noMarginPad listStyleNone floatLeftList clearfix detailList">
                                                 <li className="secondaryColor">
                                                     <span className="colorBlue">
                                                         {beddesc}
                                                         {
-                                                            bathinfogeneral == null || bathinfogeneral == '' || bathinfogeneral == undefined ?
+                                                            bathinfogeneral === null || bathinfogeneral === '' || bathinfogeneral === undefined ?
                                                                 null :
 
                                                                 bathinfogeneral
@@ -3333,7 +3333,7 @@ const PropertyDetailPage = ({ post }) => {
                                             <div className="d-flex align-items-center">
                                                 <h2 className="colorBlue font-weight700 fontSize18">Check Availability
                                                     {
-                                                        propdata.property_type == 'general' ?
+                                                        propdata.property_type === 'general' ?
                                                             ` for ${propdata.property_title} ${capitalise(propdata.property_city)}, ${propdata.property_state}`
                                                             :
                                                             null
@@ -3343,7 +3343,7 @@ const PropertyDetailPage = ({ post }) => {
                                             <div className="ml-auto">
 
                                                 {
-                                                    propdata.phone == '' || propdata.phone == null ?
+                                                    propdata.phone === '' || propdata.phone === null ?
                                                         null
 
                                                         :
@@ -3362,11 +3362,11 @@ const PropertyDetailPage = ({ post }) => {
                                 <IncomeLimitsAccordion propdetails={propdetails} specialtitle={specialtitle} subsidized={propdetails.subsidized} />
 
                                 {
-                                    propdata.property_type == 'general' ? null :
+                                    propdata.property_type === 'general' ? null :
                                         <ManagementCompanyAccordion propmancom={propmancom} />
                                 }
                                 {
-                                    propdata.property_type == 'general' ?
+                                    propdata.property_type === 'general' ?
                                         <AffordableHousingAccordian propmancom={propaffordable} />
                                         :
                                         null
@@ -3383,7 +3383,7 @@ const PropertyDetailPage = ({ post }) => {
                                     <div className="row marginTop">
                                         <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 pl-0 pr-0">
                                             <PropertiesNearby propertynearby={nearbypropdata} titletext={
-                                                propdata.property_type == 'general' ?
+                                                propdata.property_type === 'general' ?
                                                     `Affordable Properties Nearby ${capitalise(propdata.property_city)}, ${propdata.property_state}` : `Affordable Properties Nearby`} />
                                         </div>
                                     </div>
@@ -3453,9 +3453,9 @@ const PropertyDetailPage = ({ post }) => {
                         <div className="checkAvailability newBoxBottom">
                             {/* <div className="d-flex align-items-center">
 
-                                {post.details == null ||
-                                    post.details == "" ? null : post.details.subsidized == "Yes" &&
-                                        post.details.section8 == "Yes" ?
+                                {post.details === null ||
+                                    post.details === "" ? null : post.details.subsidized === "Yes" &&
+                                        post.details.section8 === "Yes" ?
 
                                     <>
 
@@ -3465,7 +3465,7 @@ const PropertyDetailPage = ({ post }) => {
                                         <div className="ml-auto">
                                             <h2 className="mb-0 font-weight700" style={{ color: "#1BC47D" }}>
                                                 {
-                                                    propdata.property_type == 'general' ?
+                                                    propdata.property_type === 'general' ?
                                                         'CALL'
                                                         :
                                                         (thirdval !== null || thirdval !== '' ?
@@ -3480,7 +3480,7 @@ const PropertyDetailPage = ({ post }) => {
                                         <div className="ml-auto">
                                             <h2 className="mb-0 font-weight700" style={{ color: "#000" }}>
                                                 {
-                                                    propdata.property_type == 'general' ?
+                                                    propdata.property_type === 'general' ?
                                                         'CALL'
                                                         :
                                                         (thirdval !== null || thirdval !== '' ?
@@ -3546,7 +3546,7 @@ const PropertyDetailPage = ({ post }) => {
                                 }
 
                                 {
-                                    propfloor.length == 0 ?
+                                    propfloor.length === 0 ?
 
                                         <li className="secondaryColor ml-16">
                                             <span className="colorBlue"> N/A</span> Sq.ft
@@ -3554,9 +3554,9 @@ const PropertyDetailPage = ({ post }) => {
 
 
                                         :
-                                        propfloor[0].square_feet_from == propfloor[propfloor.length - 1].square_feet_to ?
+                                        propfloor[0].square_feet_from === propfloor[propfloor.length - 1].square_feet_to ?
                                             <li className="secondaryColor ml-16">
-                                                <span className="colorBlue">  {propfloor[0].square_feet_from == 0 || propfloor[0].square_feet_from == '0' ?
+                                                <span className="colorBlue">  {propfloor[0].square_feet_from === 0 || propfloor[0].square_feet_from === '0' ?
                                                     'N/A' : propfloor[0].square_feet_from}</span> Sq.ft
                                             </li>
 
@@ -3571,7 +3571,7 @@ const PropertyDetailPage = ({ post }) => {
                                 }
 
                                 {
-                                    propdata.property_type == 'general' ?
+                                    propdata.property_type === 'general' ?
 
                                         <li className="secondaryColo ml-auto">
                                             <span className="colorBlue">Affordable Housing</span>
@@ -3591,7 +3591,7 @@ const PropertyDetailPage = ({ post }) => {
                             </ul> */}
                             <div className="d-flex align-items-center responsive15 flex-wrap p-0" style={{ "margin-top": "0px" }}>
 
-                                {propdata.phone == '' || propdata.phone == null ?
+                                {propdata.phone === '' || propdata.phone === null ?
                                     <div className="lineBlueBtn">
                                         <a href="javascript:;" >Call</a>
                                     </div>
@@ -3639,7 +3639,7 @@ const PropertyDetailPage = ({ post }) => {
                                                 className="labelMark">*</span></label>
                                             <input type="text" className="form-control" id=""
                                                 aria-describedby="emailHelp"
-                                                placeholder="First name"
+                                                placeholder="First Name"
                                                 value={formData.name} onChange={(e) => setformData({ ...formData, name: e.target.value })} required />
                                         </div>
                                     </div>
@@ -3658,7 +3658,7 @@ const PropertyDetailPage = ({ post }) => {
                                                 className="labelMark">*</span></label>
                                             <input type="email" className="form-control" id=""
                                                 aria-describedby="emailHelp"
-                                                placeholder="Enter email"
+                                                placeholder="Enter Email"
                                                 value={formData.emailid} onChange={(e) => setformData({ ...formData, emailid: e.target.value })} required />
                                         </div>
                                     </div>
@@ -3668,7 +3668,7 @@ const PropertyDetailPage = ({ post }) => {
                                                 className="labelMark">*</span></label>
                                             <input type="number" className="form-control" id=""
                                                 aria-describedby="emailHelp"
-                                                placeholder="Enter number"
+                                                placeholder="Enter Number"
                                                 value={formData.phone} onChange={(e) => setformData({ ...formData, phone: e.target.value })} required />
                                         </div>
                                     </div>
@@ -3685,7 +3685,7 @@ const PropertyDetailPage = ({ post }) => {
                                             <label for="">City</label>
                                             <input type="text" className="form-control" id=""
                                                 aria-describedby="emailHelp"
-                                                placeholder="Enter city"
+                                                placeholder="Enter City"
                                                 value={formData.city} onChange={(e) => setformData({ ...formData, city: e.target.value })} required />
                                         </div>
                                     </div>
@@ -3696,7 +3696,7 @@ const PropertyDetailPage = ({ post }) => {
                                             <select className="form-control"
                                                 id="exampleFormControlSelect1"
                                                 value={formData.state} onChange={(e) => setformData({ ...formData, state: e.target.value })} required >
-                                                {statelist.length == 0 ?
+                                                {statelist.length === 0 ?
                                                     <option>No states found</option>
                                                     :
                                                     statelist.map((val) => {
@@ -3759,7 +3759,7 @@ const PropertyDetailPage = ({ post }) => {
                                             <label for="">Monthly Income</label>
                                             <input type="number" className="form-control"
                                                 id="" aria-describedby="emailHelp"
-                                                placeholder="Monthly Income"
+                                                placeholder="Income"
                                                 value={formData.monthlyIncome} onChange={(e) => setformData({ ...formData, monthlyIncome: e.target.value })} required />
                                         </div>
                                     </div>
@@ -3919,7 +3919,7 @@ const PropertyDetailPage = ({ post }) => {
                                                             Check Availability</h2>
                                                         <div className="ml-auto">
 
-                                                            {propdata.phone == null || propdata.phone == '' ?
+                                                            {propdata.phone === null || propdata.phone === '' ?
                                                                 null
                                                                 :
                                                                 <p
@@ -3971,7 +3971,7 @@ const PropertyDetailPage = ({ post }) => {
                                 <div className="modalLeft">
                                     <div className="imageSecleftModal posRel">
                                         {
-                                            propimages == [] || propimages == '' || propimages == null || propimages == undefined ?
+                                            propimages === [] || propimages === '' || propimages === null || propimages === undefined ?
                                                 <img className="imgmodal" src={`https://cdn-0.rentalhousingdeals.com/images/l_thumbs/affordable-no-image.jpg`} />
 
                                                 :
@@ -3996,12 +3996,12 @@ const PropertyDetailPage = ({ post }) => {
                                     </div>
                                     <div className="sliderListing">
                                         <ul className="clearfix d-flex align-items-center">
-                                            <li className="fontSize17"><b>{propdetails.min_bed == 0 || propdetails.min_bed == '' ? 'N/A' : propdetails.min_bed}</b>Bd </li>
-                                            <li className="fontSize17"><b>{propdetails.min_bath == 0 || propdetails.min_bath == '' ? 'N/A' : decimalRoundOff(propdetails.min_bath)}</b>Ba </li>
+                                            <li className="fontSize17"><b>{propdetails.min_bed === 0 || propdetails.min_bed === '' ? 'N/A' : propdetails.min_bed}</b>Bd </li>
+                                            <li className="fontSize17"><b>{propdetails.min_bath === 0 || propdetails.min_bath === '' ? 'N/A' : decimalRoundOff(propdetails.min_bath)}</b>Ba </li>
                                             <li className="fontSize17"><b>
 
                                                 {
-                                                    propfloor.length == 0 ? <>N/A</> :
+                                                    propfloor.length === 0 ? <>N/A</> :
 
                                                         propfloor[0].square_feet_from
 
@@ -4025,7 +4025,7 @@ const PropertyDetailPage = ({ post }) => {
                                         </div>
                                         <div className="ml-auto">
                                             {
-                                                propdata.phone == '' || propdata.phone == null ?
+                                                propdata.phone === '' || propdata.phone === null ?
                                                     null
                                                     :
                                                     <p className="purpleText font-weight700 fontSize18"><img

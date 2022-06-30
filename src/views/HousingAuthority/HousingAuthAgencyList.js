@@ -10,13 +10,13 @@ export const HousingAuthAgencyList = ({ data }) => {
     const [time, settime] = useState();
 
     useEffect(() => {
-        if (data == undefined || data == null) {
+        if (data === undefined || data === null) {
 
         } else {
-            if (data.details[0].is_section_8_wating_list == 1) {
+            if (data.details[0].is_section_8_wating_list === 1) {
                 setdate(data.close_date);
                 settime(data.close_time);
-            } else if (data.details[0].is_wating_closed == 0) {
+            } else if (data.details[0].is_wating_closed === 0) {
                 setdate(data.open_date);
                 settime(data.open_time);
             }
@@ -24,13 +24,13 @@ export const HousingAuthAgencyList = ({ data }) => {
     }, [])
 
 
-    // if (data == undefined || data == null) {
+    // if (data === undefined || data === null) {
 
     // } else {
-    //     if (data.details[0].is_section_8_wating_list == 1) {
+    //     if (data.details[0].is_section_8_wating_list === 1) {
     //         setdate(data.close_date);
     //         settime(data.close_time);
-    //     } else if (data.details[0].is_wating_closed == 0) {
+    //     } else if (data.details[0].is_wating_closed === 0) {
     //         setdate(data.open_date);
     //         settime(data.open_time);
     //     }
@@ -41,7 +41,7 @@ export const HousingAuthAgencyList = ({ data }) => {
     var curr_month;
     var curr_year;
     let options = { year: 'numeric', month: 'long', day: 'numeric' };
-    if (date == undefined || date == null) {
+    if (date === undefined || date === null) {
 
     } else {
         date1 = new Date(date);
@@ -59,7 +59,7 @@ export const HousingAuthAgencyList = ({ data }) => {
                     <div className="leftagencyBlock text-center brdrRightNone leftagencyBlock2">
                         <div className="logoBlock2">
                             {
-                                data.HAPhotoDetail == [] || data.HAPhotoDetail == null || data.HAPhotoDetail == '' ?
+                                data.HAPhotoDetail === [] || data.HAPhotoDetail === null || data.HAPhotoDetail === '' ?
                                     <img src={'https://cdn-0.rentalhousingdeals.com/images/l_thumbs/photos-unavailable.jpg'} />
                                     :
                                     <img src={`https://cdn-0.rentalhousingdeals.com/${data.HAPhotoDetail[0].path}/${data.HAPhotoDetail[0].filename}`} />
@@ -74,7 +74,7 @@ export const HousingAuthAgencyList = ({ data }) => {
                         <div className="d-flex align-items-top topStatusBlock w-100">
                             <span className="itemMobile logoImageBox">
                                 {
-                                    data.HAPhotoDetail == [] || data.HAPhotoDetail == null || data.HAPhotoDetail == '' ?
+                                    data.HAPhotoDetail === [] || data.HAPhotoDetail === null || data.HAPhotoDetail === '' ?
                                         <img src={'https://cdn-0.rentalhousingdeals.com/images/l_thumbs/photos-unavailable.jpg'} />
                                         :
                                         <img src={`https://cdn-0.rentalhousingdeals.com/${data.HAPhotoDetail[0].path}/${data.HAPhotoDetail[0].filename}`} />
@@ -91,7 +91,7 @@ export const HousingAuthAgencyList = ({ data }) => {
 
 
                                 {
-                                    data.details[0].is_section_8_wating_list == 0 ?
+                                    data.details[0].is_section_8_wating_list === 0 ?
                                         <span className="statusTag fontSize14 font-weight500 closed mobileaa">
                                             Closed
                                         </span>
@@ -110,7 +110,7 @@ export const HousingAuthAgencyList = ({ data }) => {
                                         <b>
                                             {
                                                 date !== '0000-00-00' && data.open_date !== '' ?
-                                                    (date1 == undefined || date1 == null ? null : `${date1.toLocaleDateString("en-US", options)}`)
+                                                    (date1 === undefined || date1 === null ? null : `${date1.toLocaleDateString("en-US", options)}`)
                                                     :
                                                     'N/A'
                                             }
@@ -144,7 +144,7 @@ export const HousingAuthAgencyList = ({ data }) => {
                                 </span> */}
 
                                 {
-                                    data.details[0].is_section_8_wating_list == 0 ?
+                                    data.details[0].is_section_8_wating_list === 0 ?
                                         <span className="statusTag fontSize14 font-weight500 closed">
                                             Closed
                                         </span>
@@ -163,7 +163,7 @@ export const HousingAuthAgencyList = ({ data }) => {
                                     {/* October 1st 2021 */}
                                     {
                                         date !== '0000-00-00' && data.open_date !== '' ?
-                                            (date1 == undefined || date1 == null ? null : `${date1.toLocaleDateString("en-US", options)}`)
+                                            (date1 === undefined || date1 === null ? null : `${date1.toLocaleDateString("en-US", options)}`)
                                             :
                                             'N/A'
                                     },  {

@@ -15,7 +15,7 @@ const Section8housing = () => {
     { document.title = "Section8Housing - Rental Housing Deals" }
     const [latlngdata, setlatlngdata] = useState();
 
-    let latlngurl = 'http://ip-api.com/json';
+    let latlngurl = 'https://pro.ip-api.com/json?key=JQ2bhI11BHF1bzV';
 
     useEffect(() => {
         const fetchData = async () => {

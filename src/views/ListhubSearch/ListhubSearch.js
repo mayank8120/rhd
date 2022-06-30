@@ -1373,7 +1373,7 @@ const ListhubSearch = () => {
                                                                             <label for="">Full Name</label>
                                                                             <input type="email" className="form-control" id=""
                                                                                 aria-describedby="emailHelp"
-                                                                                placeholder="Enter email" value="Jonath" />
+                                                                                placeholder="Enter Email" value="Jonath" />
                                                                         </div>
                                                                     </div>
                                                                     <div className="col-lg-6 col-md-6 col-sm-6 col-xs-6">

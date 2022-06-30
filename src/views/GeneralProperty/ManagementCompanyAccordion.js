@@ -9,7 +9,7 @@ export const ManagementCompanyAccordion = ({ propmancom }) => {
 
 
             {
-                propmancom == null || propmancom.length == 0 ? null :
+                propmancom === null || propmancom.length === 0 ? null :
 
                     <Accordion defaultActiveKey="0" className="accordionBoxInfo losAngeles managementComp">
                         <Accordion.Item eventKey="0" className="card">
@@ -33,11 +33,11 @@ export const ManagementCompanyAccordion = ({ propmancom }) => {
                                     data-parent="#accordion2">
                                     <div className="card-body p-0">
 
-                                        {propmancom.company == [] || propmancom.company == null || propmancom.company == '' ? null :
+                                        {propmancom.company === [] || propmancom.company === null || propmancom.company === '' ? null :
 
                                             <div className="media d-flex align-items-center">
                                                 {
-                                                    propmancom.company.length !== 0 && propmancom.company[0].logo == null || propmancom.company[0].logo == '' ?
+                                                    propmancom.company.length !== 0 && propmancom.company[0].logo === null || propmancom.company[0].logo === '' ?
                                                         null
                                                         :
                                                         <span className="imageCircle mr-15">

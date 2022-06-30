@@ -44,7 +44,7 @@ const PropertyNearbyItem = ({ data }) => {
 
             <div className="sliderItem brdr-4px">
                 {
-                    data.photo == null || data.photo == '' || data.photo == undefined ?
+                    data.photo === null || data.photo === '' || data.photo === undefined ?
                         <img src={require('../../assets/img/equalhousinglogo.jpg').default} />
                         :
                         <img src={`https://www.rentalhousingdeals.com/${data.photo}`} />
@@ -73,7 +73,7 @@ const PropertyNearbyItem = ({ data }) => {
                     }
                 </span>
                 {
-                    data.prog_type == "affordablehousing" ? <div className="sliderTagName brdrRadius4 colorWhite font-weight700">Affordable Housing</div> : null
+                    data.prog_type === "affordablehousing" ? <div className="sliderTagName brdrRadius4 colorWhite font-weight700">Affordable Housing</div> : null
                 }
                 <div className="sliderTextArea">
                     <div className="d-flex align-items-top">
@@ -88,14 +88,14 @@ const PropertyNearbyItem = ({ data }) => {
                         <ul className="clearfix d-flex align-items-center">
                             <li><b>
                                 {
-                                    data.details == null || data.details == '' || data.details == undefined ?
+                                    data.details === null || data.details === '' || data.details === undefined ?
                                         'N/A'
                                         :
                                         (
-                                            data.details.min_bed == '' || data.details.min_bed == null || data.details.min_bed == 0 ?
+                                            data.details.min_bed === '' || data.details.min_bed === null || data.details.min_bed === 0 ?
 
                                                 (
-                                                    data.details.max_bed == '' || data.details.max_bed == null || data.details.max_bed == 0 ?
+                                                    data.details.max_bed === '' || data.details.max_bed === null || data.details.max_bed === 0 ?
                                                         'N/A'
                                                         :
                                                         data.details.max_bed
@@ -111,14 +111,14 @@ const PropertyNearbyItem = ({ data }) => {
                                 <b>
 
                                     {
-                                        data.details == null || data.details == '' || data.details == undefined ?
+                                        data.details === null || data.details === '' || data.details === undefined ?
                                             'N/A'
                                             :
                                             (
-                                                data.details.min_bath == '' || data.details.min_bath == null || data.details.min_bath == 0 ?
+                                                data.details.min_bath === '' || data.details.min_bath === null || data.details.min_bath === 0 ?
 
                                                     (
-                                                        data.details.max_bath == '' || data.details.max_bath == null || data.details.max_bath == 0 ?
+                                                        data.details.max_bath === '' || data.details.max_bath === null || data.details.max_bath === 0 ?
                                                             'N/A'
                                                             :
                                                             data.details.max_bath
@@ -134,7 +134,7 @@ const PropertyNearbyItem = ({ data }) => {
                                 Ba</li>
                             <li><b>
                                 {
-                                    data.floorPlan == null || data.floorPlan == '' ?
+                                    data.floorPlan === null || data.floorPlan === '' ?
 
                                         'N/A'
                                         :

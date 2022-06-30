@@ -82,7 +82,7 @@ const SearchSection = ({ latlngdata }) => {
 
 
     useEffect(() => {
-        if (latlngdata == undefined || latlngdata == null) {
+        if (latlngdata === undefined || latlngdata === null) {
 
         } else {
             setcityname(latlngdata.city);
@@ -136,7 +136,7 @@ const SearchSection = ({ latlngdata }) => {
                     <ul className="serachDatadrop">
                         {/* {
                                                 JSONDATA.filter((val) => {
-                                                    if (searchterm == "") {
+                                                    if (searchterm === "") {
                                                         return ""
                                                     } else if (val.city_name.toLowerCase().includes(searchterm.toLowerCase())) {
                                                         return val
@@ -156,12 +156,12 @@ const SearchSection = ({ latlngdata }) => {
 
                                             } */}
                         {/* {
-                            searchterm == null || searchterm == undefined || searchterm == '' || dropdowndata === undefined || dropdowndata === null || dropdowndata == '' ? <></>
+                            searchterm === null || searchterm === undefined || searchterm === '' || dropdowndata === undefined || dropdowndata === null || dropdowndata === '' ? <></>
 
                                 :
                                 (
 
-                                    dropdowndata == 'No Record Found' ?
+                                    dropdowndata === 'No Record Found' ?
                                         <p style={!showdropdown ? style1 : style}
                                         >
                                             No Record Found
@@ -186,12 +186,12 @@ const SearchSection = ({ latlngdata }) => {
                         } */}
 
                         {
-                            searchterm == null || searchterm == undefined || searchterm == '' || dropdowndata === undefined || dropdowndata === null || dropdowndata == ''
+                            searchterm === null || searchterm === undefined || searchterm === '' || dropdowndata === undefined || dropdowndata === null || dropdowndata === ''
                                 ?
                                 <></>
                                 :
                                 (
-                                    dropdowndata == 'No Record Found'
+                                    dropdowndata === 'No Record Found'
                                         ?
                                         <>
                                             <p
@@ -255,7 +255,7 @@ const SearchSection = ({ latlngdata }) => {
                                                                             setsearchterm(() => '');
                                                                         }}>
                                                                         {
-                                                                            val.property_state == null || val.property_state == undefined ?
+                                                                            val.property_state === null || val.property_state === undefined ?
                                                                                 `${val.property_city}, ${val.property_state}`
                                                                                 :
                                                                                 <Link className='secondaryColor w-100 d-block' to={`/agencyState?city=${val.property_city}&state=${val.property_state}`}
@@ -281,7 +281,7 @@ const SearchSection = ({ latlngdata }) => {
                                                                                         toggleshow();
                                                                                     }}>
                                                                                     {
-                                                                                        val.property_state == null || val.property_state == undefined ?
+                                                                                        val.property_state === null || val.property_state === undefined ?
                                                                                             `${val.property_city}, ${val.property_state}`
                                                                                             :
                                                                                             `${val.property_city}, ${val.property_state}`

@@ -485,7 +485,7 @@ const PropertiesNearby3 = ({ propertynearby, titletext }) => {
                         <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
 
-                            {propertynearby == null || propertynearby == undefined || propertynearby == [] || propertynearby == '' ?
+                            {propertynearby === null || propertynearby === undefined || propertynearby === [] || propertynearby === '' ?
 
                                 <Carousel
                                     responsive={responsive}
@@ -495,7 +495,7 @@ const PropertiesNearby3 = ({ propertynearby, titletext }) => {
 
                                             <div className="sliderItem">
                                                 {
-                                                    data.photo == null || data.photo == '' || data.photo == undefined ?
+                                                    data.photo === null || data.photo === '' || data.photo === undefined ?
 
                                                         <a href={`/propertyDetail?proid=${data.id_property}`}>
                                                             <img src={require('../../assets/img/equalhousinglogo.jpg').default} />
@@ -509,7 +509,7 @@ const PropertiesNearby3 = ({ propertynearby, titletext }) => {
 
 
                                                 {
-                                                    data.prog_type == "affordablehousing" ? <div className="sliderTagName brdrRadius4 colorWhite font-weight700">Affordable Housing</div> : null
+                                                    data.prog_type === "affordablehousing" ? <div className="sliderTagName brdrRadius4 colorWhite font-weight700">Affordable Housing</div> : null
                                                 }
 
                                                 <div className="sliderTextArea">
@@ -533,20 +533,20 @@ const PropertiesNearby3 = ({ propertynearby, titletext }) => {
                                                     <div className="sliderListing">
                                                         <ul className="clearfix d-flex align-items-center">
                                                             <li><b>
-                                                                {data.beds == 0 || data.beds == '' || data.beds == null ? 'N/A' : data.beds}
+                                                                {data.beds === 0 || data.beds === '' || data.beds === null ? 'N/A' : data.beds}
                                                             </b>Bd</li>
                                                             <li><b>
-                                                                {data.baths == 0 || data.baths == '' || data.baths == null ? 'N/A' : data.baths}
+                                                                {data.baths === 0 || data.baths === '' || data.baths === null ? 'N/A' : data.baths}
                                                             </b>Ba</li>
                                                             <li><b>
                                                                 {/* {data.square_feet_from} */}
                                                                 {
-                                                                    (data.square_feet_from == 0 && data.square_feet_to == 0) || (data.square_feet_from == '' && data.square_feet_to == '') || (data.square_feet_from == null && data.square_feet_to == null)
+                                                                    (data.square_feet_from === 0 && data.square_feet_to === 0) || (data.square_feet_from === '' && data.square_feet_to === '') || (data.square_feet_from === null && data.square_feet_to === null)
                                                                         ?
                                                                         'N/A'
                                                                         :
 
-                                                                        (data.square_feet_from == data.square_feet_to ?
+                                                                        (data.square_feet_from === data.square_feet_to ?
                                                                             `${data.square_feet_from}`
                                                                             :
                                                                             `${data.square_feet_from} - ${data.square_feet_to}`
@@ -557,12 +557,12 @@ const PropertiesNearby3 = ({ propertynearby, titletext }) => {
                                                         </ul>
                                                         <div className="ml-auto boldTag greenText fontSize16">
                                                             {
-                                                                (data.rent_from == 0 && data.rent_to == 0) || (data.rent_from == '' && data.rent_to == '') || (data.rent_from == null && data.rent_to == null)
+                                                                (data.rent_from === 0 && data.rent_to === 0) || (data.rent_from === '' && data.rent_to === '') || (data.rent_from === null && data.rent_to === null)
                                                                     ?
                                                                     '$ N/A'
                                                                     :
 
-                                                                    (data.rent_from == data.rent_to ?
+                                                                    (data.rent_from === data.rent_to ?
                                                                         `$ ${data.rent_from}`
                                                                         :
                                                                         `$ ${data.rent_from} - ${data.rent_to}`
@@ -587,7 +587,7 @@ const PropertiesNearby3 = ({ propertynearby, titletext }) => {
 
                                             <div className="sliderItem">
                                                 {
-                                                    data.photo == null || data.photo == '' || data.photo == undefined ?
+                                                    data.photo === null || data.photo === '' || data.photo === undefined ?
                                                         <img src={require('../../assets/img/equalhousinglogo.jpg').default} />
                                                         // <h1>jelsdkfl</h1>
                                                         :
@@ -598,7 +598,7 @@ const PropertiesNearby3 = ({ propertynearby, titletext }) => {
 
 
                                                 {
-                                                    data.prog_type == "affordablehousing" ? <div className="sliderTagName brdrRadius4 colorWhite font-weight700">Affordable Housing</div> : null
+                                                    data.prog_type === "affordablehousing" ? <div className="sliderTagName brdrRadius4 colorWhite font-weight700">Affordable Housing</div> : null
                                                 }
 
                                                 <div className="sliderTextArea">
@@ -612,20 +612,20 @@ const PropertiesNearby3 = ({ propertynearby, titletext }) => {
                                                     <div className="sliderListing">
                                                         <ul className="clearfix d-flex align-items-center">
                                                             <li><b>
-                                                                {data.beds == 0 || data.beds == '' || data.beds == null ? 'N/A' : data.beds}
+                                                                {data.beds === 0 || data.beds === '' || data.beds === null ? 'N/A' : data.beds}
                                                             </b>Bd</li>
                                                             <li><b>
-                                                                {data.baths == 0 || data.baths == '' || data.baths == null ? 'N/A' : data.baths}
+                                                                {data.baths === 0 || data.baths === '' || data.baths === null ? 'N/A' : data.baths}
                                                             </b>Ba</li>
                                                             <li><b>
                                                                 {/* {data.square_feet_from} */}
                                                                 {
-                                                                    (data.square_feet_from == 0 && data.square_feet_to == 0) || (data.square_feet_from == '' && data.square_feet_to == '') || (data.square_feet_from == null && data.square_feet_to == null)
+                                                                    (data.square_feet_from === 0 && data.square_feet_to === 0) || (data.square_feet_from === '' && data.square_feet_to === '') || (data.square_feet_from === null && data.square_feet_to === null)
                                                                         ?
                                                                         'N/A'
                                                                         :
 
-                                                                        (data.square_feet_from == data.square_feet_to ?
+                                                                        (data.square_feet_from === data.square_feet_to ?
                                                                             `${data.square_feet_from}`
                                                                             :
                                                                             `${data.square_feet_from} - ${data.square_feet_to}`
@@ -634,12 +634,12 @@ const PropertiesNearby3 = ({ propertynearby, titletext }) => {
                                                             </b>Sq.Ft</li>
                                                             <li className="ml-auto boldTag greenText fontSize16">
                                                                 {
-                                                                    (data.rent_from == 0 && data.rent_to == 0) || (data.rent_from == '' && data.rent_to == '') || (data.rent_from == null && data.rent_to == null)
+                                                                    (data.rent_from === 0 && data.rent_to === 0) || (data.rent_from === '' && data.rent_to === '') || (data.rent_from === null && data.rent_to === null)
                                                                         ?
                                                                         '$ N/A'
                                                                         :
 
-                                                                        (data.rent_from == data.rent_to ?
+                                                                        (data.rent_from === data.rent_to ?
                                                                             `$ ${data.rent_from}`
                                                                             :
                                                                             `$ ${data.rent_from} - ${data.rent_to}`
@@ -671,7 +671,7 @@ const PropertiesNearby3 = ({ propertynearby, titletext }) => {
 
 
                                             {
-                                                data.prog_type == "affordablehousing" ? <div className="sliderTagName brdrRadius4 colorWhite font-weight700">Affordable Housing</div> : null
+                                                data.prog_type === "affordablehousing" ? <div className="sliderTagName brdrRadius4 colorWhite font-weight700">Affordable Housing</div> : null
                                             }
 
                                             <div className="sliderTextArea">
@@ -685,19 +685,19 @@ const PropertiesNearby3 = ({ propertynearby, titletext }) => {
                                                 <div className="sliderListing">
                                                     <ul className="clearfix d-flex align-items-center">
                                                         <li><b>
-                                                            {data.beds == 0 || data.beds == '' || data.beds == null ? 'N/A' : data.beds}
+                                                            {data.beds === 0 || data.beds === '' || data.beds === null ? 'N/A' : data.beds}
                                                         </b>Bd</li>
                                                         <li><b>
-                                                            {data.baths == 0 || data.baths == '' || data.baths == null ? 'N/A' : data.baths}
+                                                            {data.baths === 0 || data.baths === '' || data.baths === null ? 'N/A' : data.baths}
                                                         </b>Ba</li>
                                                         <li><b>
                                                             {
-                                                                (data.square_feet_from == 0 && data.square_feet_to == 0) || (data.square_feet_from == '' && data.square_feet_to == '') || (data.square_feet_from == null && data.square_feet_to == null)
+                                                                (data.square_feet_from === 0 && data.square_feet_to === 0) || (data.square_feet_from === '' && data.square_feet_to === '') || (data.square_feet_from === null && data.square_feet_to === null)
                                                                     ?
                                                                     'N/A'
                                                                     :
 
-                                                                    (data.square_feet_from == data.square_feet_to ?
+                                                                    (data.square_feet_from === data.square_feet_to ?
                                                                         `${data.square_feet_from}`
                                                                         :
                                                                         `${data.square_feet_from} - ${data.square_feet_to}`
@@ -706,12 +706,12 @@ const PropertiesNearby3 = ({ propertynearby, titletext }) => {
                                                         </b>Sq.Ft</li>
                                                         <li className="ml-auto boldTag greenText fontSize16">
                                                             {
-                                                                (data.rent_from == 0 && data.rent_to == 0) || (data.rent_from == '' && data.rent_to == '') || (data.rent_from == null && data.rent_to == null)
+                                                                (data.rent_from === 0 && data.rent_to === 0) || (data.rent_from === '' && data.rent_to === '') || (data.rent_from === null && data.rent_to === null)
                                                                     ?
                                                                     '$ N/A'
                                                                     :
 
-                                                                    (data.rent_from == data.rent_to ?
+                                                                    (data.rent_from === data.rent_to ?
                                                                         `$ ${data.rent_from}`
                                                                         :
                                                                         `$ ${data.rent_from} - ${data.rent_to}`
@@ -788,7 +788,7 @@ const PropertiesNearby3 = ({ propertynearby, titletext }) => {
 
 
                                         {
-                                            data.prog_type == "affordablehousing" ? <div className="sliderTagName brdrRadius4 colorWhite font-weight700">Affordable Housing</div> : null
+                                            data.prog_type === "affordablehousing" ? <div className="sliderTagName brdrRadius4 colorWhite font-weight700">Affordable Housing</div> : null
                                         }
 
                                         <div className="sliderTextArea">
