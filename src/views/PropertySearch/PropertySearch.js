@@ -110,7 +110,6 @@ const PropertySearch = () => {
             setareNonQuestionParametersPresent(true);
             // console.log(parameters.cityname, parameters.statename, "TRUE");
         }
-
     }, [parameters]);
 
 
@@ -136,12 +135,6 @@ const PropertySearch = () => {
     const [maxlat, setmaxlat] = useState();
     const [minlng, setminlng] = useState();
     const [maxlng, setmaxlng] = useState();
-
-
-
-
-
-
     let searchParameters = new URLSearchParams(location.search);
 
     const [areQuestionParametersPresent, setareQuestionParametersPresent] = useState(false);

@@ -24,3 +24,14 @@ export const changeMapState = (state = mapInitState, action) => {
             return state;
     }
 }
+
+
+const mapInitZoom = 10;
+export const changeMapZoom = (state = mapInitZoom, action) => {
+    switch (action.type) {
+        case 'MAP_ZOOM':
+            return action.payload;
+        default:
+            return state;
+    }
+}

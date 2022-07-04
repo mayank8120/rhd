@@ -1228,7 +1228,7 @@ const PropertyDetailPage = ({ post }) => {
                                                                                 className="labelMark">*</span></label>
                                                                             <input type="email" className="form-control" id=""
                                                                                 aria-describedby="emailHelp"
-                                                                                placeholder="Enter Email" value="Jonath" />
+                                                                                placeholder="Email Address" value="Jonath" />
                                                                         </div>
                                                                     </div>
                                                                     <div className="col-lg-3 col-md-3 col-sm-12 col-xs-12">
@@ -1244,7 +1244,7 @@ const PropertyDetailPage = ({ post }) => {
                                                                             <label for="">City</label>
                                                                             <input type="email" className="form-control" id=""
                                                                                 aria-describedby="emailHelp"
-                                                                                placeholder="Enter Email" value="Los Angeles" />
+                                                                                placeholder="Email Address" value="Los Angeles" />
                                                                         </div>
                                                                     </div>
                                                                     <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -1268,7 +1268,7 @@ const PropertyDetailPage = ({ post }) => {
                                                                                     <label for="">ZIP</label>
                                                                                     <input type="email" className="form-control"
                                                                                         id="" aria-describedby="emailHelp"
-                                                                                        placeholder="Enter Email" value="90022" />
+                                                                                        placeholder="Email Address" value="90022" />
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -1279,7 +1279,7 @@ const PropertyDetailPage = ({ post }) => {
                                                                                 className="labelMark">*</span></label>
                                                                             <input type="email" className="form-control" id=""
                                                                                 aria-describedby="emailHelp"
-                                                                                placeholder="Enter Email"
+                                                                                placeholder="Email Address"
                                                                                 value="Jonathan@gmail.com" />
                                                                         </div>
                                                                     </div>
@@ -3658,7 +3658,7 @@ const PropertyDetailPage = ({ post }) => {
                                                 className="labelMark">*</span></label>
                                             <input type="email" className="form-control" id=""
                                                 aria-describedby="emailHelp"
-                                                placeholder="Enter Email"
+                                                placeholder="Email Address"
                                                 value={formData.emailid} onChange={(e) => setformData({ ...formData, emailid: e.target.value })} required />
                                         </div>
                                     </div>
@@ -3668,7 +3668,7 @@ const PropertyDetailPage = ({ post }) => {
                                                 className="labelMark">*</span></label>
                                             <input type="number" className="form-control" id=""
                                                 aria-describedby="emailHelp"
-                                                placeholder="Enter Number"
+                                                placeholder="Phone Number"
                                                 value={formData.phone} onChange={(e) => setformData({ ...formData, phone: e.target.value })} required />
                                         </div>
                                     </div>
@@ -3685,7 +3685,7 @@ const PropertyDetailPage = ({ post }) => {
                                             <label for="">City</label>
                                             <input type="text" className="form-control" id=""
                                                 aria-describedby="emailHelp"
-                                                placeholder="Enter City"
+                                                placeholder="City"
                                                 value={formData.city} onChange={(e) => setformData({ ...formData, city: e.target.value })} required />
                                         </div>
                                     </div>
@@ -3714,7 +3714,7 @@ const PropertyDetailPage = ({ post }) => {
                                             <label for="">ZIP</label>
                                             <input type="number" className="form-control"
                                                 id="" aria-describedby="emailHelp"
-                                                placeholder="Enter Zip Code"
+                                                placeholder="ZIP"
                                                 value={formData.zip} onChange={(e) => setformData({ ...formData, zip: e.target.value })} required />
                                         </div>
                                     </div>

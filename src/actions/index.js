@@ -1,4 +1,4 @@
-import { FETCH_PROPS, FIRSTAPI, SECONDAPI, THIRDAPI } from '../constants/constants.js';
+import { FETCH_PROPS, FIRSTAPI, SECONDAPI, THIRDAPI, MAP_ZOOM } from '../constants/constants.js';
 import axios from 'axios';
 
 let cancelTokens;
@@ -81,3 +81,13 @@ export const changeMapStateAction = () => {
         type: 'MAP_STATE'
     }
 }
+
+
+export const changeMapZoomLevel = (numb) => {
+    return {
+        type: MAP_ZOOM,
+        payload: numb
+    }
+}
+
+

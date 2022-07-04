@@ -207,7 +207,7 @@ const GeneralProperty = () => {
                                                                         className="labelMark">*</span></label>
                                                                     <input type="email" className="form-control"
                                                                         id="exampleInputEmail1" aria-describedby="emailHelp"
-                                                                        placeholder="Enter Email" value="Jonath" />
+                                                                        placeholder="Email Address" value="Jonath" />
                                                                 </div>
                                                             </div>
                                                             <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -216,7 +216,7 @@ const GeneralProperty = () => {
                                                                         className="labelMark">*</span></label>
                                                                     <input type="email" className="form-control" id=""
                                                                         aria-describedby="emailHelp"
-                                                                        placeholder="Enter Email"
+                                                                        placeholder="Email Address"
                                                                         value="Jonathan@gmail.com" />
                                                                 </div>
                                                             </div>
@@ -226,7 +226,7 @@ const GeneralProperty = () => {
                                                                         className="labelMark">*</span></label>
                                                                     <input type="email" className="form-control" id=""
                                                                         aria-describedby="emailHelp"
-                                                                        placeholder="Enter Email" value="6261234123" />
+                                                                        placeholder="Email Address" value="6261234123" />
                                                                 </div>
                                                             </div>
                                                             <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -234,7 +234,7 @@ const GeneralProperty = () => {
                                                                     <label for="">Address</label>
                                                                     <input type="email" className="form-control" id=""
                                                                         aria-describedby="emailHelp"
-                                                                        placeholder="Enter Email"
+                                                                        placeholder="Email Address"
                                                                         value="4353  Norman Street" />
                                                                 </div>
                                                             </div>
@@ -243,7 +243,7 @@ const GeneralProperty = () => {
                                                                     <label for="">City</label>
                                                                     <input type="email" className="form-control" id=""
                                                                         aria-describedby="emailHelp"
-                                                                        placeholder="Enter Email" value="Los Angeles" />
+                                                                        placeholder="Email Address" value="Los Angeles" />
                                                                 </div>
                                                             </div>
                                                             <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -267,7 +267,7 @@ const GeneralProperty = () => {
                                                                             <label for="">ZIP</label>
                                                                             <input type="email" className="form-control" id=""
                                                                                 aria-describedby="emailHelp"
-                                                                                placeholder="Enter Email" value="90022" />
+                                                                                placeholder="Email Address" value="90022" />
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1350,7 +1350,7 @@ const GeneralProperty = () => {
                                             <div className="form-group">
                                                 <label for="">Full Name</label>
                                                 <input type="email" className="form-control" id="" aria-describedby="emailHelp"
-                                                    placeholder="Enter Email" value="Jonath" />
+                                                    placeholder="Email Address" value="Jonath" />
                                             </div>
                                         </div>
                                         <div className="col-lg-6 col-md-6 col-sm-6 col-xs-6">
@@ -1457,7 +1457,7 @@ const GeneralProperty = () => {
                                                     <div className="form-group">
                                                         <label for="">Full Name</label>
                                                         <input type="email" className="form-control" id=""
-                                                            aria-describedby="emailHelp" placeholder="Enter Email"
+                                                            aria-describedby="emailHelp" placeholder="Email Address"
                                                             value="Jonath" />
                                                     </div>
                                                 </div>
@@ -2236,7 +2236,7 @@ const GeneralProperty = () => {
                                             className="labelMark">*</span></label>
                                         <input type="email" className="form-control" id=""
                                             aria-describedby="emailHelp"
-                                            placeholder="Enter Email"
+                                            placeholder="Email Address"
                                             value={formData.emailid} onChange={(e) => setformData({ ...formData, emailid: e.target.value })} required />
                                     </div>
                                 </div>
@@ -2246,7 +2246,7 @@ const GeneralProperty = () => {
                                             className="labelMark">*</span></label>
                                         <input type="number" className="form-control" id=""
                                             aria-describedby="emailHelp"
-                                            placeholder="Enter Email"
+                                            placeholder="Email Address"
                                             value={formData.phone} onChange={(e) => setformData({ ...formData, phone: e.target.value })} required />
                                     </div>
                                 </div>
@@ -2264,7 +2264,7 @@ const GeneralProperty = () => {
                                         <label for="">City</label>
                                         <input type="text" className="form-control" id=""
                                             aria-describedby="emailHelp"
-                                            placeholder="Enter City"
+                                            placeholder="City"
                                             value={formData.city} onChange={(e) => setformData({ ...formData, city: e.target.value })} required />
                                     </div>
                                 </div>

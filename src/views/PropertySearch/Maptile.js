@@ -1,15 +1,13 @@
 import React, { useCallback, useEffect, useLayoutEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
-import img from '../../assets/img/marker.png'
 import purplecircle from '../../assets/img/purple_circle.svg'
 import greencircle from '../../assets/img/greencircle.svg'
 import L, { point, setOptions } from 'leaflet'
 import useSupercluster from "use-supercluster";
 import { Link, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getPropListAccordingToMap } from "../../actions";
-import { isItCityVISE } from "../../containers/functions";
 import { FIRSTAPI, SECONDAPI, THIRDAPI } from "../../constants/constants";
+import { changeMapZoomLevel } from "../../actions";
 
 
 const markerIconpremium = new L.Icon(
@@ -69,45 +67,45 @@ const Maptile = () => {
     let amountvalue = (db) => {
         let returnvalue;
 
-        if (db === null || db === undefined || db.length === 0) {
+        if (db == null || db == undefined || db.length == 0) {
         }
         else {
 
             if (db.property.property_type !== 'general') {
                 if (db.property.property_type !== "general" && db.property.property_type !== "classified") {
-                    if (db.property_deals === null) {
+                    if (db.property_deals == null) {
                     } else {
-                        if (db.property_deals.header_description === 1 || db.property_deals.header_description === "1") {
+                        if (db.property_deals.header_description == 1 || db.property_deals.header_description == "1") {
                             // setthirdval("SPECIALS");
                             returnvalue = "SPECIALS";
                             // console.log(1);
                         }
-                        else if (db.property_deals.header_description === 2 || db.property_deals.header_description === "2") {
+                        else if (db.property_deals.header_description == 2 || db.property_deals.header_description == "2") {
                             // setthirdval(`$${db.header_value[0]}`);
                             returnvalue = `$${db.header_value[0].toLocaleString(undefined, { minimumFractionDigits: 0 })}`;
                             // console.log(2);
                         }
-                        else if (db.property_deals.header_description === 3 || db.property_deals.header_description === "3") {
+                        else if (db.property_deals.header_description == 3 || db.property_deals.header_description == "3") {
                             // setthirdval(`$${db.header_value[2]}`);
                             returnvalue = `$${db.header_value[2].toLocaleString(undefined, { minimumFractionDigits: 0 })}`
                             // console.log(3);
                         }
-                        else if (db.property_deals.header_description === 4 || db.property_deals.header_description === "4") {
+                        else if (db.property_deals.header_description == 4 || db.property_deals.header_description == "4") {
                             // setthirdval(`$${db.header_value[2]}`);
                             returnvalue = `$${db.header_value[2].toLocaleString(undefined, { minimumFractionDigits: 0 })}`;
                             // console.log(4);
                         }
-                        else if (db.property_deals.header_description === 5 || db.property_deals.header_description === "5") {
+                        else if (db.property_deals.header_description == 5 || db.property_deals.header_description == "5") {
                             // setthirdval("MOVE-IN SPECIALS");
                             returnvalue = "MOVE-IN SPECIALS";
                             // console.log(5);
                         }
-                        else if (db.property_deals.header_description === 6 || db.property_deals.header_description === "6") {
+                        else if (db.property_deals.header_description == 6 || db.property_deals.header_description == "6") {
                             // setthirdval(`$${db.header_value[0]}`);
                             returnvalue = `$${db.header_value[0].toLocaleString(undefined, { minimumFractionDigits: 0 })}`;
                             // console.log(6);
                         }
-                        else if (db.property_deals.header_description === 7 || db.property_deals.header_description === "7") {
+                        else if (db.property_deals.header_description == 7 || db.property_deals.header_description == "7") {
                             // setthirdval(db.header_value[2]);
                             returnvalue = db.header_value[2];
                             // console.log(7);
@@ -119,7 +117,7 @@ const Maptile = () => {
                     // console.log(8);
                 }
             }
-            if (db.property.property_type === 'general') {
+            if (db.property.property_type == 'general') {
                 returnvalue = 'CALL';
             }
         }
@@ -129,13 +127,26 @@ const Maptile = () => {
 
 
 
+    // const dispatch = useDispatch();
+
+
+
 
     const maxZoom = 22;
     const [bounds, setBounds] = useState(null);
     const [zoom, setZoom] = useState(10);
     const map = useMap();
 
+    // console.log(zoom,"OOOOOOOO");
+
     const [spurl, setspurl] = useState("");
+
+
+    const mapZoom = useSelector(
+        (state) => state.mapZoom
+    );
+
+    console.log(mapZoom,"MMMMMM");
 
     // get map Bounds
     function updateMap() {
@@ -146,7 +157,10 @@ const Maptile = () => {
             b.getNorthEast().lng,//LLNG
             b.getNorthEast().lat,//ULAT
         ]);
+
+        dispatch(changeMapZoomLevel(map.getZoom()));
         setZoom(map.getZoom());
+        // setZoom(mapZoom);
         counter++;
     }
 
@@ -156,30 +170,20 @@ const Maptile = () => {
 
 
     useEffect(() => {
-        console.log(counter, "CNTR");
+        // console.log(counter, "CNTR");
         if ((bounds !== null && bounds !== undefined)) {
-
             let minlat = (bounds[1] < bounds[3] ? bounds[1] : bounds[3]);
             let maxlat = (bounds[1] > bounds[3] ? bounds[1] : bounds[3]);
             let minlng = (bounds[0] < bounds[2] ? bounds[0] : bounds[2]);
             let maxlng = (bounds[0] > bounds[2] ? bounds[0] : bounds[2]);
-            if (mapchange === true) {
+            if (mapchange == true) {
                 pushToLatLngPropertyPage(minlat, maxlat, minlng, maxlng);
-
-                console.log("HHHH");
-
-
-                // if (isItCityVISE(minlng, maxlng) === true) {
+                // if (isItCityVISE(minlng, maxlng) == true) {
                 //     dispatch(getPropListAccordingToMap(minlat, maxlat, minlng, maxlng, true));
                 // } else {
                 //     dispatch(getPropListAccordingToMap(minlat, maxlat, minlng, maxlng, false));
                 // }
-
-
-
             }
-
-
         }
     }, [dispatch, bounds, mapchange, counter]);
 
@@ -221,16 +225,14 @@ const Maptile = () => {
         const fetchData = async () => {
             setsearchresultdata([]);
             setsearchresultdata(propResult.data);
-
-            if (propResult.type === FIRSTAPI) {
+            if (propResult.type == FIRSTAPI) {
                 settypeOfAPI(FIRSTAPI);
-            } else if (propResult.type === SECONDAPI) {
+            } else if (propResult.type == SECONDAPI) {
                 settypeOfAPI(SECONDAPI)
-            } else if (propResult.type === THIRDAPI) {
+            } else if (propResult.type == THIRDAPI) {
                 settypeOfAPI(THIRDAPI);
             }
-
-            // if (propResult.hasOwnProperty('count') === false) {
+            // if (propResult.hasOwnProperty('count') == false) {
             //     settypeofdata("CITY");
             // } else {
             //     settypeofdata();
@@ -252,7 +254,7 @@ const Maptile = () => {
 
         // console.log(searchresultdata, "SEARCH RESULT DATA");
 
-        if (typeOfApi === THIRDAPI) {
+        if (typeOfApi == THIRDAPI) {
             setpoints(searchresultdata.map((db) => (
                 {
                     type: "Feature",
@@ -269,7 +271,7 @@ const Maptile = () => {
                         ],
                     },
                 })))
-        } else if (typeOfApi === SECONDAPI || typeOfApi === FIRSTAPI) {
+        } else if (typeOfApi == SECONDAPI || typeOfApi == FIRSTAPI) {
             setpoints(searchresultdata.map((db) => (
                 {
                     type: "Feature",
@@ -277,16 +279,16 @@ const Maptile = () => {
                         cluster: false,
                         propid: (db.property.id_property),
                         propname: db.property.property_title,
-                        maxbed: (db.property_detail === null || db.property_detail === '' ? 'N/A' : db.property_detail.max_bed),
-                        minbed: (db.property_detail === null || db.property_detail === '' ? 'N/A' : db.property_detail.min_bed),
-                        maxbath: (db.property_detail === null || db.property_detail === '' ? 'N/A' : db.property_detail.max_bath),
-                        minbath: (db.property_detail === null || db.property_detail === '' ? 'N/A' : db.property_detail.min_bath),
+                        maxbed: (db.property_detail == null || db.property_detail == '' ? 'N/A' : db.property_detail.max_bed),
+                        minbed: (db.property_detail == null || db.property_detail == '' ? 'N/A' : db.property_detail.min_bed),
+                        maxbath: (db.property_detail == null || db.property_detail == '' ? 'N/A' : db.property_detail.max_bath),
+                        minbath: (db.property_detail == null || db.property_detail == '' ? 'N/A' : db.property_detail.min_bath),
                         phone: db.property.phone,
                         img: (
-                            db.property_photo === null ||
-                                db.property_photo === "" ||
-                                db.property_photo.photo === null ||
-                                db.property_photo.photo === ""
+                            db.property_photo == null ||
+                                db.property_photo == "" ||
+                                db.property_photo.photo == null ||
+                                db.property_photo.photo == ""
                                 ?
                                 `${require('../../assets/img/Affordable Housing Logo.jpg').default}`
                                 :
@@ -325,7 +327,7 @@ const Maptile = () => {
         points: points,
         bounds: bounds,
         zoom: zoom,
-        options: { radius: typeOfApi === THIRDAPI ? 200 : 50, maxZoom: 22 },
+        options: { radius: typeOfApi == THIRDAPI ? 200 : 50, maxZoom: 22 },
     });
 
 
@@ -346,37 +348,37 @@ const Maptile = () => {
 
 
     // useEffect(() => {
-    //     if (post === null || post === undefined || post.length === 0) {
+    //     if (post == null || post == undefined || post.length == 0) {
     //     }
     //     else {
     //         if (prop.property_type !== "general" && prop.property_type !== "classified") {
-    //             if (deals === null) {
+    //             if (deals == null) {
     //             } else {
-    //                 if (deals.header_description === 1 || deals.header_description === "1") {
+    //                 if (deals.header_description == 1 || deals.header_description == "1") {
     //                     setthirdval("SPECIALS");
     //                     // console.log(1);
     //                 }
-    //                 else if (deals.header_description === 2 || deals.header_description === "2") {
+    //                 else if (deals.header_description == 2 || deals.header_description == "2") {
     //                     setthirdval(`$${db.header_value[0]}`);
     //                     // console.log(2);
     //                 }
-    //                 else if (deals.header_description === 3 || deals.header_description === "3") {
+    //                 else if (deals.header_description == 3 || deals.header_description == "3") {
     //                     setthirdval(`$${db.header_value[2]}`);
     //                     // console.log(3);
     //                 }
-    //                 else if (deals.header_description === 4 || deals.header_description === "4") {
+    //                 else if (deals.header_description == 4 || deals.header_description == "4") {
     //                     setthirdval(`$${db.header_value[2]}`);
     //                     // console.log(4);
     //                 }
-    //                 else if (deals.header_description === 5 || deals.header_description === "5") {
+    //                 else if (deals.header_description == 5 || deals.header_description == "5") {
     //                     setthirdval("MOVE-IN SPECIALS");
     //                     // console.log(5);
     //                 }
-    //                 else if (deals.header_description === 6 || deals.header_description === "6") {
+    //                 else if (deals.header_description == 6 || deals.header_description == "6") {
     //                     setthirdval(`$${db.header_value[0]}`);
     //                     // console.log(6);
     //                 }
-    //                 else if (deals.header_description === 7 || deals.header_description === "7") {
+    //                 else if (deals.header_description == 7 || deals.header_description == "7") {
     //                     setthirdval(db.header_value[2]);
     //                     // console.log(7);
     //                 }
@@ -393,8 +395,8 @@ const Maptile = () => {
     let checkMarker = (clusterinside) => {
         // let exist;
         // console.log(clusterinside);
-        if (parseFloat(clusterinside.geometry.coordinates[0]) === parseFloat(localStorage.getItem('currLng'))
-            && parseFloat(clusterinside.geometry.coordinates[1]) === parseFloat(localStorage.getItem('currLat'))) {
+        if (parseFloat(clusterinside.geometry.coordinates[0]) == parseFloat(localStorage.getItem('currLng'))
+            && parseFloat(clusterinside.geometry.coordinates[1]) == parseFloat(localStorage.getItem('currLat'))) {
             // exist = true;
             return true;
         }
@@ -411,7 +413,7 @@ const Maptile = () => {
                     try {
                         clusterinside = supercluster.getChildren(clusterid);
                     } catch (error) {
-                        if (error && error.message === "No cluster with the specified id.") {
+                        if (error && error.message == "No cluster with the specified id.") {
                             // console.log("No cluster with the specified id");
                         } else {
                             // console.log("hahaha");
@@ -420,20 +422,20 @@ const Maptile = () => {
                 } catch (error) {
                     console.log(error, "2nd ERROR");
                 }
-                if (clusterinside === undefined) {
+                if (clusterinside == undefined) {
                 } else {
                     clusterinside.forEach(element => {
-                        if (element.properties.cluster === true) {
+                        if (element.properties.cluster == true) {
                             if (element.properties.cluster_id) {
-                                if ((checkCluster(element.properties.cluster_id)) === true) {
+                                if ((checkCluster(element.properties.cluster_id)) == true) {
                                     exist = true;
                                     // return true;
                                 }
                             }
                         }
-                        // if (element.properties.cluster === false) 
+                        // if (element.properties.cluster == false) 
                         else {
-                            if (checkMarker(element) === true) {
+                            if (checkMarker(element) == true) {
                                 exist = true;
                                 // return true;
                             }
@@ -453,15 +455,15 @@ const Maptile = () => {
     //     let exist = false;
     //     let clusterinside = supercluster.getChildren(clusterid);
     //     clusterinside.forEach(element => {
-    //         if (element.properties.cluster === true) {
+    //         if (element.properties.cluster == true) {
     //             if (element.properties.cluster_id) {
-    //                 if ((checkCluster(element.properties.cluster_id)) === true) {
+    //                 if ((checkCluster(element.properties.cluster_id)) == true) {
     //                     exist = true;
     //                 }
     //             }
     //         }
-    //         if (element.properties.cluster === false) {
-    //             if (checkMarker(element) === true) {
+    //         if (element.properties.cluster == false) {
+    //             if (checkMarker(element) == true) {
     //                 exist = true;
     //             }
     //         }
@@ -476,7 +478,7 @@ const Maptile = () => {
                 // console.log(supercluster.getChildren(id), "cluster CHildren");
             } catch (error) {
                 flag = false;
-                if (error && error.message === "No cluster with the specified id.") {
+                if (error && error.message == "No cluster with the specified id.") {
                     // console.log("lalalaal");
                 } else {
                     // console.log("hahaha");
@@ -526,18 +528,18 @@ const Maptile = () => {
                     try {
                         clusterinside = supercluster.getChildren(clusterid);
                     } catch (error) {
-                        if (error && error.message === "No cluster with the specified id.") {
+                        if (error && error.message == "No cluster with the specified id.") {
                         } else {
                         }
                     }
                 } catch (error) {
                     console.log(error, "2nd ERROR");
                 }
-                if (clusterinside === undefined) {
+                if (clusterinside == undefined) {
                 } else {
                     clusterinside.forEach(element => {
                         // console.log(element);
-                        if (element.properties.cluster === true) {
+                        if (element.properties.cluster == true) {
                             if (element.properties.cluster_id) {
                                 let data1 = checkClusterForCityName(element.properties.cluster_id);
                                 if (citydata !== undefined && data1.lstcnt <= citydata.lstcnt) {
@@ -575,7 +577,7 @@ const Maptile = () => {
 
             {
 
-                typeOfApi === THIRDAPI ?
+                typeOfApi == THIRDAPI ?
 
 
                     clusters.map((cluster) => {
@@ -595,7 +597,7 @@ const Maptile = () => {
                                         key={`cluster-${cluster.id}`}
                                         position={[latitude, longitude]}
                                         icon={
-                                            checkClusterWithNoIDerror(cluster.id) === false ?
+                                            checkClusterWithNoIDerror(cluster.id) == false ?
                                                 L.divIcon({
                                                     html: `
                                                     <div class="cluster-marker" style="position:relative;width: auto; height:auto; background:#9d56f7;display:flex;align-items:center;justify-content:flex-start;min-width:max-content;border-radius:4px;">
@@ -618,7 +620,7 @@ const Maptile = () => {
                                         }
                                         eventHandlers={{
                                             click: () => {
-                                                if (checkClusterWithNoIDerror(cluster.id) === false) {
+                                                if (checkClusterWithNoIDerror(cluster.id) == false) {
                                                 } else {
                                                     const expansionZoom = Math.min(
                                                         supercluster.getClusterExpansionZoom(cluster.id),
@@ -656,7 +658,7 @@ const Maptile = () => {
                     })
                     :
 
-                    typeOfApi === FIRSTAPI ? null :
+                    typeOfApi == FIRSTAPI ? null :
 
                         clusters.map((cluster) => {
                             const [longitude, latitude] = cluster.geometry.coordinates;
@@ -669,13 +671,13 @@ const Maptile = () => {
                                             key={`cluster-${cluster.id}`}
                                             position={[latitude, longitude]}
                                             icon={
-                                                checkClusterWithNoIDerror(cluster.id) === false ?
+                                                checkClusterWithNoIDerror(cluster.id) == false ?
                                                     L.divIcon({
                                                         html: `<div class="cluster-marker" style="width: ${10 + (pointCount / points.length) * 40}px; height: ${10 + (pointCount / points.length) * 40}px; border:2px solid #ffffff; background:#9d56f7">${pointCount > 9 ? pointCount : pointCount}</div>`,
                                                     })
                                                     :
                                                     (
-                                                        checkCluster(cluster.id) === true
+                                                        checkCluster(cluster.id) == true
                                                             ?
                                                             L.divIcon({
                                                                 html: `<div class="cluster-marker" style="width: ${10 + (pointCount / points.length) * 40}px; height: ${10 + (pointCount / points.length) * 40}px; border:2px solid #ffffff; background:#1bc47d "> ${pointCount > 9 ? pointCount : pointCount} </div>`
@@ -688,7 +690,7 @@ const Maptile = () => {
                                             }
                                             eventHandlers={{
                                                 click: () => {
-                                                    if (checkClusterWithNoIDerror(cluster.id) === false) {
+                                                    if (checkClusterWithNoIDerror(cluster.id) == false) {
                                                     } else {
                                                         const expansionZoom = Math.min(
                                                             supercluster.getClusterExpansionZoom(cluster.id),
@@ -708,7 +710,7 @@ const Maptile = () => {
                                 <Marker
                                     // key={`property-${cluster.properties.propId}`}
                                     position={[latitude, longitude]}
-                                    icon={latitude === localStorage.getItem('currLat') && longitude === localStorage.getItem('currLng') ? markerIconpremium : markerIcongeneral} >
+                                    icon={latitude == localStorage.getItem('currLat') && longitude == localStorage.getItem('currLng') ? markerIconpremium : markerIcongeneral} >
                                     <Popup position className="map-section-detail">
                                         <div className="brdr_radius4px">
                                             <img className="imgpopup" src={`${cluster.properties.img}`} alt="Pointer" />
@@ -725,8 +727,8 @@ const Maptile = () => {
                                                                 cluster.properties.amount
                                                                 :
                                                                 (
-                                                                    cluster.properties.amount === 'MOVE-IN SPECIALS' || cluster.properties.amount === 'SPECIALS'
-                                                                        || (cluster.properties.proptype === 'general' ? 1 === 1 : (cluster.properties.headerdesc === 7 || cluster.properties.headerdesc === '7'))
+                                                                    cluster.properties.amount == 'MOVE-IN SPECIALS' || cluster.properties.amount == 'SPECIALS'
+                                                                        || (cluster.properties.proptype == 'general' ? 1 == 1 : (cluster.properties.headerdesc == 7 || cluster.properties.headerdesc == '7'))
                                                                         ?
                                                                         cluster.properties.amount
                                                                         :
@@ -741,11 +743,11 @@ const Maptile = () => {
                                                             <img src={require('../../assets/img/beds.svg').default} />
                                                             <span className="colorBlue">
                                                                 {
-                                                                    cluster.properties.maxbed === '' && cluster.properties.minbed === '' ?
+                                                                    cluster.properties.maxbed == '' && cluster.properties.minbed == '' ?
                                                                         'N/A'
                                                                         :
                                                                         (
-                                                                            cluster.properties.minbed === '' || cluster.properties.minbed === 0 ?
+                                                                            cluster.properties.minbed == '' || cluster.properties.minbed == 0 ?
                                                                                 cluster.properties.maxbed
                                                                                 :
                                                                                 cluster.properties.minbed
@@ -759,11 +761,11 @@ const Maptile = () => {
                                                             <img src={require('../../assets/img/shower.svg').default} />
                                                             <span className="colorBlue">
                                                                 {
-                                                                    cluster.properties.maxbath === '' && cluster.properties.minbath === '' ?
+                                                                    cluster.properties.maxbath == '' && cluster.properties.minbath == '' ?
                                                                         'N/A'
                                                                         :
                                                                         (
-                                                                            cluster.properties.minbath === '' ?
+                                                                            cluster.properties.minbath == '' ?
                                                                                 cluster.properties.maxbath
                                                                                 :
                                                                                 cluster.properties.minbath

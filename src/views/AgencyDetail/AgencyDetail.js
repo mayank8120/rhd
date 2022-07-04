@@ -1072,7 +1072,7 @@ const AgencyDetail = () => {
                                                                         className="labelMark">*</span></label>
                                                                     <input type="email" className="form-control" id=""
                                                                         aria-describedby="emailHelp"
-                                                                        placeholder="Enter Email" value="Jonath" />
+                                                                        placeholder="Email Address" value="Jonath" />
                                                                 </div>
                                                             </div>
                                                             <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -1088,7 +1088,7 @@ const AgencyDetail = () => {
                                                                     <label for="">City</label>
                                                                     <input type="email" className="form-control" id=""
                                                                         aria-describedby="emailHelp"
-                                                                        placeholder="Enter Email" value="Los Angeles" />
+                                                                        placeholder="Email Address" value="Los Angeles" />
                                                                 </div>
                                                             </div>
                                                             <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -1112,7 +1112,7 @@ const AgencyDetail = () => {
                                                                             <label for="">ZIP</label>
                                                                             <input type="email" className="form-control" id=""
                                                                                 aria-describedby="emailHelp"
-                                                                                placeholder="Enter Email" value="90022" />
+                                                                                placeholder="Email Address" value="90022" />
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1123,7 +1123,7 @@ const AgencyDetail = () => {
                                                                         className="labelMark">*</span></label>
                                                                     <input type="email" className="form-control" id=""
                                                                         aria-describedby="emailHelp"
-                                                                        placeholder="Enter Email"
+                                                                        placeholder="Email Address"
                                                                         value="Jonathan@gmail.com" />
                                                                 </div>
                                                             </div>
@@ -1133,7 +1133,7 @@ const AgencyDetail = () => {
                                                                         className="labelMark">*</span></label>
                                                                     <input type="email" className="form-control" id=""
                                                                         aria-describedby="emailHelp"
-                                                                        placeholder="Enter Email" value="6261234123" />
+                                                                        placeholder="Email Address" value="6261234123" />
                                                                 </div>
                                                             </div>
                                                             <div className="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -2441,7 +2441,7 @@ const AgencyDetail = () => {
                                                     <div className="form-group">
                                                         <label for="exampleInputEmail1">Full Name</label>
                                                         <input type="email" className="form-control" id=""
-                                                            aria-describedby="emailHelp" placeholder="Enter Email"
+                                                            aria-describedby="emailHelp" placeholder="Email Address"
                                                             value="Jonath" />
                                                     </div>
                                                 </div>
@@ -3035,7 +3035,7 @@ const AgencyDetail = () => {
                                                     <label for="">City</label>
                                                     <input type="text" className="form-control" id=""
                                                         aria-describedby="emailHelp"
-                                                        placeholder="Enter City"
+                                                        placeholder="City"
                                                         value={formDataagency.city} onChange={(e) => setformDataagency({ ...formDataagency, city: e.target.value })} required />
                                                 </div>
                                             </div>
@@ -3068,7 +3068,7 @@ const AgencyDetail = () => {
                                                             <label for="">ZIP</label>
                                                             <input type="number" className="form-control"
                                                                 id="" aria-describedby="emailHelp"
-                                                                placeholder="Enter Email"
+                                                                placeholder="Email Address"
                                                                 value={formDataagency.zip} onChange={(e) => setformDataagency({ ...formDataagency, zip: e.target.value })} required />
                                                         </div>
                                                     </div>
@@ -3080,7 +3080,7 @@ const AgencyDetail = () => {
                                                         className="labelMark">*</span></label>
                                                     <input type="email" className="form-control" id=""
                                                         aria-describedby="emailHelp"
-                                                        placeholder="Enter Email"
+                                                        placeholder="Email Address"
                                                         value={formDataagency.emailid} onChange={(e) => setformDataagency({ ...formDataagency, emailid: e.target.value })} required />
                                                 </div>
                                             </div>
@@ -3090,7 +3090,7 @@ const AgencyDetail = () => {
                                                         className="labelMark">*</span></label>
                                                     <input type="number" className="form-control" id=""
                                                         aria-describedby="emailHelp"
-                                                        placeholder="Enter Number"
+                                                        placeholder="Phone Number"
                                                         value={formDataagency.phone} onChange={(e) => setformDataagency({ ...formDataagency, phone: e.target.value })} required />
                                                 </div>
                                             </div>

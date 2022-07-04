@@ -1,7 +1,7 @@
 export const statelist = [
     {
         state_name: "",
-        state_abbreviation: "Select state"
+        state_abbreviation: "Select State"
     },
     {
         state_name: "Alaska",

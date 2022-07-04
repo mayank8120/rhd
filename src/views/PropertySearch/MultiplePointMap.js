@@ -7,7 +7,8 @@ import Loader from '../../containers/Loader';
 import { useSelector } from 'react-redux';
 import { Button } from 'bootstrap';
 import { FIRSTAPI, SECONDAPI, THIRDAPI } from '../../constants/constants';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
+import { returnBigger, returnSmaller } from '../../containers/functions';
 const MultiplePointMap = () => {
 
     // console.log(searchresultdata);
@@ -23,10 +24,20 @@ const MultiplePointMap = () => {
     // )
 
 
+    let location = useLocation();
+
+
+
+
+
+
+    const [searchresultdata, setsearchresultdata] = useState([]);
+    const [APItype, setAPItype] = useState('');
+
+
+
 
     let history = useHistory();
-
-
 
     const mapchange = useSelector(
         (state) => state.mapState
@@ -45,11 +56,6 @@ const MultiplePointMap = () => {
 
     // earlier center finding code 
 
-
-
-
-    const [searchresultdata, setsearchresultdata] = useState([]);
-    const [APItype, setAPItype] = useState('');
 
     let propResult = useSelector((state) => state.search_result);
     // console.log(propResult);
@@ -70,6 +76,37 @@ const MultiplePointMap = () => {
 
 
     }, [searchApiUrl, propResult]);
+
+
+
+
+
+
+
+
+
+
+
+    let searchParameters = new URLSearchParams(location.search);
+
+    useEffect(() => {
+        if (lowerlat === '' || upperlat === '' || lowerlng === '' || upperlng === '') {
+            if(APItype===SECONDAPI || APItype===THIRDAPI){
+                setlowerlat(searchParameters.get('minlat'));
+                setupperlat(searchParameters.get('maxlat'));
+                setlowerlng(searchParameters.get('minlng'));
+                setupperlng(searchParameters.get('maxlng'));
+            }
+        }
+    }, [searchParameters]);
+
+
+
+
+
+
+
+
 
 
 
@@ -96,14 +133,13 @@ const MultiplePointMap = () => {
         setlowerlng(llng < ulng ? llng : ulng);
         setupperlng(llng > ulng ? llng : ulng);
 
-        if (llat === 100) {
-        } else {
-            pushToLatLngPropertyPage(llat < ulat ? llat : ulat, llat > ulat ? llat : ulat, llng < ulng ? llng : ulng, llng > ulng ? llng : ulng);
-        }
-
-
-
+        // if (llat === 100) {
+        // } else {
+        //     pushToLatLngPropertyPage(llat < ulat ? llat : ulat, llat > ulat ? llat : ulat, llng < ulng ? llng : ulng, llng > ulng ? llng : ulng);
+        // }
     }
+
+
 
 
 
@@ -119,10 +155,12 @@ const MultiplePointMap = () => {
 
             if (APItype === FIRSTAPI) {
                 loop();
-
             }
 
 
+
+
+            console.log(lowerlat, upperlat, "LLLLLLLL");
 
             // if (upperlng == '') {
             // } else {
@@ -142,41 +180,39 @@ const MultiplePointMap = () => {
     }, [searchresultdata, mapchange, upperlng]);
 
 
-    let returnBigger = (val1, val2) => {
-        let B;
+    // let returnBigger = (val1, val2) => {
+    //     let B;
 
-        let val11 = parseFloat(val1);
-        let val22 = parseFloat(val2);
+    //     let val11 = parseFloat(val1);
+    //     let val22 = parseFloat(val2);
 
 
 
-        console.log(val11, val22);
-        if (val11 >= val22) {
-            B = val11;
-        } else {
-            B = val22;
-        }
+    //     console.log(val11, val22);
+    //     if (val11 >= val22) {
+    //         B = val11;
+    //     } else {
+    //         B = val22;
+    //     }
 
-        console.log(B, "BIGG");
-        return B;
-    }
+    //     console.log(B, "BIGG");
+    //     return B;
+    // }
 
-    let returnSmaller = (val1, val2) => {
-        let S;
-        let val11 = parseFloat(val1);
-        let val22 = parseFloat(val2);
+    // let returnSmaller = (val1, val2) => {
+    //     let S;
+    //     let val11 = parseFloat(val1);
+    //     let val22 = parseFloat(val2);
 
-        if (val11 <= val22) {
-            S = val11;
-        } else {
-            S = val22;
-        }
-        return S;
-    }
+    //     if (val11 <= val22) {
+    //         S = val11;
+    //     } else {
+    //         S = val22;
+    //     }
+    //     return S;
+    // }
 
     let pushToLatLngPropertyPage = (minlat, maxlat, minlng, maxlng) => {
-        // console.log(minlat, maxlat, minlng, maxlng, "PPPP");
-        // console.log(minlng > maxlng ? minlng : maxlng, "PPPP");
         history.push(`/propertySearch?minlat=${returnSmaller(minlat, maxlat)}&maxlat=${returnBigger(minlat, maxlat)}&minlng=${returnSmaller(minlng, maxlng)}&maxlng=${returnBigger(minlng, maxlng)}`);
     }
 
