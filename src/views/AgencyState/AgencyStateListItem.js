@@ -797,7 +797,7 @@ export const AgencyStateListItem = ({ data }) => {
                                                                         <input
                                                                             type="email"
                                                                             className="form-control"
-                                                                            placeholder="Email"
+                                                                             placeholder="Email Address"
                                                                             value={formdata.email_address}
                                                                             onChange={(e) =>
                                                                                 setformdata({

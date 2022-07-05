@@ -146,7 +146,7 @@ const Maptile = () => {
         (state) => state.mapZoom
     );
 
-    console.log(mapZoom,"MMMMMM");
+    console.log(mapZoom, "MMMMMM");
 
     // get map Bounds
     function updateMap() {
@@ -255,22 +255,24 @@ const Maptile = () => {
         // console.log(searchresultdata, "SEARCH RESULT DATA");
 
         if (typeOfApi == THIRDAPI) {
-            setpoints(searchresultdata.map((db) => (
-                {
-                    type: "Feature",
-                    properties: {
-                        cluster: false,
-                        cityname: (db.city),
-                        listingCnt: (db.listingcount)
-                    },
-                    geometry: {
-                        type: "Point",
-                        coordinates: [
-                            parseFloat(db.coordinate.lng),
-                            parseFloat(db.coordinate.lat),
-                        ],
-                    },
-                })))
+            setpoints(
+                searchresultdata.map((db) => (
+                    {
+                        type: "Feature",
+                        properties: {
+                            cluster: false,
+                            cityname: (db.city),
+                            listingCnt: (db.listingcount)
+                        },
+                        geometry: {
+                            type: "Point",
+                            coordinates: [
+                                parseFloat(db.coordinate.lng),
+                                parseFloat(db.coordinate.lat),
+                            ],
+                        },
+                    }))
+            )
         } else if (typeOfApi == SECONDAPI || typeOfApi == FIRSTAPI) {
             setpoints(searchresultdata.map((db) => (
                 {

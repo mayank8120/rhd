@@ -1044,7 +1044,7 @@ const BasicInfoPage = () => {
                                                             <div className="d-flex align-items-center inputField posRel">
                                                                 <div className="input-group">
                                                                     <input type="text" className="form-control"
-                                                                        placeholder="e.g. johndoe@gmail.com"
+                                                                         placeholder="Email Address"
                                                                         aria-label="Username" aria-describedby="basic-addon1" />
                                                                 </div>
                                                                 <a className="getAlerted brdrRadius4">Get Alerted</a>

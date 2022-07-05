@@ -371,3 +371,32 @@ export const returnSmaller = (val1, val2) => {
     }
     return S;
 }
+
+
+
+export const findHighestCountCity = (arr) => {
+    let idx = 0;
+    let cnt = 0;
+    arr.map(
+        (item, index) => {
+            if (item.count > cnt) {
+                idx = index;
+                cnt = item.count;
+            }
+        }
+    )
+    return idx;
+}
+
+
+export const elementSearchInArray = (array, element) => {
+    let flag = 0;
+    array.map(
+        (item, index) => {
+            if (item.state === element.state && item.city === element.city) {
+                flag = index;
+            }
+        }
+    )
+    return flag;
+}

@@ -57,6 +57,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { getPropListAccordingToMap } from './actions';
 import PropertySearchFullMap from './views/PropertySearchFULLMAP/PropertySearchFullMap';
+import Trial from './views/Trial/trial';
 
 
 
@@ -146,6 +147,9 @@ function App() {
 
                         {/* <Route path="/propertySearch/:cityname/:statename/:feature?" component={PropertySearchFullMap} />
                         <Route path="/propertySearch" component={PropertySearchFullMap} /> */}
+
+
+                        <Route path='/trial' component={Trial} />
 
                     </Switch>
                 </ScrollToTop>

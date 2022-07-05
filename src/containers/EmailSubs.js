@@ -669,7 +669,7 @@ export const EmailSubs = () => {
                                         <h2 className="mt-0 mb-0 font-weight400">Sign up for waitlist alerts. <b>No spam</b></h2>
                                         <div className="d-flex align-items-center inputField posRel">
                                             <div className="input-group">
-                                                <input type="email" className="form-control" placeholder="e.g. johndoe@gmail.com"
+                                                <input type="email" className="form-control" placeholder="Email"
                                                     aria-label="Username" aria-describedby="basic-addon1" value={inputEmail.emailid} onChange={(e) => setinputEmail({ emailid: e.target.value })} required />
                                             </div>
                                             <button type="submit"
@@ -726,7 +726,7 @@ export const EmailSubs = () => {
                                 </div>
                                 <div className="form-group col-sm-6">
                                     <label>Email</label>
-                                    <input type="email" className="form-control emailinputclass" placeholder="e.g. johndoe@gmail.com"
+                                    <input type="email" className="form-control emailinputclass" placeholder="Email"
                                         aria-label="Username" aria-describedby="basic-addon1" value={inputEmail.emailid}
                                         // onChange={(e) => setinputEmail({ emailid: e.target.value })} 
                                         required />
@@ -764,7 +764,7 @@ export const EmailSubs = () => {
                             <div className="brdrLinee2"></div>
                             <div className="d-flex align-items-center pt-4 buttonadj" >
 
-                            <div className="recaptcha_block">
+                                <div className="recaptcha_block">
                                     <ReCAPTCHA className="captcha"
                                         sitekey='6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
                                         onChange={captchaHandle} />

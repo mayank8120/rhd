@@ -38,7 +38,6 @@ const Form = () => {
                         <label for="exampleInputEmail1">Email Address</label>
                         <input type="email" className="form-control" id=""
                             aria-describedby="emailHelp" placeholder="Enter Email address"
-
                             value={formData.emailid} onChange={(e) => setformData({ ...formData, emailid: e.target.value })} required />
                     </div>
                 </div>

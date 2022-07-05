@@ -56,7 +56,7 @@ const CheckAvailabilityAgencyDetail = () => {
                                     <label for="exampleInputEmail1">Email Address</label>
                                     <input type="email" className="form-control" id=""
                                         aria-describedby="emailHelp"
-                                        placeholder="Email"
+                                        placeholder="Email Address"
                                         value={checkAvailability.emailid} onChange={(e) => setcheckAvailability({ ...checkAvailability, emailid: e.target.value })} required />
                                 </div>
                             </div>
@@ -64,7 +64,7 @@ const CheckAvailabilityAgencyDetail = () => {
                                 <div className="form-group">
                                     <label for="exampleInputEmail1">Move In Date</label>
                                     <div className="posRel calnderIcon">
-                                        <input type="email" className="form-control" id=""
+                                        <input type="date" className="form-control" id=""
                                             aria-describedby="emailHelp"
                                             placeholder="Choose Move In Date"
                                             value={checkAvailability.date} onChange={(e) => setcheckAvailability({ ...checkAvailability, date: e.target.value })} required />
@@ -87,7 +87,7 @@ const CheckAvailabilityAgencyDetail = () => {
                                 <div
                                     className="d-flex align-items-center availSec responsive15 flex-wrap p-0">
                                     <div className="Resnoauto w-100">
-                                    <button  data-toggle="modal" data-target="#exampleModal3" className="brdrRadius4 transition w-100" type="submit" >  <img src={require('../../assets/img/mail.svg').default} />Check Availability</button>
+                                        <button data-toggle="modal" data-target="#exampleModal3" className="brdrRadius4 transition w-100" type="submit" >  <img src={require('../../assets/img/mail.svg').default} />Check Availability</button>
                                     </div>
                                 </div>
                             </div>

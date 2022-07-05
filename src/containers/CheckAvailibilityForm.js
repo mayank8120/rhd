@@ -248,7 +248,7 @@ const CheckAvailibilityForm = ({ propid, page, setIsOpenAvailability, setIsOpenS
                             <label for="">Email Address</label>
                             <input type="email" className="form-control"
 
-                                placeholder="Email"
+                                placeholder="Email Address"
                                 value={formdata.email_address}
                                 onChange={(e) => setformdata({ ...formdata, email_address: e.target.value })} required />
                         </div>

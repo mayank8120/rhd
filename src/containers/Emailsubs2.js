@@ -589,7 +589,7 @@ const Emailsubs2 = () => {
                                 <h2 className="mt-0 mb-0 font-weight400">Sign up for waitlist alerts. <b>No spam</b></h2>
                                 <div className="d-flex align-items-center inputField posRel">
                                     <div className="input-group">
-                                        <input type="email" className="form-control" placeholder="e.g. johndoe@gmail.com"
+                                        <input type="email" className="form-control"  placeholder="Email"
                                             aria-label="Username" aria-describedby="basic-addon1" value={inputEmail.emailid} onChange={(e) => setinputEmail({ emailid: e.target.value })} required />
                                     </div>
                                     <button type="submit" className="getAlerted getAlertedGreen brdrRadius4">Get Alerted</button>
@@ -642,7 +642,7 @@ const Emailsubs2 = () => {
                                 </div>
                                 <div className="form-group col-sm-6">
                                     <label>Email</label>
-                                    <input type="email" className="form-control emailinputclass" placeholder="e.g. johndoe@gmail.com"
+                                    <input type="email" className="form-control emailinputclass"  placeholder="Email"
                                         aria-label="Username" aria-describedby="basic-addon1" value={inputEmail.emailid}
                                         // onChange={(e) => setinputEmail({ emailid: e.target.value })} 
                                         required />

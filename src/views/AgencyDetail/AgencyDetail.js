@@ -1229,7 +1229,7 @@ const AgencyDetail = () => {
                                             <div className="d-flex align-items-center inputField posRel">
                                                 <div className="input-group">
                                                     <input type="text" className="form-control"
-                                                        placeholder="e.g. johndoe@gmail.com" aria-label="Username"
+                                                         placeholder="Email Address" aria-label="Username"
                                                         aria-describedby="basic-addon1" />
                                                 </div>
                                                 <a className="getAlerted brdrRadius4">Get Alerted</a>
@@ -2457,7 +2457,7 @@ const AgencyDetail = () => {
                                                         <label for="exampleInputEmail1">Email Address</label>
                                                         <input type="email" className="form-control" id=""
                                                             aria-describedby="emailHelp"
-                                                            placeholder="Email" />
+                                                             placeholder="Email Address" />
                                                     </div>
                                                 </div>
                                                 <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -2584,7 +2584,7 @@ const AgencyDetail = () => {
                                                                     <input
                                                                         type="email"
                                                                         className="form-control"
-                                                                        placeholder="Email"
+                                                                         placeholder="Email Address"
                                                                         value={formdata.email_address}
                                                                         onChange={(e) =>
                                                                             setformdata({
@@ -2701,7 +2701,7 @@ const AgencyDetail = () => {
                                                         <label for="exampleInputEmail1">Email Address</label>
                                                         <input type="email" className="form-control" id=""
                                                             aria-describedby="emailHelp"
-                                                            placeholder="Email"
+                                                             placeholder="Email Address"
                                                             value={checkAvailability.emailid} onChange={(e) => setcheckAvailability({ ...checkAvailability, emailid: e.target.value })} required />
                                                     </div>
                                                 </div>
@@ -3380,7 +3380,7 @@ const AgencyDetail = () => {
                                                                     <input
                                                                         type="email"
                                                                         className="form-control"
-                                                                        placeholder="Email"
+                                                                         placeholder="Email Address"
                                                                         value={formdatamodal.email_address}
                                                                         onChange={(e) =>
                                                                             setformdatamodal({
