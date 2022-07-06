@@ -7,7 +7,7 @@ import Starratingstatic from "../../containers/Starratingstatic";
 import axios from "axios";
 
 import { addOrRemoveProp, decimalRoundOff, getAllProp, toggleHeart } from "../../containers/functions";
-import { sendMUltipleRequestes } from "../../api/api";
+import { sendMUltipleRequestes, tokenScoreCheck } from "../../api/api";
 
 export const PropertySearchItem = ({ post }) => {
 
@@ -423,6 +423,43 @@ export const PropertySearchItem = ({ post }) => {
 
         setformdata({ property_id: prop.property_id, first_name: '', last_name: '', phone: '', email_address: '', move_date: '', message: `${formdata.message}` });
     }
+
+
+
+    // const secretKey = '6Ld0V8sgAAAAAJngehOac0eHt140tM5c51CTqFQH'
+    // const handleLoaded = _ => {
+    //     window.grecaptcha.ready(_ => {
+    //         window.grecaptcha
+    //             .execute("6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI", { action: 'sdfreg' })
+    //             .then(token => {
+    //                 console.log(token);
+
+    //                 if (token == undefined || token == '' || token == null) {
+    //                 } else {
+    //                     var requestOptions = {
+    //                         method: 'POST',
+    //                         redirect: 'follow'
+    //                     };
+    //                     fetch(`https://www.google.com/recaptcha/api/siteverify?secret=6Ld0V8sgAAAAAJngehOac0eHt140tM5c51CTqFQH&response=${token}`, requestOptions)
+    //                         .then(response => response.json())
+    //                         .then(result => console.log(result))
+    //                         .catch(error => console.log(error));
+    //                 }
+    //             })
+    //     })
+    // }
+
+
+    // useEffect(() => {
+    //     const script = document.createElement("script")
+    //     script.src = 'https://www.google.com/recaptcha/api.js?render=6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
+    //     script.addEventListener('load', handleLoaded)
+    //     document.body.appendChild(script)
+    // }, []);
+
+
+
+
 
 
     // function decimalRoundOff(number) {
@@ -1192,7 +1229,7 @@ export const PropertySearchItem = ({ post }) => {
                                                                     <input
                                                                         type="email"
                                                                         className="form-control"
-                                                                         placeholder="Email Address"
+                                                                        placeholder="Email Address"
                                                                         value={formdata.email_address}
                                                                         onChange={(e) =>
                                                                             setformdata({
@@ -1246,10 +1283,22 @@ export const PropertySearchItem = ({ post }) => {
                                                             <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                                 <div className="form-group">
                                                                     <div className="recaptcha_block">
+
                                                                         <ReCAPTCHA
                                                                             sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
                                                                             onChange={captchaHandle}
                                                                         />
+
+                                                                        {/* <div
+                                                                            className="g-recaptcha"
+                                                                            data-sitekey={'6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'}
+                                                                            data-size="invisible"
+                                                                        ></div> */}
+
+
+
+
+
                                                                     </div>
                                                                     {captchaValue === false ? (
                                                                         <span style={{ color: "red" }}>

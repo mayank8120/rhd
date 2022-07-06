@@ -36,19 +36,27 @@ export let sendMUltipleRequestes = (data) => {
 }
 
 
+export const tokenScoreCheck = (generatedToken) => {
 
-// export const searchdropdown = () => axios.post(url)
-//     .then(res => {
-//         // let data = res.data;
-//         // var datah = data.data;
-//         // console.log(res.data.data);
-//         // return datah.json();
-//         // console.log(datah);
-//         return res.data.data;
-//     }).catch(error => {
-//         console.log('error', error);
-//     });
 
+    const secretKey = '6Ld0V8sgAAAAAJngehOac0eHt140tM5c51CTqFQH'
+    var config = {
+        method: 'post',
+        url: `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${generatedToken}`,
+        headers: {}
+    };
+
+    axios(config)
+        .then(function (response) {
+            console.log(response, "QWERTY");
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+
+
+
+}
 
 
 
