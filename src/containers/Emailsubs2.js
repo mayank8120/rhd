@@ -472,9 +472,9 @@ const Emailsubs2 = () => {
                 .then(res => {
                     console.log(res);
                     setdoesemailexist(res.data.result);
-                    if (res.data.result === true) {
+                    if (res.data.result == true) {
                         toggleModalAlreadySubs();
-                    } else if (res.data.result === false) {
+                    } else if (res.data.result == false) {
                         toggleModal();
                     }
                 }).catch(error => {
@@ -504,7 +504,7 @@ const Emailsubs2 = () => {
     // console.log(cityAndStatesarray);
     const handleOnChangecityAndStates = (position) => {
         const updatedCheckedStatecityAndStates = checkedStatecityAndStates.map((item, index) =>
-            index === position ? !item : item
+            index == position ? !item : item
         );
 
         setCheckedStatecityAndStates(updatedCheckedStatecityAndStates);
@@ -514,7 +514,7 @@ const Emailsubs2 = () => {
 
         const totalPrice = updatedCheckedStatecityAndStates.reduce(
             (sum, currentState, index) => {
-                if (currentState === true) {
+                if (currentState == true) {
                     arrcityAndStates.push(cityAndStateList[index].state_abbreviation);
                     return sum + 1;
                 }
@@ -531,9 +531,9 @@ const Emailsubs2 = () => {
 
     let handleAllDataSubmit = (e) => {
         e.preventDefault();
-        if (cityAndStatesarray.length === 0) {
+        if (cityAndStatesarray.length == 0) {
             console.log('empty state list');
-        } else if (cityAndStatesarray.length > 0 && inputEmail.firstname !== '' && inputEmail.lastname !== '' && inputEmail.zip !== '' && captchaValue === true) {
+        } else if (cityAndStatesarray.length > 0 && inputEmail.firstname !== '' && inputEmail.lastname !== '' && inputEmail.zip !== '' && captchaValue == true) {
             submitMainForm();
         } else {
             console.log('some exception by pass condtion');
@@ -703,7 +703,7 @@ const Emailsubs2 = () => {
                 </div>
 
                 {
-                    formSubmitResponse === "Email Sent. Check your inbox" ?
+                    formSubmitResponse == "Email Sent. Check your inbox" ?
 
                         <div className="modal-body">
 

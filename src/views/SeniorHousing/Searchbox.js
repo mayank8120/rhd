@@ -16,7 +16,7 @@ const Searchbox = ({ latlngdata }) => {
     const [statenames, setstatenames] = useState("");
 
     useEffect(() => {
-        if (latlngdata === undefined || latlngdata === null) {
+        if (latlngdata == undefined || latlngdata == null) {
 
         } else {
             setcity(latlngdata.city);
@@ -31,7 +31,7 @@ const Searchbox = ({ latlngdata }) => {
     const [pathnameS, setpathnameS] = useState("");
 
     const toggleshow = () => {
-        if (showdropdown === false) {
+        if (showdropdown == false) {
             setshowdropdown(true)
         } else {
             setshowdropdown(false)
@@ -91,7 +91,7 @@ const Searchbox = ({ latlngdata }) => {
     useEffect(() => {
         // const result = axios.post(`http://thomasthecat.rentalhousingdeals.com/apis/v1/api/v1/dropdown-search?keyword=${searchterm}`)
         //     .then(res => {
-        //         if (res.data[0].error === true) {
+        //         if (res.data[0].error == true) {
         //             setdropdowndata(res.data[0].message)
         //         } else {
         //             setdropdowndata(res.data[0].data);
@@ -107,7 +107,7 @@ const Searchbox = ({ latlngdata }) => {
         fetch(`http://thomasthecat.rentalhousingdeals.com/apis/v1/api/v1/dropdown-search?keyword=${searchterm}`, requestOptions)
             .then(response => response.json())
             .then(res => {
-                if (res[0].error === true) {
+                if (res[0].error == true) {
                     // console.log(res.data[0]);
                     setdropdowndata(res[0].message);
                 } else {
@@ -126,7 +126,7 @@ const Searchbox = ({ latlngdata }) => {
     }, [searchterm])
 
     function searchclick() {
-        if (dropdowndata === 'No Record Found') {
+        if (dropdowndata == 'No Record Found') {
 
         } else {
             window.location.href = `${pathnameS}`;
@@ -214,16 +214,16 @@ const Searchbox = ({ latlngdata }) => {
                                         <ul className="serachDatadrop">
 
                                             {
-                                                searchterm === null || searchterm === undefined || searchterm === '' ||
-                                                    dropdowndata === undefined || dropdowndata === null || dropdowndata === '' ?
+                                                searchterm == null || searchterm == undefined || searchterm == '' ||
+                                                    dropdowndata == undefined || dropdowndata == null || dropdowndata == '' ?
                                                     <>
                                                     </>
                                                     :
                                                     (
-                                                        dropdowndata === 'No Record Found' ?
+                                                        dropdowndata == 'No Record Found' ?
                                                             <>
                                                                 <p>
-                                                                    <Link className='secondaryColor w-100 d-block' to={`/propertySearch/${city === undefined ? null : city}/${statenames === undefined ? null : statenames}/senior`}>
+                                                                    <Link className='secondaryColor w-100 d-block' to={`/propertySearch/${city == undefined ? null : city}/${statenames == undefined ? null : statenames}/senior`}>
                                                                         <svg className='mr-2' xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.208 16.712a.75.75 0 01-.469-1.425 5.564 5.564 0 003.548-3.548.75.75 0 011.425.469 7.064 7.064 0 01-4.504 4.504zM4.712 8.26a.75.75 0 01-1.425-.468 7.064 7.064 0 014.505-4.505.75.75 0 01.469 1.425A5.564 5.564 0 004.712 8.26zm11.522.479a.75.75 0 00.478-.947 7.065 7.065 0 00-4.504-4.505.75.75 0 00-.469 1.425 5.564 5.564 0 013.548 3.548.75.75 0 00.947.479zm-7.973 6.548a.75.75 0 01-.469 1.425 7.065 7.065 0 01-4.505-4.504.75.75 0 011.425-.469 5.564 5.564 0 003.549 3.548z" fill="#726F6C" /><path d="M10 7a3 3 0 110 6 3 3 0 010-6z" fill="#3db675" /></svg>
                                                                         Use Your Current Location
                                                                     </Link>
@@ -238,7 +238,7 @@ const Searchbox = ({ latlngdata }) => {
                                                             <>{
                                                                 <>
                                                                     <p>
-                                                                        <Link className='secondaryColor w-100 d-block' to={`/propertySearch/${city === undefined ? null : city}/${statenames === undefined ? null : statenames}/senior`}>
+                                                                        <Link className='secondaryColor w-100 d-block' to={`/propertySearch/${city == undefined ? null : city}/${statenames == undefined ? null : statenames}/senior`}>
                                                                             <svg className='mr-2' xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.208 16.712a.75.75 0 01-.469-1.425 5.564 5.564 0 003.548-3.548.75.75 0 011.425.469 7.064 7.064 0 01-4.504 4.504zM4.712 8.26a.75.75 0 01-1.425-.468 7.064 7.064 0 014.505-4.505.75.75 0 01.469 1.425A5.564 5.564 0 004.712 8.26zm11.522.479a.75.75 0 00.478-.947 7.065 7.065 0 00-4.504-4.505.75.75 0 00-.469 1.425 5.564 5.564 0 013.548 3.548.75.75 0 00.947.479zm-7.973 6.548a.75.75 0 01-.469 1.425 7.065 7.065 0 01-4.505-4.504.75.75 0 011.425-.469 5.564 5.564 0 003.549 3.548z" fill="#726F6C" /><path d="M10 7a3 3 0 110 6 3 3 0 010-6z" fill="#3db675" /></svg>
                                                                             Use Your Current Location
                                                                         </Link>
@@ -255,7 +255,7 @@ const Searchbox = ({ latlngdata }) => {
                                                                                     toggleshow();
                                                                                 }}>
                                                                                 {
-                                                                                    val.property_state === null || val.property_state === undefined ?
+                                                                                    val.property_state == null || val.property_state == undefined ?
                                                                                         `${val.property_city}, ${val.property_state}`
                                                                                         :
                                                                                         <Link className='secondaryColor  w-100 d-block' to={`/propertySearch/${val.property_city}/${val.property_state}/senior`}>
@@ -356,7 +356,7 @@ const Searchbox = ({ latlngdata }) => {
                                     required />
                                 <datalist id="browsers">
                                     {
-                                        searchterm === null || searchterm === undefined || searchterm === '' || dropdowndata === undefined || dropdowndata === null || dropdowndata === '' ? <></> :
+                                        searchterm == null || searchterm == undefined || searchterm == '' || dropdowndata == undefined || dropdowndata == null || dropdowndata == '' ? <></> :
                                             dropdowndata.map((val) => {
                                                 return (
 
@@ -402,16 +402,16 @@ const Searchbox = ({ latlngdata }) => {
 
                                         <ul className="serachDatadrop">
                                             {
-                                                searchterm === null || searchterm === undefined || searchterm === '' ||
-                                                    dropdowndata === undefined || dropdowndata === null || dropdowndata === '' ?
+                                                searchterm == null || searchterm == undefined || searchterm == '' ||
+                                                    dropdowndata == undefined || dropdowndata == null || dropdowndata == '' ?
                                                     <>
                                                     </>
                                                     :
                                                     (
-                                                        dropdowndata === 'No Record Found' ?
+                                                        dropdowndata == 'No Record Found' ?
                                                             <>
                                                                 <p>
-                                                                    <Link className='secondaryColor w-100 d-flex align-items-center' to={`/propertySearch/${city === undefined ? null : city}/${statenames === undefined ? null : statenames}`}>
+                                                                    <Link className='secondaryColor w-100 d-flex align-items-center' to={`/propertySearch/${city == undefined ? null : city}/${statenames == undefined ? null : statenames}`}>
                                                                         <svg className='mr-2' xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.208 16.712a.75.75 0 01-.469-1.425 5.564 5.564 0 003.548-3.548.75.75 0 011.425.469 7.064 7.064 0 01-4.504 4.504zM4.712 8.26a.75.75 0 01-1.425-.468 7.064 7.064 0 014.505-4.505.75.75 0 01.469 1.425A5.564 5.564 0 004.712 8.26zm11.522.479a.75.75 0 00.478-.947 7.065 7.065 0 00-4.504-4.505.75.75 0 00-.469 1.425 5.564 5.564 0 013.548 3.548.75.75 0 00.947.479zm-7.973 6.548a.75.75 0 01-.469 1.425 7.065 7.065 0 01-4.505-4.504.75.75 0 011.425-.469 5.564 5.564 0 003.549 3.548z" fill="#726F6C" /><path d="M10 7a3 3 0 110 6 3 3 0 010-6z" fill="#3db675" /></svg>
                                                                         Use Your Current Location
                                                                     </Link>
@@ -427,7 +427,7 @@ const Searchbox = ({ latlngdata }) => {
                                                                 {
                                                                     <>
                                                                         <p>
-                                                                            <Link className='secondaryColor w-100 d-flex align-items-center' to={`/propertySearch/${city === undefined ? null : city}/${statenames === undefined ? null : statenames}`}>
+                                                                            <Link className='secondaryColor w-100 d-flex align-items-center' to={`/propertySearch/${city == undefined ? null : city}/${statenames == undefined ? null : statenames}`}>
                                                                                 <svg className='mr-2' xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.208 16.712a.75.75 0 01-.469-1.425 5.564 5.564 0 003.548-3.548.75.75 0 011.425.469 7.064 7.064 0 01-4.504 4.504zM4.712 8.26a.75.75 0 01-1.425-.468 7.064 7.064 0 014.505-4.505.75.75 0 01.469 1.425A5.564 5.564 0 004.712 8.26zm11.522.479a.75.75 0 00.478-.947 7.065 7.065 0 00-4.504-4.505.75.75 0 00-.469 1.425 5.564 5.564 0 013.548 3.548.75.75 0 00.947.479zm-7.973 6.548a.75.75 0 01-.469 1.425 7.065 7.065 0 01-4.505-4.504.75.75 0 011.425-.469 5.564 5.564 0 003.549 3.548z" fill="#726F6C" /><path d="M10 7a3 3 0 110 6 3 3 0 010-6z" fill="#3db675" /></svg>
                                                                                 Use Your Current Location
                                                                             </Link>
@@ -446,7 +446,7 @@ const Searchbox = ({ latlngdata }) => {
                                                                                                 toggleshow();
                                                                                             }}>
                                                                                             {
-                                                                                                val.property_state === null || val.property_state === undefined ?
+                                                                                                val.property_state == null || val.property_state == undefined ?
                                                                                                     `${val.property_city}, ${val.property_state}`
                                                                                                     :
                                                                                                     <Link className='secondaryColor w-100 d-block' to={`/propertySearch/${val.property_city}/${val.property_state}`}>

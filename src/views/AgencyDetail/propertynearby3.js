@@ -485,175 +485,176 @@ const PropertiesNearby3 = ({ propertynearby, titletext }) => {
                         <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
 
-                            {propertynearby === null || propertynearby === undefined || propertynearby === [] || propertynearby === '' ?
+                            {
+                                propertynearby == null || propertynearby == undefined || propertynearby == [] || propertynearby == '' || propertynearby.length == 0 ?
 
-                                <Carousel
-                                    responsive={responsive}
-                                    infinite >
-                                    {
-                                        nearbyProperty.map((data) => (
+                                    <Carousel
+                                        responsive={responsive}
+                                        infinite >
+                                        {
+                                            nearbyProperty.map((data) => (
 
-                                            <div className="sliderItem">
-                                                {
-                                                    data.photo === null || data.photo === '' || data.photo === undefined ?
+                                                <div className="sliderItem">
+                                                    {
+                                                        data.photo == null || data.photo == '' || data.photo == undefined ?
 
-                                                        <a href={`/propertyDetail?proid=${data.id_property}`}>
-                                                            <img src={require('../../assets/img/equalhousinglogo.jpg').default} />
-                                                        </a>
-                                                        // <h1>jelsdkfl</h1>
-                                                        :
-                                                        <img src={`https://www.rentalhousingdeals.com/${data.photo}`} />
-                                                }
-                                                {/* <img src={`https://www.rentalhousingdeals.com/${data.photo}`} /> */}
-                                                <a data-toggle="modal" data-target="#exampleModalCenter" className="likeTag transition"><i className="far fa-heart"></i></a>
-
-
-                                                {
-                                                    data.prog_type === "affordablehousing" ? <div className="sliderTagName brdrRadius4 colorWhite font-weight700">Affordable Housing</div> : null
-                                                }
-
-                                                <div className="sliderTextArea">
-                                                    <div className="d-flex align-items-top">
-
-
-                                                        <div>
-
-                                                            <a className='blackcolor' href={`/propertyDetail?proid=${data.id_property}`}>
-
-                                                                <h4 className="font-weight700 mb-0 blackcolor">{data.property_title}</h4>
-
+                                                            <a href={`/propertyDetail?proid=${data.id_property}`}>
+                                                                <img src={require('../../assets/img/equalhousinglogo.jpg').default} />
                                                             </a>
-                                                            <p className="mb-0">{data.property_address} {data.property_city}, {data.property_state} {data.property_zip}</p>
-                                                        </div>
-                                                        {/* <div className="ml-auto">
+                                                            // <h1>jelsdkfl</h1>
+                                                            :
+                                                            <img src={`https://www.rentalhousingdeals.com/${data.photo}`} />
+                                                    }
+                                                    {/* <img src={`https://www.rentalhousingdeals.com/${data.photo}`} /> */}
+                                                    <a data-toggle="modal" data-target="#exampleModalCenter" className="likeTag transition"><i className="far fa-heart"></i></a>
+
+
+                                                    {
+                                                        data.prog_type == "affordablehousing" ? <div className="sliderTagName brdrRadius4 colorWhite font-weight700">Affordable Housing</div> : null
+                                                    }
+
+                                                    <div className="sliderTextArea">
+                                                        <div className="d-flex align-items-top">
+
+
+                                                            <div>
+
+                                                                <a className='blackcolor' href={`/propertyDetail?proid=${data.id_property}`}>
+
+                                                                    <h4 className="font-weight700 mb-0 blackcolor">{data.property_title}</h4>
+
+                                                                </a>
+                                                                <p className="mb-0">{data.property_address} {data.property_city}, {data.property_state} {data.property_zip}</p>
+                                                            </div>
+                                                            {/* <div className="ml-auto">
 
                                                     <a href="#"><img src={require('../../assets/img/priceTag.png').default} /></a>
                                                 </div> */}
-                                                    </div>
-                                                    <div className="sliderListing">
-                                                        <ul className="clearfix d-flex align-items-center">
-                                                            <li><b>
-                                                                {data.beds === 0 || data.beds === '' || data.beds === null ? 'N/A' : data.beds}
-                                                            </b>Bd</li>
-                                                            <li><b>
-                                                                {data.baths === 0 || data.baths === '' || data.baths === null ? 'N/A' : data.baths}
-                                                            </b>Ba</li>
-                                                            <li><b>
-                                                                {/* {data.square_feet_from} */}
-                                                                {
-                                                                    (data.square_feet_from === 0 && data.square_feet_to === 0) || (data.square_feet_from === '' && data.square_feet_to === '') || (data.square_feet_from === null && data.square_feet_to === null)
-                                                                        ?
-                                                                        'N/A'
-                                                                        :
-
-                                                                        (data.square_feet_from === data.square_feet_to ?
-                                                                            `${data.square_feet_from}`
-                                                                            :
-                                                                            `${data.square_feet_from} - ${data.square_feet_to}`
-                                                                        )
-                                                                }
-                                                            </b>Sq.Ft</li>
-
-                                                        </ul>
-                                                        <div className="ml-auto boldTag greenText fontSize16">
-                                                            {
-                                                                (data.rent_from === 0 && data.rent_to === 0) || (data.rent_from === '' && data.rent_to === '') || (data.rent_from === null && data.rent_to === null)
-                                                                    ?
-                                                                    '$ N/A'
-                                                                    :
-
-                                                                    (data.rent_from === data.rent_to ?
-                                                                        `$ ${data.rent_from}`
-                                                                        :
-                                                                        `$ ${data.rent_from} - ${data.rent_to}`
-                                                                    )
-                                                            }
-
                                                         </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        ))
-                                    }
-                                </Carousel>
-                                :
-
-                                <Carousel
-                                    responsive={responsive}
-                                    infinite>
-                                    {
-                                        propertynearby.map((data) => (
-
-                                            <div className="sliderItem">
-                                                {
-                                                    data.photo === null || data.photo === '' || data.photo === undefined ?
-                                                        <img src={require('../../assets/img/equalhousinglogo.jpg').default} />
-                                                        // <h1>jelsdkfl</h1>
-                                                        :
-                                                        <img src={`https://www.rentalhousingdeals.com/${data.photo}`} />
-                                                }
-                                                {/* <img src={`https://www.rentalhousingdeals.com/${data.photo}`} /> */}
-                                                <a data-toggle="modal" data-target="#exampleModalCenter" className="likeTag transition"><i className="far fa-heart"></i></a>
-
-
-                                                {
-                                                    data.prog_type === "affordablehousing" ? <div className="sliderTagName brdrRadius4 colorWhite font-weight700">Affordable Housing</div> : null
-                                                }
-
-                                                <div className="sliderTextArea">
-                                                    <div className="d-flex align-items-top">
-                                                        <div>
-                                                            <h4 className="font-weight700 mb-0">{data.property_title}</h4>
-                                                            <p className="mb-0">{data.property_address} {data.property_city}, {data.property_state} {data.property_zip}</p>
-                                                        </div>
-
-                                                    </div>
-                                                    <div className="sliderListing">
-                                                        <ul className="clearfix d-flex align-items-center">
-                                                            <li><b>
-                                                                {data.beds === 0 || data.beds === '' || data.beds === null ? 'N/A' : data.beds}
-                                                            </b>Bd</li>
-                                                            <li><b>
-                                                                {data.baths === 0 || data.baths === '' || data.baths === null ? 'N/A' : data.baths}
-                                                            </b>Ba</li>
-                                                            <li><b>
-                                                                {/* {data.square_feet_from} */}
-                                                                {
-                                                                    (data.square_feet_from === 0 && data.square_feet_to === 0) || (data.square_feet_from === '' && data.square_feet_to === '') || (data.square_feet_from === null && data.square_feet_to === null)
-                                                                        ?
-                                                                        'N/A'
-                                                                        :
-
-                                                                        (data.square_feet_from === data.square_feet_to ?
-                                                                            `${data.square_feet_from}`
+                                                        <div className="sliderListing">
+                                                            <ul className="clearfix d-flex align-items-center">
+                                                                <li><b>
+                                                                    {data.beds == 0 || data.beds == '' || data.beds == null ? 'N/A' : data.beds}
+                                                                </b>Bd</li>
+                                                                <li><b>
+                                                                    {data.baths == 0 || data.baths == '' || data.baths == null ? 'N/A' : data.baths}
+                                                                </b>Ba</li>
+                                                                <li><b>
+                                                                    {/* {data.square_feet_from} */}
+                                                                    {
+                                                                        (data.square_feet_from == 0 && data.square_feet_to == 0) || (data.square_feet_from == '' && data.square_feet_to == '') || (data.square_feet_from == null && data.square_feet_to == null)
+                                                                            ?
+                                                                            'N/A'
                                                                             :
-                                                                            `${data.square_feet_from} - ${data.square_feet_to}`
-                                                                        )
-                                                                }
-                                                            </b>Sq.Ft</li>
-                                                            <li className="ml-auto boldTag greenText fontSize16">
+
+                                                                            (data.square_feet_from == data.square_feet_to ?
+                                                                                `${data.square_feet_from}`
+                                                                                :
+                                                                                `${data.square_feet_from} - ${data.square_feet_to}`
+                                                                            )
+                                                                    }
+                                                                </b>Sq.Ft</li>
+
+                                                            </ul>
+                                                            <div className="ml-auto boldTag greenText fontSize16">
                                                                 {
-                                                                    (data.rent_from === 0 && data.rent_to === 0) || (data.rent_from === '' && data.rent_to === '') || (data.rent_from === null && data.rent_to === null)
+                                                                    (data.rent_from == 0 && data.rent_to == 0) || (data.rent_from == '' && data.rent_to == '') || (data.rent_from == null && data.rent_to == null)
                                                                         ?
                                                                         '$ N/A'
                                                                         :
 
-                                                                        (data.rent_from === data.rent_to ?
+                                                                        (data.rent_from == data.rent_to ?
                                                                             `$ ${data.rent_from}`
                                                                             :
                                                                             `$ ${data.rent_from} - ${data.rent_to}`
                                                                         )
                                                                 }
 
-                                                            </li>
-                                                        </ul>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        ))
-                                    }
-                                </Carousel>
+
+                                            ))
+                                        }
+                                    </Carousel>
+                                    :
+
+                                    <Carousel
+                                        responsive={responsive}
+                                        infinite>
+                                        {
+                                            propertynearby.map((data) => (
+
+                                                <div className="sliderItem">
+                                                    {
+                                                        data.photo == null || data.photo == '' || data.photo == undefined ?
+                                                            <img src={require('../../assets/img/equalhousinglogo.jpg').default} />
+                                                            // <h1>jelsdkfl</h1>
+                                                            :
+                                                            <img src={`https://www.rentalhousingdeals.com/${data.photo}`} />
+                                                    }
+                                                    {/* <img src={`https://www.rentalhousingdeals.com/${data.photo}`} /> */}
+                                                    <a data-toggle="modal" data-target="#exampleModalCenter" className="likeTag transition"><i className="far fa-heart"></i></a>
+
+
+                                                    {
+                                                        data.prog_type == "affordablehousing" ? <div className="sliderTagName brdrRadius4 colorWhite font-weight700">Affordable Housing</div> : null
+                                                    }
+
+                                                    <div className="sliderTextArea">
+                                                        <div className="d-flex align-items-top">
+                                                            <div>
+                                                                <h4 className="font-weight700 mb-0">{data.property_title}</h4>
+                                                                <p className="mb-0">{data.property_address} {data.property_city}, {data.property_state} {data.property_zip}</p>
+                                                            </div>
+
+                                                        </div>
+                                                        <div className="sliderListing">
+                                                            <ul className="clearfix d-flex align-items-center">
+                                                                <li><b>
+                                                                    {data.beds == 0 || data.beds == '' || data.beds == null ? 'N/A' : data.beds}
+                                                                </b>Bd</li>
+                                                                <li><b>
+                                                                    {data.baths == 0 || data.baths == '' || data.baths == null ? 'N/A' : data.baths}
+                                                                </b>Ba</li>
+                                                                <li><b>
+                                                                    {/* {data.square_feet_from} */}
+                                                                    {
+                                                                        (data.square_feet_from == 0 && data.square_feet_to == 0) || (data.square_feet_from == '' && data.square_feet_to == '') || (data.square_feet_from == null && data.square_feet_to == null)
+                                                                            ?
+                                                                            'N/A'
+                                                                            :
+
+                                                                            (data.square_feet_from == data.square_feet_to ?
+                                                                                `${data.square_feet_from}`
+                                                                                :
+                                                                                `${data.square_feet_from} - ${data.square_feet_to}`
+                                                                            )
+                                                                    }
+                                                                </b>Sq.Ft</li>
+                                                                <li className="ml-auto boldTag greenText fontSize16">
+                                                                    {
+                                                                        (data.rent_from == 0 && data.rent_to == 0) || (data.rent_from == '' && data.rent_to == '') || (data.rent_from == null && data.rent_to == null)
+                                                                            ?
+                                                                            '$ N/A'
+                                                                            :
+
+                                                                            (data.rent_from == data.rent_to ?
+                                                                                `$ ${data.rent_from}`
+                                                                                :
+                                                                                `$ ${data.rent_from} - ${data.rent_to}`
+                                                                            )
+                                                                    }
+
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            ))
+                                        }
+                                    </Carousel>
 
 
                             }
@@ -671,7 +672,7 @@ const PropertiesNearby3 = ({ propertynearby, titletext }) => {
 
 
                                             {
-                                                data.prog_type === "affordablehousing" ? <div className="sliderTagName brdrRadius4 colorWhite font-weight700">Affordable Housing</div> : null
+                                                data.prog_type == "affordablehousing" ? <div className="sliderTagName brdrRadius4 colorWhite font-weight700">Affordable Housing</div> : null
                                             }
 
                                             <div className="sliderTextArea">
@@ -685,19 +686,19 @@ const PropertiesNearby3 = ({ propertynearby, titletext }) => {
                                                 <div className="sliderListing">
                                                     <ul className="clearfix d-flex align-items-center">
                                                         <li><b>
-                                                            {data.beds === 0 || data.beds === '' || data.beds === null ? 'N/A' : data.beds}
+                                                            {data.beds == 0 || data.beds == '' || data.beds == null ? 'N/A' : data.beds}
                                                         </b>Bd</li>
                                                         <li><b>
-                                                            {data.baths === 0 || data.baths === '' || data.baths === null ? 'N/A' : data.baths}
+                                                            {data.baths == 0 || data.baths == '' || data.baths == null ? 'N/A' : data.baths}
                                                         </b>Ba</li>
                                                         <li><b>
                                                             {
-                                                                (data.square_feet_from === 0 && data.square_feet_to === 0) || (data.square_feet_from === '' && data.square_feet_to === '') || (data.square_feet_from === null && data.square_feet_to === null)
+                                                                (data.square_feet_from == 0 && data.square_feet_to == 0) || (data.square_feet_from == '' && data.square_feet_to == '') || (data.square_feet_from == null && data.square_feet_to == null)
                                                                     ?
                                                                     'N/A'
                                                                     :
 
-                                                                    (data.square_feet_from === data.square_feet_to ?
+                                                                    (data.square_feet_from == data.square_feet_to ?
                                                                         `${data.square_feet_from}`
                                                                         :
                                                                         `${data.square_feet_from} - ${data.square_feet_to}`
@@ -706,12 +707,12 @@ const PropertiesNearby3 = ({ propertynearby, titletext }) => {
                                                         </b>Sq.Ft</li>
                                                         <li className="ml-auto boldTag greenText fontSize16">
                                                             {
-                                                                (data.rent_from === 0 && data.rent_to === 0) || (data.rent_from === '' && data.rent_to === '') || (data.rent_from === null && data.rent_to === null)
+                                                                (data.rent_from == 0 && data.rent_to == 0) || (data.rent_from == '' && data.rent_to == '') || (data.rent_from == null && data.rent_to == null)
                                                                     ?
                                                                     '$ N/A'
                                                                     :
 
-                                                                    (data.rent_from === data.rent_to ?
+                                                                    (data.rent_from == data.rent_to ?
                                                                         `$ ${data.rent_from}`
                                                                         :
                                                                         `$ ${data.rent_from} - ${data.rent_to}`
@@ -788,7 +789,7 @@ const PropertiesNearby3 = ({ propertynearby, titletext }) => {
 
 
                                         {
-                                            data.prog_type === "affordablehousing" ? <div className="sliderTagName brdrRadius4 colorWhite font-weight700">Affordable Housing</div> : null
+                                            data.prog_type == "affordablehousing" ? <div className="sliderTagName brdrRadius4 colorWhite font-weight700">Affordable Housing</div> : null
                                         }
 
                                         <div className="sliderTextArea">

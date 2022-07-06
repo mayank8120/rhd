@@ -22,7 +22,7 @@ export const ContactUs = () => {
         // console.log(formdata);
 
 
-        if (captchaValue === true) {
+        if (captchaValue == true) {
             submitAllData();
             // console.log('12345');
             setformdata({ name: '', email: '', subject: '', formbody: '' });
@@ -81,14 +81,14 @@ export const ContactUs = () => {
     }
 
     function captchacheck() {
-        if (captchaValue === undefined || captchaValue !== true) { setcaptchaValue(false) }
+        if (captchaValue == undefined || captchaValue !== true) { setcaptchaValue(false) }
     }
 
     return (
         <>
             <section className="secPad24">
                 <div className="container">
-                    <div class="row">
+                    <div className="row">
 
                         <div className="col-md-24 col-sm-24 col-lg-24">
                             <nav className="navbar resNavbarBread" aria-label="breadcrumb">
@@ -98,14 +98,14 @@ export const ContactUs = () => {
                                 </ol>
                             </nav>
                         </div>
-                        <div class="col-md-24 col-sm-24 col-lg-24">
-                            <div class="row">
+                        <div className="col-md-24 col-sm-24 col-lg-24">
+                            <div className="row">
 
-                                <div class="col-md-24 col-sm-24 col-lg-24">
+                                <div className="col-md-24 col-sm-24 col-lg-24">
                                     <h2 className='mt-0'>Contact Us</h2>
-                                    {submission === true ?
+                                    {submission == true ?
 
-                                        <div class="flash-success">
+                                        <div className="flash-success">
                                             Thank you for contacting us. We will respond to you as soon as possible.
                                         </div>
                                         :
@@ -116,22 +116,22 @@ export const ContactUs = () => {
                                                 questions about our service, or listing or billing questions, please contact
                                                 our Customer Service department.</p>
                                             <p></p>
-                                            <p>Simply email <a href="mailto:info@rentalhousingdeals.com" class="hvr">our Customer
+                                            <p>Simply email <a href="mailto:info@rentalhousingdeals.com" className="hvr">our Customer
                                                 Service</a> team at or call (626) 281-8300 during the hours of 9AM to 5PM
                                                 (Pacific Standard time). Our fax number is (626) 593-2112.</p>
                                             <p></p>
                                             <p>To advertise or partner with us, or if you have business inquiries or other
-                                                questions, please fill out the form below or send email to <a href="mailto:info@rentalhousingdeals.com" class="hvr">info@rentalhousingdeals.com</a>.
+                                                questions, please fill out the form below or send email to <a href="mailto:info@rentalhousingdeals.com" className="hvr">info@rentalhousingdeals.com</a>.
                                                 Thank you!</p>
                                             <p></p>
                                         </>
                                     }
                                 </div>
                             </div>
-                            {submission === true ? null :
-                                <div class="form">
-                                    <div class="row">
-                                        <div class="col-md-12 col-xm-16 col-xs-24 col-lg-12">
+                            {submission == true ? null :
+                                <div className="form">
+                                    <div className="row">
+                                        <div className="col-md-12 col-xm-16 col-xs-24 col-lg-12">
                                             <form className="rentalForm" onSubmit={handleSubmit}>
                                                 <div className="row">
                                                     <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -183,7 +183,7 @@ export const ContactUs = () => {
                                                                         onChange={captchaHandle} />
                                                                 </div>
                                                                 {
-                                                                    captchaValue === false
+                                                                    captchaValue == false
                                                                         ?
                                                                         <span style={{ color: 'red' }}>Please Verify Captcha</span>
                                                                         :

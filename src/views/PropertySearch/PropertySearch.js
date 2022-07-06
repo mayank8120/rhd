@@ -99,8 +99,8 @@ const PropertySearch = () => {
     const [areNonQuestionParametersPresent, setareNonQuestionParametersPresent] = useState(false);
 
     useEffect(() => {
-        if ((parameters.cityname === undefined || parameters.cityname === null) &&
-            (parameters.statename === undefined || parameters.statename === null)) {
+        if ((parameters.cityname == undefined || parameters.cityname == null) &&
+            (parameters.statename == undefined || parameters.statename == null)) {
             setareNonQuestionParametersPresent(false);
             // console.log(parameters.cityname, parameters.statename, "FALSE");
         } else {
@@ -117,7 +117,7 @@ const PropertySearch = () => {
 
 
     function changePaginationSimpleData(num) {
-        if ((city !== null || city !== undefined) && (statename !== null || statename !== undefined) && areNonQuestionParametersPresent === true && areQuestionParametersPresent === false) {
+        if ((city !== null || city !== undefined) && (statename !== null || statename !== undefined) && areNonQuestionParametersPresent == true && areQuestionParametersPresent == false) {
             history.push(`/propertySearch/${city}/${statename}`);
         }
     }
@@ -143,7 +143,7 @@ const PropertySearch = () => {
 
 
     useEffect(() => {
-        if (minlat === searchParameters.get('minlat') && maxlat === searchParameters.get('maxlat') && minlng === searchParameters.get('minlng') && maxlng === searchParameters.get('maxlng')) {
+        if (minlat == searchParameters.get('minlat') && maxlat == searchParameters.get('maxlat') && minlng == searchParameters.get('minlng') && maxlng == searchParameters.get('maxlng')) {
             setarequestionparameterschanegd(false);
         } else {
             setarequestionparameterschanegd(true);
@@ -153,10 +153,10 @@ const PropertySearch = () => {
         setminlng(searchParameters.get('minlng'));
         setmaxlng(searchParameters.get('maxlng'));
         // console.log("PARAMETERS CHANGED");
-        if ((minlat === null || minlat === undefined) &&
-            (maxlat === null || maxlat === undefined) &&
-            (minlng === null || minlng === undefined) &&
-            (maxlng === null || maxlng === undefined)) {
+        if ((minlat == null || minlat == undefined) &&
+            (maxlat == null || maxlat == undefined) &&
+            (minlng == null || minlng == undefined) &&
+            (maxlng == null || maxlng == undefined)) {
             setareQuestionParametersPresent(false);
             // console.log(minlat, maxlat, minlng, maxlng, "FALSE");
         } else {
@@ -168,10 +168,10 @@ const PropertySearch = () => {
 
 
     // useEffect(() => {
-    //     if ((minlat === null || minlat === undefined) &&
-    //         (maxlat === null || maxlat === undefined) &&
-    //         (minlng === null || minlng === undefined) &&
-    //         (maxlng === null || maxlng === undefined)) {
+    //     if ((minlat == null || minlat == undefined) &&
+    //         (maxlat == null || maxlat == undefined) &&
+    //         (minlng == null || minlng == undefined) &&
+    //         (maxlng == null || maxlng == undefined)) {
     //         setareQuestionParametersPresent(false);
     //         // console.log(minlat, maxlat, minlng, maxlng, "FALSE");
     //     } else {
@@ -186,8 +186,8 @@ const PropertySearch = () => {
 
     useEffect(() => {
 
-        if (areQuestionParametersPresent === true && areNonQuestionParametersPresent === false && arequestionparameterschanegd === true) {
-            if (isItCityVISE(minlng, maxlng) === true) {
+        if (areQuestionParametersPresent == true && areNonQuestionParametersPresent == false && arequestionparameterschanegd == true) {
+            if (isItCityVISE(minlng, maxlng) == true) {
                 setsearchresultdata();
                 sethead(0);
                 settail(24);
@@ -277,41 +277,41 @@ const PropertySearch = () => {
         paginationarray.push(i);
     }
     let tagarray;
-    if (fourpage === undefined) {
+    if (fourpage == undefined) {
     }
     else {
         tagarray = [
-            <li className={`${currentpage === fourpage - 3 ? "active paginationNum" : "paginationNum"}`} onClick={() => {
+            <li className={`${currentpage == fourpage - 3 ? "active paginationNum" : "paginationNum"}`} onClick={() => {
                 currentpagechange(fourpage - 3);
                 // setsearchresultdata();
             }} >{fourpage - 3}</li>
             ,
-            <li className={`${currentpage === (fourpage - 2) ? "active paginationNum" : "paginationNum"}`} onClick={() => {
+            <li className={`${currentpage == (fourpage - 2) ? "active paginationNum" : "paginationNum"}`} onClick={() => {
                 currentpagechange(fourpage - 2);
                 // setsearchresultdata();
             }}>{fourpage - 2}</li>
             ,
-            <li className={`${currentpage === fourpage - 1 ? "active paginationNum" : "paginationNum"}`} onClick={() => {
+            <li className={`${currentpage == fourpage - 1 ? "active paginationNum" : "paginationNum"}`} onClick={() => {
                 currentpagechange(fourpage - 1);
                 // setsearchresultdata();
             }}>{fourpage - 1}</li>
             ,
-            <li className={`${currentpage === fourpage ? "active paginationNum" : "paginationNum"}`} onClick={() => {
+            <li className={`${currentpage == fourpage ? "active paginationNum" : "paginationNum"}`} onClick={() => {
                 currentpagechange(fourpage);
                 // setsearchresultdata();
             }}>{fourpage}</li>
             ,
-            <li className={`${currentpage === fourpage + 1 ? "active paginationNum" : "paginationNum"}`} onClick={() => {
+            <li className={`${currentpage == fourpage + 1 ? "active paginationNum" : "paginationNum"}`} onClick={() => {
                 currentpagechange(fourpage + 1);
                 // setsearchresultdata();
             }}>{fourpage + 1}</li>
             ,
-            <li className={`${currentpage === fourpage + 2 ? "active paginationNum" : "paginationNum"}`} onClick={() => {
+            <li className={`${currentpage == fourpage + 2 ? "active paginationNum" : "paginationNum"}`} onClick={() => {
                 currentpagechange(fourpage + 2);
                 // setsearchresultdata();
             }}>{fourpage + 2}</li>
             ,
-            <li className={`${currentpage === fourpage + 3 ? "active paginationNum" : "paginationNum"}`} onClick={() => {
+            <li className={`${currentpage == fourpage + 3 ? "active paginationNum" : "paginationNum"}`} onClick={() => {
                 currentpagechange(fourpage + 3);
                 // setsearchresultdata();
             }}>{fourpage + 3}</li>
@@ -400,7 +400,7 @@ const PropertySearch = () => {
 
     useEffect(() => {
         for (let i = 0; i < selectBeds.length; i++) {
-            if (selectBeds[i].label === 'Studio' || selectBeds[i].label === 'Others') {
+            if (selectBeds[i].label == 'Studio' || selectBeds[i].label == 'Others') {
                 bedstring += '\'' + selectBeds[i].label + '\',';
             } else {
                 if (i < selectBeds.length - 1) {
@@ -422,22 +422,22 @@ const PropertySearch = () => {
 
 
 
-    if (selectapartment.length === 0) {
+    if (selectapartment.length == 0) {
 
     } else {
-        if (selectapartment.value === 'Senior Housing') {
+        if (selectapartment.value == 'Senior Housing') {
             apartmentstring = 'senior';
-        } if (selectapartment.value === 'Section 8 Housing') {
+        } if (selectapartment.value == 'Section 8 Housing') {
             apartmentstring = 'section';
         }
-        if (selectapartment.value === 'Rental Deals') {
+        if (selectapartment.value == 'Rental Deals') {
             apartmentstring = '';
         }
     }
 
     let removelastcomma = (str) => {
         let us;
-        if (str.charAt(str.length - 1) === ',') {
+        if (str.charAt(str.length - 1) == ',') {
             us = str.slice(0, -1);
         } else {
             us = str;
@@ -493,7 +493,7 @@ const PropertySearch = () => {
 
     const handleOnChangepets = (position) => {
         const updatedCheckedStatepets = checkedStatepets.map((item, index) =>
-            index === position ? !item : item
+            index == position ? !item : item
         );
 
         setCheckedStatepets(updatedCheckedStatepets);
@@ -503,7 +503,7 @@ const PropertySearch = () => {
 
         const totalPrice = updatedCheckedStatepets.reduce(
             (sum, currentState, index) => {
-                if (currentState === true) {
+                if (currentState == true) {
                     arrpets.push(petsection[index].name);
                     return sum + 1;
                 }
@@ -529,7 +529,7 @@ const PropertySearch = () => {
 
     const handleOnChangeamenities = (position) => {
         const updatedCheckedStateamenities = checkedStateamenities.map((item, index) =>
-            index === position ? !item : item
+            index == position ? !item : item
         );
 
         setCheckedStateamenities(updatedCheckedStateamenities);
@@ -538,7 +538,7 @@ const PropertySearch = () => {
 
         const totalPrice = updatedCheckedStateamenities.reduce(
             (sum, currentState, index) => {
-                if (currentState === true) {
+                if (currentState == true) {
                     arramenities.push(amenitieslist[index].name);
                     return sum + 1;
                 }
@@ -568,7 +568,7 @@ const PropertySearch = () => {
 
     useEffect(() => {
         setnearbycitiesdata(JSON.parse(localStorage.getItem("nearbycitiesdata")))
-        if (nearbycitiesdata.length === 0) {
+        if (nearbycitiesdata.length == 0) {
         } else {
             setCheckedStatecities(new Array(nearbycitiesdata.length).fill(false));
         }
@@ -576,17 +576,17 @@ const PropertySearch = () => {
     }, [filtermodalclick]);
 
     const handleOnChangecities = (position) => {
-        if (nearbycitiesdata.length === 0) {
+        if (nearbycitiesdata.length == 0) {
 
         } else {
             const updatedCheckedStatecities = checkedStatecities.map((item, index) =>
-                index === position ? !item : item
+                index == position ? !item : item
             );
             setCheckedStatecities(updatedCheckedStatecities);
             const arrcities = [];
             const totalPrice = updatedCheckedStatecities.reduce(
                 (sum, currentState, index) => {
-                    if (currentState === true) {
+                    if (currentState == true) {
                         arrcities.push(nearbycitiesdata[index].name);
                         return sum + 1;
                     }
@@ -615,24 +615,24 @@ const PropertySearch = () => {
 
     const surl = 'http://thomasthecat.rentalhousingdeals.com/apis/v1/api/v1/property-search?';
 
-    let searchApiUrl = `${surl}city=${city}&state=${statename}&page=${currentpage}&feature=${featureParameter}&minamtval=${min_price === undefined ? '' : min_price}&maxamtval=${max_price === undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`
-    let searchsenior = `${surl}city=${city}&state=${statename}&page=${currentpage}&feature=senior&minamtval=${min_price === undefined ? '' : min_price}&maxamtval=${max_price === undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`
-    let searchsection8 = `${surl}city=${city}&state=${statename}&page=${currentpage}&feature=section&minamtval=${min_price === undefined ? '' : min_price}&maxamtval=${max_price === undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`
+    let searchApiUrl = `${surl}city=${city}&state=${statename}&page=${currentpage}&feature=${featureParameter}&minamtval=${min_price == undefined ? '' : min_price}&maxamtval=${max_price == undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`
+    let searchsenior = `${surl}city=${city}&state=${statename}&page=${currentpage}&feature=senior&minamtval=${min_price == undefined ? '' : min_price}&maxamtval=${max_price == undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`
+    let searchsection8 = `${surl}city=${city}&state=${statename}&page=${currentpage}&feature=section&minamtval=${min_price == undefined ? '' : min_price}&maxamtval=${max_price == undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`
 
 
     // console.log(apartmentstring);
 
     // useEffect(() => {
-    //     searchApiUrl = `${surl}city=${city}/${statename}&page=${currentpage}&feature=${apartmentstring}&minamtval=${min_price === undefined ? '' : min_price}&maxamtval=${max_price === undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`;
-    //     searchsenior = `${surl}city=${city}/${statename}&page=${currentpage}&feature=senior&minamtval=${min_price === undefined ? '' : min_price}&maxamtval=${max_price === undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`
-    //     searchsection8 = `${surl}city=${city}/${statename}&page=${currentpage}&feature=section&minamtval=${min_price === undefined ? '' : min_price}&maxamtval=${max_price === undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`
+    //     searchApiUrl = `${surl}city=${city}/${statename}&page=${currentpage}&feature=${apartmentstring}&minamtval=${min_price == undefined ? '' : min_price}&maxamtval=${max_price == undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`;
+    //     searchsenior = `${surl}city=${city}/${statename}&page=${currentpage}&feature=senior&minamtval=${min_price == undefined ? '' : min_price}&maxamtval=${max_price == undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`
+    //     searchsection8 = `${surl}city=${city}/${statename}&page=${currentpage}&feature=section&minamtval=${min_price == undefined ? '' : min_price}&maxamtval=${max_price == undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`
     // }, [selectBeds, selectBaths]);
 
 
     useEffect(() => {
-        searchApiUrl = `${surl}city=${city}&state=${statename}&page=${currentpage}&feature=${featureParameter}&minamtval=${min_price === undefined ? '' : min_price}&maxamtval=${max_price === undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`;
-        searchsenior = `${surl}city=${city}&state=${statename}&page=${currentpage}&feature=senior&minamtval=${min_price === undefined ? '' : min_price}&maxamtval=${max_price === undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`
-        searchsection8 = `${surl}city=${city}&state=${statename}&page=${currentpage}&feature=section&minamtval=${min_price === undefined ? '' : min_price}&maxamtval=${max_price === undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`
+        searchApiUrl = `${surl}city=${city}&state=${statename}&page=${currentpage}&feature=${featureParameter}&minamtval=${min_price == undefined ? '' : min_price}&maxamtval=${max_price == undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`;
+        searchsenior = `${surl}city=${city}&state=${statename}&page=${currentpage}&feature=senior&minamtval=${min_price == undefined ? '' : min_price}&maxamtval=${max_price == undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`
+        searchsection8 = `${surl}city=${city}&state=${statename}&page=${currentpage}&feature=section&minamtval=${min_price == undefined ? '' : min_price}&maxamtval=${max_price == undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`
     }, [selectBeds, selectBaths, areNonQuestionParametersPresent]);
 
 
@@ -640,7 +640,7 @@ const PropertySearch = () => {
 
 
     useEffect(() => {
-        searchApiUrl = `${surl}city=${city}&state=${statename}&page=${currentpage}&feature=${featureParameter}&minamtval=${min_price === undefined ? '' : min_price}&maxamtval=${max_price === undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`;
+        searchApiUrl = `${surl}city=${city}&state=${statename}&page=${currentpage}&feature=${featureParameter}&minamtval=${min_price == undefined ? '' : min_price}&maxamtval=${max_price == undefined ? '' : max_price}&beds=${removelastcomma(bedstring)}&baths=${removelastcomma(bathstring)}`;
     }, [areNonQuestionParametersPresent])
 
 
@@ -678,14 +678,14 @@ const PropertySearch = () => {
 
     // useEffect(() => {
 
-    //     if (isObjectEmpty(parameters) === true) {
+    //     if (isObjectEmpty(parameters) == true) {
 
     //     } else {
 
-    //         if (areNonQuestionParametersPresent === true && mapchange === false) {
+    //         if (areNonQuestionParametersPresent == true && mapchange == false) {
 
     //             // console.log(city, statename);
-    //             if (city === null || statename === null || city === undefined || statename === undefined) {
+    //             if (city == null || statename == null || city == undefined || statename == undefined) {
     //             } else {
     //                 dispatch(getPropListAccordingToCityAndState(searchApiUrl));
     //             }
@@ -695,24 +695,24 @@ const PropertySearch = () => {
     //         }
     //     }
     //     // const fetchData = async () => {
-    //     //     if (statename === 'undefined' || statename === '' || statename === null) {
+    //     //     if (statename == 'undefined' || statename == '' || statename == null) {
 
     //     //     }
     //     //     else {
 
 
 
-    //     //         if (mapchange === false) {
+    //     //         if (mapchange == false) {
 
     //     //             setsearchresultdata([]);
 
-    //     //             if (feature === 'senior') {
+    //     //             if (feature == 'senior') {
 
     //     //                 const result = await fetch(`${searchsenior}`, requestOptions)
     //     //                     .then(response => response.json())
     //     //                     .then(res => {
     //     //                         // console.log(res.error);
-    //     //                         if (res.error === true) {
+    //     //                         if (res.error == true) {
     //     //                             // console.log('5');
     //     //                             setsearchresultdata(res.message);
     //     //                             settotalcount(0);
@@ -726,12 +726,12 @@ const PropertySearch = () => {
     //     //                     })
     //     //                     .catch(error => console.log('error', error));
 
-    //     //             } else if (feature === 'section') {
+    //     //             } else if (feature == 'section') {
     //     //                 const result = await fetch(`${searchsection8}`, requestOptions)
     //     //                     .then(response => response.json())
     //     //                     .then(res => {
     //     //                         // console.log(res.error);
-    //     //                         if (res.error === true) {
+    //     //                         if (res.error == true) {
     //     //                             // console.log('5');
     //     //                             setsearchresultdata(res.message);
     //     //                             settotalcount(0);
@@ -750,7 +750,7 @@ const PropertySearch = () => {
     //     //                     .then(response => response.json())
     //     //                     .then(res => {
     //     //                         // console.log(res.error);
-    //     //                         if (res.error === true) {
+    //     //                         if (res.error == true) {
     //     //                             console.log('5');
     //     //                             setsearchresultdata(res.message);
     //     //                             settotalcount(0);
@@ -765,12 +765,12 @@ const PropertySearch = () => {
     //     //             }
 
     //     //         }
-    //     //         else if (mapchange === true) {
+    //     //         else if (mapchange == true) {
     //     //             setsearchresultdata([]);
 
     //     //             setsearchresultdata(propResult.data);
 
-    //     //             if (propResult.hasOwnProperty('count') === false) {
+    //     //             if (propResult.hasOwnProperty('count') == false) {
     //     //                 settypeofdata("CITY");
     //     //             } else {
     //     //                 settypeofdata();
@@ -806,17 +806,17 @@ const PropertySearch = () => {
 
 
     useEffect(() => {
-        if (areNonQuestionParametersPresent === true && areQuestionParametersPresent === false) {
-            if (city === null || statename === null || city === undefined || statename === undefined) {
+        if (areNonQuestionParametersPresent == true && areQuestionParametersPresent == false) {
+            if (city == null || statename == null || city == undefined || statename == undefined) {
             } else {
                 dispatch(getPropListAccordingToCityAndState(searchApiUrl));
             }
-        } else if (areNonQuestionParametersPresent === false && areQuestionParametersPresent === true) {
-            if (mapchange === true) {
+        } else if (areNonQuestionParametersPresent == false && areQuestionParametersPresent == true) {
+            if (mapchange == true) {
                 // console.log("FETCH SECOND API");
 
-                if (areQuestionParametersPresent === true && areNonQuestionParametersPresent === false) {
-                    if (isItCityVISE(minlng, maxlng) === true) {
+                if (areQuestionParametersPresent == true && areNonQuestionParametersPresent == false) {
+                    if (isItCityVISE(minlng, maxlng) == true) {
                         setsearchresultdata();
                         sethead(0);
                         settail(24);
@@ -842,16 +842,16 @@ const PropertySearch = () => {
 
 
     useEffect(() => {
-        if (propResult.error === true) {
+        if (propResult.error == true) {
             setsearchresultdata(ERROR);
-        } else if (propResult.error === false) {
+        } else if (propResult.error == false) {
             setsearchresultdata(propResult.data);
 
-            if (propResult.type === FIRSTAPI) {
+            if (propResult.type == FIRSTAPI) {
                 settypeOfAPI(FIRSTAPI);
-            } else if (propResult.type === SECONDAPI) {
+            } else if (propResult.type == SECONDAPI) {
                 settypeOfAPI(SECONDAPI)
-            } else if (propResult.type === THIRDAPI) {
+            } else if (propResult.type == THIRDAPI) {
                 settypeOfAPI(THIRDAPI);
             }
 
@@ -872,7 +872,7 @@ const PropertySearch = () => {
 
 
     let findLastPage = (count) => {
-        return parseInt(count / 25) + (count % 25 === 0 ? 0 : 1);
+        return parseInt(count / 25) + (count % 25 == 0 ? 0 : 1);
     }
 
     const [resultdatabackup, setresultdatabackup] = useState([]);
@@ -881,17 +881,17 @@ const PropertySearch = () => {
 
 
     useEffect(() => {
-        if (propResult.error === true) {
+        if (propResult.error == true) {
             setsearchresultdata(ERROR);
             settotalcount(0);
-        } else if (propResult.error === false) {
+        } else if (propResult.error == false) {
             setsearchresultdata(propResult.data);
 
-            if (propResult.type === FIRSTAPI) {
+            if (propResult.type == FIRSTAPI) {
                 settypeOfAPI(FIRSTAPI);
-            } else if (propResult.type === SECONDAPI) {
+            } else if (propResult.type == SECONDAPI) {
                 settypeOfAPI(SECONDAPI)
-            } else if (propResult.type === THIRDAPI) {
+            } else if (propResult.type == THIRDAPI) {
                 settypeOfAPI(THIRDAPI);
             }
 
@@ -901,7 +901,7 @@ const PropertySearch = () => {
         }
 
 
-        if (mapchange === true) {
+        if (mapchange == true) {
             currentpagechange(1);
             setfourpage(4);
         }
@@ -916,14 +916,14 @@ const PropertySearch = () => {
 
     useEffect(() => {
 
-        if (mapchange === true) {
-            if (lastpage === 1) {
+        if (mapchange == true) {
+            if (lastpage == 1) {
                 sethead(0);
                 settail(totalcount);
                 console.log("tail 1");
                 // console.log(head, tail);
             } else {
-                if (currentpage === lastpage) {
+                if (currentpage == lastpage) {
                     sethead((currentpage - 1) * 25);
                     settail(totalcount);
                     console.log("tail 2");
@@ -950,7 +950,7 @@ const PropertySearch = () => {
 
 
     const findUnique = (array) => {
-        if (array === undefined || array === null || array.length === 0) {
+        if (array == undefined || array == null || array.length == 0) {
         } else {
             let newarr = [];
             array.map(
@@ -1003,7 +1003,7 @@ const PropertySearch = () => {
 
 
     useEffect(() => {
-        if (firstListofCityStates === undefined || firstListofCityStates.length === 0) {
+        if (firstListofCityStates == undefined || firstListofCityStates.length == 0) {
 
         } else {
             findUnique(firstListofCityStates);
@@ -1014,7 +1014,7 @@ const PropertySearch = () => {
 
 
     useEffect(() => {
-        if (uniQueCityStateList.length === 0) { }
+        if (uniQueCityStateList.length == 0) { }
         else {
             console.log(uniQueCityStateList, "QQQQ");
             setcity(uniQueCityStateList[findHighestCountCity(uniQueCityStateList)].city);
@@ -1029,10 +1029,10 @@ const PropertySearch = () => {
     useEffect(() => {
         // console.log(head, "HEAD", tail, "TAIL");
 
-        if (searchresultdata === undefined || searchresultdata === null || searchresultdata.length === 0) {
+        if (searchresultdata == undefined || searchresultdata == null || searchresultdata.length == 0) {
 
         } else {
-            if (typeOfApi === FIRSTAPI || typeOfApi === SECONDAPI) {
+            if (typeOfApi == FIRSTAPI || typeOfApi == SECONDAPI) {
                 generateFirstFilterList(searchresultdata.slice(head, tail));
             }
         }
@@ -1066,13 +1066,13 @@ const PropertySearch = () => {
 
 
                             {
-                                (searchresultdata === null || searchresultdata === undefined || searchresultdata === '' || searchresultdata.length === 0) ?
+                                (searchresultdata == null || searchresultdata == undefined || searchresultdata == '' || searchresultdata.length == 0) ?
                                     <Loader />
                                     :
 
                                     (
-                                        // typeofdata === "CITY" 
-                                        typeOfApi === THIRDAPI
+                                        // typeofdata == "CITY" 
+                                        typeOfApi == THIRDAPI
                                             ?
                                             <>
                                                 <CityWiseList searchresultdata={searchresultdata} />
@@ -1080,18 +1080,18 @@ const PropertySearch = () => {
                                             :
                                             <>
                                                 <div className="listingSection map-filter-section">
-                                                    <div class="cst adjustment">
+                                                    <div className="cst adjustment">
                                                         <div className="itemWebsite">
                                                             <nav className="navbar resNavbarBread" aria-label="breadcrumb">
                                                                 <ol className="breadcrumb font-weight500 mb-0">
                                                                     <li className="breadcrumb-item fontSize14"><a href="/" className=' purpleText' > Home</a></li>
-                                                                    <li className="breadcrumb-item fontSize14 purpleText"><a href="/" className=' purpleText' >{feature === 'senior' ? 'Senior Housing' : (feature === 'section' ? 'Section 8 Housing' : 'Rentals')}</a></li>
-                                                                    <li className="breadcrumb-item fontSize14 purpleText"><a href={`/propertySearch//${statename}`} className={city === undefined || city === '' ? 'activeimp' : 'purpleText'} >{statename.toUpperCase()}</a></li>
-                                                                    {city === undefined || city === '' ? null : <li className="breadcrumb-item fontSize14 active">{capitalise(city)}</li>}
+                                                                    <li className="breadcrumb-item fontSize14 purpleText"><a href="/" className=' purpleText' >{feature == 'senior' ? 'Senior Housing' : (feature == 'section' ? 'Section 8 Housing' : 'Rentals')}</a></li>
+                                                                    <li className="breadcrumb-item fontSize14 purpleText"><a href={`/propertySearch//${statename}`} className={city == undefined || city == '' ? 'activeimp' : 'purpleText'} >{statename.toUpperCase()}</a></li>
+                                                                    {city == undefined || city == '' ? null : <li className="breadcrumb-item fontSize14 active">{capitalise(city)}</li>}
                                                                 </ol>
                                                             </nav>
                                                         </div>
-                                                        <h1 className="font-weight400 mb-0 fontSize18">Apartments for rent in or near {city === undefined || city === '' ? null : `${capitalise(city)},`} {statename.toUpperCase()}</h1>
+                                                        <h1 className="font-weight400 mb-0 fontSize18">Apartments for rent in or near {city == undefined || city == '' ? null : `${capitalise(city)},`} {statename.toUpperCase()}</h1>
                                                         <div className="tagList d-flex align-items-center">
 
 
@@ -1152,7 +1152,7 @@ const PropertySearch = () => {
 
                                                             <div className="ml-auto itemWebsite">
                                                                 <h4 className="numProperty colorBlue fontSize16 font-weight700 mb-0">
-                                                                    {searchresultdata === null || searchresultdata.length === 0 ? 0 : totalcount} Properties</h4>
+                                                                    {searchresultdata == null || searchresultdata.length == 0 ? 0 : totalcount} Properties</h4>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1167,13 +1167,13 @@ const PropertySearch = () => {
 
                                                                 {
 
-                                                                    searchresultdata === undefined || searchresultdata === '' || searchresultdata.length === 0 || searchresultdata === null || typeOfApi === FIRSTAPI
+                                                                    searchresultdata == undefined || searchresultdata == '' || searchresultdata.length == 0 || searchresultdata == null || typeOfApi == FIRSTAPI
                                                                         ?
                                                                         <>
                                                                             <Loader />
                                                                         </>
                                                                         :
-                                                                        searchresultdata === ERROR
+                                                                        searchresultdata == ERROR
                                                                             ?
                                                                             window.location.replace("/error404")
                                                                             :
@@ -1197,13 +1197,13 @@ const PropertySearch = () => {
 
                                                     {/* pagination */}
                                                     {
-                                                        lastpage === undefined || lastpage === 0 || lastpage === '' || totalcount < 26 ? null :
+                                                        lastpage == undefined || lastpage == 0 || lastpage == '' || totalcount < 26 ? null :
                                                             <div className="pagination">
                                                                 <ul className="noMarginPad listStyleNone">
 
                                                                     {/* left arrow  */}
                                                                     {
-                                                                        currentpage === 1
+                                                                        currentpage == 1
                                                                             ?
                                                                             null
                                                                             :
@@ -1242,19 +1242,19 @@ const PropertySearch = () => {
                                                                                     )
                                                                                     :
                                                                                     <>
-                                                                                        <li className={`${currentpage === fourpage - 3 ? "active paginationNum" : "paginationNum"}`} onClick={() => {
+                                                                                        <li className={`${currentpage == fourpage - 3 ? "active paginationNum" : "paginationNum"}`} onClick={() => {
                                                                                             currentpagechange(fourpage - 3);
                                                                                         }}>{fourpage - 3}</li>
 
-                                                                                        <li className={`${currentpage === (fourpage - 2) ? "active paginationNum" : "paginationNum"}`} onClick={() => {
+                                                                                        <li className={`${currentpage == (fourpage - 2) ? "active paginationNum" : "paginationNum"}`} onClick={() => {
                                                                                             currentpagechange(fourpage - 2);
                                                                                         }}>{fourpage - 2}</li>
 
-                                                                                        <li className={`${currentpage === fourpage - 1 ? "active paginationNum" : "paginationNum"}`} onClick={() => {
+                                                                                        <li className={`${currentpage == fourpage - 1 ? "active paginationNum" : "paginationNum"}`} onClick={() => {
                                                                                             currentpagechange(fourpage - 1);
                                                                                         }}>{fourpage - 1}</li>
 
-                                                                                        <li className={`${currentpage === fourpage ? "active paginationNum" : "paginationNum"}`} onClick={() => {
+                                                                                        <li className={`${currentpage == fourpage ? "active paginationNum" : "paginationNum"}`} onClick={() => {
                                                                                             currentpagechange(fourpage);
                                                                                         }}>{fourpage}</li>
                                                                                     </>
@@ -1271,15 +1271,15 @@ const PropertySearch = () => {
                                                                                     <>
                                                                                         <li className="dotsBlock">...</li>
 
-                                                                                        <li className={`${currentpage === lastpage - 2 ? "active paginationNum" : "paginationNum"}`} onClick={() => {
+                                                                                        <li className={`${currentpage == lastpage - 2 ? "active paginationNum" : "paginationNum"}`} onClick={() => {
                                                                                             currentpagechange(lastpage - 2);
                                                                                         }}>{lastpage - 2}</li>
 
-                                                                                        <li className={`${currentpage === lastpage - 1 ? "active paginationNum" : "paginationNum"}`} onClick={() => {
+                                                                                        <li className={`${currentpage == lastpage - 1 ? "active paginationNum" : "paginationNum"}`} onClick={() => {
                                                                                             currentpagechange(lastpage - 1);
                                                                                         }}>{lastpage - 1}</li>
 
-                                                                                        <li className={`${currentpage === lastpage ? "active paginationNum" : "paginationNum"}`} onClick={() => {
+                                                                                        <li className={`${currentpage == lastpage ? "active paginationNum" : "paginationNum"}`} onClick={() => {
                                                                                             currentpagechange(lastpage);
                                                                                         }}>{lastpage}</li>
                                                                                     </>
@@ -1294,7 +1294,7 @@ const PropertySearch = () => {
 
                                                                     {/* right aRROW  */}
                                                                     {
-                                                                        currentpage === lastpage
+                                                                        currentpage == lastpage
                                                                             ?
                                                                             null
                                                                             :
@@ -1314,12 +1314,12 @@ const PropertySearch = () => {
                                                                 </ul>
                                                                 <p className="mb-0 fontSize14 font-weight400 text-center mt-1 secondaryColor">Showing&nbsp;
                                                                     {
-                                                                        lastpage === 1 ?
+                                                                        lastpage == 1 ?
                                                                             <>{1}-{totalcount} of&nbsp;{totalcount}</>
                                                                             :
                                                                             <>
                                                                                 {
-                                                                                    currentpage === lastpage ?
+                                                                                    currentpage == lastpage ?
                                                                                         <>{currentpage * 25 - 24}-{totalcount} of&nbsp;{totalcount}</>
                                                                                         :
                                                                                         <>{currentpage * 25 - 24}-{currentpage * 25} of&nbsp;{totalcount}</>
@@ -1345,7 +1345,7 @@ const PropertySearch = () => {
                                     <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 mapRight0 widthBlock70">
                                         <div className="posRel">
                                             {
-                                                // (searchresultdata !== null && searchresultdata.length !== 0 && searchresultdata !== undefined) && mapchange === false ?
+                                                // (searchresultdata !== null && searchresultdata.length !== 0 && searchresultdata !== undefined) && mapchange == false ?
                                                 //     <MultiplePointMap className="map"
                                                 //         searchresultdata={searchresultdata}
                                                 //     />
@@ -1355,7 +1355,7 @@ const PropertySearch = () => {
 
 
                                             <div className="mapBlockCheck">
-                                                <div class="listingSection adjustment1 mapListingSection d-flex align-items-center">
+                                                <div className="listingSection adjustment1 mapListingSection d-flex align-items-center">
                                                     {/* <h1>{JSON.stringify(mapchange)}</h1> */}
                                                     <input
                                                         type="checkbox"
@@ -1587,13 +1587,13 @@ const PropertySearch = () => {
                         </div>
                         <div className="pupleLineBtn amenityTop">
                             <span className="w-100 transition font-weight500" onClick={() => {
-                                if (indexforamenities === 6) {
+                                if (indexforamenities == 6) {
                                     setindexforamenities(amenitieslist.length);
                                 } else {
                                     setindexforamenities(6);
                                 }
 
-                            }}>Show {indexforamenities === 6 ? 'more' : 'less'} amenities</span>
+                            }}>Show {indexforamenities == 6 ? 'more' : 'less'} amenities</span>
                         </div>
 
 
@@ -1624,7 +1624,7 @@ const PropertySearch = () => {
                                             </label>
                                         </div> */}
                                         {
-                                            nearbycitiesdata === null || nearbycitiesdata === '' || nearbycitiesdata.length === 0 ?
+                                            nearbycitiesdata == null || nearbycitiesdata == '' || nearbycitiesdata.length == 0 ?
                                                 null
                                                 :
                                                 nearbycitiesdata.slice(0, indexforcities).map(({ property_city, price }, index) => {
@@ -1656,13 +1656,13 @@ const PropertySearch = () => {
                         <div className="pupleLineBtn amenityTop">
                             <span className="w-100 transition font-weight500"
                                 onClick={() => {
-                                    if (indexforcities === 6) {
+                                    if (indexforcities == 6) {
                                         setindexforcities(12);
                                     } else {
                                         setindexforcities(6);
                                     }
 
-                                }}>Show {indexforcities === 6 ? 'more' : 'less'} neighborhoods</span>
+                                }}>Show {indexforcities == 6 ? 'more' : 'less'} neighborhoods</span>
                         </div>
                     </div>
                     <div className="RentalFooter">

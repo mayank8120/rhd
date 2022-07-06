@@ -43,7 +43,7 @@ const Inspections = () => {
                                 <h3>Top 25 Deficiencies in Multifamily Housing</h3>
 
 
-                                <table class="table table-bordered">
+                                <table className="table table-bordered">
                                     {/* <thead>
                                         <tr>
                                             <th >#</th>
@@ -192,7 +192,7 @@ const Inspections = () => {
                                 <h3>Top 25 Deficiencies in Public Housing</h3>
 
 
-                                <table class="table table-bordered">
+                                <table className="table table-bordered">
 
                                     <tbody>
                                         <tr>

@@ -132,14 +132,16 @@ const PopularCities = ({ titletext }) => {
                         <Carousel
                             responsive={responsive}
                             infinite>
-                            {database.map((data) => (
-                                <Link to={`/propertySearch/${data.city}/${data.state}`}>
-                                    <div className="popularCitySliderText">
-                                        <img src={require(`../assets/img/${data.imgurl}`).default} />
-                                        <h3 className="font-weight700">{data.city}, {data.state}</h3>
-                                    </div>
-                                </Link>
-                            ))}
+                            {
+                                database.map((data) => (
+                                    <Link key={data.city} to={`/propertySearch/${data.city}/${data.state}`}>
+                                        <div className="popularCitySliderText">
+                                            <img src={require(`../assets/img/${data.imgurl}`).default} />
+                                            <h3 className="font-weight700">{data.city}, {data.state}</h3>
+                                        </div>
+                                    </Link>
+                                ))
+                            }
                         </Carousel>
 
                     </div>

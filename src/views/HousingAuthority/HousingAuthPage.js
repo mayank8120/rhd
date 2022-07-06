@@ -63,7 +63,7 @@ const HousingAuthPage = () => {
     const [loadmore, setloadmore] = useState(false);
 
     const toggleshow = () => {
-        if (showdropdown === false) {
+        if (showdropdown == false) {
             setshowdropdown(true)
         } else {
             setshowdropdown(false)
@@ -122,7 +122,7 @@ const HousingAuthPage = () => {
 
     let countyfactsurl;
 
-    if (latlngdata === undefined || latlngdata === [] || latlngdata === null) {
+    if (latlngdata == undefined || latlngdata == [] || latlngdata == null) {
         countyfactsurl = `http://thomasthecat.rentalhousingdeals.com/apis/v1/api/v1/nearbyCountyfacts?state=&city=`;
     }
     else {
@@ -147,7 +147,7 @@ const HousingAuthPage = () => {
 
     const [nearbypropdata, setnearbypropdata] = useState([]);
 
-    if (latlngdata === undefined || latlngdata === [] || latlngdata === null) {
+    if (latlngdata == undefined || latlngdata == [] || latlngdata == null) {
         nearbypropurl = `http://thomasthecat.rentalhousingdeals.com/apis/v1/api/v1/nearByproperty?state=&city=`;
     }
     else {
@@ -174,7 +174,7 @@ const HousingAuthPage = () => {
 
     const [nearbyagencydata, setnearbyagencydata] = useState([]);
 
-    if (latlngdata === undefined || latlngdata === [] || latlngdata === null) {
+    if (latlngdata == undefined || latlngdata == [] || latlngdata == null) {
         nearbyagencyurl = `http://thomasthecat.rentalhousingdeals.com/apis/v1/api/v1/HousingAuthorityNearby?state=&city=`;
     }
     else {
@@ -200,7 +200,7 @@ const HousingAuthPage = () => {
     useEffect(() => {
         const result = axios.post(`http://thomasthecat.rentalhousingdeals.com/apis/v1/api/v1/dropdown-search?keyword=${searchterm}`)
             .then(res => {
-                if (res.data[0].error === true) {
+                if (res.data[0].error == true) {
                     setdropdowndata(res.data[0].message)
                 } else {
                     setdropdowndata(res.data[0].data);
@@ -252,12 +252,12 @@ const HousingAuthPage = () => {
                                             <span className="searchBannerItem searchBannerItemagency"> <img src={require('../../assets/img/searchBanner.svg').default} /></span>
                                             <ul className="serachDatadrop">
                                                 {
-                                                    searchterm === null || searchterm === undefined || searchterm === '' || dropdowndata === undefined || dropdowndata === null || dropdowndata === ''
+                                                    searchterm == null || searchterm == undefined || searchterm == '' || dropdowndata == undefined || dropdowndata == null || dropdowndata == ''
                                                         ?
                                                         <></>
                                                         :
                                                         (
-                                                            dropdowndata === 'No Record Found'
+                                                            dropdowndata == 'No Record Found'
                                                                 ?
                                                                 // <p style={!showdropdown ? style1 : style}>
                                                                 //     No Record Found
@@ -308,7 +308,7 @@ const HousingAuthPage = () => {
                                                                                                 toggleshow();
                                                                                             }}>
                                                                                             {
-                                                                                                val.property_state === null || val.property_state === undefined ?
+                                                                                                val.property_state == null || val.property_state == undefined ?
                                                                                                     `${val.property_city}, ${val.property_state}`
                                                                                                     :
                                                                                                     <Link className='secondaryColor w-100 d-block' to={`/agencyState?city=${val.property_city}&state=${val.property_state}`}>
@@ -329,7 +329,7 @@ const HousingAuthPage = () => {
                                                                                         toggleshow();
                                                                                     }}>
                                                                                     {
-                                                                                        val.property_state === null || val.property_state === undefined ?
+                                                                                        val.property_state == null || val.property_state == undefined ?
                                                                                             `${val.property_city}, ${val.property_state}`
                                                                                             :
                                                                                             `${val.property_city}, ${val.property_state}`
@@ -382,7 +382,7 @@ const HousingAuthPage = () => {
                                             housingauthdata.length !== 0
                                                 ?
                                                 (
-                                                    loadmore === false
+                                                    loadmore == false
                                                         ?
                                                         housingauthdata.slice(0, 5).map((data) => {
                                                             return (
@@ -414,7 +414,7 @@ const HousingAuthPage = () => {
 
                                 <div>
                                     {
-                                        loadmore === false ?
+                                        loadmore == false ?
                                             <span className="loadMore transition" onClick={() => { setloadmore(true) }}>Load More</span>
                                             :
                                             <span className="loadMore transition" onClick={() => { setloadmore(false) }}>Load Less</span>
@@ -437,7 +437,7 @@ const HousingAuthPage = () => {
                                 </div>
 
                                 {
-                                    nearbyagencydata === undefined || nearbyagencydata === null || nearbyagencydata === '' ?
+                                    nearbyagencydata == undefined || nearbyagencydata == null || nearbyagencydata == '' ?
                                         null :
 
                                         <NearbyAgenciesAccordion data={nearbyagencydata} />

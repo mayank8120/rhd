@@ -9,24 +9,24 @@ export const IncomeLimitsAccordion = ({ propdetails, specialtitle, subsidized })
 
             {
 
-                // propdetails === null || propdetails === [] || propdetails === undefined || propdetails === '' ?
+                // propdetails == null || propdetails == [] || propdetails == undefined || propdetails == '' ?
                 //     <>
                 //     </>
                 //     :
                 //     <>
 
                 //         {
-                //             specialtitle === 'Affordable Housing' && (propdetails.income_limit_one_person === '' || propdetails.income_limit_one_person === null)
+                //             specialtitle == 'Affordable Housing' && (propdetails.income_limit_one_person == '' || propdetails.income_limit_one_person == null)
                 //                 ?
                 //                 null
                 //                 :
                 //                 <>
                 //                     {
-                //                         subsidized === 'Yes' || subsidized === 1 ?
+                //                         subsidized == 'Yes' || subsidized == 1 ?
                 //                             (
-                propdetails === undefined ?
+                propdetails == undefined ?
                     null :
-                    (propdetails.income_limit_one_person === 0 || propdetails.income_limit_one_person === ''
+                    (propdetails.income_limit_one_person == 0 || propdetails.income_limit_one_person == ''
                         ?
                         null
                         :
@@ -55,13 +55,13 @@ export const IncomeLimitsAccordion = ({ propdetails, specialtitle, subsidized })
                                                 levels for this property</p>
                                             <div className="row">
                                                 {
-                                                    propdetails.income_limit_one_person === 0 && propdetails.income_limit_three_person === 0 ?
+                                                    propdetails.income_limit_one_person == 0 && propdetails.income_limit_three_person == 0 ?
                                                         null :
                                                         <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                                             {
                                                                 <ul className="noMarginPad listStyleNone">
                                                                     {
-                                                                        propdetails.income_limit_one_person === 0 || propdetails.income_limit_one_person === '' ? null :
+                                                                        propdetails.income_limit_one_person == 0 || propdetails.income_limit_one_person == '' ? null :
                                                                             <li className="d-flex align-items-center fontSize14">
                                                                                 1 person<span
                                                                                     className="ml-auto colorBlue font-weight700">$
@@ -70,7 +70,7 @@ export const IncomeLimitsAccordion = ({ propdetails, specialtitle, subsidized })
                                                                             </li>
                                                                     }
                                                                     {
-                                                                        propdetails.income_limit_three_person === 0 || propdetails.income_limit_three_person === '' ? null :
+                                                                        propdetails.income_limit_three_person == 0 || propdetails.income_limit_three_person == '' ? null :
                                                                             <li className="d-flex align-items-center fontSize14">
                                                                                 3 persons<span
                                                                                     className="ml-auto colorBlue font-weight700">$
@@ -79,7 +79,7 @@ export const IncomeLimitsAccordion = ({ propdetails, specialtitle, subsidized })
                                                                             </li>
                                                                     }
                                                                     {
-                                                                        propdetails.income_limit_five_person === 0 || propdetails.income_limit_five_person === '' ? null :
+                                                                        propdetails.income_limit_five_person == 0 || propdetails.income_limit_five_person == '' ? null :
                                                                             <li className="d-flex align-items-center fontSize14">
                                                                                 5 persons<span
                                                                                     className="ml-auto colorBlue font-weight700">$
@@ -88,7 +88,7 @@ export const IncomeLimitsAccordion = ({ propdetails, specialtitle, subsidized })
                                                                             </li>
                                                                     }
                                                                     {
-                                                                        propdetails.income_limit_seven_person === 0 || propdetails.income_limit_seven_person === '' ? null :
+                                                                        propdetails.income_limit_seven_person == 0 || propdetails.income_limit_seven_person == '' ? null :
                                                                             <li className="d-flex align-items-center fontSize14">
                                                                                 7 persons<span
                                                                                     className="ml-auto colorBlue font-weight700">$
@@ -104,7 +104,7 @@ export const IncomeLimitsAccordion = ({ propdetails, specialtitle, subsidized })
                                                 <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                                     <ul className="noMarginPad listStyleNone">
                                                         {
-                                                            propdetails.income_limit_two_person === 0 || propdetails.income_limit_two_person === '' ? null :
+                                                            propdetails.income_limit_two_person == 0 || propdetails.income_limit_two_person == '' ? null :
                                                                 <li className="d-flex align-items-center fontSize14">
                                                                     2 persons<span
                                                                         className="ml-auto colorBlue font-weight700">$
@@ -113,7 +113,7 @@ export const IncomeLimitsAccordion = ({ propdetails, specialtitle, subsidized })
                                                                 </li>
                                                         }
                                                         {
-                                                            propdetails.income_limit_four_person === 0 || propdetails.income_limit_four_person === '' ? null :
+                                                            propdetails.income_limit_four_person == 0 || propdetails.income_limit_four_person == '' ? null :
                                                                 <li className="d-flex align-items-center fontSize14">
                                                                     4 persons<span
                                                                         className="ml-auto colorBlue font-weight700">$
@@ -122,7 +122,7 @@ export const IncomeLimitsAccordion = ({ propdetails, specialtitle, subsidized })
                                                                 </li>
                                                         }
                                                         {
-                                                            propdetails.income_limit_six_person === 0 || propdetails.income_limit_six_person === '' ? null :
+                                                            propdetails.income_limit_six_person == 0 || propdetails.income_limit_six_person == '' ? null :
                                                                 <li className="d-flex align-items-center fontSize14">
                                                                     6 persons<span
                                                                         className="ml-auto colorBlue font-weight700">$
@@ -131,7 +131,7 @@ export const IncomeLimitsAccordion = ({ propdetails, specialtitle, subsidized })
                                                                 </li>
                                                         }
                                                         {
-                                                            propdetails.income_limit_eight_person === 0 || propdetails.income_limit_eight_person === '' ? null :
+                                                            propdetails.income_limit_eight_person == 0 || propdetails.income_limit_eight_person == '' ? null :
                                                                 <li className="d-flex align-items-center fontSize14">
                                                                     8 persons<span
                                                                         className="ml-auto colorBlue font-weight700">$

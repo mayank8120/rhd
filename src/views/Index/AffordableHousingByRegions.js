@@ -11,7 +11,7 @@ const AffordableHousingByRegions = ({ page }) => {
                 <div className="sectionTitle">
                     <h2 className="font-weight700 colorBlue">
                         {
-                            page === 2 ?
+                            page == 2 ?
                                 "Affordable Senior Housing by Regions"
                                 :
                                 "Affordable Housing by Regions"
@@ -38,84 +38,55 @@ const AffordableHousingByRegions = ({ page }) => {
 
 
 
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=ME`}>
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=ME`}>
                                                         <li>
-                                                            <h3 class="font-weight500 mb-0">Maine</h3>
+                                                            <h3 className="font-weight500 mb-0">Maine</h3>
                                                             <p className="mb-0 secondaryColor"  >
                                                                 Affordable Housing
                                                             </p  >
                                                         </li>
                                                     </Link>
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=NH`}>
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=NH`}>
                                                         <li>
-                                                            <h3 class="font-weight500 mb-0">New Hampshire</h3>
+                                                            <h3 className="font-weight500 mb-0">New Hampshire</h3>
                                                             <p className="mb-0 secondaryColor"  >
                                                                 Affordable Housing
                                                             </p  >
                                                         </li>
                                                     </Link>
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=VT`}>
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=VT`}>
                                                         <li>
-                                                            <h3 class="font-weight500 mb-0">Vermont</h3>
+                                                            <h3 className="font-weight500 mb-0">Vermont</h3>
                                                             <p className="mb-0 secondaryColor"  >
                                                                 Affordable Housing
                                                             </p  >
                                                         </li>
                                                     </Link>
 
-
-                                                </ul>
-                                            </div>
-                                            <div className="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                                                <ul className="noMarginPad list-style-type">
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=MA`}>
-                                                        <li>
-                                                            <h3 class="font-weight500 mb-0">Massachusetts</h3>
-                                                            <p className="mb-0 secondaryColor"  >
-                                                                Affordable Housing
-                                                            </p  >
-                                                        </li>
-                                                    </Link>
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=NY`}>
-                                                        <li>
-                                                            <h3 class="font-weight500 mb-0">New York</h3>
-                                                            <p className="mb-0 secondaryColor"  >
-                                                                Affordable Housing
-                                                            </p  >
-                                                        </li>
-                                                    </Link>
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=RI`}>
-                                                        <li>
-                                                            <h3 class="font-weight500 mb-0">Rhode Island</h3>
-                                                            <p className="mb-0 secondaryColor"  >
-                                                                Affordable Housing
-                                                            </p  >
-                                                        </li>
-                                                    </Link>
 
                                                 </ul>
                                             </div>
                                             <div className="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                                 <ul className="noMarginPad list-style-type">
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=CT`}>
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=MA`}>
                                                         <li>
-                                                            <h3 class="font-weight500 mb-0">Connecticut</h3>
+                                                            <h3 className="font-weight500 mb-0">Massachusetts</h3>
                                                             <p className="mb-0 secondaryColor"  >
                                                                 Affordable Housing
                                                             </p  >
                                                         </li>
                                                     </Link>
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=NJ`}>
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=NY`}>
                                                         <li>
-                                                            <h3 class="font-weight500 mb-0">New Jersey</h3>
+                                                            <h3 className="font-weight500 mb-0">New York</h3>
                                                             <p className="mb-0 secondaryColor"  >
                                                                 Affordable Housing
                                                             </p  >
                                                         </li>
                                                     </Link>
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=DE`}>
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=RI`}>
                                                         <li>
-                                                            <h3 class="font-weight500 mb-0">Delaware</h3>
+                                                            <h3 className="font-weight500 mb-0">Rhode Island</h3>
                                                             <p className="mb-0 secondaryColor"  >
                                                                 Affordable Housing
                                                             </p  >
@@ -126,17 +97,46 @@ const AffordableHousingByRegions = ({ page }) => {
                                             </div>
                                             <div className="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                                 <ul className="noMarginPad list-style-type">
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=MD`}>
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=CT`}>
                                                         <li>
-                                                            <h3 class="font-weight500 mb-0">Maryland</h3>
+                                                            <h3 className="font-weight500 mb-0">Connecticut</h3>
                                                             <p className="mb-0 secondaryColor"  >
                                                                 Affordable Housing
                                                             </p  >
                                                         </li>
                                                     </Link>
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=DC`}>
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=NJ`}>
                                                         <li>
-                                                            <h3 class="font-weight500 mb-0">Washington DC</h3>
+                                                            <h3 className="font-weight500 mb-0">New Jersey</h3>
+                                                            <p className="mb-0 secondaryColor"  >
+                                                                Affordable Housing
+                                                            </p  >
+                                                        </li>
+                                                    </Link>
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=DE`}>
+                                                        <li>
+                                                            <h3 className="font-weight500 mb-0">Delaware</h3>
+                                                            <p className="mb-0 secondaryColor"  >
+                                                                Affordable Housing
+                                                            </p  >
+                                                        </li>
+                                                    </Link>
+
+                                                </ul>
+                                            </div>
+                                            <div className="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                                                <ul className="noMarginPad list-style-type">
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=MD`}>
+                                                        <li>
+                                                            <h3 className="font-weight500 mb-0">Maryland</h3>
+                                                            <p className="mb-0 secondaryColor"  >
+                                                                Affordable Housing
+                                                            </p  >
+                                                        </li>
+                                                    </Link>
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=DC`}>
+                                                        <li>
+                                                            <h3 className="font-weight500 mb-0">Washington DC</h3>
                                                             <p className="mb-0 secondaryColor"  >
                                                                 Affordable Housing
                                                             </p  >
@@ -152,84 +152,55 @@ const AffordableHousingByRegions = ({ page }) => {
                                         <div className="row">
                                             <div className="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                                 <ul className="noMarginPad list-style-type">
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=ND`}>
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=ND`}>
                                                         <li>
-                                                            <h3 class="font-weight500 mb-0">North Dakota</h3>
+                                                            <h3 className="font-weight500 mb-0">North Dakota</h3>
                                                             <p className="mb-0 secondaryColor"  >
                                                                 Affordable Housing
                                                             </p  >
                                                         </li>
                                                     </Link>
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=SD`}>
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=SD`}>
                                                         <li>
-                                                            <h3 class="font-weight500 mb-0">South Dakota</h3>
+                                                            <h3 className="font-weight500 mb-0">South Dakota</h3>
                                                             <p className="mb-0 secondaryColor"  >
                                                                 Affordable Housing
                                                             </p  >
                                                         </li>
                                                     </Link>
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=MN`}>
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=MN`}>
                                                         <li>
-                                                            <h3 class="font-weight500 mb-0">Minnesota</h3>
+                                                            <h3 className="font-weight500 mb-0">Minnesota</h3>
                                                             <p className="mb-0 secondaryColor"  >
                                                                 Affordable Housing
                                                             </p  >
                                                         </li>
                                                     </Link>
 
-
-                                                </ul>
-                                            </div>
-                                            <div className="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                                                <ul className="noMarginPad list-style-type">
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=IA`} >
-                                                        <li>
-                                                            <h3 class="font-weight500 mb-0">Iowa</h3>
-                                                            <p className="mb-0 secondaryColor"  >
-                                                                Affordable Housing
-                                                            </p  >
-                                                        </li>
-                                                    </Link>
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=KS`}>
-                                                        <li>
-                                                            <h3 class="font-weight500 mb-0">Kansas</h3>
-                                                            <p className="mb-0 secondaryColor"  >
-                                                                Affordable Housing
-                                                            </p  >
-                                                        </li>
-                                                    </Link>
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=MO`}>
-                                                        <li>
-                                                            <h3 class="font-weight500 mb-0">Missouri</h3>
-                                                            <p className="mb-0 secondaryColor"  >
-                                                                Affordable Housing
-                                                            </p  >
-                                                        </li>
-                                                    </Link>
 
                                                 </ul>
                                             </div>
                                             <div className="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                                 <ul className="noMarginPad list-style-type">
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=WI`}>
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=IA`} >
                                                         <li>
-                                                            <h3 class="font-weight500 mb-0">Wisconsin</h3>
+                                                            <h3 className="font-weight500 mb-0">Iowa</h3>
                                                             <p className="mb-0 secondaryColor"  >
                                                                 Affordable Housing
                                                             </p  >
                                                         </li>
                                                     </Link>
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=IL`}>
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=KS`}>
                                                         <li>
-                                                            <h3 class="font-weight500 mb-0">Illinois</h3>
+                                                            <h3 className="font-weight500 mb-0">Kansas</h3>
                                                             <p className="mb-0 secondaryColor"  >
                                                                 Affordable Housing
                                                             </p  >
                                                         </li>
                                                     </Link>
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=IN`}>
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=MO`}>
                                                         <li>
-                                                            <h3 class="font-weight500 mb-0">Indiana</h3>
+                                                            <h3 className="font-weight500 mb-0">Missouri</h3>
                                                             <p className="mb-0 secondaryColor"  >
                                                                 Affordable Housing
                                                             </p  >
@@ -240,17 +211,46 @@ const AffordableHousingByRegions = ({ page }) => {
                                             </div>
                                             <div className="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                                 <ul className="noMarginPad list-style-type">
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=OH`}>
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=WI`}>
                                                         <li>
-                                                            <h3 class="font-weight500 mb-0">Ohio</h3>
+                                                            <h3 className="font-weight500 mb-0">Wisconsin</h3>
                                                             <p className="mb-0 secondaryColor"  >
                                                                 Affordable Housing
                                                             </p  >
                                                         </li>
                                                     </Link>
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=MI`}>
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=IL`}>
                                                         <li>
-                                                            <h3 class="font-weight500 mb-0">Michigan</h3>
+                                                            <h3 className="font-weight500 mb-0">Illinois</h3>
+                                                            <p className="mb-0 secondaryColor"  >
+                                                                Affordable Housing
+                                                            </p  >
+                                                        </li>
+                                                    </Link>
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=IN`}>
+                                                        <li>
+                                                            <h3 className="font-weight500 mb-0">Indiana</h3>
+                                                            <p className="mb-0 secondaryColor"  >
+                                                                Affordable Housing
+                                                            </p  >
+                                                        </li>
+                                                    </Link>
+
+                                                </ul>
+                                            </div>
+                                            <div className="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                                                <ul className="noMarginPad list-style-type">
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=OH`}>
+                                                        <li>
+                                                            <h3 className="font-weight500 mb-0">Ohio</h3>
+                                                            <p className="mb-0 secondaryColor"  >
+                                                                Affordable Housing
+                                                            </p  >
+                                                        </li>
+                                                    </Link>
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=MI`}>
+                                                        <li>
+                                                            <h3 className="font-weight500 mb-0">Michigan</h3>
                                                             <p className="mb-0 secondaryColor"  >
                                                                 Affordable Housing
                                                             </p  >
@@ -272,84 +272,55 @@ const AffordableHousingByRegions = ({ page }) => {
                                         <div className="row">
                                             <div className="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                                 <ul className="noMarginPad list-style-type">
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=AR`}>
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=AR`}>
                                                         <li>
-                                                            <h3 class="font-weight500 mb-0">Arkansas</h3>
+                                                            <h3 className="font-weight500 mb-0">Arkansas</h3>
                                                             <p className="mb-0 secondaryColor"  >
                                                                 Affordable Housing
                                                             </p  >
                                                         </li>
                                                     </Link>
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=LA`}>
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=LA`}>
                                                         <li>
-                                                            <h3 class="font-weight500 mb-0">Louisiana</h3>
+                                                            <h3 className="font-weight500 mb-0">Louisiana</h3>
                                                             <p className="mb-0 secondaryColor"  >
                                                                 Affordable Housing
                                                             </p  >
                                                         </li>
                                                     </Link>
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=MS`}>
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=MS`}>
                                                         <li>
-                                                            <h3 class="font-weight500 mb-0">Mississippi</h3>
+                                                            <h3 className="font-weight500 mb-0">Mississippi</h3>
                                                             <p className="mb-0 secondaryColor"  >
                                                                 Affordable Housing
                                                             </p  >
                                                         </li>
                                                     </Link>
 
-
-                                                </ul>
-                                            </div>
-                                            <div className="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                                                <ul className="noMarginPad list-style-type">
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=TN`}>
-                                                        <li>
-                                                            <h3 class="font-weight500 mb-0">Tennessee</h3>
-                                                            <p className="mb-0 secondaryColor"  >
-                                                                Affordable Housing
-                                                            </p  >
-                                                        </li>
-                                                    </Link>
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=KY`}>
-                                                        <li>
-                                                            <h3 class="font-weight500 mb-0">Kentucky</h3>
-                                                            <p className="mb-0 secondaryColor"  >
-                                                                Affordable Housing
-                                                            </p  >
-                                                        </li>
-                                                    </Link>
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=AL`}>
-                                                        <li>
-                                                            <h3 class="font-weight500 mb-0">Alabama</h3>
-                                                            <p className="mb-0 secondaryColor"  >
-                                                                Affordable Housing
-                                                            </p  >
-                                                        </li>
-                                                    </Link>
 
                                                 </ul>
                                             </div>
                                             <div className="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                                 <ul className="noMarginPad list-style-type">
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=GA`}>
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=TN`}>
                                                         <li>
-                                                            <h3 class="font-weight500 mb-0">Georgia</h3>
+                                                            <h3 className="font-weight500 mb-0">Tennessee</h3>
                                                             <p className="mb-0 secondaryColor"  >
                                                                 Affordable Housing
                                                             </p  >
                                                         </li>
                                                     </Link>
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=FL`}>
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=KY`}>
                                                         <li>
-                                                            <h3 class="font-weight500 mb-0">Florida</h3>
+                                                            <h3 className="font-weight500 mb-0">Kentucky</h3>
                                                             <p className="mb-0 secondaryColor"  >
                                                                 Affordable Housing
                                                             </p  >
                                                         </li>
                                                     </Link>
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=SD`}>
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=AL`}>
                                                         <li>
-                                                            <h3 class="font-weight500 mb-0">South Carolina</h3>
+                                                            <h3 className="font-weight500 mb-0">Alabama</h3>
                                                             <p className="mb-0 secondaryColor"  >
                                                                 Affordable Housing
                                                             </p  >
@@ -360,25 +331,54 @@ const AffordableHousingByRegions = ({ page }) => {
                                             </div>
                                             <div className="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                                 <ul className="noMarginPad list-style-type">
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=NC`}>
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=GA`}>
                                                         <li>
-                                                            <h3 class="font-weight500 mb-0">North Carolina</h3>
+                                                            <h3 className="font-weight500 mb-0">Georgia</h3>
                                                             <p className="mb-0 secondaryColor"  >
                                                                 Affordable Housing
                                                             </p  >
                                                         </li>
                                                     </Link>
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=VA`}>
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=FL`}>
                                                         <li>
-                                                            <h3 class="font-weight500 mb-0">Virginia</h3>
+                                                            <h3 className="font-weight500 mb-0">Florida</h3>
                                                             <p className="mb-0 secondaryColor"  >
                                                                 Affordable Housing
                                                             </p  >
                                                         </li>
                                                     </Link>
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=WV`}>
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=SD`}>
                                                         <li>
-                                                            <h3 class="font-weight500 mb-0">West Virginia</h3>
+                                                            <h3 className="font-weight500 mb-0">South Carolina</h3>
+                                                            <p className="mb-0 secondaryColor"  >
+                                                                Affordable Housing
+                                                            </p  >
+                                                        </li>
+                                                    </Link>
+
+                                                </ul>
+                                            </div>
+                                            <div className="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                                                <ul className="noMarginPad list-style-type">
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=NC`}>
+                                                        <li>
+                                                            <h3 className="font-weight500 mb-0">North Carolina</h3>
+                                                            <p className="mb-0 secondaryColor"  >
+                                                                Affordable Housing
+                                                            </p  >
+                                                        </li>
+                                                    </Link>
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=VA`}>
+                                                        <li>
+                                                            <h3 className="font-weight500 mb-0">Virginia</h3>
+                                                            <p className="mb-0 secondaryColor"  >
+                                                                Affordable Housing
+                                                            </p  >
+                                                        </li>
+                                                    </Link>
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=WV`}>
+                                                        <li>
+                                                            <h3 className="font-weight500 mb-0">West Virginia</h3>
                                                             <p className="mb-0 secondaryColor"  >
                                                                 Affordable Housing
                                                             </p  >
@@ -399,25 +399,25 @@ const AffordableHousingByRegions = ({ page }) => {
                                         <div className="row">
                                             <div className="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                                 <ul className="noMarginPad list-style-type">
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=AZ`}>
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=AZ`}>
                                                         <li>
-                                                            <h3 class="font-weight500 mb-0">Arizona</h3>
+                                                            <h3 className="font-weight500 mb-0">Arizona</h3>
                                                             <p className="mb-0 secondaryColor"  >
                                                                 Affordable Housing
                                                             </p  >
                                                         </li>
                                                     </Link>
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=NM`}>
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=NM`}>
                                                         <li>
-                                                            <h3 class="font-weight500 mb-0">New Mexico</h3>
+                                                            <h3 className="font-weight500 mb-0">New Mexico</h3>
                                                             <p className="mb-0 secondaryColor"  >
                                                                 Affordable Housing
                                                             </p  >
                                                         </li>
                                                     </Link>
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=TX`}>
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=TX`}>
                                                         <li>
-                                                            <h3 class="font-weight500 mb-0">Texas</h3>
+                                                            <h3 className="font-weight500 mb-0">Texas</h3>
                                                             <p className="mb-0 secondaryColor"  >
                                                                 Affordable Housing
                                                             </p  >
@@ -429,9 +429,9 @@ const AffordableHousingByRegions = ({ page }) => {
                                             </div>
                                             <div className="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                                 <ul className="noMarginPad list-style-type">
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=OK`}>
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=OK`}>
                                                         <li>
-                                                            <h3 class="font-weight500 mb-0">Oklahoma</h3>
+                                                            <h3 className="font-weight500 mb-0">Oklahoma</h3>
                                                             <p className="mb-0 secondaryColor"  >
                                                                 Affordable Housing
                                                             </p  >
@@ -465,84 +465,55 @@ const AffordableHousingByRegions = ({ page }) => {
                                         <div className="row">
                                             <div className="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                                 <ul className="noMarginPad list-style-type">
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=WA`}>
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=WA`}>
                                                         <li>
-                                                            <h3 class="font-weight500 mb-0">Washington</h3>
+                                                            <h3 className="font-weight500 mb-0">Washington</h3>
                                                             <p className="mb-0 secondaryColor"  >
                                                                 Affordable Housing
                                                             </p  >
                                                         </li>
                                                     </Link>
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=OR`}>
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=OR`}>
                                                         <li>
-                                                            <h3 class="font-weight500 mb-0">Oregon</h3>
+                                                            <h3 className="font-weight500 mb-0">Oregon</h3>
                                                             <p className="mb-0 secondaryColor"  >
                                                                 Affordable Housing
                                                             </p  >
                                                         </li>
                                                     </Link>
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=NV`}>
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=NV`}>
                                                         <li>
-                                                            <h3 class="font-weight500 mb-0">Nevada</h3>
+                                                            <h3 className="font-weight500 mb-0">Nevada</h3>
                                                             <p className="mb-0 secondaryColor"  >
                                                                 Affordable Housing
                                                             </p  >
                                                         </li>
                                                     </Link>
 
-
-                                                </ul>
-                                            </div>
-                                            <div className="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                                                <ul className="noMarginPad list-style-type">
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=AK`}>
-                                                        <li>
-                                                            <h3 class="font-weight500 mb-0">Alaska</h3>
-                                                            <p className="mb-0 secondaryColor"  >
-                                                                Affordable Housing
-                                                            </p  >
-                                                        </li>
-                                                    </Link>
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=ID`}>
-                                                        <li>
-                                                            <h3 class="font-weight500 mb-0">Idaho</h3>
-                                                            <p className="mb-0 secondaryColor"  >
-                                                                Affordable Housing
-                                                            </p  >
-                                                        </li>
-                                                    </Link>
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=MT`}>
-                                                        <li>
-                                                            <h3 class="font-weight500 mb-0">Montana</h3>
-                                                            <p className="mb-0 secondaryColor"  >
-                                                                Affordable Housing
-                                                            </p  >
-                                                        </li>
-                                                    </Link>
 
                                                 </ul>
                                             </div>
                                             <div className="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                                 <ul className="noMarginPad list-style-type">
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=UT`}>
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=AK`}>
                                                         <li>
-                                                            <h3 class="font-weight500 mb-0">Utah</h3>
+                                                            <h3 className="font-weight500 mb-0">Alaska</h3>
                                                             <p className="mb-0 secondaryColor"  >
                                                                 Affordable Housing
                                                             </p  >
                                                         </li>
                                                     </Link>
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=HI`}>
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=ID`}>
                                                         <li>
-                                                            <h3 class="font-weight500 mb-0">Hawaii</h3>
+                                                            <h3 className="font-weight500 mb-0">Idaho</h3>
                                                             <p className="mb-0 secondaryColor"  >
                                                                 Affordable Housing
                                                             </p  >
                                                         </li>
                                                     </Link>
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=WY`}>
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=MT`}>
                                                         <li>
-                                                            <h3 class="font-weight500 mb-0">Wyoming</h3>
+                                                            <h3 className="font-weight500 mb-0">Montana</h3>
                                                             <p className="mb-0 secondaryColor"  >
                                                                 Affordable Housing
                                                             </p  >
@@ -553,17 +524,46 @@ const AffordableHousingByRegions = ({ page }) => {
                                             </div>
                                             <div className="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                                 <ul className="noMarginPad list-style-type">
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=CA`}>
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=UT`}>
                                                         <li>
-                                                            <h3 class="font-weight500 mb-0">California</h3>
+                                                            <h3 className="font-weight500 mb-0">Utah</h3>
                                                             <p className="mb-0 secondaryColor"  >
                                                                 Affordable Housing
                                                             </p  >
                                                         </li>
                                                     </Link>
-                                                    <Link to={`/propertySearch?${page === 2 ? 'feature=senior&' : ''}${page === 3 ? 'feature=section&' : ''}city=&state=CO`}>
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=HI`}>
                                                         <li>
-                                                            <h3 class="font-weight500 mb-0">Colorado</h3>
+                                                            <h3 className="font-weight500 mb-0">Hawaii</h3>
+                                                            <p className="mb-0 secondaryColor"  >
+                                                                Affordable Housing
+                                                            </p  >
+                                                        </li>
+                                                    </Link>
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=WY`}>
+                                                        <li>
+                                                            <h3 className="font-weight500 mb-0">Wyoming</h3>
+                                                            <p className="mb-0 secondaryColor"  >
+                                                                Affordable Housing
+                                                            </p  >
+                                                        </li>
+                                                    </Link>
+
+                                                </ul>
+                                            </div>
+                                            <div className="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                                                <ul className="noMarginPad list-style-type">
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=CA`}>
+                                                        <li>
+                                                            <h3 className="font-weight500 mb-0">California</h3>
+                                                            <p className="mb-0 secondaryColor"  >
+                                                                Affordable Housing
+                                                            </p  >
+                                                        </li>
+                                                    </Link>
+                                                    <Link to={`/propertySearch?${page == 2 ? 'feature=senior&' : ''}${page == 3 ? 'feature=section&' : ''}city=&state=CO`}>
+                                                        <li>
+                                                            <h3 className="font-weight500 mb-0">Colorado</h3>
                                                             <p className="mb-0 secondaryColor"  >
                                                                 Affordable Housing
                                                             </p  >

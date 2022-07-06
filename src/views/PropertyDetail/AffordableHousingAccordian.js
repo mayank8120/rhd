@@ -24,7 +24,7 @@ const AffordableHousingAccordian = ({ propmancom }) => {
             {/* <h1>he;llo</h1> */}
 
             {
-                propmancom === null || propmancom.length === 0 ? null :
+                propmancom == null || propmancom.length == 0 ? null :
 
                     <Accordion defaultActiveKey="0" className="accordionBoxInfo losAngeles managementComp">
                         <Accordion.Item eventKey="0" className="card">
@@ -47,7 +47,7 @@ const AffordableHousingAccordian = ({ propmancom }) => {
 
                                 {/* <div className="brdrLine mar-15"></div> */}
                                 {
-                                    propmancom === null || propmancom.length === 0 ? null :
+                                    propmancom == null || propmancom.length == 0 ? null :
                                         <div id="collapseTwo" className="collapse show" aria-labelledby="headingTwo"
                                             data-parent="#accordion2">
                                             <div className="card-body p-0">

@@ -472,9 +472,9 @@ export const EmailSubs = () => {
                 .then(res => {
                     console.log(res);
                     setdoesemailexist(res.data.result);
-                    if (res.data.result === true) {
+                    if (res.data.result == true) {
                         toggleModalAlreadySubs();
-                    } else if (res.data.result === false) {
+                    } else if (res.data.result == false) {
                         toggleModal();
                     }
                 }).catch(error => {
@@ -504,7 +504,7 @@ export const EmailSubs = () => {
     // console.log(cityAndStatesarray);
     const handleOnChangecityAndStates = (position) => {
         const updatedCheckedStatecityAndStates = checkedStatecityAndStates.map((item, index) =>
-            index === position ? !item : item
+            index == position ? !item : item
         );
 
         setCheckedStatecityAndStates(updatedCheckedStatecityAndStates);
@@ -514,7 +514,7 @@ export const EmailSubs = () => {
 
         const totalPrice = updatedCheckedStatecityAndStates.reduce(
             (sum, currentState, index) => {
-                if (currentState === true) {
+                if (currentState == true) {
                     arrcityAndStates.push(cityAndStateList[index].state_abbreviation);
                     return sum + 1;
                 }
@@ -531,9 +531,9 @@ export const EmailSubs = () => {
 
     let handleAllDataSubmit = (e) => {
         e.preventDefault();
-        if (cityAndStatesarray.length === 0) {
+        if (cityAndStatesarray.length == 0) {
             console.log('empty state list');
-        } else if (cityAndStatesarray.length > 0 && inputEmail.firstname !== '' && inputEmail.lastname !== '' && inputEmail.zip !== '' && captchaValue === true) {
+        } else if (cityAndStatesarray.length > 0 && inputEmail.firstname !== '' && inputEmail.lastname !== '' && inputEmail.zip !== '' && captchaValue == true) {
             submitMainForm();
         } else {
             console.log('some exception by pass condtion');
@@ -606,11 +606,11 @@ export const EmailSubs = () => {
 
     //             console.log(response);
     //             response.json();
-    //             // if (response.result === "Email Sent. Check your inbox") {
+    //             // if (response.result == "Email Sent. Check your inbox") {
     //             //     console.log("Email Sent");
     //             //     setformSubmitResponse(response.result);
     //             // }
-    //             // else if (response.result === "Something Went Wrong, Email Not Sent.") {
+    //             // else if (response.result == "Something Went Wrong, Email Not Sent.") {
     //             //     console.log("Email Not Sent.");
     //             //     setformSubmitResponse(response.result);
     //             // } else {
@@ -739,9 +739,8 @@ export const EmailSubs = () => {
                                     cityAndStateList.map(({ state_name, price }, index) => {
                                         return (
                                             <>
-                                                <div className="checkboxItem col-sm-3">
-                                                    <label key={index} className="checkboxBlock emailinputlabel" htmlFor={`custom-checkbox-${index}`}>
-
+                                                <div key={index} className="checkboxItem col-sm-3">
+                                                    <label className="checkboxBlock emailinputlabel" htmlFor={`custom-checkbox-${index}`}>
                                                         <input
                                                             className='emailInputclass'
                                                             type="checkbox"
@@ -791,7 +790,7 @@ export const EmailSubs = () => {
                 </div>
 
                 {
-                    formSubmitResponse === "Email Sent. Check your inbox" ?
+                    formSubmitResponse == "Email Sent. Check your inbox" ?
 
                         <div className="modal-body">
 

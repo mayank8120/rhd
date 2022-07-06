@@ -65,11 +65,11 @@ const MultiplePointMap = () => {
     useEffect(() => {
 
         setsearchresultdata([]);
-        if (propResult.type === FIRSTAPI) {
+        if (propResult.type == FIRSTAPI) {
             setAPItype(FIRSTAPI);
-        } else if (propResult.type === SECONDAPI) {
+        } else if (propResult.type == SECONDAPI) {
             setAPItype(SECONDAPI)
-        } else if (propResult.type === THIRDAPI) {
+        } else if (propResult.type == THIRDAPI) {
             setAPItype(THIRDAPI);
         }
         setsearchresultdata(propResult.data);
@@ -90,7 +90,7 @@ const MultiplePointMap = () => {
     let searchParameters = new URLSearchParams(location.search);
 
     useEffect(() => {
-        if (lowerlat === '' || upperlat === '' || lowerlng === '' || upperlng === '') {
+        if (lowerlat == '' || upperlat == '' || lowerlng == '' || upperlng == '') {
             if(APItype===SECONDAPI || APItype===THIRDAPI){
                 setlowerlat(searchParameters.get('minlat'));
                 setupperlat(searchParameters.get('maxlat'));
@@ -133,7 +133,7 @@ const MultiplePointMap = () => {
         setlowerlng(llng < ulng ? llng : ulng);
         setupperlng(llng > ulng ? llng : ulng);
 
-        // if (llat === 100) {
+        // if (llat == 100) {
         // } else {
         //     pushToLatLngPropertyPage(llat < ulat ? llat : ulat, llat > ulat ? llat : ulat, llng < ulng ? llng : ulng, llng > ulng ? llng : ulng);
         // }
@@ -149,11 +149,11 @@ const MultiplePointMap = () => {
 
         } else {
 
-            // if (mapchange === false) {
+            // if (mapchange == false) {
 
             console.log(searchresultdata, "PPPP");
 
-            if (APItype === FIRSTAPI) {
+            if (APItype == FIRSTAPI) {
                 loop();
             }
 
@@ -167,7 +167,7 @@ const MultiplePointMap = () => {
             //     pushToLatLngPropertyPage(lowerlat, upperlat, lowerlng, upperlng);
             // }
 
-            // if (searchresultdata === true) {
+            // if (searchresultdata == true) {
             //     console.log(searchresultdata);
             // }
             // console.log(searchresultdata);
@@ -217,9 +217,9 @@ const MultiplePointMap = () => {
     }
 
     useEffect(() => {
-        if ((lowerlat == '' || lowerlng == '' || upperlng == '' || upperlat == '') && (APItype === SECONDAPI || APItype === THIRDAPI)) {
+        if ((lowerlat == '' || lowerlng == '' || upperlng == '' || upperlat == '') && (APItype == SECONDAPI || APItype == THIRDAPI)) {
             console.log("THEY ARE EMPTY");
-        } else if (APItype === FIRSTAPI) {
+        } else if (APItype == FIRSTAPI) {
             console.log("THEY ARE FULLL");
             // pushToLatLngPropertyPage(lowerlat, upperlat, lowerlng, upperlng);
         }
@@ -246,7 +246,7 @@ const MultiplePointMap = () => {
                                 <h1>{searchresultdata}</h1>
                                 :
                                 (
-                                    // mapchange === false ?
+                                    // mapchange == false ?
 
                                     <>
                                         {
@@ -262,10 +262,10 @@ const MultiplePointMap = () => {
                                                         url={streetmap} />
                                                     <Maptile />
                                                     {/* {
-                                                        ((lowerlat == '' || lowerlng == '' || upperlng == '' || upperlat == '') && (APItype === SECONDAPI || APItype === THIRDAPI))
+                                                        ((lowerlat == '' || lowerlng == '' || upperlng == '' || upperlat == '') && (APItype == SECONDAPI || APItype == THIRDAPI))
                                                             ?
                                                             null :
-                                                            (APItype === FIRSTAPI) ? pushToLatLngPropertyPage(lowerlat, upperlat, lowerlng, upperlng) : null
+                                                            (APItype == FIRSTAPI) ? pushToLatLngPropertyPage(lowerlat, upperlat, lowerlng, upperlng) : null
                                                     } */}
                                                 </MapContainer>
 

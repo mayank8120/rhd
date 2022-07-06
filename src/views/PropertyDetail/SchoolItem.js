@@ -23,7 +23,7 @@ const SchoolItem = ({ schoolnearby }) => {
     value *= m
     // sign of the number
     sgn = (value > 0) | -(value < 0)
-    isHalf = value % 1 === 0.5 * sgn
+    isHalf = value % 1 == 0.5 * sgn
 
     f = Math.floor(value)
     value = f + (f % 2 * sgn)
@@ -36,7 +36,7 @@ const SchoolItem = ({ schoolnearby }) => {
         value *= m
         // sign of the number
         sgn = (value > 0) | -(value < 0)
-        isHalf = value % 1 === 0.5 * sgn
+        isHalf = value % 1 == 0.5 * sgn
 
         f = Math.floor(value)
         value = f + (f % 2 * sgn)
@@ -57,7 +57,7 @@ const SchoolItem = ({ schoolnearby }) => {
     return (
 
         <>
-            {schoolnearby === null || schoolnearby === [] || schoolnearby === '' ? null :
+            {schoolnearby == null || schoolnearby == [] || schoolnearby == '' ? null :
 
                 <>
                     <div className="responsive15 paddingBottom0 mt-2">
@@ -77,7 +77,7 @@ const SchoolItem = ({ schoolnearby }) => {
                                 </thead>
                                 <tbody>
                                     {
-                                        loadmore === false ?
+                                        loadmore == false ?
                                             (
                                                 five.map((data) => (
 
@@ -106,20 +106,20 @@ const SchoolItem = ({ schoolnearby }) => {
                                                     //             </div>
                                                     //         </div>
                                                     //     </th>
-                                                    //     <td>{data.grade_level === "" || data.grade_level === null ? "N/A" : data.grade_level}</td>
+                                                    //     <td>{data.grade_level == "" || data.grade_level == null ? "N/A" : data.grade_level}</td>
                                                     //     <td>
                                                     //         {
-                                                    //             data.institute_info === "" || data.institute_info === null ? "N/A" :
-                                                    //                 data.institute_info === 'CityLarge11' ? 'City Large' :
-                                                    //                     data.institute_info === 'TownRemote33' ? 'Town Remote' :
-                                                    //                         data.institute_info === 'TownDistant32' ? 'Town Distant' :
-                                                    //                             data.institute_info === 'TownFringe31' ? 'Town Fringe' :
-                                                    //                                 data.institute_info === 'SuburbSmall23' ? 'Suburb Small' :
-                                                    //                                     data.institute_info === 'SuburbMidsize22' ? 'Suburb Midsize' :
-                                                    //                                         data.institute_info === 'SuburbLarge21' ? 'Suburb Large' :
-                                                    //                                             data.institute_info === 'RuralRemote43' ? 'Rural Remote' :
-                                                    //                                                 data.institute_info === 'RuralFringe41' ? 'Rural Fringe' :
-                                                    //                                                     data.institute_info === 'RuralDistant42' ? 'Rural Distant' :
+                                                    //             data.institute_info == "" || data.institute_info == null ? "N/A" :
+                                                    //                 data.institute_info == 'CityLarge11' ? 'City Large' :
+                                                    //                     data.institute_info == 'TownRemote33' ? 'Town Remote' :
+                                                    //                         data.institute_info == 'TownDistant32' ? 'Town Distant' :
+                                                    //                             data.institute_info == 'TownFringe31' ? 'Town Fringe' :
+                                                    //                                 data.institute_info == 'SuburbSmall23' ? 'Suburb Small' :
+                                                    //                                     data.institute_info == 'SuburbMidsize22' ? 'Suburb Midsize' :
+                                                    //                                         data.institute_info == 'SuburbLarge21' ? 'Suburb Large' :
+                                                    //                                             data.institute_info == 'RuralRemote43' ? 'Rural Remote' :
+                                                    //                                                 data.institute_info == 'RuralFringe41' ? 'Rural Fringe' :
+                                                    //                                                     data.institute_info == 'RuralDistant42' ? 'Rural Distant' :
                                                     //                                                         // data.institute_info
                                                     //                                                         'N/A'
                                                     //         }
@@ -155,7 +155,7 @@ const SchoolItem = ({ schoolnearby }) => {
                         <div className="pupleLineBtn responsive15 itemWebsite">
                             <button href="" className="w-100 transition font-weight500" onClick={handleclick}>Load
 
-                                {loadmore === false ? ' More' : ' Less'}
+                                {loadmore == false ? ' More' : ' Less'}
                             </button>
                         </div>
 
@@ -166,8 +166,8 @@ const SchoolItem = ({ schoolnearby }) => {
 
 
 
-                    <div class="itemMobile responsive15 paddingTop0">
-                        <ul class="noMarginPad listStyleNone agendtailList">
+                    <div className="itemMobile responsive15 paddingTop0">
+                        <ul className="noMarginPad listStyleNone agendtailList">
 
 
                             {
@@ -176,32 +176,32 @@ const SchoolItem = ({ schoolnearby }) => {
 
                                         <>
                                             <li>
-                                                <div class="media">
-                                                    <div class="media-body">
-                                                        <div class="d-flex align-items-center">
-                                                            <h5 class="mt-0 mb-0 fontSize16 font-weight500 colorBlue"> {data.inst_name}</h5>
+                                                <div className="media">
+                                                    <div className="media-body">
+                                                        <div className="d-flex align-items-center">
+                                                            <h5 className="mt-0 mb-0 fontSize16 font-weight500 colorBlue"> {data.inst_name}</h5>
                                                         </div>
-                                                        <p class="mb-0 fontSize14 font-weight500 secondaryColor">{data.phone}</p>
-                                                        <div class="d-flex align-items-center w-100 listTop12">
-                                                            <div class="w-50">
-                                                                <ul class="noMarginPad listStyleNone">
+                                                        <p className="mb-0 fontSize14 font-weight500 secondaryColor">{data.phone}</p>
+                                                        <div className="d-flex align-items-center w-100 listTop12">
+                                                            <div className="w-50">
+                                                                <ul className="noMarginPad listStyleNone">
                                                                     <li>
-                                                                        <h5 class="mb-0 fontSize16 font-weight500 colorBlue">
-                                                                            {data.grade_level === "" || data.grade_level === null ? "N/A" : data.grade_level}
+                                                                        <h5 className="mb-0 fontSize16 font-weight500 colorBlue">
+                                                                            {data.grade_level == "" || data.grade_level == null ? "N/A" : data.grade_level}
                                                                         </h5>
-                                                                        <p class="mb-0 secondaryColor font-weight500 fontSize12">
+                                                                        <p className="mb-0 secondaryColor font-weight500 fontSize12">
                                                                             {
-                                                                                data.institute_info === "" || data.institute_info === null ? "N/A" :
-                                                                                    data.institute_info === 'CityLarge11' ? 'City Large' :
-                                                                                        data.institute_info === 'TownRemote33' ? 'Town Remote' :
-                                                                                            data.institute_info === 'TownDistant32' ? 'Town Distant' :
-                                                                                                data.institute_info === 'TownFringe31' ? 'Town Fringe' :
-                                                                                                    data.institute_info === 'SuburbSmall23' ? 'Suburb Small' :
-                                                                                                        data.institute_info === 'SuburbMidsize22' ? 'Suburb Midsize' :
-                                                                                                            data.institute_info === 'SuburbLarge21' ? 'Suburb Large' :
-                                                                                                                data.institute_info === 'RuralRemote43' ? 'Rural Remote' :
-                                                                                                                    data.institute_info === 'RuralFringe41' ? 'Rural Fringe' :
-                                                                                                                        data.institute_info === 'RuralDistant42' ? 'Rural Distant' :
+                                                                                data.institute_info == "" || data.institute_info == null ? "N/A" :
+                                                                                    data.institute_info == 'CityLarge11' ? 'City Large' :
+                                                                                        data.institute_info == 'TownRemote33' ? 'Town Remote' :
+                                                                                            data.institute_info == 'TownDistant32' ? 'Town Distant' :
+                                                                                                data.institute_info == 'TownFringe31' ? 'Town Fringe' :
+                                                                                                    data.institute_info == 'SuburbSmall23' ? 'Suburb Small' :
+                                                                                                        data.institute_info == 'SuburbMidsize22' ? 'Suburb Midsize' :
+                                                                                                            data.institute_info == 'SuburbLarge21' ? 'Suburb Large' :
+                                                                                                                data.institute_info == 'RuralRemote43' ? 'Rural Remote' :
+                                                                                                                    data.institute_info == 'RuralFringe41' ? 'Rural Fringe' :
+                                                                                                                        data.institute_info == 'RuralDistant42' ? 'Rural Distant' :
                                                                                                                             'N/A'
 
                                                                             }
@@ -209,12 +209,12 @@ const SchoolItem = ({ schoolnearby }) => {
                                                                     </li>
                                                                 </ul>
                                                             </div>
-                                                            <div class="w-50">
-                                                                <ul class="noMarginPad listStyleNone">
+                                                            <div className="w-50">
+                                                                <ul className="noMarginPad listStyleNone">
                                                                     <li>
-                                                                        <h5 class="mb-0 fontSize16 font-weight500 colorBlue">
+                                                                        <h5 className="mb-0 fontSize16 font-weight500 colorBlue">
                                                                             {data.inst_city}, {data.inst_state_code}</h5>
-                                                                        <p class="mb-0 secondaryColor font-weight500 fontSize12">
+                                                                        <p className="mb-0 secondaryColor font-weight500 fontSize12">
                                                                             City,State</p>
                                                                     </li>
                                                                 </ul>
@@ -223,7 +223,7 @@ const SchoolItem = ({ schoolnearby }) => {
                                                     </div>
                                                 </div>
                                             </li>
-                                            <li class="brdrLinee"></li>
+                                            <li className="brdrLinee"></li>
 
 
                                         </>

@@ -7,7 +7,7 @@ export const Disclaimer = () => {
         <>
             <section className="secPad24">
                 <div className="container">
-                    <div class="row">
+                    <div className="row">
 
                         <div className="col-md-24 col-sm-24 col-lg-24">
                             <nav className="navbar resNavbarBread" aria-label="breadcrumb">
@@ -18,7 +18,7 @@ export const Disclaimer = () => {
                             </nav>
                         </div>
 
-                        <div class="col-md-24 col-sm-24 col-lg-24">
+                        <div className="col-md-24 col-sm-24 col-lg-24">
                             <div id="article_body">
                                 <h2>Legal Disclaimer</h2>
 

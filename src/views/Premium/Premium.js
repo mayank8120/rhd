@@ -47,7 +47,7 @@ export const Premium = () => {
         color: 'blue'
     }
     const toggleshow = () => {
-        if (activelinkontab === false) {
+        if (activelinkontab == false) {
             setactivelinkontab(true)
         } else {
             setactivelinkontab(false)
@@ -227,7 +227,7 @@ export const Premium = () => {
                                                             onClick={() => handleClick(link.id)}
                                                             className={
                                                                 link.className +
-                                                                (link.id === activeLink ? " active_item" : "")
+                                                                (link.id == activeLink ? " active_item" : "")
                                                             }
                                                         >{link.name}</a>
 

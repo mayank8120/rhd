@@ -4,8 +4,8 @@ import loadimg from '../assets/img/loader.gif'
 const Loader = () => {
     return (
         <>
-            <div class="test">
-                <img src={loadimg} alt="" />
+            <div className="test">
+                <img src={loadimg} alt="Loading..." />
             </div>
 
         </>

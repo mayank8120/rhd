@@ -17,13 +17,13 @@ const SavedProperties = () => {
 
 
 
-    if (arr === null || arr === '' || arr === undefined) {
+    if (arr == null || arr == '' || arr == undefined) {
         let newArr = [];
         localStorage.setItem('saveHAList', JSON.stringify(newArr));
 
     }
 
-    if (arr1 === null || arr1 === '' || arr1 === undefined) {
+    if (arr1 == null || arr1 == '' || arr1 == undefined) {
         let newArr = [];
         localStorage.setItem('savePropList', JSON.stringify(newArr));
     }
@@ -51,7 +51,7 @@ const SavedProperties = () => {
             await fetch(`${propsURL}`, requestOptions)
                 .then(response => response.json())
                 .then(res => {
-                    if (res.error === true) {
+                    if (res.error == true) {
                     } else {
                         setpropertyList(res.data);
                     }
@@ -85,7 +85,7 @@ const SavedProperties = () => {
             await fetch(`${haURL}`, requestOptions)
                 .then(response => response.json())
                 .then(res => {
-                    if (res.error === true) {
+                    if (res.error == true) {
                         // setpropertyList(res.message);
                         // console.log(res);
                     } else {
@@ -135,15 +135,12 @@ const SavedProperties = () => {
                                                 {
 
 
-                                                    arr1 === null || arr1 === '' || arr1.length === 0 ?
+                                                    arr1 == null || arr1 == '' || arr1.length == 0 ?
                                                         <li className="listingBlock2">
 
                                                             <h1>No Properties Saved. Please save the propeties.</h1>
                                                         </li>
                                                         :
-
-
-
                                                         propertyList.map((data) => {
                                                             return (
                                                                 <li className="listingBlock2">
@@ -161,8 +158,8 @@ const SavedProperties = () => {
                                         aria-labelledby="profile-tab">
                                         <div className="tabCont propertyList mtEight">
                                             <h3 className="mb-0 colorBlue itemWebsite">Saved Housing Authorities</h3>
-                                            <div class="agencyStateList">
-                                                <div class="propertyListState propertyListScroll boxscroll4 favouritesBox">
+                                            <div className="agencyStateList">
+                                                <div className="propertyListState propertyListScroll boxscroll4 favouritesBox">
                                                     <ul className="noMarginPad listStyleNone marginExtraBlock">
 
 
@@ -170,7 +167,7 @@ const SavedProperties = () => {
                                                         {
 
 
-                                                            arr === null || arr === '' || arr.length === 0 ?
+                                                            arr == null || arr == '' || arr.length == 0 ?
                                                                 <li className="listingBlock2">
                                                                     <h1>No Housing authorities Saved. Please save the housing authorities.</h1>
                                                                 </li>
@@ -183,7 +180,7 @@ const SavedProperties = () => {
                                                                         // {
                                                                         //     
                                                                         <li className="listingBlock2">
-                                                                            {data.HADetail === null || data.HADetail === '' || data.HADetail === undefined ?
+                                                                            {data.HADetail == null || data.HADetail == '' || data.HADetail == undefined ?
                                                                                 null :
 
                                                                                 <SavedHa data={data} />

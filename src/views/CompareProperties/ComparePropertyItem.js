@@ -7,7 +7,7 @@ const ComparePropertyItem = () => {
 
         <>
 
-            {/* <div class="emptyBlocks"></div>
+            {/* <div className="emptyBlocks"></div>
 
             <div className="parentofstickytitle">
                 <div>
@@ -20,7 +20,7 @@ const ComparePropertyItem = () => {
                 </div>
 
 
-                <div class="title">Swan</div>
+                <div className="title">Swan</div>
 
                 <div>
                     <p>Swansithin the genus Cygnus. The swans' close relatives include the geese and ducks. Swans are grouped with the closely related geese in the subfamily Anserinae where they form the tribe Cygnini. Sometimes, they are
@@ -32,7 +32,7 @@ const ComparePropertyItem = () => {
                 </div>
             </div>
 
-            <div class="emptyBlocks"></div> */}
+            <div className="emptyBlocks"></div> */}
 
 
 
@@ -46,11 +46,11 @@ const ComparePropertyItem = () => {
 
 
 
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 parentofstickytitle">
+            <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12 parentofstickytitle">
 
-                <div class="compareprorty-listing ">
+                <div className="compareprorty-listing ">
 
-                    <div class="compatepImage">
+                    <div className="compatepImage">
                         {/* <img src={require('../../assets/img/agencyState1.png').default} /> */}
                         <img src={require('../../assets/img/sliderproduct.png').default} />
                     </div>
@@ -59,14 +59,14 @@ const ComparePropertyItem = () => {
 
                     </div>
 
-                    <div class="padda title competod compatedes">
+                    <div className="padda title competod compatedes">
 
-                        <p class="fontSize18 font-weight700 colorBlue mb-1"><a href="#" class="colorBlue"> Blessed
+                        <p className="fontSize18 font-weight700 colorBlue mb-1"><a href="#" className="colorBlue"> Blessed
                             Rock Apartments</a></p>
-                        <p class="fontSize14 font-weight400 secondaryColor mb-12">2882 Tyler St El Monte, CA 91157
+                        <p className="fontSize14 font-weight400 secondaryColor mb-12">2882 Tyler St El Monte, CA 91157
                         </p>
-                        <div class="cstarlist">
-                            <ul class="noMarginPad listStyleNone ml-0 mt-12 d-flex align-items-center">
+                        <div className="cstarlist">
+                            <ul className="noMarginPad listStyleNone ml-0 mt-12 d-flex align-items-center">
                                 <li><img src={require('../../assets/img/starRate.svg').default} /></li>
                                 <li><img src={require('../../assets/img/starRate.svg').default} /></li>
                                 <li><img src={require('../../assets/img/starRate.svg').default} /></li>
@@ -74,24 +74,24 @@ const ComparePropertyItem = () => {
                                 <li><img src={require('../../assets/img/starRate.svg').default} /></li>
                             </ul>
                         </div>
-                        <div class="priceRange">
-                            <div class="d-flex align-items-center">
-                                <h4 class="fontSize16 font-weight700 mb-0 mt-0 colorGreen">$1,200</h4>
-                                <span class="font-weight700 fontSize14"><img src={require('../../assets/img/goodDeal.svg').default} />Good
+                        <div className="priceRange">
+                            <div className="d-flex align-items-center">
+                                <h4 className="fontSize16 font-weight700 mb-0 mt-0 colorGreen">$1,200</h4>
+                                <span className="font-weight700 fontSize14"><img src={require('../../assets/img/goodDeal.svg').default} />Good
                                     Deal</span>
                             </div>
                         </div>
-                        <div class="clistbad">
-                            <div class="d-flex align-items-center listingBlockLine">
-                                <ul class="noMarginPad listStyleNone">
-                                    <li class="d-flex align-items-center">
-                                        <img src={require('../../assets/img/beds.svg').default} /><span class="colorBlue">1-2</span> Beds
+                        <div className="clistbad">
+                            <div className="d-flex align-items-center listingBlockLine">
+                                <ul className="noMarginPad listStyleNone">
+                                    <li className="d-flex align-items-center">
+                                        <img src={require('../../assets/img/beds.svg').default} /><span className="colorBlue">1-2</span> Beds
                                     </li>
-                                    <li class="d-flex align-items-center ml-12">
-                                        <img src={require('../../assets/img/shower.svg').default} /><span class="colorBlue">1-2</span> Baths
+                                    <li className="d-flex align-items-center ml-12">
+                                        <img src={require('../../assets/img/shower.svg').default} /><span className="colorBlue">1-2</span> Baths
                                     </li>
                                 </ul>
-                                <ul class="noMarginPad listStyleNone listIcon ml-auto">
+                                <ul className="noMarginPad listStyleNone listIcon ml-auto">
                                     <li>
                                         <img src={require('../../assets/img/detailImage1.svg').default} />
                                     </li>
@@ -108,10 +108,10 @@ const ComparePropertyItem = () => {
                             </div>
                         </div>
                         <div className="d-flex align-items-center padda compareBtn">
-                        <a href="#" class="lineBtnCalling brdrRadius4 prplrFilledBtn">
+                        <a href="#" className="lineBtnCalling brdrRadius4 prplrFilledBtn">
                             <img src={require('../../assets/img/phoneFilledWhite.svg').default} />(626) 448-2699
                         </a>
-                        <a class="checkAvailableBtn colorWhite brdrRadius4 ml-auto" data-toggle="modal"
+                        <a className="checkAvailableBtn colorWhite brdrRadius4 ml-auto" data-toggle="modal"
                             data-target="#exampleModal1">
                             <img src={require('../../assets/img/mail.svg').default} />Check Availability
                         </a>
@@ -122,83 +122,83 @@ const ComparePropertyItem = () => {
 
 
 
-                    <div class="compareList">
+                    <div className="compareList">
                         <ul>
-                            <li class="bgclist">
-                                <div class="d-flex align-items-center">
-                                    <p class="fontSize18 font-weight700 colorBlue w-50  mb-0">Floorplan</p>
-                                    <select name="stateid" class="selectpicker form-control w-50">
+                            <li className="bgclist">
+                                <div className="d-flex align-items-center">
+                                    <p className="fontSize18 font-weight700 colorBlue w-50  mb-0">Floorplan</p>
+                                    <select name="stateid" className="selectpicker form-control w-50">
                                         <option value="1">Studio </option>
                                     </select>
                                 </div>
                             </li>
                             <li>
-                                <div class="d-flex align-items-center">
-                                    <p class="fontSize16 font-weight500 thirdColor w-50  mb-0">Bedroom</p>
-                                    <div class="d-flex align-items-center">
+                                <div className="d-flex align-items-center">
+                                    <p className="fontSize16 font-weight500 thirdColor w-50  mb-0">Bedroom</p>
+                                    <div className="d-flex align-items-center">
 
-                                        <span class="imgBox">
+                                        <span className="imgBox">
                                             <img src={require('../../assets/img/Uniona.png').default} />
                                         </span>
-                                        <p class="mb-0 secondaryColor fontSize16 font-weight400">
-                                            <span class="colorBlue font-weight700">1</span> Bedroom
+                                        <p className="mb-0 secondaryColor fontSize16 font-weight400">
+                                            <span className="colorBlue font-weight700">1</span> Bedroom
                                         </p>
                                     </div>
                                 </div>
                             </li>
                             <li>
-                                <div class="d-flex align-items-center">
-                                    <p class="fontSize16 font-weight500 thirdColor w-50  mb-0">Bedroom</p>
-                                    <div class="d-flex align-items-center">
+                                <div className="d-flex align-items-center">
+                                    <p className="fontSize16 font-weight500 thirdColor w-50  mb-0">Bedroom</p>
+                                    <div className="d-flex align-items-center">
 
-                                        <span class="imgBox">
+                                        <span className="imgBox">
                                             <img src={require('../../assets/img/Uniona.png').default} />
                                         </span>
-                                        <p class="mb-0 secondaryColor fontSize16 font-weight400">
-                                            <span class="colorBlue font-weight700">1</span> Bedroom
+                                        <p className="mb-0 secondaryColor fontSize16 font-weight400">
+                                            <span className="colorBlue font-weight700">1</span> Bedroom
                                         </p>
                                     </div>
                                 </div>
                             </li>
 
                             <li>
-                                <div class="d-flex align-items-center">
-                                    <p class="fontSize16 font-weight500 thirdColor w-50  mb-0">Bedroom</p>
-                                    <div class="d-flex align-items-center">
+                                <div className="d-flex align-items-center">
+                                    <p className="fontSize16 font-weight500 thirdColor w-50  mb-0">Bedroom</p>
+                                    <div className="d-flex align-items-center">
 
-                                        <span class="imgBox">
+                                        <span className="imgBox">
                                             <img src={require('../../assets/img/Uniona.png').default} />
                                         </span>
-                                        <p class="mb-0 secondaryColor fontSize16 font-weight400">
-                                            <span class="colorBlue font-weight700">1</span> Bedroom
+                                        <p className="mb-0 secondaryColor fontSize16 font-weight400">
+                                            <span className="colorBlue font-weight700">1</span> Bedroom
                                         </p>
                                     </div>
                                 </div>
                             </li>
                             <li>
-                                <div class="d-flex align-items-center">
-                                    <p class="fontSize16 font-weight500 thirdColor w-50  mb-0">Bedroom</p>
-                                    <div class="d-flex align-items-center">
+                                <div className="d-flex align-items-center">
+                                    <p className="fontSize16 font-weight500 thirdColor w-50  mb-0">Bedroom</p>
+                                    <div className="d-flex align-items-center">
 
-                                        <span class="imgBox">
+                                        <span className="imgBox">
                                             <img src={require('../../assets/img/Uniona.png').default} />
                                         </span>
-                                        <p class="mb-0 secondaryColor fontSize16 font-weight400">
-                                            <span class="colorBlue font-weight700">1</span> Bedroom
+                                        <p className="mb-0 secondaryColor fontSize16 font-weight400">
+                                            <span className="colorBlue font-weight700">1</span> Bedroom
                                         </p>
                                     </div>
                                 </div>
                             </li>
                             <li>
-                                <div class="d-flex align-items-center">
-                                    <p class="fontSize16 font-weight500 thirdColor w-50  mb-0">Bedroom</p>
-                                    <div class="d-flex align-items-center">
+                                <div className="d-flex align-items-center">
+                                    <p className="fontSize16 font-weight500 thirdColor w-50  mb-0">Bedroom</p>
+                                    <div className="d-flex align-items-center">
 
-                                        <span class="imgBox">
+                                        <span className="imgBox">
                                             <img src={require('../../assets/img/Uniona.png').default} />
                                         </span>
-                                        <p class="mb-0 secondaryColor fontSize16 font-weight400">
-                                            <span class="colorBlue font-weight700">1</span> Bedroom
+                                        <p className="mb-0 secondaryColor fontSize16 font-weight400">
+                                            <span className="colorBlue font-weight700">1</span> Bedroom
                                         </p>
                                     </div>
                                 </div>
@@ -207,54 +207,54 @@ const ComparePropertyItem = () => {
 
 
                         <ul>
-                            <li class="bgclist">
-                                <div class="d-flex align-items-center">
-                                    <p class="fontSize18 font-weight700 colorBlue w-50  mb-0">Unit Amenities </p>
-                                    {/* <!-- <select name="stateid" class="selectpicker form-control w-50">
+                            <li className="bgclist">
+                                <div className="d-flex align-items-center">
+                                    <p className="fontSize18 font-weight700 colorBlue w-50  mb-0">Unit Amenities </p>
+                                    {/* <!-- <select name="stateid" className="selectpicker form-control w-50">
                                                     <option value="1">   </option>
                                                 </select> --> */}
                                 </div>
                             </li>
                             <li>
-                                <div class="d-flex align-items-center">
-                                    <p class="fontSize16 font-weight500 thirdColor w-50  mb-0">Air Conditioning </p>
-                                    <div class="d-flex align-items-center">
+                                <div className="d-flex align-items-center">
+                                    <p className="fontSize16 font-weight500 thirdColor w-50  mb-0">Air Conditioning </p>
+                                    <div className="d-flex align-items-center">
 
-                                        <span class="imgBox">
+                                        <span className="imgBox">
                                             <img src={require('../../assets/img/Uniona.png').default} />
                                         </span>
-                                        <p class="mb-0 secondaryColor fontSize16 font-weight400">
-                                            <span class="colorBlue font-weight700">1</span> Available
+                                        <p className="mb-0 secondaryColor fontSize16 font-weight400">
+                                            <span className="colorBlue font-weight700">1</span> Available
                                         </p>
                                     </div>
                                 </div>
                             </li>
                             <li>
-                                <div class="d-flex align-items-center">
-                                    <p class="fontSize16 font-weight500 thirdColor w-50  mb-0">Carpet</p>
-                                    <div class="d-flex align-items-center">
+                                <div className="d-flex align-items-center">
+                                    <p className="fontSize16 font-weight500 thirdColor w-50  mb-0">Carpet</p>
+                                    <div className="d-flex align-items-center">
 
-                                        <span class="imgBox">
+                                        <span className="imgBox">
                                             <img src={require('../../assets/img/Uniona.png').default} />
                                         </span>
-                                        <p class="mb-0 secondaryColor fontSize16 font-weight400">
-                                            <span class="colorBlue font-weight700">3</span> Available
+                                        <p className="mb-0 secondaryColor fontSize16 font-weight400">
+                                            <span className="colorBlue font-weight700">3</span> Available
                                         </p>
                                     </div>
                                 </div>
                             </li>
 
                             <li>
-                                <div class="d-flex align-items-center">
-                                    <p class="fontSize16 font-weight500 thirdColor w-50  mb-0">Cable Ready
+                                <div className="d-flex align-items-center">
+                                    <p className="fontSize16 font-weight500 thirdColor w-50  mb-0">Cable Ready
                                     </p>
-                                    <div class="d-flex align-items-center">
+                                    <div className="d-flex align-items-center">
 
-                                        <span class="imgBox">
+                                        <span className="imgBox">
                                             <img src={require('../../assets/img/Uniona.png').default} />
                                         </span>
-                                        <p class="mb-0 secondaryColor fontSize16 font-weight400">
-                                            <span class="colorBlue font-weight700">1</span> Available
+                                        <p className="mb-0 secondaryColor fontSize16 font-weight400">
+                                            <span className="colorBlue font-weight700">1</span> Available
                                         </p>
                                     </div>
                                 </div>
@@ -264,56 +264,56 @@ const ComparePropertyItem = () => {
 
 
                         <ul>
-                            <li class="bgclist">
-                                <div class="d-flex align-items-center">
-                                    <p class="fontSize18 font-weight700 colorBlue w-50  mb-0">Property Amenities
+                            <li className="bgclist">
+                                <div className="d-flex align-items-center">
+                                    <p className="fontSize18 font-weight700 colorBlue w-50  mb-0">Property Amenities
                                     </p>
-                                    {/* <!-- <select name="stateid" class="selectpicker form-control w-50">
+                                    {/* <!-- <select name="stateid" className="selectpicker form-control w-50">
                                                     <option value="1">   </option>
                                                 </select> --> */}
                                 </div>
                             </li>
                             <li>
-                                <div class="d-flex align-items-center">
-                                    <p class="fontSize16 font-weight500 thirdColor w-50  mb-0">Community Rooms Large
+                                <div className="d-flex align-items-center">
+                                    <p className="fontSize16 font-weight500 thirdColor w-50  mb-0">Community Rooms Large
                                         Screen TV </p>
-                                    <div class="d-flex align-items-center">
+                                    <div className="d-flex align-items-center">
 
-                                        <span class="imgBox">
+                                        <span className="imgBox">
                                             <img src={require('../../assets/img/Uniona.png').default} />
                                         </span>
-                                        <p class="mb-0 secondaryColor fontSize16 font-weight400">
-                                            <span class="colorBlue font-weight700">1</span> Available
+                                        <p className="mb-0 secondaryColor fontSize16 font-weight400">
+                                            <span className="colorBlue font-weight700">1</span> Available
                                         </p>
                                     </div>
                                 </div>
                             </li>
                             <li>
-                                <div class="d-flex align-items-center">
-                                    <p class="fontSize16 font-weight500 thirdColor w-50  mb-0">Laundry Rooms </p>
-                                    <div class="d-flex align-items-center">
+                                <div className="d-flex align-items-center">
+                                    <p className="fontSize16 font-weight500 thirdColor w-50  mb-0">Laundry Rooms </p>
+                                    <div className="d-flex align-items-center">
 
-                                        <span class="imgBox">
+                                        <span className="imgBox">
                                             <img src={require('../../assets/img/Uniona.png').default} />
                                         </span>
-                                        <p class="mb-0 secondaryColor fontSize16 font-weight400">
-                                            <span class="colorBlue font-weight700">3</span> Available
+                                        <p className="mb-0 secondaryColor fontSize16 font-weight400">
+                                            <span className="colorBlue font-weight700">3</span> Available
                                         </p>
                                     </div>
                                 </div>
                             </li>
 
                             <li>
-                                <div class="d-flex align-items-center">
-                                    <p class="fontSize16 font-weight500 thirdColor w-50  mb-0">Courtyard
+                                <div className="d-flex align-items-center">
+                                    <p className="fontSize16 font-weight500 thirdColor w-50  mb-0">Courtyard
                                     </p>
-                                    <div class="d-flex align-items-center">
+                                    <div className="d-flex align-items-center">
 
-                                        <span class="imgBox">
+                                        <span className="imgBox">
                                             <img src={require('../../assets/img/Uniona.png').default} />
                                         </span>
-                                        <p class="mb-0 secondaryColor fontSize16 font-weight400">
-                                            <span class="colorBlue font-weight700">1</span> Available
+                                        <p className="mb-0 secondaryColor fontSize16 font-weight400">
+                                            <span className="colorBlue font-weight700">1</span> Available
                                         </p>
                                     </div>
                                 </div>
@@ -322,124 +322,124 @@ const ComparePropertyItem = () => {
                         </ul>
 
                         <ul>
-                            <li class="bgclist">
-                                <div class="d-flex align-items-center">
-                                    <p class="fontSize18 font-weight700 colorBlue w-50  mb-0">Utility Allowances
+                            <li className="bgclist">
+                                <div className="d-flex align-items-center">
+                                    <p className="fontSize18 font-weight700 colorBlue w-50  mb-0">Utility Allowances
                                     </p>
-                                    {/* <!-- <select name="stateid" class="selectpicker form-control w-50">
+                                    {/* <!-- <select name="stateid" className="selectpicker form-control w-50">
                                                     <option value="1">   </option>
                                                 </select> --> */}
                                 </div>
                             </li>
                             <li>
-                                <div class="d-flex align-items-center">
-                                    <div class="d-flex align-items-center w-50">
+                                <div className="d-flex align-items-center">
+                                    <div className="d-flex align-items-center w-50">
 
-                                        <span class="imgBox">
+                                        <span className="imgBox">
                                             <img src={require('../../assets/img/Uniona.png').default} />
                                         </span>
-                                        <p class="mb-0 secondaryColor fontSize16 font-weight400">
-                                            <span class="colorBlue font-weight700">1</span> Electric
+                                        <p className="mb-0 secondaryColor fontSize16 font-weight400">
+                                            <span className="colorBlue font-weight700">1</span> Electric
                                         </p>
                                     </div>
-                                    <p class="fontSize16 font-weight500 thirdColor w-50  mb-0">Paid by Tenants
+                                    <p className="fontSize16 font-weight500 thirdColor w-50  mb-0">Paid by Tenants
                                     </p>
 
                                 </div>
                             </li>
                             <li>
-                                <div class="d-flex align-items-center">
-                                    <div class="d-flex align-items-center w-50">
+                                <div className="d-flex align-items-center">
+                                    <div className="d-flex align-items-center w-50">
 
-                                        <span class="imgBox">
+                                        <span className="imgBox">
                                             <img src={require('../../assets/img/Uniona.png').default} />
                                         </span>
-                                        <p class="mb-0 secondaryColor fontSize16 font-weight400">
-                                            <span class="colorBlue font-weight700">1</span> Heat
+                                        <p className="mb-0 secondaryColor fontSize16 font-weight400">
+                                            <span className="colorBlue font-weight700">1</span> Heat
                                         </p>
                                     </div>
-                                    <p class="fontSize16 font-weight500 thirdColor w-50  mb-0">Paid by Manager
+                                    <p className="fontSize16 font-weight500 thirdColor w-50  mb-0">Paid by Manager
                                     </p>
 
                                 </div>
                             </li>
                             <li>
-                                <div class="d-flex align-items-center">
-                                    <div class="d-flex align-items-center w-50">
+                                <div className="d-flex align-items-center">
+                                    <div className="d-flex align-items-center w-50">
 
-                                        <span class="imgBox">
+                                        <span className="imgBox">
                                             <img src={require('../../assets/img/Uniona.png').default} />
                                         </span>
-                                        <p class="mb-0 secondaryColor fontSize16 font-weight400">
-                                            <span class="colorBlue font-weight700">1</span> Hot Water
+                                        <p className="mb-0 secondaryColor fontSize16 font-weight400">
+                                            <span className="colorBlue font-weight700">1</span> Hot Water
                                         </p>
                                     </div>
-                                    <p class="fontSize16 font-weight500 thirdColor w-50  mb-0">Paid by Tenants
+                                    <p className="fontSize16 font-weight500 thirdColor w-50  mb-0">Paid by Tenants
                                     </p>
 
                                 </div>
                             </li>
                             <li>
-                                <div class="d-flex align-items-center">
-                                    <div class="d-flex align-items-center w-50">
+                                <div className="d-flex align-items-center">
+                                    <div className="d-flex align-items-center w-50">
 
-                                        <span class="imgBox">
+                                        <span className="imgBox">
                                             <img src={require('../../assets/img/Uniona.png').default} />
                                         </span>
-                                        <p class="mb-0 secondaryColor fontSize16 font-weight400">
-                                            <span class="colorBlue font-weight700">1</span> Cooking
+                                        <p className="mb-0 secondaryColor fontSize16 font-weight400">
+                                            <span className="colorBlue font-weight700">1</span> Cooking
                                         </p>
                                     </div>
-                                    <p class="fontSize16 font-weight500 thirdColor w-50  mb-0">Paid by Manager
+                                    <p className="fontSize16 font-weight500 thirdColor w-50  mb-0">Paid by Manager
                                     </p>
 
                                 </div>
                             </li>
                             <li>
-                                <div class="d-flex align-items-center">
-                                    <div class="d-flex align-items-center w-50">
+                                <div className="d-flex align-items-center">
+                                    <div className="d-flex align-items-center w-50">
 
-                                        <span class="imgBox">
+                                        <span className="imgBox">
                                             <img src={require('../../assets/img/Uniona.png').default} />
                                         </span>
-                                        <p class="mb-0 secondaryColor fontSize16 font-weight400">
-                                            <span class="colorBlue font-weight700">1</span> Cooling
+                                        <p className="mb-0 secondaryColor fontSize16 font-weight400">
+                                            <span className="colorBlue font-weight700">1</span> Cooling
                                         </p>
                                     </div>
-                                    <p class="fontSize16 font-weight500 thirdColor w-50  mb-0">Paid by Manager
+                                    <p className="fontSize16 font-weight500 thirdColor w-50  mb-0">Paid by Manager
                                     </p>
 
                                 </div>
                             </li>
                             <li>
-                                <div class="d-flex align-items-center">
-                                    <div class="d-flex align-items-center w-50">
+                                <div className="d-flex align-items-center">
+                                    <div className="d-flex align-items-center w-50">
 
-                                        <span class="imgBox">
+                                        <span className="imgBox">
                                             <img src={require('../../assets/img/Uniona.png').default} />
                                         </span>
-                                        <p class="mb-0 secondaryColor fontSize16 font-weight400">
-                                            <span class="colorBlue font-weight700">1</span> Sewer
+                                        <p className="mb-0 secondaryColor fontSize16 font-weight400">
+                                            <span className="colorBlue font-weight700">1</span> Sewer
                                         </p>
                                     </div>
-                                    <p class="fontSize16 font-weight500 thirdColor w-50  mb-0">Paid by Manager
+                                    <p className="fontSize16 font-weight500 thirdColor w-50  mb-0">Paid by Manager
 
                                     </p>
 
                                 </div>
                             </li>
                             <li>
-                                <div class="d-flex align-items-center">
-                                    <div class="d-flex align-items-center w-50">
+                                <div className="d-flex align-items-center">
+                                    <div className="d-flex align-items-center w-50">
 
-                                        <span class="imgBox">
+                                        <span className="imgBox">
                                             <img src={require('../../assets/img/Uniona.png').default} />
                                         </span>
-                                        <p class="mb-0 secondaryColor fontSize16 font-weight400">
-                                            <span class="colorBlue font-weight700">1</span> Water
+                                        <p className="mb-0 secondaryColor fontSize16 font-weight400">
+                                            <span className="colorBlue font-weight700">1</span> Water
                                         </p>
                                     </div>
-                                    <p class="fontSize16 font-weight500 thirdColor w-50  mb-0">Not Available
+                                    <p className="fontSize16 font-weight500 thirdColor w-50  mb-0">Not Available
 
 
                                     </p>

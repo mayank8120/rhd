@@ -7,10 +7,10 @@ export const PrivacyPolicy = () => {
         <>
             <section className="secPad24">
                 <div className="container">
-                    <div class="row">
-                        <div class="col-md-24 col-sm-24 col-lg-24">
+                    <div className="row">
+                        <div className="col-md-24 col-sm-24 col-lg-24">
 
-                            <div class="row">
+                            <div className="row">
 
                                 <div className="col-md-24 col-sm-24 col-lg-24">
                                     <nav className="navbar resNavbarBread" aria-label="breadcrumb">
@@ -21,7 +21,7 @@ export const PrivacyPolicy = () => {
                                     </nav>
                                 </div>
 
-                                <div class="col-md-24 col-sm-24 col-lg-24">
+                                <div className="col-md-24 col-sm-24 col-lg-24">
                                     <div id="article_body">
                                         <h2>Privacy Policy</h2>
 

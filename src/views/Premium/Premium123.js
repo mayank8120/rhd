@@ -40,7 +40,7 @@ export const Premium = () => {
         color: 'blue'
     }
     const toggleshow = () => {
-        if (activelinkontab === false) {
+        if (activelinkontab == false) {
             setactivelinkontab(true)
         } else {
             setactivelinkontab(false)

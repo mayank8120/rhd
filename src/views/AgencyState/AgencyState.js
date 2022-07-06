@@ -59,40 +59,40 @@ const AgencyState = () => {
     }
 
     let tagarray;
-    if (fourpage === undefined) {
+    if (fourpage == undefined) {
     } else {
         tagarray = [
-            <li className={`${currentpage === fourpage - 3 ? "active paginationNum" : "paginationNum"}`} onClick={() => {
+            <li className={`${currentpage == fourpage - 3 ? "active paginationNum" : "paginationNum"}`} onClick={() => {
                 setcurrentpage(fourpage - 3)
                 setsearchresultdata();
             }} >{fourpage - 3}</li>
             ,
-            <li className={`${currentpage === (fourpage - 2) ? "active paginationNum" : "paginationNum"}`} onClick={() => {
+            <li className={`${currentpage == (fourpage - 2) ? "active paginationNum" : "paginationNum"}`} onClick={() => {
                 setcurrentpage(fourpage - 2)
                 setsearchresultdata();
             }}>{fourpage - 2}</li>
             ,
-            <li className={`${currentpage === fourpage - 1 ? "active paginationNum" : "paginationNum"}`} onClick={() => {
+            <li className={`${currentpage == fourpage - 1 ? "active paginationNum" : "paginationNum"}`} onClick={() => {
                 setcurrentpage(fourpage - 1)
                 setsearchresultdata();
             }}>{fourpage - 1}</li>
             ,
-            <li className={`${currentpage === fourpage ? "active paginationNum" : "paginationNum"}`} onClick={() => {
+            <li className={`${currentpage == fourpage ? "active paginationNum" : "paginationNum"}`} onClick={() => {
                 setcurrentpage(fourpage)
                 setsearchresultdata();
             }}>{fourpage}</li>
             ,
-            <li className={`${currentpage === fourpage + 1 ? "active paginationNum" : "paginationNum"}`} onClick={() => {
+            <li className={`${currentpage == fourpage + 1 ? "active paginationNum" : "paginationNum"}`} onClick={() => {
                 setcurrentpage(fourpage + 1)
                 setsearchresultdata();
             }}>{fourpage + 1}</li>
             ,
-            <li className={`${currentpage === fourpage + 2 ? "active paginationNum" : "paginationNum"}`} onClick={() => {
+            <li className={`${currentpage == fourpage + 2 ? "active paginationNum" : "paginationNum"}`} onClick={() => {
                 setcurrentpage(fourpage + 2)
                 setsearchresultdata();
             }}>{fourpage + 2}</li>
             ,
-            <li className={`${currentpage === fourpage + 3 ? "active paginationNum" : "paginationNum"}`} onClick={() => {
+            <li className={`${currentpage == fourpage + 3 ? "active paginationNum" : "paginationNum"}`} onClick={() => {
                 setcurrentpage(fourpage + 3)
                 setsearchresultdata();
             }}>{fourpage + 3}</li>
@@ -125,13 +125,13 @@ const AgencyState = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            if (statename === 'undefined' || statename === '' || statename === null) {
+            if (statename == 'undefined' || statename == '' || statename == null) {
             }
             else {
                 setsearchresultdata([]);
                 const result = await axios.post(housingAPIurl)
                     .then(res => {
-                        if (res.data.error === true) {
+                        if (res.data.error == true) {
                             setsearchresultdata(res.data.message);
                         } else {
                             setsearchresultdata(res.data.data);
@@ -158,7 +158,7 @@ const AgencyState = () => {
 
                         <div className="listting-search-left">
 
-                            <div class="listingSection map-filter-section">
+                            <div className="listingSection map-filter-section">
                                 <div className="cst pd-12 responsiveCst">
                                     <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <nav className="navbar resNavbarBread breadleftmargin mb-3" aria-label="breadcrumb">
@@ -166,15 +166,15 @@ const AgencyState = () => {
                                                 <li className="breadcrumb-item fontSize14 "><a href="/" className="purpleText">Home</a></li>
                                                 <li className="breadcrumb-item fontSize14"><a href="/housingAuthority" className="purpleText">Housing
                                                     Authority</a></li>
-                                                <li className="breadcrumb-item fontSize14 "><a href={`/agencyState?city=&state=${statename}`} className="purpleText">{statename === undefined || statename === '' ? null : statename}</a></li>
-                                                {city === undefined || city === '' ? null : <li className="breadcrumb-item fontSize14 active"><a href={`/agencyState?city=${city}&state=${statename}`} className="">{city === undefined || city === '' ? null : city}</a></li>}
+                                                <li className="breadcrumb-item fontSize14 "><a href={`/agencyState?city=&state=${statename}`} className="purpleText">{statename == undefined || statename == '' ? null : statename}</a></li>
+                                                {city == undefined || city == '' ? null : <li className="breadcrumb-item fontSize14 active"><a href={`/agencyState?city=${city}&state=${statename}`} className="">{city == undefined || city == '' ? null : city}</a></li>}
 
                                             </ol>
                                         </nav>
                                     </div>
                                     <SearchSection latlngdata={latlngdata} />
                                     <div className="d-flex align-items-center headingTab itemWebsite">
-                                        <h1 className="colorBlue font-weight700 mb-0 fontSize18">Housing Authority in or near {city === undefined || city === '' ? null : `${city},`} {statename === undefined || statename === '' ? null : statename}</h1>
+                                        <h1 className="colorBlue font-weight700 mb-0 fontSize18">Housing Authority in or near {city == undefined || city == '' ? null : `${city},`} {statename == undefined || statename == '' ? null : statename}</h1>
                                         {/* <ul className="noMarginPad listStyleNone itemMobile ml-auto tabiIconResponsive">
                                             <li>
                                                 <img src={require('../../assets/img/mapIcon.png').default} />
@@ -199,12 +199,12 @@ const AgencyState = () => {
                                             <ul className="noMarginPad listStyleNone">
                                                 {
 
-                                                    searchresultdata === undefined || searchresultdata === '' || searchresultdata.length === 0 || searchresultdata === null ?
+                                                    searchresultdata == undefined || searchresultdata == '' || searchresultdata.length == 0 || searchresultdata == null ?
                                                         <>
                                                             <Loader />
                                                         </>
                                                         :
-                                                        searchresultdata === 'No Record Found'
+                                                        searchresultdata == 'No Record Found'
                                                             ?
                                                             <h1>{searchresultdata}</h1>
                                                             :
@@ -230,12 +230,12 @@ const AgencyState = () => {
                                     </div>
 
                                     {
-                                        lastpage === undefined || lastpage === 0 || lastpage === '' ? null :
+                                        lastpage == undefined || lastpage == 0 || lastpage == '' ? null :
                                             <div className="pagination">
                                                 <ul className="noMarginPad listStyleNone">
 
                                                     {
-                                                        currentpage === 1
+                                                        currentpage == 1
                                                             ?
                                                             null
                                                             :
@@ -258,9 +258,9 @@ const AgencyState = () => {
 
 
                                                     {
-                                                        // paginationopen === true ?
+                                                        // paginationopen == true ?
                                                         //     paginationarray.map((data) => (
-                                                        //         currentpage === data ?
+                                                        //         currentpage == data ?
                                                         //             <li className="active paginationNum" onClick={() => {
                                                         //                 setcurrentpage(data);
                                                         //                 setsearchresultdata();
@@ -284,22 +284,22 @@ const AgencyState = () => {
                                                                     }))
                                                                     :
                                                                     <>
-                                                                        <li className={`${currentpage === fourpage - 3 ? "active paginationNum" : "paginationNum"}`} onClick={() => {
+                                                                        <li className={`${currentpage == fourpage - 3 ? "active paginationNum" : "paginationNum"}`} onClick={() => {
                                                                             setcurrentpage(fourpage - 3)
                                                                             setsearchresultdata();
                                                                         }} >{fourpage - 3}</li>
 
-                                                                        <li className={`${currentpage === (fourpage - 2) ? "active paginationNum" : "paginationNum"}`} onClick={() => {
+                                                                        <li className={`${currentpage == (fourpage - 2) ? "active paginationNum" : "paginationNum"}`} onClick={() => {
                                                                             setcurrentpage(fourpage - 2)
                                                                             setsearchresultdata();
                                                                         }}>{fourpage - 2}</li>
 
-                                                                        <li className={`${currentpage === fourpage - 1 ? "active paginationNum" : "paginationNum"}`} onClick={() => {
+                                                                        <li className={`${currentpage == fourpage - 1 ? "active paginationNum" : "paginationNum"}`} onClick={() => {
                                                                             setcurrentpage(fourpage - 1)
                                                                             setsearchresultdata();
                                                                         }}>{fourpage - 1}</li>
 
-                                                                        <li className={`${currentpage === fourpage ? "active paginationNum" : "paginationNum"}`} onClick={() => {
+                                                                        <li className={`${currentpage == fourpage ? "active paginationNum" : "paginationNum"}`} onClick={() => {
                                                                             setcurrentpage(fourpage)
                                                                             setsearchresultdata();
                                                                         }}>{fourpage}</li>
@@ -317,17 +317,17 @@ const AgencyState = () => {
                                                                     <>
                                                                         <li className="dotsBlock">...</li>
 
-                                                                        <li className={`${currentpage === lastpage - 2 ? "active paginationNum" : "paginationNum"}`} onClick={() => {
+                                                                        <li className={`${currentpage == lastpage - 2 ? "active paginationNum" : "paginationNum"}`} onClick={() => {
                                                                             setcurrentpage(lastpage - 2)
                                                                             setsearchresultdata();
                                                                         }}>{lastpage - 2}</li>
 
-                                                                        <li className={`${currentpage === lastpage - 1 ? "active paginationNum" : "paginationNum"}`} onClick={() => {
+                                                                        <li className={`${currentpage == lastpage - 1 ? "active paginationNum" : "paginationNum"}`} onClick={() => {
                                                                             setcurrentpage(lastpage - 1)
                                                                             setsearchresultdata();
                                                                         }}>{lastpage - 1}</li>
 
-                                                                        <li className={`${currentpage === lastpage ? "active paginationNum" : "paginationNum"}`} onClick={() => {
+                                                                        <li className={`${currentpage == lastpage ? "active paginationNum" : "paginationNum"}`} onClick={() => {
                                                                             setcurrentpage(lastpage)
                                                                             setsearchresultdata();
                                                                         }}>{lastpage}</li>
@@ -341,7 +341,7 @@ const AgencyState = () => {
                                                     }
 
                                                     {
-                                                        currentpage === lastpage
+                                                        currentpage == lastpage
                                                             ?
                                                             null
                                                             :
@@ -366,12 +366,12 @@ const AgencyState = () => {
                                                 <p className="mb-0 fontSize14 font-weight400 text-center mt-1 secondaryColor">Showing&nbsp;
 
                                                     {
-                                                        lastpage === 1 ?
+                                                        lastpage == 1 ?
                                                             <>{1}-{totalcount} of&nbsp;{totalcount}</>
                                                             :
                                                             <>
                                                                 {
-                                                                    currentpage === lastpage ?
+                                                                    currentpage == lastpage ?
                                                                         <>{currentpage * 25 - 24}-{totalcount} of&nbsp;{totalcount}</>
                                                                         :
                                                                         <>{currentpage * 25 - 24}-{currentpage * 25} of&nbsp;{totalcount}</>
@@ -429,10 +429,10 @@ const AgencyState = () => {
                                                 <div className="row">
                                                     <div className="col">
                                                         {
-                                                            searchresultdata === undefined || searchresultdata.length === 0 || searchresultdata === null ?
+                                                            searchresultdata == undefined || searchresultdata.length == 0 || searchresultdata == null ?
                                                                 <Loader />
                                                                 :
-                                                                searchresultdata === 'No Record Found' ?
+                                                                searchresultdata == 'No Record Found' ?
                                                                     <h1>{searchresultdata}</h1>
                                                                     :
                                                                     <>
@@ -464,10 +464,10 @@ const AgencyState = () => {
                         {/* <div className="row">
                             <div className="col">
                                 {
-                                    searchresultdata === undefined || searchresultdata.length === 0 || searchresultdata === null ?
+                                    searchresultdata == undefined || searchresultdata.length == 0 || searchresultdata == null ?
                                         <Loader />
                                         :
-                                        searchresultdata === 'No Record Found' ?
+                                        searchresultdata == 'No Record Found' ?
                                             <h1>{searchresultdata}</h1>
                                             :
                                             <MapContainer center={

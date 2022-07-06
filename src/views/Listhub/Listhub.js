@@ -3946,7 +3946,7 @@ const Listhub = () => {
                                                     <input
                                                         type="radio"
                                                         value="male"
-                                                        checked={formData.voucher === 'male'}
+                                                        checked={formData.voucher == 'male'}
                                                         onChange={onValChange}
                                                     /> Male
                                                 </div>
@@ -3954,7 +3954,7 @@ const Listhub = () => {
                                                     <input
                                                         type="radio"
                                                         value="female"
-                                                        checked={formData.voucher === 'female'}
+                                                        checked={formData.voucher == 'female'}
                                                         onChange={onValChange}
                                                     /> Female
                                                 </div>
@@ -3962,7 +3962,7 @@ const Listhub = () => {
                                                     <input
                                                         type="radio"
                                                         value="transgender"
-                                                        checked={formData.voucher === 'transgender'}
+                                                        checked={formData.voucher == 'transgender'}
                                                         onChange={onValChange}
                                                     /> Transgender
                                                 </div> */}
@@ -3973,7 +3973,7 @@ const Listhub = () => {
                                                     <input
                                                         type="radio"
                                                         value="Yes"
-                                                        checked={formData.voucher === "Yes"}
+                                                        checked={formData.voucher == "Yes"}
                                                         onChange={onValChange} />
                                                     <span>Yes</span>
                                                 </label>
@@ -3982,7 +3982,7 @@ const Listhub = () => {
                                                     <input
                                                         type="radio"
                                                         value="No"
-                                                        checked={formData.voucher === "No"}
+                                                        checked={formData.voucher == "No"}
                                                         onChange={onValChange} />
                                                     <span>No</span>
                                                 </label>
@@ -3991,7 +3991,7 @@ const Listhub = () => {
                                                     <input
                                                         type="radio"
                                                         value="on waiting list"
-                                                        checked={formData.voucher === "on waiting list"}
+                                                        checked={formData.voucher == "on waiting list"}
                                                         onChange={onValChange} />
                                                     <span>on waiting list</span>
                                                 </label> */}
@@ -4006,7 +4006,7 @@ const Listhub = () => {
                                                         <input type="radio" id="test1"
                                                             name="radio-group"
                                                             value="Yes"
-                                                            checked={formData.voucher === "Yes"}
+                                                            checked={formData.voucher == "Yes"}
                                                             onChange={onValChange}
                                                         />
                                                         <label for="test1">Yes</label>
@@ -4015,7 +4015,7 @@ const Listhub = () => {
                                                         <input type="radio" id="test2"
                                                             name="radio-group"
                                                             value="No"
-                                                            checked={formData.voucher === "No"}
+                                                            checked={formData.voucher == "No"}
                                                             onChange={onValChange}
                                                         />
                                                         <label for="test2">No</label>

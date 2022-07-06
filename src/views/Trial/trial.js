@@ -3642,7 +3642,7 @@ const Trial = () => {
 
 
     const findUnique = (array) => {
-        if (array === undefined || array === null || array.length === 0) {
+        if (array == undefined || array == null || array.length == 0) {
         } else {
             let newarr = [];
             array.map(
@@ -3697,7 +3697,7 @@ const Trial = () => {
 
 
     useEffect(() => {
-        if (firstListofCityStates === undefined || firstListofCityStates.length === 0) {
+        if (firstListofCityStates == undefined || firstListofCityStates.length == 0) {
 
         } else {
             findUnique(firstListofCityStates);

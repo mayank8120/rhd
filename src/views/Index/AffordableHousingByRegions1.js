@@ -25,15 +25,15 @@ const AffordableHousingByRegions = () => {
                                             <div className="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                                 <ul className="noMarginPad list-style-type">
                                                     <li>
-                                                    <h3 class="font-weight500 mb-0">Affordable Housing</h3>
+                                                    <h3 className="font-weight500 mb-0">Affordable Housing</h3>
                                                         <p className="mb-0 secondaryColor">Maine</p>
                                                     </li>
                                                     <li>
-                                                    <h3 class="font-weight500 mb-0">Affordable Housing</h3>
+                                                    <h3 className="font-weight500 mb-0">Affordable Housing</h3>
                                                         <p className="mb-0 secondaryColor">New York</p>
                                                     </li>
                                                     <li>
-                                                    <h3 class="font-weight500 mb-0">Affordable Housing</h3>
+                                                    <h3 className="font-weight500 mb-0">Affordable Housing</h3>
                                                         <p className="mb-0 secondaryColor">Delaware</p>
                                                     </li>
                                                 </ul>
@@ -41,15 +41,15 @@ const AffordableHousingByRegions = () => {
                                             <div className="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                                 <ul className="noMarginPad list-style-type">
                                                     <li>
-                                                    <h3 class="font-weight500 mb-0">Affordable Housing</h3>
+                                                    <h3 className="font-weight500 mb-0">Affordable Housing</h3>
                                                         <p className="mb-0 secondaryColor">New Hampshire</p>
                                                     </li>
                                                     <li>
-                                                    <h3 class="font-weight500 mb-0">Affordable Housing</h3>
+                                                    <h3 className="font-weight500 mb-0">Affordable Housing</h3>
                                                         <p className="mb-0 secondaryColor">Rhode Island</p>
                                                     </li>
                                                     <li>
-                                                    <h3 class="font-weight500 mb-0">Affordable Housing</h3>
+                                                    <h3 className="font-weight500 mb-0">Affordable Housing</h3>
                                                         <p className="mb-0 secondaryColor">Maryland</p>
                                                     </li>
                                                 </ul>
@@ -57,15 +57,15 @@ const AffordableHousingByRegions = () => {
                                             <div className="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                                 <ul className="noMarginPad list-style-type">
                                                     <li>
-                                                      <h3 class="font-weight500 mb-0">Affordable Housing</h3>
+                                                      <h3 className="font-weight500 mb-0">Affordable Housing</h3>
                                                         <p className="mb-0 secondaryColor">Vermont</p>
                                                     </li>
                                                     <li>
-                                                      <h3 class="font-weight500 mb-0">Affordable Housing</h3>
+                                                      <h3 className="font-weight500 mb-0">Affordable Housing</h3>
                                                         <p className="mb-0 secondaryColor">Connecticut</p>
                                                     </li>
                                                     <li>
-                                                      <h3 class="font-weight500 mb-0">Affordable Housing</h3>
+                                                      <h3 className="font-weight500 mb-0">Affordable Housing</h3>
                                                         <p className="mb-0 secondaryColor">New Jersey</p>
                                                     </li>
                                                 </ul>
@@ -73,11 +73,11 @@ const AffordableHousingByRegions = () => {
                                             <div className="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                                 <ul className="noMarginPad list-style-type">
                                                     <li>
-                                                    <h3 class="font-weight500 mb-0">Affordable Housing</h3>
+                                                    <h3 className="font-weight500 mb-0">Affordable Housing</h3>
                                                         <p className="mb-0 secondaryColor">Massachusetts</p>
                                                     </li>
                                                     <li>
-                                                    <h3 class="font-weight500 mb-0">Affordable Housing</h3>
+                                                    <h3 className="font-weight500 mb-0">Affordable Housing</h3>
                                                         <p className="mb-0 secondaryColor">Washington DC</p>
                                                     </li>
                                                 </ul>

@@ -81,7 +81,7 @@ const PropertyDetail = ({ location }) => {
 
     useEffect(() => {
         const fetchData = async () => {
-            if (propid === undefined || propid === '' || propid === null) {
+            if (propid == undefined || propid == '' || propid == null) {
             }
             else {
                 const result = await axios.post(propertyDetailUrl)
@@ -137,7 +137,7 @@ const PropertyDetail = ({ location }) => {
     return (
         <>
             {
-                propertyDetailData === "" || propertyDetailData === undefined || propertyDetailData === null || propertyDetailData.length === 0
+                propertyDetailData == "" || propertyDetailData == undefined || propertyDetailData == null || propertyDetailData.length == 0
                     ?
                     <h1 style={{ "text-align": "center" }}>
                         <Loader />

@@ -13,13 +13,13 @@ const FloorPlanGeneralItem = ({ data, toggleModalAvailability }) => {
 
     return (
         <>
-            {data === undefined || data === null || data === [] || data === '' ? null :
+            {data == undefined || data == null || data == [] || data == '' ? null :
                 <li className="d-flex align-items-center justify-content-between floorPlanListing">
                     <div className="imageLeft floorplanHead d-flex align-items-center">
 
 
                         {
-                            data.floor_plan_photo === '' || data.floor_plan_photo === null ?
+                            data.floor_plan_photo == '' || data.floor_plan_photo == null ?
                                 <>
 
                                     <div className="">
@@ -48,7 +48,7 @@ const FloorPlanGeneralItem = ({ data, toggleModalAvailability }) => {
                                         </div>
                                         <div className="modal-body rentalForm availBodyBlock">
                                             {
-                                                data.floor_plan_photo === '' || data.floor_plan_photo === null ?
+                                                data.floor_plan_photo == '' || data.floor_plan_photo == null ?
                                                     <></>
                                                     :
                                                     <img className=' w-100' src={`https://www.rentalhousingdeals.com/${data.floor_plan_photo}`} alt='alt' />
@@ -69,21 +69,21 @@ const FloorPlanGeneralItem = ({ data, toggleModalAvailability }) => {
                                 <li className="secondaryColor">
 
                                     {
-                                        data.beds === 0 || data.beds === '' ?
+                                        data.beds == 0 || data.beds == '' ?
                                             (<span className="colorBlue">N/A Bd</span>)
                                             :
 
                                             <>
-                                                <span className="colorBlue font-weight500">{data.beds}</span> <span className='colorblack font-weight400'> {data.beds === 'Studio' ? null : 'Bd'}</span>
+                                                <span className="colorBlue font-weight500">{data.beds}</span> <span className='colorblack font-weight400'> {data.beds == 'Studio' ? null : 'Bd'}</span>
                                             </>
                                     }
-                                    {/* <span className="colorBlue">{data.beds}</span> {data.beds === 'Studio' ? null : 'Bd'} */}
+                                    {/* <span className="colorBlue">{data.beds}</span> {data.beds == 'Studio' ? null : 'Bd'} */}
 
 
                                 </li>
                                 <li className="secondaryColor ml-16">
                                     {
-                                        data.baths === 0 || data.baths === '' ?
+                                        data.baths == 0 || data.baths == '' ?
                                             (<span className="colorBlue font-weight500">N/A Ba</span>)
                                             :
                                             <span className="colorBlue font-weight500">{decimalRoundOff(data.baths)}   <span className='colorblack font-weight400'> Ba</span></span>
@@ -98,7 +98,7 @@ const FloorPlanGeneralItem = ({ data, toggleModalAvailability }) => {
                                     } */}
 
                                     {
-                                        data.square_feet_to === 0 ?
+                                        data.square_feet_to == 0 ?
                                             (<span className="colorBlue font-weight500">N/A Sq.ft</span>)
                                             :
                                             <><span className="colorBlue font-weight500">{commaInNumber(data.square_feet_to)}</span><span className='colorblack font-weight400'> Sq.ft</span>  </>
@@ -106,19 +106,19 @@ const FloorPlanGeneralItem = ({ data, toggleModalAvailability }) => {
 
 
                                     {/* {
-                                        data.square_feet_to === undefined || data.square_feet_from === undefined ?
+                                        data.square_feet_to == undefined || data.square_feet_from == undefined ?
                                             null
                                             :
 
-                                            (data.square_feet_to === data.square_feet_from ?
+                                            (data.square_feet_to == data.square_feet_from ?
                                                 <>
                                                     <span className="colorBlue">{data.square_feet_from}</span> Sq.ft
                                                 </>
                                                 :
-                                                (data.square_feet_from === 0 || data.square_feet_from === null) && (data.square_feet_to === 0 || square_feet_to === null) ?
+                                                (data.square_feet_from == 0 || data.square_feet_from == null) && (data.square_feet_to == 0 || square_feet_to == null) ?
                                                     <span className="colorBlue">N/A</span>
                                                     :
-                                                    data.square_feet_from === 0 || data.square_feet_from === null ?
+                                                    data.square_feet_from == 0 || data.square_feet_from == null ?
                                                         <>
                                                             <span className="colorBlue">{data.square_feet_to}</span> Sq.ft
                                                         </>
@@ -141,23 +141,23 @@ const FloorPlanGeneralItem = ({ data, toggleModalAvailability }) => {
 
 
                                     {
-                                        data.beds === 0 || data.beds === '' ?
+                                        data.beds == 0 || data.beds == '' ?
                                             (<span className="colorBlue">N/A Bd</span>)
                                             :
 
                                             <>
-                                                <span className="colorBlue font-weight500">{data.beds}</span> <span className='colorblack font-weight400'> {data.beds === 'Studio' ? null : 'Bd'}</span>
+                                                <span className="colorBlue font-weight500">{data.beds}</span> <span className='colorblack font-weight400'> {data.beds == 'Studio' ? null : 'Bd'}</span>
                                             </>
                                     }
 
 
-                                    {/* <span className="colorBlue">{data.beds}</span> {data.beds === 'Studio' ? null : 'Bedroom'} */}
+                                    {/* <span className="colorBlue">{data.beds}</span> {data.beds == 'Studio' ? null : 'Bedroom'} */}
                                 </li>
                                 <li className="secondaryColor ml-35">
 
 
                                     {
-                                        data.baths === 0 || data.baths === '' ?
+                                        data.baths == 0 || data.baths == '' ?
                                             (<span className="colorBlue font-weight500">N/A Ba</span>)
                                             :
                                             <span className="colorBlue font-weight500">{decimalRoundOff(data.baths)}   <span className='colorblack font-weight400'> Ba</span></span>
@@ -169,7 +169,7 @@ const FloorPlanGeneralItem = ({ data, toggleModalAvailability }) => {
                                 </li>
                                 <li className="secondaryColor ml-40">
                                     {
-                                        data.square_feet_to === 0 ?
+                                        data.square_feet_to == 0 ?
                                             (<span className="colorBlue font-weight500">N/A Sq.ft</span>)
                                             :
 

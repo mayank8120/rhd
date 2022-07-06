@@ -53,9 +53,9 @@ const ImageSliderCarousel = ({ propimages, type }) => {
 
         <>
             {
-                propimages === null || propimages.length === 0 ?
+                propimages == null || propimages.length == 0 ?
                     (
-                        type === 'general' ?
+                        type == 'general' ?
                             <img className='imgadjust'
                                 // src={`https://cdn-0.rentalhousingdeals.com/images/l_thumbs/affordable-no-image.jpg`}
                                 // {`https://www.rentalhousingdeals.com/${data.photo}`}

@@ -37,8 +37,8 @@ const FairMarketRents = () => {
                                 <center>
                                     <h2>FY 2017 Fair Market Rent Summary</h2>
 
-                                    <div class="row">
-                                        <div class="col-md-24 col-sm-24">
+                                    <div className="row">
+                                        <div className="col-md-24 col-sm-24">
                                             {/* <style type="text/css">.localhousing_tbl.table > thead > tr > th, 
                 .localhousing_tbl.table > tbody > tr > th, 
                 .localhousing_tbl.table > tfoot > tr > th, 
@@ -52,7 +52,7 @@ const FairMarketRents = () => {
                                                     text - align: center !important;
                 }
                                             </style> */}
-                                            <table class="table fair-market-tbl thborder localhousing_tbl">
+                                            <table className="table fair-market-tbl thborder localhousing_tbl">
                                                 <tbody>
                                                     <tr>
                                                         <th align="center" valign="middle">Efficiency</th>

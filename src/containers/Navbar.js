@@ -92,7 +92,7 @@ const Navbar = () => {
 
 
     useEffect(() => {
-        if (latlngdata === undefined || latlngdata === null) {
+        if (latlngdata == undefined || latlngdata == null) {
 
         } else {
             setcity(latlngdata.city);
@@ -106,7 +106,7 @@ const Navbar = () => {
     // console.log(latlngdata);
 
     let nearbycitiesurl;
-    if (latlngdata === null || latlngdata === undefined) {
+    if (latlngdata == null || latlngdata == undefined) {
         nearbycitiesurl = `http://thomasthecat.rentalhousingdeals.com/apis/v1/api/v1/nearbycities?lat=&lng=`
     } else {
         nearbycitiesurl = `http://thomasthecat.rentalhousingdeals.com/apis/v1/api/v1/nearbycities?lat=${latlngdata.lat}&lng=${latlngdata.lon}`
@@ -215,7 +215,7 @@ const Navbar = () => {
     const [showdropdown, setshowdropdown] = useState(false);
 
     const toggleshow = () => {
-        if (showdropdown === false) {
+        if (showdropdown == false) {
             setshowdropdown(true)
         } else {
             setshowdropdown(false)
@@ -239,7 +239,7 @@ const Navbar = () => {
     useEffect(() => {
         const result = axios.post(`http://thomasthecat.rentalhousingdeals.com/apis/v1/api/v1/dropdown-search?keyword=${searchterm}`)
             .then(res => {
-                if (res.data[0].error === true) {
+                if (res.data[0].error == true) {
                     setdropdowndata(res.data[0].message)
                 } else {
                     setdropdowndata(res.data[0].data);
@@ -578,7 +578,7 @@ const Navbar = () => {
                                     <div className="searchNav searchNavsmallMar">
                                         <div className="posRel posRelIcon">
                                             {
-                                                location.pathname === '/' || location.pathname === '/seniorHousing' || location.pathname === '/section8housing'
+                                                location.pathname == '/' || location.pathname == '/seniorHousing' || location.pathname == '/section8housing'
                                                     ?
                                                     null :
                                                     <form onSubmit={handleSubmit}>
@@ -628,7 +628,7 @@ const Navbar = () => {
                                             <ul className="serachDatadrop">
                                                 {/* {
                                                     JSONDATA.filter((val) => {
-                                                        if (searchterm === "") {
+                                                        if (searchterm == "") {
                                                             return ""
                                                         } else if (val.property_city.toLowerCase().includes(searchterm.toLowerCase())) {
                                                             return val
@@ -650,7 +650,7 @@ const Navbar = () => {
 
 
                                                 {/* {
-                                                    dropdowndata === undefined || dropdowndata === null ? <></> :
+                                                    dropdowndata == undefined || dropdowndata == null ? <></> :
                                                         dropdowndata.map((val) => {
                                                             return (
                                                                 <p style={!showdropdown ? style1 : style}
@@ -672,16 +672,16 @@ const Navbar = () => {
 
 
                                                 {
-                                                    searchterm === null || searchterm === undefined || searchterm === '' ||
-                                                        dropdowndata === undefined || dropdowndata === null || dropdowndata === '' ?
+                                                    searchterm == null || searchterm == undefined || searchterm == '' ||
+                                                        dropdowndata == undefined || dropdowndata == null || dropdowndata == '' ?
                                                         <>
                                                         </>
                                                         :
                                                         (
-                                                            dropdowndata === 'No Record Found' ?
+                                                            dropdowndata == 'No Record Found' ?
                                                                 <>
                                                                     <p>
-                                                                        <a className='secondaryColor w-100 d-block' href={`/propertySearch/${city === undefined ? null : city}/${statenames === undefined ? null : statenames}`}
+                                                                        <a className='secondaryColor w-100 d-block' href={`/propertySearch/${city == undefined ? null : city}/${statenames == undefined ? null : statenames}`}
                                                                             onClick={() => {
                                                                                 setdropdowndata();
                                                                                 setsearchterm('');
@@ -703,7 +703,7 @@ const Navbar = () => {
                                                                     {
                                                                         <>
                                                                             <p>
-                                                                                <a className='secondaryColor w-100 d-block' href={`/propertySearch/${city === undefined ? null : city}/${statenames === undefined ? null : statenames}`}
+                                                                                <a className='secondaryColor w-100 d-block' href={`/propertySearch/${city == undefined ? null : city}/${statenames == undefined ? null : statenames}`}
                                                                                     onClick={() => {
                                                                                         setdropdowndata();
                                                                                         setsearchterm(() => '');
@@ -727,7 +727,7 @@ const Navbar = () => {
                                                                                                 setdropdowndata();
                                                                                             }}>
                                                                                             {
-                                                                                                val.property_state === null || val.property_state === undefined ?
+                                                                                                val.property_state == null || val.property_state == undefined ?
                                                                                                     `${val.property_city}, ${val.property_state}`
                                                                                                     :
                                                                                                     <a className='secondaryColor w-100 d-block' href={`/propertySearch/${val.property_city}/${val.property_state}`}
@@ -770,18 +770,18 @@ const Navbar = () => {
                                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                                         <ul className="navbar-nav ml-auto">
                                             <li className="nav-item">
-                                                <NavLink className={`${feature === undefined && window.location.href.includes('propertySearch') ? 'activeclass' : null}`} exact activeClassName="activeclass" to="">Rentals</NavLink>
+                                                <NavLink className={`${feature == undefined && window.location.href.includes('propertySearch') ? 'activeclass' : null}`} exact activeClassName="activeclass" to="">Rentals</NavLink>
 
                                             </li>
                                             <li className="nav-item">
-                                                <NavLink className={`${feature === 'senior' ? 'activeclass' : null}`} exact activeClassName="activeclass" to="/seniorHousing">Senior Housing</NavLink>
+                                                <NavLink className={`${feature == 'senior' ? 'activeclass' : null}`} exact activeClassName="activeclass" to="/seniorHousing">Senior Housing</NavLink>
                                             </li>
                                             <li className="nav-item">
-                                                <NavLink className={`${feature === 'section' ? 'activeclass' : null}`} exact activeClassName="activeclass" to="/section8housing">Section 8
+                                                <NavLink className={`${feature == 'section' ? 'activeclass' : null}`} exact activeClassName="activeclass" to="/section8housing">Section 8
                                                     Housing</NavLink>
                                             </li>
                                             <li className="nav-item">
-                                                <NavLink className={`${feature === undefined && window.location.href.includes('agencyState') ? 'activeclass' : null}`} exact activeClassName="activeclass" to="/housingAuthority">Housing
+                                                <NavLink className={`${feature == undefined && window.location.href.includes('agencyState') ? 'activeclass' : null}`} exact activeClassName="activeclass" to="/housingAuthority">Housing
                                                     Authority Waitlists</NavLink>
                                             </li>
                                         </ul>

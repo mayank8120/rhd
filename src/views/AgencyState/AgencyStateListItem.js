@@ -17,7 +17,7 @@ export const AgencyStateListItem = ({ data }) => {
     let authimg;
     let authdate;
 
-    if (data.HADetail === [] || data.HADetail === '' || data.HADetail === undefined || data.HADetail === null) {
+    if (data.HADetail == [] || data.HADetail == '' || data.HADetail == undefined || data.HADetail == null) {
 
     } else {
         authdetail = data.HADetail[0];
@@ -25,7 +25,7 @@ export const AgencyStateListItem = ({ data }) => {
 
 
 
-    if (data.HAPhotoDetail === [] || data.HAPhotoDetail === '' || data.HAPhotoDetail === undefined || data.HAPhotoDetail === null) {
+    if (data.HAPhotoDetail == [] || data.HAPhotoDetail == '' || data.HAPhotoDetail == undefined || data.HAPhotoDetail == null) {
 
     } else {
         authimg = data.HAPhotoDetail[0];
@@ -33,7 +33,7 @@ export const AgencyStateListItem = ({ data }) => {
 
 
 
-    if (data.closedate === [] || data.closedate === '' || data.closedate === undefined || data.closedate === null) {
+    if (data.closedate == [] || data.closedate == '' || data.closedate == undefined || data.closedate == null) {
 
     } else {
         authdate = data.closedate[0];
@@ -44,18 +44,18 @@ export const AgencyStateListItem = ({ data }) => {
 
 
     useEffect(() => {
-        // if (data === undefined || data === [] || data === null || data === '') {
+        // if (data == undefined || data == [] || data == null || data == '') {
         if (authdetail.service_type != '' && authdetail.service_type !== null) {
-            if (authdetail.service_type === 'Low-Rent') {
+            if (authdetail.service_type == 'Low-Rent') {
                 setheadertext('Low-Rent');
             }
-            else if (authdetail.service_type === 'Section 8') {
+            else if (authdetail.service_type == 'Section 8') {
                 setheadertext('Section 8 Voucher');
             } else {
                 setheadertext('SRent');
             }
 
-            if (authdetail.is_section_8_wating_list === 1 && authdate.close_date !== '0000-00-00') {
+            if (authdetail.is_section_8_wating_list == 1 && authdate.close_date !== '0000-00-00') {
                 setheadertext(authdate.close_date + ' ' + authdate.close_time);
             }
         }
@@ -69,16 +69,16 @@ export const AgencyStateListItem = ({ data }) => {
 
 
     // if (authdetail.service_type != '' || authdetail.service_type !== null) {
-    //     if (authdetail.service_type === 'Low-Rent') {
+    //     if (authdetail.service_type == 'Low-Rent') {
     //         setheadertext('Low-Rent');
     //     }
-    //     else if (authdetail.service_type === 'Section 8') {
+    //     else if (authdetail.service_type == 'Section 8') {
     //         setheadertext('Section 8 Voucher');
     //     } else {
     //         setheadertext('Section 8 Voucher<br/>Low-Rent');
     //     }
 
-    //     if (authdetail.is_section_8_wating_list === 1 && authdate.close_date !== '0000-00-00') {
+    //     if (authdetail.is_section_8_wating_list == 1 && authdate.close_date !== '0000-00-00') {
     //         setheadertext(authdate.close_date + ' ' + authdate.close_time);
     //     }
     // }
@@ -107,7 +107,7 @@ export const AgencyStateListItem = ({ data }) => {
     }
 
     function captchacheck() {
-        if (captchaValue === undefined || captchaValue !== true) {
+        if (captchaValue == undefined || captchaValue !== true) {
             setcaptchaValue(false);
         }
     }
@@ -117,7 +117,7 @@ export const AgencyStateListItem = ({ data }) => {
         e.preventDefault();
 
         // console.log(formdata);
-        if (captchaValue === true ) {
+        if (captchaValue == true ) {
             submitAllData();
             fetchAfterCheckPropList();
             // setformdata({ property_id: data.id, first_name: '', last_name: '', phone: '', email_address: '', move_date: '', message: `${formdata.message}` });
@@ -188,11 +188,11 @@ export const AgencyStateListItem = ({ data }) => {
             .get(fetchAfterCheckUrl)
             .then((res) => {
                 console.log(res);
-                if (res.error === true) {
+                if (res.error == true) {
                     toggleModalAvailability();
                     toggleModalThankYou();
                 } else {
-                    if (res.data.data === null || res.data.data === '' || res.data.data === undefined || res.data.data.length === 0) {
+                    if (res.data.data == null || res.data.data == '' || res.data.data == undefined || res.data.data.length == 0) {
                         toggleModalAvailability();
                         toggleModalThankYou();
                     }
@@ -235,7 +235,7 @@ export const AgencyStateListItem = ({ data }) => {
 
     const handleOnChangepets = (position) => {
         const updatedcheckedStatePropList = checkedStatePropList.map(
-            (item, index) => (index === position ? !item : item)
+            (item, index) => (index == position ? !item : item)
         );
 
         setcheckedStatePropList(updatedcheckedStatePropList);
@@ -244,7 +244,7 @@ export const AgencyStateListItem = ({ data }) => {
 
         const totalPrice = updatedcheckedStatePropList.reduce(
             (sum, currentState, index) => {
-                if (currentState === true) {
+                if (currentState == true) {
                     arrpets.push(aftercheckPropList[index].id_property);
                     return sum + 1;
                 }
@@ -344,7 +344,7 @@ export const AgencyStateListItem = ({ data }) => {
     function colorChange(item) {
 
         if (toggleHeartHA
-            (item) === true) {
+            (item) == true) {
             setcolorCHangeheart(true);
         } else {
             setcolorCHangeheart(false);
@@ -360,9 +360,9 @@ export const AgencyStateListItem = ({ data }) => {
     return (
         <>
             {
-                data === undefined || data.length === 0 || data === null || data === ''
-                    // || authimg === '' || authimg === undefined || authimg.path === '' ||
-                    // authimg.path === undefined || authimg.filename === '' || authimg.filename === undefined
+                data == undefined || data.length == 0 || data == null || data == ''
+                    // || authimg == '' || authimg == undefined || authimg.path == '' ||
+                    // authimg.path == undefined || authimg.filename == '' || authimg.filename == undefined
                     ?
                     <>No Record Found</>
                     :
@@ -374,88 +374,88 @@ export const AgencyStateListItem = ({ data }) => {
 
 
                             {/* 
-                            <div class="d-flex align-items-center ResponsiveFlexDiv">
-                                <div class="agencyStateListLeft">
-                                    <div class="agencyLeftHeadermedia">
-                                        <div class="media">
+                            <div className="d-flex align-items-center ResponsiveFlexDiv">
+                                <div className="agencyStateListLeft">
+                                    <div className="agencyLeftHeadermedia">
+                                        <div className="media">
                                             <a href="agencyDetail.html">
-                                                <span class="CircleImage">
+                                                <span className="CircleImage">
                                                     <img src="assets/img/agencyState1.png" />
                                                 </span>
                                             </a>
-                                            <div class="media-body">
-                                                <div class="d-flex align-items-top">
+                                            <div className="media-body">
+                                                <div className="d-flex align-items-top">
                                                     <div>
                                                         <a href="agencyDetail.html">
                                                             <h5
-                                                                class="mt-0 fontSize16 font-weight700 colorBlue">
+                                                                className="mt-0 fontSize16 font-weight700 colorBlue">
                                                                 Anajhheim Housing Authority</h5>
                                                         </a>
                                                         <a href="agencyDetail.html">
                                                             <p
-                                                                class="mb-0 mt-0 font-weight400 fontSize14 secondaryColor">
+                                                                className="mb-0 mt-0 font-weight400 fontSize14 secondaryColor">
                                                                 2882 Tyler St El Monte, CA 91157</p>
                                                         </a>
                                                     </div>
-                                                    <div class="likeBttn ml-auto">
-                                                        <span class="heartIcon transition">
-                                                            <i class="fas fa-heart"></i>
+                                                    <div className="likeBttn ml-auto">
+                                                        <span className="heartIcon transition">
+                                                            <i className="fas fa-heart"></i>
                                                         </span>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <p
-                                            class="fontSize16 secondaryColor font-weight400 mb-0 detailPara">
+                                            className="fontSize16 secondaryColor font-weight400 mb-0 detailPara">
                                             Anaheim Housing Authority (AHA) provides information about
                                             the Section 8 Housing Choice Voucher (HCV) Program and how
                                             to apply for the program. The... <a href="#"
-                                                class="purpleText">More Info</a></p>
-                                        <div class="bottomInfo d-flex align-items-center itemWebsite">
-                                            <div class="callBtn purpleText font-weight700 fontSize14">
-                                                <i class="fas fa-phone-alt"></i>(626) 448-2699
+                                                className="purpleText">More Info</a></p>
+                                        <div className="bottomInfo d-flex align-items-center itemWebsite">
+                                            <div className="callBtn purpleText font-weight700 fontSize14">
+                                                <i className="fas fa-phone-alt"></i>(626) 448-2699
                                             </div>
                                             <p
-                                                class="mb-0 ml-auto fontSize14 font-weight400 secondaryColor">
+                                                className="mb-0 ml-auto fontSize14 font-weight400 secondaryColor">
                                                 25 Miles</p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="agencyStateListRight">
-                                    <div class="itemWebsite">
+                                <div className="agencyStateListRight">
+                                    <div className="itemWebsite">
                                         <h5
-                                            class="text-center fontSize14 colorBlue font-weight500 mb-0">
+                                            className="text-center fontSize14 colorBlue font-weight500 mb-0">
                                             Section 8 Voucher Low-Rent</h5>
-                                        <div class="text-center counterAgencyState">
-                                            <h2 class="font-weight700 skyBlueColor mb-0">355</h2>
-                                            <h6 class="mb-0 secondaryColor font-weight400">Subsidized
+                                        <div className="text-center counterAgencyState">
+                                            <h2 className="font-weight700 skyBlueColor mb-0">355</h2>
+                                            <h6 className="mb-0 secondaryColor font-weight400">Subsidized
                                                 Units</h6>
                                         </div>
                                     </div>
-                                    <div class="itemMobile mrginTop16">
-                                        <div class="d-flex align-items-center">
+                                    <div className="itemMobile mrginTop16">
+                                        <div className="d-flex align-items-center">
                                             <h5
-                                                class="text-center fontSize14 colorBlue font-weight500 mb-0">
+                                                className="text-center fontSize14 colorBlue font-weight500 mb-0">
                                                 Section 8 Voucher<br /> Low-Rent</h5>
-                                            <div class="text-center counterAgencyState ml-auto">
-                                                <h2 class="font-weight700 skyBlueColor mb-0">355</h2>
-                                                <h6 class="mb-0 secondaryColor font-weight400">
+                                            <div className="text-center counterAgencyState ml-auto">
+                                                <h2 className="font-weight700 skyBlueColor mb-0">355</h2>
+                                                <h6 className="mb-0 secondaryColor font-weight400">
                                                     Subsidized Units</h6>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="text-center itemWebsite">
-                                        <a class="checkAvailBtnSmall">Check Availability</a>
+                                    <div className="text-center itemWebsite">
+                                        <a className="checkAvailBtnSmall">Check Availability</a>
                                     </div>
-                                    <div class="bottomInfo d-flex align-items-center itemMobile">
-                                        <div class="callBtn lineBtnMobile purpleText font-weight700">
-                                            <i class="fas fa-phone-alt"></i>(626) 448-26999
+                                    <div className="bottomInfo d-flex align-items-center itemMobile">
+                                        <div className="callBtn lineBtnMobile purpleText font-weight700">
+                                            <i className="fas fa-phone-alt"></i>(626) 448-26999
                                         </div>
-                                        <div class="availbity availbilityBtn fontSize16 font-weight700">
+                                        <div className="availbity availbilityBtn fontSize16 font-weight700">
                                             Check Availability
                                         </div>
                                         <a href="#"
-                                            class="ml-auto moreInfo brdrRadius4 fontSize16 transition itemWebsite">More
+                                            className="ml-auto moreInfo brdrRadius4 fontSize16 transition itemWebsite">More
                                             Info</a>
                                     </div>
                                 </div>
@@ -467,7 +467,7 @@ export const AgencyStateListItem = ({ data }) => {
                                     <div className="agencyLeftHeadermedia">
                                         <div className="media">
                                             {
-                                                data.HAPhotoDetail.length === 0 || data.HAPhotoDetail === null || data.HAPhotoDetail === ''
+                                                data.HAPhotoDetail.length == 0 || data.HAPhotoDetail == null || data.HAPhotoDetail == ''
                                                     ?
                                                     <a href="javascript:;">
                                                         <span className="CircleImage">
@@ -510,13 +510,13 @@ export const AgencyStateListItem = ({ data }) => {
                                                         >
 
                                                             {
-                                                                colorCHangeheart === true ?
+                                                                colorCHangeheart == true ?
                                                                     <>
-                                                                        <i class="fas fa-heart redcolor"></i>
+                                                                        <i className="fas fa-heart redcolor"></i>
                                                                     </>
                                                                     :
                                                                     <>
-                                                                        <i class="far fa-heart lightbluemodified"></i>
+                                                                        <i className="far fa-heart lightbluemodified"></i>
                                                                     </>
                                                             }
 
@@ -526,7 +526,7 @@ export const AgencyStateListItem = ({ data }) => {
                                             </div>
                                         </div>
                                         {
-                                            authdetail.about_us === '' || authdetail.about_us === null || authdetail.about_us === undefined ?
+                                            authdetail.about_us == '' || authdetail.about_us == null || authdetail.about_us == undefined ?
                                                 <p className="fontSize16 secondaryColor font-weight400 mb-0 detailPara" >
                                                     {authdetail.name} is a public housing agency that helps provide decent and safe rental housing for eligible low-income families, the elderly, and persons with disabilities.
 
@@ -559,10 +559,10 @@ export const AgencyStateListItem = ({ data }) => {
                                 <div className="agencyStateListRight">
                                     <div className="itemWebsite">
                                         {
-                                            authdetail.is_section_8_wating_list === 1 && authdate.close_date != '0000-00-00' ?
+                                            authdetail.is_section_8_wating_list == 1 && authdate.close_date != '0000-00-00' ?
                                                 <>
                                                     {
-                                                        headertext === 'SRent' ?
+                                                        headertext == 'SRent' ?
                                                             <>
                                                                 <h5 className=" text-center fontSize14 colorBlue font-weight500 mb-0">
                                                                     Section 8 Voucher Low-Rent
@@ -583,7 +583,7 @@ export const AgencyStateListItem = ({ data }) => {
                                                 :
                                                 <>
                                                     {
-                                                        headertext === 'SRent' ?
+                                                        headertext == 'SRent' ?
                                                             <>
                                                                 <h5 className="text-center fontSize14 colorBlue font-weight500 mb-0">
                                                                     Section 8 Voucher
@@ -600,7 +600,7 @@ export const AgencyStateListItem = ({ data }) => {
 
                                                             authdetail.num_units !== 0 && authdetail.num_units !== '' ?
                                                                 <>
-                                                                    <h2 class="font-weight700 skyBlueColor mb-0">{authdetail.num_units} </h2>
+                                                                    <h2 className="font-weight700 skyBlueColor mb-0">{authdetail.num_units} </h2>
                                                                     <h6 className="mb-0 secondaryColor font-weight400">Subsidized
                                                                         Units</h6>
                                                                 </>
@@ -658,7 +658,7 @@ export const AgencyStateListItem = ({ data }) => {
                                 onRequestClose={toggleModalAvailability}
                                 className="propertysearch-modal bottomInfo">
                                 <div className="modal-header     align-items-baseline ">
-                                    <div class="">
+                                    <div className="">
                                         <h5 className="modal-title fontSize22 font-weight400 ml-22"
                                             id="exampleModalLongTitle">
                                             {authdetail.name}
@@ -689,7 +689,7 @@ export const AgencyStateListItem = ({ data }) => {
 
 
                                                     {
-                                                        data.HAPhotoDetail.length === 0 || data.HAPhotoDetail === null || data.HAPhotoDetail === ''
+                                                        data.HAPhotoDetail.length == 0 || data.HAPhotoDetail == null || data.HAPhotoDetail == ''
                                                             ?
                                                             <img className="w-100" src={`https://cdn-0.rentalhousingdeals.com/images/l_thumbs/photos-unavailable.jpg`} />
 
@@ -703,7 +703,7 @@ export const AgencyStateListItem = ({ data }) => {
 
                                                 <p className="para fontSize14 font-weight400 secondaryColor">
                                                     {
-                                                        authdetail.about_us === '' || authdetail.about_us === null || authdetail.about_us === undefined ?
+                                                        authdetail.about_us == '' || authdetail.about_us == null || authdetail.about_us == undefined ?
                                                             <p className="fontSize16 secondaryColor font-weight400 mb-0 detailPara" >
                                                                 {authdetail.name} is a public housing agency that helps provide decent and safe rental housing for eligible low-income families, the elderly, and persons with disabilities.
                                                             </p>
@@ -855,7 +855,7 @@ export const AgencyStateListItem = ({ data }) => {
                                                                                 onChange={captchaHandle}
                                                                             />
                                                                         </div>
-                                                                        {captchaValue === false ? (
+                                                                        {captchaValue == false ? (
                                                                             <span style={{ color: "red" }}>
                                                                                 Please Verify Captcha
                                                                             </span>
@@ -915,7 +915,7 @@ export const AgencyStateListItem = ({ data }) => {
                                 </div>
 
                                 <div className="modal-body responsiveApartment">
-                                    {propListArray.length === 0 ? 'Please Select At least one Property' : null}
+                                    {propListArray.length == 0 ? 'Please Select At least one Property' : null}
                                     <div className="rentalForm availBodyBlock">
                                         {aftercheckPropList.map(
                                             (
@@ -932,16 +932,16 @@ export const AgencyStateListItem = ({ data }) => {
                                                     <>
                                                         {/* {id_property} */}
 
-                                                        <div class="margin-top-0 mb-2">
-                                                            <div class="blog-post align-items-center">
-                                                                <div class="utf-blog-post-thumbnail">
-                                                                    <div class="utf-blog-post-thumbnail-inner">
+                                                        <div className="margin-top-0 mb-2">
+                                                            <div className="blog-post align-items-center">
+                                                                <div className="utf-blog-post-thumbnail">
+                                                                    <div className="utf-blog-post-thumbnail-inner">
                                                                         {/* <Link to={linkurl} className="d-flex w-100  abcd"> */}
                                                                         <div className="listing-left">
                                                                             <div className="bg-image">
-                                                                                {property_photo === null ||
-                                                                                    property_photo === "" ||
-                                                                                    property_photo.length === 0 ? (
+                                                                                {property_photo == null ||
+                                                                                    property_photo == "" ||
+                                                                                    property_photo.length == 0 ? (
                                                                                     // Affordable Housing Logo
 
                                                                                     //     spurl = "https://cdn-0.rentalhousingdeals.com/images/l_thumbs/affordable-no-image.jpg"
@@ -973,9 +973,9 @@ export const AgencyStateListItem = ({ data }) => {
                                                                     </div>
                                                                 </div>
 
-                                                                <div class="utf-blog-post-content">
+                                                                <div className="utf-blog-post-content">
                                                                     <div className="d-flex align-items-baseline  propertyTitle">
-                                                                        <div class="">
+                                                                        <div className="">
                                                                             <span className="w-100">
                                                                                 {" "}
                                                                                 <h5 className="colorBlue font-weight700 mb-0">
@@ -993,8 +993,8 @@ export const AgencyStateListItem = ({ data }) => {
                                                                             </p>
                                                                         </div>
 
-                                                                        {property_rating === null ||
-                                                                            property_rating === undefined ||
+                                                                        {property_rating == null ||
+                                                                            property_rating == undefined ||
                                                                             property_rating ==
                                                                             "" ? null : property_rating.vote_avg ==
                                                                                 null ? null : (
@@ -1010,15 +1010,15 @@ export const AgencyStateListItem = ({ data }) => {
 
 
                                                                     {/* {
-                                                        propdetail === null || propdetail === '' ?
+                                                        propdetail == null || propdetail == '' ?
                                                             null
                                                             :
-                                                            propdetail.subsidized === "Yes" &&
-                                                                propdetail.section8 === "Yes" ?
+                                                            propdetail.subsidized == "Yes" &&
+                                                                propdetail.section8 == "Yes" ?
                                                                 (
-                                                                    <div class="itemWebsite priceRangeMobile">
-                                                                        <div class="d-flex align-items-center">
-                                                                            <h4 class="fontSize22 font-weight400 mb-0">
+                                                                    <div className="itemWebsite priceRangeMobile">
+                                                                        <div className="d-flex align-items-center">
+                                                                            <h4 className="fontSize22 font-weight400 mb-0">
                                                                                 {
                                                                                     thirdval !== '' && thirdval !== 'MOVE-IN SPECIALS' && thirdval !== 'SPECIALS' && typeof (thirdval) !== undefined
 
@@ -1026,7 +1026,7 @@ export const AgencyStateListItem = ({ data }) => {
                                                                                         thirdval
                                                                                         :
                                                                                         (
-                                                                                            thirdval === 'MOVE-IN SPECIALS' || thirdval === 'SPECIALS'
+                                                                                            thirdval == 'MOVE-IN SPECIALS' || thirdval == 'SPECIALS'
 
                                                                                                 ?
                                                                                                 thirdval
@@ -1036,7 +1036,7 @@ export const AgencyStateListItem = ({ data }) => {
                                                                                 }
 
                                                                             </h4>
-                                                                            <span class="font-weight700">
+                                                                            <span className="font-weight700">
                                                                                 <img src={require("../../assets/img/priceTagg.svg").default} />
                                                                                 Good Deal
                                                                             </span>
@@ -1056,7 +1056,7 @@ export const AgencyStateListItem = ({ data }) => {
                                                                                     thirdval
                                                                                     :
                                                                                     (
-                                                                                        thirdval === 'MOVE-IN SPECIALS' || thirdval === 'SPECIALS'
+                                                                                        thirdval == 'MOVE-IN SPECIALS' || thirdval == 'SPECIALS'
 
                                                                                             ?
                                                                                             thirdval
@@ -1069,17 +1069,17 @@ export const AgencyStateListItem = ({ data }) => {
                                                                 )
                                                     } */}
 
-                                                                    <div class="priceRangeMobile">
-                                                                        <div class="d-flex align-items-center">
-                                                                            <h4 class="black-color fontSize22 font-weight800 mb-0">
-                                                                                {(property_details[0].min_rent === 0 && property_details[0].max_rent === 0) || (property_details[0].max_rent === '' && property_details[0].min_rent === '')
+                                                                    <div className="priceRangeMobile">
+                                                                        <div className="d-flex align-items-center">
+                                                                            <h4 className="black-color fontSize22 font-weight800 mb-0">
+                                                                                {(property_details[0].min_rent == 0 && property_details[0].max_rent == 0) || (property_details[0].max_rent == '' && property_details[0].min_rent == '')
                                                                                     ?
                                                                                     null :
 
-                                                                                    (property_details[0].min_rent === 0 || property_details[0].max_rent === 0) || (property_details[0].max_rent === '' || property_details[0].min_rent === '')
+                                                                                    (property_details[0].min_rent == 0 || property_details[0].max_rent == 0) || (property_details[0].max_rent == '' || property_details[0].min_rent == '')
                                                                                         ?
 
-                                                                                        `$${property_details[0].max_rent === 0 ? '' : property_details[0].max_rent}${property_details[0].min_rent === 0 ? '' : property_details[0].min_rent}`
+                                                                                        `$${property_details[0].max_rent == 0 ? '' : property_details[0].max_rent}${property_details[0].min_rent == 0 ? '' : property_details[0].min_rent}`
                                                                                         :
                                                                                         `$${property_details[0].min_rent}-$${property_details[0].max_rent}`
                                                                                 }
@@ -1088,25 +1088,25 @@ export const AgencyStateListItem = ({ data }) => {
                                                                     </div>
 
                                                                     <div className="d-flex align-items-center listingBlockLine ">
-                                                                        {property_details === null ||
-                                                                            property_details === "" ||
+                                                                        {property_details == null ||
+                                                                            property_details == "" ||
                                                                             property_details.length ==
-                                                                            0 ? null : (property_details[0].max_bed === null ||
-                                                                                property_details[0].max_bed === "" ||
-                                                                                property_details[0].min_bed === "" ||
-                                                                                property_details[0].min_bed === null) &&
-                                                                                (property_details[0].min_bath === null ||
-                                                                                    property_details[0].min_bath === "" ||
-                                                                                    property_details[0].max_bath === "" ||
-                                                                                    property_details[0].max_bath === null) ? null : (
+                                                                            0 ? null : (property_details[0].max_bed == null ||
+                                                                                property_details[0].max_bed == "" ||
+                                                                                property_details[0].min_bed == "" ||
+                                                                                property_details[0].min_bed == null) &&
+                                                                                (property_details[0].min_bath == null ||
+                                                                                    property_details[0].min_bath == "" ||
+                                                                                    property_details[0].max_bath == "" ||
+                                                                                    property_details[0].max_bath == null) ? null : (
                                                                             <ul className="noMarginPad listStyleNone mr-18">
-                                                                                {property_details[0].max_bed === null ||
-                                                                                    (property_details[0].max_bed === "" &&
-                                                                                        property_details[0].min_bed === "") ||
+                                                                                {property_details[0].max_bed == null ||
+                                                                                    (property_details[0].max_bed == "" &&
+                                                                                        property_details[0].min_bed == "") ||
                                                                                     property_details[0].min_bed ==
                                                                                     null ? null : property_details[0].min_bed ==
                                                                                         "" ||
-                                                                                        property_details[0].min_bed === null ? (
+                                                                                        property_details[0].min_bed == null ? (
                                                                                     <li className="d-flex align-items-center">
                                                                                         <img
                                                                                             src={
@@ -1149,13 +1149,13 @@ export const AgencyStateListItem = ({ data }) => {
                                                                                     </li>
                                                                                 )}
 
-                                                                                {property_details[0].max_bath === null ||
-                                                                                    (property_details[0].max_bath === "" &&
-                                                                                        property_details[0].min_bath === "") ||
+                                                                                {property_details[0].max_bath == null ||
+                                                                                    (property_details[0].max_bath == "" &&
+                                                                                        property_details[0].min_bath == "") ||
                                                                                     property_details[0].min_bath ==
                                                                                     null ? null : property_details[0].min_bath ==
                                                                                         "" ||
-                                                                                        property_details[0].min_bath === null ? (
+                                                                                        property_details[0].min_bath == null ? (
                                                                                     <li className="d-flex align-items-center">
                                                                                         <img
                                                                                             src={
@@ -1200,11 +1200,11 @@ export const AgencyStateListItem = ({ data }) => {
                                                                             </ul>
                                                                         )}
 
-                                                                        {property_details[0] === null ||
-                                                                            property_details[0] === "" ? null : (
+                                                                        {property_details[0] == null ||
+                                                                            property_details[0] == "" ? null : (
                                                                             <ul className="listStyleNone listIcon pl-0 mb-0">
-                                                                                {property_details[0].pet_allowed === null ||
-                                                                                    property_details[0].pet_allowed === "" ||
+                                                                                {property_details[0].pet_allowed == null ||
+                                                                                    property_details[0].pet_allowed == "" ||
                                                                                     property_details[0].pet_allowed.toLowerCase() ==
                                                                                     "no" ? null : (
                                                                                     <li>
@@ -1217,8 +1217,8 @@ export const AgencyStateListItem = ({ data }) => {
                                                                                     </li>
                                                                                 )}
 
-                                                                                {property_details[0].handicap === null ||
-                                                                                    property_details[0].handicap === "" ||
+                                                                                {property_details[0].handicap == null ||
+                                                                                    property_details[0].handicap == "" ||
                                                                                     property_details[0].handicap.toLowerCase() ==
                                                                                     "no" ? null : (
                                                                                     <li>
@@ -1231,8 +1231,8 @@ export const AgencyStateListItem = ({ data }) => {
                                                                                     </li>
                                                                                 )}
 
-                                                                                {property_details[0].section8 === null ||
-                                                                                    property_details[0].section8 === "" ||
+                                                                                {property_details[0].section8 == null ||
+                                                                                    property_details[0].section8 == "" ||
                                                                                     property_details[0].section8.toLowerCase() ==
                                                                                     "no" ? null : (
                                                                                     <li>
@@ -1249,7 +1249,7 @@ export const AgencyStateListItem = ({ data }) => {
                                                                                     "yes" &&
                                                                                     (property_details[0].seniorpropval.toLowerCase() ==
                                                                                         "62" ||
-                                                                                        property_details[0].seniorpropval === 62) ? (
+                                                                                        property_details[0].seniorpropval == 62) ? (
                                                                                     <li>
                                                                                         <img
                                                                                             src={
@@ -1263,9 +1263,9 @@ export const AgencyStateListItem = ({ data }) => {
                                                                                     "yes" &&
                                                                                     (property_details[0].seniorpropval.toLowerCase() ==
                                                                                         "55" ||
-                                                                                        property_details[0].seniorpropval === 55 ||
-                                                                                        property_details[0].seniorpropval === "" ||
-                                                                                        property_details[0].seniorpropval === null) ? (
+                                                                                        property_details[0].seniorpropval == 55 ||
+                                                                                        property_details[0].seniorpropval == "" ||
+                                                                                        property_details[0].seniorpropval == null) ? (
                                                                                     <li>
                                                                                         <img
                                                                                             src={
@@ -1280,7 +1280,7 @@ export const AgencyStateListItem = ({ data }) => {
                                                                     </div>
                                                                 </div>
                                                                 <div className="checkboxItem widthRadio">
-                                                                    <p class="fontSize14 font-weight700 text-center requestTag"> Request for more info</p>
+                                                                    <p className="fontSize14 font-weight700 text-center requestTag"> Request for more info</p>
                                                                     <label key={index} className="checkboxBlock" htmlFor={`custom-checkbox-prop-${index}`}>
 
                                                                         <input
@@ -1304,10 +1304,10 @@ export const AgencyStateListItem = ({ data }) => {
                                         )}
                                     </div>
                                 </div>
-                                <div class="bg-white responsiveApartmentBottom">
-                                    <div class="bottomFooter d-flex align-items-center">
+                                <div className="bg-white responsiveApartmentBottom">
+                                    <div className="bottomFooter d-flex align-items-center">
                                         <h3>{propListArray.length} properties Selected</h3>
-                                        <div class="ml-auto">
+                                        <div className="ml-auto">
                                             <span onClick={sendMultipleProps} href="#" className="checkBtnModall" data-toggle="modal" data-target="#exampleModal3" data-dismiss="modal" aria-label="Close">Check Availability</span>
                                         </div>
                                     </div>

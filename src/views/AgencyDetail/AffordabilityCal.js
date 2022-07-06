@@ -45,7 +45,7 @@ const AffordabilityCal = () => {
                                 <form onSubmit={handleSubmit}>
                                     <div className="d-flex align-items-center rentalForm">
                                         <div className="form-group mb-0 input-icon">
-                                            <input type="number" class="form-control" placeholder="" value={costAfford.cost} onChange={(e) => {
+                                            <input type="number" className="form-control" placeholder="" value={costAfford.cost} onChange={(e) => {
                                                 setcostAfford({ ...costAfford, cost: e.target.value })
                                             }} required />
                                             <i>$</i>
@@ -55,10 +55,10 @@ const AffordabilityCal = () => {
 
                                 </form>
                                 {
-                                    calculateshow === true ?
+                                    calculateshow == true ?
 
                                         (
-                                            costAfford.cost === 0 || costAfford.cost === '' || costAfford.cost === null ?
+                                            costAfford.cost == 0 || costAfford.cost == '' || costAfford.cost == null ?
                                                 null
                                                 :
                                                 <div><p className="fontSize16 secondaryColor mb-0 mt-1">You should not be paying more
@@ -66,7 +66,7 @@ const AffordabilityCal = () => {
                                                     <span className="purpleText font-weight700" onClick={() => { setwhyclick(true) }}>Why?</span>
 
                                                     {
-                                                        whyclick === true ?
+                                                        whyclick == true ?
                                                             <>
                                                                 <p>According to HUD, spending more than 30 percent of your income on housing makes it more difficult to afford necessities such as food, transportation and health care. To live in a budget with higher housing costs, you will need to cut unnecessary expenses.</p>
 

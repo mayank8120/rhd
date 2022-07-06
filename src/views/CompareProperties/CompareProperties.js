@@ -14,10 +14,10 @@ export const CompareProperties = () => {
         <>
 
             {/* <!--detail Page--> */}
-            <section class="mt-54">
+            <section className="mt-54">
 
 
-                <div class="container3">
+                <div className="container3">
 
                     <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <nav className="navbar resNavbarBread breadleftmargin" aria-label="breadcrumb">
@@ -27,19 +27,19 @@ export const CompareProperties = () => {
                             </ol>
                         </nav>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <h3 class="font-weight700 mb-0 fontSize24 colorBlue mt-3">Compare Properties</h3>
+                    <div className="row">
+                        <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <h3 className="font-weight700 mb-0 fontSize24 colorBlue mt-3">Compare Properties</h3>
                         </div>
                     </div>
-                    <div class="row mt-32">
+                    <div className="row mt-32">
 
 
 
-                        {/* <div class="emptyBlocks"></div>
+                        {/* <div className="emptyBlocks"></div>
 
                         <article>
-                            <h1 class="title">Swan</h1>
+                            <h1 className="title">Swan</h1>
                             <p>Swansithin the genus Cygnus. The swans' close relatives include the geese and ducks. Swans are grouped with the closely related geese in the subfamily Anserinae where they form the tribe Cygnini. Sometimes, they are
                                 considered a distinct subfamily, Cygninae. There are six or seven living (and one extinct) species of swan in the genus Cygnus; in addition, there is another species known as the coscoroba swan, although this species is no longer considered one of the
                                 true swans. Swans usually mate for life, although “divorce” sometimes occurs, particularly following nesting failure, and if a mate dies, the remaining swan will take up with another. The number of eggs in each clutch ranges from three to eight.</p>
@@ -49,7 +49,7 @@ export const CompareProperties = () => {
 
                         </article>
 
-                        <div class="emptyBlocks"></div> */}
+                        <div className="emptyBlocks"></div> */}
 
 
 
@@ -128,253 +128,253 @@ export const CompareProperties = () => {
 
 
 
-            <section class="secPad housingNearby companre-slider">
-                <div class="container3">
-                    <div class="sectionTitle">
-                        <h2 class="font-weight700 colorBlue">Similar Nearby Apartments for Rent </h2>
+            <section className="secPad housingNearby companre-slider">
+                <div className="container3">
+                    <div className="sectionTitle">
+                        <h2 className="font-weight700 colorBlue">Similar Nearby Apartments for Rent </h2>
                     </div>
 
 
                     <SimilarPropertiesCompare />
 
-                    {/* <div class="row marginTop">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="owl-carousel owl-theme housing_Nearby sliderNav">
-                                <div class="item">
-                                    <div class="sliderItem">
+                    {/* <div className="row marginTop">
+                        <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div className="owl-carousel owl-theme housing_Nearby sliderNav">
+                                <div className="item">
+                                    <div className="sliderItem">
                                         <img src={require('../../assets/img/housingNearby1.png').default} />
-                                        <a data-toggle="modal" data-target="#exampleModalCenter" class="likeTag transition"><i
-                                            class="far fa-heart"></i></a>
-                                        <div class="sliderTagName brdrRadius4 colorWhite font-weight700">Affordable Housing
+                                        <a data-toggle="modal" data-target="#exampleModalCenter" className="likeTag transition"><i
+                                            className="far fa-heart"></i></a>
+                                        <div className="sliderTagName brdrRadius4 colorWhite font-weight700">Affordable Housing
                                         </div>
-                                        <div class="sliderTextArea">
-                                            <div class="d-flex align-items-top">
+                                        <div className="sliderTextArea">
+                                            <div className="d-flex align-items-top">
                                                 <div>
-                                                    <h4 class="font-weight700 mb-0">Blessed Rock Apartments</h4>
-                                                    <p class="mb-0">2882 Tyler St El Monte, CA 91157</p>
+                                                    <h4 className="font-weight700 mb-0">Blessed Rock Apartments</h4>
+                                                    <p className="mb-0">2882 Tyler St El Monte, CA 91157</p>
                                                 </div>
 
                                             </div>
-                                            <div class="sliderListing">
-                                                <ul class="clearfix d-flex align-items-center">
+                                            <div className="sliderListing">
+                                                <ul className="clearfix d-flex align-items-center">
                                                     <li><b>1</b>Bd</li>
                                                     <li><b>1</b>Ba</li>
                                                     <li><b>880</b>Sq.Ft</li>
 
                                                 </ul>
                                             </div>
-                                            <div class="d-flex mt-3">
+                                            <div className="d-flex mt-3">
 
-                                                <p class=" mb-0 boldTag greenText fontSize16">$1,200</p>
-                                                <div class="ml-auto">
+                                                <p className=" mb-0 boldTag greenText fontSize16">$1,200</p>
+                                                <div className="ml-auto">
                                                     <a href="#"><img src={require('../../assets/img/priceTag.png').default} /></a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="item">
-                                    <div class="sliderItem">
+                                <div className="item">
+                                    <div className="sliderItem">
                                         <img src={require('../../assets/img/housingNearby2.png').default} />
-                                        <a data-toggle="modal" data-target="#exampleModalCenter" class="likeTag transition"><i
-                                            class="far fa-heart"></i></a>
-                                        <div class="sliderTextArea">
-                                            <div class="d-flex align-items-top">
+                                        <a data-toggle="modal" data-target="#exampleModalCenter" className="likeTag transition"><i
+                                            className="far fa-heart"></i></a>
+                                        <div className="sliderTextArea">
+                                            <div className="d-flex align-items-top">
                                                 <div>
-                                                    <h4 class="font-weight700 mb-0">Arcadia Apartment</h4>
-                                                    <p class="mb-0">2882 Tyler St El Monte, CA 91157</p>
+                                                    <h4 className="font-weight700 mb-0">Arcadia Apartment</h4>
+                                                    <p className="mb-0">2882 Tyler St El Monte, CA 91157</p>
                                                 </div>
                                             </div>
-                                            <div class="sliderListing">
-                                                <ul class="clearfix d-flex align-items-center">
+                                            <div className="sliderListing">
+                                                <ul className="clearfix d-flex align-items-center">
                                                     <li><b>1-2</b>Bd</li>
                                                     <li><b>1-3</b>Ba</li>
 
                                                 </ul>
                                             </div>
-                                            <div class="d-flex mt-3">
+                                            <div className="d-flex mt-3">
 
-                                                <p class=" mb-0 boldTag greenText fontSize16">$1,200</p>
-                                                <div class="ml-auto">
+                                                <p className=" mb-0 boldTag greenText fontSize16">$1,200</p>
+                                                <div className="ml-auto">
                                                     <a href="#"><img src={require('../../assets/img/priceTag.png').default} /></a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="item">
-                                    <div class="sliderItem">
+                                <div className="item">
+                                    <div className="sliderItem">
                                         <img src={require('../../assets/img/housingNearby3.png').default} />
-                                        <a data-toggle="modal" data-target="#exampleModalCenter" class="likeTag transition"><i
-                                            class="far fa-heart"></i></a>
-                                        <div class="sliderTagName brdrRadius4 colorWhite font-weight700">Affordable Housing
+                                        <a data-toggle="modal" data-target="#exampleModalCenter" className="likeTag transition"><i
+                                            className="far fa-heart"></i></a>
+                                        <div className="sliderTagName brdrRadius4 colorWhite font-weight700">Affordable Housing
                                         </div>
-                                        <div class="sliderTextArea">
-                                            <div class="d-flex align-items-top">
+                                        <div className="sliderTextArea">
+                                            <div className="d-flex align-items-top">
                                                 <div>
-                                                    <h4 class="font-weight700 mb-0">Blessed Rock Apartments</h4>
-                                                    <p class="mb-0">2882 Tyler St El Monte, CA 91157</p>
+                                                    <h4 className="font-weight700 mb-0">Blessed Rock Apartments</h4>
+                                                    <p className="mb-0">2882 Tyler St El Monte, CA 91157</p>
                                                 </div>
 
                                             </div>
-                                            <div class="sliderListing">
-                                                <ul class="clearfix d-flex align-items-center">
+                                            <div className="sliderListing">
+                                                <ul className="clearfix d-flex align-items-center">
                                                     <li><b>1</b>Bd</li>
                                                     <li><b>1</b>Ba</li>
                                                     <li><b>880</b>Sq.Ft</li>
 
                                                 </ul>
                                             </div>
-                                            <div class="d-flex mt-3">
-                                                <p class="mr-auto fontSize16 mb-0 colorBlue font-weight700">$1,200-1,800</p>
+                                            <div className="d-flex mt-3">
+                                                <p className="mr-auto fontSize16 mb-0 colorBlue font-weight700">$1,200-1,800</p>
 
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="item">
-                                    <div class="sliderItem">
+                                <div className="item">
+                                    <div className="sliderItem">
                                         <img src={require('../../assets/img/housingNearby4.png').default} />
-                                        <a data-toggle="modal" data-target="#exampleModalCenter" class="likeTag transition"><i
-                                            class="far fa-heart"></i></a>
-                                        <div class="sliderTextArea">
-                                            <div class="d-flex align-items-top">
+                                        <a data-toggle="modal" data-target="#exampleModalCenter" className="likeTag transition"><i
+                                            className="far fa-heart"></i></a>
+                                        <div className="sliderTextArea">
+                                            <div className="d-flex align-items-top">
                                                 <div>
-                                                    <h4 class="font-weight700 mb-0">Arcadia Apartment</h4>
-                                                    <p class="mb-0">2882 Tyler St El Monte, CA 91157</p>
+                                                    <h4 className="font-weight700 mb-0">Arcadia Apartment</h4>
+                                                    <p className="mb-0">2882 Tyler St El Monte, CA 91157</p>
                                                 </div>
                                             </div>
-                                            <div class="sliderListing">
-                                                <ul class="clearfix d-flex align-items-center">
+                                            <div className="sliderListing">
+                                                <ul className="clearfix d-flex align-items-center">
                                                     <li><b>1-2</b>Bd</li>
                                                     <li><b>1-3</b>Ba</li>
 
                                                 </ul>
                                             </div>
-                                            <div class="d-flex mt-3">
-                                                <p class="mr-auto fontSize16 mb-0 colorBlue font-weight700">$1,200-1,800</p>
+                                            <div className="d-flex mt-3">
+                                                <p className="mr-auto fontSize16 mb-0 colorBlue font-weight700">$1,200-1,800</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="item">
-                                    <div class="sliderItem">
+                                <div className="item">
+                                    <div className="sliderItem">
                                         <img src={require('../../assets/img/housingNearby1.png').default} />
-                                        <a data-toggle="modal" data-target="#exampleModalCenter" class="likeTag transition"><i
-                                            class="far fa-heart"></i></a>
-                                        <div class="sliderTagName brdrRadius4 colorWhite font-weight700">Affordable Housing
+                                        <a data-toggle="modal" data-target="#exampleModalCenter" className="likeTag transition"><i
+                                            className="far fa-heart"></i></a>
+                                        <div className="sliderTagName brdrRadius4 colorWhite font-weight700">Affordable Housing
                                         </div>
-                                        <div class="sliderTextArea">
-                                            <div class="d-flex align-items-top">
+                                        <div className="sliderTextArea">
+                                            <div className="d-flex align-items-top">
                                                 <div>
-                                                    <h4 class="font-weight700 mb-0">Blessed Rock Apartments</h4>
-                                                    <p class="mb-0">2882 Tyler St El Monte, CA 91157</p>
+                                                    <h4 className="font-weight700 mb-0">Blessed Rock Apartments</h4>
+                                                    <p className="mb-0">2882 Tyler St El Monte, CA 91157</p>
                                                 </div>
 
                                             </div>
-                                            <div class="sliderListing">
-                                                <ul class="clearfix d-flex align-items-center">
+                                            <div className="sliderListing">
+                                                <ul className="clearfix d-flex align-items-center">
                                                     <li><b>1</b>Bd</li>
                                                     <li><b>1</b>Ba</li>
                                                     <li><b>880</b>Sq.Ft</li>
 
                                                 </ul>
                                             </div>
-                                            <div class="d-flex mt-3">
+                                            <div className="d-flex mt-3">
 
-                                                <p class=" mb-0 boldTag greenText fontSize16">$1,200</p>
-                                                <div class="ml-auto">
+                                                <p className=" mb-0 boldTag greenText fontSize16">$1,200</p>
+                                                <div className="ml-auto">
                                                     <a href="#"><img src={require('../../assets/img/priceTag.png').default} /></a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="item">
-                                    <div class="sliderItem">
+                                <div className="item">
+                                    <div className="sliderItem">
                                         <img src={require('../../assets/img/housingNearby2.png').default} />
-                                        <a data-toggle="modal" data-target="#exampleModalCenter" class="likeTag transition"><i
-                                            class="far fa-heart"></i></a>
-                                        <div class="sliderTextArea">
-                                            <div class="d-flex align-items-top">
+                                        <a data-toggle="modal" data-target="#exampleModalCenter" className="likeTag transition"><i
+                                            className="far fa-heart"></i></a>
+                                        <div className="sliderTextArea">
+                                            <div className="d-flex align-items-top">
                                                 <div>
-                                                    <h4 class="font-weight700 mb-0">Arcadia Apartment</h4>
-                                                    <p class="mb-0">2882 Tyler St El Monte, CA 91157</p>
+                                                    <h4 className="font-weight700 mb-0">Arcadia Apartment</h4>
+                                                    <p className="mb-0">2882 Tyler St El Monte, CA 91157</p>
                                                 </div>
                                             </div>
-                                            <div class="sliderListing">
-                                                <ul class="clearfix d-flex align-items-center">
+                                            <div className="sliderListing">
+                                                <ul className="clearfix d-flex align-items-center">
                                                     <li><b>1-2</b>Bd</li>
                                                     <li><b>1-3</b>Ba</li>
 
                                                 </ul>
                                             </div>
-                                            <div class="d-flex mt-3">
-                                                <p class="mr-auto fontSize16 mb-0 colorBlue font-weight700">$1,200-1,800</p>
+                                            <div className="d-flex mt-3">
+                                                <p className="mr-auto fontSize16 mb-0 colorBlue font-weight700">$1,200-1,800</p>
 
 
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="item">
-                                    <div class="sliderItem">
+                                <div className="item">
+                                    <div className="sliderItem">
                                         <img src={require('../../assets/img/housingNearby3.png').default} />
-                                        <a data-toggle="modal" data-target="#exampleModalCenter" class="likeTag transition"><i
-                                            class="far fa-heart"></i></a>
-                                        <div class="sliderTagName brdrRadius4 colorWhite font-weight700">Affordable Housing
+                                        <a data-toggle="modal" data-target="#exampleModalCenter" className="likeTag transition"><i
+                                            className="far fa-heart"></i></a>
+                                        <div className="sliderTagName brdrRadius4 colorWhite font-weight700">Affordable Housing
                                         </div>
-                                        <div class="sliderTextArea">
-                                            <div class="d-flex align-items-top">
+                                        <div className="sliderTextArea">
+                                            <div className="d-flex align-items-top">
                                                 <div>
-                                                    <h4 class="font-weight700 mb-0">Blessed Rock Apartments</h4>
-                                                    <p class="mb-0">2882 Tyler St El Monte, CA 91157</p>
+                                                    <h4 className="font-weight700 mb-0">Blessed Rock Apartments</h4>
+                                                    <p className="mb-0">2882 Tyler St El Monte, CA 91157</p>
                                                 </div>
-                                                <div class="ml-auto">
+                                                <div className="ml-auto">
                                                     <a href="#"><img src={require('../../assets/img/priceTag.png').default} /></a>
                                                 </div>
                                             </div>
-                                            <div class="sliderListing">
-                                                <ul class="clearfix d-flex align-items-center">
+                                            <div className="sliderListing">
+                                                <ul className="clearfix d-flex align-items-center">
                                                     <li><b>1</b>Bd</li>
                                                     <li><b>1</b>Ba</li>
                                                     <li><b>880</b>Sq.Ft</li>
 
                                                 </ul>
                                             </div>
-                                            <div class="d-flex mt-3">
+                                            <div className="d-flex mt-3">
 
-                                                <p class=" mb-0 boldTag greenText fontSize16">$1,200</p>
-                                                <div class="ml-auto">
+                                                <p className=" mb-0 boldTag greenText fontSize16">$1,200</p>
+                                                <div className="ml-auto">
                                                     <a href="#"><img src={require('../../assets/img/priceTag.png').default} /></a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="item">
-                                    <div class="sliderItem">
+                                <div className="item">
+                                    <div className="sliderItem">
                                         <img src={require('../../assets/img/housingNearby4.png').default} />
-                                        <a data-toggle="modal" data-target="#exampleModalCenter" class="likeTag transition"><i
-                                            class="far fa-heart"></i></a>
-                                        <div class="sliderTextArea">
-                                            <div class="d-flex align-items-top">
+                                        <a data-toggle="modal" data-target="#exampleModalCenter" className="likeTag transition"><i
+                                            className="far fa-heart"></i></a>
+                                        <div className="sliderTextArea">
+                                            <div className="d-flex align-items-top">
                                                 <div>
-                                                    <h4 class="font-weight700 mb-0">Arcadia Apartment</h4>
-                                                    <p class="mb-0">2882 Tyler St El Monte, CA 91157</p>
+                                                    <h4 className="font-weight700 mb-0">Arcadia Apartment</h4>
+                                                    <p className="mb-0">2882 Tyler St El Monte, CA 91157</p>
                                                 </div>
                                             </div>
-                                            <div class="sliderListing">
-                                                <ul class="clearfix d-flex align-items-center">
+                                            <div className="sliderListing">
+                                                <ul className="clearfix d-flex align-items-center">
                                                     <li><b>1-2</b>Bd</li>
                                                     <li><b>1-3</b>Ba</li>
 
                                                 </ul>
                                             </div>
-                                            <div class="d-flex mt-3">
+                                            <div className="d-flex mt-3">
 
-                                                <p class=" mb-0 boldTag greenText fontSize16">$1,200</p>
-                                                <div class="ml-auto">
+                                                <p className=" mb-0 boldTag greenText fontSize16">$1,200</p>
+                                                <div className="ml-auto">
                                                     <a href="#"><img src={require('../../assets/img/priceTag.png').default} /></a>
                                                 </div>
                                             </div>
@@ -384,8 +384,8 @@ export const CompareProperties = () => {
                             </div>
                         </div>
                     </div> */}
-                    <div class="pupleLineBtn responsive15 itemWebsite mb-5">
-                        <a href="#" class="w-100 transition font-weight500">Load More</a>
+                    <div className="pupleLineBtn responsive15 itemWebsite mb-5">
+                        <a href="#" className="w-100 transition font-weight500">Load More</a>
                     </div>
                 </div>
             </section>

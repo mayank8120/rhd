@@ -61,7 +61,7 @@ const PropertiesNearby = ({ propertynearby, titletext }) => {
 
 
                             {
-                                propertynearby === null || propertynearby === undefined || propertynearby === [] || propertynearby === '' ?
+                                propertynearby == null || propertynearby == undefined || propertynearby == [] || propertynearby == '' ?
 
                                     null
                                     :

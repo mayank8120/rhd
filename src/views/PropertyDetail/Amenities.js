@@ -26,7 +26,7 @@ const Amenities = ({ propamenities }) => {
                             <h3 className="font-weight700 colorBlue">Unit Amenities</h3>
                             <ul className="noMarginPad listStyleNone detailListing">
                                 {
-                                    loadmore === false ?
+                                    loadmore == false ?
                                         (sixunit.map((data) => (
                                             (data.hasOwnProperty('other_unit_amenities') ?
                                                 <li className="d-flex align-items-center">
@@ -76,10 +76,10 @@ const Amenities = ({ propamenities }) => {
                         <div>
                             <h3 className="font-weight700 colorBlue">Property Amenities</h3>
                             <ul className="noMarginPad listStyleNone detailListing">
-                                {loadmore === false ?
+                                {loadmore == false ?
                                     (sixprop.map((data) => (
                                         (
-                                             data.propertyAmenities === null || data.propertyAmenities === '' || data.propertyAmenities.length === 0
+                                             data.propertyAmenities == null || data.propertyAmenities == '' || data.propertyAmenities.length == 0
                                                 ?
                                                 <li className="d-flex align-items-center">
                                                     <span className="brdrRadius4">
@@ -101,7 +101,7 @@ const Amenities = ({ propamenities }) => {
                                     :
                                     (prop.map((data) => (
                                         (
-                                          data.propertyAmenities === null || data.propertyAmenities === '' || data.propertyAmenities.length === 0
+                                          data.propertyAmenities == null || data.propertyAmenities == '' || data.propertyAmenities.length == 0
                                                 ?
                                                 <li className="d-flex align-items-center">
                                                     <span className="brdrRadius4">
@@ -132,9 +132,9 @@ const Amenities = ({ propamenities }) => {
                                 unit.length < 7 && prop.length < 7 ? null :
                                     <button href="" className="w-100 transition font-weight500" onClick={handleclick}>
 
-                                        {loadmore === false ? 'Show all ' : 'Show less '}
+                                        {loadmore == false ? 'Show all ' : 'Show less '}
 
-                                        {loadmore === false ? unit.length + prop.length : null} amenities
+                                        {loadmore == false ? unit.length + prop.length : null} amenities
                                     </button>
                             }
                         </div>

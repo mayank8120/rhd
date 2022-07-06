@@ -14,22 +14,22 @@ const FloorPlanItemMobile = ({ data }) => {
     return (
         <>
             {
-                data === undefined || data === null || data === [] || data === '' ?
+                data == undefined || data == null || data == [] || data == '' ?
                     null
                     :
                     <>
 
 
 
-                        <li class="d-flex align-items-center justify-content-between floorPlanListing">
-                            <div class="imageLeft floorplanHead d-flex align-items-center">
+                        <li className="d-flex align-items-center justify-content-between floorPlanListing">
+                            <div className="imageLeft floorplanHead d-flex align-items-center">
 
 
 
 
 
                                 {
-                                    data.floor_plan_photo === '' || data.floor_plan_photo === null ?
+                                    data.floor_plan_photo == '' || data.floor_plan_photo == null ?
                                         <>
 
                                             <img src={require('../../assets/img/floorplanGrey.svg').default} className="twentyfourbytwentyfour" />
@@ -58,7 +58,7 @@ const FloorPlanItemMobile = ({ data }) => {
                                                 </div>
                                                 <div className="modal-body rentalForm availBodyBlock">
                                                     {
-                                                        data.floor_plan_photo === '' || data.floor_plan_photo === null ?
+                                                        data.floor_plan_photo == '' || data.floor_plan_photo == null ?
                                                             <></>
                                                             :
                                                             <img className=' w-100' src={`https://www.rentalhousingdeals.com/${data.floor_plan_photo}`} alt='alt' />
@@ -84,47 +84,47 @@ const FloorPlanItemMobile = ({ data }) => {
 
 
 
-                                <div class="headingList">
-                                    <h4 class="font-weight500 colorBlue mb-0">{data.floor_plan_name}</h4>
-                                    <ul class="noMarginPad listStyleNone floatLeftList itemMobile">
-                                        <li class="secondaryColor">
+                                <div className="headingList">
+                                    <h4 className="font-weight500 colorBlue mb-0">{data.floor_plan_name}</h4>
+                                    <ul className="noMarginPad listStyleNone floatLeftList itemMobile">
+                                        <li className="secondaryColor">
 
                                             {
-                                                data.beds === 0 || data.beds === '' ?
+                                                data.beds == 0 || data.beds == '' ?
                                                     (<span className="colorBlue">N/A Bd</span>)
                                                     :
 
                                                     <>
-                                                        <span className="colorBlue">{data.beds}</span> <span className='colorBlue'> {data.beds === 'Studio' ? null : 'Bd'}</span>
+                                                        <span className="colorBlue">{data.beds}</span> <span className='colorBlue'> {data.beds == 'Studio' ? null : 'Bd'}</span>
                                                     </>
                                             }
 
                                         </li>
-                                        <li class="secondaryColor ml-16">
+                                        <li className="secondaryColor ml-16">
                                             {
-                                                data.baths === 0 || data.baths === '' ?
+                                                data.baths == 0 || data.baths == '' ?
                                                     (<span className="colorBlue">N/A Ba</span>)
                                                     :
                                                     <span className="colorBlue">{decimalRoundOff(data.baths)} Ba</span>
                                             }
                                         </li>
-                                        <li class="secondaryColor ml-24">
+                                        <li className="secondaryColor ml-24">
                                             {
-                                                data.square_feet_to === 0 ?
+                                                data.square_feet_to == 0 ?
                                                     (<span className="colorBlue">N/A Sq.ft</span>)
                                                     :
                                                     <><span className="colorBlue">{data.square_feet_to}</span><span className='colorBlue'> Sq.ft</span>  </>
                                             }
-                                            {/* <span class="colorBlue">880</span> Sq.ft */}
+                                            {/* <span className="colorBlue">880</span> Sq.ft */}
                                         </li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="ml-auto formHead">
+                            <div className="ml-auto formHead">
 
 
-                                <h3 class="colorBlue">
-                                    {data.rent_from === 0 || data.rent_from === '' ?
+                                <h3 className="colorBlue">
+                                    {data.rent_from == 0 || data.rent_from == '' ?
                                         'N/A'
                                         :
                                         ` $${data.rent_from}`

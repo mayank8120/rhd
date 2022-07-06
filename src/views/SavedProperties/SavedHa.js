@@ -4,17 +4,23 @@ import Modal from "react-modal";
 import ReCAPTCHA from "react-google-recaptcha";
 import axios from 'axios';
 import Starratingstatic from '../../containers/Starratingstatic';
-import { addOrRemoveHA, getAllHA, toggleHeart, toggleHeartHA } from '../../containers/functions';
+import { addOrRemoveHA, finddate, getAllHA, getDayOf, getMonthOf, toggleHeart, toggleHeartHA } from '../../containers/functions';
 
 const SavedHa = ({ data }) => {
 
-    console.log(data);
+    // console.log(data,"QQQ");
+
+
+    let dateS = new Date(finddate(data.HADetail.id, 2));
+
+
+
 
     let authdetail;
     let authimg;
     let authdate;
 
-    if (data.HADetail === [] || data.HADetail === '' || data.HADetail === undefined || data.HADetail === null) {
+    if (data.HADetail == [] || data.HADetail == '' || data.HADetail == undefined || data.HADetail == null) {
 
     } else {
         authdetail = data.HADetail;
@@ -22,7 +28,7 @@ const SavedHa = ({ data }) => {
 
 
 
-    if (data.HAPhotoDetail === [] || data.HAPhotoDetail === '' || data.HAPhotoDetail === undefined || data.HAPhotoDetail === null) {
+    if (data.HAPhotoDetail == [] || data.HAPhotoDetail == '' || data.HAPhotoDetail == undefined || data.HAPhotoDetail == null) {
 
     } else {
         authimg = data.HAPhotoDetail;
@@ -30,7 +36,7 @@ const SavedHa = ({ data }) => {
 
 
 
-    if (data.closedate === [] || data.closedate === '' || data.closedate === undefined || data.closedate === null) {
+    if (data.closedate == [] || data.closedate == '' || data.closedate == undefined || data.closedate == null) {
 
     } else {
         authdate = data.closedate;
@@ -41,18 +47,18 @@ const SavedHa = ({ data }) => {
 
 
     useEffect(() => {
-        // if (data === undefined || data === [] || data === null || data === '') {
+        // if (data == undefined || data == [] || data == null || data == '') {
         if (authdetail.service_type != '' && authdetail.service_type !== null) {
-            if (authdetail.service_type === 'Low-Rent') {
+            if (authdetail.service_type == 'Low-Rent') {
                 setheadertext('Low-Rent');
             }
-            else if (authdetail.service_type === 'Section 8') {
+            else if (authdetail.service_type == 'Section 8') {
                 setheadertext('Section 8 Voucher');
             } else {
                 setheadertext('SRent');
             }
 
-            if (authdetail.is_section_8_wating_list === 1 && authdate.close_date !== '0000-00-00') {
+            if (authdetail.is_section_8_wating_list == 1 && authdate.close_date !== '0000-00-00') {
                 setheadertext(authdate.close_date + ' ' + authdate.close_time);
             }
         }
@@ -71,7 +77,7 @@ const SavedHa = ({ data }) => {
     function colorChange(item) {
 
         if (toggleHeartHA
-            (item) === true) {
+            (item) == true) {
             setcolorCHangeheart(true);
         } else {
             setcolorCHangeheart(false);
@@ -96,9 +102,9 @@ const SavedHa = ({ data }) => {
         <>
 
             {
-                data === undefined || data.length === 0 || data === null || data === ''
-                    // || authimg === '' || authimg === undefined || authimg.path === '' ||
-                    // authimg.path === undefined || authimg.filename === '' || authimg.filename === undefined
+                data == undefined || data.length == 0 || data == null || data == ''
+                    // || authimg == '' || authimg == undefined || authimg.path == '' ||
+                    // authimg.path == undefined || authimg.filename == '' || authimg.filename == undefined
                     ?
                     <>No Record Found</>
                     :
@@ -107,13 +113,13 @@ const SavedHa = ({ data }) => {
                         ?
                         <>
 
-                            <li class="listState">
-                                <div class="d-flex align-items-center ResponsiveFlexDiv">
-                                    <div class="agencyStateListLeft">
-                                        <div class="agencyLeftHeadermedia">
-                                            <div class="media">
+                            <li className="listState">
+                                <div className="d-flex align-items-center ResponsiveFlexDiv">
+                                    <div className="agencyStateListLeft">
+                                        <div className="agencyLeftHeadermedia">
+                                            <div className="media">
                                                 {
-                                                    data.HAPhotoDetail.length === 0 || data.HAPhotoDetail === null || data.HAPhotoDetail === ''
+                                                    data.HAPhotoDetail == null || data.HAPhotoDetail == '' || data.HAPhotoDetail.length == 0
                                                         ?
                                                         <a href="javascript:;">
                                                             <span className="CircleImage">
@@ -127,8 +133,8 @@ const SavedHa = ({ data }) => {
                                                             </span>
                                                         </a>
                                                 }
-                                                <div class="media-body">
-                                                    <div class="d-flex align-items-top">
+                                                <div className="media-body">
+                                                    <div className="d-flex align-items-top">
                                                         <div>
 
 
@@ -143,7 +149,7 @@ const SavedHa = ({ data }) => {
                                                                     {authdetail.address} {authdetail.city}, {authdetail.state} {authdetail.zip}</p>
                                                             </a>
                                                         </div>
-                                                        <div class="likeBttn ml-auto">
+                                                        <div className="likeBttn ml-auto">
                                                             <span className="heartIcon transition"
 
                                                                 onClick={
@@ -158,13 +164,13 @@ const SavedHa = ({ data }) => {
                                                             >
 
                                                                 {
-                                                                    colorCHangeheart === true ?
+                                                                    colorCHangeheart == true ?
                                                                         <>
-                                                                            <i class="fas fa-heart redcolor"></i>
+                                                                            <i className="fas fa-heart redcolor"></i>
                                                                         </>
                                                                         :
                                                                         <>
-                                                                            <i class="far fa-heart lightbluemodified"></i>
+                                                                            <i className="far fa-heart lightbluemodified"></i>
                                                                         </>
                                                                 }
 
@@ -174,7 +180,7 @@ const SavedHa = ({ data }) => {
                                                 </div>
                                             </div>
                                             {
-                                                authdetail.about_us === '' || authdetail.about_us === null || authdetail.about_us === undefined ?
+                                                authdetail.about_us == '' || authdetail.about_us == null || authdetail.about_us == undefined ?
                                                     <p className="fontSize16 secondaryColor font-weight400 mb-0 detailPara" >
                                                         {authdetail.name} is a public housing agency that helps provide decent and safe rental housing for eligible low-income families, the elderly, and persons with disabilities.
 
@@ -192,31 +198,31 @@ const SavedHa = ({ data }) => {
                                                         </p>
                                                     </>
                                             }
-                                            {/* <p class="fontSize16 secondaryColor font-weight400 mb-0 detailPara">Anaheim Housing Authority (AHA) provides information about the Section 8 Housing Choice Voucher (HCV) Program and how to apply for the program. The... <a href="#" class="purpleText">More Info</a></p> */}
+                                            {/* <p className="fontSize16 secondaryColor font-weight400 mb-0 detailPara">Anaheim Housing Authority (AHA) provides information about the Section 8 Housing Choice Voucher (HCV) Program and how to apply for the program. The... <a href="#" className="purpleText">More Info</a></p> */}
 
 
 
-                                            <div class="bottomInfo d-flex align-items-center itemWebsite">
-                                                <div class="callBtn purpleText font-weight700 fontSize14 d-flex align-items-center justify-content-center">
+                                            <div className="bottomInfo d-flex align-items-center itemWebsite">
+                                                <div className="callBtn purpleText font-weight700 fontSize14 d-flex align-items-center justify-content-center">
                                                     <a href={`tel:${authdetail.phone}`} className="purpleText">
                                                         <i className="fas fa-phone-alt"></i>
                                                         {authdetail.phone}</a>
                                                 </div>
-                                                {/* <p class="mb-0 ml-auto fontSize14 font-weight400 secondaryColor">25 Miles</p> */}
+                                                {/* <p className="mb-0 ml-auto fontSize14 font-weight400 secondaryColor">25 Miles</p> */}
                                             </div>
                                             <p className="mb-0 fontSize14 savedPara itemWebsite">
-
-                                                Saved on Thursday, March 10
+                                                Saved on {getDayOf(dateS)},
+                                                {getMonthOf(dateS.getMonth())} {dateS.getDate()}
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="agencyStateListRight">
+                                    <div className="agencyStateListRight">
                                         <div className="itemWebsite">
                                             {
-                                                authdetail.is_section_8_wating_list === 1 && authdate.close_date != '0000-00-00' ?
+                                                authdetail.is_section_8_wating_list == 1 && authdate.close_date != '0000-00-00' ?
                                                     <>
                                                         {
-                                                            headertext === 'SRent' ?
+                                                            headertext == 'SRent' ?
                                                                 <>
                                                                     <h5 className=" text-center fontSize14 colorBlue font-weight500 mb-0">
                                                                         Section 8 Voucher Low-Rent
@@ -237,7 +243,7 @@ const SavedHa = ({ data }) => {
                                                     :
                                                     <>
                                                         {
-                                                            headertext === 'SRent' ?
+                                                            headertext == 'SRent' ?
                                                                 <>
                                                                     <h5 className="text-center fontSize14 colorBlue font-weight500 mb-0">
                                                                         Section 8 Voucher
@@ -254,7 +260,7 @@ const SavedHa = ({ data }) => {
 
                                                                 authdetail.num_units !== 0 && authdetail.num_units !== '' ?
                                                                     <>
-                                                                        <h2 class="font-weight700 skyBlueColor mb-0">{authdetail.num_units} </h2>
+                                                                        <h2 className="font-weight700 skyBlueColor mb-0">{authdetail.num_units} </h2>
                                                                         <h6 className="mb-0 secondaryColor font-weight400">Subsidized
                                                                             Units</h6>
                                                                     </>
@@ -278,15 +284,15 @@ const SavedHa = ({ data }) => {
 
                                             </div>
                                         </div>
-                                        <div class="itemMobile mrginTop16">
+                                        <div className="itemMobile mrginTop16">
                                             <div className="d-flex align-items-center">
 
 
                                                 {
-                                                    authdetail.is_section_8_wating_list === 1 && authdate.close_date != '0000-00-00' ?
+                                                    authdetail.is_section_8_wating_list == 1 && authdate.close_date != '0000-00-00' ?
                                                         <>
                                                             {
-                                                                headertext === 'SRent' ?
+                                                                headertext == 'SRent' ?
                                                                     <>
                                                                         <h5
                                                                             className="text-center fontSize14 colorBlue font-weight500 mb-0">
@@ -310,7 +316,7 @@ const SavedHa = ({ data }) => {
                                                         :
                                                         <>
                                                             {
-                                                                headertext === 'SRent' ?
+                                                                headertext == 'SRent' ?
                                                                     <>
                                                                         <h5
                                                                             className="text-center fontSize14 colorBlue font-weight500 mb-0">
@@ -330,7 +336,7 @@ const SavedHa = ({ data }) => {
 
                                                                     authdetail.num_units !== 0 && authdetail.num_units !== '' ?
                                                                         <>
-                                                                            <h2 class="font-weight700 skyBlueColor mb-0">{authdetail.num_units} </h2>
+                                                                            <h2 className="font-weight700 skyBlueColor mb-0">{authdetail.num_units} </h2>
                                                                             <h6 className="mb-0 secondaryColor font-weight400">Subsidized
                                                                                 Units</h6>
                                                                         </>
@@ -354,25 +360,25 @@ const SavedHa = ({ data }) => {
 
 
 
-                                            {/* <div class="d-flex align-items-center">
-                                                <h5 class="text-center fontSize14 colorBlue font-weight500 mb-0">Section 8 Voucher<br /> Low-Rent</h5>
-                                                <div class="text-center counterAgencyState ml-auto">
-                                                    <h2 class="font-weight700 skyBlueColor mb-0">355</h2>
-                                                    <h6 class="mb-0 secondaryColor font-weight400">Subsidized Units</h6>
+                                            {/* <div className="d-flex align-items-center">
+                                                <h5 className="text-center fontSize14 colorBlue font-weight500 mb-0">Section 8 Voucher<br /> Low-Rent</h5>
+                                                <div className="text-center counterAgencyState ml-auto">
+                                                    <h2 className="font-weight700 skyBlueColor mb-0">355</h2>
+                                                    <h6 className="mb-0 secondaryColor font-weight400">Subsidized Units</h6>
                                                 </div>
                                             </div> */}
                                         </div>
-                                        <div class="text-center itemWebsite">
-                                            <Link to={`agencyDetail?haid=${authdetail.ha_id}`} class="checkAvailBtnSmall"> Check Availability</Link>
+                                        <div className="text-center itemWebsite">
+                                            <Link to={`agencyDetail?haid=${authdetail.ha_id}`} className="checkAvailBtnSmall"> Check Availability</Link>
                                         </div>
-                                        <div class="bottomInfo d-flex align-items-center itemMobile justify-content-center w-100 savedBtnn">
-                                            <div class="callBtn lineBtnMobile purpleText font-weight700 d-flex align-items-center justify-content-center w-50">
-                                                <i class="fas fa-phone-alt"></i><span>Call</span>
+                                        <div className="bottomInfo d-flex align-items-center itemMobile justify-content-center w-100 savedBtnn">
+                                            <div className="callBtn lineBtnMobile purpleText font-weight700 d-flex align-items-center justify-content-center w-50">
+                                                <i className="fas fa-phone-alt"></i><span>Call</span>
                                             </div>
-                                            <div class="availbity availbilityBtn fontSize16 font-weight700 w-50 justify-content-center text-center">
+                                            <div className="availbity availbilityBtn fontSize16 font-weight700 w-50 justify-content-center text-center">
                                                 Mail
                                             </div>
-                                            <Link to={`agencyDetail?haid=${authdetail.ha_id}`} class="ml-auto moreInfo brdrRadius4 fontSize16 transition itemWebsite">More Info</Link>
+                                            <Link to={`agencyDetail?haid=${authdetail.ha_id}`} className="ml-auto moreInfo brdrRadius4 fontSize16 transition itemWebsite">More Info</Link>
                                         </div>
                                     </div>
                                 </div>

@@ -107,7 +107,7 @@ function App() {
                         <Route path="/agencyDetail" component={AgencyDetail} />
                         <Route path="/publicHousing" component={PublicHousing} />
                         <Route path="/basicInfoPage" component={BasicInfoPage} />
-                        <Route path="/generalProperty" component={GeneralProperty} />
+                        {/* <Route path="/generalProperty" component={GeneralProperty} /> */}
                         <Route path="/agencyState" component={AgencyState} />
                         <Route path="/savedProperties" component={SavedProperties} />
                         <Route path="/listWithUs" component={ListWithUs} />

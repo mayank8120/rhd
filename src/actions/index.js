@@ -20,7 +20,7 @@ export const getPropListAccordingToMap = (minlat, maxlat, minlng, maxlng, isItCi
         url: zoomOutURL,
         cancelToken: cancelTokens.token
     };
-    if (isItCityVISE === true) {
+    if (isItCityVISE == true) {
         try {
             const data = await axios(zoomOutConfig).then(function (response) {
                 // return response.data;

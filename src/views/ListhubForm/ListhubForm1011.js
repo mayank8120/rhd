@@ -39,7 +39,7 @@ const ListhubForm = () => {
         color: 'blue'
     }
     const toggleshow = () => {
-        if (activelinkontab === false) {
+        if (activelinkontab == false) {
             setactivelinkontab(true)
         } else {
             setactivelinkontab(false)
@@ -260,7 +260,7 @@ const ListhubForm = () => {
                                                             onClick={() => handleClick(link.id)}
                                                             className={
                                                                 link.className +
-                                                                (link.id === activeLink ? " active_item" : "")
+                                                                (link.id == activeLink ? " active_item" : "")
                                                             }
                                                         >{link.name}</a>
 

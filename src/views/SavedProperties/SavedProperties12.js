@@ -51,88 +51,88 @@ const SavedProperties = () => {
 
 
 
-                                                    <div class="d-flex align-items-center ResponsiveFlexDiv">
-                                                        <div class="agencyStateListLeft">
-                                                            <div class="agencyLeftHeadermedia">
-                                                                <div class="media">
+                                                    <div className="d-flex align-items-center ResponsiveFlexDiv">
+                                                        <div className="agencyStateListLeft">
+                                                            <div className="agencyLeftHeadermedia">
+                                                                <div className="media">
                                                                     <a href="agencyDetail.html">
-                                                                        <span class="CircleImage">
+                                                                        <span className="CircleImage">
                                                                             <img src="assets/img/agencyState1.png" />
                                                                         </span>
                                                                     </a>
-                                                                    <div class="media-body">
-                                                                        <div class="d-flex align-items-top">
+                                                                    <div className="media-body">
+                                                                        <div className="d-flex align-items-top">
                                                                             <div>
                                                                                 <a href="agencyDetail.html">
                                                                                     <h5
-                                                                                        class="mt-0 fontSize16 font-weight700 colorBlue">
+                                                                                        className="mt-0 fontSize16 font-weight700 colorBlue">
                                                                                         Anajhheim Housing Authority</h5>
                                                                                 </a>
                                                                                 <a href="agencyDetail.html">
                                                                                     <p
-                                                                                        class="mb-0 mt-0 font-weight400 fontSize14 secondaryColor">
+                                                                                        className="mb-0 mt-0 font-weight400 fontSize14 secondaryColor">
                                                                                         2882 Tyler St El Monte, CA 91157</p>
                                                                                 </a>
                                                                             </div>
-                                                                            <div class="likeBttn ml-auto">
-                                                                                <span class="heartIcon transition">
-                                                                                    <i class="fas fa-heart"></i>
+                                                                            <div className="likeBttn ml-auto">
+                                                                                <span className="heartIcon transition">
+                                                                                    <i className="fas fa-heart"></i>
                                                                                 </span>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                                 <p
-                                                                    class="fontSize16 secondaryColor font-weight400 mb-0 detailPara">
+                                                                    className="fontSize16 secondaryColor font-weight400 mb-0 detailPara">
                                                                     Anaheim Housing Authority (AHA) provides information about
                                                                     the Section 8 Housing Choice Voucher (HCV) Program and how
                                                                     to apply for the program. The... <a href="#"
-                                                                        class="purpleText">More Info</a></p>
-                                                                <div class="bottomInfo d-flex align-items-center itemWebsite">
-                                                                    <div class="callBtn purpleText font-weight700 fontSize14">
-                                                                        <i class="fas fa-phone-alt"></i>(626) 448-2699
+                                                                        className="purpleText">More Info</a></p>
+                                                                <div className="bottomInfo d-flex align-items-center itemWebsite">
+                                                                    <div className="callBtn purpleText font-weight700 fontSize14">
+                                                                        <i className="fas fa-phone-alt"></i>(626) 448-2699
                                                                     </div>
                                                                     <p
-                                                                        class="mb-0 ml-auto fontSize14 font-weight400 secondaryColor">
+                                                                        className="mb-0 ml-auto fontSize14 font-weight400 secondaryColor">
                                                                         25 Miles</p>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="agencyStateListRight">
-                                                            <div class="itemWebsite">
+                                                        <div className="agencyStateListRight">
+                                                            <div className="itemWebsite">
                                                                 <h5
-                                                                    class="text-center fontSize14 colorBlue font-weight500 mb-0">
+                                                                    className="text-center fontSize14 colorBlue font-weight500 mb-0">
                                                                     Section 8 Voucher Low-Rent</h5>
-                                                                <div class="text-center counterAgencyState">
-                                                                    <h2 class="font-weight700 skyBlueColor mb-0">355</h2>
-                                                                    <h6 class="mb-0 secondaryColor font-weight400">Subsidized
+                                                                <div className="text-center counterAgencyState">
+                                                                    <h2 className="font-weight700 skyBlueColor mb-0">355</h2>
+                                                                    <h6 className="mb-0 secondaryColor font-weight400">Subsidized
                                                                         Units</h6>
                                                                 </div>
                                                             </div>
-                                                            <div class="itemMobile mrginTop16">
-                                                                <div class="d-flex align-items-center">
+                                                            <div className="itemMobile mrginTop16">
+                                                                <div className="d-flex align-items-center">
                                                                     <h5
-                                                                        class="text-center fontSize14 colorBlue font-weight500 mb-0">
+                                                                        className="text-center fontSize14 colorBlue font-weight500 mb-0">
                                                                         Section 8 Voucher<br /> Low-Rent</h5>
-                                                                    <div class="text-center counterAgencyState ml-auto">
-                                                                        <h2 class="font-weight700 skyBlueColor mb-0">355</h2>
-                                                                        <h6 class="mb-0 secondaryColor font-weight400">
+                                                                    <div className="text-center counterAgencyState ml-auto">
+                                                                        <h2 className="font-weight700 skyBlueColor mb-0">355</h2>
+                                                                        <h6 className="mb-0 secondaryColor font-weight400">
                                                                             Subsidized Units</h6>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="text-center itemWebsite">
-                                                                <a class="checkAvailBtnSmall">Check Availability</a>
+                                                            <div className="text-center itemWebsite">
+                                                                <a className="checkAvailBtnSmall">Check Availability</a>
                                                             </div>
-                                                            <div class="bottomInfo d-flex align-items-center itemMobile">
-                                                                <div class="callBtn lineBtnMobile purpleText font-weight700">
-                                                                    <i class="fas fa-phone-alt"></i>(626) 448-26999
+                                                            <div className="bottomInfo d-flex align-items-center itemMobile">
+                                                                <div className="callBtn lineBtnMobile purpleText font-weight700">
+                                                                    <i className="fas fa-phone-alt"></i>(626) 448-26999
                                                                 </div>
-                                                                <div class="availbity availbilityBtn fontSize16 font-weight700">
+                                                                <div className="availbity availbilityBtn fontSize16 font-weight700">
                                                                     Check Availability
                                                                 </div>
                                                                 <a href="#"
-                                                                    class="ml-auto moreInfo brdrRadius4 fontSize16 transition itemWebsite">More
+                                                                    className="ml-auto moreInfo brdrRadius4 fontSize16 transition itemWebsite">More
                                                                     Info</a>
                                                             </div>
                                                         </div>

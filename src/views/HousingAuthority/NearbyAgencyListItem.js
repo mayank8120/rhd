@@ -10,7 +10,7 @@ export const NearbyAgencyListItem = ({ data }) => {
             <div className="media">
                 <Link to={`/agencyDetail?haid=${data.ha_id}`}>
                     {
-                        data.image === [] || data.image === null || data.image === '' ?
+                        data.image == [] || data.image == null || data.image == '' ?
                             <img className="w-46 h-46" src={`https://cdn-0.rentalhousingdeals.com/images/l_thumbs/photos-unavailable.jpg`} alt="Image" />
                             :
                             <img className="w-46 h-46" src={`https://www.rentalhousingdeals.com/${data.image[0].path}/${data.image[0].filename}`} alt="Image" />
@@ -35,7 +35,7 @@ export const NearbyAgencyListItem = ({ data }) => {
 
                         <div className="ml-auto">
                             {
-                                data.is_section_8_wating_list === 0 ?
+                                data.is_section_8_wating_list == 0 ?
                                     <span className="statusTag fontSize14 font-weight500 closed">
                                         Closed
                                     </span>

@@ -7,7 +7,7 @@ export const IncomeBasedFAQ = () => {
         <>
             <section className="secPad24">
                 <div className="container">
-                    <div class="row">
+                    <div className="row">
 
                         <div className="col-md-24 col-sm-24 col-lg-24">
                             <nav className="navbar resNavbarBread" aria-label="breadcrumb">
@@ -18,8 +18,8 @@ export const IncomeBasedFAQ = () => {
                             </nav>
                         </div>
 
-                        <div class="col-md-24 col-sm-24 col-lg-24">
-                            <h1><strong><span style={{ "font-size": "18px" }}><span style={{ "font-family": "arial" }}><span class="pagehd1">FAQ (frequently asked questions)</span></span></span></strong></h1>
+                        <div className="col-md-24 col-sm-24 col-lg-24">
+                            <h1><strong><span style={{ "font-size": "18px" }}><span style={{ "font-family": "arial" }}><span className="pagehd1">FAQ (frequently asked questions)</span></span></span></strong></h1>
 
                             <h4>Q: How does RentalHousingDeals.com work?</h4>
 

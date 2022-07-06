@@ -26,7 +26,7 @@ const HousingAuthorityforGeneral = ({ prophousingAuthority }) => {
                                         <div className="media minWidth200">
 
                                             {
-                                                data.image === [] || data.image === null || data.image === '' || data.image === undefined ?
+                                                data.image == [] || data.image == null || data.image == '' || data.image == undefined ?
 
                                                     <img className="mr-3 imageresize" src='https://cdn-0.rentalhousingdeals.com/images/l_thumbs/photos-unavailable.jpg' alt="" />
                                                     :
@@ -48,10 +48,10 @@ const HousingAuthorityforGeneral = ({ prophousingAuthority }) => {
                                     <td>
                                         <div className="minWidth150 font-weight500">
                                             {
-                                                data.section_units === [] || data.section_units === null || data.section_units === '' ?
+                                                data.section_units == [] || data.section_units == null || data.section_units == '' ?
                                                     'N/A'
                                                     :
-                                                    (data.section_units[0].section_units === null || data.section_units[0].section_units === "" || data.section_units[0].section_units === 0 ?
+                                                    (data.section_units[0].section_units == null || data.section_units[0].section_units == "" || data.section_units[0].section_units == 0 ?
                                                         'N/A'
                                                         :
                                                         data.section_units[0].section_units)
@@ -62,10 +62,10 @@ const HousingAuthorityforGeneral = ({ prophousingAuthority }) => {
                                     <td>
                                         <div className="minWidth150 font-weight500">
                                             {
-                                                data.section_units === [] || data.section_units === null || data.section_units === '' ?
+                                                data.section_units == [] || data.section_units == null || data.section_units == '' ?
                                                     'N/A'
                                                     :
-                                                    (data.section_units[0].total_units === null || data.section_units[0].total_units === "" || data.section_units[0].total_units === 0 ?
+                                                    (data.section_units[0].total_units == null || data.section_units[0].total_units == "" || data.section_units[0].total_units == 0 ?
                                                         'N/A'
                                                         :
                                                         data.section_units[0].total_units)
@@ -75,7 +75,7 @@ const HousingAuthorityforGeneral = ({ prophousingAuthority }) => {
                                     <td >
                                         <div className="minWidth150">
                                             {
-                                                data.is_wating_closed === 0 ?
+                                                data.is_wating_closed == 0 ?
                                                     <span className="statusTag fontSize14 font-weight500 open">
                                                         Open
                                                     </span>
@@ -113,7 +113,7 @@ const HousingAuthorityforGeneral = ({ prophousingAuthority }) => {
 
 
                                         {
-                                            data.image === [] || data.image === null || data.image === '' || data.image === undefined ?
+                                            data.image == [] || data.image == null || data.image == '' || data.image == undefined ?
 
                                                 <img className="mr-3 imageresize" src='https://cdn-0.rentalhousingdeals.com/images/l_thumbs/photos-unavailable.jpg' alt="" />
                                                 :
@@ -134,7 +134,7 @@ const HousingAuthorityforGeneral = ({ prophousingAuthority }) => {
                                                 <div className="ml-auto">
 
                                                     {
-                                                        data.is_wating_closed === 0 ?
+                                                        data.is_wating_closed == 0 ?
                                                             <span className="statusTag fontSize14 font-weight500 open">
                                                                 Open
                                                             </span>
@@ -158,10 +158,10 @@ const HousingAuthorityforGeneral = ({ prophousingAuthority }) => {
                                                         <li>
                                                             <h5 className="mb-0 fontSize16 font-weight500 colorBlue">
                                                                 {
-                                                                    data.section_units === [] || data.section_units === null || data.section_units === '' ?
+                                                                    data.section_units == [] || data.section_units == null || data.section_units == '' ?
                                                                         'N/A'
                                                                         :
-                                                                        (data.section_units[0].section_units === null || data.section_units[0].section_units === "" || data.section_units[0].section_units === 0 ?
+                                                                        (data.section_units[0].section_units == null || data.section_units[0].section_units == "" || data.section_units[0].section_units == 0 ?
                                                                             'N/A'
                                                                             :
                                                                             data.section_units[0].section_units)
@@ -177,10 +177,10 @@ const HousingAuthorityforGeneral = ({ prophousingAuthority }) => {
                                                         <li>
                                                             <h5 className="mb-0 fontSize16 font-weight500 colorBlue">
                                                                 {
-                                                                    data.section_units === [] || data.section_units === null || data.section_units === '' ?
+                                                                    data.section_units == [] || data.section_units == null || data.section_units == '' ?
                                                                         'N/A'
                                                                         :
-                                                                        (data.section_units[0].total_units === null || data.section_units[0].total_units === "" || data.section_units[0].total_units === 0 ?
+                                                                        (data.section_units[0].total_units == null || data.section_units[0].total_units == "" || data.section_units[0].total_units == 0 ?
                                                                             'N/A'
                                                                             :
                                                                             data.section_units[0].total_units)

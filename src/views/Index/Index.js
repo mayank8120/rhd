@@ -43,7 +43,7 @@ const Index = (props) => {
 
     let nearbypropurl;
     const [nearbypropdata, setnearbypropdata] = useState([]);
-    if (latlngdata === undefined || latlngdata === [] || latlngdata === null) {
+    if (latlngdata == undefined || latlngdata == [] || latlngdata == null) {
         nearbypropurl = `http://thomasthecat.rentalhousingdeals.com/apis/v1/api/v1/nearByproperty?state=&city=`;
     }
     else {

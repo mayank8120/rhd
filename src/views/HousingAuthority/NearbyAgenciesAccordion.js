@@ -8,7 +8,7 @@ export const NearbyAgenciesAccordion = ({ data }) => {
     return (
         <>
             {
-                data === null || data === [] || data.length === 0 ?
+                data == null || data == [] || data.length == 0 ?
                     null :
                     <Accordion defaultActiveKey="0" className="accordionBoxInfo losAngeles">
                         <Accordion.Item eventKey="0">
@@ -45,21 +45,21 @@ export const NearbyAgenciesAccordion = ({ data }) => {
                                                 }
 
                                                 {/* <li>
-                                                    <div class="media">
-                                                        <img class="" src={require('../../assets/img/nearbyAgency3.png').default}
+                                                    <div className="media">
+                                                        <img className="" src={require('../../assets/img/nearbyAgency3.png').default}
                                                             alt="Image" />
-                                                        <div class="media-body">
-                                                            <div class="d-flex align-items-top">
-                                                                <div class="headingSec">
+                                                        <div className="media-body">
+                                                            <div className="d-flex align-items-top">
+                                                                <div className="headingSec">
                                                                     <h5
-                                                                        class="mt-0 mb-0 fontSize14 font-weight500 colorBlue">
+                                                                        className="mt-0 mb-0 fontSize14 font-weight500 colorBlue">
                                                                         Santa Ana Housing Authority</h5>
-                                                                    <p class="mb-0 secondaryColor fontSize14">
+                                                                    <p className="mb-0 secondaryColor fontSize14">
                                                                         Garden Grove, CA</p>
                                                                 </div>
-                                                                <div class="ml-auto">
+                                                                <div className="ml-auto">
                                                                     <span
-                                                                        class="statusTag fontSize12 font-weight500 open">
+                                                                        className="statusTag fontSize12 font-weight500 open">
                                                                         Open
                                                                     </span>
                                                                 </div>
@@ -70,21 +70,21 @@ export const NearbyAgenciesAccordion = ({ data }) => {
 
 
                                                 <li>
-                                                    <div class="media">
-                                                        <img class="" src={require('../../assets/img/nearbyAgency1.png').default}
+                                                    <div className="media">
+                                                        <img className="" src={require('../../assets/img/nearbyAgency1.png').default}
                                                             alt="Image" />
-                                                        <div class="media-body">
-                                                            <div class="d-flex align-items-top">
-                                                                <div class="headingSec">
+                                                        <div className="media-body">
+                                                            <div className="d-flex align-items-top">
+                                                                <div className="headingSec">
                                                                     <h5
-                                                                        class="mt-0 mb-0 fontSize14 font-weight500 colorBlue">
+                                                                        className="mt-0 mb-0 fontSize14 font-weight500 colorBlue">
                                                                         Garden Grove Housing Authority</h5>
-                                                                    <p class="mb-0 secondaryColor fontSize14">
+                                                                    <p className="mb-0 secondaryColor fontSize14">
                                                                         Garden Grove, CA</p>
                                                                 </div>
-                                                                <div class="ml-auto">
+                                                                <div className="ml-auto">
                                                                     <span
-                                                                        class="statusTag fontSize12 font-weight500 closed">
+                                                                        className="statusTag fontSize12 font-weight500 closed">
                                                                         Closed
                                                                     </span>
                                                                 </div>
@@ -95,21 +95,21 @@ export const NearbyAgenciesAccordion = ({ data }) => {
 
 
                                                 <li>
-                                                    <div class="media">
-                                                        <img class="" src={require('../../assets/img/nearbyAgency2.png').default}
+                                                    <div className="media">
+                                                        <img className="" src={require('../../assets/img/nearbyAgency2.png').default}
                                                             alt="Image" />
-                                                        <div class="media-body">
-                                                            <div class="d-flex align-items-top">
-                                                                <div class="headingSec">
+                                                        <div className="media-body">
+                                                            <div className="d-flex align-items-top">
+                                                                <div className="headingSec">
                                                                     <h5
-                                                                        class="mt-0 mb-0 fontSize14 font-weight500 colorBlue">
+                                                                        className="mt-0 mb-0 fontSize14 font-weight500 colorBlue">
                                                                         Orange Housing Authority</h5>
-                                                                    <p class="mb-0 secondaryColor fontSize14">
+                                                                    <p className="mb-0 secondaryColor fontSize14">
                                                                         Garden Grove, CA</p>
                                                                 </div>
-                                                                <div class="ml-auto">
+                                                                <div className="ml-auto">
                                                                     <span
-                                                                        class="statusTag fontSize12 font-weight500 openingSoon">
+                                                                        className="statusTag fontSize12 font-weight500 openingSoon">
                                                                         Opening Soon
                                                                     </span>
                                                                 </div>
@@ -124,7 +124,7 @@ export const NearbyAgenciesAccordion = ({ data }) => {
                                 </div>
 
 
-                                <div class="gradientBox"></div>
+                                <div className="gradientBox"></div>
                             </Accordion.Body>
                         </Accordion.Item>
 

@@ -32,7 +32,7 @@ const MySelect = props => {
                     if (
                         selected !== null &&
                         selected.length > 0 &&
-                        selected[selected.length - 1].value === props.allOption.value
+                        selected[selected.length - 1].value == props.allOption.value
                     ) {
                         return props.onChange(props.options);
                     }
